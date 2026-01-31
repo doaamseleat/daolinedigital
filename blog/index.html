@@ -4,200 +4,376 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>المكتبة الذكية | Daoline Digital</title>
-
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
 
   <style>
-    :root{
-      --primary:#c013a6;
-      --bg:#07080c;
-      --card:#0f1220;
-      --text:#f3f4f6;
-      --muted:rgba(243,244,246,.6);
-      --border:rgba(255,255,255,.08);
-      --radius:22px;
-      --max:1000px;
+    :root {
+      --primary: #c013a6;
+      --primary-hover: #9a0e85;
+      --bg: #07080c;
+      --bg2: #0b0d14;
+      --card: #0f1220;
+      --text: #f3f4f6;
+      --muted: rgba(243,244,246,0.65);
+      --border: rgba(255,255,255,0.08);
+      --shadow: 0 20px 50px rgba(0,0,0,0.6);
+      --radius: 24px;
+      --max: 1000px;
     }
 
-    *{box-sizing:border-box}
-
-    body{
-      margin:0;
-      font-family:"Tajawal",sans-serif;
-      background:var(--bg);
-      color:var(--text);
-      line-height:1.7;
+    * { box-sizing: border-box; outline: none; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Tajawal", sans-serif;
+      color: var(--text);
+      background: 
+        radial-gradient(circle at 15% 15%, rgba(192,19,166,0.18), transparent 45%),
+        radial-gradient(circle at 85% 30%, rgba(192,19,166,0.12), transparent 45%),
+        var(--bg);
+      line-height: 1.6;
+      overflow-x: hidden;
     }
 
-    .wrap{
-      max-width:var(--max);
-      margin:auto;
-      padding:0 20px;
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+
+    /* --- Topbar --- */
+    .topbar {
+      position: sticky; top: 0; z-index: 100;
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      background: rgba(7, 8, 12, 0.75);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 16px 0;
+    }
+    .brand { font-weight: 900; font-size: 1.4rem; letter-spacing: -0.5px; cursor: default; }
+    .brand span { color: var(--primary); }
+
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 12px 28px; border-radius: 16px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.05);
+      font-weight: 800; font-size: 14px;
+      cursor: pointer; transition: all 0.3s ease;
+      text-decoration: none; color: white;
+      gap: 10px;
+    }
+    .btn:hover { background: rgba(255,255,255,0.1); transform: translateY(-3px); border-color: rgba(255,255,255,0.2); }
+    .btn.primary {
+      background: linear-gradient(180deg, var(--primary), var(--primary-hover));
+      border: none; box-shadow: 0 10px 30px rgba(192, 19, 166, 0.35);
+    }
+    .btn.primary:hover { box-shadow: 0 15px 40px rgba(192, 19, 166, 0.5); }
+
+    /* --- Header --- */
+    header { padding: 90px 0 50px; text-align: center; }
+    h1 { font-size: clamp(2.8rem, 9vw, 3.8rem); font-weight: 900; margin: 0 0 18px; letter-spacing: -1.5px; line-height: 1.1; }
+    .lead { font-size: 1.25rem; color: var(--muted); max-width: 750px; margin: 0 auto; line-height: 1.8; }
+    .lead b { color: #fff; font-weight: 800; border-bottom: 2px solid var(--primary); }
+
+    /* --- Features Grid --- */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-bottom: 80px;
+    }
+    .f-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      padding: 40px 30px;
+      border-radius: var(--radius);
+      text-align: center;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    .f-card:hover { 
+      background: rgba(192,19,166,0.06); 
+      border-color: var(--primary); 
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    }
+    .f-icon { font-size: 2.5rem; margin-bottom: 20px; display: block; filter: drop-shadow(0 0 10px rgba(192,19,166,0.3)); }
+    .f-card h3 { margin: 0 0 12px; font-size: 1.3rem; font-weight: 800; color: #fff; }
+    .f-card p { margin: 0; font-size: 1rem; color: var(--muted); }
+
+    /* --- Section Title --- */
+    .section-title { font-size: 2rem; font-weight: 900; margin-bottom: 35px; display: flex; align-items: center; gap: 20px; }
+    .section-title::after { content: ''; flex: 1; height: 1px; background: linear-gradient(90deg, var(--border), transparent); }
+
+    /* --- Articles List & Cards --- */
+    .list { display: grid; gap: 30px; margin-bottom: 80px; }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 40px;
+      position: relative;
+      transition: all 0.4s ease;
+      animation: slideUp 0.7s ease forwards;
+      opacity: 0;
+    }
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .card:hover { border-color: rgba(192,19,166,0.5); transform: translateY(-5px); box-shadow: var(--shadow); }
+
+    .tag-container { display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; }
+    .tag {
+      background: rgba(192,19,166,0.12);
+      border: 1px solid rgba(192,19,166,0.25);
+      padding: 6px 16px; border-radius: 50px;
+      font-size: 11.5px; font-weight: 800; color: #ff9ef4;
+      text-transform: uppercase; letter-spacing: 0.5px;
     }
 
-    header{
-      text-align:center;
-      padding:80px 0 40px;
-    }
+    .card h2 { margin: 0 0 15px; font-size: 1.85rem; font-weight: 800; line-height: 1.4; }
+    /* Fix: Ensure links are white, not default blue */
+    .card h2 a { color: var(--text); text-decoration: none; transition: 0.3s; }
+    .card h2 a:hover { color: var(--primary); }
+    
+    .desc { color: var(--muted); font-size: 1.1rem; margin-bottom: 35px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; line-height: 1.7; }
 
-    h1{
-      font-size:3rem;
-      margin:0 0 10px;
-      font-weight:900;
+    /* --- Newsletter --- */
+    .newsletter {
+      background: linear-gradient(145deg, #161b33, #0b0d14);
+      border-radius: var(--radius);
+      padding: 60px 40px;
+      text-align: center;
+      margin-bottom: 100px;
+      border: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow);
     }
-
-    .lead{
-      color:var(--muted);
+    .newsletter::before {
+      content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+      background: radial-gradient(circle, rgba(192,19,166,0.08) 0%, transparent 70%);
+      pointer-events: none;
     }
-
-    .list{
-      display:grid;
-      gap:25px;
-      margin:50px 0;
+    .newsletter h2 { font-size: 2.4rem; margin-bottom: 12px; font-weight: 900; color: #fff; }
+    .newsletter p { color: var(--muted); margin-bottom: 35px; font-size: 1.15rem; }
+    .n-form { display: flex; gap: 12px; max-width: 580px; margin: 0 auto; flex-wrap: wrap; position: relative; z-index: 1; }
+    .n-input {
+      flex: 1; min-width: 280px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--border);
+      padding: 18px 24px; border-radius: 18px;
+      color: white; font-family: inherit; font-size: 1rem;
+      transition: 0.3s;
     }
+    .n-input:focus { outline: none; border-color: var(--primary); background: rgba(255,255,255,0.1); box-shadow: 0 0 20px rgba(192,19,166,0.2); }
 
-    .card{
-      background:var(--card);
-      border:1px solid var(--border);
-      border-radius:var(--radius);
-      padding:35px;
-      transition:.3s;
+    /* --- Toast --- */
+    .toast {
+      position: fixed; bottom: 40px; left: 50%; transform: translateX(-50%);
+      background: var(--primary); color: white; padding: 16px 40px;
+      border-radius: 60px; font-weight: 800; box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+      z-index: 1000; display: none; animation: popUp 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
+    @keyframes popUp { from { transform: translate(-50%, 100px); opacity: 0; } to { transform: translate(-50%, 0); opacity: 1; } }
 
-    .card:hover{
-      border-color:var(--primary);
-      transform:translateY(-4px);
+    /* --- Loader --- */
+    .loader { text-align: center; padding: 120px 0; }
+    .spinner {
+      width: 50px; height: 50px; border: 4px solid rgba(192,19,166,0.1);
+      border-left-color: var(--primary); border-radius: 50%;
+      margin: 0 auto 20px; animation: spin 1s linear infinite;
     }
+    @keyframes spin { to { transform: rotate(360deg); } }
 
-    h2{
-      margin:0 0 15px;
-      font-size:1.6rem;
-      font-weight:800;
-    }
-
-    h2 a{
-      color:white;
-      text-decoration:none;
-    }
-
-    h2 a:hover{
-      text-decoration:underline;
-      text-underline-offset:6px;
-    }
-
-    .desc{
-      color:var(--muted);
-      margin-bottom:20px;
-    }
-
-    .btn{
-      display:inline-block;
-      padding:10px 22px;
-      border-radius:14px;
-      background:linear-gradient(180deg,var(--primary),#9a0e85);
-      color:white;
-      text-decoration:none;
-      font-weight:800;
-      font-size:14px;
-    }
-
-    footer{
-      text-align:center;
-      padding:40px 0;
-      border-top:1px solid var(--border);
-      color:var(--muted);
-      font-size:14px;
+    footer { padding: 80px 0; text-align: center; border-top: 1px solid var(--border); color: var(--muted); font-size: 14px; font-weight: 600; }
+    
+    @media (max-width: 650px) {
+      header { padding: 60px 0 40px; }
+      .newsletter { padding: 45px 20px; }
+      .n-form { flex-direction: column; }
+      .n-input, .newsletter .btn { width: 100%; }
+      .section-title { font-size: 1.6rem; }
     }
   </style>
 </head>
-
 <body>
 
-<header class="wrap">
-  <h1>المكتبة الذكية</h1>
-  <p class="lead">
-    أي مقال جديد يظهر هنا تلقائيًا ✨
-  </p>
-</header>
-
-<main class="wrap">
-  <div id="articlesList" class="list">
-    <p style="text-align:center;opacity:.6">جاري تحميل المقالات…</p>
+  <div class="topbar">
+    <div class="wrap">
+      <div class="nav">
+        <div class="brand">Daoline <span>Digital</span></div>
+        <div style="display:flex; gap:10px;">
+          <a class="btn" href="https://doaamseleat.github.io/daolinedigital/">الرئيسية</a>
+        </div>
+      </div>
+    </div>
   </div>
-</main>
 
-<footer>
-  © <span id="year"></span> Daoline Digital
-</footer>
+  <header class="wrap">
+    <h1>المكتبة الذكية</h1>
+    <p class="lead">
+      وجهتك الأولى للحصول على <b>كورسات مجانية</b>، <b>كتيبات للتدريب</b>، و <b>مصادر متجددة</b> تضعك على طريق الاحتراف الرقمي.
+    </p>
+  </header>
 
-<script>
-  const CONFIG = {
-    owner: "doaamseleat",
-    repo: "daolinedigital",
-    path: "blog"
-  };
+  <!-- أقسام المحتوى الغنية -->
+  <section class="wrap">
+    <div class="features-grid">
+      <div class="f-card">
+        <span class="f-icon">🎓</span>
+        <h3>كورسات مجانية</h3>
+        <p>دروس تطبيقية مكثفة تبدأ معك من الصفر في عالم التسويق الاستراتيجي وصناعة المحتوى.</p>
+      </div>
+      <div class="f-card">
+        <span class="f-icon">📚</span>
+        <h3>كتيبات للتدريب</h3>
+        <p>ملفات PDF عملية تحتوي على نماذج عمل Worksheets لتطبيق استراتيجياتك فوراً.</p>
+      </div>
+      <div class="f-card">
+        <span class="f-icon">🔗</span>
+        <h3>مصادر وأدوات</h3>
+        <p>قوائم منتقاة بأفضل الأدوات والمنصات التي نستخدمها لزيادة الإنتاجية وتحسين النتائج.</p>
+      </div>
+    </div>
+  </section>
 
-  const CACHE_BUST = Date.now();
+  <main class="wrap">
+    <div class="section-title">آخر المقالات والكتيبات</div>
+    
+    <!-- القائمة البرمجية للمقالات -->
+    <div id="articlesList" class="list">
+        <div class="loader">
+            <div class="spinner"></div>
+            <p>جاري مزامنة المحتوى التعليمي من GitHub...</p>
+        </div>
+    </div>
 
-  async function fetchNoCache(url){
-    return fetch(url + "?v=" + CACHE_BUST, { cache:"no-store" });
-  }
+    <!-- القائمة البريدية -->
+    <section class="newsletter">
+        <h2>انضم للقائمة البريدية ✉️</h2>
+        <p>كن أول من يحصل على الكتيبات الحصرية والمصادر الجديدة فور صدورها في بريدك.</p>
+        <form class="n-form" id="newsletterForm">
+            <input type="email" class="n-input" placeholder="بريدك الإلكتروني الحقيقي.." required>
+            <button type="submit" class="btn primary">سجلني الآن</button>
+        </form>
+    </section>
+  </main>
 
-  async function getFiles(){
-    const api = `https://api.github.com/repos/${CONFIG.owner}/${CONFIG.repo}/contents/${CONFIG.path}`;
-    const res = await fetchNoCache(api);
-    if(!res.ok) return [];
-    const data = await res.json();
-    return data.filter(f => f.name.endsWith(".html"));
-  }
+  <!-- رسالة النجاح -->
+  <div class="toast" id="toast">تمت إضافتك بنجاح لمجتمعنا! 🎉</div>
 
-  async function getMeta(file){
-    const url = `./blog/${file.name}`;
-    const res = await fetchNoCache(url);
-    if(!res.ok) return null;
+  <footer>
+    &copy; <span id="year"></span> Daoline Digital - جميع الحقوق محفوظة
+  </footer>
 
-    const html = await res.text();
-    const doc = new DOMParser().parseFromString(html,"text/html");
-
-    return {
-      title: doc.querySelector("title")?.innerText.split("|")[0].trim()
-              || file.name.replace(".html",""),
-      desc: doc.querySelector('meta[name="description"]')?.content
-            || "اضغط لقراءة المقال",
-      url
+  <script>
+    // إعدادات GitHub الخاصة بكِ
+    const GITHUB_CONFIG = {
+      owner: "doaamseleat",
+      repo: "daolinedigital",
+      path: "blog"
     };
-  }
 
-  async function init(){
-    const box = document.getElementById("articlesList");
-    const files = await getFiles();
-
-    if(!files.length){
-      box.innerHTML="<p style='text-align:center;opacity:.6'>لا توجد مقالات حالياً</p>";
-      return;
+    // جلب قائمة الملفات من GitHub API
+    async function getArticlesList() {
+      // نستخدم التوقيت الحالي لضمان جلب أحدث قائمة دائماً وتجنب الكاش
+      const apiUrl = `https://api.github.com/repos/${GITHUB_CONFIG.owner}/${GITHUB_CONFIG.repo}/contents/${GITHUB_CONFIG.path}?t=${Date.now()}`;
+      try {
+        const response = await fetch(apiUrl);
+        if (!response.ok) throw new Error("GitHub API Error");
+        const data = await response.json();
+        return data.filter(file => file.name.endsWith('.html')).map(file => file.name); 
+      } catch (err) {
+        console.error("Error fetching file list:", err);
+        return [];
+      }
     }
 
-    const metas = await Promise.all(files.map(getMeta));
+    // جلب بيانات كل مقال
+    async function fetchMetadata(fileName) {
+      // نستخدم مسار مباشر مع إضافة متغير عشوائي لكسر الكاش
+      const url = `blog/${fileName}?v=${Date.now()}`;
+      try {
+        const response = await fetch(url);
+        
+        // التعامل مع حالة الـ 404 (لم ينشر بعد)
+        if (!response.ok) {
+            return {
+                title: "مقال قيد المزامنة..",
+                description: "جاري نشر المقال على السيرفر، يرجى الانتظار دقيقة وتحديث الصفحة.",
+                keywords: "Updating",
+                url: `blog/${fileName}`
+            };
+        }
 
-    box.innerHTML="";
+        const html = await response.text();
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, 'text/html');
 
-    metas.forEach(m=>{
-      if(!m) return;
-      box.innerHTML += `
-        <div class="card">
-          <h2><a href="${m.url}">${m.title}</a></h2>
-          <p class="desc">${m.desc}</p>
-          <a class="btn" href="${m.url}">اقرأ المقال</a>
-        </div>
-      `;
+        let rawTitle = doc.querySelector('title')?.innerText.split('|')[0].trim();
+        
+        // التحقق مما إذا كان العنوان يشير لخطأ
+        if (!rawTitle || rawTitle.toLowerCase().includes("not found") || rawTitle.includes("404")) {
+            rawTitle = "مقال تعليمي جديد";
+        }
+
+        return {
+          title: rawTitle,
+          description: doc.querySelector('meta[name="description"]')?.getAttribute('content') || "اكتشف هذا الدرس التعليمي الجديد من Daoline Digital لتطوير مهاراتك الرقمية.",
+          keywords: doc.querySelector('meta[name="keywords"]')?.getAttribute('content') || "Marketing, Digital",
+          url: `blog/${fileName}`
+        };
+      } catch (err) { return null; }
+    }
+
+    // بناء الصفحة (محسّن باستخدام Promise.all)
+    async function init() {
+      const container = document.getElementById('articlesList');
+      const fileNames = await getArticlesList();
+      
+      if (fileNames.length === 0) {
+        container.innerHTML = '<p style="text-align:center; padding:60px; opacity:0.5;">لا توجد مقالات منشورة حالياً في مجلد blog.</p>';
+        return;
+      }
+
+      // جلب بيانات جميع الملفات بالتوازي لتسريع العملية
+      const promises = fileNames.map(name => fetchMetadata(name));
+      const results = await Promise.all(promises);
+      
+      container.innerHTML = ''; // مسح اللودر
+
+      results.filter(art => art !== null).forEach((art, index) => {
+        const tags = art.keywords.split(',').map(t => `<span class="tag">${t.trim()}</span>`).join('');
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.style.animationDelay = `${index * 0.1}s`;
+        card.innerHTML = `
+          <div class="tag-container">${tags}</div>
+          <h2><a href="${art.url}">${art.title}</a></h2>
+          <p class="desc">${art.description}</p>
+          <a href="${art.url}" class="btn primary">استعرض المحتوى</a>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    // القائمة البريدية
+    document.getElementById('newsletterForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const toast = document.getElementById('toast');
+      toast.style.display = 'block';
+      this.reset();
+      setTimeout(() => { toast.style.display = 'none'; }, 4500);
     });
-  }
 
-  document.getElementById("year").textContent = new Date().getFullYear();
-  init();
-</script>
-
+    window.onload = () => {
+      document.getElementById("year").textContent = new Date().getFullYear();
+      init();
+    };
+  </script>
 </body>
 </html>
