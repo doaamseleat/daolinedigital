@@ -3,12 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daoline Free Courses | Daoline Digital</title>
+  <meta name="description" content="Daoline Free Courses: مكتبة مجانية للسوشيال ميديا — مقالات + كتيبات PDF قابلة للتنفيذ." />
 
-  <title>Social Media Free Course | Daoline Digital</title>
-  <meta name="description" content="مكتبة Daoline Digital المجانية: مقالات وكتيبات عملية في السوشيال ميديا، المحتوى، الإعلانات، وقياس الأداء." />
-  <meta name="robots" content="index,follow" />
-
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
@@ -27,6 +24,7 @@
       --max:980px;
     }
     *{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
     body{
       margin:0;
       font-family:"Tajawal", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
@@ -39,20 +37,21 @@
     a{ color:inherit; text-decoration:none; }
     .wrap{ max-width:var(--max); margin:0 auto; padding:0 18px; }
 
-    /* Topbar */
     .topbar{
-      position:sticky; top:0; z-index:10;
+      position:sticky; top:0; z-index:50;
       backdrop-filter: blur(14px);
-      background: rgba(7,8,12,.60);
+      background: rgba(7,8,12,.58);
       border-bottom: 1px solid rgba(255,255,255,.08);
     }
     .nav{
       display:flex; align-items:center; justify-content:space-between;
       gap:12px; padding:14px 0;
+      flex-wrap:wrap;
     }
     .brand{
+      display:flex; align-items:center; gap:10px;
       font-weight:900;
-      font-size:16px;
+      letter-spacing:.2px;
     }
     .brand span{ color:var(--primary); }
 
@@ -73,46 +72,19 @@
       box-shadow: 0 16px 40px rgba(192,19,166,.18);
     }
 
-    /* Header */
-    header{
-      padding:36px 0 18px;
-    }
-    h1{
-      margin:0 0 10px;
-      font-size:36px;
-      letter-spacing:.2px;
-    }
+    header{ padding:34px 0 14px; }
+    h1{ margin:0 0 8px; font-size:34px; letter-spacing:.2px; }
     .lead{
       margin:0;
       color: rgba(243,244,246,.78);
-      line-height:1.95;
-      font-size:16px;
-      max-width:780px;
-    }
-
-    /* Course intro */
-    .intro{
-      margin-top:18px;
-      border-radius: var(--radius);
-      border:1px solid rgba(192,19,166,.35);
-      background: rgba(192,19,166,.10);
-      padding:18px;
-    }
-    .intro h3{
-      margin:0 0 6px;
-      font-size:20px;
-    }
-    .intro p{
-      margin:0;
       line-height:1.9;
-      color: rgba(243,244,246,.88);
+      font-size:16px;
     }
 
-    /* Articles list */
     .list{
-      margin:22px 0 44px;
+      margin:18px 0 44px;
       display:grid;
-      gap:16px;
+      gap:14px;
     }
     .card{
       border-radius: var(--radius);
@@ -120,17 +92,6 @@
       background: rgba(15,18,32,.52);
       box-shadow: var(--shadow);
       padding:18px;
-      transition:.2s ease;
-    }
-    .card:hover{
-      transform: translateY(-2px);
-      border-color: rgba(192,19,166,.35);
-    }
-
-    h2{
-      margin:0;
-      font-size:20px;
-      line-height:1.6;
     }
     .meta{
       display:flex;
@@ -147,14 +108,27 @@
       padding:8px 10px;
       border-radius:999px;
     }
+    h2{ margin:0; font-size:20px; line-height:1.5; }
     .desc{
-      margin:12px 0 0;
+      margin:10px 0 0;
       color: rgba(243,244,246,.78);
       line-height:1.9;
     }
 
+    .notice{
+      margin-top:12px;
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      padding:14px;
+      color: rgba(243,244,246,.78);
+      line-height:1.9;
+      font-weight:700;
+    }
+    .notice b{ color:#fff; }
+
     footer{
-      padding:22px 0 34px;
+      padding:18px 0 34px;
       color: rgba(243,244,246,.58);
       text-align:center;
       border-top: 1px solid rgba(255,255,255,.08);
@@ -162,42 +136,31 @@
     }
   </style>
 </head>
-
 <body>
 
-  <!-- Topbar -->
   <div class="topbar">
     <div class="wrap">
       <div class="nav">
-        <div class="brand">Daoline <span>Free Course</span></div>
+        <div class="brand">Daoline <span>Free Courses</span></div>
         <div style="display:flex; gap:10px; flex-wrap:wrap;">
           <a class="btn" href="/index.html">رجوع للموقع</a>
-          <a class="btn primary" href="/blog/article-1.html">ابدأ من المقال الأول</a>
+          <a class="btn primary" href="/blog/article-1.html">ابدأ بالمقال الأول</a>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Header -->
   <header>
     <div class="wrap">
-      <h1>🎓 Social Media Free Course</h1>
-      <p class="lead">
-        مكتبة مجانية من مقالات وكتيبات عملية في السوشيال ميديا والإعلانات.
-        المحتوى هنا مبني على تجربة حقيقية وأسئلة السوق—مش تنظير ولا كلام عام.
-      </p>
+      <h1>Daoline Free Courses</h1>
+      <p class="lead">مكتبة مجانية: مقالات + كتيبات PDF — بلغة بسيطة ومباشرة للتطبيق.</p>
 
-      <div class="intro">
-        <h3>إزاي تستخدم المكتبة دي؟</h3>
-        <p>
-          ابدأ بالمقالات بالترتيب، وبعدها استخدم الكتيبات والـ Templates
-          علشان تطبق بنفسك أو تطور شغلك بشكل أذكى.
-        </p>
+      <div class="notice">
+        <b>مهم:</b> أي كتيب مجاني هيتحط هنا كرابط مباشر للتحميل داخل نفس صفحة المقال أو كصفحة مستقلة.
       </div>
     </div>
   </header>
 
-  <!-- Articles -->
   <main class="wrap">
     <div class="list">
 
@@ -216,36 +179,38 @@
         </div>
 
         <p class="desc">
-          تحليل عملي يشرح ليه التفاعل ما بقاش كفاية،
-          وإزاي الـ Signals الجديدة بتحدد إذا المحتوى هيتوزع ولا لا،
-          مع خطوات واضحة للتطبيق.
+          قراءة عملية للتغييرات اللي خلت “التفاعل” مش كفاية وحده، وإزاي تبني رسالة وكرييتف يخاطب الاهتمام الحقيقي قبل أي لايك.
         </p>
 
         <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
           <a class="btn primary" href="/blog/article-1.html">فتح المقال</a>
-          <a class="btn" href="/index.html">رجوع للموقع</a>
+          <a class="btn" href="/index.html">رجوع للصفحة الرئيسية</a>
         </div>
       </article>
 
-      <!-- Placeholder for future resources -->
-      <article class="card" style="opacity:.7;">
-        <h2>📘 كتيبات مجانية (قريبًا)</h2>
-        <p class="desc">
-          Checklist + Templates + Frameworks
-          لمساعدتك في التخطيط، التنفيذ، وقياس النتائج.
-        </p>
+      <!-- مثال جاهز لكتيّب PDF (فعّله لما ترفع الملف)
+      <article class="card">
+        <h2><a href="/blog/free-social-media-kit.pdf" download>كتيّب مجاني: Social Media Starter Kit (PDF)</a></h2>
+        <div class="meta">
+          <span class="tag">Free PDF</span>
+          <span class="tag">Templates</span>
+        </div>
+        <p class="desc">قوالب عملية تساعدك تبدأ خطة محتوى وتحدد KPI وتبني CTA واضح.</p>
+        <div style="margin-top:14px;">
+          <a class="btn primary" href="/blog/free-social-media-kit.pdf" download>تحميل مباشر</a>
+        </div>
       </article>
+      -->
 
     </div>
   </main>
 
   <footer>
-    © <span id="year"></span> Daoline Digital — All rights reserved.
+    © <span id="year"></span> Daoline Digital
   </footer>
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
-
 </body>
 </html>
