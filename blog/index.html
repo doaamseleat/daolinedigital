@@ -40,6 +40,7 @@
 
     .wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
 
+    /* --- Topbar --- */
     .topbar {
       position: sticky; top: 0; z-index: 100;
       backdrop-filter: blur(18px);
@@ -71,11 +72,13 @@
     }
     .btn.primary:hover { box-shadow: 0 15px 40px rgba(192, 19, 166, 0.5); }
 
+    /* --- Header --- */
     header { padding: 90px 0 50px; text-align: center; }
     h1 { font-size: clamp(2.8rem, 9vw, 3.8rem); font-weight: 900; margin: 0 0 18px; letter-spacing: -1.5px; line-height: 1.1; }
     .lead { font-size: 1.25rem; color: var(--muted); max-width: 750px; margin: 0 auto; line-height: 1.8; }
     .lead b { color: #fff; font-weight: 800; border-bottom: 2px solid var(--primary); }
 
+    /* --- Features Grid --- */
     .features-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -100,9 +103,11 @@
     .f-card h3 { margin: 0 0 12px; font-size: 1.3rem; font-weight: 800; color: #fff; }
     .f-card p { margin: 0; font-size: 1rem; color: var(--muted); }
 
+    /* --- Section Title --- */
     .section-title { font-size: 2rem; font-weight: 900; margin-bottom: 35px; display: flex; align-items: center; gap: 20px; }
     .section-title::after { content: ''; flex: 1; height: 1px; background: linear-gradient(90deg, var(--border), transparent); }
 
+    /* --- Articles List & Cards --- */
     .list { display: grid; gap: 30px; margin-bottom: 80px; }
     .card {
       background: var(--card);
@@ -129,12 +134,14 @@
       text-transform: uppercase; letter-spacing: 0.5px;
     }
 
+    /* Fixed Link Colors */
     .card h2 { margin: 0 0 15px; font-size: 1.85rem; font-weight: 800; line-height: 1.4; }
     .card h2 a { color: var(--text); text-decoration: none; transition: 0.3s; }
     .card h2 a:hover { color: var(--primary); }
     
     .desc { color: var(--muted); font-size: 1.1rem; margin-bottom: 35px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; line-height: 1.7; }
 
+    /* --- Newsletter --- */
     .newsletter {
       background: linear-gradient(145deg, #161b33, #0b0d14);
       border-radius: var(--radius);
@@ -164,6 +171,7 @@
     }
     .n-input:focus { outline: none; border-color: var(--primary); background: rgba(255,255,255,0.1); box-shadow: 0 0 20px rgba(192,19,166,0.2); }
 
+    /* --- Toast --- */
     .toast {
       position: fixed; bottom: 40px; left: 50%; transform: translateX(-50%);
       background: var(--primary); color: white; padding: 16px 40px;
@@ -172,6 +180,7 @@
     }
     @keyframes popUp { from { transform: translate(-50%, 100px); opacity: 0; } to { transform: translate(-50%, 0); opacity: 1; } }
 
+    /* --- Loader --- */
     .loader { text-align: center; padding: 120px 0; }
     .spinner {
       width: 50px; height: 50px; border: 4px solid rgba(192,19,166,0.1);
@@ -198,7 +207,8 @@
       <div class="nav">
         <div class="brand">Daoline <span>Digital</span></div>
         <div style="display:flex; gap:10px;">
-          <a class="btn" href="https://doaamseleat.github.io/daolinedigital/">الرئيسية</a>
+          <!-- تم تعديل الرابط ليكون نسبياً بدلاً من رابط مطلق -->
+          <a class="btn" href="index.html">الرئيسية</a>
         </div>
       </div>
     </div>
@@ -211,6 +221,7 @@
     </p>
   </header>
 
+  <!-- أقسام المحتوى الغنية -->
   <section class="wrap">
     <div class="features-grid">
       <div class="f-card">
@@ -233,24 +244,27 @@
 
   <main class="wrap">
     <div class="section-title">آخر المقالات والكتيبات</div>
-
+    
+    <!-- القائمة البرمجية للمقالات -->
     <div id="articlesList" class="list">
-      <div class="loader">
-        <div class="spinner"></div>
-        <p>جاري مزامنة المحتوى التعليمي من GitHub...</p>
-      </div>
+        <div class="loader">
+            <div class="spinner"></div>
+            <p>جاري مزامنة المحتوى التعليمي من GitHub...</p>
+        </div>
     </div>
 
+    <!-- القائمة البريدية -->
     <section class="newsletter">
-      <h2>انضم للقائمة البريدية ✉️</h2>
-      <p>كن أول من يحصل على الكتيبات الحصرية والمصادر الجديدة فور صدورها في بريدك.</p>
-      <form class="n-form" id="newsletterForm">
-        <input type="email" class="n-input" placeholder="بريدك الإلكتروني الحقيقي.." required>
-        <button type="submit" class="btn primary">سجلني الآن</button>
-      </form>
+        <h2>انضم للقائمة البريدية ✉️</h2>
+        <p>كن أول من يحصل على الكتيبات الحصرية والمصادر الجديدة فور صدورها في بريدك.</p>
+        <form class="n-form" id="newsletterForm">
+            <input type="email" class="n-input" placeholder="بريدك الإلكتروني الحقيقي.." required>
+            <button type="submit" class="btn primary">سجلني الآن</button>
+        </form>
     </section>
   </main>
 
+  <!-- رسالة النجاح -->
   <div class="toast" id="toast">تمت إضافتك بنجاح لمجتمعنا! 🎉</div>
 
   <footer>
@@ -258,126 +272,102 @@
   </footer>
 
   <script>
+    // إعدادات GitHub الخاصة بكِ
     const GITHUB_CONFIG = {
       owner: "doaamseleat",
       repo: "daolinedigital",
       path: "blog"
     };
 
-    // ✅ Token واحد لكسر الكاش في كل الطلبات
-    const CACHE_TOKEN = Date.now();
-
-    // ✅ Fetch بدون كاش
-    async function fetchNoCache(url) {
-      const sep = url.includes('?') ? '&' : '?';
-      const res = await fetch(url + sep + 'v=' + CACHE_TOKEN, { cache: "no-store" });
-      return res;
-    }
-
+    // جلب قائمة الملفات
     async function getArticlesList() {
-      const apiUrl = `https://api.github.com/repos/${GITHUB_CONFIG.owner}/${GITHUB_CONFIG.repo}/contents/${GITHUB_CONFIG.path}`;
+      // نستخدم Time stamp لمنع الكاش والتأكد من جلب القائمة الجديدة دائماً
+      const apiUrl = `https://api.github.com/repos/${GITHUB_CONFIG.owner}/${GITHUB_CONFIG.repo}/contents/${GITHUB_CONFIG.path}?t=${Date.now()}`;
       try {
-        const response = await fetchNoCache(apiUrl);
+        const response = await fetch(apiUrl);
         if (!response.ok) throw new Error("GitHub API Error");
         const data = await response.json();
-
-        // ✅ html فقط + استبعاد أي ملفات غير مرغوبة لو ظهرت
+        
+        // نعيد اسم الملف ورابط التحميل المباشر (Raw Download URL)
+        // الرابط المباشر يحل مشكلة الـ 404 لأن الـ API أسرع من Pages
         return data
           .filter(file => file.name.endsWith('.html'))
-          .filter(file => file.name.toLowerCase() !== 'index.html')
-          .map(file => file.name)
-          // ✅ ترتيب ثابت (اختياري): أبجديًا
-          .sort((a, b) => a.localeCompare(b, "en"));
+          .map(file => ({ name: file.name, downloadUrl: file.download_url })); 
       } catch (err) {
         console.error("Error fetching file list:", err);
         return [];
       }
     }
 
-    async function fetchMetadata(fileName) {
-      // ✅ مهم: ./blog لضمان المسار الصحيح في GitHub Pages
-      const urlWithBust = `./blog/${fileName}`;
+    // جلب بيانات المقال (باستخدام الرابط الخام من الـ API)
+    async function fetchMetadata(fileObj) {
       try {
-        const response = await fetchNoCache(urlWithBust);
-
-        if (!response.ok) {
-          return {
-            title: "مقال قيد المزامنة..",
-            description: "جاري نشر المقال على السيرفر، حدّث الصفحة بعد دقيقة.",
-            keywords: "Updating",
-            url: `./blog/${fileName}`
-          };
-        }
+        // نقرأ المحتوى من downloadUrl (Raw content) لتجنب تأخير النشر
+        const response = await fetch(fileObj.downloadUrl);
+        
+        if (!response.ok) throw new Error("Fetch failed");
 
         const html = await response.text();
-        const doc = new DOMParser().parseFromString(html, 'text/html');
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, 'text/html');
 
-        let rawTitle = doc.querySelector('title')?.innerText?.trim() || "";
-        // لو العنوان فيه | نعرض الجزء الأول فقط
-        rawTitle = rawTitle.split('|')[0].trim();
-
-        if (!rawTitle || rawTitle.toLowerCase().includes("not found") || rawTitle.includes("404")) {
-          rawTitle = fileName.replace('.html', '').replace(/[-_]/g, ' ');
+        let rawTitle = doc.querySelector('title')?.innerText.split('|')[0].trim();
+        
+        // تنظيف العنوان
+        if (!rawTitle || rawTitle.toLowerCase().includes("not found")) {
+            rawTitle = "مقال جديد";
         }
-
-        const description =
-          doc.querySelector('meta[name="description"]')?.getAttribute('content') ||
-          "اكتشف هذا الدرس التعليمي الجديد من Daoline Digital لتطوير مهاراتك الرقمية.";
-
-        const keywords =
-          doc.querySelector('meta[name="keywords"]')?.getAttribute('content') ||
-          "Marketing, Digital";
 
         return {
           title: rawTitle,
-          description,
-          keywords,
-          url: `./blog/${fileName}`
+          description: doc.querySelector('meta[name="description"]')?.getAttribute('content') || "اكتشف هذا الدرس التعليمي الجديد من Daoline Digital.",
+          keywords: doc.querySelector('meta[name="keywords"]')?.getAttribute('content') || "Marketing, Digital",
+          // الرابط الذي يضغط عليه المستخدم يظل كما هو (الصفحة العادية)
+          url: `blog/${fileObj.name}`
         };
-      } catch (err) {
-        return null;
+      } catch (err) { 
+          // في حال الفشل التام، نعرض بيانات مؤقتة
+          return {
+            title: "مقال قيد التجهيز",
+            description: "جاري رفع المحتوى، يرجى المحاولة بعد قليل.",
+            keywords: "New",
+            url: `blog/${fileObj.name}`
+          };
       }
     }
 
+    // بناء الصفحة
     async function init() {
       const container = document.getElementById('articlesList');
-      const fileNames = await getArticlesList();
-
-      if (fileNames.length === 0) {
+      const files = await getArticlesList();
+      
+      if (files.length === 0) {
         container.innerHTML = '<p style="text-align:center; padding:60px; opacity:0.5;">لا توجد مقالات منشورة حالياً في مجلد blog.</p>';
         return;
       }
 
-      const results = await Promise.all(fileNames.map(fetchMetadata));
+      // جلب البيانات بالتوازي
+      const promises = files.map(file => fetchMetadata(file));
+      const results = await Promise.all(promises);
+      
+      container.innerHTML = ''; // مسح اللودر
 
-      container.innerHTML = '';
-
-      results
-        .filter(Boolean)
-        .forEach((art, index) => {
-          const tags = (art.keywords || "")
-            .split(',')
-            .map(t => t.trim())
-            .filter(Boolean)
-            .slice(0, 5) // ✅ حد أقصى للتاجز عشان ميحصلش زحمة
-            .map(t => `<span class="tag">${t}</span>`)
-            .join('');
-
-          const card = document.createElement('div');
-          card.className = 'card';
-          card.style.animationDelay = `${index * 0.08}s`;
-
-          card.innerHTML = `
-            <div class="tag-container">${tags}</div>
-            <h2><a href="${art.url}" rel="noopener">${art.title}</a></h2>
-            <p class="desc">${art.description}</p>
-            <a href="${art.url}" class="btn primary" rel="noopener">استعرض المحتوى</a>
-          `;
-
-          container.appendChild(card);
-        });
+      results.forEach((art, index) => {
+        const tags = art.keywords.split(',').map(t => `<span class="tag">${t.trim()}</span>`).join('');
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.style.animationDelay = `${index * 0.1}s`;
+        card.innerHTML = `
+          <div class="tag-container">${tags}</div>
+          <h2><a href="${art.url}">${art.title}</a></h2>
+          <p class="desc">${art.description}</p>
+          <a href="${art.url}" class="btn primary">استعرض المحتوى</a>
+        `;
+        container.appendChild(card);
+      });
     }
 
+    // القائمة البريدية
     document.getElementById('newsletterForm').addEventListener('submit', function(e) {
       e.preventDefault();
       const toast = document.getElementById('toast');
