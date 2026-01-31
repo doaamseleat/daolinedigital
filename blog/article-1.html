@@ -1,137 +1,239 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نموذج مقال احترافي | Daoline Digital</title>
+    <meta name="description" content="نموذج مقال تعليمي بأسلوب Daoline Digital مع حماية للمحتوى">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Base Settings */
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: #0f172a; /* Slate 900 */
+            color: #e2e8f0; /* Slate 200 */
+            overflow-x: hidden;
+            /* Text Selection Protection */
+            -webkit-user-select: none; /* Safari */
+            -ms-user-select: none; /* IE 10 and IE 11 */
+            user-select: none; /* Standard syntax */
+        }
 
-  <title>لماذا ينهار الـ Organic Reach فجأة؟ | Daoline Digital</title>
+        /* Brand Colors */
+        .text-daoline { color: #c013a6; }
+        .bg-daoline { background-color: #c013a6; }
+        .border-daoline { border-color: #c013a6; }
+        .hover-bg-daoline:hover { background-color: #a00f89; transition: 0.3s; }
 
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
+        /* Gradients */
+        .card-gradient {
+            background: linear-gradient(145deg, #1e293b 0%, #0f172a 100%);
+        }
+        .hero-gradient {
+            background: radial-gradient(circle at top center, #c013a620 0%, transparent 70%);
+        }
 
-  <style>
-    :root{
-      --primary:#c013a6;
-      --bg:#07080c;
-      --card:#0f1220;
-      --text:#f3f4f6;
-      --muted:rgba(243,244,246,.72);
-      --border:rgba(255,255,255,.10);
-      --radius:18px;
-    }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #c013a6; }
 
-    body{
-      margin:0;
-      font-family:"Tajawal",sans-serif;
-      background:linear-gradient(180deg,#07080c,#0b0d14);
-      color:var(--text);
-    }
-
-    .wrap{max-width:900px;margin:auto;padding:20px}
-
-    h1{font-size:32px}
-    p{line-height:2;color:var(--muted)}
-
-    .panel{
-      background:rgba(15,18,32,.6);
-      border:1px solid var(--border);
-      border-radius:22px;
-      padding:20px;
-    }
-
-    .note{
-      background:rgba(255,255,255,.04);
-      border:1px solid var(--border);
-      border-radius:18px;
-      padding:14px;
-      margin:16px 0;
-    }
-
-    /* ===== العنصر المرئي الجديد ===== */
-    .accordion{
-      margin:20px 0;
-      border:1px solid var(--border);
-      border-radius:18px;
-      overflow:hidden;
-      background:rgba(192,19,166,.08);
-    }
-
-    .accordion-header{
-      width:100%;
-      background:transparent;
-      border:none;
-      padding:14px 18px;
-      font-size:15px;
-      font-weight:900;
-      color:#fff;
-      cursor:pointer;
-      text-align:right;
-    }
-
-    .accordion-body{
-      max-height:0;
-      overflow:hidden;
-      padding:0 18px;
-      transition:.3s;
-      color:var(--muted);
-    }
-
-    .accordion.active .accordion-body{
-      max-height:300px;
-      padding:12px 18px 18px;
-    }
-  </style>
+        /* Accordion Animation */
+        details > summary { list-style: none; }
+        details > summary::-webkit-details-marker { display: none; }
+        details[open] summary ~ * { animation: sweep .5s ease-in-out; }
+        @keyframes sweep {
+            0%    {opacity: 0; transform: translateY(-10px)}
+            100%  {opacity: 1; transform: translateY(0)}
+        }
+    </style>
 </head>
+<body class="relative">
 
-<body>
+    <!-- Sticky Nav -->
+    <nav class="sticky top-0 z-50 bg-[#0f172a]/90 backdrop-blur-md border-b border-slate-800">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="font-bold text-lg md:text-xl tracking-wide">
+                Daoline<span class="text-daoline">Digital</span>
+            </div>
+            <div class="flex gap-3 text-sm">
+                <a href="/blog/" class="hidden md:block text-slate-400 hover:text-white transition">المكتبة</a>
+                <a href="/index.html" class="bg-daoline text-white px-4 py-1.5 rounded-full hover-bg-daoline font-medium text-xs md:text-sm">الرئيسية</a>
+            </div>
+        </div>
+    </nav>
 
-<div class="wrap">
-  <h1>لماذا ينهار الـ Organic Reach فجأة؟</h1>
-
-  <div class="panel">
-
-    <div class="note">
-      <strong>الخلاصة:</strong>
-      التفاعل لوحده ما بقاش كفاية… Meta بقت تركز على الاهتمام الحقيقي.
-    </div>
-
-    <!-- 🔴 العنصر المرئي المضاف -->
-    <div class="accordion">
-      <button class="accordion-header">
-        📌 معلومة مهمة: ما الفرق بين Dwell Time و Engagement؟
-      </button>
-      <div class="accordion-body">
-        <p>
-          <strong>Dwell Time</strong> هو الوقت اللي القارئ بيقضيه فعليًا وهو واقف على المحتوى،
-          حتى لو ما عملش لايك أو تعليق.
-          <br><br>
-          <strong>Engagement</strong> هو التفاعل السريع.
-          وعلشان كده Meta بقت تفضّل المحتوى اللي "يتقري" مش اللي "يتضغط عليه".
+    <!-- Hero Section -->
+    <header class="hero-gradient pt-16 pb-12 px-4 text-center relative">
+        <span class="inline-block py-1 px-3 rounded-full bg-daoline/10 text-daoline text-xs font-bold border border-daoline/20 mb-4">
+            تحليل استراتيجي
+        </span>
+        <h1 class="text-3xl md:text-5xl font-extrabold mb-6 leading-tight max-w-4xl mx-auto">
+            Content Strategy vs Posting:<br>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-400">الفرق اللي محدش قالك عليه</span>
+        </h1>
+        <p class="text-slate-400 max-w-2xl mx-auto text-lg leading-relaxed">
+            ليه صفحات بتنشر كل يوم ومابتبيعش، وصفحات تانية بوست واحد منها بيقلب الدنيا؟ السر مش في "الكمية"، السر في البوصلة اللي بتتحرك بيها.
         </p>
-      </div>
-    </div>
-    <!-- 🔴 نهاية العنصر -->
+    </header>
 
-    <h2>1) التفاعل بقى مؤشر متأخر</h2>
-    <p>
-      زمان كان سهل نقيس نجاح البوست باللايكات.
-      دلوقتي المنصات بقت أذكى.
-    </p>
+    <!-- Main Content Container -->
+    <main class="container mx-auto px-4 max-w-3xl pb-20">
+        
+        <!-- The Summary Box (الخلاصة) -->
+        <div class="bg-slate-800/50 border-r-4 border-daoline p-6 rounded-lg mb-12 shadow-lg backdrop-blur-sm">
+            <h3 class="text-daoline font-bold text-lg mb-2 flex items-center gap-2">
+                ⚡ الخلاصة في سطر:
+            </h3>
+            <p class="text-slate-300">
+                النشر هو إنك "ترمي بضاعة" في السوق وتستنى حد يشتري. الاستراتيجية هي إنك "تبني السوق" نفسه قبل ما تعرض المنتج.
+            </p>
+        </div>
 
-    <h2>2) إشارات الاهتمام الجديدة</h2>
-    <p>
-      زي وقت المشاهدة، التوقف أثناء السكرول، والتصرف بعد المحتوى.
-    </p>
+        <!-- Accordion Section 1 -->
+        <div class="space-y-4 mb-12">
+            <div class="text-xl font-bold mb-6 text-white border-b border-slate-800 pb-2 inline-block">مفاهيم مغلوطة</div>
+            
+            <details class="group bg-slate-800 rounded-xl overflow-hidden cursor-pointer border border-slate-700">
+                <summary class="flex justify-between items-center font-medium p-5 text-slate-200 hover:bg-slate-700/50 transition">
+                    <span>1. "لازم أنشر كل يوم عشان الريتش"</span>
+                    <span class="transition group-open:rotate-180 text-daoline">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg>
+                    </span>
+                </summary>
+                <div class="text-slate-400 p-5 pt-0 leading-relaxed border-t border-slate-700/50 mt-2">
+                    ده أكبر فخ. الخوارزميات دلوقتي بتهتم بالـ Retention (مدة المشاهدة) والـ Engagement Quality. بوست واحد متعوب عليه استراتيجياً أحسن من 7 بوستات حشو.
+                </div>
+            </details>
 
-  </div>
-</div>
+            <details class="group bg-slate-800 rounded-xl overflow-hidden cursor-pointer border border-slate-700">
+                <summary class="flex justify-between items-center font-medium p-5 text-slate-200 hover:bg-slate-700/50 transition">
+                    <span>2. "الاستراتيجية يعني جدول محتوى"</span>
+                    <span class="transition group-open:rotate-180 text-daoline">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg>
+                    </span>
+                </summary>
+                <div class="text-slate-400 p-5 pt-0 leading-relaxed border-t border-slate-700/50 mt-2">
+                    الجدول (Calendar) هو مجرد أداة تنظيم. الاستراتيجية هي "ليه" اخترنا الموضوع ده؟ و"مين" المستهدف؟ و"إيه" الأكشن المطلوب؟ الجدول هو الخريطة، الاستراتيجية هي الوجهة.
+                </div>
+            </details>
+        </div>
 
-<script>
-  document.querySelectorAll(".accordion-header").forEach(btn=>{
-    btn.addEventListener("click",()=>{
-      btn.parentElement.classList.toggle("active");
-    });
-  });
-</script>
+        <!-- Insights Section (Cards) -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold mb-6 text-white">إشارات السوق (Market Signals)</h2>
+            <div class="grid md:grid-cols-2 gap-4">
+                <div class="card-gradient p-5 rounded-xl border border-slate-700 hover:border-daoline/50 transition duration-300">
+                    <div class="text-daoline text-4xl mb-2 font-black">01</div>
+                    <h4 class="font-bold text-white mb-2">العميل بيكشفك</h4>
+                    <p class="text-sm text-slate-400">الجمهور بقى أذكى، بيعرف يفرق بين المحتوى اللي بيبيع له والمحتوى اللي بيفيده.</p>
+                </div>
+                <div class="card-gradient p-5 rounded-xl border border-slate-700 hover:border-daoline/50 transition duration-300">
+                    <div class="text-daoline text-4xl mb-2 font-black">02</div>
+                    <h4 class="font-bold text-white mb-2">المنافسة مش سعر</h4>
+                    <p class="text-sm text-slate-400">المنافسة بقت على "مين بيشرح أحسن" ومين "بيحل مشاكل أسرع".</p>
+                </div>
+            </div>
+        </section>
 
+        <!-- Checklist -->
+        <div class="bg-gradient-to-br from-slate-800 to-slate-900 border border-slate-700 rounded-2xl p-6 md:p-8 relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-20 h-20 bg-daoline blur-3xl opacity-20"></div>
+            <h3 class="text-xl font-bold mb-6 relative z-10">✅ التشيك ليست العملية</h3>
+            <ul class="space-y-4 relative z-10">
+                <li class="flex items-start gap-3">
+                    <div class="mt-1 w-5 h-5 rounded-full border border-daoline flex items-center justify-center text-daoline text-xs">✓</div>
+                    <span class="text-slate-300">حدد هدفك من الربع الحالي (بيع مباشر؟ ولا وعي بالعلامة؟)</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <div class="mt-1 w-5 h-5 rounded-full border border-daoline flex items-center justify-center text-daoline text-xs">✓</div>
+                    <span class="text-slate-300">راجع آخر 10 بوستات: هل بتقدم قيمة ولا مجرد "إحنا موجودين"؟</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <div class="mt-1 w-5 h-5 rounded-full border border-daoline flex items-center justify-center text-daoline text-xs">✓</div>
+                    <span class="text-slate-300">ثبت 3 محاور (Content Pillars) تتكلم فيهم بس، وبطل تشتت نفسك.</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Free Resource Placeholder -->
+        <div class="mt-12 text-center py-10 border-t border-slate-800">
+            <p class="text-slate-400 mb-4">عايز تطبق الكلام ده عملي؟</p>
+            <button class="bg-white text-slate-900 hover:bg-daoline hover:text-white transition px-8 py-3 rounded-full font-bold shadow-lg shadow-daoline/20">
+                📥 حمل دليل الاستراتيجية (PDF)
+            </button>
+        </div>
+
+    </main>
+
+    <!-- Footer Nav -->
+    <footer class="border-t border-slate-800 bg-slate-900 py-8 text-center text-slate-500 text-sm">
+        <div class="flex justify-center gap-6 mb-4">
+            <a href="/blog/" class="hover:text-daoline transition">المدونة</a>
+            <a href="/courses/" class="hover:text-daoline transition">الكورسات</a>
+            <a href="/contact/" class="hover:text-daoline transition">تواصل معنا</a>
+        </div>
+        <p>&copy; 2026 Daoline Digital. All Rights Reserved.</p>
+    </footer>
+
+    <!-- PROTECTION SCRIPT -->
+    <script>
+        // Disable Right Click
+        document.addEventListener('contextmenu', event => {
+            event.preventDefault();
+            showToast('المحتوى محمي بحقوق الملكية لـ Daoline Digital 🔒');
+        });
+
+        // Disable Shortcuts (Ctrl+C, Ctrl+U, Ctrl+S, F12)
+        document.addEventListener('keydown', event => {
+            if (
+                (event.ctrlKey && (event.key === 'c' || event.key === 'u' || event.key === 's')) ||
+                event.key === 'F12'
+            ) {
+                event.preventDefault();
+                showToast('عفواً، النسخ غير متاح للحفاظ على حقوقنا 🔒');
+            }
+        });
+
+        // Toast Notification Logic
+        function showToast(message) {
+            // Check if toast already exists
+            if (document.getElementById('security-toast')) return;
+
+            const toast = document.createElement('div');
+            toast.id = 'security-toast';
+            toast.innerText = message;
+            toast.style.cssText = `
+                position: fixed;
+                bottom: 20px;
+                left: 50%;
+                transform: translateX(-50%);
+                background-color: #c013a6;
+                color: white;
+                padding: 12px 24px;
+                border-radius: 50px;
+                font-family: 'Tajawal', sans-serif;
+                font-size: 14px;
+                font-weight: bold;
+                box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+                z-index: 9999;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            `;
+            document.body.appendChild(toast);
+
+            // Animate In
+            setTimeout(() => toast.style.opacity = '1', 10);
+
+            // Remove after 2 seconds
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                setTimeout(() => toast.remove(), 300);
+            }, 2000);
+        }
+    </script>
 </body>
 </html>
