@@ -72,7 +72,7 @@
     }
     .btn.primary:hover { box-shadow: 0 15px 40px rgba(192, 19, 166, 0.5); }
     /* حالة الانتظار للزر */
-    .btn.loading { opacity: 0.7; cursor: wait; pointer-events: none; }
+    .btn.loading { opacity: 0.7; cursor: wait; }
 
     /* --- Header --- */
     header { padding: 90px 0 50px; text-align: center; }
@@ -209,8 +209,8 @@
       <div class="nav">
         <div class="brand">Daoline <span>Digital</span></div>
         <div style="display:flex; gap:10px;">
-          <!-- رابط نسبي للعودة للصفحة الرئيسية -->
-          <a class="btn" href="index.html">الرئيسية</a>
+          <!-- رابط الدومين الخاص -->
+          <a class="btn" href="https://daolinedigital.com">الرئيسية</a>
         </div>
       </div>
     </div>
@@ -283,14 +283,12 @@
 
     // جلب قائمة الملفات
     async function getArticlesList() {
-      // نستخدم Time stamp لمنع الكاش والتأكد من جلب القائمة الجديدة دائماً
       const apiUrl = `https://api.github.com/repos/${GITHUB_CONFIG.owner}/${GITHUB_CONFIG.repo}/contents/${GITHUB_CONFIG.path}?t=${Date.now()}`;
       try {
         const response = await fetch(apiUrl);
         if (!response.ok) throw new Error("GitHub API Error");
         const data = await response.json();
         
-        // جلب رابط التحميل المباشر لقراءة البيانات فوراً
         return data
           .filter(file => file.name.endsWith('.html'))
           .map(file => ({ name: file.name, downloadUrl: file.download_url })); 
@@ -300,10 +298,9 @@
       }
     }
 
-    // جلب بيانات المقال (باستخدام الرابط الخام من الـ API)
+    // جلب بيانات المقال
     async function fetchMetadata(fileObj) {
       try {
-        // نقرأ المحتوى من downloadUrl (Raw content) لتجنب تأخير النشر
         const response = await fetch(fileObj.downloadUrl);
         
         if (!response.ok) throw new Error("Fetch failed");
@@ -322,7 +319,6 @@
           title: rawTitle,
           description: doc.querySelector('meta[name="description"]')?.getAttribute('content') || "اكتشف هذا الدرس التعليمي الجديد من Daoline Digital.",
           keywords: doc.querySelector('meta[name="keywords"]')?.getAttribute('content') || "Marketing, Digital",
-          // الرابط الذي يضغط عليه المستخدم (الصفحة العادية)
           url: `blog/${fileObj.name}`
         };
       } catch (err) { 
@@ -356,17 +352,15 @@
         card.className = 'card';
         card.style.animationDelay = `${index * 0.1}s`;
         
-        // لاحظي: الزر الآن يحتوي على check-btn
         card.innerHTML = `
           <div class="tag-container">${tags}</div>
-          <h2><a href="#" class="check-link" data-url="${art.url}">${art.title}</a></h2>
+          <h2><a href="${art.url}" class="check-link">${art.title}</a></h2>
           <p class="desc">${art.description}</p>
           <button class="btn primary check-btn" data-url="${art.url}">استعرض المحتوى</button>
         `;
         container.appendChild(card);
       });
 
-      // تفعيل الفحص الذكي عند الضغط
       setupSmartLinks();
     }
 
@@ -375,38 +369,48 @@
       const links = document.querySelectorAll('.check-btn, .check-link');
       const toast = document.getElementById('toast');
 
-      links.forEach(link => {
-        link.addEventListener('click', async (e) => {
-          e.preventDefault();
-          const url = link.getAttribute('data-url');
-          const btn = link.classList.contains('btn') ? link : null;
+      document.body.addEventListener('click', async (e) => {
+        const link = e.target.closest('.check-btn, .check-link');
+        if (!link) return;
 
+        // وضع الدخول الإجباري
+        if (link.dataset.force === "true") {
+           if (link.tagName !== 'A') {
+             window.location.href = link.dataset.url;
+           }
+           return; 
+        }
+
+        e.preventDefault();
+        const url = link.getAttribute('data-url') || link.getAttribute('href');
+        const btn = link.classList.contains('btn') ? link : null;
+
+        if(btn) {
+           btn.textContent = "جاري الفحص...";
+           btn.classList.add('loading');
+        }
+
+        try {
+          const response = await fetch(url, { method: 'HEAD', cache: 'no-store' });
+          if (response.ok) {
+            window.location.href = url; 
+          } else {
+            throw new Error('Not found');
+          }
+        } catch (err) {
+          toast.textContent = "⏳ المقال قيد النشر.. اضغط مرة أخرى للدخول الإجباري.";
+          toast.style.background = "#eab308"; 
+          toast.style.display = 'block';
+          
+          link.dataset.force = "true";
+          
           if(btn) {
-             btn.textContent = "جاري الفحص...";
-             btn.classList.add('loading');
+              btn.textContent = "دخول (تجاهل الفحص)";
+              btn.classList.remove('loading');
           }
-
-          try {
-            // محاولة الوصول للصفحة
-            const response = await fetch(url, { method: 'HEAD' }); // طلب خفيف للتحقق فقط
-            if (response.ok) {
-              window.location.href = url; // الصفحة موجودة! انتقل إليها
-            } else {
-              throw new Error('Not found');
-            }
-          } catch (err) {
-            // الصفحة غير موجودة بعد
-            toast.textContent = "⏳ المقال قيد النشر، يرجى الانتظار دقيقة وتحديث الصفحة.";
-            toast.style.background = "#eab308"; // لون أصفر للانتظار
-            toast.style.display = 'block';
-            setTimeout(() => { toast.style.display = 'none'; }, 4000);
-            
-            if(btn) {
-                btn.textContent = "استعرض المحتوى";
-                btn.classList.remove('loading');
-            }
-          }
-        });
+          
+          setTimeout(() => { toast.style.display = 'none'; }, 5000);
+        }
       });
     }
 
