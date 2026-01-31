@@ -71,6 +71,8 @@
       border: none; box-shadow: 0 10px 30px rgba(192, 19, 166, 0.35);
     }
     .btn.primary:hover { box-shadow: 0 15px 40px rgba(192, 19, 166, 0.5); }
+    /* حالة الانتظار للزر */
+    .btn.loading { opacity: 0.7; cursor: wait; pointer-events: none; }
 
     /* --- Header --- */
     header { padding: 90px 0 50px; text-align: center; }
@@ -207,7 +209,7 @@
       <div class="nav">
         <div class="brand">Daoline <span>Digital</span></div>
         <div style="display:flex; gap:10px;">
-          <!-- تم تعديل الرابط ليكون نسبياً بدلاً من رابط مطلق -->
+          <!-- رابط نسبي للعودة للصفحة الرئيسية -->
           <a class="btn" href="index.html">الرئيسية</a>
         </div>
       </div>
@@ -243,7 +245,7 @@
   </section>
 
   <main class="wrap">
-    <div class="section-title">آخر المقالات والكتيبات</div>
+    <div class="section-title">أحدث الإصدارات والمقالات</div>
     
     <!-- القائمة البرمجية للمقالات -->
     <div id="articlesList" class="list">
@@ -264,8 +266,8 @@
     </section>
   </main>
 
-  <!-- رسالة النجاح -->
-  <div class="toast" id="toast">تمت إضافتك بنجاح لمجتمعنا! 🎉</div>
+  <!-- رسالة التنبيه -->
+  <div class="toast" id="toast">تمت الإضافة بنجاح! 🎉</div>
 
   <footer>
     &copy; <span id="year"></span> Daoline Digital - جميع الحقوق محفوظة
@@ -288,8 +290,7 @@
         if (!response.ok) throw new Error("GitHub API Error");
         const data = await response.json();
         
-        // نعيد اسم الملف ورابط التحميل المباشر (Raw Download URL)
-        // الرابط المباشر يحل مشكلة الـ 404 لأن الـ API أسرع من Pages
+        // جلب رابط التحميل المباشر لقراءة البيانات فوراً
         return data
           .filter(file => file.name.endsWith('.html'))
           .map(file => ({ name: file.name, downloadUrl: file.download_url })); 
@@ -313,7 +314,6 @@
 
         let rawTitle = doc.querySelector('title')?.innerText.split('|')[0].trim();
         
-        // تنظيف العنوان
         if (!rawTitle || rawTitle.toLowerCase().includes("not found")) {
             rawTitle = "مقال جديد";
         }
@@ -322,11 +322,10 @@
           title: rawTitle,
           description: doc.querySelector('meta[name="description"]')?.getAttribute('content') || "اكتشف هذا الدرس التعليمي الجديد من Daoline Digital.",
           keywords: doc.querySelector('meta[name="keywords"]')?.getAttribute('content') || "Marketing, Digital",
-          // الرابط الذي يضغط عليه المستخدم يظل كما هو (الصفحة العادية)
+          // الرابط الذي يضغط عليه المستخدم (الصفحة العادية)
           url: `blog/${fileObj.name}`
         };
       } catch (err) { 
-          // في حال الفشل التام، نعرض بيانات مؤقتة
           return {
             title: "مقال قيد التجهيز",
             description: "جاري رفع المحتوى، يرجى المحاولة بعد قليل.",
@@ -336,7 +335,7 @@
       }
     }
 
-    // بناء الصفحة
+    // بناء الصفحة مع زر "فحص ذكي"
     async function init() {
       const container = document.getElementById('articlesList');
       const files = await getArticlesList();
@@ -346,7 +345,6 @@
         return;
       }
 
-      // جلب البيانات بالتوازي
       const promises = files.map(file => fetchMetadata(file));
       const results = await Promise.all(promises);
       
@@ -357,23 +355,69 @@
         const card = document.createElement('div');
         card.className = 'card';
         card.style.animationDelay = `${index * 0.1}s`;
+        
+        // لاحظي: الزر الآن يحتوي على check-btn
         card.innerHTML = `
           <div class="tag-container">${tags}</div>
-          <h2><a href="${art.url}">${art.title}</a></h2>
+          <h2><a href="#" class="check-link" data-url="${art.url}">${art.title}</a></h2>
           <p class="desc">${art.description}</p>
-          <a href="${art.url}" class="btn primary">استعرض المحتوى</a>
+          <button class="btn primary check-btn" data-url="${art.url}">استعرض المحتوى</button>
         `;
         container.appendChild(card);
       });
+
+      // تفعيل الفحص الذكي عند الضغط
+      setupSmartLinks();
     }
 
-    // القائمة البريدية
+    // وظيفة الفحص الذكي للروابط
+    function setupSmartLinks() {
+      const links = document.querySelectorAll('.check-btn, .check-link');
+      const toast = document.getElementById('toast');
+
+      links.forEach(link => {
+        link.addEventListener('click', async (e) => {
+          e.preventDefault();
+          const url = link.getAttribute('data-url');
+          const btn = link.classList.contains('btn') ? link : null;
+
+          if(btn) {
+             btn.textContent = "جاري الفحص...";
+             btn.classList.add('loading');
+          }
+
+          try {
+            // محاولة الوصول للصفحة
+            const response = await fetch(url, { method: 'HEAD' }); // طلب خفيف للتحقق فقط
+            if (response.ok) {
+              window.location.href = url; // الصفحة موجودة! انتقل إليها
+            } else {
+              throw new Error('Not found');
+            }
+          } catch (err) {
+            // الصفحة غير موجودة بعد
+            toast.textContent = "⏳ المقال قيد النشر، يرجى الانتظار دقيقة وتحديث الصفحة.";
+            toast.style.background = "#eab308"; // لون أصفر للانتظار
+            toast.style.display = 'block';
+            setTimeout(() => { toast.style.display = 'none'; }, 4000);
+            
+            if(btn) {
+                btn.textContent = "استعرض المحتوى";
+                btn.classList.remove('loading');
+            }
+          }
+        });
+      });
+    }
+
     document.getElementById('newsletterForm').addEventListener('submit', function(e) {
       e.preventDefault();
       const toast = document.getElementById('toast');
+      toast.textContent = "تمت إضافتك بنجاح لمجتمعنا! 🎉";
+      toast.style.background = "#c013a6";
       toast.style.display = 'block';
       this.reset();
-      setTimeout(() => { toast.style.display = 'none'; }, 4500);
+      setTimeout(() => { toast.style.display = 'none'; }, 4000);
     });
 
     window.onload = () => {
