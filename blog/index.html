@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>المكتبة التلقائية | Daoline Digital</title>
-  
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
@@ -28,7 +28,7 @@
       margin: 0;
       font-family: "Tajawal", sans-serif;
       color: var(--text);
-      background: 
+      background:
         radial-gradient(circle at 10% 10%, rgba(192,19,166,0.15), transparent 50%),
         radial-gradient(circle at 90% 20%, rgba(192,19,166,0.1), transparent 50%),
         var(--bg);
@@ -119,7 +119,28 @@
     }
 
     h2 { margin: 0 0 15px; font-size: 1.7rem; font-weight: 800; line-height: 1.4; }
-    .desc { color: var(--muted); font-size: 1.05rem; margin-bottom: 30px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+
+    /* ✅ إصلاح لون الروابط (العناوين) */
+    h2 a {
+      color: var(--text);
+      text-decoration: none;
+    }
+    h2 a:hover {
+      color: #fff;
+      text-decoration: underline;
+      text-decoration-color: rgba(192,19,166,0.7);
+      text-underline-offset: 6px;
+    }
+
+    .desc {
+      color: var(--muted);
+      font-size: 1.05rem;
+      margin-bottom: 30px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
 
     .newsletter {
       background: linear-gradient(145deg, #161b33, #0f1220);
@@ -136,213 +157,4 @@
       background: radial-gradient(circle, rgba(192,19,166,0.1) 0%, transparent 70%);
       pointer-events: none;
     }
-    .newsletter h2 { font-size: 2rem; margin-bottom: 10px; }
-    .newsletter p { color: var(--muted); margin-bottom: 30px; }
-    .n-form { display: flex; gap: 10px; max-width: 500px; margin: 0 auto; flex-wrap: wrap; }
-    .n-input {
-      flex: 1; min-width: 250px;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid var(--border);
-      padding: 15px 20px; border-radius: 14px;
-      color: white; font-family: inherit; font-size: 1rem;
-      transition: 0.3s;
-    }
-    .n-input:focus { outline: none; border-color: var(--primary); background: rgba(255,255,255,0.08); }
-
-    .toast {
-      position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%);
-      background: var(--primary); color: white; padding: 15px 30px;
-      border-radius: 50px; font-weight: 800; box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-      z-index: 1000; display: none; animation: popUp 0.3s ease;
-    }
-    @keyframes popUp { from { bottom: 0; opacity: 0; } to { bottom: 30px; opacity: 1; } }
-
-    .loader { text-align: center; padding: 100px 0; }
-    .spinner {
-      width: 40px; height: 40px; border: 4px solid rgba(192,19,166,0.1);
-      border-left-color: var(--primary); border-radius: 50%;
-      margin: 0 auto 15px; animation: spin 1s linear infinite;
-    }
-    @keyframes spin { to { transform: rotate(360deg); } }
-
-    footer { padding: 60px 0; text-align: center; border-top: 1px solid var(--border); color: var(--muted); font-size: 14px; font-weight: 600; }
-    
-    @media (max-width: 600px) {
-      header { padding: 50px 0 30px; }
-      .n-form { flex-direction: column; }
-      .n-input { width: 100%; }
-      .btn { width: 100%; }
-    }
-  </style>
-</head>
-<body>
-
-  <div class="topbar">
-    <div class="wrap">
-      <div class="nav">
-        <div class="brand">Daoline <span>Digital</span></div>
-        <div style="display:flex; gap:10px;">
-          <a class="btn" href="/index.html">الرئيسية</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <header class="wrap">
-    <h1>المكتبة الذكية</h1>
-    <p class="lead">
-      وجهتك الأولى للحصول على <b>كورسات مجانية</b>، <b>كتيبات للتدريب</b>، و <b>مصادر متجددة</b> تضعك على طريق الاحتراف الرقمي.
-    </p>
-  </header>
-
-  <section class="wrap">
-    <div class="features-grid">
-      <div class="f-card">
-        <span class="f-icon">🎓</span>
-        <h3>كورسات مجانية</h3>
-        <p>دروس تطبيقية مكثفة تبدأ معك من الصفر في عالم التسويق وصناعة المحتوى.</p>
-      </div>
-      <div class="f-card">
-        <span class="f-icon">📚</span>
-        <h3>كتيبات للتدريب</h3>
-        <p>ملفات PDF عملية تحتوي على نماذج عمل (Worksheets) لتطبيق ما تتعلمه فوراً.</p>
-      </div>
-      <div class="f-card">
-        <span class="f-icon">🔗</span>
-        <h3>مصادر وأدوات</h3>
-        <p>قوائم بأفضل الأدوات والمواقع التي نستخدمها يومياً لزيادة الإنتاجية.</p>
-      </div>
-    </div>
-  </section>
-
-  <main class="wrap">
-    <div class="section-title">أحدث الإصدارات والمقالات</div>
-    <div id="articlesList" class="list">
-        <div class="loader">
-            <div class="spinner"></div>
-            <p>جاري مزامنة المحتوى التعليمي...</p>
-        </div>
-    </div>
-
-    <section class="newsletter">
-        <h2>انضم للقائمة البريدية ✉️</h2>
-        <p>كن أول من يحصل على الكتيبات والمصادر الجديدة فور صدورها مباشرة في بريدك.</p>
-        <form class="n-form" id="newsletterForm">
-            <input type="email" class="n-input" placeholder="بريدك الإلكتروني الحقيقي.." required>
-            <button type="submit" class="btn primary">انضم الآن</button>
-        </form>
-    </section>
-  </main>
-
-  <div class="toast" id="toast">تمت إضافتك بنجاح لمجتمعنا! 🎉</div>
-
-  <footer>
-    &copy; <span id="year"></span> Daoline Digital - جميع الحقوق محفوظة
-  </footer>
-
-  <script>
-    const GITHUB_CONFIG = {
-      owner: "doaamseleat",
-      repo: "daolinedigital",
-      path: "blog"
-    };
-
-    async function getArticlesList() {
-      // جلب قائمة الملفات من GitHub API
-      const apiUrl = `https://api.github.com/repos/${GITHUB_CONFIG.owner}/${GITHUB_CONFIG.repo}/contents/${GITHUB_CONFIG.path}`;
-      try {
-        const response = await fetch(apiUrl);
-        if (!response.ok) throw new Error("API Error");
-        const data = await response.json();
-        // تصفية الملفات التي تنتهي بـ html فقط
-        return data.filter(file => file.name.endsWith('.html')).map(file => file.name); 
-      } catch (err) {
-        console.error("خطأ في الاتصال بـ GitHub API:", err);
-        return [];
-      }
-    }
-
-    async function fetchMetadata(fileName) {
-      // المحاولة الأولى: قراءة الملف مباشرة من الموقع
-      const url = `./blog/${fileName}`;
-      try {
-        const response = await fetch(url);
-        
-        // إذا لم يجد الملف أو أرجع صفحة 404
-        if (!response.ok) {
-            return {
-                title: "مقال قيد التحديث",
-                description: "جاري مزامنة محتوى هذا المقال، يرجى المحاولة لاحقاً.",
-                keywords: "Marketing",
-                url: url
-            };
-        }
-
-        const html = await response.text();
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(html, 'text/html');
-
-        let title = doc.querySelector('title')?.innerText.split('|')[0].trim();
-        
-        // إذا كان العنوان هو "Page not found" (صفحة GitHub الافتراضية)
-        if (!title || title.toLowerCase().includes("not found")) {
-            title = "مقال جديد";
-        }
-
-        return {
-          title: title,
-          description: doc.querySelector('meta[name="description"]')?.getAttribute('content') || "اقرأ هذا الدرس التعليمي الجديد من Daoline Digital.",
-          keywords: doc.querySelector('meta[name="keywords"]')?.getAttribute('content') || "Marketing",
-          url: url
-        };
-      } catch (err) { 
-          return null; 
-      }
-    }
-
-    async function init() {
-      const container = document.getElementById('articlesList');
-      const fileNames = await getArticlesList();
-      
-      if (fileNames.length === 0) {
-        container.innerHTML = '<p style="text-align:center; padding:50px; opacity:0.5;">لا توجد ملفات حالياً في مجلد blog.</p>';
-        return;
-      }
-
-      const articles = [];
-      for (const name of fileNames) {
-        const meta = await fetchMetadata(name);
-        if (meta) articles.push(meta);
-      }
-
-      container.innerHTML = '';
-      articles.forEach((art, index) => {
-        const tags = art.keywords.split(',').map(t => `<span class="tag">${t.trim()}</span>`).join('');
-        const card = document.createElement('div');
-        card.className = 'card';
-        card.style.animationDelay = `${index * 0.1}s`;
-        card.innerHTML = `
-          <div class="tag-container">${tags}</div>
-          <h2><a href="${art.url}">${art.title}</a></h2>
-          <p class="desc">${art.description}</p>
-          <a href="${art.url}" class="btn primary">استعرض المحتوى</a>
-        `;
-        container.appendChild(card);
-      });
-    }
-
-    document.getElementById('newsletterForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const toast = document.getElementById('toast');
-      toast.style.display = 'block';
-      this.reset();
-      setTimeout(() => { toast.style.display = 'none'; }, 4000);
-    });
-
-    window.onload = () => {
-      document.getElementById("year").textContent = new Date().getFullYear();
-      init();
-    };
-  </script>
-</body>
-</html>
+    .newslet
