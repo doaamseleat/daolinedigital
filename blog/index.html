@@ -1,164 +1,29 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>المدونة | Daoline Digital</title>
-  <meta name="description" content="مدونة Daoline Digital: مقالات عملية في السوشيال ميديا والإعلانات وصناعة المحتوى." />
+.heroLine{
+  display:flex; flex-wrap:wrap; gap:10px;
+  margin:12px 0 18px;
+}
+.k{
+  font-size:13px;
+  padding:8px 10px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.04);
+  color: rgba(243,244,246,.85);
+  font-weight:800;
+}
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
-
-  <!-- Google AdSense -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9549277321717950"
-  crossorigin="anonymous"></script>
-
-  <style>
-    :root{
-      --primary:#c013a6;
-      --bg:#07080c;
-      --bg2:#0b0d14;
-      --card:#0f1220;
-      --text:#f3f4f6;
-      --muted:rgba(243,244,246,.72);
-      --border:rgba(255,255,255,.10);
-      --shadow: 0 18px 60px rgba(0,0,0,.55);
-      --radius:22px;
-      --max:920px;
-    }
-    *{ box-sizing:border-box; }
-    body{
-      margin:0;
-      font-family:"Tajawal", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      color:var(--text);
-      background:
-        radial-gradient(900px 600px at 10% 10%, rgba(192,19,166,.18), transparent 60%),
-        radial-gradient(900px 600px at 90% 20%, rgba(192,19,166,.12), transparent 60%),
-        linear-gradient(180deg, var(--bg), var(--bg2));
-    }
-    a{ color:inherit; text-decoration:none; }
-    .wrap{ max-width:var(--max); margin:0 auto; padding:0 18px; }
-
-    .topbar{
-      position:sticky; top:0; z-index:50;
-      backdrop-filter: blur(14px);
-      background: rgba(7,8,12,.58);
-      border-bottom: 1px solid rgba(255,255,255,.08);
-    }
-    .nav{
-      display:flex; align-items:center; justify-content:space-between;
-      gap:14px; padding:14px 0;
-    }
-    .brand{ display:flex; align-items:center; gap:12px; }
-    .brand img{ width:40px; height:40px; object-fit:contain; }
-    .brand .name{ font-weight:900; line-height:1.05; }
-    .brand .name span{ color:var(--primary); }
-
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center;
-      padding:10px 14px; border-radius:14px;
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.06);
-      font-weight:800;
-      transition:.2s ease;
-      white-space:nowrap;
-    }
-    .btn:hover{ transform: translateY(-1px); border-color: rgba(255,255,255,.18); }
-    .btn.primary{
-      border-color: rgba(192,19,166,.65);
-      background: linear-gradient(180deg, rgba(192,19,166,.95), rgba(192,19,166,.65));
-      box-shadow: 0 16px 40px rgba(192,19,166,.18);
-    }
-
-    main{ padding:34px 0 64px; }
-    h1{ margin:0 0 10px; font-size:34px; line-height:1.25; }
-    .lead{ margin:0 0 18px; color: rgba(243,244,246,.80); line-height:1.95; font-size:17px; }
-
-    .card{
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(15,18,32,.56);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding:20px;
-      margin-top:14px;
-    }
-    .meta{
-      display:flex; flex-wrap:wrap; gap:10px;
-      color: rgba(243,244,246,.72);
-      font-weight:700;
-      margin-bottom:8px;
-      font-size:13px;
-    }
-    .tag{
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.04);
-      padding:8px 10px;
-      border-radius:999px;
-      font-weight:900;
-      font-size:12px;
-    }
-    .title{ font-size:20px; font-weight:900; margin:6px 0 8px; }
-    .excerpt{ margin:0 0 14px; color: rgba(243,244,246,.78); line-height:1.95; }
-    .row{ display:flex; gap:10px; flex-wrap:wrap; }
-
-    .footer{
-      padding:22px 0 34px;
-      color: rgba(243,244,246,.58);
-      text-align:center;
-      font-weight:700;
-      border-top: 1px solid rgba(255,255,255,.08);
-    }
-  </style>
-</head>
-
-<body>
-  <div class="topbar">
-    <div class="wrap">
-      <div class="nav">
-        <a class="brand" href="/index.html">
-          <img src="/logo-daoline.png" alt="Daoline Digital Logo">
-          <div class="name">Daoline <span>Digital</span></div>
-        </a>
-
-        <div class="row">
-          <a class="btn" href="/index.html">الرئيسية</a>
-          <a class="btn primary" href="/index.html#contact">تواصل</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <main class="wrap">
-    <h1>المدونة</h1>
-    <p class="lead">مقالات عملية في السوشيال ميديا والإعلانات وصناعة المحتوى—مكتوبة بشكل مباشر وقابل للتطبيق.</p>
-
-    <!-- مقال 1 -->
-    <div class="card">
-      <div class="meta">
-        <span class="tag">إعلانات</span>
-        <span class="tag">Meta</span>
-        <span class="tag">2026-01-31</span>
-      </div>
-
-      <div class="title">هل الإعلان الممول بقى غالي فعلًا؟ ولا المشكلة في طريقة الشغل؟</div>
-      <p class="excerpt">
-        تفكيك عملي لفكرة “الإعلانات بقت نار”: إيه اللي اتغير؟ وإزاي تقيس النجاح صح قبل ما تزود الميزانية.
-      </p>
-
-      <div class="row">
-        <a class="btn primary" href="/blog/ads-expensive-or-strategy.html">اقرأ المقال</a>
-        <a class="btn" href="/index.html#services">خدماتنا</a>
-      </div>
-    </div>
-  </main>
-
-  <footer class="footer">
-    © <span id="year"></span> Daoline Digital — All rights reserved.
-  </footer>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
-</body>
-</html>
+.infobox{
+  margin:18px 0 26px;
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.03);
+  overflow:hidden;
+}
+.infobox .cap{
+  padding:12px 14px;
+  font-weight:900;
+  color: rgba(243,244,246,.92);
+  border-bottom:1px solid rgba(255,255,255,.08);
+  background: rgba(192,19,166,.08);
+}
+.infobox svg{ display:block; width:100%; height:auto; }
