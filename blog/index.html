@@ -3,9 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>المدونة | Daoline Digital</title>
-  <meta name="description" content="مدونة Daoline Digital: مقالات عملية في السوشيال ميديا، المحتوى، الإعلانات، والقياس." />
 
+  <title>Social Media Free Course | Daoline Digital</title>
+  <meta name="description" content="مكتبة Daoline Digital المجانية: مقالات وكتيبات عملية في السوشيال ميديا، المحتوى، الإعلانات، وقياس الأداء." />
+  <meta name="robots" content="index,follow" />
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
@@ -36,10 +39,11 @@
     a{ color:inherit; text-decoration:none; }
     .wrap{ max-width:var(--max); margin:0 auto; padding:0 18px; }
 
+    /* Topbar */
     .topbar{
-      position:sticky; top:0; z-index:5;
+      position:sticky; top:0; z-index:10;
       backdrop-filter: blur(14px);
-      background: rgba(7,8,12,.58);
+      background: rgba(7,8,12,.60);
       border-bottom: 1px solid rgba(255,255,255,.08);
     }
     .nav{
@@ -47,8 +51,8 @@
       gap:12px; padding:14px 0;
     }
     .brand{
-      display:flex; align-items:center; gap:10px;
       font-weight:900;
+      font-size:16px;
     }
     .brand span{ color:var(--primary); }
 
@@ -69,25 +73,46 @@
       box-shadow: 0 16px 40px rgba(192,19,166,.18);
     }
 
+    /* Header */
     header{
-      padding:34px 0 14px;
+      padding:36px 0 18px;
     }
     h1{
-      margin:0 0 8px;
-      font-size:34px;
+      margin:0 0 10px;
+      font-size:36px;
       letter-spacing:.2px;
     }
     .lead{
       margin:0;
       color: rgba(243,244,246,.78);
-      line-height:1.9;
+      line-height:1.95;
       font-size:16px;
+      max-width:780px;
     }
 
+    /* Course intro */
+    .intro{
+      margin-top:18px;
+      border-radius: var(--radius);
+      border:1px solid rgba(192,19,166,.35);
+      background: rgba(192,19,166,.10);
+      padding:18px;
+    }
+    .intro h3{
+      margin:0 0 6px;
+      font-size:20px;
+    }
+    .intro p{
+      margin:0;
+      line-height:1.9;
+      color: rgba(243,244,246,.88);
+    }
+
+    /* Articles list */
     .list{
-      margin:18px 0 44px;
+      margin:22px 0 44px;
       display:grid;
-      gap:14px;
+      gap:16px;
     }
     .card{
       border-radius: var(--radius);
@@ -95,6 +120,17 @@
       background: rgba(15,18,32,.52);
       box-shadow: var(--shadow);
       padding:18px;
+      transition:.2s ease;
+    }
+    .card:hover{
+      transform: translateY(-2px);
+      border-color: rgba(192,19,166,.35);
+    }
+
+    h2{
+      margin:0;
+      font-size:20px;
+      line-height:1.6;
     }
     .meta{
       display:flex;
@@ -103,7 +139,7 @@
       color: rgba(243,244,246,.70);
       font-weight:700;
       font-size:13px;
-      margin-top:6px;
+      margin-top:8px;
     }
     .tag{
       border:1px solid rgba(255,255,255,.12);
@@ -111,19 +147,14 @@
       padding:8px 10px;
       border-radius:999px;
     }
-    h2{
-      margin:0;
-      font-size:20px;
-      line-height:1.5;
-    }
     .desc{
-      margin:10px 0 0;
+      margin:12px 0 0;
       color: rgba(243,244,246,.78);
       line-height:1.9;
     }
 
     footer{
-      padding:18px 0 34px;
+      padding:22px 0 34px;
       color: rgba(243,244,246,.58);
       text-align:center;
       border-top: 1px solid rgba(255,255,255,.08);
@@ -131,54 +162,90 @@
     }
   </style>
 </head>
+
 <body>
 
+  <!-- Topbar -->
   <div class="topbar">
     <div class="wrap">
       <div class="nav">
-        <div class="brand">Daoline <span>Blog</span></div>
+        <div class="brand">Daoline <span>Free Course</span></div>
         <div style="display:flex; gap:10px; flex-wrap:wrap;">
           <a class="btn" href="/index.html">رجوع للموقع</a>
-          <a class="btn primary" href="/blog/article-1.html">اقرأ المقال الأول</a>
+          <a class="btn primary" href="/blog/article-1.html">ابدأ من المقال الأول</a>
         </div>
       </div>
     </div>
   </div>
 
+  <!-- Header -->
   <header>
     <div class="wrap">
-      <h1>المدونة</h1>
-      <p class="lead">مقالات عملية بلغة بسيطة—تساعدك تفهم، وتطبّق، وتقيّم النتائج.</p>
+      <h1>🎓 Social Media Free Course</h1>
+      <p class="lead">
+        مكتبة مجانية من مقالات وكتيبات عملية في السوشيال ميديا والإعلانات.
+        المحتوى هنا مبني على تجربة حقيقية وأسئلة السوق—مش تنظير ولا كلام عام.
+      </p>
+
+      <div class="intro">
+        <h3>إزاي تستخدم المكتبة دي؟</h3>
+        <p>
+          ابدأ بالمقالات بالترتيب، وبعدها استخدم الكتيبات والـ Templates
+          علشان تطبق بنفسك أو تطور شغلك بشكل أذكى.
+        </p>
+      </div>
     </div>
   </header>
 
+  <!-- Articles -->
   <main class="wrap">
     <div class="list">
+
       <article class="card">
-        <h2><a href="/blog/article-1.html">لماذا ينهار الـ Organic Reach فجأة؟ وما الذي تغيّر في تقييم Meta للمحتوى؟</a></h2>
+        <h2>
+          <a href="/blog/article-1.html">
+            لماذا ينهار الـ Organic Reach فجأة؟ وما الذي تغيّر في تقييم Meta للمحتوى؟
+          </a>
+        </h2>
+
         <div class="meta">
           <span class="tag">Facebook</span>
           <span class="tag">Instagram</span>
           <span class="tag">Meta Algorithm</span>
           <span class="tag">Content Strategy</span>
         </div>
+
         <p class="desc">
-          قراءة عملية للتغييرات اللي خلت “التفاعل” مش كفاية وحده، وإزاي تبني كرييتف ورسالة تخلي شخص محدد يقول: “ده معمول عشاني”.
+          تحليل عملي يشرح ليه التفاعل ما بقاش كفاية،
+          وإزاي الـ Signals الجديدة بتحدد إذا المحتوى هيتوزع ولا لا،
+          مع خطوات واضحة للتطبيق.
         </p>
+
         <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
           <a class="btn primary" href="/blog/article-1.html">فتح المقال</a>
-          <a class="btn" href="/index.html">رجوع للصفحة الرئيسية</a>
+          <a class="btn" href="/index.html">رجوع للموقع</a>
         </div>
       </article>
+
+      <!-- Placeholder for future resources -->
+      <article class="card" style="opacity:.7;">
+        <h2>📘 كتيبات مجانية (قريبًا)</h2>
+        <p class="desc">
+          Checklist + Templates + Frameworks
+          لمساعدتك في التخطيط، التنفيذ، وقياس النتائج.
+        </p>
+      </article>
+
     </div>
   </main>
 
   <footer>
-    © <span id="year"></span> Daoline Digital
+    © <span id="year"></span> Daoline Digital — All rights reserved.
   </footer>
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
+
 </body>
 </html>
