@@ -4,442 +4,134 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>لماذا ينهار الـ Organic Reach فجأة؟ وما الذي تغيّر في تقييم Meta للمحتوى؟ | Daoline Digital</title>
-  <meta name="description" content="تحليل عملي لتغيرات تقييم محتوى فيسبوك وإنستجرام: لماذا لم يعد التفاعل كافيًا؟ وما هي Signals الجديدة مثل Dwell Time وScroll-Stop وكيف تبني محتوى متخصص يحقق نتائج؟" />
-  <meta name="robots" content="index,follow" />
-<!-- HTML: عنصر مرئي داخل المقال -->
-<div class="accordion">
-  <button class="accordion-header">📌 معلومة مهمة: ما الفرق بين Dwell Time و Engagement؟</button>
-  <div class="accordion-body">
-    <p>
-      <strong>Dwell Time</strong> هو الوقت اللي المستخدم بيقضيه فعليًا في قراءة المحتوى—even لو ما عملش أي تفاعل.
-      أما <strong>Engagement</strong> فهو التفاعل التقليدي (Like/Comment/Share). 
-      وده يوضح ليه Meta بدأت تفضل قياس الاهتمام الفعلي عن طريق السلوك بدل الضغطات السريعة.
-    </p>
-  </div>
-</div>
+  <title>لماذا ينهار الـ Organic Reach فجأة؟ | Daoline Digital</title>
 
-<!-- CSS: التصميم -->
-<style>
-  .accordion {
-    margin: 20px 0;
-    border: 1px solid var(--border, rgba(255,255,255,.10));
-    border-radius: var(--radius2, 18px);
-    background: rgba(255,255,255,0.03);
-    box-shadow: var(--shadow, 0 18px 60px rgba(0,0,0,.55));
-    overflow: hidden;
-  }
-
-  .accordion-header {
-    width: 100%;
-    background: transparent;
-    padding: 14px 18px;
-    font-weight: 800;
-    font-size: 15px;
-    color: var(--text, #f3f4f6);
-    border: none;
-    cursor: pointer;
-    text-align: right;
-    transition: background 0.3s ease;
-  }
-
-  .accordion-header:hover {
-    background: rgba(255,255,255,0.06);
-  }
-
-  .accordion-body {
-    max-height: 0;
-    overflow: hidden;
-    padding: 0 18px;
-    color: var(--muted, rgba(243,244,246,.72));
-    font-size: 15px;
-    line-height: 1.9;
-    transition: max-height 0.35s ease, padding 0.35s ease;
-  }
-
-  .accordion.active .accordion-body {
-    max-height: 500px;
-    padding: 12px 18px 18px;
-  }
-</style>
-
-<!-- JavaScript: تفعيل الفتح/الإغلاق -->
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    document.querySelectorAll('.accordion-header').forEach(header => {
-      header.addEventListener('click', () => {
-        const box = header.parentElement;
-        box.classList.toggle('active');
-      });
-    });
-  });
-</script>
-
-  <!-- Canonical (اختياري) -->
-  <!-- <link rel="canonical" href="https://daolinedigital.com/blog/article-1.html" /> -->
-
-  <!-- Open Graph -->
-  <meta property="og:type" content="article" />
-  <meta property="og:locale" content="ar_AR" />
-  <meta property="og:title" content="لماذا ينهار الـ Organic Reach فجأة؟ وما الذي تغيّر في تقييم Meta للمحتوى؟" />
-  <meta property="og:description" content="لم يعد التفاعل وحده كافيًا. هذا الدليل يشرح الـ Signals الجديدة وكيف تبني محتوى متخصص يحقق نتائج." />
-  <meta property="og:site_name" content="Daoline Digital" />
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
 
   <style>
     :root{
       --primary:#c013a6;
       --bg:#07080c;
-      --bg2:#0b0d14;
       --card:#0f1220;
       --text:#f3f4f6;
       --muted:rgba(243,244,246,.72);
       --border:rgba(255,255,255,.10);
-      --shadow: 0 18px 60px rgba(0,0,0,.55);
-      --radius:22px;
-      --radius2:18px;
-      --max:980px;
+      --radius:18px;
     }
-    *{ box-sizing:border-box; }
-    html{ scroll-behavior:smooth; }
+
     body{
       margin:0;
-      font-family:"Tajawal", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      font-family:"Tajawal",sans-serif;
+      background:linear-gradient(180deg,#07080c,#0b0d14);
       color:var(--text);
-      background:
-        radial-gradient(900px 600px at 10% 10%, rgba(192,19,166,.18), transparent 60%),
-        radial-gradient(900px 600px at 90% 20%, rgba(192,19,166,.12), transparent 60%),
-        linear-gradient(180deg, var(--bg), var(--bg2));
-      overflow-x:hidden;
-    }
-    a{ color:inherit; text-decoration:none; }
-    .wrap{ max-width:var(--max); margin:0 auto; padding:0 18px; }
-
-    /* Top bar */
-    .topbar{
-      position:sticky; top:0; z-index:50;
-      backdrop-filter: blur(14px);
-      background: rgba(7,8,12,.62);
-      border-bottom: 1px solid rgba(255,255,255,.08);
-    }
-    .nav{
-      display:flex; align-items:center; justify-content:space-between;
-      gap:12px; padding:12px 0;
-    }
-    .brand{
-      font-weight:900;
-      letter-spacing:.2px;
-      display:flex; align-items:center; gap:10px;
-    }
-    .brand span{ color:var(--primary); }
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center;
-      gap:8px;
-      padding:10px 14px;
-      border-radius:14px;
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.06);
-      color: var(--text);
-      font-weight:800;
-      transition:.2s ease;
-      white-space:nowrap;
-    }
-    .btn:hover{ transform: translateY(-1px); border-color: rgba(255,255,255,.18); }
-    .btn.primary{
-      border-color: rgba(192,19,166,.65);
-      background: linear-gradient(180deg, rgba(192,19,166,.95), rgba(192,19,166,.65));
-      box-shadow: 0 16px 40px rgba(192,19,166,.18);
     }
 
-    /* Article layout */
-    header{
-      padding:28px 0 14px;
-    }
-    .kicker{
-      display:inline-flex; align-items:center; gap:10px;
-      font-weight:900;
-      padding:8px 12px;
-      border-radius:999px;
-      border:1px solid rgba(192,19,166,.35);
-      background: rgba(192,19,166,.10);
-      color: rgba(243,244,246,.95);
-      font-size:13px;
-    }
-    h1{
-      margin:14px 0 10px;
-      font-size:36px;
-      line-height:1.2;
-      letter-spacing:.2px;
-    }
-    .sub{
-      margin:0;
-      color: rgba(243,244,246,.78);
-      line-height:1.95;
-      font-size:16px;
-    }
-    .meta{
-      margin-top:14px;
-      display:flex; gap:10px; flex-wrap:wrap;
-      color: rgba(243,244,246,.70);
-      font-weight:700;
-      font-size:13px;
-    }
-    .tag{
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.04);
-      padding:8px 10px;
-      border-radius:999px;
-    }
+    .wrap{max-width:900px;margin:auto;padding:20px}
+
+    h1{font-size:32px}
+    p{line-height:2;color:var(--muted)}
 
     .panel{
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(15,18,32,.56);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      overflow:hidden;
-      position:relative;
-    }
-    .panel::before{
-      content:"";
-      position:absolute; inset:-2px;
-      background: radial-gradient(500px 220px at 18% 10%, rgba(192,19,166,.18), transparent 70%);
-      pointer-events:none;
-    }
-    .content{
-      padding:18px;
-      position:relative;
-      z-index:1;
+      background:rgba(15,18,32,.6);
+      border:1px solid var(--border);
+      border-radius:22px;
+      padding:20px;
     }
 
-    /* Typography */
-    .content h2{
-      margin:18px 0 8px;
-      font-size:22px;
-      letter-spacing:.2px;
-    }
-    .content h3{
-      margin:16px 0 8px;
-      font-size:18px;
-      letter-spacing:.2px;
-      color: rgba(243,244,246,.92);
-    }
-    .content p{
-      margin:10px 0;
-      color: rgba(243,244,246,.82);
-      line-height:2.0;
-      font-size:16px;
-    }
-    .content ul{
-      margin:10px 0 10px;
-      padding:0 18px 0 0;
-      color: rgba(243,244,246,.82);
-      line-height:2.0;
-    }
-    .content li{ margin:8px 0; }
     .note{
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.04);
-      border-radius: 18px;
+      background:rgba(255,255,255,.04);
+      border:1px solid var(--border);
+      border-radius:18px;
       padding:14px;
-      margin:14px 0;
-      color: rgba(243,244,246,.82);
-    }
-    .note strong{ color: rgba(243,244,246,.95); }
-
-    .grid2{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:12px;
-      margin:14px 0;
-    }
-    .box{
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.03);
-      border-radius: 18px;
-      padding:14px;
-    }
-    .box h4{ margin:0 0 6px; font-size:16px; }
-    .box p{ margin:0; font-size:14px; color: rgba(243,244,246,.78); line-height:1.9; }
-
-    .ctaCard{
-      margin-top:16px;
-      padding:18px;
-      border-radius: var(--radius);
-      border:1px solid rgba(192,19,166,.35);
-      background: rgba(192,19,166,.10);
-    }
-    .ctaRow{ display:flex; gap:10px; flex-wrap:wrap; margin-top:12px; }
-
-    footer{
-      padding:18px 0 34px;
-      color: rgba(243,244,246,.58);
-      text-align:center;
-      border-top: 1px solid rgba(255,255,255,.08);
-      font-weight:700;
-      margin-top:22px;
+      margin:16px 0;
     }
 
-    @media (max-width: 820px){
-      h1{ font-size:30px; }
-      .grid2{ grid-template-columns: 1fr; }
+    /* ===== العنصر المرئي الجديد ===== */
+    .accordion{
+      margin:20px 0;
+      border:1px solid var(--border);
+      border-radius:18px;
+      overflow:hidden;
+      background:rgba(192,19,166,.08);
+    }
+
+    .accordion-header{
+      width:100%;
+      background:transparent;
+      border:none;
+      padding:14px 18px;
+      font-size:15px;
+      font-weight:900;
+      color:#fff;
+      cursor:pointer;
+      text-align:right;
+    }
+
+    .accordion-body{
+      max-height:0;
+      overflow:hidden;
+      padding:0 18px;
+      transition:.3s;
+      color:var(--muted);
+    }
+
+    .accordion.active .accordion-body{
+      max-height:300px;
+      padding:12px 18px 18px;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- Top navigation -->
-  <div class="topbar">
-    <div class="wrap">
-      <div class="nav">
-        <div class="brand">Daoline <span>Blog</span></div>
-        <div style="display:flex; gap:10px; flex-wrap:wrap;">
-          <a class="btn" href="/blog/">رجوع للمدونة</a>
-          <a class="btn primary" href="/index.html">رجوع للموقع</a>
-        </div>
+<div class="wrap">
+  <h1>لماذا ينهار الـ Organic Reach فجأة؟</h1>
+
+  <div class="panel">
+
+    <div class="note">
+      <strong>الخلاصة:</strong>
+      التفاعل لوحده ما بقاش كفاية… Meta بقت تركز على الاهتمام الحقيقي.
+    </div>
+
+    <!-- 🔴 العنصر المرئي المضاف -->
+    <div class="accordion">
+      <button class="accordion-header">
+        📌 معلومة مهمة: ما الفرق بين Dwell Time و Engagement؟
+      </button>
+      <div class="accordion-body">
+        <p>
+          <strong>Dwell Time</strong> هو الوقت اللي القارئ بيقضيه فعليًا وهو واقف على المحتوى،
+          حتى لو ما عملش لايك أو تعليق.
+          <br><br>
+          <strong>Engagement</strong> هو التفاعل السريع.
+          وعلشان كده Meta بقت تفضّل المحتوى اللي "يتقري" مش اللي "يتضغط عليه".
+        </p>
       </div>
     </div>
+    <!-- 🔴 نهاية العنصر -->
+
+    <h2>1) التفاعل بقى مؤشر متأخر</h2>
+    <p>
+      زمان كان سهل نقيس نجاح البوست باللايكات.
+      دلوقتي المنصات بقت أذكى.
+    </p>
+
+    <h2>2) إشارات الاهتمام الجديدة</h2>
+    <p>
+      زي وقت المشاهدة، التوقف أثناء السكرول، والتصرف بعد المحتوى.
+    </p>
+
   </div>
+</div>
 
-  <!-- Article header -->
-  <header>
-    <div class="wrap">
-      <div class="kicker">Organic Reach • Meta Algorithm • Content Strategy</div>
-      <h1>لماذا ينهار الـ Organic Reach فجأة؟ وما الذي تغيّر في تقييم Meta للمحتوى؟</h1>
-      <p class="sub">
-        لو لاحظت إن الوصول المجاني على فيسبوك وإنستجرام بقى أقل—فده غالبًا مش “حظ وحش”.
-        اللي اتغيّر هو معيار التقييم نفسه: <b>الاهتمام الحقيقي قبل التفاعل</b>.
-      </p>
-
-      <div class="meta">
-        <span class="tag">Facebook</span>
-        <span class="tag">Instagram</span>
-        <span class="tag">Meta Algorithm</span>
-        <span class="tag">Creative Testing</span>
-        <span class="tag">Content Strategy</span>
-      </div>
-    </div>
-  </header>
-
-  <!-- Article content -->
-  <main class="wrap">
-    <article class="panel">
-      <div class="content">
-
-        <div class="note">
-          <strong>الخلاصة في سطر:</strong>
-          التفاعل (Like/Comment/Share) ما بقاش كافي لوحده… لأن المنصات بقت تفرق بين “تفاعل للتسلية” و“اهتمام بنية فعل”.
-        </div>
-
-        <h2>1) التفاعل بقى مؤشر متأخر</h2>
-        <p>
-          زمان كان سهل نقول: “البوست ده ناجح لأنه جاب لايكات”.
-          لكن عمليًا—ممكن بوست يجيب تفاعل عالي… من غير أي أثر على مبيعات أو Leads أو حتى زيارات جدية.
-        </p>
-        <p>
-          اللي بيحصل دلوقتي إن منصات Meta بتبحث عن إشارات أقرب لـ “نية المستخدم” بدل ما تعتمد على التفاعل فقط.
-        </p>
-
-        <h2>2) الـ Signals اللي بتهم Meta دلوقتي</h2>
-        <p>
-          بدل ما تركز المنصة على زر الـ Like وحده، بقت تراقب سلوك المشاهدة بشكل أعمق.
-          أهم الإشارات العملية:
-        </p>
-
-        <div class="grid2">
-          <div class="box">
-            <h4>Dwell Time</h4>
-            <p>قد إيه الشخص وقف على المحتوى قبل ما يكمل Scroll—even لو ما عملش أي تفاعل.</p>
-          </div>
-          <div class="box">
-            <h4>Scroll-Stop Velocity</h4>
-            <p>سرعة توقف المستخدم أثناء التصفح—إشارة قوية إن المحتوى شد انتباهه.</p>
-          </div>
-          <div class="box">
-            <h4>Post-View Actions</h4>
-            <p>إيه اللي حصل بعد المشاهدة: بحث؟ زيارة بروفايل؟ حفظ؟ رسالة؟ متابعة؟</p>
-          </div>
-          <div class="box">
-            <h4>Relevance Feedback</h4>
-            <p>تقييم المستخدم لمناسبة المحتوى له… وده بيرفع/يقلل من فرص توزيعك لاحقًا.</p>
-          </div>
-        </div>
-
-        <h2>3) ليه المحتوى “العام” بيتدفن؟</h2>
-        <p>
-          المحتوى اللي معمول “يعجب أي حد” عادةً بيحقق تفاعل سريع… لكن اهتمام سطحي.
-          ومع الـ Signals الجديدة، ده بيبان في سلوك المستخدم: يشوف ثانية ويكمل.
-        </p>
-
-        <div class="note">
-          <strong>قاعدة مهمة:</strong>
-          المحتوى اللي يكسب دلوقتي هو اللي يخلي شخص واحد يقول: “ده معمول عشاني”.
-          مش اللي يحاول يرضي الكل.
-        </div>
-
-        <h2>4) “Creative هو الـ Targeting الحقيقي”</h2>
-        <p>
-          بدل ما تعتمد إن الاستهداف هيجيبلك الناس الصح… لازم الرسالة نفسها تكون موجهة بدقة.
-          يعني بدل إعلان واحد عام… تعمل نسخ متعددة، كل نسخة لسيناريو محدد.
-        </p>
-
-        <h3>مثال سريع (منطق التقسيم)</h3>
-        <ul>
-          <li><b>للمترددين:</b> “مش واثق تبدأ؟ دي 3 خطوات بسيطة تخليك تبدأ بدون مخاطرة.”</li>
-          <li><b>للناس اللي جرّبت وفشلت:</b> “ليه خطتك السابقة ما اشتغلتش؟ وأول تعديل يعمل فرق.”</li>
-          <li><b>للي عايز نتيجة سريعة:</b> “إيه اللي ممكن يعمل فرق في 7 أيام لو شغال بميزانية محدودة؟”</li>
-        </ul>
-
-        <h2>5) خطة تنفيذ عملية (بدون تعقيد)</h2>
-        <p>لو عايز تبدأ صح من بكرة، امشي بالترتيب ده:</p>
-        <ul>
-          <li><b>حدد Segment واحد</b> (فئة ضيقة) بدل ما تكلم السوق كله.</li>
-          <li><b>اكتب رسالة واحدة واضحة</b>: مشكلة محددة → حل واضح → خطوة تالية.</li>
-          <li><b>اعمل 5 نسخ كرييتف</b> لنفس العرض بزوايا مختلفة (مش تغيّر لون وخلاص).</li>
-          <li><b>راقب إشارات الاهتمام</b>: وقت مشاهدة، حفظ، زيارات بروفايل، رسائل—not Likes فقط.</li>
-          <li><b>ثبت 7–14 يوم</b> قبل ما تقلب الدنيا تعديلات كل يوم.</li>
-        </ul>
-
-        <h2>6) إزاي تربط ده بالموقع (علشان يجيب زيارات حقيقية)</h2>
-        <p>
-          المقال ده مش هدفه Views وخلاص. الهدف إن القارئ ياخد خطوة:
-          يحمل Template، يسجل Mail، أو يطلب تقييم سريع.
-        </p>
-        <div class="note">
-          <strong>اقتراح عملي للموقع:</strong>
-          اعمل Lead Magnet بسيط (PDF/Checklist) مرتبط بعنوان المقال—وخلي التحميل مقابل البريد.
-        </div>
-
-        <div class="ctaCard">
-          <h3 style="margin:0 0 6px;">عايز نفس المنهج ده على حسابك؟</h3>
-          <p style="margin:0; color: rgba(243,244,246,.85); line-height:1.9;">
-            ابعت نوع النشاط والهدف والمنصات الحالية… ونرد عليك بتقييم سريع وخطوة أولى مناسبة.
-          </p>
-          <div class="ctaRow">
-            <a class="btn primary" href="mailto:info@daolinedigital.com">راسلنا على الإيميل</a>
-            <a class="btn" href="/blog/">رجوع للمدونة</a>
-            <a class="btn" href="/index.html">رجوع للموقع</a>
-          </div>
-        </div>
-
-      </div>
-    </article>
-
-    <footer>
-      © <span id="year"></span> Daoline Digital
-    </footer>
-  </main>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+<script>
+  document.querySelectorAll(".accordion-header").forEach(btn=>{
+    btn.addEventListener("click",()=>{
+      btn.parentElement.classList.toggle("active");
+    });
+  });
+</script>
 
 </body>
 </html>
