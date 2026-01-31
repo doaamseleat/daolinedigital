@@ -3,21 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Daoline Digital</title>
-  <meta name="description" content="Daoline Digital وكالة متخصصة في بناء حضور رقمي قابل للنمو: استراتيجية + محتوى + إعلانات + متابعة." />
+  <title>Daoline Free Courses | Daoline Digital</title>
+  <meta name="description" content="Daoline Free Courses: مكتبة مجانية للسوشيال ميديا — مقالات + كتيبات PDF قابلة للتنفيذ." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
-
-<!-- Google AdSense -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9549277321717950"
-crossorigin="anonymous"></script>
 
   <style>
     :root{
-      --primary:#c013a6;        /* DAOLINE Magenta */
+      --primary:#c013a6;
       --bg:#07080c;
       --bg2:#0b0d14;
       --card:#0f1220;
@@ -26,8 +21,7 @@ crossorigin="anonymous"></script>
       --border:rgba(255,255,255,.10);
       --shadow: 0 18px 60px rgba(0,0,0,.55);
       --radius:22px;
-      --radius2:18px;
-      --max:1120px;
+      --max:980px;
     }
     *{ box-sizing:border-box; }
     html{ scroll-behavior:smooth; }
@@ -38,15 +32,12 @@ crossorigin="anonymous"></script>
       background:
         radial-gradient(900px 600px at 10% 10%, rgba(192,19,166,.18), transparent 60%),
         radial-gradient(900px 600px at 90% 20%, rgba(192,19,166,.12), transparent 60%),
-        radial-gradient(900px 600px at 50% 110%, rgba(255,255,255,.05), transparent 60%),
         linear-gradient(180deg, var(--bg), var(--bg2));
-      overflow-x:hidden;
     }
     a{ color:inherit; text-decoration:none; }
     .wrap{ max-width:var(--max); margin:0 auto; padding:0 18px; }
 
-    /* Header */
-    .header{
+    .topbar{
       position:sticky; top:0; z-index:50;
       backdrop-filter: blur(14px);
       background: rgba(7,8,12,.58);
@@ -54,47 +45,24 @@ crossorigin="anonymous"></script>
     }
     .nav{
       display:flex; align-items:center; justify-content:space-between;
-      gap:14px; padding:14px 0;
+      gap:12px; padding:14px 0;
+      flex-wrap:wrap;
     }
     .brand{
-      display:flex; align-items:center; gap:12px; min-width: 220px;
+      display:flex; align-items:center; gap:10px;
+      font-weight:900;
+      letter-spacing:.2px;
     }
-    .brand img{ width:44px; height:44px; object-fit:contain; }
-    .brand .name{
-      font-weight:900; letter-spacing:.2px;
-      line-height:1.05;
-    }
-    .brand .name span{ color:var(--primary); }
-    .brand .sub{ font-size:12px; color:var(--muted); margin-top:2px; }
-    .menu{
-      display:flex; align-items:center; gap:14px; flex-wrap:wrap;
-      justify-content:flex-start;
-    }
-    .menu a{
-      font-size:14px; color:rgba(243,244,246,.85);
-      padding:8px 10px; border-radius:12px;
-      border:1px solid transparent;
-      transition:.2s ease;
-    }
-    .menu a:hover{
-      border-color:rgba(192,19,166,.45);
-      background: rgba(192,19,166,.10);
-    }
-    .cta{
-      display:flex; gap:10px; align-items:center; justify-content:flex-end;
-      min-width: 220px;
-    }
+    .brand span{ color:var(--primary); }
+
     .btn{
       display:inline-flex; align-items:center; justify-content:center;
-      gap:8px;
       padding:10px 14px;
       border-radius:14px;
       border:1px solid rgba(255,255,255,.10);
       background: rgba(255,255,255,.06);
-      color: var(--text);
-      font-weight:700;
+      font-weight:800;
       transition:.2s ease;
-      cursor:pointer;
       white-space:nowrap;
     }
     .btn:hover{ transform: translateY(-1px); border-color: rgba(255,255,255,.18); }
@@ -103,862 +71,145 @@ crossorigin="anonymous"></script>
       background: linear-gradient(180deg, rgba(192,19,166,.95), rgba(192,19,166,.65));
       box-shadow: 0 16px 40px rgba(192,19,166,.18);
     }
-<!-- Free Course Banner -->
-<div style="
-  position: sticky;
-  top: 72px;
-  z-index: 40;
-  background: linear-gradient(90deg, rgba(192,19,166,.95), rgba(192,19,166,.75));
-  border-bottom: 1px solid rgba(255,255,255,.18);
-">
-  <div class="wrap" style="
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:14px;
-    padding:12px 0;
-    flex-wrap:wrap;
-  ">
-    <div style="
-      font-weight:900;
-      font-size:15px;
-      letter-spacing:.2px;
-    ">
-      🎓 Social Media Free Course
-      <span style="
-        font-weight:700;
-        opacity:.9;
-        margin-right:6px;
-      ">
-        — مقالات + كتيبات مجانية
-      </span>
-    </div>
 
-    <a href="/blog/" style="
-      background: rgba(7,8,12,.85);
-      color:#fff;
-      padding:8px 14px;
-      border-radius:999px;
-      font-weight:900;
-      text-decoration:none;
-      white-space:nowrap;
-    ">
-      دخول المكتبة →
-    </a>
-  </div>
-</div>
-
-    /* Sections */
-    section{ padding:72px 0; }
-    .hero{
-      padding:54px 0 74px;
-    }
-    .heroGrid{
-      display:grid;
-      grid-template-columns: 1.15fr .85fr;
-      gap:22px;
-      align-items:stretch;
-    }
-    .panel{
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(15,18,32,.56);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      overflow:hidden;
-      position:relative;
-    }
-    .panel::before{
-      content:"";
-      position:absolute; inset:-2px;
-      background: radial-gradient(500px 220px at 18% 10%, rgba(192,19,166,.22), transparent 70%);
-      pointer-events:none;
-    }
-    .heroLeft{ padding:28px; }
-    .kicker{
-      display:inline-flex; align-items:center; gap:10px;
-      font-weight:800;
-      padding:8px 12px;
-      border-radius:999px;
-      border:1px solid rgba(192,19,166,.35);
-      background: rgba(192,19,166,.10);
-      color: rgba(243,244,246,.95);
-      font-size:13px;
-      position:relative;
-      z-index:1;
-    }
-    h1{
-      margin:14px 0 10px;
-      font-size:44px;
-      line-height:1.1;
-      letter-spacing:.2px;
-      position:relative; z-index:1;
-    }
-    h1 .accent{ color:var(--primary); }
+    header{ padding:34px 0 14px; }
+    h1{ margin:0 0 8px; font-size:34px; letter-spacing:.2px; }
     .lead{
-      margin:0 0 18px;
-      color: rgba(243,244,246,.78);
-      font-size:18px;
-      line-height:1.85;
-      position:relative; z-index:1;
-    }
-    .heroBadges{
-      display:flex; flex-wrap:wrap; gap:10px;
-      position:relative; z-index:1;
-    }
-    .badge{
-      padding:10px 12px;
-      border-radius:14px;
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.05);
-      color: rgba(243,244,246,.88);
-      font-weight:700;
-      font-size:13px;
-    }
-    .heroActions{
-      display:flex; gap:12px; flex-wrap:wrap;
-      margin-top:18px;
-      position:relative; z-index:1;
-    }
-    .heroRight{
-      display:flex; flex-direction:column;
-      padding:18px;
-      gap:14px;
-    }
-    .profile{
-      border-radius: var(--radius);
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.04);
-      overflow:hidden;
-      display:grid;
-      grid-template-columns: 110px 1fr;
-      gap:14px;
-      align-items:center;
-      padding:14px;
-      position:relative;
-    }
-    .profile img{
-      width:110px; height:110px;
-      border-radius:18px;
-      object-fit:cover;
-      border:1px solid rgba(255,255,255,.12);
-      background:#0b0d14;
-    }
-    .profile .pName{ font-weight:900; font-size:18px; }
-    .profile .pRole{ color: rgba(243,244,246,.72); margin-top:2px; }
-    .quote{
-      border-radius: var(--radius);
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.03);
-      padding:16px 16px 18px;
-      color: rgba(243,244,246,.78);
-      line-height:1.85;
-      position:relative;
-    }
-    .quote strong{ color: rgba(243,244,246,.92); }
-    .quote::before{
-      content:"";
-      position:absolute; inset:0;
-      background: radial-gradient(420px 260px at 85% 15%, rgba(192,19,166,.18), transparent 70%);
-      pointer-events:none;
-    }
-
-    .sectionTitle{
-      display:flex; align-items:flex-end; justify-content:space-between;
-      gap:18px; margin-bottom:16px;
-    }
-    .sectionTitle h2{
-      margin:0;
-      font-size:34px;
-      letter-spacing:.2px;
-    }
-    .sectionTitle p{
-      margin:0;
-      color: rgba(243,244,246,.70);
-      line-height:1.8;
-      max-width: 520px;
-    }
-
-    /* About */
-    .aboutGrid{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:18px;
-    }
-    .aboutBox{
-      padding:22px;
-      border-radius: var(--radius);
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(15,18,32,.52);
-      box-shadow: var(--shadow);
-    }
-    .aboutBox h3{
-      margin:0 0 10px;
-      font-size:20px;
-    }
-    .aboutBox .txt{
       margin:0;
       color: rgba(243,244,246,.78);
-      line-height:1.95;
+      line-height:1.9;
       font-size:16px;
     }
-    .aboutBox .txt b{ color: rgba(243,244,246,.95); }
-    .pillRow{ display:flex; flex-wrap:wrap; gap:10px; margin-top:14px; }
-    .pill{
-      font-size:13px;
-      padding:10px 12px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.04);
-      color: rgba(243,244,246,.86);
-      font-weight:800;
-    }
-    .pill.primary{
-      border-color: rgba(192,19,166,.45);
-      background: rgba(192,19,166,.10);
-    }
 
-    /* Services */
-    .cards{
+    .list{
+      margin:18px 0 44px;
       display:grid;
-      grid-template-columns: repeat(3, 1fr);
       gap:14px;
-      margin-top:18px;
     }
     .card{
       border-radius: var(--radius);
       border:1px solid rgba(255,255,255,.10);
-      background: rgba(15,18,32,.50);
-      box-shadow: var(--shadow);
-      padding:18px;
-      position:relative;
-      overflow:hidden;
-      min-height: 170px;
-    }
-    .card::before{
-      content:"";
-      position:absolute; inset:-2px;
-      background: radial-gradient(360px 220px at 18% 12%, rgba(192,19,166,.15), transparent 70%);
-      pointer-events:none;
-    }
-    .card h4{ margin:0 0 8px; font-size:18px; position:relative; z-index:1; }
-    .card p{ margin:0; color: rgba(243,244,246,.74); line-height:1.85; position:relative; z-index:1; }
-    .card ul{ margin:12px 0 0; padding:0 18px 0 0; color: rgba(243,244,246,.78); line-height:1.9; position:relative; z-index:1; }
-    .card li{ margin:6px 0; }
-
-    /* Clients */
-    .clientsSection{
-      padding:78px 0 86px;
-      border-top: 1px solid rgba(255,255,255,.08);
-      border-bottom: 1px solid rgba(255,255,255,.08);
-      background:
-        radial-gradient(900px 520px at 30% 10%, rgba(192,19,166,.14), transparent 60%),
-        radial-gradient(900px 520px at 80% 30%, rgba(255,255,255,.05), transparent 60%),
-        linear-gradient(180deg, rgba(7,8,12,0), rgba(15,18,32,.12), rgba(7,8,12,0));
-    }
-    .ticker{
-      margin-top:18px;
-      border-radius: 16px;
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.04);
-      overflow:hidden;
-      position:relative;
-    }
-    .tickerTrack{
-      display:flex;
-      width: max-content;
-      gap:18px;
-      padding:12px 14px;
-      animation: ticker 22s linear infinite;
-      will-change: transform;
-    }
-    .ticker:hover .tickerTrack{ animation-play-state: paused; }
-    .tag{
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.04);
-      padding:10px 12px;
-      border-radius: 999px;
-      font-weight:800;
-      font-size:13px;
-      color: rgba(243,244,246,.88);
-      white-space:nowrap;
-    }
-    .tag.primary{
-      border-color: rgba(192,19,166,.40);
-      background: rgba(192,19,166,.12);
-    }
-    @keyframes ticker{
-      from{ transform: translateX(0); }
-      to{ transform: translateX(-50%); }
-    }
-
-    .featuredRow{
-      margin-top:18px;
-      display:grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap:14px;
-    }
-    .partnerCard{
-      border-radius: var(--radius);
-      border:1px solid rgba(255,255,255,.10);
       background: rgba(15,18,32,.52);
       box-shadow: var(--shadow);
-      overflow:hidden;
-      position:relative;
-      transition:.18s ease;
+      padding:18px;
     }
-    .partnerCard:hover{
-      transform: translateY(-3px);
-      border-color: rgba(192,19,166,.35);
-    }
-    .partnerTop{
-      background: rgba(255,255,255,.92);
-      margin:16px;
-      border-radius: 18px;
-      height:112px;
+    .meta{
       display:flex;
-      align-items:center;
-      justify-content:center;
-      overflow:hidden;
-    }
-    .partnerTop img{
-      width: 100%;
-      height: 100%;
-      object-fit: contain; /* مهم: يمنع القص */
-      padding:14px;
-      background:#fff;
-    }
-    .partnerBody{
-      padding: 0 18px 18px;
-      text-align:center;
-    }
-    .partnerBody .t1{
-      font-weight:900;
-      font-size:18px;
-      margin-top:2px;
-    }
-    .partnerBody .t2{
-      margin-top:6px;
+      gap:10px;
+      flex-wrap:wrap;
       color: rgba(243,244,246,.70);
       font-weight:700;
       font-size:13px;
-      letter-spacing:.2px;
+      margin-top:8px;
+    }
+    .tag{
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+      padding:8px 10px;
+      border-radius:999px;
+    }
+    h2{ margin:0; font-size:20px; line-height:1.5; }
+    .desc{
+      margin:10px 0 0;
+      color: rgba(243,244,246,.78);
+      line-height:1.9;
     }
 
-    .logosGrid{
-      margin-top:18px;
-      border-radius: var(--radius);
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.03);
-      padding:14px;
-      box-shadow: var(--shadow);
-    }
-    .grid{
-      display:grid;
-      grid-template-columns: repeat(6, 1fr);
-      gap:12px;
-    }
-    .logoTile{
-      border-radius: 16px;
+    .notice{
+      margin-top:12px;
+      border-radius:18px;
       border:1px solid rgba(255,255,255,.10);
       background: rgba(255,255,255,.04);
-      overflow:hidden;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      justify-content:center;
-      padding:12px 10px;
-      min-height: 96px;
-      transition:.18s ease;
+      padding:14px;
+      color: rgba(243,244,246,.78);
+      line-height:1.9;
+      font-weight:700;
     }
-    .logoTile:hover{
-      transform: translateY(-2px);
-      border-color: rgba(192,19,166,.30);
-      background: rgba(192,19,166,.08);
-    }
-    .logoTile img{
-      width:100%;
-      height:54px;
-      object-fit:contain;
-      filter: grayscale(.45) contrast(1.05);
-      opacity:.92;
-      transition:.18s ease;
-    }
-    .logoTile:hover img{ filter:none; opacity:1; }
-    .logoName{
-      margin-top:8px;
-      font-size:12px;
-      color: rgba(243,244,246,.72);
-      font-weight:800;
-      text-align:center;
-      line-height:1.2;
-    }
-<!-- Blog Section -->
-<section id="blog">
-  <div class="wrap">
-    <div class="sectionTitle">
-      <h2>المقالات</h2>
-      <p>تحليلات عملية مبنية على أسئلة السوق الحقيقي وتجارب فعلية.</p>
-    </div>
+    .notice b{ color:#fff; }
 
-    <div class="cards">
-      <a class="card" href="/blog/article-1.html">
-        <h4>ليه الـ Organic Reach بيموت فجأة؟</h4>
-        <p>
-          فهم تغيّر خوارزميات Meta وإزاي تبني محتوى يخاطب الاهتمام الحقيقي قبل التفاعل.
-        </p>
-        <span style="display:inline-block;margin-top:10px;font-weight:700;">
-          اقرأ المقال ←
-        </span>
-      </a>
-
-      <a class="card" href="/blog/">
-        <h4>كل المقالات</h4>
-        <p>ادخل على المدونة وشوف كل المحتوى التحليلي المتاح.</p>
-        <span style="display:inline-block;margin-top:10px;font-weight:700;">
-          افتح المدونة ←
-        </span>
-      </a>
-    </div>
-  </div>
-</section>
-
-    /* Contact */
-    .contactGrid{
-      display:grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap:16px;
-      align-items:stretch;
-    }
-    .contactBox{
-      border-radius: var(--radius);
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(15,18,32,.50);
-      box-shadow: var(--shadow);
-      padding:22px;
-    }
-    .contactBox h3{ margin:0 0 10px; font-size:20px; }
-    .contactBox p{ margin:0; color: rgba(243,244,246,.78); line-height:1.9; }
-    .socialRow{
-      display:flex; flex-wrap:wrap; gap:10px; margin-top:14px;
-    }
-    .social{
-      display:inline-flex; align-items:center; justify-content:center;
-      padding:10px 12px;
-      border-radius: 14px;
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.05);
-      font-weight:900;
-      color: rgba(243,244,246,.90);
-      transition:.18s ease;
-    }
-    .social:hover{
-      border-color: rgba(192,19,166,.35);
-      background: rgba(192,19,166,.10);
-      transform: translateY(-1px);
-    }
-    .footer{
-      padding:22px 0 34px;
+    footer{
+      padding:18px 0 34px;
       color: rgba(243,244,246,.58);
       text-align:center;
-      font-weight:700;
       border-top: 1px solid rgba(255,255,255,.08);
-    }
-
-    /* Responsive */
-    @media (max-width: 980px){
-      .heroGrid{ grid-template-columns: 1fr; }
-      .aboutGrid{ grid-template-columns: 1fr; }
-      .cards{ grid-template-columns: 1fr; }
-      .featuredRow{ grid-template-columns: 1fr 1fr; }
-      .grid{ grid-template-columns: repeat(4, 1fr); }
-      .contactGrid{ grid-template-columns: 1fr; }
-      h1{ font-size: 38px; }
-    }
-    @media (max-width: 560px){
-      .menu{ display:none; }
-      .grid{ grid-template-columns: repeat(2, 1fr); }
-      h1{ font-size: 34px; }
+      font-weight:700;
     }
   </style>
 </head>
-
 <body>
 
-  <!-- Header -->
-  <header class="header">
+  <div class="topbar">
     <div class="wrap">
       <div class="nav">
-        <div class="brand">
-          <!-- ضع لوجو داولاين هنا بنفس الاسم في نفس المجلد -->
-          <img src="logo-daoline.png" alt="Daoline Digital Logo">
-          <div>
-            <div class="name">Daoline <span>Digital</span></div>
-            <div class="sub">Social Media Agency</div>
-          </div>
+        <div class="brand">Daoline <span>Free Courses</span></div>
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <a class="btn" href="/index.html">رجوع للموقع</a>
+          <a class="btn primary" href="/blog/article-1.html">ابدأ بالمقال الأول</a>
         </div>
+      </div>
+    </div>
+  </div>
 
-        <<nav class="menu" aria-label="Main Navigation">
-  <a href="#about">عن Daoline Digital</a>
-  <a href="#services">الخدمات</a>
-  <a href="#clients">العملاء</a>
-  <a href="/blog/">المدونة</a>
-  <a href="#contact">التواصل</a>
-</nav>
+  <header>
+    <div class="wrap">
+      <h1>Daoline Free Courses</h1>
+      <p class="lead">مكتبة مجانية: مقالات + كتيبات PDF — بلغة بسيطة ومباشرة للتطبيق.</p>
 
-        <div class="cta">
-          <a class="btn" href="mailto:info@daolinedigital.com">info@daolinedigital.com</a>
-          <a class="btn primary" href="#contact">تواصل الآن</a>
-        </div>
+      <div class="notice">
+        <b>مهم:</b> أي كتيب مجاني هيتحط هنا كرابط مباشر للتحميل داخل نفس صفحة المقال أو كصفحة مستقلة.
       </div>
     </div>
   </header>
 
-  <!-- Hero -->
-  <section class="hero" id="home">
-    <div class="wrap">
-      <div class="heroGrid">
-        <div class="panel heroLeft">
-          <div class="kicker">منهج واضح • لغة بسيطة • قياس نتائج</div>
-          <h1>نبني حضورًا رقميًا <span class="accent">قابلًا للنمو</span></h1>
-          <p class="lead">
-            Daoline Digital وكالة متخصصة في بناء حضور رقمي قابل للنمو: استراتيجية + محتوى + إعلانات + متابعة.
-            نشتغل بمنهج واضح، ونتواصل بلغة بسيطة، ونقيس النتائج بمؤشرات أداء (KPIs) قابلة للمراجعة.
-          </p>
+  <main class="wrap">
+    <div class="list">
 
-          <div class="heroBadges">
-            <div class="badge">استراتيجية محتوى</div>
-            <div class="badge">إدارة منصات</div>
-            <div class="badge">إعلانات مدفوعة</div>
-            <div class="badge">تقارير و KPIs</div>
-          </div>
+      <article class="card">
+        <h2>
+          <a href="/blog/article-1.html">
+            لماذا ينهار الـ Organic Reach فجأة؟ وما الذي تغيّر في تقييم Meta للمحتوى؟
+          </a>
+        </h2>
 
-          <div class="heroActions">
-            <a class="btn primary" href="#clients">شاهد العملاء</a>
-            <a class="btn" href="#services">تفاصيل الخدمات</a>
-          </div>
+        <div class="meta">
+          <span class="tag">Facebook</span>
+          <span class="tag">Instagram</span>
+          <span class="tag">Meta Algorithm</span>
+          <span class="tag">Content Strategy</span>
         </div>
 
-        <div class="panel heroRight">
-          <div class="profile">
-            <!-- ضع صورة دعاء هنا بنفس الاسم في نفس المجلد -->
-            <img src="doaa-photo.jpg" alt="Doaa Seleat">
-            <div>
-              <div class="pName">دعاء سليط</div>
-              <div class="pRole">إدارة وتشغيل • خبرة تتجاوز 15 عامًا</div>
-              <div class="pillRow" style="margin-top:10px">
-                <span class="pill primary">Daoline Digital</span>
-                <span class="pill">Social Media • Performance</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="quote">
-            <strong>الهدف:</strong> حضور قوي + نمو مستمر + نتائج قابلة للقياس.
-            <br/>
-            <span style="color:rgba(243,244,246,.72)">نركز على التخطيط، التنفيذ، والمتابعة… بنفس الدقة.</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- About -->
-  <section id="about">
-    <div class="wrap">
-      <div class="sectionTitle">
-        <h2>عن Daoline Digital</h2>
-        <p>وكالة تشغيل وإدارة سوشيال ميديا بمنهج واضح، ومخرجات قابلة للمراجعة والقياس.</p>
-      </div>
-
-      <div class="aboutGrid">
-        <div class="aboutBox">
-          <h3>تعريف مختصر</h3>
-          <p class="txt">
-            <b>Daoline Digital</b> وكالة متخصصة في بناء حضور رقمي قابل للنمو: استراتيجية + محتوى + إعلانات + متابعة.
-            بنشتغل بمنهج واضح، ونتواصل بلغة بسيطة، ونقيس النتائج بمؤشرات أداء (KPIs) قابلة للمراجعة.
-            <br><br>
-            تحت إدارة <b>دعاء سليط</b> — خبرة تتجاوز <b>15 عامًا</b> في إدارة السوشيال ميديا والحملات عبر مجالات مختلفة.
-          </p>
-        </div>
-
-        <div class="aboutBox">
-          <h3>طريقة الشغل</h3>
-          <p class="txt">
-            1) تشخيص سريع للوضع الحالي → 2) خطة محتوى وأهداف واضحة → 3) تنفيذ ومتابعة يومية →
-            4) تقارير أداء → 5) تحسين مستمر بناءً على البيانات.
-          </p>
-          <div class="pillRow">
-            <span class="pill primary">Strategy</span>
-            <span class="pill">Content</span>
-            <span class="pill">Ads</span>
-            <span class="pill">KPIs</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Services -->
-  <section id="services">
-    <div class="wrap">
-      <div class="sectionTitle">
-        <h2>الخدمات</h2>
-        <p>تقسيم واضح يساعدك تعرف أنت محتاج إيه بالضبط… وتستلم إيه كل شهر.</p>
-      </div>
-
-      <div class="cards">
-        <div class="card">
-          <h4>الاستراتيجية والتأسيس</h4>
-          <p>بنجهز الأساس اللي يخلي المحتوى “يشتغل” بدل ما يكون نشر وخلاص.</p>
-          <ul>
-            <li>تحليل البراند والجمهور</li>
-            <li>Content Pillars + Tone of Voice</li>
-            <li>خطة شهرية قابلة للتنفيذ</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h4>إدارة السوشيال ميديا</h4>
-          <p>تشغيل يومي + تنظيم المحتوى + ضبط الإيقاع.</p>
-          <ul>
-            <li>Calendar + Copywriting</li>
-            <li>متابعة الرسائل والتعليقات (حسب الاتفاق)</li>
-            <li>تقارير أسبوعية/شهرية</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h4>المحتوى الإبداعي</h4>
-          <p>محتوى يخدم الهدف، ويعكس الهوية، ويترجم القيمة.</p>
-          <ul>
-            <li>أفكار وسيناريوهات</li>
-            <li>محتوى تعليمي/بيعي/براندينج</li>
-            <li>تحسين الرسائل الأساسية</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h4>الإعلانات المدفوعة</h4>
-          <p>إعلانات مبنية على Funnel واضح، ومتابعة أداء دقيقة.</p>
-          <ul>
-            <li>إعداد الحملات + الاستهداف</li>
-            <li>Optimization أسبوعي</li>
-            <li>Tracking + قياس النتائج</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h4>التقارير و KPIs</h4>
-          <p>القرار مبني على أرقام… مش إحساس.</p>
-          <ul>
-            <li>لوحة مؤشرات أساسية</li>
-            <li>تحليل ما يعمل/لا يعمل</li>
-            <li>توصيات الشهر القادم</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h4>تحسين الهوية الرقمية</h4>
-          <p>تنظيم الشكل والرسالة لتقديم احترافي وتحويل أعلى.</p>
-          <ul>
-            <li>Bio/Highlights/CTA</li>
-            <li>Guidelines بسيطة للشكل</li>
-            <li>Consistency عبر المنصات</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-<!-- Blog -->
-<section id="blog">
-  <div class="wrap">
-    <div class="sectionTitle">
-      <h2>المدونة</h2>
-      <p>مقالات عملية تساعد أصحاب المشاريع يفهموا السوشيال ميديا والإعلانات بوضوح ومن غير تنظير.</p>
-    </div>
-
-    <div class="aboutGrid">
-      <div class="aboutBox">
-        <h3>ابدأ من هنا</h3>
-        <p class="txt">
-          أول مقالة جاهزة الآن داخل المدونة. هتلاقي فيها شرح واضح لتغيرات الوصول المجاني
-          وإزاي تفكر في المحتوى والإعلانات بالـ Signals الجديدة.
+        <p class="desc">
+          قراءة عملية للتغييرات اللي خلت “التفاعل” مش كفاية وحده، وإزاي تبني رسالة وكرييتف يخاطب الاهتمام الحقيقي قبل أي لايك.
         </p>
-        <div class="heroActions" style="margin-top:14px">
-          <a class="btn primary" href="/blog/">ادخل المدونة</a>
-          <a class="btn" href="/blog/article-1.html">اقرأ المقال الأول</a>
-        </div>
-      </div>
 
-      <div class="aboutBox">
-        <h3>طريقة النشر عندنا</h3>
-        <p class="txt">
-          كل مقال له صفحة مستقلة داخل <b>/blog</b>، ومع كل مقال هنضيف روابط سهلة للرجوع للموقع والعودة للمدونة.
-          كده التصفح يفضل بسيط ومنظم.
-        </p>
-        <div class="pillRow">
-          <span class="pill primary">SEO Ready</span>
-          <span class="pill">Internal Links</span>
-          <span class="pill">Easy Navigation</span>
+        <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
+          <a class="btn primary" href="/blog/article-1.html">فتح المقال</a>
+          <a class="btn" href="/index.html">رجوع للصفحة الرئيسية</a>
         </div>
-      </div>
+      </article>
+
+      <!-- مثال جاهز لكتيّب PDF (فعّله لما ترفع الملف)
+      <article class="card">
+        <h2><a href="/blog/free-social-media-kit.pdf" download>كتيّب مجاني: Social Media Starter Kit (PDF)</a></h2>
+        <div class="meta">
+          <span class="tag">Free PDF</span>
+          <span class="tag">Templates</span>
+        </div>
+        <p class="desc">قوالب عملية تساعدك تبدأ خطة محتوى وتحدد KPI وتبني CTA واضح.</p>
+        <div style="margin-top:14px;">
+          <a class="btn primary" href="/blog/free-social-media-kit.pdf" download>تحميل مباشر</a>
+        </div>
+      </article>
+      -->
+
     </div>
-  </div>
-</section>
+  </main>
 
-  <!-- Clients -->
-  <section class="clientsSection" id="clients">
-    <div class="wrap">
-      <div class="sectionTitle">
-        <h2>عملاء وشركاء نجاح</h2>
-      </div>
-
-      <!-- Moving names strip (Auto / dynamic) -->
-      <div class="ticker" aria-label="Clients ticker">
-        <div class="tickerTrack" id="tickerTrack"></div>
-      </div>
-
-      <!-- Featured (4) -->
-      <div class="featuredRow" style="margin-top:18px">
-        <a class="partnerCard" href="https://www.facebook.com/doaaamerofficial" target="_blank" rel="noopener">
-          <div class="partnerTop">
-            <img src="doaa-amer.png" alt="الإعلامية دعاء عامر">
-          </div>
-          <div class="partnerBody">
-            <div class="t1">الإعلامية دعاء عامر</div>
-            <div class="t2">Public Figure • Social Presence</div>
-          </div>
-        </a>
-
-        <a class="partnerCard" href="https://www.watexsolutions.com/" target="_blank" rel="noopener">
-          <div class="partnerTop">
-            <img src="watex.png" alt="Watex Trading">
-          </div>
-          <div class="partnerBody">
-            <div class="t1">Watex Trading</div>
-            <div class="t2">B2B • Industrial Branding</div>
-          </div>
-        </a>
-
-        <a class="partnerCard" href="https://ghayaeg.com/" target="_blank" rel="noopener">
-          <div class="partnerTop">
-            <img src="ghaya.png" alt="مؤسسة غايا للإبداع">
-          </div>
-          <div class="partnerBody">
-            <div class="t1">مؤسسة غايا للإبداع</div>
-            <div class="t2">Publishing • Creativity • Events</div>
-          </div>
-        </a>
-
-        <a class="partnerCard" href="https://www.facebook.com/AhmedMouradWriter" target="_blank" rel="noopener">
-          <div class="partnerTop">
-            <!-- استخدم لوجو أحمد مراد من clients/24.png كما ذكرته -->
-            <img src="clients/24.png" alt="الكاتب أحمد مراد">
-          </div>
-          <div class="partnerBody">
-            <div class="t1">الكاتب أحمد مراد</div>
-            <div class="t2">Author • Social Presence</div>
-          </div>
-        </a>
-      </div>
-
-      <!-- Logos grid -->
-      <div class="logosGrid" style="margin-top:18px">
-        <div class="grid" id="logosGrid"></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact">
-    <div class="wrap">
-      <div class="sectionTitle">
-        <h2>التواصل</h2>
-        <p>للاستفسارات والتعاون: راسلنا وسنرد بأقرب وقت.</p>
-      </div>
-
-      <div class="contactGrid">
-        <div class="contactBox">
-          <h3>البريد الرسمي</h3>
-          <p>
-            <a class="btn primary" href="mailto:info@daolinedigital.com">info@daolinedigital.com</a>
-          </p>
-
-          <div class="socialRow" style="margin-top:14px">
-            <a class="social" href="https://www.facebook.com/doaaseleat" target="_blank" rel="noopener">Facebook @doaaseleat</a>
-            <a class="social" href="https://www.instagram.com/doaa.seleat" target="_blank" rel="noopener">Instagram @doaa.seleat</a>
-          </div>
-        </div>
-
-        <div class="contactBox">
-          <h3>معلومة مهمة</h3>
-          <p>
-            نفضل إن رسالتك تشمل: نوع النشاط، الهدف الرئيسي، المنصات الحالية (إن وجدت)،
-            وأي رابط/صفحة للبراند لتقييم سريع ومقترح أولي.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer class="footer">
-    © <span id="year"></span> Daoline Digital — All rights reserved.
+  <footer>
+    © <span id="year"></span> Daoline Digital
   </footer>
 
   <script>
-    // ====== Settings ======
-    const totalClients = 29;
-
-    // أسماء التكرار المتحرك (تقدر تزود/تعدل براحتك)
-    const movingNames = [
-      "مؤسسة غايا للإبداع",
-      "Watex Trading",
-      "الإعلامية دعاء عامر",
-      "الكاتب أحمد مراد",
-      "AkhbarMeter",
-      "Dar Kayan",
-      "Writers & Publishing",
-      "Corporate & Business"
-    ];
-
-    // أسماء معروفة للّوجوهات (اختياري) — أي رقم مش موجود هنا هيتسمى Client XX
-    const knownClientNames = {
-      24: "الكاتب أحمد مراد"
-      // أضف لاحقًا: 1:"اسم العميل", 2:"اسم العميل"... إلخ
-    };
-
-    // ====== Ticker ======
-    const tickerTrack = document.getElementById("tickerTrack");
-    const tickerItems = [...movingNames, ...movingNames, ...movingNames]; // لتكرار أطول
-    tickerItems.forEach((name, i) => {
-      const span = document.createElement("span");
-      span.className = "tag" + (i % 6 === 0 ? " primary" : "");
-      span.textContent = name;
-      tickerTrack.appendChild(span);
-    });
-
-    // ====== Logos Grid ======
-    const grid = document.getElementById("logosGrid");
-    for (let i = 1; i <= totalClients; i++) {
-      const tile = document.createElement("div");
-      tile.className = "logoTile";
-
-      const img = document.createElement("img");
-      img.loading = "lazy";
-      img.src = `clients/${i}.png`;
-      const label = knownClientNames[i] ? knownClientNames[i] : `Client ${String(i).padStart(2,"0")}`;
-      img.alt = label;
-      img.title = label;
-
-      const name = document.createElement("div");
-      name.className = "logoName";
-      name.textContent = label;
-
-      tile.appendChild(img);
-      tile.appendChild(name);
-      grid.appendChild(tile);
-    }
-
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
