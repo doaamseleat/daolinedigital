@@ -3,8 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>نموذج مقال احترافي | Daoline Digital</title>
-    <meta name="description" content="نموذج مقال تعليمي بأسلوب Daoline Digital مع حماية للمحتوى">
+    
+    <!-- هذه هي البيانات التي تقرأها المكتبة الذكية تلقائياً -->
+    <title>Content Strategy vs Posting: الفرق اللي محدش قالك عليه</title>
+    <meta name="description" content="ليه صفحات بتنشر كل يوم ومابتبيعش؟ السر في البوصلة اللي بتتحرك بيها. اكتشف الفرق الجوهري بين النشر العشوائي وبناء الاستراتيجية.">
+    <meta name="keywords" content="Strategy, Marketing, Content"> 
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
     
@@ -60,7 +64,6 @@
                 Daoline<span class="text-daoline">Digital</span>
             </div>
             <div class="flex gap-3 text-sm">
-                <a href="/blog/" class="hidden md:block text-slate-400 hover:text-white transition">المكتبة</a>
                 <a href="/index.html" class="bg-daoline text-white px-4 py-1.5 rounded-full hover-bg-daoline font-medium text-xs md:text-sm">الرئيسية</a>
             </div>
         </div>
@@ -171,11 +174,6 @@
 
     <!-- Footer Nav -->
     <footer class="border-t border-slate-800 bg-slate-900 py-8 text-center text-slate-500 text-sm">
-        <div class="flex justify-center gap-6 mb-4">
-            <a href="/blog/" class="hover:text-daoline transition">المدونة</a>
-            <a href="/courses/" class="hover:text-daoline transition">الكورسات</a>
-            <a href="/contact/" class="hover:text-daoline transition">تواصل معنا</a>
-        </div>
         <p>&copy; 2026 Daoline Digital. All Rights Reserved.</p>
     </footer>
 
@@ -200,7 +198,6 @@
 
         // Toast Notification Logic
         function showToast(message) {
-            // Check if toast already exists
             if (document.getElementById('security-toast')) return;
 
             const toast = document.createElement('div');
@@ -225,10 +222,8 @@
             `;
             document.body.appendChild(toast);
 
-            // Animate In
             setTimeout(() => toast.style.opacity = '1', 10);
 
-            // Remove after 2 seconds
             setTimeout(() => {
                 toast.style.opacity = '0';
                 setTimeout(() => toast.remove(), 300);
