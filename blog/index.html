@@ -1,88 +1,184 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ليه الـ Organic Reach بيقع؟ | دعاء سليط</title>
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>المدونة | Daoline Digital</title>
+  <meta name="description" content="مدونة Daoline Digital: مقالات عملية في السوشيال ميديا، المحتوى، الإعلانات، والقياس." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+
   <style>
-    /* التنسيقات العامة */
-    body { margin:0; font-family: 'Tajawal', sans-serif; background:#0b0d14; color:#f3f4f6; line-height:1.9; }
-    .wrap { max-width:820px; margin:0 auto; padding:32px 18px; }
-    h1 { font-size:32px; margin-bottom:12px; font-weight: 900; color: #fff; }
-    .meta { color:rgba(243,244,246,.65); font-size:14px; margin-bottom:28px; }
-    p { font-size: 17px; color: rgba(243,244,246,0.88); margin: 18px 0; }
-    
-    /* التنسيقات التي أرسلتِها بالضبط */
-    .heroLine{
-      display:flex; flex-wrap:wrap; gap:10px;
-      margin:12px 0 18px;
+    :root{
+      --primary:#c013a6;
+      --bg:#07080c;
+      --bg2:#0b0d14;
+      --card:#0f1220;
+      --text:#f3f4f6;
+      --muted:rgba(243,244,246,.72);
+      --border:rgba(255,255,255,.10);
+      --shadow: 0 18px 60px rgba(0,0,0,.55);
+      --radius:22px;
+      --max:980px;
     }
-    .k{
-      font-size:13px;
-      padding:8px 10px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.04);
-      color: rgba(243,244,246,.85);
-      font-weight:800;
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family:"Tajawal", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(900px 600px at 10% 10%, rgba(192,19,166,.18), transparent 60%),
+        radial-gradient(900px 600px at 90% 20%, rgba(192,19,166,.12), transparent 60%),
+        linear-gradient(180deg, var(--bg), var(--bg2));
     }
-    .infobox{
-      margin:18px 0 26px;
+    a{ color:inherit; text-decoration:none; }
+    .wrap{ max-width:var(--max); margin:0 auto; padding:0 18px; }
+
+    .topbar{
+      position:sticky; top:0; z-index:5;
+      backdrop-filter: blur(14px);
+      background: rgba(7,8,12,.58);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:12px; padding:14px 0;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      font-weight:900;
+    }
+    .brand span{ color:var(--primary); }
+
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:10px 14px;
       border-radius:14px;
       border:1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.03);
-      overflow:hidden;
+      background: rgba(255,255,255,.06);
+      font-weight:800;
+      transition:.2s ease;
+      white-space:nowrap;
     }
-    .infobox .cap{
-      padding:12px 14px;
-      font-weight:900;
-      color: rgba(243,244,246,.92);
-      border-bottom:1px solid rgba(255,255,255,.08);
-      background: rgba(192,19,166,.08);
+    .btn:hover{ transform: translateY(-1px); border-color: rgba(255,255,255,.18); }
+    .btn.primary{
+      border-color: rgba(192,19,166,.65);
+      background: linear-gradient(180deg, rgba(192,19,166,.95), rgba(192,19,166,.65));
+      box-shadow: 0 16px 40px rgba(192,19,166,.18);
     }
-    .infobox svg{ display:block; width:100%; height:auto; }
 
-    /* لمسة إضافية للمقال */
-    .note { background: rgba(192,19,166,0.05); border-right: 4px solid #c013a6; padding: 20px; border-radius: 8px; margin: 30px 0; }
-    a.back-btn { color: #c013a6; text-decoration: none; font-weight: bold; border-bottom: 1px dashed #c013a6; }
+    header{
+      padding:34px 0 14px;
+    }
+    h1{
+      margin:0 0 8px;
+      font-size:34px;
+      letter-spacing:.2px;
+    }
+    .lead{
+      margin:0;
+      color: rgba(243,244,246,.78);
+      line-height:1.9;
+      font-size:16px;
+    }
+
+    .list{
+      margin:18px 0 44px;
+      display:grid;
+      gap:14px;
+    }
+    .card{
+      border-radius: var(--radius);
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(15,18,32,.52);
+      box-shadow: var(--shadow);
+      padding:18px;
+    }
+    .meta{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      color: rgba(243,244,246,.70);
+      font-weight:700;
+      font-size:13px;
+      margin-top:6px;
+    }
+    .tag{
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+      padding:8px 10px;
+      border-radius:999px;
+    }
+    h2{
+      margin:0;
+      font-size:20px;
+      line-height:1.5;
+    }
+    .desc{
+      margin:10px 0 0;
+      color: rgba(243,244,246,.78);
+      line-height:1.9;
+    }
+
+    footer{
+      padding:18px 0 34px;
+      color: rgba(243,244,246,.58);
+      text-align:center;
+      border-top: 1px solid rgba(255,255,255,.08);
+      font-weight:700;
+    }
   </style>
 </head>
 <body>
 
-  <div class="wrap">
-    <h1>ليه الـ Organic Reach بيقع رغم إن المحتوى كويس؟</h1>
-    <div class="meta">بقلم: دعاء سليط — Daoline Digital</div>
-
-    <div class="heroLine">
-      <span class="k">#تسويق_بالمحتوى</span>
-      <span class="k">#تحديثات_ميتا</span>
-      <span class="k">#الوصول_المجاني</span>
-    </div>
-
-    <p>خلال الشهور الأخيرة، الكل بيسأل نفس السؤال: «أنا بقدّم محتوى كويس، ليه الريتش واقع؟» الإجابة مش في جودة الصور بس، الإجابة في "خوارزمية النية".</p>
-
-    <div class="infobox">
-      <div class="cap">تحليل: كيف تفهم Meta محتواك الآن؟</div>
-      <svg viewBox="0 0 500 150" xmlns="http://www.w3.org/2000/svg">
-        <path d="M50 120 Q 150 120 250 80 T 450 30" stroke="#c013a6" stroke-width="3" fill="none" />
-        <circle cx="250" cy="80" r="5" fill="#fff" />
-        <text x="50" y="140" fill="rgba(255,255,255,0.4)" font-size="12">محتوى عام (Reach يقل)</text>
-        <text x="300" y="25" fill="#c013a6" font-size="14" font-weight="bold">محتوى مخصص (Reach يصعد)</text>
-      </svg>
-    </div>
-
-    <div class="note">
-      <strong>القاعدة الذهبية:</strong> الخوارزمية بطلت تعد "لايكات"، وبقت تحسب "وقت البقاء". كل ما العميل وقف يقرأ أو يشوف، كل ما الريتش زاد.
-    </div>
-
-    <h2>إيه الحل العملي؟</h2>
-    <p>توقف عن مخاطبة "الجمهور"، وابدأ بمخاطبة "الإنسان". المحتوى اللي بينجح حالياً هو اللي بيخلي العميل يقول: "ده بيتكلم عني أنا!".</p>
-
-    <div style="margin-top: 60px;">
-      <a href="/" class="back-btn">← العودة للرئيسية</a>
+  <div class="topbar">
+    <div class="wrap">
+      <div class="nav">
+        <div class="brand">Daoline <span>Blog</span></div>
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <a class="btn" href="/index.html">رجوع للموقع</a>
+          <a class="btn primary" href="/blog/article-1.html">اقرأ المقال الأول</a>
+        </div>
+      </div>
     </div>
   </div>
 
+  <header>
+    <div class="wrap">
+      <h1>المدونة</h1>
+      <p class="lead">مقالات عملية بلغة بسيطة—تساعدك تفهم، وتطبّق، وتقيّم النتائج.</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="list">
+      <article class="card">
+        <h2><a href="/blog/article-1.html">لماذا ينهار الـ Organic Reach فجأة؟ وما الذي تغيّر في تقييم Meta للمحتوى؟</a></h2>
+        <div class="meta">
+          <span class="tag">Facebook</span>
+          <span class="tag">Instagram</span>
+          <span class="tag">Meta Algorithm</span>
+          <span class="tag">Content Strategy</span>
+        </div>
+        <p class="desc">
+          قراءة عملية للتغييرات اللي خلت “التفاعل” مش كفاية وحده، وإزاي تبني كرييتف ورسالة تخلي شخص محدد يقول: “ده معمول عشاني”.
+        </p>
+        <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
+          <a class="btn primary" href="/blog/article-1.html">فتح المقال</a>
+          <a class="btn" href="/index.html">رجوع للصفحة الرئيسية</a>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Daoline Digital
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
