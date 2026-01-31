@@ -134,8 +134,8 @@
       text-transform: uppercase; letter-spacing: 0.5px;
     }
 
+    /* Fixed Link Colors */
     .card h2 { margin: 0 0 15px; font-size: 1.85rem; font-weight: 800; line-height: 1.4; }
-    /* Fix: Ensure links are white, not default blue */
     .card h2 a { color: var(--text); text-decoration: none; transition: 0.3s; }
     .card h2 a:hover { color: var(--primary); }
     
@@ -279,8 +279,8 @@
     };
 
     // جلب قائمة الملفات من GitHub API
+    // تمت إضافة ?t=${Date.now()} لمنع التخزين المؤقت
     async function getArticlesList() {
-      // نستخدم التوقيت الحالي لضمان جلب أحدث قائمة دائماً وتجنب الكاش
       const apiUrl = `https://api.github.com/repos/${GITHUB_CONFIG.owner}/${GITHUB_CONFIG.repo}/contents/${GITHUB_CONFIG.path}?t=${Date.now()}`;
       try {
         const response = await fetch(apiUrl);
@@ -294,8 +294,8 @@
     }
 
     // جلب بيانات كل مقال
+    // تمت إضافة ?v=${Date.now()} لمنع التخزين المؤقت للملفات
     async function fetchMetadata(fileName) {
-      // نستخدم مسار مباشر مع إضافة متغير عشوائي لكسر الكاش
       const url = `blog/${fileName}?v=${Date.now()}`;
       try {
         const response = await fetch(url);
@@ -330,7 +330,7 @@
       } catch (err) { return null; }
     }
 
-    // بناء الصفحة (محسّن باستخدام Promise.all)
+    // بناء الصفحة (محسّن باستخدام Promise.all للسرعة)
     async function init() {
       const container = document.getElementById('articlesList');
       const fileNames = await getArticlesList();
