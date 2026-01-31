@@ -209,7 +209,7 @@
       <div class="nav">
         <div class="brand">Daoline <span>Digital</span></div>
         <div style="display:flex; gap:10px;">
-          <!-- رابط الدومين الخاص -->
+          <!-- الزر الآن يوجه للدومين الرئيسي مباشرة -->
           <a class="btn" href="https://daolinedigital.com">الرئيسية</a>
         </div>
       </div>
@@ -283,6 +283,7 @@
 
     // جلب قائمة الملفات
     async function getArticlesList() {
+      // نستخدم Time stamp لمنع الكاش والتأكد من جلب القائمة الجديدة دائماً
       const apiUrl = `https://api.github.com/repos/${GITHUB_CONFIG.owner}/${GITHUB_CONFIG.repo}/contents/${GITHUB_CONFIG.path}?t=${Date.now()}`;
       try {
         const response = await fetch(apiUrl);
@@ -319,14 +320,15 @@
           title: rawTitle,
           description: doc.querySelector('meta[name="description"]')?.getAttribute('content') || "اكتشف هذا الدرس التعليمي الجديد من Daoline Digital.",
           keywords: doc.querySelector('meta[name="keywords"]')?.getAttribute('content') || "Marketing, Digital",
-          url: `blog/${fileObj.name}`
+          // *** التعديل الجذري: إضافة علامة / في البداية لجعل الرابط مطلقاً ***
+          url: `/blog/${fileObj.name}`
         };
       } catch (err) { 
           return {
             title: "مقال قيد التجهيز",
             description: "جاري رفع المحتوى، يرجى المحاولة بعد قليل.",
             keywords: "New",
-            url: `blog/${fileObj.name}`
+            url: `/blog/${fileObj.name}`
           };
       }
     }
