@@ -7,6 +7,73 @@
   <title>لماذا ينهار الـ Organic Reach فجأة؟ وما الذي تغيّر في تقييم Meta للمحتوى؟ | Daoline Digital</title>
   <meta name="description" content="تحليل عملي لتغيرات تقييم محتوى فيسبوك وإنستجرام: لماذا لم يعد التفاعل كافيًا؟ وما هي Signals الجديدة مثل Dwell Time وScroll-Stop وكيف تبني محتوى متخصص يحقق نتائج؟" />
   <meta name="robots" content="index,follow" />
+<!-- HTML: عنصر مرئي داخل المقال -->
+<div class="accordion">
+  <button class="accordion-header">📌 معلومة مهمة: ما الفرق بين Dwell Time و Engagement؟</button>
+  <div class="accordion-body">
+    <p>
+      <strong>Dwell Time</strong> هو الوقت اللي المستخدم بيقضيه فعليًا في قراءة المحتوى—even لو ما عملش أي تفاعل.
+      أما <strong>Engagement</strong> فهو التفاعل التقليدي (Like/Comment/Share). 
+      وده يوضح ليه Meta بدأت تفضل قياس الاهتمام الفعلي عن طريق السلوك بدل الضغطات السريعة.
+    </p>
+  </div>
+</div>
+
+<!-- CSS: التصميم -->
+<style>
+  .accordion {
+    margin: 20px 0;
+    border: 1px solid var(--border, rgba(255,255,255,.10));
+    border-radius: var(--radius2, 18px);
+    background: rgba(255,255,255,0.03);
+    box-shadow: var(--shadow, 0 18px 60px rgba(0,0,0,.55));
+    overflow: hidden;
+  }
+
+  .accordion-header {
+    width: 100%;
+    background: transparent;
+    padding: 14px 18px;
+    font-weight: 800;
+    font-size: 15px;
+    color: var(--text, #f3f4f6);
+    border: none;
+    cursor: pointer;
+    text-align: right;
+    transition: background 0.3s ease;
+  }
+
+  .accordion-header:hover {
+    background: rgba(255,255,255,0.06);
+  }
+
+  .accordion-body {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 18px;
+    color: var(--muted, rgba(243,244,246,.72));
+    font-size: 15px;
+    line-height: 1.9;
+    transition: max-height 0.35s ease, padding 0.35s ease;
+  }
+
+  .accordion.active .accordion-body {
+    max-height: 500px;
+    padding: 12px 18px 18px;
+  }
+</style>
+
+<!-- JavaScript: تفعيل الفتح/الإغلاق -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll('.accordion-header').forEach(header => {
+      header.addEventListener('click', () => {
+        const box = header.parentElement;
+        box.classList.toggle('active');
+      });
+    });
+  });
+</script>
 
   <!-- Canonical (اختياري) -->
   <!-- <link rel="canonical" href="https://daolinedigital.com/blog/article-1.html" /> -->
