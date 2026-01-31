@@ -1,29 +1,570 @@
-.heroLine{
-  display:flex; flex-wrap:wrap; gap:10px;
-  margin:12px 0 18px;
-}
-.k{
-  font-size:13px;
-  padding:8px 10px;
-  border-radius:999px;
-  border:1px solid rgba(255,255,255,.12);
-  background: rgba(255,255,255,.04);
-  color: rgba(243,244,246,.85);
-  font-weight:800;
-}
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-.infobox{
-  margin:18px 0 26px;
-  border-radius:14px;
-  border:1px solid rgba(255,255,255,.10);
-  background: rgba(255,255,255,.03);
-  overflow:hidden;
-}
-.infobox .cap{
-  padding:12px 14px;
-  font-weight:900;
-  color: rgba(243,244,246,.92);
-  border-bottom:1px solid rgba(255,255,255,.08);
-  background: rgba(192,19,166,.08);
-}
-.infobox svg{ display:block; width:100%; height:auto; }
+  <title>لماذا يهبط الـ Organic Reach فجأة؟ (وماذا نفعل بدلًا من الصراخ)</title>
+  <meta name="description" content="تحليل عملي لتراجع الوصول المجاني على فيسبوك وإنستجرام: لماذا لم يعد التفاعل كافيًا؟ وما الإشارات التي تقيسها Meta الآن؟ وخطة تنفيذ 14 يومًا لاستعادة النمو." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://daolinedigital.com/blog/article-1.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="لماذا يهبط الـ Organic Reach فجأة؟ (وماذا نفعل بدلًا من الصراخ)" />
+  <meta property="og:description" content="تحليل عملي لتراجع الوصول المجاني على فيسبوك وإنستجرام + خطة تنفيذ 14 يومًا." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://daolinedigital.com/blog/article-1.html" />
+  <meta property="og:site_name" content="Daoline Digital" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="لماذا يهبط الـ Organic Reach فجأة؟" />
+  <meta name="twitter:description" content="تحليل عملي + خطة 14 يومًا لاستعادة النمو." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Google AdSense (كما هو عندك) -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9549277321717950"
+  crossorigin="anonymous"></script>
+
+  <!-- Structured Data (Article) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Article",
+    "headline":"لماذا يهبط الـ Organic Reach فجأة؟ (وماذا نفعل بدلًا من الصراخ)",
+    "description":"تحليل عملي لتراجع الوصول المجاني على فيسبوك وإنستجرام: لماذا لم يعد التفاعل كافيًا؟ وما الإشارات التي تقيسها Meta الآن؟ وخطة تنفيذ 14 يومًا لاستعادة النمو.",
+    "author":{"@type":"Person","name":"دعاء سليط"},
+    "publisher":{"@type":"Organization","name":"Daoline Digital","url":"https://daolinedigital.com"},
+    "mainEntityOfPage":{"@type":"WebPage","@id":"https://daolinedigital.com/blog/article-1.html"},
+    "inLanguage":"ar",
+    "keywords":["Organic Reach","Meta Algorithm","Facebook","Instagram","Content Strategy","Media Buying","Creative Testing"]
+  }
+  </script>
+
+  <style>
+    :root{
+      --primary:#c013a6;        /* DAOLINE Magenta */
+      --bg:#07080c;
+      --bg2:#0b0d14;
+      --card:#0f1220;
+      --text:#f3f4f6;
+      --muted:rgba(243,244,246,.72);
+      --border:rgba(255,255,255,.10);
+      --shadow: 0 18px 60px rgba(0,0,0,.55);
+      --radius:22px;
+      --radius2:18px;
+      --max:920px;
+    }
+    *{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
+    body{
+      margin:0;
+      font-family:"Tajawal", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(900px 600px at 10% 10%, rgba(192,19,166,.18), transparent 60%),
+        radial-gradient(900px 600px at 90% 20%, rgba(192,19,166,.12), transparent 60%),
+        radial-gradient(900px 600px at 50% 110%, rgba(255,255,255,.05), transparent 60%),
+        linear-gradient(180deg, var(--bg), var(--bg2));
+      overflow-x:hidden;
+    }
+    a{ color:inherit; text-decoration:none; }
+    .wrap{ max-width:var(--max); margin:0 auto; padding:0 18px; }
+
+    /* Top bar */
+    .topbar{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(14px);
+      background: rgba(7,8,12,.60);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .topbar .row{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:12px; padding:12px 0;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      min-width: 200px;
+    }
+    .brand img{ width:38px; height:38px; object-fit:contain; }
+    .brand .name{ font-weight:900; line-height:1.1; }
+    .brand .name span{ color:var(--primary); }
+    .nav{
+      display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-start;
+    }
+    .nav a{
+      font-size:13px;
+      padding:8px 10px;
+      border-radius:12px;
+      border:1px solid transparent;
+      color: rgba(243,244,246,.86);
+      transition:.18s ease;
+    }
+    .nav a:hover{
+      border-color: rgba(192,19,166,.45);
+      background: rgba(192,19,166,.10);
+    }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:8px;
+      padding:9px 12px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+      font-weight:800;
+      transition:.18s ease;
+      white-space:nowrap;
+    }
+    .btn:hover{ transform: translateY(-1px); border-color: rgba(255,255,255,.18); }
+    .btn.primary{
+      border-color: rgba(192,19,166,.65);
+      background: linear-gradient(180deg, rgba(192,19,166,.95), rgba(192,19,166,.65));
+      box-shadow: 0 16px 40px rgba(192,19,166,.18);
+    }
+
+    /* Article container */
+    .page{
+      padding:26px 0 70px;
+    }
+    .crumbs{
+      display:flex; gap:10px; flex-wrap:wrap;
+      color: rgba(243,244,246,.72);
+      font-weight:700;
+      font-size:13px;
+      margin: 8px 0 14px;
+    }
+    .crumbs a{ text-decoration:underline; text-decoration-color: rgba(255,255,255,.20); }
+    .panel{
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(15,18,32,.56);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      position:relative;
+    }
+    .panel::before{
+      content:"";
+      position:absolute; inset:-2px;
+      background: radial-gradient(500px 220px at 18% 10%, rgba(192,19,166,.20), transparent 70%);
+      pointer-events:none;
+    }
+
+    .article{
+      padding:22px 18px 18px;
+      position:relative;
+      z-index:1;
+    }
+
+    .meta{
+      display:flex; gap:10px; flex-wrap:wrap;
+      align-items:center;
+      margin: 0 0 10px;
+      color: rgba(243,244,246,.70);
+      font-weight:700;
+      font-size:13px;
+    }
+    .dot{
+      width:5px; height:5px; border-radius:999px;
+      background: rgba(255,255,255,.35);
+      display:inline-block;
+      transform: translateY(-1px);
+    }
+
+    h1{
+      margin: 6px 0 10px;
+      font-size: 34px;
+      line-height:1.25;
+      letter-spacing:.2px;
+    }
+    .subtitle{
+      margin:0 0 14px;
+      color: rgba(243,244,246,.78);
+      line-height:1.95;
+      font-size:16px;
+    }
+
+    .heroLine{
+      display:flex; flex-wrap:wrap; gap:10px;
+      margin: 10px 0 18px;
+    }
+    .k{
+      font-size:13px;
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+      color: rgba(243,244,246,.85);
+      font-weight:800;
+    }
+    .k.primary{
+      border-color: rgba(192,19,166,.40);
+      background: rgba(192,19,166,.10);
+    }
+
+    /* Infographic box */
+    .infobox{
+      margin:18px 0 20px;
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+      overflow:hidden;
+    }
+    .infobox .cap{
+      padding:12px 14px;
+      font-weight:900;
+      color: rgba(243,244,246,.92);
+      border-bottom:1px solid rgba(255,255,255,.08);
+      background: rgba(192,19,166,.10);
+    }
+    .infobox .note{
+      padding:10px 14px 0;
+      color: rgba(243,244,246,.70);
+      font-weight:700;
+      font-size:13px;
+      line-height:1.8;
+    }
+    .infobox svg{ display:block; width:100%; height:auto; padding: 12px 10px 14px; }
+
+    /* Content */
+    .content{
+      margin-top: 6px;
+      color: rgba(243,244,246,.86);
+      line-height: 2.05;
+      font-size: 16px;
+    }
+    .content h2{
+      margin: 22px 0 10px;
+      font-size: 22px;
+      letter-spacing:.2px;
+    }
+    .content h3{
+      margin: 18px 0 8px;
+      font-size: 18px;
+    }
+    .content p{ margin: 10px 0; }
+    .content ul{
+      margin: 10px 0 10px;
+      padding: 0 18px 0 0;
+    }
+    .content li{ margin: 8px 0; }
+
+    .callout{
+      margin: 16px 0;
+      border-radius: 18px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      padding: 14px 14px 12px;
+      position:relative;
+      overflow:hidden;
+    }
+    .callout::before{
+      content:"";
+      position:absolute; inset:-2px;
+      background: radial-gradient(520px 220px at 85% 15%, rgba(192,19,166,.16), transparent 70%);
+      pointer-events:none;
+    }
+    .callout strong{ color: rgba(243,244,246,.95); }
+    .callout p{ margin: 0; position:relative; z-index:1; }
+
+    .miniGrid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:12px;
+      margin: 14px 0 6px;
+    }
+    .mini{
+      border-radius: 18px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(15,18,32,.42);
+      padding: 14px;
+    }
+    .mini .t{
+      font-weight:900;
+      margin-bottom:6px;
+    }
+    .mini .b{
+      color: rgba(243,244,246,.74);
+      font-weight:700;
+      line-height:1.9;
+      font-size:14px;
+    }
+
+    .ctaBox{
+      margin: 22px 0 4px;
+      border-radius: 20px;
+      border:1px solid rgba(192,19,166,.38);
+      background: rgba(192,19,166,.10);
+      padding: 16px 14px;
+    }
+    .ctaBox .row{
+      display:flex; gap:12px; flex-wrap:wrap;
+      align-items:center; justify-content:space-between;
+    }
+    .ctaBox .text{
+      font-weight:800;
+      color: rgba(243,244,246,.92);
+      line-height:1.8;
+    }
+    .ctaBox .actions{
+      display:flex; gap:10px; flex-wrap:wrap;
+    }
+
+    .footerNote{
+      margin-top:14px;
+      color: rgba(243,244,246,.58);
+      font-weight:700;
+      font-size:13px;
+      line-height:1.8;
+    }
+
+    @media (max-width: 760px){
+      h1{ font-size: 30px; }
+      .miniGrid{ grid-template-columns: 1fr; }
+      .nav{ display:none; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Topbar -->
+  <header class="topbar">
+    <div class="wrap">
+      <div class="row">
+        <a class="brand" href="../index.html" aria-label="Daoline Digital Home">
+          <img src="../logo-daoline.png" alt="Daoline Digital Logo">
+          <div class="name">Daoline <span>Digital</span></div>
+        </a>
+
+        <nav class="nav" aria-label="Blog Navigation">
+          <a href="index.html">المدونة</a>
+          <a href="../index.html#services">الخدمات</a>
+          <a href="../index.html#contact">التواصل</a>
+        </nav>
+
+        <a class="btn" href="mailto:info@daolinedigital.com">info@daolinedigital.com</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="page">
+    <div class="wrap">
+      <div class="crumbs">
+        <a href="../index.html">الرئيسية</a>
+        <span class="dot"></span>
+        <a href="index.html">المدونة</a>
+        <span class="dot"></span>
+        <span>المقال 1</span>
+      </div>
+
+      <article class="panel article" aria-label="Article">
+        <div class="meta">
+          <span>بقلم: <strong>دعاء سليط</strong></span>
+          <span class="dot"></span>
+          <span>آخر تحديث: <span id="updated"></span></span>
+          <span class="dot"></span>
+          <span>مدة القراءة: 6–8 دقائق</span>
+        </div>
+
+        <h1>لماذا يهبط الـ Organic Reach فجأة؟ (وماذا نفعل بدلًا من الصراخ)</h1>
+        <p class="subtitle">
+          لو لاحظت إن الوصول المجاني على <strong>Facebook</strong> و<strong>Instagram</strong> نزل فجأة —
+          فالموضوع غالبًا مش “حظ سيّئ”، ومش بالضرورة إن المحتوى بتاعك اتدهور. اللي تغيّر هو معيار التقييم نفسه:
+          <strong>Meta</strong> بقت تدور على “الاهتمام الحقيقي” قبل التفاعل.
+        </p>
+
+        <div class="heroLine" aria-label="Keywords">
+          <span class="k primary">Organic Reach</span>
+          <span class="k">Meta Algorithm</span>
+          <span class="k">Facebook</span>
+          <span class="k">Instagram</span>
+          <span class="k">Content Strategy</span>
+          <span class="k">Creative Testing</span>
+        </div>
+
+        <!-- Internal infographic -->
+        <section class="infobox" aria-label="Infographic">
+          <div class="cap">الملخص البصري: التفاعل لم يعد كافيًا</div>
+          <div class="note">انسخ/احفظ الفكرة: “Creative = Targeting” … والرسالة لازم تبان إنها معمولة لشخص واحد.</div>
+
+          <svg viewBox="0 0 1200 560" role="img" aria-label="Infographic summary">
+            <defs>
+              <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#c013a6" stop-opacity="0.35"/>
+                <stop offset="1" stop-color="#ffffff" stop-opacity="0.06"/>
+              </linearGradient>
+            </defs>
+
+            <rect x="0" y="0" width="1200" height="560" fill="url(#g)"/>
+            <rect x="48" y="52" width="1104" height="456" rx="28" fill="rgba(11,13,20,.72)" stroke="rgba(255,255,255,.10)"/>
+
+            <text x="1100" y="120" text-anchor="end" font-size="34" fill="#f3f4f6" font-weight="900">
+              Meta تقيس “الاهتمام الحقيقي” قبل الـ Like
+            </text>
+            <text x="1100" y="165" text-anchor="end" font-size="22" fill="rgba(243,244,246,.75)" font-weight="700">
+              Engagement ≠ Intent
+            </text>
+
+            <!-- Column 1 -->
+            <g>
+              <rect x="84" y="220" width="330" height="240" rx="18" fill="rgba(255,255,255,.04)" stroke="rgba(255,255,255,.10)"/>
+              <text x="392" y="265" text-anchor="end" font-size="22" fill="#f3f4f6" font-weight="900">Signals جديدة</text>
+
+              <text x="392" y="305" text-anchor="end" font-size="18" fill="rgba(243,244,246,.80)" font-weight="800">• Dwell Time</text>
+              <text x="392" y="340" text-anchor="end" font-size="18" fill="rgba(243,244,246,.80)" font-weight="800">• Scroll-Stop</text>
+              <text x="392" y="375" text-anchor="end" font-size="18" fill="rgba(243,244,246,.80)" font-weight="800">• Post-View Actions</text>
+              <text x="392" y="410" text-anchor="end" font-size="18" fill="rgba(243,244,246,.80)" font-weight="800">• Relevance Feedback</text>
+            </g>
+
+            <!-- Column 2 -->
+            <g>
+              <rect x="435" y="220" width="330" height="240" rx="18" fill="rgba(255,255,255,.04)" stroke="rgba(255,255,255,.10)"/>
+              <text x="745" y="265" text-anchor="end" font-size="22" fill="#f3f4f6" font-weight="900">اللي بيتدفن</text>
+
+              <text x="745" y="305" text-anchor="end" font-size="18" fill="rgba(243,244,246,.80)" font-weight="800">• محتوى “لكل الناس”</text>
+              <text x="745" y="340" text-anchor="end" font-size="18" fill="rgba(243,244,246,.80)" font-weight="800">• Hooks شكلها حلو بس فاضية</text>
+              <text x="745" y="375" text-anchor="end" font-size="18" fill="rgba(243,244,246,.80)" font-weight="800">• تريند بلا حل</text>
+              <text x="745" y="410" text-anchor="end" font-size="18" fill="rgba(243,244,246,.80)" font-weight="800">• تفاعل بلا نية شراء</text>
+            </g>
+
+            <!-- Column 3 -->
+            <g>
+              <rect x="786" y="220" width="330" height="240" rx="18" fill="rgba(192,19,166,.12)" stroke="rgba(192,19,166,.40)"/>
+              <text x="1096" y="265" text-anchor="end" font-size="22" fill="#f3f4f6" font-weight="900">اللي بيطلع</text>
+
+              <text x="1096" y="305" text-anchor="end" font-size="18" fill="rgba(243,244,246,.88)" font-weight="900">• محتوى متخصّص</text>
+              <text x="1096" y="340" text-anchor="end" font-size="18" fill="rgba(243,244,246,.88)" font-weight="900">• مشكلة واضحة + حل واضح</text>
+              <text x="1096" y="375" text-anchor="end" font-size="18" fill="rgba(243,244,246,.88)" font-weight="900">• رسالة لفئة محددة جدًا</text>
+              <text x="1096" y="410" text-anchor="end" font-size="18" fill="rgba(243,244,246,.88)" font-weight="900">• زوايا Creative متعددة</text>
+            </g>
+
+            <text x="1100" y="490" text-anchor="end" font-size="18" fill="rgba(243,244,246,.70)" font-weight="800">
+              قاعدة تشغيل: “اكتب كأنك بتكلم شخص واحد… مش جمهور.”
+            </text>
+          </svg>
+        </section>
+
+        <div class="content">
+          <h2>1) المشكلة مش إن الناس بطّلت تعمل Like… المشكلة إن الـ Like مبقاش مقياس</h2>
+          <p>
+            سنين كتير كنا بنربط “نجاح البوست” بالتفاعل: لايكات، كومنتات، شير. دلوقتي المعيار اتسع.
+            المنصات بتسأل نفسها سؤال مباشر: <strong>هل المحتوى ده مناسب للشخص ده؟</strong>
+            ومش لازم يضغط لايك عشان الإجابة تبقى “نعم”.
+          </p>
+
+          <div class="callout">
+            <p>
+              <strong>خلاصة سريعة:</strong> ممكن بوست يجيب تفاعل قليل… لكن يحقق نمو حقيقي لأنه خلّى الناس “توقف، تقرأ، وتكمّل”.
+              وممكن بوست يجيب تفاعل عالي… لكنه اتشاف كتسلية وخلاص.
+            </p>
+          </div>
+
+          <h2>2) إشارات “الاهتمام” اللي لازم تهتم بيها بدل التفاعل</h2>
+          <p>لو هتتابع أرقام، تابع اللي بيقولك هل المحتوى “مسك” ولا لأ:</p>
+          <ul>
+            <li><strong>Dwell Time:</strong> قد إيه الشخص وقف عند المحتوى.</li>
+            <li><strong>Scroll-Stop:</strong> هل المحتوى بيوقف الـ Scroll فعلًا.</li>
+            <li><strong>Post-View Actions:</strong> بعد ما شافك… عمل إيه؟ دخل بروفايل؟ فتح لينك؟ حفظ؟</li>
+            <li><strong>Relevance Feedback:</strong> إشارات مباشرة/غير مباشرة إن المحتوى “مناسب”.</li>
+          </ul>
+
+          <h2>3) ليه المحتوى “العام” بيقع؟</h2>
+          <p>
+            لأن المحتوى العام بيحاول يرضي الكل… وفي الآخر ما بيقنعش حد. الخوارزمية دلوقتي بتكافئ
+            الرسائل اللي بتخلي شخص واحد يقول: <strong>ده معمول عشاني</strong>.
+          </p>
+
+          <div class="miniGrid" aria-label="Do vs Dont">
+            <div class="mini">
+              <div class="t">بدل: “إحنا الأفضل”</div>
+              <div class="b">اكتب: “لو عندك المشكلة (س)… ده الحل (ص) بخطوات واضحة.”</div>
+            </div>
+            <div class="mini">
+              <div class="t">بدل: “تريند + موسيقى”</div>
+              <div class="b">اكتب: “موقف واقعي/اعتراض متكرر… ورد عملي عليه.”</div>
+            </div>
+          </div>
+
+          <h2>4) خطة تنفيذ 14 يوم (عملية ومناسبة لشغل السوشيال + المدونة)</h2>
+
+          <h3>الأيام 1–3: تقسيم الجمهور (مش Demographics… لغة ومشاكل)</h3>
+          <ul>
+            <li>اكتب 5 أسئلة بتتكرر من العملاء (زي اللي إنتِ بتجمعيه من الجروبات).</li>
+            <li>لكل سؤال: حدّد “مين اللي بيسأل؟” و“هو خايف من إيه؟” و“عايز يسمع إيه؟”.</li>
+            <li>حول كل سؤال لـ 3 زوايا محتوى: (معلومة/اعتراض/قصة قصيرة).</li>
+          </ul>
+
+          <h3>الأيام 4–7: 8 قطع محتوى “متخصصة” بدل 2 قطع “عامة”</h3>
+          <ul>
+            <li>اعمل 8 نسخ قصيرة لنفس الفكرة، كل نسخة لفئة محددة.</li>
+            <li>غيّر مثال واحد فقط في كل نسخة (لغة الفئة + مشكلتها).</li>
+            <li>حافظ على CTA واحد واضح: قراءة المقال / تحميل ملف / رسالة.</li>
+          </ul>
+
+          <h3>الأيام 8–14: تثبيت روتين “اختبار الكرييتف”</h3>
+          <ul>
+            <li>كل موضوع كبير في المدونة = 3 مشتقات سوشيال (ريل/بوست/ستوري).</li>
+            <li>قياس أسبوعي: ما الذي زاد وقت التوقف؟ ما الذي رفع الزيارات للمقال؟</li>
+            <li>ضاعف الناجح… واقفل الباقي بدون عاطفة.</li>
+          </ul>
+
+          <h2>5) ربط المقالات بالزيارات والربح (بدون تحميل على Netlify)</h2>
+          <p>
+            Netlify مناسب جدًا كبداية لموقع ثابت، و<strong>مش هتحتاج “استضافة تقليدية”</strong> طالما:
+            المقالات HTML خفيفة + الصور مضغوطة + مفيش ملفات ضخمة.
+          </p>
+          <ul>
+            <li>خلي الصور <strong>WebP</strong> قدر الإمكان، ومقاسها منطقي (1200px عرض كفاية).</li>
+            <li>أي ملف تحميل (PDF / Checklist / Ebook) خليه على Google Drive/Dropbox أو GitHub Releases أو أي Storage خارجي.</li>
+            <li>داخل المقال: رابط واحد واضح للتحميل + رابط واحد لمقال مرتبط (Internal Link).</li>
+          </ul>
+
+          <div class="callout">
+            <p>
+              <strong>ملاحظة تشغيل:</strong> مش لازم تغيّر “الملف الرئيسي” كل مرة.
+              كل مقال ملف جديد داخل <strong>blog/</strong>.
+              التغيير الوحيد المتكرر: تضيف رابط المقال في <strong>blog/index.html</strong> (قائمة المقالات).
+            </p>
+          </div>
+
+          <h2>6) أفكار ملفات مجانية تجيب زيارات (وتخدم AdSense)</h2>
+          <ul>
+            <li><strong>Checklist:</strong> “هل صفحتك جاهزة قبل ما تموّل؟” (صفحة واحدة PDF).</li>
+            <li><strong>Template:</strong> “خطة محتوى أسبوع” جاهزة (Google Sheet).</li>
+            <li><strong>Mini Ebook:</strong> “دليل الـ 14 يوم لتحسين الـ Reach” (8 صفحات).</li>
+            <li><strong>Quiz بسيط:</strong> “أنت محتاج محتوى ولا إعلانات؟” (صفحة HTML تفاعلية لاحقًا).</li>
+          </ul>
+
+          <section class="ctaBox" aria-label="CTA">
+            <div class="row">
+              <div class="text">
+                لو عندك صفحة وحاسس إن الريتش وقع… ابعتلي رابط الصفحة + آخر 7 أيام Insights،
+                وأنا أقولك “فين المشكلة” في نقطتين واضحين.
+              </div>
+              <div class="actions">
+                <a class="btn primary" href="mailto:info@daolinedigital.com?subject=Audit%20Request%20-%20Organic%20Reach&body=اكتب%20لينك%20الصفحة%20+%20ملخص%20الهدف%20+%20سكرين%20من%20الـInsights%20لآخر%207%20أيام.">اطلب مراجعة سريعة</a>
+                <a class="btn" href="index.html">ارجع لقائمة المقالات</a>
+              </div>
+            </div>
+          </section>
+
+          <p class="footerNote">
+            تقدر تعتبر المقال ده “نسخة تشغيل” مش تنظير. لو حابب، المقال اللي بعده هنحوله لـ:
+            <strong>قالب تقرير شهري</strong> (Content Creator + Social Media Specialist) جاهز للتحميل… وده هيبقى Magnet ممتاز للزيارات.
+          </p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <script>
+    // تاريخ بسيط بدون تعقيد
+    const d = new Date();
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    document.getElementById("updated").textContent = d.toLocaleDateString('ar-EG', options);
+  </script>
+</body>
+</html>
