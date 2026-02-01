@@ -519,6 +519,36 @@
       background: rgba(192,19,166,.10);
       transform: translateY(-1px);
     }
+
+    /* Legal footer links (NEW) */
+    .legalFooter{
+      margin-top:60px;
+      padding:18px 0;
+      border-top: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.02);
+    }
+    .legalFooter .row{
+      display:flex;
+      gap:16px;
+      flex-wrap:wrap;
+      justify-content:center;
+      font-weight:800;
+      color: rgba(243,244,246,.72);
+    }
+    .legalFooter a{
+      padding:8px 12px;
+      border-radius: 999px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+      transition:.18s ease;
+    }
+    .legalFooter a:hover{
+      border-color: rgba(192,19,166,.35);
+      background: rgba(192,19,166,.10);
+      transform: translateY(-1px);
+      color: rgba(243,244,246,.92);
+    }
+
     .footer{
       padding:22px 0 34px;
       color: rgba(243,244,246,.58);
@@ -545,13 +575,6 @@
     }
   </style>
 </head>
-<footer style="margin-top:60px; padding: 24px 16px; border-top: 1px solid rgba(0,0,0,.1);">
-  <div style="max-width: 900px; margin: 0 auto; display:flex; gap:16px; flex-wrap:wrap;">
-    <a href="/privacy.html">سياسة الخصوصية</a>
-    <a href="/terms.html">الشروط والأحكام</a>
-    <a href="/contact.html">اتصل بنا</a>
-  </div>
-</footer>
 
 <body>
 
@@ -831,9 +854,10 @@
           </div>
         </a>
 
+        <!-- ✅ FIX: الصورة عندك غالبًا clients24.png (مش clients/24.png) -->
         <a class="partnerCard" href="https://www.facebook.com/AhmedMouradWriter" target="_blank" rel="noopener">
           <div class="partnerTop">
-            <img src="clients/24.png" alt="الكاتب أحمد مراد">
+            <img src="clients24.png" alt="الكاتب أحمد مراد">
           </div>
           <div class="partnerBody">
             <div class="t1">الكاتب أحمد مراد</div>
@@ -880,6 +904,17 @@
     </div>
   </section>
 
+  <!-- ✅ NEW: روابط الصفحات القانونية (داخل الـ body وفي مكانها الصحيح) -->
+  <div class="legalFooter">
+    <div class="wrap">
+      <div class="row">
+        <a href="/privacy.html">سياسة الخصوصية</a>
+        <a href="/terms.html">الشروط والأحكام</a>
+        <a href="/contact.html">اتصل بنا</a>
+      </div>
+    </div>
+  </div>
+
   <footer class="footer">
     © <span id="year"></span> Daoline Digital — All rights reserved.
   </footer>
@@ -918,7 +953,7 @@
 
       const img = document.createElement("img");
       img.loading = "lazy";
-      img.src = `clients/${i}.png`;
+      img.src = `clients/${i}.png`;  // ده شغال لو عندك فولدر clients فعلاً
       const label = knownClientNames[i] ? knownClientNames[i] : `Client ${String(i).padStart(2,"0")}`;
       img.alt = label;
       img.title = label;
@@ -934,5 +969,6 @@
 
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
+
 </body>
 </html>
