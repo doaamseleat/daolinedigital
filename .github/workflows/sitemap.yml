@@ -2,60 +2,38 @@ name: Auto-generate sitemap.xml
 
 on:
   push:
-    branches: [ "main" ]
-  workflow_dispatch:
-
-permissions:
-  contents: write
+    branches:
+      - main
 
 jobs:
-  sitemap:
+  generate-sitemap:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Generate sitemap.xml
+      - name: Generate sitemap for blog articles only
         run: |
-          DOMAIN="https://daolinedigital.com"
-          OUT="sitemap.xml"
+          echo '<?xml version="1.0" encoding="UTF-8"?>' > sitemap.xml
+          echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' >> sitemap.xml
 
-          echo '<?xml version="1.0" encoding="UTF-8"?>' > "$OUT"
-          echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' >> "$OUT"
+          for file in blog/article-*.html; do
+            if [ -f "$file" ]; then
+              echo "  <url>" >> sitemap.xml
+              echo "    <loc>https://daolinedigital.com/$file</loc>" >> sitemap.xml
+              echo "    <changefreq>weekly</changefreq>" >> sitemap.xml
+              echo "    <priority>0.8</priority>" >> sitemap.xml
+              echo "  </url>" >> sitemap.xml
+            fi
+          done
 
-          add_url () {
-            loc="$1"
-            freq="$2"
-            prio="$3"
-            echo "  <url>" >> "$OUT"
-            echo "    <loc>${loc}</loc>" >> "$OUT"
-            echo "    <changefreq>${freq}</changefreq>" >> "$OUT"
-            echo "    <priority>${prio}</priority>" >> "$OUT"
-            echo "  </url>" >> "$OUT"
-          }
+          echo '</urlset>' >> sitemap.xml
 
-          # صفحات أساسية
-          add_url "${DOMAIN}/" "weekly" "1.0"
-          add_url "${DOMAIN}/blog/" "weekly" "0.9"
-
-          # صفحات قانونية (يضيفها لو موجودة فعلاً)
-          [ -f "privacy.html" ] && add_url "${DOMAIN}/privacy.html" "yearly" "0.3"
-          [ -f "terms.html" ] && add_url "${DOMAIN}/terms.html" "yearly" "0.3"
-          [ -f "contact.html" ] && add_url "${DOMAIN}/contact.html" "yearly" "0.4"
-
-          # مقالات blog/*.html (يضيفها تلقائيًا)
-          if ls blog/*.html 1> /dev/null 2>&1; then
-            for f in blog/*.html; do
-              base="$(basename "$f")"
-              add_url "${DOMAIN}/blog/${base}" "monthly" "0.8"
-            done
-          fi
-
-          echo '</urlset>' >> "$OUT"
-
-      - name: Commit & Push sitemap.xml (if changed)
+      - name: Commit sitemap
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
           git add sitemap.xml
-          git diff --cached --quiet || (git commit -m "Auto-update sitemap.xml" && git push)
+          git commit -m "Update sitemap (articles only)" || echo "No changes"
+          git push
