@@ -1,306 +1,380 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- SEO Meta Tags -->
-    <title>Content Strategy vs Posting: الفرق اللي محدش قالك عليه</title>
-    <meta name="description" content="ليه صفحات بتنشر كل يوم ومابتبيعش؟ السر في البوصلة اللي بتتحرك بيها. اكتشف الفرق الجوهري بين النشر العشوائي وبناء الاستراتيجية.">
-    <meta name="keywords" content="Strategy, Marketing, Content, التسويق بالمحتوى, استراتيجية المحتوى"> 
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Tajawal -->
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
-    
-    <style>
-        /* Base Settings */
-        body {
-            font-family: 'Tajawal', sans-serif;
-            background-color: #0f172a; /* Slate 900 */
-            color: #e2e8f0; /* Slate 200 */
-            overflow-x: hidden;
-            /* Text Selection Protection */
-            -webkit-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        /* Brand Colors */
-        .text-daoline { color: #c013a6; }
-        .bg-daoline { background-color: #c013a6; }
-        .border-daoline { border-color: #c013a6; }
-        .hover-bg-daoline:hover { background-color: #a00f89; transition: 0.3s; }
+  <!-- SEO Meta Tags -->
+  <title>خطة الـ 90 يوماً: كيف تسيطر على السوشيال ميديا في 2026 | Daoline Digital</title>
+  <meta name="description" content="انتقل من النشر العشوائي إلى بناء براند حقيقي. خطة عمل 90 يوماً لزيادة الريتش، بناء الثقة، وتحقيق مبيعات حقيقية في 2026.">
 
-        /* Gradients */
-        .card-gradient {
-            background: linear-gradient(145deg, #1e293b 0%, #0f172a 100%);
-        }
-        .hero-gradient {
-            background: radial-gradient(circle at top center, #c013a620 0%, transparent 70%);
-        }
+  <!-- Google Fonts: Tajawal -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
 
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #0f172a; }
-        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #c013a6; }
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
-        /* Accordion Animation */
-        details > summary { list-style: none; outline: none; }
-        details > summary::-webkit-details-marker { display: none; }
-        details[open] summary ~ * { animation: sweep .5s ease-in-out; }
-        @keyframes sweep {
-            0%    {opacity: 0; transform: translateY(-10px)}
-            100   {opacity: 1; transform: translateY(0)}
-        }
+  <style>
+    :root{
+      --primary:#c013a6;
+      --primary2:#a00f89;
+      --bg:#0f172a;
+      --text:#e2e8f0;
+      --muted:rgba(226,232,240,.78);
+      --muted2:rgba(226,232,240,.65);
+      --border:rgba(255,255,255,.08);
+    }
 
-        /* Smooth Transition for UI */
-        .transition-all-custom { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
-    </style>
+    /* Base */
+    html{ scroll-behavior:smooth; }
+    body{
+      font-family:'Tajawal',sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      overflow-x:hidden;
+
+      /* Text Selection Protection */
+      -webkit-user-select:none;
+      -ms-user-select:none;
+      user-select:none;
+    }
+
+    /* Brand Colors */
+    .text-daoline{ color: var(--primary); }
+    .bg-daoline{ background-color: var(--primary); }
+    .border-daoline{ border-color: var(--primary); }
+    .hover-bg-daoline:hover{ background-color: var(--primary2); transition: .25s ease; }
+
+    /* Visuals */
+    .hero-gradient{
+      background: radial-gradient(circle at top center, rgba(192,19,166,.15) 0%, transparent 70%);
+    }
+    .glass{
+      background: rgba(30, 41, 59, 0.40);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    /* Typography tuning */
+    h1,h2,h3{ letter-spacing: .2px; }
+    h1{ line-height:1.25 !important; }
+    p{ line-height:2.05; color: var(--muted); }
+    .prose-strong{ color:#fff; font-weight:900; }
+    .muted2{ color: var(--muted2); }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar{ width:8px; }
+    ::-webkit-scrollbar-track{ background:#0f172a; }
+    ::-webkit-scrollbar-thumb{ background:#334155; border-radius:4px; }
+    ::-webkit-scrollbar-thumb:hover{ background: var(--primary); }
+
+    /* Accordion */
+    details > summary{ list-style:none; outline:none; }
+    details > summary::-webkit-details-marker{ display:none; }
+    details[open] summary ~ *{ animation: sweep .45s ease-in-out; }
+    @keyframes sweep{
+      0%{ opacity:0; transform:translateY(-10px) }
+      100%{ opacity:1; transform:translateY(0) }
+    }
+
+    /* Free courses bar */
+    .freebar{
+      background: linear-gradient(90deg, rgba(192,19,166,.95), rgba(160,15,137,.85));
+      border-bottom: 1px solid rgba(255,255,255,.12);
+    }
+    .freebar a{
+      background: rgba(15,23,42,.86);
+      border:1px solid rgba(255,255,255,.10);
+    }
+    .freebar a:hover{
+      background:#0b1224;
+      border-color: rgba(255,255,255,.18);
+      transform: translateY(-1px);
+      transition:.2s ease;
+    }
+  </style>
 </head>
+
 <body class="relative">
 
-    <!-- Sticky Nav -->
-    <nav class="sticky top-0 z-50 bg-[#0f172a]/90 backdrop-blur-md border-b border-slate-800">
-        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-            <div class="font-bold text-lg md:text-xl tracking-wide flex items-center gap-2">
-                <div class="w-8 h-8 bg-daoline rounded-lg flex items-center justify-center">
-                    <span class="text-white text-xs">D</span>
-                </div>
-                <span>Daoline<span class="text-daoline">Digital</span></span>
-            </div>
-            <div class="flex gap-3">
-                <a href="#" class="bg-daoline text-white px-5 py-1.5 rounded-full hover-bg-daoline font-medium text-xs md:text-sm transition-all-custom shadow-lg shadow-daoline/20">
-                    الرئيسية
-                </a>
-            </div>
+  <!-- Sticky Nav -->
+  <nav class="sticky top-0 z-50 bg-[#0f172a]/90 backdrop-blur-md border-b border-slate-800">
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+      <a href="/index.html" class="font-black text-lg md:text-xl tracking-wide">
+        Daoline<span class="text-daoline">Digital</span>
+      </a>
+
+      <div class="flex gap-2 sm:gap-3 text-sm flex-wrap">
+        <a href="/blog/" class="px-4 py-1.5 rounded-full border border-slate-700 bg-slate-800/60 hover:bg-slate-700/60 font-bold text-xs md:text-sm transition">
+          المدونة
+        </a>
+        <a href="/index.html" class="bg-daoline text-white px-4 py-1.5 rounded-full hover-bg-daoline font-bold text-xs md:text-sm shadow-lg shadow-pink-500/10 transition-all">
+          الرئيسية
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Free Courses Bar (Blog-aligned) -->
+  <div class="freebar sticky top-[56px] z-40">
+    <div class="container mx-auto px-4 py-2 flex flex-wrap items-center justify-between gap-3">
+      <div class="font-black text-white text-sm md:text-[15px]">
+        🎓 Daoline Free Courses
+        <span class="muted2 font-bold">— Social Media Free Course (مقالات + أدوات مجانية)</span>
+      </div>
+      <a href="/blog/" class="px-4 py-2 rounded-full font-black text-white text-xs md:text-sm transition">
+        دخول المكتبة →
+      </a>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <header class="hero-gradient pt-14 md:pt-16 pb-10 md:pb-12 px-4 text-center relative">
+    <span class="inline-block py-1 px-3 rounded-full bg-daoline/10 text-daoline text-[11px] md:text-xs font-black border border-daoline/20 mb-4 uppercase tracking-widest">
+      Playbook 2026: استراتيجية مش مجرد نشر
+    </span>
+
+    <h1 class="text-3xl md:text-5xl lg:text-6xl font-black mb-5 leading-tight max-w-4xl mx-auto text-white">
+      خطة الـ 90 يوماً: طريقك للسيطرة على
+      <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-200 to-slate-400 block md:inline">
+        الريتش والمبيعات في 2026
+      </span>
+    </h1>
+
+    <p class="text-slate-300/80 max-w-2xl mx-auto text-[15px] md:text-lg leading-relaxed font-medium">
+      بطل تنشر بوستات "زحمة" ومحدش يشوفها. اتعلم ازاي تبني محتوى يشد العميل ليك ويخليه يثق فيك من أول ثانية.
+    </p>
+
+    <div class="mt-6 flex items-center justify-center gap-3 flex-wrap">
+      <a href="/blog/" class="px-5 py-2 rounded-full border border-slate-700 bg-slate-900/40 hover:bg-slate-800/50 font-black text-sm transition">
+        ← رجوع للمدونة
+      </a>
+      <a href="/index.html" class="px-5 py-2 rounded-full bg-daoline hover-bg-daoline text-white font-black text-sm transition shadow-lg shadow-pink-500/10">
+        زيارة Daoline Digital
+      </a>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container mx-auto px-4 max-w-3xl pb-16">
+
+    <!-- Strategy Concept -->
+    <section class="bg-slate-800/50 border-r-4 border-daoline p-6 rounded-2xl mb-10 shadow-lg backdrop-blur-sm relative overflow-hidden">
+      <h2 class="text-daoline font-black text-xl mb-3 flex items-center gap-2">
+        <span class="text-2xl">🎯</span> سر اللعبة في 2026:
+      </h2>
+      <p class="text-slate-200 text-[15px] md:text-lg leading-relaxed font-medium">
+        الفرق بين <span class="prose-strong">"اللي بينشر وخلاص"</span> وبين <span class="prose-strong">"البراند الناجح"</span>
+        هو الـ <span class="text-daoline font-black italic">Authority</span>.
+        هدفنا مش إننا نملى الصفحة بوستات، هدفنا نكون "الخيار الأول" في دماغ عميلك.
+      </p>
+    </section>
+
+    <!-- The Roadmap -->
+    <section class="space-y-6 mb-10">
+      <div class="text-xl font-black text-white border-b border-slate-800 pb-2 inline-block">
+        خريطة الطريق (Roadmap)
+      </div>
+
+      <div class="grid gap-4">
+
+        <!-- Phase 1 -->
+        <details class="group bg-slate-800 rounded-2xl overflow-hidden cursor-pointer border border-slate-700">
+          <summary class="flex justify-between items-center font-black p-5 text-slate-100 hover:bg-slate-700/40 transition">
+            <span>1) تجهيز الملعب (أول 30 يوم)</span>
+            <span class="transition group-open:rotate-180 text-daoline">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+              </svg>
+            </span>
+          </summary>
+          <div class="text-slate-300/80 p-5 pt-0 leading-relaxed border-t border-slate-700/50 mt-2">
+            هنحوّل البروفايل لمكان "بيبيع": تضبيط الـ Bio والـ Highlights،
+            ومحتوى يعرّف الناس أنت مين وبتقدم إيه فعلاً.
+          </div>
+        </details>
+
+        <!-- Phase 2 -->
+        <details class="group bg-slate-800 rounded-2xl overflow-hidden cursor-pointer border border-slate-700">
+          <summary class="flex justify-between items-center font-black p-5 text-slate-100 hover:bg-slate-700/40 transition">
+            <span>2) فتح الريتش (يوم 31 لـ 60)</span>
+            <span class="transition group-open:rotate-180 text-daoline">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+              </svg>
+            </span>
+          </summary>
+          <div class="text-slate-300/80 p-5 pt-0 leading-relaxed border-t border-slate-700/50 mt-2">
+            التركيز هنا على الانتشار: ريلز (Reels) بهوكس (Hooks) قوية،
+            وردود ذكية على التعليقات لبناء مجتمع فعلي.
+          </div>
+        </details>
+
+        <!-- Phase 3 -->
+        <details class="group bg-slate-800 rounded-2xl overflow-hidden cursor-pointer border border-slate-700">
+          <summary class="flex justify-between items-center font-black p-5 text-slate-100 hover:bg-slate-700/40 transition">
+            <span>3) وقت الحصاد (آخر 30 يوم)</span>
+            <span class="transition group-open:rotate-180 text-daoline">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+              </svg>
+            </span>
+          </summary>
+          <div class="text-slate-300/80 p-5 pt-0 leading-relaxed border-t border-slate-700/50 mt-2">
+            تحويل المتابعين لعملاء: نتايج حقيقية + ريفيوهات + عروض ذكية (Soft Sell)
+            تخلي العميل ياخد قرار الشراء وهو مطمّن.
+          </div>
+        </details>
+
+      </div>
+    </section>
+
+    <!-- Action Plan Checklist -->
+    <section class="bg-gradient-to-br from-slate-800 to-slate-900 border border-slate-700 rounded-2xl p-6 md:p-8 relative overflow-hidden mb-10">
+      <div class="absolute top-0 left-0 w-20 h-20 bg-daoline blur-3xl opacity-20"></div>
+
+      <h2 class="text-xl font-black mb-6 relative z-10 flex items-center gap-2 text-white">
+        <span class="p-1 bg-daoline rounded text-white text-xs">📋</span> الـ Action Plan بتاعك
+      </h2>
+
+      <ul class="space-y-6 relative z-10">
+        <li class="flex items-start gap-3">
+          <div class="mt-1 w-6 h-6 rounded-full border border-daoline flex items-center justify-center text-daoline text-[11px] font-black">1</div>
+          <span class="text-slate-200/90 font-medium leading-relaxed">
+            ثبّت مجالاتك (Content Pillars): اختار 3 مواضيع بس تتكلم فيهم بتمكّن.
+          </span>
+        </li>
+
+        <li class="flex flex-col gap-3">
+          <div class="flex items-start gap-3">
+            <div class="mt-1 w-6 h-6 rounded-full border border-daoline flex items-center justify-center text-daoline text-[11px] font-black">2</div>
+            <span class="text-slate-200/90 font-medium leading-relaxed">
+              جهّز بنك "الهوكس" (Hooks): اجمع أقوى جمل البداية اللي بتشد الناس.
+            </span>
+          </div>
+
+          <!-- Link becomes safe if article-2 not ready: still clickable but won't break page -->
+          <a href="/blog/article-2.html" class="mr-8 inline-flex items-center gap-2 text-xs font-black text-daoline hover:text-white transition-all bg-daoline/10 hover:bg-daoline px-4 py-2 rounded-lg border border-daoline/20 w-fit">
+            <span>🚀 شوف بنك "الهوكات" الجاهزة من هنا</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+          </a>
+        </li>
+
+        <li class="flex items-start gap-3">
+          <div class="mt-1 w-6 h-6 rounded-full border border-daoline flex items-center justify-center text-daoline text-[11px] font-black">3</div>
+          <span class="text-slate-200/90 font-medium leading-relaxed">
+            حلّل أرقامك أسبوعيًا: البيانات هي اللي بتقولك تكمّل في إيه وتغيّر إيه.
+          </span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- CTA Placeholder -->
+    <div class="text-center py-10 border-t border-slate-800 mb-10">
+      <button class="bg-white text-slate-900 hover:bg-daoline hover:text-white transition px-8 py-3 rounded-full font-black shadow-lg shadow-pink-500/10 transform hover:scale-105 duration-300">
+        📥 تحميل الدليل التنفيذي 2026 (PDF)
+      </button>
+      <p class="mt-3 text-xs text-slate-500 font-medium">
+        ملاحظة: زر التحميل جاهز—لما ترفعي ملف PDF هنربطه هنا مباشرة.
+      </p>
+    </div>
+
+    <!-- Podcast Recommendation -->
+    <section class="glass p-6 md:p-8 rounded-2xl border border-daoline/20 relative overflow-hidden group mb-6">
+      <div class="flex flex-col md:flex-row items-center gap-6 relative z-10">
+        <div class="w-20 h-20 bg-daoline rounded-2xl flex items-center justify-center shadow-xl flex-shrink-0 group-hover:rotate-3 transition-transform">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
+          </svg>
         </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <header class="hero-gradient pt-20 pb-16 px-4 text-center relative overflow-hidden">
-        <div class="absolute top-10 right-10 w-64 h-64 bg-daoline/5 blur-[100px] rounded-full"></div>
-        <span class="inline-block py-1 px-4 rounded-full bg-daoline/10 text-daoline text-xs font-bold border border-daoline/20 mb-6 tracking-widest uppercase">
-            تحليل استراتيجي 2026
-        </span>
-        <h1 class="text-4xl md:text-6xl font-extrabold mb-8 leading-tight max-w-4xl mx-auto">
-            Content Strategy vs Posting:<br>
-            <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-200 to-slate-500">الفرق اللي محدش قالك عليه</span>
-        </h1>
-        <p class="text-slate-400 max-w-2xl mx-auto text-lg md:text-xl leading-relaxed font-light">
-            ليه صفحات بتنشر كل يوم ومابتبيعش، وصفحات تانية بوست واحد منها بيقلب الدنيا؟ السر مش في "الكمية"، السر في البوصلة اللي بتتحرك بيها.
-        </p>
-    </header>
-
-    <!-- Main Content -->
-    <main class="container mx-auto px-4 max-w-3xl pb-24">
-        
-        <!-- Summary Box -->
-        <div class="bg-slate-800/40 border-r-4 border-daoline p-8 rounded-2xl mb-16 shadow-2xl backdrop-blur-md relative overflow-hidden group">
-            <div class="absolute -left-10 -top-10 w-32 h-32 bg-daoline/5 rounded-full group-hover:scale-150 transition-transform duration-700"></div>
-            <h3 class="text-daoline font-bold text-xl mb-4 flex items-center gap-3">
-                <span class="text-2xl">⚡</span> الخلاصة في سطر:
-            </h3>
-            <p class="text-slate-200 text-lg leading-relaxed">
-                النشر هو إنك <span class="text-white font-bold underline decoration-daoline/40">"ترمي بضاعة"</span> في السوق وتستنى حد يشتري. الاستراتيجية هي إنك <span class="text-white font-bold underline decoration-daoline/40">"تبني السوق"</span> نفسه قبل ما تعرض المنتج.
-            </p>
+        <div class="text-center md:text-right">
+          <h3 class="text-xl font-black text-white mb-2">بودكاست سر الـ 1% 🎙️</h3>
+          <p class="text-slate-300/70 text-sm mb-4 leading-relaxed font-medium">
+            مش بس استراتيجيات—إحنا بنجيب لك الخلاصة من تجارب حقيقية خلت الـ 1% يسيطروا على السوق.
+          </p>
+          <a href="https://www.facebook.com/reel/1152011216345678" target="_blank" rel="noopener"
+             class="inline-block bg-white text-daoline font-black px-6 py-2 rounded-xl hover:bg-daoline hover:text-white transition-all text-sm">
+            اسمع الحلقات دلوقتي
+          </a>
         </div>
+      </div>
+    </section>
 
-        <!-- Misconceptions Section -->
-        <div class="space-y-6 mb-16">
-            <div class="flex items-center gap-4 mb-8">
-                <div class="h-px flex-1 bg-slate-800"></div>
-                <h2 class="text-xl font-bold text-white px-4">مفاهيم مغلوطة لازم تصححها</h2>
-                <div class="h-px flex-1 bg-slate-800"></div>
-            </div>
-            
-            <details class="group bg-slate-800/30 rounded-2xl overflow-hidden cursor-pointer border border-slate-700/50 hover:border-daoline/30 transition-all-custom">
-                <summary class="flex justify-between items-center font-bold p-6 text-slate-200 group-hover:text-white">
-                    <span class="flex items-center gap-3">
-                        <span class="w-8 h-8 rounded-full bg-slate-700 flex items-center justify-center text-xs text-daoline">01</span>
-                        "لازم أنشر كل يوم عشان الريتش"
-                    </span>
-                    <span class="transition-transform group-open:rotate-180 text-daoline">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg>
-                    </span>
-                </summary>
-                <div class="text-slate-400 p-6 pt-0 leading-relaxed border-t border-slate-700/30 bg-slate-900/20">
-                    ده أكبر فخ بيقع فيه المبتدئين. الخوارزميات حالياً بتهتم بـ <span class="text-slate-200 font-medium">Retention (مدة المشاهدة)</span> ونوعية التفاعل. بوست واحد مدروس استراتيجياً بيحقق نتائج أفضل بكتير من 10 بوستات "حشو".
-                </div>
-            </details>
+    <!-- Bottom Navigation -->
+    <div class="mt-10 flex items-center justify-center gap-3 flex-wrap">
+      <a href="/blog/" class="px-5 py-2 rounded-full border border-slate-700 bg-slate-900/40 hover:bg-slate-800/50 font-black text-sm transition">
+        ← رجوع للمدونة
+      </a>
+      <a href="/index.html" class="px-5 py-2 rounded-full bg-daoline hover-bg-daoline text-white font-black text-sm transition shadow-lg shadow-pink-500/10">
+        الصفحة الرئيسية
+      </a>
+    </div>
 
-            <details class="group bg-slate-800/30 rounded-2xl overflow-hidden cursor-pointer border border-slate-700/50 hover:border-daoline/30 transition-all-custom">
-                <summary class="flex justify-between items-center font-bold p-6 text-slate-200 group-hover:text-white">
-                    <span class="flex items-center gap-3">
-                        <span class="w-8 h-8 rounded-full bg-slate-700 flex items-center justify-center text-xs text-daoline">02</span>
-                        "الاستراتيجية يعني جدول محتوى"
-                    </span>
-                    <span class="transition-transform group-open:rotate-180 text-daoline">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg>
-                    </span>
-                </summary>
-                <div class="text-slate-400 p-6 pt-0 leading-relaxed border-t border-slate-700/30 bg-slate-900/20">
-                    الجدول (Calendar) مجرد أداة تنظيمية. الاستراتيجية بتجاوب على: <span class="text-white underline decoration-daoline/30">ليه اخترنا الموضوع ده؟</span> مين الجمهور اللي بنستهدفه؟ وإيه "الفعل" اللي محتاجينه يعمله؟ الجدول هو الخريطة، لكن الاستراتيجية هي الوجهة.
-                </div>
-            </details>
-        </div>
+  </main>
 
-        <!-- Market Signals Grid -->
-        <section class="mb-16">
-            <h2 class="text-2xl font-bold mb-8 text-white flex items-center gap-3">
-                <span class="w-2 h-8 bg-daoline rounded-full"></span>
-                إشارات السوق (Market Signals)
-            </h2>
-            <div class="grid md:grid-cols-2 gap-6">
-                <div class="card-gradient p-8 rounded-2xl border border-slate-800 hover:border-daoline/40 transition-all-custom group">
-                    <div class="text-daoline text-5xl mb-4 font-black opacity-20 group-hover:opacity-100 transition-opacity">01</div>
-                    <h4 class="font-bold text-white text-xl mb-3 underline decoration-slate-700">العميل بيكشفك</h4>
-                    <p class="text-slate-400 leading-relaxed">الجمهور بقى أذكى بمراحل، بيقدر يفرق فوراً بين المحتوى اللي هدفه "البيع وبس" والمحتوى اللي بيضيف له قيمة حقيقية لحياته.</p>
-                </div>
-                <div class="card-gradient p-8 rounded-2xl border border-slate-800 hover:border-daoline/40 transition-all-custom group">
-                    <div class="text-daoline text-5xl mb-4 font-black opacity-20 group-hover:opacity-100 transition-opacity">02</div>
-                    <h4 class="font-bold text-white text-xl mb-3 underline decoration-slate-700">المنافسة مش سعر</h4>
-                    <p class="text-slate-400 leading-relaxed">المنافسة الحقيقية النهاردة بقت على "مين بيشرح أحسن" ومين "بيحل مشاكل العميل أسرع وبأبسط طريقة".</p>
-                </div>
-            </div>
-        </section>
+  <!-- Footer -->
+  <footer class="border-t border-slate-800 bg-slate-900 py-8 text-center text-slate-500 text-sm">
+    <p>&copy; 2026 Daoline Digital. All Rights Reserved.</p>
+  </footer>
 
-        <!-- Checklist -->
-        <div class="bg-gradient-to-br from-slate-800 to-slate-950 border border-slate-700/50 rounded-3xl p-8 md:p-12 relative overflow-hidden shadow-2xl">
-            <div class="absolute -bottom-20 -right-20 w-64 h-64 bg-daoline/10 blur-[80px] rounded-full"></div>
-            <h3 class="text-2xl font-bold mb-8 text-white flex items-center gap-3 relative z-10">
-                <span class="p-2 bg-daoline/20 rounded-lg text-daoline">✓</span>
-                التشيك ليست العملية
-            </h3>
-            <ul class="space-y-6 relative z-10">
-                <li class="flex items-start gap-4 group">
-                    <div class="mt-1 w-6 h-6 rounded-full border-2 border-daoline/40 flex items-center justify-center text-daoline group-hover:bg-daoline group-hover:text-white transition-colors">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" /></svg>
-                    </div>
-                    <div>
-                        <p class="text-white font-medium mb-1">حدد هدف الربع الحالي</p>
-                        <p class="text-slate-400 text-sm">هل الأولوية مبيعات مباشرة، ولا زيادة وعي بالعلامة التجارية؟</p>
-                    </div>
-                </li>
-                <li class="flex items-start gap-4 group">
-                    <div class="mt-1 w-6 h-6 rounded-full border-2 border-daoline/40 flex items-center justify-center text-daoline group-hover:bg-daoline group-hover:text-white transition-colors">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" /></svg>
-                    </div>
-                    <div>
-                        <p class="text-white font-medium mb-1">مراجعة المحتوى الأخير</p>
-                        <p class="text-slate-400 text-sm">راجع آخر 10 بوستات: هل كانت تقدم قيمة، أم مجرد منشورات "إحنا هنا"؟</p>
-                    </div>
-                </li>
-                <li class="flex items-start gap-4 group">
-                    <div class="mt-1 w-6 h-6 rounded-full border-2 border-daoline/40 flex items-center justify-center text-daoline group-hover:bg-daoline group-hover:text-white transition-colors">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" /></svg>
-                    </div>
-                    <div>
-                        <p class="text-white font-medium mb-1">تثبيت محاور المحتوى (Content Pillars)</p>
-                        <p class="text-slate-400 text-sm">اختر 3 محاور أساسية تتحدث فيها بتمكن، وتوقف عن تشتيت نفسك والجمهور.</p>
-                    </div>
-                </li>
-            </ul>
-        </div>
+  <!-- Protection Script -->
+  <script>
+    // Disable Right Click
+    document.addEventListener('contextmenu', event => {
+      event.preventDefault();
+      showToast('المحتوى محمي بحقوق الملكية لـ Daoline Digital 🔒');
+    });
 
-        <!-- CTA Section -->
-        <div class="mt-20 text-center py-12 border-t border-slate-800">
-            <h4 class="text-xl font-bold mb-4 text-white">عايز تطبق الكلام ده عملي على مشروعك؟</h4>
-            <p class="text-slate-400 mb-8 max-w-md mx-auto">جمعنا لك أهم الخطوات في دليل واحد بسيط ومباشر للتحميل الفوري.</p>
-            <button class="bg-white text-slate-900 hover:bg-daoline hover:text-white transition px-10 py-4 rounded-full font-bold shadow-xl shadow-daoline/10 transform hover:scale-105 active:scale-95 duration-300">
-                📥 حمل دليل الاستراتيجية مجاناً (PDF)
-            </button>
-        </div>
+    // Disable Shortcuts (Ctrl+C, Ctrl+U, Ctrl+S, Ctrl+I, F12)
+    document.addEventListener('keydown', event => {
+      const key = event.key.toLowerCase();
+      if (
+        (event.ctrlKey && (key === 'c' || key === 'u' || key === 's' || key === 'i')) ||
+        event.key === 'F12'
+      ) {
+        event.preventDefault();
+        showToast('عفواً، حقوق النسخ والتفتيش محفوظة 🔒');
+      }
+    });
 
-    </main>
+    function showToast(message) {
+      let toast = document.getElementById('security-toast');
+      if (toast) toast.remove();
 
-    <!-- Footer -->
-    <footer class="bg-slate-900 border-t border-slate-800 py-12 text-center">
-        <div class="container mx-auto px-4">
-            <div class="mb-6 font-bold text-xl">
-                Daoline<span class="text-daoline">Digital</span>
-            </div>
-            <p class="text-slate-500 text-sm mb-4">نساعدك على بناء حضور رقمي استراتيجي وليس مجرد تواجد.</p>
-            <div class="flex justify-center gap-6 mb-8 text-slate-400">
-                <a href="#" class="hover:text-daoline transition">LinkedIn</a>
-                <a href="#" class="hover:text-daoline transition">Instagram</a>
-                <a href="#" class="hover:text-daoline transition">Facebook</a>
-            </div>
-            <p class="text-slate-600 text-xs">&copy; 2026 Daoline Digital. جميع الحقوق محفوظة.</p>
-        </div>
-    </footer>
+      toast = document.createElement('div');
+      toast.id = 'security-toast';
+      toast.innerText = message;
+      toast.style.cssText = `
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #c013a6;
+        color: white;
+        padding: 12px 24px;
+        border-radius: 999px;
+        font-family: 'Tajawal', sans-serif;
+        font-size: 14px;
+        font-weight: 900;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+        z-index: 9999;
+        opacity: 0;
+        transition: all 0.25s ease;
+      `;
+      document.body.appendChild(toast);
 
-    <!-- Security & Notifications -->
-    <script>
-        // Disable Right Click with Toast
-        document.addEventListener('contextmenu', event => {
-            event.preventDefault();
-            showToast('المحتوى محمي بحقوق الملكية لـ Daoline Digital 🔒');
-        });
+      setTimeout(() => { toast.style.opacity = '1'; }, 10);
+      setTimeout(() => {
+        toast.style.opacity = '0';
+        setTimeout(() => toast.remove(), 250);
+      }, 2200);
+    }
+  </script>
 
-        // Disable Common Shortcuts
-        document.addEventListener('keydown', event => {
-            if (
-                (event.ctrlKey && (event.key === 'c' || event.key === 'u' || event.key === 's' || event.key === 'i')) ||
-                event.key === 'F12'
-            ) {
-                event.preventDefault();
-                showToast('عفواً، النسخ والتفتيش غير متاح للحفاظ على حقوقنا 🔒');
-            }
-        });
-
-        // Improved Toast Notification
-        function showToast(message) {
-            let existingToast = document.getElementById('security-toast');
-            if (existingToast) existingToast.remove();
-
-            const toast = document.createElement('div');
-            toast.id = 'security-toast';
-            toast.innerText = message;
-            toast.style.cssText = `
-                position: fixed;
-                bottom: 30px;
-                left: 50%;
-                transform: translateX(-50%) translateY(20px);
-                background: linear-gradient(135deg, #c013a6 0%, #8a0e77 100%);
-                color: white;
-                padding: 14px 28px;
-                border-radius: 12px;
-                font-family: 'Tajawal', sans-serif;
-                font-size: 15px;
-                font-weight: 600;
-                box-shadow: 0 15px 35px rgba(192, 19, 166, 0.3);
-                z-index: 10000;
-                opacity: 0;
-                transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-                text-align: center;
-                min-width: 300px;
-                border: 1px solid rgba(255,255,255,0.1);
-            `;
-            document.body.appendChild(toast);
-
-            // Animate In
-            requestAnimationFrame(() => {
-                toast.style.opacity = '1';
-                toast.style.transform = 'translateX(-50%) translateY(0)';
-            });
-
-            // Animate Out
-            setTimeout(() => {
-                toast.style.opacity = '0';
-                toast.style.transform = 'translateX(-50%) translateY(10px)';
-                setTimeout(() => toast.remove(), 400);
-            }, 3000);
-        }
-
-        // Image loading error fallback
-        document.querySelectorAll('img').forEach(img => {
-            img.onerror = function() {
-                this.src = 'https://via.placeholder.com/800x450/1e293b/c013a6?text=Daoline+Digital';
-            };
-        });
-    </script>
 </body>
 </html>
