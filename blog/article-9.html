@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Daoline Digital | الدليل الاستراتيجي 2026 (محمي)</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Changa:wght@400;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    :root {
+      --primary: #8b5cf6; 
+      --secondary: #2563eb; 
+      --pink: #d119ab; 
+      --bg: #0f172a;
+      --text-soft: #f1f5f9;
+    }
+
+    /* حماية المحتوى - منع النسخ والتحديد */
+    body {
+      font-family: 'Tajawal', sans-serif;
+      background-color: var(--bg);
+      color: var(--text-soft);
+      overflow-x: hidden;
+      line-height: 2;
+      font-size: 1.4rem;
+      text-align: right;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none; 
+    }
+
+    /* الروابط التفاعلية */
+    .doaa-link { color: var(--primary); font-weight: 800; text-decoration: underline; text-underline-offset: 6px; cursor: pointer; transition: 0.3s; }
+    .doaa-link:hover { color: white; opacity: 0.8; }
+    .case-link { color: var(--secondary); font-weight: 900; font-size: 1.2rem; text-decoration: underline; }
+
+    .section-title {
+        font-size: 2.2rem;
+        font-weight: 900;
+        background: white;
+        color: black;
+        padding: 12px 45px;
+        display: inline-block;
+        border-radius: 8px;
+        margin-bottom: 4rem;
+        box-shadow: 10px 10px 0px var(--secondary);
+    }
+
+    .glass-box { 
+        background: rgba(30, 41, 59, 0.45); 
+        backdrop-filter: blur(20px); 
+        border: 1px solid rgba(255, 255, 255, 0.12); 
+        border-radius: 3rem;
+        padding: 3.5rem;
+        margin-bottom: 4rem;
+    }
+
+    .advice-highlight {
+        border-right: 8px solid var(--primary);
+        background: rgba(255, 255, 255, 0.04);
+        padding: 2.5rem;
+        border-radius: 1.5rem;
+        margin-top: 3rem;
+    }
+
+    .advice-text {
+        font-family: 'Changa', sans-serif;
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: #fff;
+    }
+
+    .logo-box {
+        width: 60px;
+        height: 60px;
+        background-color: var(--pink);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 34px;
+        font-weight: 900;
+        border-radius: 5px;
+    }
+
+    /* قسم التسجيل المطور */
+    .form-input {
+        width: 100%;
+        background: rgba(255, 255, 255, 0.05);
+        border: 2px solid rgba(255, 255, 255, 0.1);
+        border-radius: 1.5rem;
+        padding: 1.2rem 2rem;
+        color: white;
+        font-size: 1.1rem;
+        outline: none;
+        transition: 0.3s;
+        text-align: right;
+    }
+    .form-input:focus { border-color: var(--primary); background: rgba(255, 255, 255, 0.1); }
+
+    /* تأثير الملف خلف القفل */
+    .locked-section {
+        position: relative;
+        overflow: hidden;
+        border-radius: 3rem;
+    }
+    .file-watermark {
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        transform: translateX(-50%) rotate(-15deg);
+        font-size: 6rem;
+        font-weight: 900;
+        color: rgba(255, 255, 255, 0.03);
+        white-space: nowrap;
+        pointer-events: none;
+        z-index: 1;
+        text-align: center;
+    }
+    .locked-overlay {
+        filter: blur(8px);
+        opacity: 0.3;
+        pointer-events: none;
+        z-index: 2;
+    }
+
+    .main-btn {
+        background: linear-gradient(45deg, var(--primary), var(--secondary));
+        color: white;
+        padding: 1.5rem 4rem;
+        border-radius: 100px;
+        font-weight: 900;
+        box-shadow: 0 10px 30px rgba(37, 99, 235, 0.3);
+        transition: 0.4s;
+    }
+
+    #admin-dashboard { display: none; background: white; color: #1a202c; padding: 3rem; border-radius: 2rem; margin-top: 4rem; border: 4px solid var(--primary); }
+    .admin-table { width: 100%; border-collapse: collapse; margin-top: 2rem; }
+    .admin-table th, .admin-table td { border: 1px solid #e2e8f0; padding: 15px; text-align: right; font-size: 1rem; }
+    .admin-table th { background: #f8fafc; font-weight: 900; }
+
+    #status-msg { display: none; margin-top: 1rem; font-weight: bold; border-radius: 8px; padding: 12px; font-size: 1.1rem; }
+  </style>
+</head>
+
+<body oncontextmenu="return false;"> 
+
+  <!-- Navigation -->
+  <nav class="sticky top-0 z-50 bg-[#0f172a]/95 backdrop-blur-xl border-b border-white/5">
+    <div class="container mx-auto px-8 py-5 flex justify-between items-center">
+      <div class="flex items-center gap-4">
+        <div class="logo-box">D</div>
+        <div class="font-black text-2xl tracking-tighter text-white uppercase italic">
+          DAOLINE<span class="text-daoline font-black">DIGITAL</span>
+        </div>
+      </div>
+      <div class="hidden md:block">
+        <span class="text-xs font-black text-slate-500 uppercase tracking-widest italic">Strategy Portal 2026</span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Cover Page -->
+  <header class="min-h-screen flex flex-col justify-center items-center text-center px-6 relative">
+    <div class="absolute inset-0 bg-gradient-to-b from-indigo-900/20 to-transparent -z-10"></div>
+    <div class="logo-box mb-10 !w-32 !h-32 !text-8xl shadow-2xl">D</div>
+    <div class="inline-block py-2 px-10 rounded-full bg-daoline text-white text-xs font-black mb-10 uppercase tracking-[0.3em] shadow-xl">The Road To 1% Success</div>
+    <h1 class="text-white mb-10 !text-6xl md:!text-8xl font-black leading-tight">هندسة المحتوى <br><span class="text-daoline italic">بذكاء واحترافية</span></h1>
+    <p class="max-w-2xl mx-auto font-bold text-slate-300 text-3xl leading-relaxed mb-16">
+        الدليل العملي الشامل لعام 2026 لبناء أصول رقمية ترفع المبيعات وتصنع السيادة الرقمية.
+    </p>
+    <div class="flex flex-col items-center p-8 border-2 border-white/20 rounded-[2rem] bg-white/5">
+        <p class="text-white text-xl mb-2">بإشراف المدير التنفيذي لـ Daoline Digital</p>
+        <a href="https://facebook.com/doaaseleat" target="_blank" class="doaa-link text-5xl block">Doaa Seleat</a>
+    </div>
+  </header>
+
+  <main class="container mx-auto px-8 max-w-5xl">
+
+    <!-- Section 1 -->
+    <section class="mb-40 pt-20">
+      <h2 class="section-title">01) الخطة المرنة - Flexible Strategy 🚀</h2>
+      <div class="glass-box shadow-2xl">
+        <h3 class="text-white text-3xl font-black mb-8 italic underline decoration-daoline">الخطة مش ورقة، الخطة حركة!</h3>
+        <p class="text-slate-200 text-2xl leading-relaxed mb-10 text-right">
+          في 2026، الخطة الجامدة هي أسرع طريق للفشل. إحنا بنعتمد <strong>الخطة المرنة</strong>؛ يعني بنبني أساس قوي، وبنسيب مساحة نتحرك فيها حسب البيانات اللي بتجيلنا كل يوم. لو بيانات النهاردة قالت إن جمهورك حابب يسمع حكاية، ماتجبروش يشوف صورة جامدة لمجرد إن ده اللي مكتوب في الخطة.
+        </p>
+        <div class="p-8 bg-blue-600/10 border-2 border-dashed border-blue-500 rounded-[2.5rem] mb-10 text-right">
+            <h4 class="text-daoline font-black text-xl mb-4 italic uppercase tracking-widest">💡 مثال تطبيقي (المرونة):</h4>
+            <p class="text-lg leading-relaxed text-white">
+                لو مخطط تنشر صور فخمة للمشاريع، بس لقيت إن "فيديو ريلز عفوي" بيشرح إزاي تختار شقتك جاب مكالمات وتفاعل خيالي.. فوراً نوقف الصور ونركز على المحتوى التعليمي العفوي. دي هي المرونة.
+            </p>
+        </div>
+        <div class="advice-highlight">
+            <p class="advice-text italic">"اسمع كلام الأرقام، هي اللي بتوجهك صح مش مجرد التخمين. لو البوست منجحش، غير الطريقة فوراً وماتتمسكش بخطة مش جايبة نتيجة."</p>
+            <div class="mt-8 border-t border-white/10 pt-6">
+                <a href="https://facebook.com/doaaseleat" target="_blank" class="doaa-link text-2xl">Doaa Seleat</a>
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2 -->
+    <section class="mb-40">
+      <h2 class="section-title">02) أهدافك بالملّي - SMART Goals 🎯</h2>
+      <div class="glass-box shadow-2xl text-right">
+        <p class="text-slate-200 text-2xl leading-relaxed mb-12">
+            بلاش تطارد "اللايكات" وتنسى "المبيعات". في مدرسة <strong>Daoline</strong>، بنقيس النجاح بمدى تحقيقك لأهداف البيزنس الحقيقية. هدفك لازم يكون SMART (محدد، مقاس، واقعي، وله وقت).
+        </p>
+        <div class="grid md:grid-cols-2 gap-10 mb-12">
+            <div class="p-8 border border-white/10 rounded-[2rem] bg-white/5">
+                <h4 class="text-daoline font-black text-2xl mb-4 italic uppercase tracking-widest">Business Case:</h4>
+                <p class="text-lg text-slate-300 italic italic">"تحقيق 50 مكالمة استشارية من LinkedIn خلال 60 يوم بميزانية 300$."</p>
+            </div>
+            <div class="p-8 border border-white/10 rounded-[2rem] bg-white/5">
+                <h4 class="text-daoline font-black text-2xl mb-4 italic uppercase tracking-widest">Sales Case:</h4>
+                <p class="text-lg text-slate-300 italic italic">"زيادة مبيعات المتجر بنسبة 20% عن طريق حملة Reels تفاعلية في شهر مارس."</p>
+            </div>
+        </div>
+        <div class="advice-highlight">
+            <p class="advice-text italic">"لو مش عارف إنت عايز إيه بالظبط، هتتعب ومحدش هيحس بيك. حدد رقم لمبيعاتك أو لرسائلك وابدأ اشتغل عليه."</p>
+            <a href="https://facebook.com/doaaseleat" target="_blank" class="doaa-link text-2xl block mt-6 text-left">Doaa Seleat</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: Brand Showcase -->
+    <section class="mb-40">
+        <h2 class="section-title text-right">03) نماذج براندات نجحت بالمنهجية 🧩</h2>
+        <div class="glass-box shadow-2xl text-right">
+            <div class="grid md:grid-cols-1 gap-12">
+                <div class="p-8 bg-indigo-600/10 border-r-8 border-indigo-600 rounded-3xl">
+                    <h4 class="text-indigo-400 font-black text-3xl italic mb-4 italic">🎙️ غايا بودكاست - Ghaya</h4>
+                    <p class="text-xl text-white mb-6 leading-relaxed">تحويل محتوى يوتيوب لمساحة حوارية عميقة تحترم عقل المشاهد، مما جعلها براند ثقافي موثوق.</p>
+                    <a href="https://www.youtube.com/@ghayaeg" target="_blank" class="case-link italic italic">مشاهدة القناة @ghayaeg</a>
+                </div>
+                <div class="p-8 bg-blue-600/10 border-r-8 border-blue-600 rounded-3xl">
+                    <h4 class="text-blue-400 font-black text-3xl italic mb-4 italic">🏭 واتكس - WATEX</h4>
+                    <p class="text-xl text-white mb-6 leading-relaxed">تحويل المحتوى التقني الصناعي على الموقع لحلول تركز على العميل بدلاً من مواصفات المكن.</p>
+                    <a href="https://watexsolutions.com" target="_blank" class="case-link italic italic">زيارة الموقع: watexsolutions.com</a>
+                </div>
+                <div class="p-8 bg-pink-600/10 border-r-8 border-pink-600 rounded-3xl">
+                    <h4 class="text-pink-400 font-black text-3xl italic mb-4 italic">🧕 هنا للعبايات - Hana</h4>
+                    <p class="text-xl text-white mb-6 leading-relaxed">بناء مجتمع نسائي يعتمد على أسلوب الحياة والذوق الرفيع على فيسبوك لزيادة المبيعات.</p>
+                    <a href="https://facebook.com/Hana3abaya" target="_blank" class="case-link italic italic">رابط الصفحة: Hana3abaya</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 6 -->
+    <section class="mb-40">
+        <h2 class="section-title text-right">04) خريطة المنصات الشاملة 🗺️</h2>
+        <div class="glass-box shadow-2xl text-right">
+            <div class="overflow-x-auto border-2 border-white/5 rounded-3xl mb-12">
+                <table class="w-full text-right">
+                    <thead class="bg-indigo-950 text-white">
+                        <tr><th class="p-5 border-b text-xl font-black">المنصة</th><th class="p-5 border-b text-xl font-black">الدور الاستراتيجي</th><th class="p-5 border-b text-xl font-black">الهدف الأسمى</th></tr>
+                    </thead>
+                    <tbody class="bg-white/5 text-lg italic italic">
+                        <tr class="border-b border-white/5"><td>Facebook</td><td>بناء المجتمع والقصص الطويلة.</td><td class="text-daoline font-black">Community</td></tr>
+                        <tr class="border-b border-white/5"><td>Instagram</td><td>الريلز والبراندنج البصري.</td><td class="text-daoline font-black">Sales</td></tr>
+                        <tr class="border-b border-white/5"><td>TikTok</td><td>الانتشار الفيروسي والعفوية.</td><td class="text-daoline font-black">Awareness</td></tr>
+                        <tr class="border-b border-white/5"><td>LinkedIn</td><td>السلطة الفكرية والـ B2B.</td><td class="text-daoline font-black">Expertise</td></tr>
+                        <tr><td>WhatsApp</td><td>إغلاق المبيعات المباشرة.</td><td class="text-daoline font-black">Closing</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="p-8 bg-yellow-600/10 border-r-8 border-yellow-500 rounded-xl">
+                <h4 class="text-yellow-500 font-black text-xl mb-3 italic">⚙️ سر الإنجاز (Batching):</h4>
+                <p class="text-lg text-slate-200">خلص جدول الأسبوع كله في يوم واحد.. ماتحاولش تعمل محتوى كل يوم عشان ماتتعبش.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 7: Strategy Master Template (THE LOCKED ONE) -->
+    <section id="template-section" class="locked-section mb-40">
+      <!-- اسم الملف في الظل الخلفي -->
+      <div class="file-watermark">
+          كتالوج هندسة المحتوى 2026<br>الإصدار الكامل PDF
+      </div>
+
+      <div class="text-center mb-20 relative z-10">
+        <h2 class="section-title">05) القالب الاستراتيجي السحري ✨</h2>
+        <p class="text-slate-400 font-bold text-xl italic underline decoration-daoline">The Magic Content Strategy Playbook</p>
+      </div>
+      
+      <!-- Locked Content (Blurred) -->
+      <div class="locked-overlay">
+          <div class="glass-box text-right rounded-[3rem]">
+            <div class="space-y-12">
+                <h3 class="text-3xl font-black bg-indigo-950 text-white p-4 px-10 inline-block mb-10 rounded-xl">1) بطاقة الهوية (Identity)</h3>
+                <div class="h-20 border-b-2 border-dashed border-gray-600 mb-20"></div>
+                <h3 class="text-3xl font-black bg-indigo-950 text-white p-4 px-10 inline-block mb-10 rounded-xl">2) الهدف الشهري (SMART Goal)</h3>
+                <div class="h-20 border-b-2 border-dashed border-gray-600"></div>
+            </div>
+          </div>
+      </div>
+
+      <!-- THE CALL TO ACTION (The Unlock Form) -->
+      <div class="relative z-50 -mt-80">
+        <div class="glass-box border-4 border-daoline text-center shadow-[0_0_150px_rgba(139,92,246,0.4)]">
+            <div class="logo-box mx-auto mb-8 !w-24 !h-24 !text-6xl">D</div>
+            <h2 class="text-4xl font-black mb-8 text-white italic">احصل على الملف الكامل والتمبلت فوراً! 🔥</h2>
+            <p class="text-slate-200 text-2xl mb-12 leading-relaxed max-w-3xl mx-auto italic">
+                سجل بياناتك وهنبعتلك النسخة الكاملة بصيغة <strong>PDF</strong> + <strong>Playbook</strong> قابل للتعديل + هدايا وكورسات حصرية من <strong>Daoline Digital</strong>.
+            </p>
+            
+            <div class="max-w-2xl mx-auto space-y-6">
+                <input type="text" id="subscriber-name" placeholder="اكتب اسمك هنا.." class="form-input">
+                <input type="email" id="subscriber-email" placeholder="بريدك الإلكتروني.." class="form-input">
+                <input type="tel" id="subscriber-whatsapp" placeholder="رقم الواتساب (لإرسال الملف).." class="form-input">
+                
+                <button onclick="handleSubscription()" class="main-btn w-full !text-2xl hover:scale-105 transition transform shadow-[0_10px_40px_rgba(37,99,235,0.4)]">
+                    أرسل لي الملف الآن 🚀
+                </button>
+            </div>
+            
+            <div id="status-msg"></div>
+            <p class="text-sm text-slate-500 mt-10 italic">بمجرد الضغط، ستنضم لمجتمع الـ 1% الأكثر نجاحاً في 2026.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Admin Section (Invisible to users) -->
+    <section class="mt-20 text-center mb-40">
+        <button onclick="toggleAdminPanel()" class="text-slate-800 text-xs font-bold hover:text-daoline transition opacity-30 uppercase tracking-widest">🔐 Secret Admin Dashboard (Private)</button>
+        <div id="admin-dashboard">
+            <h2 class="text-3xl font-black text-indigo-950 border-b-4 mb-8 pb-4 italic italic">Subscribers Data (Leads)</h2>
+            <div class="overflow-x-auto">
+                <table class="admin-table">
+                    <thead><tr><th>الاسم</th><th>الإيميل</th><th>الواتساب</th><th>التاريخ</th></tr></thead>
+                    <tbody id="subscribers-list"></tbody>
+                </table>
+            </div>
+            <button onclick="fetchSubscribers()" class="mt-8 bg-indigo-600 text-white p-4 rounded-xl font-bold">تحديث القائمة 🔄</button>
+        </div>
+    </section>
+
+  </main>
+
+  <footer class="bg-black py-40 text-center border-t border-white/10">
+    <div class="flex flex-col items-center gap-10 mb-24">
+        <div class="logo-box !w-24 !h-24 !text-6xl shadow-2xl">D</div>
+        <div class="font-black text-5xl text-white uppercase italic tracking-tighter">DAOLINE<span class="text-daoline font-black">DIGITAL</span></div>
+    </div>
+    <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-20 text-right px-10 mb-32">
+        <div>
+            <h4 class="text-white text-3xl font-black mb-10 border-r-8 border-daoline pr-5 uppercase italic italic italic">Contact Details:</h4>
+            <div class="space-y-6 text-2xl text-slate-400 font-medium font-medium">
+                <p>Website: <a href="http://daolinedigital.com" target="_blank" class="text-white hover:text-daoline underline">Daolinedigital.com</a></p>
+                <p>Email: <a href="mailto:info@daolinedigital.com" class="text-white hover:text-daoline underline">info@daolinedigital.com</a></p>
+                <p>Support: <a href="https://facebook.com/daolinedigital" target="_blank" class="text-white hover:text-daoline underline italic italic">Messenger Assistance</a></p>
+            </div>
+        </div>
+        <div>
+            <h4 class="text-white text-2xl font-black mb-8 border-r-4 border-daoline pr-4 uppercase italic italic italic italic">Lead By:</h4>
+            <div class="space-y-4">
+                <p class="text-slate-400 text-xl font-medium mb-2 uppercase tracking-widest">Executive Director</p>
+                <a href="https://facebook.com/doaaseleat" target="_blank" class="text-daoline text-4xl font-black italic underline decoration-white underline-offset-8">Doaa Seleat</a>
+            </div>
+        </div>
+    </div>
+    <div class="pt-10 border-t border-white/5 mx-10 text-[11px] text-slate-800 uppercase font-black tracking-widest leading-relaxed">
+        © 2026 Daoline Digital Academy | Content Engineering System | All Rights Reserved <br>
+        Developed & Protected for <a href="https://facebook.com/doaaseleat" target="_blank" class="hover:text-slate-600 underline">Doaa Seleat</a>
+    </div>
+  </footer>
+
+  <!-- Firebase Logic -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+    import { getAuth, signInAnonymously, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+    import { getFirestore, collection, addDoc, getDocs, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+    const firebaseConfig = JSON.parse(__firebase_config);
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const db = getFirestore(app);
+    const appId = typeof __app_id !== 'undefined' ? __app_id : 'daoline-final-leads-2026';
+
+    let user = null;
+    const initAuth = async () => { try { await signInAnonymously(auth); } catch (e) {} };
+    initAuth();
+    onAuthStateChanged(auth, (u) => { user = u; });
+
+    // حماية المحتوى من الاختصارات
+    document.addEventListener('keydown', e => {
+        if (e.ctrlKey && (e.key === 'c' || e.key === 'u' || e.key === 's' || e.key === 'p' || e.key === 'a')) {
+            e.preventDefault();
+        }
+    });
+
+    window.handleSubscription = async () => {
+      const name = document.getElementById('subscriber-name').value.trim();
+      const email = document.getElementById('subscriber-email').value.trim();
+      const whatsapp = document.getElementById('subscriber-whatsapp').value.trim();
+
+      if (!name || !email || !whatsapp) { showStatus("من فضلك املأ جميع الخانات!", "red"); return; }
+      if (!user) { showStatus("جاري الاتصال.. حاول مجدداً.", "red"); return; }
+
+      try {
+        await addDoc(collection(db, 'artifacts', appId, 'public', 'data', 'leads'), {
+          name, email, whatsapp, timestamp: serverTimestamp()
+        });
+        showStatus("تم الإرسال بنجاح! سيتم التواصل معك الآن لإرسال الملف.", "green");
+        document.getElementById('subscriber-name').value = "";
+        document.getElementById('subscriber-email').value = "";
+        document.getElementById('subscriber-whatsapp').value = "";
+      } catch (error) { showStatus("خطأ فني، حاول مجدداً.", "red"); }
+    };
+
+    window.fetchSubscribers = async () => {
+        if (!user) return;
+        const listBody = document.getElementById('subscribers-list');
+        listBody.innerHTML = "<tr><td colspan='4'>جاري التحميل...</td></tr>";
+        try {
+            const querySnapshot = await getDocs(collection(db, 'artifacts', appId, 'public', 'data', 'leads'));
+            listBody.innerHTML = "";
+            const docs = [];
+            querySnapshot.forEach(doc => docs.push(doc.data()));
+            docs.sort((a, b) => (b.timestamp?.seconds || 0) - (a.timestamp?.seconds || 0));
+            docs.forEach(data => {
+                const date = data.timestamp ? new Date(data.timestamp.seconds * 1000).toLocaleDateString('ar-EG') : 'قيد التسجيل';
+                listBody.innerHTML += `<tr><td>${data.name}</td><td>${data.email}</td><td>${data.whatsapp}</td><td>${date}</td></tr>`;
+            });
+        } catch (e) { listBody.innerHTML = "<tr><td colspan='4'>خطأ في الجلب.</td></tr>"; }
+    };
+
+    window.toggleAdminPanel = () => {
+        const panel = document.getElementById('admin-dashboard');
+        panel.style.display = panel.style.display === "block" ? "none" : "block";
+        if (panel.style.display === "block") window.fetchSubscribers();
+    };
+
+    function showStatus(text, color) {
+      const msgBox = document.getElementById('status-msg');
+      msgBox.style.display = "block";
+      msgBox.innerText = text;
+      msgBox.style.color = color === "green" ? "#10b981" : "#f87171";
+    }
+  </script>
+
+</body>
+</html>
