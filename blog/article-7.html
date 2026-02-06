@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- SEO Meta Tags -->
-  <title>خطة الـ 4 أسابيع: تلعب اللعبة زي الشركات الكبيرة؟ | Daoline Digital</title>
-  <meta name="description" content="مقال داولين الشامل لكيفية تحويل حسابك من نشر عشوائي إلى ماكينة مبيعات. خطوات عملية بـ 4 أسابيع لفهم المنصات وتوزيع الجمهور.">
-  <meta name="keywords" content="استراتيجية سوشيال ميديا, خطة نمو, زيادة المبيعات, Daoline Digital, Social Media 2026">
+  <title>دليل المبتدئين: استراتيجية المحتوى الرقمي في 2026 (Playbook عملي)</title>
+  <meta name="description" content="كتيب مدروس للمبتدئين في السوشيال ميديا. تعلم التأسيس، فهم الجمهور، هندسة المحتوى، وتطبيق القوالب الجاهزة لتحقيق أهدافك في 2026.">
+  <meta name="keywords" content="Social Media Guide 2026, استراتيجية محتوى للمبتدئين, دليل سوشيال ميديا, Daoline Digital, Smart Goals">
 
   <!-- Google Fonts: Tajawal -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -72,6 +72,38 @@
     ::-webkit-scrollbar-thumb{ background:#334155; border-radius:4px; }
     ::-webkit-scrollbar-thumb:hover{ background: var(--primary); }
 
+    /* Accordion */
+    details > summary{ list-style:none; outline:none; }
+    details > summary::-webkit-details-marker{ display:none; }
+    details[open] summary ~ *{ animation: sweep .45s ease-in-out; }
+    @keyframes sweep{
+      0%{ opacity:0; transform:translateY(-10px) }
+      100%{ opacity:1; transform:translateY(0) }
+    }
+
+    /* Table Styling for Dark Mode */
+    .daoline-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      text-align: right;
+    }
+    .daoline-table th {
+      background-color: rgba(192, 19, 166, 0.15);
+      color: #fff;
+      padding: 16px; /* زيادة الحشو */
+      font-weight: 900;
+      font-size: 1.1rem; /* تكبير خط العنوان */
+      border-bottom: 2px solid rgba(192, 19, 166, 0.3);
+    }
+    .daoline-table td {
+      padding: 16px; /* زيادة الحشو */
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      color: var(--muted);
+      font-size: 1.05rem; /* تكبير خط الخلية */
+    }
+    .daoline-table tr:last-child td { border-bottom: none; }
+
     /* Free courses bar */
     .freebar{
       background: linear-gradient(90deg, rgba(192,19,166,.95), rgba(160,15,137,.85));
@@ -126,131 +158,267 @@
   <!-- Hero Section -->
   <header class="hero-gradient pt-14 md:pt-16 pb-10 md:pb-12 px-4 text-center relative">
     <span class="inline-block py-1 px-3 rounded-full bg-daoline/10 text-daoline text-[11px] md:text-xs font-black border border-daoline/20 mb-4 uppercase tracking-widest">
-      دليل Daoline العملي
+      📘 The Beginner's Playbook 2026
     </span>
 
     <h1 class="text-3xl md:text-5xl lg:text-6xl font-black mb-5 leading-tight max-w-4xl mx-auto text-white">
-      خطة الـ 4 أسابيع: تلعب اللعبة زي الشركات الكبيرة؟
+      دليل المبتدئين في السوشيال ميديا
       <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-200 to-slate-400 block md:inline">
-        إزاي تحول حسابك لـ "ماشينة مبيعات"؟
+        من الصفر للاحتراف
       </span>
     </h1>
 
-    <p class="text-slate-300/80 max-w-2xl mx-auto text-[15px] md:text-lg leading-relaxed font-medium">
-      بدل ما تنزل محتوى عشوائي وتستنى الريتش... هنا هتفهم اللعبة زي الشركات الكبيرة.
+    <p class="text-slate-300/80 max-w-2xl mx-auto text-lg md:text-2xl leading-relaxed font-medium">
+      مرشدك الشامل لبناء استراتيجية محتوى رقمية في 2026. كتيب عملي يضم الجداول، القوالب، والأمثلة لتعرف "بتكتب ليه؟" و"بتكلم لمن؟".
     </p>
 
-    <!-- GRAPHIC HEADER -->
-    <div class="mt-10 flex justify-center">
-      <img src="social_header.png"
-           class="rounded-2xl shadow-xl border border-white/10 max-w-full h-auto"
-           alt="Social Media Platforms Graphic">
+    <div class="mt-6 flex items-center justify-center gap-3 flex-wrap">
+      <a href="/blog/" class="px-5 py-2 rounded-full border border-slate-700 bg-slate-900/40 hover:bg-slate-800/50 font-black text-sm transition">
+        ← رجوع للمدونة
+      </a>
+      <a href="/index.html" class="px-5 py-2 rounded-full bg-daoline hover-bg-daoline text-white font-black text-sm transition shadow-lg shadow-pink-500/10">
+        زيارة Daoline Digital
+      </a>
     </div>
   </header>
 
   <!-- Main Content -->
   <main class="container mx-auto px-4 max-w-3xl pb-16">
 
-    <!-- INTRO -->
-    <section class="glass p-6 rounded-2xl mb-12 text-right border-r-4 border-daoline">
-      <h2 class="text-daoline font-black text-xl md:text-2xl mb-3">
-        🎯 الفكرة ببساطة:
-      </h2>
-      <p class="text-slate-200 font-medium text-lg md:text-xl">
-        السوشيال ميديا مش بوستات وخلاص… دي ملعب كامل. كل منصة ليها جمهور مختلف، وكل رقم في التحليلات معناه قرار.
+    <!-- Intro -->
+    <section class="mb-12">
+      <p class="text-slate-300/80 text-lg md:text-xl leading-loose mb-4">
+        مرحباً بيك في عالم السوشيال ميديا! في 2026، السوشيال ميديا مش بس مكان للدردشة، بل أداة قوية للأعمال والعلامات التجارية. التحديات الجديدة زي الذكاء الاصطناعي (AI)، إرهاق الجمهور من المحتوى غير الأصيل، والخوارزميات الذكية.
+      </p>
+      <p class="text-slate-300/80 text-lg md:text-xl leading-loose">
+        العلامات الناجحة تركز على <span class="text-daoline font-bold">المحتوى الحقيقي، المجتمعات، والتجارة الإلكترونية</span> داخل التطبيقات. لماذا تحتاج استراتيجية؟ لأن بدونها، النشر عشوائي وغير فعال. هدفنا هنا: نمو مستدام، زيادة التفاعل، والمبيعات.
       </p>
     </section>
 
-    <!-- SECTION 1 -->
-    <section class="mb-12 text-right">
-      <h3 class="text-2xl md:text-3xl font-black text-white mb-6 border-b border-slate-800 pb-2 inline-block">
-        1. كل منصة ليها دور (مش Copy Paste)
-      </h3>
+    <!-- Chapter 1 & 2: Strategy & Foundations -->
+    <details class="group bg-slate-800/50 rounded-2xl overflow-hidden cursor-pointer border border-slate-700 mb-6">
+      <summary class="flex justify-between items-center font-black p-6 text-slate-100 hover:bg-slate-700/40 transition">
+        <span class="text-xl md:text-2xl">1) التأسيس الاستراتيجي: إزاي تبدأ صح؟</span>
+        <span class="transition group-open:rotate-180 text-daoline">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg>
+        </span>
+      </summary>
+      <div class="text-slate-300/80 p-6 pt-0 leading-loose border-t border-slate-700/50 mt-2">
+        <p class="mb-6 text-lg">الخطوة الأولى: حدد أهدافك بمنهجية <strong>SMART</strong> (محدد، قابل للقياس، واقعي، ذا صلة، زمني). مثال: "زيادة التعليقات بنسبة 20% على فيديوهات إنستغرام في شهر واحد."</p>
+        
+        <h3 class="text-white font-bold mb-4 mt-8 text-xl">أمثلة حقيقية حسب نوع العمل:</h3>
+        <div class="overflow-x-auto">
+          <table class="daoline-table mb-6">
+            <thead>
+              <tr>
+                <th>نوع العمل</th>
+                <th>مثال هدف SMART</th>
+                <th>نوع المحتوى المفضل</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="text-white text-lg">B2C (تجارة إلكترونية)</td>
+                <td class="text-lg">ROAS 500% من Reels</td>
+                <td class="text-lg">UGC، فيديوهات shoppable</td>
+              </tr>
+              <tr>
+                <td class="text-white text-lg">B2B (خدمات أعمال)</td>
+                <td class="text-lg">60 lead شهرياً من LinkedIn</td>
+                <td class="text-lg">دراسات حالة، webinars</td>
+              </tr>
+              <tr>
+                <td class="text-white text-lg">علامة شخصية</td>
+                <td class="text-lg">نمو متابعين 15%</td>
+                <td class="text-lg">قصص شخصية، نصائح</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-base bg-slate-900/50 p-3 rounded text-daoline font-bold inline-block">💡 نصيحة للمبتدئين: ابدأ بـ 1-2 أهداف فقط، وراجعها كل شهر.</p>
+      </div>
+    </details>
 
-      <p class="mb-6 text-lg md:text-xl">
-        أكبر غلط إنك تنزل نفس البوست على فيسبوك وإنستجرام ويوتيوب… الصح إنك تسأل: مين موجود فين؟
-      </p>
+    <!-- Chapter 3 & 4: Audience & Voice -->
+    <details class="group bg-slate-800/50 rounded-2xl overflow-hidden cursor-pointer border border-slate-700 mb-6">
+      <summary class="flex justify-between items-center font-black p-6 text-slate-100 hover:bg-slate-700/40 transition">
+        <span class="text-xl md:text-2xl">2) فهم الجمهور ونبرة الصوت</span>
+        <span class="transition group-open:rotate-180 text-daoline">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg>
+        </span>
+      </summary>
+      <div class="text-slate-300/80 p-6 pt-0 leading-loose border-t border-slate-700/50 mt-2">
+        <p class="mb-6 text-lg">مش بس العمر والجنس، بل المعتقدات، نقاط الألم، والحواجز. ابْنِ "شخصيات المشتري" (Buyer Personas).</p>
+        
+        <div class="bg-slate-900/50 p-5 rounded-lg border-r-2 border-daoline mb-8">
+          <strong class="text-white block mb-2 text-lg">👤 مثال شخصية (Persona):</strong>
+          "أحمد، 25 سنة، يبحث عن توفير وقت في التسوق، يخاف من المنتجات المزيفة."
+        </div>
 
-      <ul class="space-y-4">
-        <li class="glass p-5 rounded-xl border border-slate-700 hover:border-daoline/50 transition">
-          <b class="text-daoline block text-lg md:text-xl">Facebook:</b>
-          <span class="text-slate-300 text-base md:text-lg">بيع مباشر + إعلانات قوية + مجتمعات.</span>
-        </li>
+        <h3 class="text-white font-bold mb-4 text-xl">اختيار نبرة الصوت (Tone of Voice):</h3>
+        <div class="overflow-x-auto">
+          <table class="daoline-table">
+            <thead>
+              <tr>
+                <th>القطاع</th>
+                <th>نبرة مقترحة</th>
+                <th>مثال جملة</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="text-white text-lg">استشارات مالية</td>
+                <td class="text-lg">جدي، رسمي</td>
+                <td class="text-lg">"تحليل دقيق لأسواق 2026."</td>
+              </tr>
+              <tr>
+                <td class="text-white text-lg">توصيل طعام</td>
+                <td class="text-lg">مضحك، غير رسمي</td>
+                <td class="text-lg">"جوعان؟ طلبك واصل أسرع من البرق! 🍕"</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-base text-slate-500 mt-3">* وثيقة Do’s/Don’ts: اكتب ما تقوله وما تتجنبه للحفاظ على الاتساق.</p>
+      </div>
+    </details>
 
-        <li class="glass p-5 rounded-xl border border-slate-700 hover:border-daoline/50 transition">
-          <b class="text-daoline block text-lg md:text-xl">Instagram:</b>
-          <span class="text-slate-300 text-base md:text-lg">براندينج + ريلز + محتوى سريع.</span>
-        </li>
+    <!-- Chapter 5 & 6: Content & Platforms -->
+    <details class="group bg-slate-800/50 rounded-2xl overflow-hidden cursor-pointer border border-slate-700 mb-6">
+      <summary class="flex justify-between items-center font-black p-6 text-slate-100 hover:bg-slate-700/40 transition">
+        <span class="text-xl md:text-2xl">3) هندسة المحتوى واختيار المنصات</span>
+        <span class="transition group-open:rotate-180 text-daoline">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg>
+        </span>
+      </summary>
+      <div class="text-slate-300/80 p-6 pt-0 leading-loose border-t border-slate-700/50 mt-2">
+        <p class="mb-6 text-lg">ركائز المحتوى: تعليمي، إلهامي، ترفيهي، ترويجي، مجتمعي. استخدم قاعدة <strong class="text-daoline">60-30-10</strong> (60% قيمة، 30% مشارك، 10% ترويج).</p>
 
-        <li class="glass p-5 rounded-xl border border-slate-700 hover:border-daoline/50 transition">
-          <b class="text-daoline block text-lg md:text-xl">YouTube:</b>
-          <span class="text-slate-300 text-base md:text-lg">منصة الثقة وبناء جمهور طويل المدى.</span>
-        </li>
+        <h3 class="text-white font-bold mb-4 text-xl">أين تنشر؟ (Platform Selection):</h3>
+        <div class="overflow-x-auto mb-4">
+          <table class="daoline-table">
+            <thead>
+              <tr>
+                <th>المنصة</th>
+                <th>مثال استخدام</th>
+                <th>B2B/B2C</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="text-white text-lg">Instagram</td>
+                <td class="text-lg">Reels بصرية</td>
+                <td class="text-lg">قوي B2C</td>
+              </tr>
+              <tr>
+                <td class="text-white text-lg">LinkedIn</td>
+                <td class="text-lg">دراسات</td>
+                <td class="text-lg">#1 B2B</td>
+              </tr>
+              <tr>
+                <td class="text-white text-lg">TikTok</td>
+                <td class="text-lg">فيديوهات فيروسية</td>
+                <td class="text-lg">B2C</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-base text-slate-500">* جديد في 2026: تقليل hashtags، ركز على المحتوى الأصيل.</p>
+      </div>
+    </details>
 
-        <li class="glass p-5 rounded-xl border border-slate-700 hover:border-daoline/50 transition">
-          <b class="text-daoline block text-lg md:text-xl">Pinterest:</b>
-          <span class="text-slate-300 text-base md:text-lg">كنز للمنتجات والإلهام والزيارات للموقع.</span>
-        </li>
-      </ul>
-    </section>
+    <!-- Chapter 7 & 8: Operations & KPIs (Expanded) -->
+    <details class="group bg-slate-800/50 rounded-2xl overflow-hidden cursor-pointer border border-slate-700 mb-6">
+      <summary class="flex justify-between items-center font-black p-6 text-slate-100 hover:bg-slate-700/40 transition">
+        <span class="text-xl md:text-2xl">4) التنفيذ والقياس (Ops & KPIs)</span>
+        <span class="transition group-open:rotate-180 text-daoline">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg>
+        </span>
+      </summary>
+      <div class="text-slate-300/80 p-6 pt-0 leading-loose border-t border-slate-700/50 mt-2">
+        <p class="mb-8 text-lg">استخدم تقويم أسبوعي: الإثنين (إلهام)، الثلاثاء (نصائح)، إلخ. النجاح مش في النشر، بل في إزاي تقيس النتائج وتتعلم منها.</p>
+        
+        <h3 class="text-white font-bold mb-4 text-xl border-b border-slate-700 pb-2">مقاييس النجاح (KPIs) بتفصيل أعمق:</h3>
+        
+        <ul class="space-y-8">
+          <li>
+            <strong class="text-daoline block text-xl mb-2">1. Reach (الوصول والوعي)</strong>
+            <p class="text-base text-slate-400">ده عدد الناس اللي شافوا المحتوى بتاعك. انتبه إن "الرقم كبير" مش دايماً معناه نجاح. لازم تكون "الجمهور المناسب" هو اللي شافك، مش أي حد عشوائي.</p>
+          </li>
+          <li>
+            <strong class="text-daoline block text-xl mb-2">2. Engagement Rate (معدل التفاعل)</strong>
+            <p class="text-base text-slate-400">ده أهم رقم. احسب النسبة (التفاعل مقسوم على الوصول). الـ <strong>Comments</strong> (التعليقات) أغلى من الـ Likes لأنها بتديلك فكرة عن "الاهتمام الحقيقي". الـ Shares بتعني إن المحتوى بيهم الناس.</p>
+          </li>
+          <li>
+            <strong class="text-daoline block text-xl mb-2">3. Click-Through Rate (CTR) والتحويل</strong>
+            <p class="text-base text-slate-400">لو هدفك بيع أو زيارة موقع، شوف النفاذ (Clicks). زيادة الزيارات مش معناها كلام لسه، لازم النسبة بتاعهم تحسن بمرور الوقت.</p>
+          </li>
+          <li>
+            <strong class="text-daoline block text-xl mb-2">4. Retention (الاحتفاظ بالمشاهدة)</strong>
+            <p class="text-base text-slate-400">على إنستغرام وفيسبوك، شوف متوسط مدة المشاهدة. لو الناس بتخرج قبل أول 3 ثواني، عندك مشكلة في الهوك (Hook).</p>
+          </li>
+        </ul>
 
-    <!-- SECTION 2 -->
-    <section class="mb-12 text-right">
-      <h3 class="text-2xl md:text-3xl font-black text-white mb-6 border-b border-slate-800 pb-2 inline-block">
-        📊 2. توزيع الجمهور بالأرقام
-      </h3>
+        <div class="bg-slate-900/50 p-5 rounded-lg border-r-4 border-yellow-500 mt-8">
+          <strong class="text-white block mb-2 text-lg">⚠️ تحذير من "القياسات الوهمية" (Vanity Metrics):</strong>
+          <p class="text-base text-slate-400">لا تتباهى بالعدد الكبير من اللايكات لو مفيش ولا كومنت واحد ولا ولا عملية بيع حقيقية.</p>
+        </div>
+      </div>
+    </details>
 
-      <p class="mb-6 text-lg md:text-xl">
-        الصورة دي بتوضح حجم الجمهور على كل منصة… وده معناه إنك مش لازم تحط نفس المجهود في كل مكان.
-      </p>
-
-      <div class="flex justify-center">
-        <img src="social_stats.png"
-             class="rounded-2xl shadow-xl border border-white/10 max-w-full h-auto"
-             alt="Platform Stats Graphic">
+    <!-- Chapter 9: Case Studies -->
+    <section class="mb-12">
+      <h2 class="text-2xl md:text-3xl font-black text-white mb-8 border-b border-slate-800 pb-2">5) قصص نجاح ملهمة (Case Studies)</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-slate-800/60 p-6 rounded-xl border border-slate-700">
+          <h4 class="text-white font-bold mb-2 text-lg">Duolingo</h4>
+          <p class="text-base text-slate-400">فكاهة فيروسية على TikTok، زيادة احتفاظ 30%.</p>
+        </div>
+        <div class="bg-slate-800/60 p-6 rounded-xl border border-slate-700">
+          <h4 class="text-white font-bold mb-2 text-lg">Nike</h4>
+          <p class="text-base text-slate-400">قصص إلهامية، تفاعل +25%.</p>
+        </div>
+        <div class="bg-slate-800/60 p-6 rounded-xl border border-slate-700">
+          <h4 class="text-white font-bold mb-2 text-lg">Airbnb</h4>
+          <p class="text-base text-slate-400">UGC، حجوزات +20%.</p>
+        </div>
+        <div class="bg-slate-800/60 p-6 rounded-xl border border-slate-700">
+          <h4 class="text-white font-bold mb-2 text-lg">Barbie</h4>
+          <p class="text-base text-slate-400">حملة تفاعلية، مبيعات +50%.</p>
+        </div>
+        <div class="bg-slate-800/60 p-6 rounded-xl border border-slate-700">
+          <h4 class="text-white font-bold mb-2 text-lg">Leapsome (B2B)</h4>
+          <p class="text-base text-slate-400">فكاهة، engagement +394%.</p>
+        </div>
+        <div class="bg-slate-800/60 p-6 rounded-xl border border-slate-700">
+          <h4 class="text-white font-bold mb-2 text-lg">ModSquad (B2B)</h4>
+          <p class="text-base text-slate-400">قيادة فكرية، leads محسنة.</p>
+        </div>
       </div>
     </section>
 
-    <!-- SECTION 3 -->
-    <section class="mb-12 text-right">
-      <h3 class="text-2xl md:text-3xl font-black text-white mb-6 border-b border-slate-800 pb-2 inline-block">
-        🚀 3. خطة تنفيذ Daoline السريعة
-      </h3>
-
-      <div class="space-y-4">
-
-        <div class="glass p-6 rounded-2xl border-r-4 border-daoline bg-slate-800/60">
-          <h4 class="font-black text-white mb-2 text-lg md:text-xl">الأسبوع الأول:</h4>
-          <p class="text-base md:text-lg">حدد هدفك + عرف جمهورك + ركّز على منصتين.</p>
-        </div>
-
-        <div class="glass p-6 rounded-2xl border-r-4 border-daoline bg-slate-800/60">
-          <h4 class="font-black text-white mb-2 text-lg md:text-xl">الأسبوع الثاني:</h4>
-          <p class="text-base md:text-lg">ابدأ محتوى ثابت: 3 بوستات + ريلز + ستوري يومي.</p>
-        </div>
-
-        <div class="glass p-6 rounded-2xl border-r-4 border-daoline bg-slate-800/60">
-          <h4 class="font-black text-white mb-2 text-lg md:text-xl">الأسبوع الثالث:</h4>
-          <p class="text-base md:text-lg">حلل الأرقام واعرف إيه اللي اشتغل وإيه لأ.</p>
-        </div>
-
-        <div class="glass p-6 rounded-2xl border-r-4 border-daoline bg-slate-800/60">
-          <h4 class="font-black text-white mb-2 text-lg md:text-xl">الأسبوع الرابع:</h4>
-          <p class="text-base md:text-lg">كرر الأفضل + ابدأ إعلان بسيط لو جاهز.</p>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- CONCLUSION -->
-    <section class="glass p-6 rounded-2xl text-right mb-12">
-      <h2 class="text-daoline font-black text-xl mb-3">
-        ✅ الخلاصة:
-      </h2>
-      <p class="text-slate-200 font-medium text-lg md:text-xl">
-        الاستراتيجية مش رفاهية… دي الفرق بين حساب بيكبر وحساب بيضيع وقت. اشتغل بالأرقام وركز على المنصات الصح وهتشوف النتيجة بسرعة.
+    <!-- Conclusion -->
+    <section class="text-center mb-12">
+      <h3 class="text-2xl md:text-3xl font-black text-white mb-6">الخاتمة: خطواتك التالية</h3>
+      <p class="text-slate-300 leading-loose max-w-2xl mx-auto text-lg md:text-xl">
+        ابدأ صغيراً: حدد هدف، اختر منصة، نفذ أسبوعياً. تذكر: المرونة مفتاح النجاح. راجع كل ربع، ودع البيانات تقودك. نجاحك في السوشيال ميديا يبدأ الآن!
       </p>
     </section>
+
+    <!-- CTA: Fixed Link to Article 3 -->
+    <div class="bg-gradient-to-br from-slate-800 to-slate-900 border border-daoline/30 rounded-2xl p-8 text-center mb-10 relative overflow-hidden shadow-2xl shadow-pink-900/10">
+      <div class="absolute top-0 right-0 w-40 h-40 bg-daoline blur-3xl opacity-10"></div>
+      <div class="relative z-10">
+        <h3 class="text-2xl md:text-3xl font-black text-white mb-4">حمل خطة الـ 90 يوماً (The Full Plan)</h3>
+        <p class="text-slate-300 mb-6 max-w-lg mx-auto text-sm md:text-base">
+          دي الخطة التنفيذية اللي بتشمل الجداول اليومية، الأهداف التفصيلية، والخوارزميات. خطة الـ 90 يوم اللي هتحولك من مبتدئ لخبير.
+        </p>
+        <a href="https://daolinedigital.com/blog/article-3.html" class="bg-white text-slate-900 hover:bg-daoline hover:text-white transition px-10 py-4 rounded-full font-black shadow-lg shadow-pink-500/20 transform hover:scale-105 duration-300 text-lg flex items-center justify-center mx-auto gap-2">
+          <span>🔓 افتح خطة الـ 90 يوماً</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+        </a>
+      </div>
+    </div>
 
     <!-- Podcast Recommendation -->
     <section class="glass p-6 md:p-8 rounded-2xl border border-daoline/20 relative overflow-hidden group mb-6">
@@ -271,7 +439,7 @@
     </section>
 
     <!-- Bottom Navigation -->
-    <div class="mt-10 flex items-center justify-center gap-3 flex-wrap">
+    <div class="mt-12 flex items-center justify-center gap-3 flex-wrap">
       <a href="/blog/" class="px-5 py-2 rounded-full border border-slate-700 bg-slate-900/40 hover:bg-slate-800/50 font-black text-sm transition">
         ← رجوع للمدونة
       </a>
