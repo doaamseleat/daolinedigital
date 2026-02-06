@@ -5,15 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- SEO Meta Tags -->
-  <title>الدليل النهائي لاستراتيجية السوشيال ميديا | Daoline Digital</title>
-  <meta name="description" content="مقال داولين الشامل لبناء استراتيجية سوشيال ميديا قوية بالأرقام والمنصات والرسومات.">
+  <title>دليل تجهيز الملعب: إزاي تحول بروفايلك لماكينة بيع؟ | Daoline Digital</title>
+  <meta name="description" content="اتعلم إزاي تظبط الـ Bio والـ Highlights وصورة البروفايل عشان تحول أي زائر لعميل مهتم في ثواني. دليل داولين الشامل لتجهيز الحساب.">
 
-  <!-- Google Fonts -->
+  <!-- Google Fonts: Tajawal -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
 
-  <!-- Tailwind -->
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
 
   <style>
@@ -23,204 +23,317 @@
       --bg:#0f172a;
       --text:#e2e8f0;
       --muted:rgba(226,232,240,.78);
+      --muted2:rgba(226,232,240,.65);
+      --border:rgba(255,255,255,.08);
     }
 
+    /* Base */
+    html{ scroll-behavior:smooth; }
     body{
       font-family:'Tajawal',sans-serif;
       background-color: var(--bg);
       color: var(--text);
       overflow-x:hidden;
+      -webkit-user-select:none;
+      -ms-user-select:none;
+      user-select:none;
     }
 
+    /* Brand Colors */
     .text-daoline{ color: var(--primary); }
     .bg-daoline{ background-color: var(--primary); }
-    .hover-bg-daoline:hover{
-      background-color: var(--primary2);
-      transition:.25s ease;
-    }
+    .border-daoline{ border-color: var(--primary); }
+    .hover-bg-daoline:hover{ background-color: var(--primary2); transition: .25s ease; }
 
+    /* Visuals */
     .hero-gradient{
-      background: radial-gradient(circle at top center,
-      rgba(192,19,166,.15) 0%,
-      transparent 70%);
+      background: radial-gradient(circle at top center, rgba(192,19,166,.20) 0%, transparent 70%);
     }
-
     .glass{
       background: rgba(30, 41, 59, 0.40);
       backdrop-filter: blur(12px);
       border: 1px solid rgba(255, 255, 255, 0.06);
     }
 
-    p{
-      line-height:2.05;
-      color: var(--muted);
+    /* Typography tuning - Massive Sizes */
+    .hero-title {
+        font-size: clamp(2.8rem, 9vw, 6rem);
+        font-weight: 900;
+        line-height: 1.1 !important;
+        letter-spacing: -1px;
     }
+    
+    .section-title {
+        font-size: clamp(1.8rem, 5vw, 3rem);
+        font-weight: 900;
+        background: white;
+        color: black;
+        padding: 8px 25px;
+        display: inline-block;
+        border-radius: 2px;
+        margin-bottom: 2.5rem;
+        transform: rotate(-1.5deg);
+        box-shadow: 8px 8px 0px var(--primary);
+    }
+
+    h1,h2,h3{ letter-spacing: .2px; }
+    p{ line-height:2.05; font-size: clamp(1.1rem, 2vw, 1.4rem); color: var(--muted); }
+    .prose-strong{ color:#fff; font-weight:900; }
+    .muted2{ color: var(--muted2); }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar{ width:10px; }
+    ::-webkit-scrollbar-track{ background:#0f172a; }
+    ::-webkit-scrollbar-thumb{ background:#334155; border-radius:5px; }
+    ::-webkit-scrollbar-thumb:hover{ background: var(--primary); }
+
+    /* Free courses bar */
+    .freebar{
+      background: linear-gradient(90deg, rgba(192,19,166,.95), rgba(160,15,137,.85));
+      border-bottom: 1px solid rgba(255,255,255,.12);
+    }
+    .freebar a{
+      background: rgba(15,23,42,.86);
+      border:1px solid rgba(255,255,255,.10);
+    }
+    
+    /* Highlight Graph Elements */
+    .highlight-circle {
+        width: 110px;
+        height: 110px;
+        border-radius: 50%;
+        border: 5px solid var(--primary);
+        background: #1e293b;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 45px;
+        box-shadow: 0 0 30px rgba(192, 19, 166, 0.25);
+        transition: 0.3s;
+    }
+    .highlight-circle:hover { transform: scale(1.1) rotate(5deg); }
   </style>
 </head>
 
-<body>
+<body class="relative">
 
-  <!-- NAVBAR -->
+  <!-- Sticky Nav -->
   <nav class="sticky top-0 z-50 bg-[#0f172a]/90 backdrop-blur-md border-b border-slate-800">
     <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-      <a href="#" class="font-black text-lg tracking-wide text-white">
+      <a href="/index.html" class="font-black text-2xl md:text-3xl tracking-wide text-white">
         Daoline<span class="text-daoline">Digital</span>
       </a>
 
-      <div class="flex gap-2 text-sm">
-        <a href="#" class="px-4 py-1.5 rounded-full border border-slate-700 bg-slate-800/60 hover:bg-slate-700/60 font-bold text-xs transition">
+      <div class="flex gap-2 sm:gap-3 text-sm flex-wrap">
+        <a href="/blog/" class="px-4 py-1.5 rounded-full border border-slate-700 bg-slate-800/60 hover:bg-slate-700/60 font-bold text-xs md:text-sm transition text-white">
           المدونة
         </a>
-        <a href="#" class="bg-daoline px-4 py-1.5 rounded-full hover-bg-daoline font-bold text-xs shadow-lg shadow-pink-500/10 transition-all">
+        <a href="/index.html" class="bg-daoline text-white px-5 py-1.5 rounded-full hover-bg-daoline font-bold text-xs md:text-sm shadow-lg shadow-pink-500/10 transition-all">
           الرئيسية
         </a>
       </div>
     </div>
   </nav>
 
-  <!-- HERO -->
-  <header class="hero-gradient pt-14 pb-12 px-4 text-center">
+  <!-- Free Courses Bar -->
+  <div class="freebar sticky top-[56px] z-40">
+    <div class="container mx-auto px-4 py-2 flex flex-wrap items-center justify-between gap-3">
+      <div class="font-black text-white text-sm md:text-[15px]">
+        🎓 Daoline Free Courses
+        <span class="muted2 font-bold">— دليل تجهيز الحسابات الاحترافي (أدوات مجانية بالداخل)</span>
+      </div>
+      <a href="/blog/" class="px-4 py-2 rounded-full font-black text-white text-xs md:text-sm transition hover:scale-105">
+        دخول المكتبة ←
+      </a>
+    </div>
+  </div>
 
-    <span class="inline-block py-1 px-3 rounded-full bg-daoline/10 text-daoline text-[11px] font-black border border-daoline/20 mb-4 tracking-widest text-white">
-      دليل Daoline العملي
+  <!-- Hero Section -->
+  <header class="hero-gradient pt-20 md:pt-24 pb-12 md:pb-20 px-4 text-center relative overflow-hidden">
+    <span class="inline-block py-1.5 px-4 rounded-full bg-daoline/10 text-daoline text-xs md:text-sm font-black border border-daoline/20 mb-6 uppercase tracking-widest text-white shadow-sm">
+      📘 Playbook 2026: الجزء الأول (تجهيز الملعب)
     </span>
 
-    <h1 class="text-3xl md:text-5xl font-black mb-5 max-w-4xl mx-auto text-white">
-      الدليل النهائي لاستراتيجية السوشيال ميديا
-      <span class="block text-slate-300 text-lg mt-3">
-        إزاي تحول الحساب بتاعك لخطة نمو ومبيعات؟
+    <h1 class="hero-title mb-8 text-white">
+      إزاي تحول بروفايلك <br>
+      <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-daoline to-purple-400">
+        لماكينة مبيعات حقيقية؟
       </span>
     </h1>
 
-    <p class="max-w-2xl mx-auto text-[15px] md:text-lg font-medium">
-      بدل ما تنزل محتوى عشوائي وتستنى الريتش...
-      هنا هتفهم اللعبة زي الشركات الكبيرة 👇
+    <p class="text-slate-300/80 max-w-3xl mx-auto font-medium">
+      العميل بياخد قرار يتابعك أو يخرج من صفحتك في أول 3 ثواني. في الدليل ده، هنقولك إزاي تخليه ينبهر بيك من أول سكرول ويتحول لعميل وفي لبراندك.
     </p>
 
-    <!-- GRAPHIC HEADER -->
-    <div class="mt-10 flex justify-center">
-      <img src="social_header.png"
-           class="rounded-2xl shadow-xl border border-white/10 max-w-full"
-           alt="Social Media Platforms Graphic">
+    <!-- Graphic Placeholder -->
+    <div class="mt-16 max-w-4xl mx-auto opacity-90 border border-white/5 rounded-[2.5rem] overflow-hidden shadow-2xl">
+        
     </div>
   </header>
 
-  <!-- MAIN -->
-  <main class="container mx-auto px-4 max-w-3xl pb-16 pt-10">
+  <!-- Main Content -->
+  <main class="container mx-auto px-6 max-w-4xl pb-24">
 
-    <!-- INTRO -->
-    <section class="glass p-6 rounded-2xl mb-10 text-right">
-      <h2 class="text-daoline font-black text-xl mb-3">
-        🎯 الفكرة ببساطة:
-      </h2>
-      <p class="text-slate-200 font-medium">
-        السوشيال ميديا مش بوستات وخلاص…
-        دي ملعب كامل. كل منصة ليها جمهور مختلف،
-        وكل رقم في التحليلات معناه قرار.
-      </p>
-    </section>
-
-    <!-- SECTION 1 -->
-    <section class="mb-12 text-right">
-      <h3 class="text-2xl font-black text-white mb-4 border-b border-slate-800 pb-2 inline-block">
-        1. كل منصة ليها دور (مش Copy Paste)
-      </h3>
-
-      <p class="mb-6">
-        أكبر غلط إنك تنزل نفس البوست على فيسبوك وإنستجرام ويوتيوب…
-        الصح إنك تسأل: مين موجود فين؟
-      </p>
-
-      <ul class="space-y-4">
-        <li class="glass p-4 rounded-xl">
-          <b class="text-daoline">Facebook:</b>
-          بيع مباشر + إعلانات قوية + مجتمعات.
-        </li>
-
-        <li class="glass p-4 rounded-xl">
-          <b class="text-daoline">Instagram:</b>
-          براندينج + ريلز + محتوى سريع.
-        </li>
-
-        <li class="glass p-4 rounded-xl">
-          <b class="text-daoline">YouTube:</b>
-          منصة الثقة وبناء جمهور طويل المدى.
-        </li>
-
-        <li class="glass p-4 rounded-xl">
-          <b class="text-daoline">Pinterest:</b>
-          كنز للمنتجات والإلهام والزيارات للموقع.
-        </li>
-      </ul>
-    </section>
-
-    <!-- SECTION 2 -->
-    <section class="mb-12 text-right">
-      <h3 class="text-2xl font-black text-white mb-4 border-b border-slate-800 pb-2 inline-block">
-        📊 2. توزيع الجمهور بالأرقام
-      </h3>
-
-      <p class="mb-6">
-        الصورة دي بتوضح حجم الجمهور على كل منصة…
-        وده معناه إنك مش لازم تحط نفس المجهود في كل مكان.
-      </p>
-
-      <div class="flex justify-center">
-        <img src="social_stats.png"
-             class="rounded-2xl shadow-xl border border-white/10 max-w-full"
-             alt="Platform Stats Graphic">
+    <!-- Intro Card -->
+    <section class="mb-24 text-right">
+      <h2 class="section-title">الانطباع الأول يدوم 📸</h2>
+      <div class="glass p-10 rounded-[3rem] shadow-2xl border-daoline/10">
+        <p class="text-white text-2xl md:text-3xl font-medium leading-relaxed">
+            تخيل بروفايلك هو <span class="prose-strong underline decoration-daoline">واجهة محل فخم</span> في أرقى مول. لو الواجهة مش نظيفة، والمنتجات مش واضحة، واليافطة غلط.. محدش هيدخل. في 2026، بروفايلك هو هويتك ومصدر رزقك.
+        </p>
+      </div>
+      <div class="mt-8 flex justify-center md:justify-end">
+          
       </div>
     </section>
 
-    <!-- SECTION 3 -->
-    <section class="mb-12 text-right">
-      <h3 class="text-2xl font-black text-white mb-4 border-b border-slate-800 pb-2 inline-block">
-        🚀 3. خطة تنفيذ Daoline السريعة
-      </h3>
+    <!-- Point 1: Bio -->
+    <section class="mb-24 text-right">
+      <h2 class="section-title">1. الـ Bio (يافطة المحل) ✍️</h2>
+      <p class="mb-10 font-bold text-white text-xl">الـ Bio مش مكان للحكم، ده مكان لإغلاق الصفقات. لازم يجاوب بوضوح:</p>
+      
+      <div class="grid md:grid-cols-3 gap-8 mb-12">
+          <div class="bg-white p-10 rounded-[2.5rem] border-b-8 border-daoline hover:-translate-y-2 transition duration-300">
+              <div class="text-5xl mb-6">👤</div>
+              <h4 class="font-black text-black text-2xl mb-4">إنت مين؟</h4>
+              <p class="text-black/70 font-bold text-base leading-relaxed">تخصصك بكلمة واحدة قوية ومباشرة.</p>
+          </div>
+          <div class="bg-white p-10 rounded-[2.5rem] border-b-8 border-daoline hover:-translate-y-2 transition duration-300">
+              <div class="text-5xl mb-6">🚀</div>
+              <h4 class="font-black text-black text-2xl mb-4">هتفيدني إيه؟</h4>
+              <p class="text-black/70 font-bold text-base leading-relaxed">النتيجة النهائية اللي هيوصلها العميل معاك.</p>
+          </div>
+          <div class="bg-white p-10 rounded-[2.5rem] border-b-8 border-daoline hover:-translate-y-2 transition duration-300">
+              <div class="text-5xl mb-6">📲</div>
+              <h4 class="font-black text-black text-2xl mb-4">أعمل إيه؟</h4>
+              <p class="text-black/70 font-bold text-base leading-relaxed">طلب فعل (CTA) صريح لرابط أو رسالة.</p>
+          </div>
+      </div>
 
-      <div class="space-y-4">
-
-        <div class="glass p-5 rounded-2xl border-r-4 border-daoline">
-          <h4 class="font-black text-white mb-2">الأسبوع الأول:</h4>
-          <p>حدد هدفك + عرف جمهورك + ركّز على منصتين.</p>
-        </div>
-
-        <div class="glass p-5 rounded-2xl border-r-4 border-daoline">
-          <h4 class="font-black text-white mb-2">الأسبوع الثاني:</h4>
-          <p>ابدأ محتوى ثابت: 3 بوستات + ريلز + ستوري يومي.</p>
-        </div>
-
-        <div class="glass p-5 rounded-2xl border-r-4 border-daoline">
-          <h4 class="font-black text-white mb-2">الأسبوع الثالث:</h4>
-          <p>حلل الأرقام واعرف إيه اللي اشتغل وإيه لأ.</p>
-        </div>
-
-        <div class="glass p-5 rounded-2xl border-r-4 border-daoline">
-          <h4 class="font-black text-white mb-2">الأسبوع الرابع:</h4>
-          <p>كرر الأفضل + ابدأ إعلان بسيط لو جاهز.</p>
-        </div>
-
+      <div class="bg-slate-900/80 p-10 rounded-[2.5rem] border-2 border-dashed border-daoline/40 text-center">
+        <span class="text-daoline font-black text-xl mb-4 block">💡 المعادلة الذهبية:</span>
+        <p class="text-2xl md:text-3xl text-white font-bold leading-snug">
+            "بساعد [جمهورك] يوصلوا لـ [نتيجة] عن طريق [طريقتك] 🚀 | احجز مكانك من هنا 👇"
+        </p>
       </div>
     </section>
 
-    <!-- CLOSING -->
-    <section class="glass p-6 rounded-2xl text-right">
-      <h2 class="text-daoline font-black text-xl mb-3">
-        ✅ الخلاصة:
-      </h2>
-      <p class="text-slate-200 font-medium">
-        الاستراتيجية مش رفاهية…
-        دي الفرق بين حساب بيكبر وحساب بيضيع وقت.
-        اشتغل بالأرقام وركز على المنصات الصح وهتشوف النتيجة بسرعة.
-      </p>
+    <!-- Point 2: Profile Picture -->
+    <section class="mb-24 text-right">
+      <h2 class="section-title">2. صورة البروفايل 👤</h2>
+      <p class="mb-10 text-white font-medium">صورتك هي "بوابة الثقة". لازم تكون واضحة، مضيئة، وبتحسس العميل إنه بيتعامل مع إنسان حقيقي مش آلة صماء.</p>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div class="rounded-[3rem] border-4 border-red-500/20 overflow-hidden relative shadow-2xl">
+            
+            <div class="bg-red-600 text-white font-black p-5 text-center text-xl uppercase tracking-wider">🚫 تجنب هذا الأسلوب</div>
+        </div>
+        <div class="rounded-[3rem] border-4 border-green-500/20 overflow-hidden relative shadow-2xl">
+            
+            <div class="bg-green-600 text-white font-black p-5 text-center text-xl uppercase tracking-wider">✅ المعيار المطلوب</div>
+        </div>
+      </div>
     </section>
+
+    <!-- Point 3: Highlights -->
+    <section class="mb-24 text-right">
+      <h2 class="section-title">3. الـ Highlights (الفاترينة) 🔄</h2>
+      <p class="mb-12 text-white font-bold text-xl">الهايلايتس هي "قائمة المبيعات" الدائمة. رتبها عشان الزائر الجديد يفهمك بسرعة:</p>
+      
+      <div class="flex flex-wrap justify-around gap-10 md:px-12 mb-16">
+          <div class="flex flex-col items-center gap-5 group">
+              <div class="highlight-circle">🏠</div>
+              <span class="font-black text-white text-xl group-hover:text-daoline transition">البداية</span>
+          </div>
+          <div class="flex flex-col items-center gap-5 group">
+              <div class="highlight-circle">🏆</div>
+              <span class="font-black text-white text-xl group-hover:text-daoline transition">النتائج</span>
+          </div>
+          <div class="flex flex-col items-center gap-5 group">
+              <div class="highlight-circle">💼</div>
+              <span class="font-black text-white text-xl group-hover:text-daoline transition">الخدمات</span>
+          </div>
+          <div class="flex flex-col items-center gap-5 group">
+              <div class="highlight-circle">💬</div>
+              <span class="font-black text-white text-xl group-hover:text-daoline transition">آراء الناس</span>
+          </div>
+      </div>
+
+      <div class="opacity-80">
+          
+      </div>
+    </section>
+
+    <!-- Final Checklist -->
+    <section class="bg-white border-[10px] border-daoline rounded-[4rem] p-12 md:p-20 text-right shadow-2xl relative overflow-hidden">
+      <div class="absolute -top-20 -left-20 w-60 h-60 bg-daoline opacity-10 rounded-full blur-[100px]"></div>
+      
+      <h2 class="text-4xl md:text-5xl font-black text-black mb-12 flex items-center gap-5">
+          <span class="text-daoline text-6xl">✓</span> الخطوات العملية:
+      </h2>
+      
+      <div class="space-y-10">
+        <label class="flex items-center gap-8 cursor-pointer group">
+            <input type="checkbox" class="w-12 h-12 accent-daoline border-4 border-black rounded-lg">
+            <span class="text-2xl md:text-4xl font-black text-black group-hover:text-daoline transition">هل اسم الحساب سهل النطق والحفظ؟</span>
+        </label>
+        <label class="flex items-center gap-8 cursor-pointer group">
+            <input type="checkbox" class="w-12 h-12 accent-daoline">
+            <span class="text-2xl md:text-4xl font-black text-black group-hover:text-daoline transition">هل الـ Bio فيه رابط واتساب أو موقع شغال؟</span>
+        </label>
+        <label class="flex items-center gap-8 cursor-pointer group">
+            <input type="checkbox" class="w-12 h-12 accent-daoline">
+            <span class="text-2xl md:text-4xl font-black text-black group-hover:text-daoline transition">هل جودة الصور واضحة ومريحة للعين؟</span>
+        </label>
+      </div>
+    </section>
+
+    <!-- Navigation Buttons -->
+    <div class="mt-24 flex flex-col md:flex-row items-center justify-center gap-8">
+      <a href="/blog/daoline_2026_guide.html" class="w-full md:w-auto px-12 py-6 rounded-3xl bg-slate-800 hover:bg-slate-700 text-white font-black text-2xl transition text-center shadow-xl">
+        ← العودة للخطة الأم
+      </a>
+      <a href="/blog/hooks-bank-2026.html" class="w-full md:w-auto px-12 py-6 rounded-3xl bg-daoline hover:opacity-90 text-white font-black text-2xl transition text-center shadow-2xl shadow-pink-500/30 transform hover:scale-105">
+        التالي: بنك الهوكات →
+      </a>
+    </div>
 
   </main>
 
-  <!-- FOOTER -->
-  <footer class="border-t border-slate-800 bg-slate-900 py-8 text-center text-slate-500 text-sm">
-    <p>&copy; 2026 Daoline Digital. جميع الحقوق محفوظة.</p>
+  <!-- Footer -->
+  <footer class="border-t border-slate-800 bg-slate-900 py-16 text-center text-slate-500 text-sm">
+    <div class="container mx-auto px-6">
+        <div class="text-3xl font-black text-white mb-6">Daoline<span class="text-daoline">Digital</span></div>
+        <p class="max-w-xl mx-auto mb-8 font-medium">نحن نصنع القواعد، وأنت تحقق النتائج. مقالك القادم هو خطوة جديدة نحو السيطرة الرقمية في 2026.</p>
+        <p class="font-bold uppercase tracking-widest">&copy; 2026 Daoline Digital. All Rights Reserved.</p>
+    </div>
   </footer>
+
+  <!-- Protection Script -->
+  <script>
+    document.addEventListener('contextmenu', e => e.preventDefault());
+    document.addEventListener('keydown', e => {
+      const k = e.key.toLowerCase();
+      if ((e.ctrlKey && ['c', 'u', 's', 'i'].includes(k)) || e.key === 'F12') {
+        e.preventDefault();
+        showToast('محتوى داولين محمي بحقوق الملكية الفكرية 🔒');
+      }
+    });
+
+    function showToast(m) {
+      let t = document.getElementById('daoline-toast');
+      if (t) t.remove();
+      t = document.createElement('div');
+      t.id = 'daoline-toast';
+      t.innerText = m;
+      t.style.cssText = `position:fixed;bottom:40px;left:50%;transform:translateX(-50%);background:#c013a6;color:white;padding:20px 40px;border-radius:100px;font-weight:900;z-index:10000;box-shadow:0 20px 50px rgba(0,0,0,0.5);animation:slideUp 0.3s forwards;`;
+      document.body.appendChild(t);
+      setTimeout(() => t.remove(), 2500);
+    }
+    const s = document.createElement('style');
+    s.innerHTML = `@keyframes slideUp { from { bottom: -50px; opacity: 0; } to { bottom: 40px; opacity: 1; } }`;
+    document.head.appendChild(s);
+  </script>
 
 </body>
 </html>
