@@ -4,383 +4,389 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- SEO Meta Tags --><!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- SEO Meta Tags -->
+  <title>دليل المبتدئين: استراتيجية المحتوى الرقمي في 2026 | Daoline Digital</title>
+  <meta name="description" content="دليل هندسة المحتوى الشامل 2026. تعلم التأسيس، فهم الجمهور، وتطبيق القوالب الجاهزة مع مدرسة Daoline Digital.">
 
-  <title> الدليل الاستراتيجي 2026 (محمي)</title>
-  
+  <!-- Google Fonts: Tajawal & Changa -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Changa:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Changa:wght@400;700;800&display=swap" rel="stylesheet">
 
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
 
   <style>
     :root {
-      --primary: #8b5cf6; 
+      --primary: #c013a6; /* اللون الوردي المعتمد */
+      --primary2: #a00f89;
       --secondary: #2563eb; 
-      --pink: #d119ab; 
       --bg: #0f172a;
-      --text-soft: #f1f5f9;
+      --text: #e2e8f0;
+      --muted: rgba(226,232,240,.78);
+      --border: rgba(255,255,255,.08);
     }
 
-    /* حماية المحتوى - منع النسخ والتحديد */
+    /* Base Style & Protection */
+    html { scroll-behavior: smooth; }
     body {
       font-family: 'Tajawal', sans-serif;
       background-color: var(--bg);
-      color: var(--text-soft);
+      color: var(--text);
       overflow-x: hidden;
       line-height: 2;
-      font-size: 1.4rem;
-      text-align: right;
+      font-size: 1.1rem;
       -webkit-user-select: none;
-      -moz-user-select: none;
       -ms-user-select: none;
-      user-select: none; 
+      user-select: none; /* حماية النص */
     }
 
-    /* الروابط التفاعلية */
-    .doaa-link { color: var(--primary); font-weight: 800; text-decoration: underline; text-underline-offset: 6px; cursor: pointer; transition: 0.3s; }
-    .doaa-link:hover { color: white; opacity: 0.8; }
-    .case-link { color: var(--secondary); font-weight: 900; font-size: 1.2rem; text-decoration: underline; }
+    /* Brand Colors */
+    .text-daoline { color: var(--primary); }
+    .bg-daoline { background-color: var(--primary); }
+    .hover-bg-daoline:hover { background-color: var(--primary2); transition: .25s ease; }
+    .doaa-link { color: var(--primary); font-weight: 900; text-decoration: underline; text-underline-offset: 4px; cursor: pointer; }
+    .case-link { color: var(--secondary); font-weight: 900; text-decoration: underline; }
 
+    /* Visuals */
+    .hero-gradient { background: radial-gradient(circle at top center, rgba(192,19,166,.15) 0%, transparent 75%); }
+    .glass { 
+        background: rgba(30, 41, 59, 0.45); 
+        backdrop-filter: blur(12px); 
+        border: 1px solid rgba(255, 255, 255, 0.08); 
+        border-radius: 2rem;
+        padding: 3rem;
+        margin-bottom: 4rem;
+    }
+
+    /* Typography */
     .section-title {
-        font-size: 2.2rem;
+        font-size: 2rem;
         font-weight: 900;
         background: white;
         color: black;
-        padding: 12px 45px;
+        padding: 10px 35px;
         display: inline-block;
-        border-radius: 8px;
-        margin-bottom: 4rem;
-        box-shadow: 10px 10px 0px var(--secondary);
+        border-radius: 6px;
+        margin-bottom: 3rem;
+        box-shadow: 8px 8px 0px var(--secondary);
     }
-
-    .glass-box { 
-        background: rgba(30, 41, 59, 0.45); 
-        backdrop-filter: blur(20px); 
-        border: 1px solid rgba(255, 255, 255, 0.12); 
-        border-radius: 3rem;
-        padding: 3.5rem;
-        margin-bottom: 4rem;
-    }
-
     .advice-highlight {
-        border-right: 8px solid var(--primary);
+        border-right: 6px solid var(--primary);
         background: rgba(255, 255, 255, 0.04);
-        padding: 2.5rem;
-        border-radius: 1.5rem;
-        margin-top: 3rem;
+        padding: 2rem;
+        border-radius: 1rem;
+        margin-top: 2rem;
     }
+    .advice-text { font-family: 'Changa', sans-serif; font-size: 1.4rem; font-weight: 700; color: #fff; }
 
-    .advice-text {
-        font-family: 'Changa', sans-serif;
-        font-size: 1.6rem;
-        font-weight: 700;
-        color: #fff;
-    }
-
-    .logo-box {
-        width: 60px;
-        height: 60px;
-        background-color: var(--pink);
-        color: white;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 34px;
-        font-weight: 900;
-        border-radius: 5px;
-    }
-
-    /* قسم التسجيل المطور */
+    /* Forms */
     .form-input {
         width: 100%;
         background: rgba(255, 255, 255, 0.05);
         border: 2px solid rgba(255, 255, 255, 0.1);
-        border-radius: 1.5rem;
-        padding: 1.2rem 2rem;
+        border-radius: 1rem;
+        padding: 1rem 1.5rem;
         color: white;
-        font-size: 1.1rem;
         outline: none;
-        transition: 0.3s;
-        text-align: right;
     }
-    .form-input:focus { border-color: var(--primary); background: rgba(255, 255, 255, 0.1); }
+    .form-input:focus { border-color: var(--primary); background: rgba(255, 255, 255, 0.08); }
 
-    /* تأثير الملف خلف القفل */
-    .locked-section {
-        position: relative;
-        overflow: hidden;
-        border-radius: 3rem;
-    }
-    .file-watermark {
+    /* Locked Section */
+    .locked-container { position: relative; overflow: hidden; border-radius: 2rem; }
+    .locked-blur { filter: blur(10px); opacity: 0.2; pointer-events: none; }
+    .watermark-text {
         position: absolute;
-        top: 20%;
+        top: 30%;
         left: 50%;
-        transform: translateX(-50%) rotate(-15deg);
-        font-size: 6rem;
+        transform: translate(-50%, -50%) rotate(-15deg);
+        font-size: 5rem;
         font-weight: 900;
-        color: rgba(255, 255, 255, 0.03);
+        color: rgba(255, 255, 255, 0.05);
         white-space: nowrap;
-        pointer-events: none;
         z-index: 1;
-        text-align: center;
-    }
-    .locked-overlay {
-        filter: blur(8px);
-        opacity: 0.3;
-        pointer-events: none;
-        z-index: 2;
     }
 
-    .main-btn {
-        background: linear-gradient(45deg, var(--primary), var(--secondary));
-        color: white;
-        padding: 1.5rem 4rem;
-        border-radius: 100px;
-        font-weight: 900;
-        box-shadow: 0 10px 30px rgba(37, 99, 235, 0.3);
-        transition: 0.4s;
+    /* Navbar & Bars */
+    .freebar {
+      background: linear-gradient(90deg, rgba(192,19,166,.95), rgba(160,15,137,.85));
+      border-bottom: 1px solid rgba(255,255,255,.12);
     }
 
-    #admin-dashboard { display: none; background: white; color: #1a202c; padding: 3rem; border-radius: 2rem; margin-top: 4rem; border: 4px solid var(--primary); }
-    .admin-table { width: 100%; border-collapse: collapse; margin-top: 2rem; }
-    .admin-table th, .admin-table td { border: 1px solid #e2e8f0; padding: 15px; text-align: right; font-size: 1rem; }
-    .admin-table th { background: #f8fafc; font-weight: 900; }
-
-    #status-msg { display: none; margin-top: 1rem; font-weight: bold; border-radius: 8px; padding: 12px; font-size: 1.1rem; }
+    #status-msg { display: none; margin-top: 1rem; font-weight: bold; padding: 10px; border-radius: 8px; }
+    #admin-dashboard { display: none; background: white; color: black; padding: 2rem; border-radius: 1.5rem; margin-top: 3rem; }
+    .admin-table { width: 100%; border-collapse: collapse; }
+    .admin-table th, .admin-table td { border: 1px solid #ddd; padding: 10px; text-align: right; font-size: 0.9rem; }
   </style>
 </head>
 
-<body oncontextmenu="return false;"> 
+<body oncontextmenu="return false;">
 
-  <!-- Navigation -->
-  <nav class="sticky top-0 z-50 bg-[#0f172a]/95 backdrop-blur-xl border-b border-white/5">
-    <div class="container mx-auto px-8 py-5 flex justify-between items-center">
-      <div class="flex items-center gap-4">
-        <div class="logo-box">D</div>
-        <div class="font-black text-2xl tracking-tighter text-white uppercase italic">
-          DAOLINE<span class="text-daoline font-black">DIGITAL</span>
-        </div>
-      </div>
-      <div class="hidden md:block">
-        <span class="text-xs font-black text-slate-500 uppercase tracking-widest italic">Strategy Portal 2026</span>
+  <!-- Sticky Nav -->
+  <nav class="sticky top-0 z-50 bg-[#0f172a]/95 backdrop-blur-md border-b border-slate-800">
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+      <a href="/index.html" class="font-black text-lg md:text-xl tracking-wide">
+        Daoline<span class="text-daoline">Digital</span>
+      </a>
+      <div class="flex gap-2 sm:gap-3 text-sm flex-wrap">
+        <a href="/blog/" class="px-4 py-1.5 rounded-full border border-slate-700 bg-slate-800/60 hover:bg-slate-700/60 font-bold text-xs md:text-sm transition">المدونة</a>
+        <a href="/index.html" class="bg-daoline text-white px-4 py-1.5 rounded-full hover-bg-daoline font-bold text-xs md:text-sm shadow-lg shadow-pink-500/10 transition-all">الرئيسية</a>
       </div>
     </div>
   </nav>
 
-  <!-- Cover Page -->
-  <header class="min-h-screen flex flex-col justify-center items-center text-center px-6 relative">
-    <div class="absolute inset-0 bg-gradient-to-b from-indigo-900/20 to-transparent -z-10"></div>
-    <div class="logo-box mb-10 !w-32 !h-32 !text-8xl shadow-2xl">D</div>
-    <div class="inline-block py-2 px-10 rounded-full bg-daoline text-white text-xs font-black mb-10 uppercase tracking-[0.3em] shadow-xl">The Road To 1% Success</div>
-    <h1 class="text-white mb-10 !text-6xl md:!text-8xl font-black leading-tight">هندسة المحتوى <br><span class="text-daoline italic">بذكاء واحترافية</span></h1>
-    <p class="max-w-2xl mx-auto font-bold text-slate-300 text-3xl leading-relaxed mb-16">
-        الدليل العملي الشامل لعام 2026 لبناء أصول رقمية ترفع المبيعات وتصنع السيادة الرقمية.
+  <!-- Free Courses Bar -->
+  <div class="freebar sticky top-[56px] z-40">
+    <div class="container mx-auto px-4 py-2 flex flex-wrap items-center justify-between gap-3">
+      <div class="font-black text-white text-sm md:text-[15px]">
+        🎓 Daoline Free Resources
+        <span class="opacity-80 font-bold">— Social Media Playbook 2026 (متاح الآن)</span>
+      </div>
+      <a href="#leads-section" class="bg-[#0f172a] px-4 py-1 rounded-full font-black text-white text-xs md:text-sm transition hover:bg-black">
+        تحميل النسخة الكاملة →
+      </a>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <header class="hero-gradient pt-16 pb-12 px-4 text-center">
+    <span class="inline-block py-1 px-3 rounded-full bg-daoline/10 text-daoline text-[11px] font-black border border-daoline/20 mb-4 uppercase tracking-widest">
+      📘 Strategy Guide 2026
+    </span>
+    <h1 class="text-4xl md:text-6xl font-black mb-6 leading-tight text-white">
+      هندسة المحتوى الرقمي <br>
+      <span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-400">
+        بذكاء واحترافية 2026
+      </span>
+    </h1>
+    <p class="text-slate-300 max-w-3xl mx-auto text-xl md:text-2xl leading-relaxed mb-10">
+      الدليل العملي الشامل لبناء أصول رقمية ترفع المبيعات وتصنع السيادة الرقمية لبراندك.
     </p>
-    <div class="flex flex-col items-center p-8 border-2 border-white/20 rounded-[2rem] bg-white/5">
-        <p class="text-white text-xl mb-2">بإشراف المدير التنفيذي لـ Daoline Digital</p>
-        <a href="https://facebook.com/doaaseleat" target="_blank" class="doaa-link text-5xl block">Doaa Seleat</a>
+    <div class="flex flex-col items-center p-6 border-2 border-white/10 rounded-3xl bg-white/5 inline-block mx-auto">
+        <p class="text-white opacity-70 text-sm mb-1">بإشراف المدير التنفيذي لـ Daoline Digital</p>
+        <a href="https://facebook.com/doaaseleat" target="_blank" class="doaa-link text-3xl">Doaa Seleat</a>
     </div>
   </header>
 
-  <main class="container mx-auto px-8 max-w-5xl">
+  <!-- Main Content -->
+  <main class="container mx-auto px-4 max-w-4xl pb-20">
 
-    <!-- Section 1 -->
-    <section class="mb-40 pt-20">
+    <!-- Section 1: Flexible Strategy -->
+    <section class="mb-24 pt-10">
       <h2 class="section-title">01) الخطة المرنة - Flexible Strategy 🚀</h2>
-      <div class="glass-box shadow-2xl">
-        <h3 class="text-white text-3xl font-black mb-8 italic underline decoration-daoline">الخطة مش ورقة، الخطة حركة!</h3>
-        <p class="text-slate-200 text-2xl leading-relaxed mb-10 text-right">
+      <div class="glass shadow-xl">
+        <h3 class="text-white text-2xl font-black mb-6 italic underline decoration-daoline">الخطة مش ورقة، الخطة حركة!</h3>
+        <p class="text-slate-300 text-lg leading-relaxed mb-8">
           في 2026، الخطة الجامدة هي أسرع طريق للفشل. إحنا بنعتمد <strong>الخطة المرنة</strong>؛ يعني بنبني أساس قوي، وبنسيب مساحة نتحرك فيها حسب البيانات اللي بتجيلنا كل يوم. لو بيانات النهاردة قالت إن جمهورك حابب يسمع حكاية، ماتجبروش يشوف صورة جامدة لمجرد إن ده اللي مكتوب في الخطة.
         </p>
-        <div class="p-8 bg-blue-600/10 border-2 border-dashed border-blue-500 rounded-[2.5rem] mb-10 text-right">
-            <h4 class="text-daoline font-black text-xl mb-4 italic uppercase tracking-widest">💡 مثال تطبيقي (المرونة):</h4>
-            <p class="text-lg leading-relaxed text-white">
-                لو مخطط تنشر صور فخمة للمشاريع، بس لقيت إن "فيديو ريلز عفوي" بيشرح إزاي تختار شقتك جاب مكالمات وتفاعل خيالي.. فوراً نوقف الصور ونركز على المحتوى التعليمي العفوي. دي هي المرونة.
+        <div class="p-6 bg-blue-600/10 border-2 border-dashed border-blue-500 rounded-2xl mb-8">
+            <h4 class="text-daoline font-black text-xl mb-4 italic">💡 مثال تطبيقي لبراند عقارات:</h4>
+            <p class="text-lg text-white">
+                لو مخططين ننشر صور فخمة للمشاريع، بس فيديو "عفوي" بيشرح إزاي تختار شقتك جاب تفاعل ومكالمات أكتر.. فوراً نوقف الصور ونركز على المحتوى التعليمي العفوي.
             </p>
         </div>
         <div class="advice-highlight">
             <p class="advice-text italic">"اسمع كلام الأرقام، هي اللي بتوجهك صح مش مجرد التخمين. لو البوست منجحش، غير الطريقة فوراً وماتتمسكش بخطة مش جايبة نتيجة."</p>
-            <div class="mt-8 border-t border-white/10 pt-6">
-                <a href="https://facebook.com/doaaseleat" target="_blank" class="doaa-link text-2xl">Doaa Seleat</a>
+            <div class="mt-6 border-t border-white/10 pt-4">
+                <a href="https://facebook.com/doaaseleat" target="_blank" class="doaa-link text-xl">Doaa Seleat</a>
             </div>
         </div>
       </div>
     </section>
 
-    <!-- Section 2 -->
-    <section class="mb-40">
+    <!-- Section 2: SMART Goals -->
+    <section class="mb-24">
       <h2 class="section-title">02) أهدافك بالملّي - SMART Goals 🎯</h2>
-      <div class="glass-box shadow-2xl text-right">
-        <p class="text-slate-200 text-2xl leading-relaxed mb-12">
-            بلاش تطارد "اللايكات" وتنسى "المبيعات". في مدرسة <strong>Daoline</strong>، بنقيس النجاح بمدى تحقيقك لأهداف البيزنس الحقيقية. هدفك لازم يكون SMART (محدد، مقاس، واقعي، وله وقت).
+      <div class="glass shadow-xl">
+        <p class="text-slate-200 text-xl leading-relaxed mb-10">
+            بلاش تطارد "اللايكات" وتنسى "المبيعات". في مدرسة <strong>Daoline</strong>، بنقيس النجاح بمدى تحقيقك لأهداف البيزنس الحقيقية (Specific, Measurable, Achievable, Relevant, Time-bound).
         </p>
-        <div class="grid md:grid-cols-2 gap-10 mb-12">
-            <div class="p-8 border border-white/10 rounded-[2rem] bg-white/5">
-                <h4 class="text-daoline font-black text-2xl mb-4 italic uppercase tracking-widest">Business Case:</h4>
-                <p class="text-lg text-slate-300 italic italic">"تحقيق 50 مكالمة استشارية من LinkedIn خلال 60 يوم بميزانية 300$."</p>
+        <div class="grid md:grid-cols-2 gap-8 mb-10">
+            <div class="p-6 bg-white/5 border border-white/10 rounded-2xl">
+                <h4 class="text-daoline font-black text-lg mb-4 uppercase">Business Target:</h4>
+                <p class="text-sm italic">"تحقيق 50 مكالمة استشارية من LinkedIn خلال 60 يوم بميزانية 300$."</p>
             </div>
-            <div class="p-8 border border-white/10 rounded-[2rem] bg-white/5">
-                <h4 class="text-daoline font-black text-2xl mb-4 italic uppercase tracking-widest">Sales Case:</h4>
-                <p class="text-lg text-slate-300 italic italic">"زيادة مبيعات المتجر بنسبة 20% عن طريق حملة Reels تفاعلية في شهر مارس."</p>
+            <div class="p-6 bg-white/5 border border-white/10 rounded-2xl">
+                <h4 class="text-daoline font-black text-lg mb-4 uppercase">Sales Target:</h4>
+                <p class="text-sm italic">"زيادة مبيعات المتجر بنسبة 20% عن طريق حملة Reels تفاعلية بنهاية الشهر."</p>
             </div>
         </div>
         <div class="advice-highlight">
-            <p class="advice-text italic">"لو مش عارف إنت عايز إيه بالظبط، هتتعب ومحدش هيحس بيك. حدد رقم لمبيعاتك أو لرسائلك وابدأ اشتغل عليه."</p>
-            <a href="https://facebook.com/doaaseleat" target="_blank" class="doaa-link text-2xl block mt-6 text-left">Doaa Seleat</a>
+            <p class="advice-text">"لو مش عارف إنت عايز إيه بالظبط، هتتعب ومحدش هيحس بيك. حدد رقم لمبيعاتك أو لرسائلك وابدأ اشتغل عليه."</p>
+            <a href="https://facebook.com/doaaseleat" target="_blank" class="doaa-link text-xl block mt-4 text-left">Doaa Seleat</a>
         </div>
       </div>
     </section>
 
-    <!-- Section 5: Brand Showcase -->
-    <section class="mb-40">
-        <h2 class="section-title text-right">03) نماذج براندات نجحت بالمنهجية 🧩</h2>
-        <div class="glass-box shadow-2xl text-right">
-            <div class="grid md:grid-cols-1 gap-12">
-                <div class="p-8 bg-indigo-600/10 border-r-8 border-indigo-600 rounded-3xl">
-                    <h4 class="text-indigo-400 font-black text-3xl italic mb-4 italic">🎙️ غايا بودكاست - Ghaya</h4>
-                    <p class="text-xl text-white mb-6 leading-relaxed">تحويل محتوى يوتيوب لمساحة حوارية عميقة تحترم عقل المشاهد، مما جعلها براند ثقافي موثوق.</p>
-                    <a href="https://www.youtube.com/@ghayaeg" target="_blank" class="case-link italic italic">مشاهدة القناة @ghayaeg</a>
-                </div>
-                <div class="p-8 bg-blue-600/10 border-r-8 border-blue-600 rounded-3xl">
-                    <h4 class="text-blue-400 font-black text-3xl italic mb-4 italic">🏭 واتكس - WATEX</h4>
-                    <p class="text-xl text-white mb-6 leading-relaxed">تحويل المحتوى التقني الصناعي على الموقع لحلول تركز على العميل بدلاً من مواصفات المكن.</p>
-                    <a href="https://watexsolutions.com" target="_blank" class="case-link italic italic">زيارة الموقع: watexsolutions.com</a>
-                </div>
-                <div class="p-8 bg-pink-600/10 border-r-8 border-pink-600 rounded-3xl">
-                    <h4 class="text-pink-400 font-black text-3xl italic mb-4 italic">🧕 هنا للعبايات - Hana</h4>
-                    <p class="text-xl text-white mb-6 leading-relaxed">بناء مجتمع نسائي يعتمد على أسلوب الحياة والذوق الرفيع على فيسبوك لزيادة المبيعات.</p>
-                    <a href="https://facebook.com/Hana3abaya" target="_blank" class="case-link italic italic">رابط الصفحة: Hana3abaya</a>
-                </div>
+    <!-- Section 3: AI Power -->
+    <section class="mb-24">
+      <h2 class="section-title">03) شريكك الذكي - AI Tool 🤖</h2>
+      <div class="glass shadow-xl">
+        <h3 class="text-white text-2xl font-black mb-6 italic">المساعد شاطر مش صاحب الشغل!</h3>
+        <p class="text-slate-300 text-lg leading-relaxed mb-10">
+            الذكاء الاصطناعي بيجيب لك <strong>القماشة الخام</strong> (أفكار، سكريبتات، تحليل)، وإنت الفنان اللي بيعمل <strong>النحت</strong> بلمستك البشرية وقصصك الحقيقية وخبرتك اللي مفيش مكنة تقدر تقلدها.
+        </p>
+        <div class="p-6 bg-pink-600/10 border-r-8 border-pink-600 rounded-xl mb-10">
+            <h4 class="text-pink-400 font-black text-lg mb-3">💡 تكتيك النحت:</h4>
+            <p class="text-base text-slate-200 italic">
+                استخدم AI لتوليد 100 فكرة في دقيقة، بس لما تيجي تكتب الكابشن استعمل صوتك وإحساسك.. ده اللي بيخلي العميل يثق فيك.
+            </p>
+        </div>
+        <div class="advice-highlight">
+            <p class="advice-text italic">"الناس بتشتري من البشر، مش من الروبوتات. خليه يساعدك تنجز أسرع، بس روحك لازم تكون واضحة في كل كلمة."</p>
+            <a href="https://facebook.com/doaaseleat" target="_blank" class="doaa-link text-xl block mt-4 text-left">Doaa Seleat</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Brand Showcase (Ghaya, Watex, Hana) -->
+    <section class="mb-24">
+        <h2 class="section-title">04) نماذج براندات نجحت بالمنهجية 🏆</h2>
+        <div class="space-y-8">
+            <div class="p-8 glass !mb-0 border-r-8 border-daoline">
+                <h4 class="text-white font-black text-2xl mb-4 italic">🎙️ غايا بودكاست - Ghaya (يوتيوب)</h4>
+                <p class="text-slate-300 mb-6">التحويل الاستراتيجي: تحويل المحتوى لمساحة حوارية عميقة تحترم عقل المشاهد، مما جعلها براند ثقافي موثوق.</p>
+                <a href="https://www.youtube.com/@ghayaeg" target="_blank" class="case-link italic">قناة يوتيوب @ghayaeg</a>
+            </div>
+            <div class="p-8 glass !mb-0 border-r-8 border-secondary">
+                <h4 class="text-white font-black text-2xl mb-4 italic">🏭 واتكس - WATEX (الموقع)</h4>
+                <p class="text-slate-300 mb-6">التحويل الاستراتيجي: تحويل المحتوى التقني الصناعي لحلول تركز على "النتائج" للشركات بدلاً من سرد المواصفات.</p>
+                <a href="https://watexsolutions.com" target="_blank" class="case-link italic">زيارة watexsolutions.com</a>
+            </div>
+            <div class="p-8 glass !mb-0 border-r-8 border-pink-500">
+                <h4 class="text-white font-black text-2xl mb-4 italic">🧕 هنا للعبايات - Hana (فيسبوك)</h4>
+                <p class="text-slate-300 mb-6">التحويل الاستراتيجي: بناء مجتمع نسائي يعتمد على أسلوب الحياة والذوق الرفيع، مما حول الصفحة لمجتمع يشتري بانتظام.</p>
+                <a href="https://facebook.com/Hana3abaya" target="_blank" class="case-link italic">صفحة Hana3abaya</a>
             </div>
         </div>
     </section>
 
-    <!-- Section 6 -->
-    <section class="mb-40">
-        <h2 class="section-title text-right">04) خريطة المنصات الشاملة 🗺️</h2>
-        <div class="glass-box shadow-2xl text-right">
-            <div class="overflow-x-auto border-2 border-white/5 rounded-3xl mb-12">
-                <table class="w-full text-right">
+    <!-- Section 5: Platforms Map -->
+    <section class="mb-24">
+        <h2 class="section-title">05) خريطة المنصات والسيادة الرقمية 🗺️</h2>
+        <div class="glass shadow-xl">
+            <div class="overflow-x-auto border border-white/10 rounded-2xl mb-10">
+                <table class="w-full text-right text-sm">
                     <thead class="bg-indigo-950 text-white">
-                        <tr><th class="p-5 border-b text-xl font-black">المنصة</th><th class="p-5 border-b text-xl font-black">الدور الاستراتيجي</th><th class="p-5 border-b text-xl font-black">الهدف الأسمى</th></tr>
+                        <tr><th class="p-4">المنصة</th><th class="p-4">الدور الاستراتيجي</th><th class="p-4">الهدف</th></tr>
                     </thead>
-                    <tbody class="bg-white/5 text-lg italic italic">
-                        <tr class="border-b border-white/5"><td>Facebook</td><td>بناء المجتمع والقصص الطويلة.</td><td class="text-daoline font-black">Community</td></tr>
-                        <tr class="border-b border-white/5"><td>Instagram</td><td>الريلز والبراندنج البصري.</td><td class="text-daoline font-black">Sales</td></tr>
-                        <tr class="border-b border-white/5"><td>TikTok</td><td>الانتشار الفيروسي والعفوية.</td><td class="text-daoline font-black">Awareness</td></tr>
-                        <tr class="border-b border-white/5"><td>LinkedIn</td><td>السلطة الفكرية والـ B2B.</td><td class="text-daoline font-black">Expertise</td></tr>
-                        <tr><td>WhatsApp</td><td>إغلاق المبيعات المباشرة.</td><td class="text-daoline font-black">Closing</td></tr>
+                    <tbody class="bg-white/5">
+                        <tr class="border-b border-white/5"><td class="p-4 italic">Facebook</td><td class="p-4">بناء المجتمع والقصص الطويلة.</td><td class="p-4 font-black">Community</td></tr>
+                        <tr class="border-b border-white/5"><td class="p-4 italic">Instagram</td><td class="p-4">الريلز والشكل البصري الشيك.</td><td class="p-4 font-black">Sales/Branding</td></tr>
+                        <tr class="border-b border-white/5"><td class="p-4 italic">TikTok</td><td class="p-4">الانتشار الفيروسي والعفوية.</td><td class="p-4 font-black">Viral Reach</td></tr>
+                        <tr class="border-b border-white/5"><td class="p-4 italic">LinkedIn</td><td class="p-4">السلطة الفكرية والـ B2B.</td><td class="p-4 font-black">Authority</td></tr>
+                        <tr><td class="p-4 italic">WhatsApp</td><td class="p-4">إغلاق المبيعات وخدمة العملاء.</td><td class="p-4 font-black">Closing</td></tr>
                     </tbody>
                 </table>
             </div>
-            <div class="p-8 bg-yellow-600/10 border-r-8 border-yellow-500 rounded-xl">
-                <h4 class="text-yellow-500 font-black text-xl mb-3 italic">⚙️ سر الإنجاز (Batching):</h4>
-                <p class="text-lg text-slate-200">خلص جدول الأسبوع كله في يوم واحد.. ماتحاولش تعمل محتوى كل يوم عشان ماتتعبش.</p>
+            <div class="p-6 bg-yellow-600/10 border-r-8 border-yellow-500 rounded-xl">
+                <h4 class="text-yellow-500 font-black text-xl mb-2">⚙️ سر الإنجاز (Batching):</h4>
+                <p class="text-lg text-slate-200 italic">"خلص جدول الأسبوع كله في يوم واحد.. ماتحاولش تعمل محتوى كل يوم عشان ماتتعبش وتوقف خالص."</p>
             </div>
         </div>
     </section>
 
-    <!-- Section 7: Strategy Master Template (THE LOCKED ONE) -->
-    <section id="template-section" class="locked-section mb-40">
-      <!-- اسم الملف في الظل الخلفي -->
-      <div class="file-watermark">
-          كتالوج هندسة المحتوى 2026<br>الإصدار الكامل PDF
-      </div>
-
-      <div class="text-center mb-20 relative z-10">
-        <h2 class="section-title">05) القالب الاستراتيجي السحري ✨</h2>
+    <!-- Section 6: Strategy Template (Locked) -->
+    <section id="leads-section" class="locked-container mb-40">
+      <div class="watermark-text">STRATEGY PLAYBOOK 2026</div>
+      
+      <div class="text-center mb-16 relative z-10">
+        <h2 class="section-title">06) القالب الاستراتيجي السحري ✨</h2>
         <p class="text-slate-400 font-bold text-xl italic underline decoration-daoline">The Magic Content Strategy Playbook</p>
       </div>
       
-      <!-- Locked Content (Blurred) -->
-      <div class="locked-overlay">
-          <div class="glass-box text-right rounded-[3rem]">
+      <!-- Locked Content -->
+      <div class="locked-blur">
+          <div class="glass shadow-2xl">
             <div class="space-y-12">
-                <h3 class="text-3xl font-black bg-indigo-950 text-white p-4 px-10 inline-block mb-10 rounded-xl">1) بطاقة الهوية (Identity)</h3>
-                <div class="h-20 border-b-2 border-dashed border-gray-600 mb-20"></div>
-                <h3 class="text-3xl font-black bg-indigo-950 text-white p-4 px-10 inline-block mb-10 rounded-xl">2) الهدف الشهري (SMART Goal)</h3>
-                <div class="h-20 border-b-2 border-dashed border-gray-600"></div>
+                <h3 class="text-2xl font-black bg-indigo-950 text-white p-3 px-8 inline-block mb-8 rounded-xl italic italic">1) بطاقة الهوية (Identity)</h3>
+                <div class="h-16 border-b-2 border-dashed border-gray-600 mb-20"></div>
+                <h3 class="text-2xl font-black bg-indigo-950 text-white p-3 px-8 inline-block mb-8 rounded-xl italic italic">2) الهدف الشهري (SMART Goal)</h3>
+                <div class="h-16 border-b-2 border-dashed border-gray-600"></div>
             </div>
           </div>
       </div>
 
-      <!-- THE CALL TO ACTION (The Unlock Form) -->
-      <div class="relative z-50 -mt-80">
-        <div class="glass-box border-4 border-daoline text-center shadow-[0_0_150px_rgba(139,92,246,0.4)]">
-            <div class="logo-box mx-auto mb-8 !w-24 !h-24 !text-6xl">D</div>
+      <!-- Lead Gen Form Overlay -->
+      <div class="relative z-50 -mt-64">
+        <div class="glass border-4 border-daoline text-center shadow-[0_0_150px_rgba(192,19,166,0.4)]">
             <h2 class="text-4xl font-black mb-8 text-white italic">احصل على الملف الكامل والتمبلت فوراً! 🔥</h2>
-            <p class="text-slate-200 text-2xl mb-12 leading-relaxed max-w-3xl mx-auto italic">
+            <p class="text-slate-200 text-xl mb-12 leading-relaxed max-w-2xl mx-auto italic italic">
                 سجل بياناتك وهنبعتلك النسخة الكاملة بصيغة <strong>PDF</strong> + <strong>Playbook</strong> قابل للتعديل + هدايا وكورسات حصرية من <strong>Daoline Digital</strong>.
             </p>
             
-            <div class="max-w-2xl mx-auto space-y-6">
-                <input type="text" id="subscriber-name" placeholder="اكتب اسمك هنا.." class="form-input">
-                <input type="email" id="subscriber-email" placeholder="بريدك الإلكتروني.." class="form-input">
-                <input type="tel" id="subscriber-whatsapp" placeholder="رقم الواتساب (لإرسال الملف).." class="form-input">
+            <div class="max-w-xl mx-auto space-y-5">
+                <input type="text" id="lead-name" placeholder="اكتب اسمك هنا.." class="form-input">
+                <input type="email" id="lead-email" placeholder="بريدك الإلكتروني.." class="form-input">
+                <input type="tel" id="lead-whatsapp" placeholder="رقم الواتساب (لإرسال الملف).." class="form-input">
                 
-                <button onclick="handleSubscription()" class="main-btn w-full !text-2xl hover:scale-105 transition transform shadow-[0_10px_40px_rgba(37,99,235,0.4)]">
-                    أرسل لي الملف الآن 🚀
+                <button onclick="handleLeadSubmission()" class="bg-daoline hover-bg-daoline text-white w-full py-5 rounded-2xl font-black text-2xl shadow-xl transition transform hover:scale-105">
+                    أرسل لي الملف والتمبلت الآن 🚀
                 </button>
             </div>
             
             <div id="status-msg"></div>
-            <p class="text-sm text-slate-500 mt-10 italic">بمجرد الضغط، ستنضم لمجتمع الـ 1% الأكثر نجاحاً في 2026.</p>
+            <p class="text-xs text-slate-500 mt-10 italic">بمجرد التسجيل، ستنضم لمجتمع الـ 1% الأكثر نجاحاً في 2026.</p>
         </div>
       </div>
     </section>
 
-    <!-- Admin Section (Invisible to users) -->
+    <!-- Admin Panel (Dashboard) -->
     <section class="mt-20 text-center mb-40">
-        <button onclick="toggleAdminPanel()" class="text-slate-800 text-xs font-bold hover:text-daoline transition opacity-30 uppercase tracking-widest">🔐 Secret Admin Dashboard (Private)</button>
-        <div id="admin-dashboard">
-            <h2 class="text-3xl font-black text-indigo-950 border-b-4 mb-8 pb-4 italic italic">Subscribers Data (Leads)</h2>
+        <button onclick="toggleAdminPanel()" class="text-slate-800 text-xs font-bold hover:text-daoline transition opacity-20 uppercase tracking-widest">🔐 Secret Admin Dashboard (للمسؤول فقط)</button>
+        <div id="admin-dashboard" class="shadow-2xl">
+            <h2 class="text-2xl font-black text-indigo-950 border-b-4 mb-6 pb-2 italic">Subscribers Database (Leads)</h2>
             <div class="overflow-x-auto">
                 <table class="admin-table">
                     <thead><tr><th>الاسم</th><th>الإيميل</th><th>الواتساب</th><th>التاريخ</th></tr></thead>
-                    <tbody id="subscribers-list"></tbody>
+                    <tbody id="leads-list"></tbody>
                 </table>
             </div>
-            <button onclick="fetchSubscribers()" class="mt-8 bg-indigo-600 text-white p-4 rounded-xl font-bold">تحديث القائمة 🔄</button>
+            <button onclick="fetchLeads()" class="mt-6 bg-indigo-600 text-white p-3 rounded-xl font-bold text-sm">تحديث القائمة 🔄</button>
         </div>
     </section>
 
   </main>
 
-  <footer class="bg-black py-40 text-center border-t border-white/10">
-    <div class="flex flex-col items-center gap-10 mb-24">
-        <div class="logo-box !w-24 !h-24 !text-6xl shadow-2xl">D</div>
-        <div class="font-black text-5xl text-white uppercase italic tracking-tighter">DAOLINE<span class="text-daoline font-black">DIGITAL</span></div>
+  <!-- Footer -->
+  <footer class="bg-black py-32 text-center border-t border-white/5">
+    <div class="flex flex-col items-center gap-8 mb-20">
+        <div class="logo-box">D</div>
+        <div class="font-black text-4xl text-white uppercase italic tracking-tighter">
+          DAOLINE<span class="text-daoline font-black">DIGITAL</span>
+        </div>
     </div>
-    <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-20 text-right px-10 mb-32">
+    
+    <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-16 text-right px-8 mb-24">
         <div>
-            <h4 class="text-white text-3xl font-black mb-10 border-r-8 border-daoline pr-5 uppercase italic italic italic">Contact Details:</h4>
-            <div class="space-y-6 text-2xl text-slate-400 font-medium font-medium">
+            <h4 class="text-white text-2xl font-black mb-8 border-r-4 border-daoline pr-4 uppercase italic italic">Contact Details:</h4>
+            <div class="space-y-5 text-xl text-slate-400">
                 <p>Website: <a href="http://daolinedigital.com" target="_blank" class="text-white hover:text-daoline underline">Daolinedigital.com</a></p>
                 <p>Email: <a href="mailto:info@daolinedigital.com" class="text-white hover:text-daoline underline">info@daolinedigital.com</a></p>
                 <p>Support: <a href="https://facebook.com/daolinedigital" target="_blank" class="text-white hover:text-daoline underline italic italic">Messenger Assistance</a></p>
             </div>
         </div>
         <div>
-            <h4 class="text-white text-2xl font-black mb-8 border-r-4 border-daoline pr-4 uppercase italic italic italic italic">Lead By:</h4>
-            <div class="space-y-4">
-                <p class="text-slate-400 text-xl font-medium mb-2 uppercase tracking-widest">Executive Director</p>
+            <h4 class="text-white text-2xl font-black mb-8 border-r-4 border-daoline pr-4 uppercase italic italic">Lead By:</h4>
+            <div class="space-y-3">
+                <p class="text-slate-400 text-xl mb-1 uppercase tracking-widest italic">Executive Director</p>
                 <a href="https://facebook.com/doaaseleat" target="_blank" class="text-daoline text-4xl font-black italic underline decoration-white underline-offset-8">Doaa Seleat</a>
             </div>
         </div>
     </div>
-    <div class="pt-10 border-t border-white/5 mx-10 text-[11px] text-slate-800 uppercase font-black tracking-widest leading-relaxed">
-        © 2026 Daoline Digital Academy | Content Engineering System | All Rights Reserved <br>
-        Developed & Protected for <a href="https://facebook.com/doaaseleat" target="_blank" class="hover:text-slate-600 underline">Doaa Seleat</a>
+
+    <div class="flex justify-center gap-12 text-sm font-black text-slate-500 uppercase tracking-widest mb-16">
+        <a href="https://facebook.com/daolinedigital" target="_blank" class="hover:text-daoline transition">Facebook</a>
+        <a href="https://instagram.com/daolinedigital" target="_blank" class="hover:text-daoline transition">Instagram</a>
+    </div>
+    
+    <div class="pt-10 border-t border-white/5 mx-8 text-[11px] text-slate-800 uppercase font-black tracking-widest leading-relaxed">
+        © 2026 Daoline Digital Academy | Content Engineering | All Rights Reserved <br>
+        Developed for <a href="https://facebook.com/doaaseleat" target="_blank" class="hover:text-slate-600 underline">Doaa Seleat</a>
     </div>
   </footer>
 
-  <!-- Firebase Logic -->
+  <!-- Firebase & Security Scripts -->
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
     import { getAuth, signInAnonymously, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
@@ -390,24 +396,18 @@
     const app = initializeApp(firebaseConfig);
     const auth = getAuth(app);
     const db = getFirestore(app);
-    const appId = typeof __app_id !== 'undefined' ? __app_id : 'daoline-final-leads-2026';
+    const appId = typeof __app_id !== 'undefined' ? __app_id : 'daoline-blog-2026';
 
     let user = null;
     const initAuth = async () => { try { await signInAnonymously(auth); } catch (e) {} };
     initAuth();
     onAuthStateChanged(auth, (u) => { user = u; });
 
-    // حماية المحتوى من الاختصارات
-    document.addEventListener('keydown', e => {
-        if (e.ctrlKey && (e.key === 'c' || e.key === 'u' || e.key === 's' || e.key === 'p' || e.key === 'a')) {
-            e.preventDefault();
-        }
-    });
-
-    window.handleSubscription = async () => {
-      const name = document.getElementById('subscriber-name').value.trim();
-      const email = document.getElementById('subscriber-email').value.trim();
-      const whatsapp = document.getElementById('subscriber-whatsapp').value.trim();
+    // تجميع البيانات
+    window.handleLeadSubmission = async () => {
+      const name = document.getElementById('lead-name').value.trim();
+      const email = document.getElementById('lead-email').value.trim();
+      const whatsapp = document.getElementById('lead-whatsapp').value.trim();
 
       if (!name || !email || !whatsapp) { showStatus("من فضلك املأ جميع الخانات!", "red"); return; }
       if (!user) { showStatus("جاري الاتصال.. حاول مجدداً.", "red"); return; }
@@ -417,15 +417,16 @@
           name, email, whatsapp, timestamp: serverTimestamp()
         });
         showStatus("تم الإرسال بنجاح! سيتم التواصل معك الآن لإرسال الملف.", "green");
-        document.getElementById('subscriber-name').value = "";
-        document.getElementById('subscriber-email').value = "";
-        document.getElementById('subscriber-whatsapp').value = "";
+        document.getElementById('lead-name').value = "";
+        document.getElementById('lead-email').value = "";
+        document.getElementById('lead-whatsapp').value = "";
       } catch (error) { showStatus("خطأ فني، حاول مجدداً.", "red"); }
     };
 
-    window.fetchSubscribers = async () => {
+    // لوحة التحكم
+    window.fetchLeads = async () => {
         if (!user) return;
-        const listBody = document.getElementById('subscribers-list');
+        const listBody = document.getElementById('leads-list');
         listBody.innerHTML = "<tr><td colspan='4'>جاري التحميل...</td></tr>";
         try {
             const querySnapshot = await getDocs(collection(db, 'artifacts', appId, 'public', 'data', 'leads'));
@@ -437,13 +438,14 @@
                 const date = data.timestamp ? new Date(data.timestamp.seconds * 1000).toLocaleDateString('ar-EG') : 'قيد التسجيل';
                 listBody.innerHTML += `<tr><td>${data.name}</td><td>${data.email}</td><td>${data.whatsapp}</td><td>${date}</td></tr>`;
             });
+            if (docs.length === 0) listBody.innerHTML = "<tr><td colspan='4'>لا يوجد بيانات حالياً.</td></tr>";
         } catch (e) { listBody.innerHTML = "<tr><td colspan='4'>خطأ في الجلب.</td></tr>"; }
     };
 
     window.toggleAdminPanel = () => {
         const panel = document.getElementById('admin-dashboard');
         panel.style.display = panel.style.display === "block" ? "none" : "block";
-        if (panel.style.display === "block") window.fetchSubscribers();
+        if (panel.style.display === "block") window.fetchLeads();
     };
 
     function showStatus(text, color) {
@@ -451,6 +453,28 @@
       msgBox.style.display = "block";
       msgBox.innerText = text;
       msgBox.style.color = color === "green" ? "#10b981" : "#f87171";
+    }
+
+    // نظام الحماية
+    document.addEventListener('contextmenu', e => { e.preventDefault(); showToast('المحتوى محمي بحقوق الملكية لـ Daoline Digital 🔒'); });
+    document.addEventListener('keydown', e => {
+        const key = e.key.toLowerCase();
+        if ((e.ctrlKey && (key === 'c' || key === 'u' || key === 's' || key === 'i' || key === 'a' || key === 'p')) || e.key === 'F12') {
+            e.preventDefault();
+            showToast('عفواً، حقوق النسخ والتفتيش محفوظة 🔒');
+        }
+    });
+
+    function showToast(message) {
+      let toast = document.getElementById('security-toast');
+      if (toast) toast.remove();
+      toast = document.createElement('div');
+      toast.id = 'security-toast';
+      toast.innerText = message;
+      toast.style.cssText = `position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background-color: #c013a6; color: white; padding: 12px 24px; border-radius: 999px; font-family: 'Tajawal'; font-size: 14px; font-weight: 900; box-shadow: 0 10px 25px rgba(0,0,0,0.5); z-index: 9999; opacity: 0; transition: all 0.25s ease;`;
+      document.body.appendChild(toast);
+      setTimeout(() => { toast.style.opacity = '1'; }, 10);
+      setTimeout(() => { toast.style.opacity = '0'; setTimeout(() => toast.remove(), 250); }, 2500);
     }
   </script>
 
