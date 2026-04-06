@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>أفضل 10 أدوات سوشيال ميديا مجانية للمبتدئين في 2026 | Daoline Digital</title>
+  <meta name="description" content="اكتشف أفضل 10 أدوات سوشيال ميديا مجانية في 2026. من Canva للتصميم، Buffer للجدولة، وCapCut للفيديو. كل الأدوات اللي محتاجها من Daoline Digital.">
+  <meta name="keywords" content="أدوات سوشيال ميديا مجانية, Canva عربي, Buffer مجاني, CapCut, أدوات التسويق الإلكتروني 2026, Daoline Digital">
+  <meta property="og:title" content="أفضل 10 أدوات سوشيال ميديا مجانية للمبتدئين في 2026">
+  <meta property="og:type" content="article">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Changa:wght@400;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "أفضل 10 أدوات سوشيال ميديا مجانية للمبتدئين في 2026",
+    "author": {"@type":"Person","name":"Doaa Seleat"},
+    "publisher": {"@type":"Organization","name":"Daoline Digital"},
+    "datePublished": "2026-01-01",
+    "inLanguage": "ar"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"هل Canva مجاني بالفعل؟","acceptedAnswer":{"@type":"Answer","text":"نعم، Canva فيه إصدار مجاني قوي جداً يكفي للمبتدئين. الإصدار المدفوع Pro بيضيف مميزات إضافية لكن مش ضرورية في البداية."}},
+      {"@type":"Question","name":"ما الفرق بين Buffer وLater في جدولة البوستات؟","acceptedAnswer":{"@type":"Answer","text":"Buffer أبسط وأسهل للمبتدئين، بينما Later أقوى في تحليلات Instagram تحديداً وعنده Visual Grid Preview."}},
+      {"@type":"Question","name":"هل أحتاج كل الأدوات دي في نفس الوقت؟","acceptedAnswer":{"@type":"Answer","text":"لا! ابدأ بأداة تصميم (Canva) وأداة جدولة (Buffer) بس. وبعدين زود الأدوات تدريجياً حسب احتياجك."}}
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --primary: #c013a6;
+      --primary2: #a00f89;
+      --secondary: #2563eb;
+      --bg: #0f172a;
+      --text: #e2e8f0;
+      --muted: rgba(226,232,240,.78);
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Tajawal', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+      line-height: 2;
+      font-size: 1.1rem;
+      -webkit-user-select: none;
+      user-select: none;
+    }
+    input, textarea, button, a { -webkit-user-select: auto !important; user-select: auto !important; }
+    .text-daoline { color: var(--primary); }
+    .bg-daoline { background-color: var(--primary); }
+    .hover-bg-daoline:hover { background-color: var(--primary2); transition: .25s ease; }
+    .hero-gradient { background: radial-gradient(circle at top center, rgba(192,19,166,.15) 0%, transparent 75%); }
+    .glass {
+      background: rgba(30,41,59,0.45);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 2rem;
+      padding: 3rem;
+      margin-bottom: 4rem;
+    }
+    .section-title {
+      font-size: 2rem;
+      font-weight: 900;
+      background: white;
+      color: black;
+      padding: 10px 35px;
+      display: inline-block;
+      border-radius: 6px;
+      margin-bottom: 3rem;
+      box-shadow: 8px 8px 0px var(--secondary);
+      transform: rotate(-1deg);
+    }
+    .advice-highlight {
+      border-left: 6px solid var(--primary);
+      border-right: 6px solid var(--primary);
+      background: rgba(255,255,255,0.04);
+      padding: 2rem;
+      border-radius: 1rem;
+      margin-top: 2rem;
+    }
+    .tool-card {
+      background: rgba(30,41,59,0.5);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 1.75rem;
+      padding: 2rem;
+      transition: all 0.35s ease;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+    }
+    .tool-card:hover {
+      border-color: var(--primary);
+      transform: translateY(-5px);
+      box-shadow: 0 20px 60px rgba(192,19,166,0.15);
+    }
+    .tool-number {
+      font-size: 4rem;
+      font-weight: 900;
+      color: rgba(255,255,255,0.04);
+      position: absolute;
+      top: 0.5rem;
+      left: 1.5rem;
+      font-family: 'Changa', sans-serif;
+      line-height: 1;
+      pointer-events: none;
+    }
+    .badge { display: inline-block; padding: 3px 12px; border-radius: 999px; font-size: 0.7rem; font-weight: 900; }
+    .badge-free { background: rgba(16,185,129,0.15); color: #10b981; border: 1px solid rgba(16,185,129,0.3); }
+    .badge-freemium { background: rgba(37,99,235,0.15); color: #60a5fa; border: 1px solid rgba(37,99,235,0.3); }
+    .badge-hot { background: rgba(239,68,68,0.15); color: #f87171; border: 1px solid rgba(239,68,68,0.3); }
+    .rating-star { color: #fbbf24; }
+    .freebar { background: linear-gradient(90deg, rgba(192,19,166,.95), rgba(160,15,137,.85)); border-bottom: 1px solid rgba(255,255,255,.12); }
+    .form-input {
+      width: 100%;
+      background: rgba(255,255,255,0.05);
+      border: 2px solid rgba(255,255,255,0.1);
+      border-radius: 1rem;
+      padding: 1.2rem 1.5rem;
+      color: white;
+      outline: none;
+      text-align: right;
+      font-family: 'Tajawal', sans-serif;
+      font-size: 1rem;
+    }
+    .form-input:focus { border-color: var(--primary); background: rgba(255,255,255,0.08); }
+    .form-input::placeholder { color: rgba(255,255,255,0.35); }
+    details > summary { list-style: none; outline: none; cursor: pointer; }
+    details > summary::-webkit-details-marker { display: none; }
+    details[open] summary ~ * { animation: sweep .45s ease-in-out; }
+    @keyframes sweep { 0%{opacity:0;transform:translateY(-10px)} 100%{opacity:1;transform:translateY(0)} }
+    #status-msg { display:none; margin-top:1.5rem; font-weight:bold; padding:14px; border-radius:12px; text-align:center; font-size:1rem; border:1px solid transparent; }
+    #security-toast { position:fixed; bottom:20px; left:50%; transform:translateX(-50%); background-color:var(--primary); color:white; padding:12px 24px; border-radius:999px; font-weight:900; box-shadow:0 10px 25px rgba(0,0,0,0.5); z-index:9999; opacity:0; transition:all 0.3s ease; pointer-events:none; }
+    #reading-progress { position:fixed; top:0; left:0; height:3px; background:linear-gradient(90deg,var(--primary),#7c3aed); z-index:9999; transition:width 0.1s; width:0%; }
+    .quote-block { border-right:5px solid var(--primary); padding-right:1.5rem; font-size:1.3rem; font-style:italic; color:#94a3b8; margin:2rem 0; }
+    .comparison-table { width:100%; border-collapse:separate; border-spacing:0; text-align:right; }
+    .comparison-table th { background:rgba(192,19,166,0.12); color:#fff; padding:14px 18px; font-weight:900; border-bottom:2px solid rgba(192,19,166,0.25); }
+    .comparison-table td { padding:14px 18px; border-bottom:1px solid rgba(255,255,255,0.05); color:var(--muted); font-weight:600; }
+    .comparison-table tr:last-child td { border-bottom:none; }
+    .comparison-table tr:hover td { background:rgba(255,255,255,0.02); }
+  </style>
+</head>
+
+<body oncontextmenu="return false;">
+<div id="reading-progress"></div>
+
+<!-- Nav -->
+<nav class="sticky top-0 z-50 bg-[#0f172a]/95 backdrop-blur-md border-b border-slate-800">
+  <div class="container mx-auto px-4 py-3 flex justify-between items-center text-white">
+    <a href="https://daolinedigital.com" class="font-black text-lg md:text-xl tracking-wide">Daoline<span class="text-daoline">Digital</span></a>
+    <div class="flex gap-2 sm:gap-3">
+      <a href="/blog/" class="px-4 py-1.5 rounded-full border border-slate-700 bg-slate-800/60 hover:bg-slate-700/60 font-bold text-xs md:text-sm transition text-slate-300">المدونة</a>
+      <a href="https://daolinedigital.com" class="bg-daoline text-white px-4 py-1.5 rounded-full hover-bg-daoline font-bold text-xs md:text-sm shadow-lg transition-all">الرئيسية</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Free Bar -->
+<div class="freebar sticky top-[56px] z-40">
+  <div class="container mx-auto px-4 py-2 flex flex-wrap items-center justify-between gap-3 text-white">
+    <div class="font-black text-sm md:text-[15px]">🛠️ هدية حصرية <span class="opacity-80 font-bold">— قايمة أدوات Daoline المفضلة (PDF مجاني)</span></div>
+    <a href="#leads-section" class="bg-[#0f172a] px-4 py-1 rounded-full font-black text-white text-xs md:text-sm hover:bg-black transition">حمّل مجاناً →</a>
+  </div>
+</div>
+
+<!-- Hero -->
+<header class="hero-gradient pt-20 pb-14 px-4 text-center">
+  <span class="inline-block py-1 px-4 rounded-full bg-daoline/10 text-daoline text-[11px] font-black border border-daoline/20 mb-6 uppercase tracking-widest">🛠️ أدوات السوشيال ميديا · 2026</span>
+  <h1 class="text-4xl md:text-6xl font-black mb-8 leading-tight text-white max-w-5xl mx-auto">
+    أفضل 10 أدوات سوشيال ميديا<br>
+    <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-300 to-slate-500 italic text-3xl md:text-5xl">مجانية للمبتدئين في 2026</span>
+  </h1>
+  <p class="text-slate-300 max-w-3xl mx-auto text-xl md:text-2xl leading-relaxed mb-12 italic">
+    فلوسك مش المشكلة.. الأداة الغلط هي المشكلة! دي الأدوات اللي بنستخدمها فعلاً في Daoline وبنوصي بيها.
+  </p>
+  <div class="flex flex-wrap justify-center gap-6 mb-10 text-slate-400 text-sm font-bold">
+    <span>⏱ وقت القراءة: 10 دقائق</span>
+    <span>📅 آخر تحديث: يناير 2026</span>
+    <span>💰 8 منهم مجانيين تماماً</span>
+  </div>
+  <div class="flex flex-col items-center p-6 border-2 border-white/10 rounded-[2.5rem] bg-white/5 inline-block mx-auto shadow-2xl">
+    <p class="text-white opacity-60 text-sm mb-1 uppercase tracking-widest">بقلم المدير التنفيذي</p>
+    <a href="https://facebook.com/doaaseleat" target="_blank" class="text-3xl font-black text-daoline hover:text-white transition">Doaa Seleat</a>
+  </div>
+</header>
+
+<!-- Main -->
+<main class="container mx-auto px-4 max-w-4xl pb-24 text-right">
+
+  <!-- Intro -->
+  <section class="mb-16">
+    <p class="text-xl leading-relaxed text-slate-300 mb-6">واحدة من أكتر الأسئلة اللي بتيجيلي: <strong class="text-white">"يا دوا.. أنا مش معايا ميزانية كبيرة، هقدر أعمل سوشيال ميديا احترافية؟"</strong></p>
+    <p class="text-xl leading-relaxed text-slate-300 mb-6">والإجابة؟ أيوه بكل ثقة! في 2026، في أدوات مجانية بتعمل نفس الشغل اللي كان بيتعمل بمئات الدولارات قبل سنين. المقال ده مش مجرد قايمة.. ده <strong class="text-white">دليلك العملي</strong> لاختيار الأداة الصح في وقتها الصح.</p>
+    <div class="quote-block">"المحترف مش اللي عنده أغلى الأدوات.. المحترف هو اللي عارف يستخدم بسيطها بأقصى كفاءة."</div>
+  </section>
+
+  <!-- Legend -->
+  <section class="mb-16">
+    <div class="glass !p-6">
+      <p class="text-white font-black text-lg mb-4">🗂️ دليل الـ Badges في المقال ده:</p>
+      <div class="flex flex-wrap gap-3">
+        <span class="badge badge-free text-sm px-4 py-2">✅ مجاني 100%</span>
+        <span class="badge badge-freemium text-sm px-4 py-2">🔵 مجاني مع بلان مدفوع</span>
+        <span class="badge badge-hot text-sm px-4 py-2">🔥 الأكتر استخداماً</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 1: Design -->
+  <section class="mb-24">
+    <h2 class="section-title">01) أدوات التصميم 🎨</h2>
+    <p class="text-slate-300 text-lg mb-8 leading-relaxed">المحتوى البصري هو أول حاجة بتوقف الـ Scroll. الصورة الكويسة بتلفت نظر المتابع وبتخليه يقرأ.. والأدوات دي بتساعدك تعملها من غير ما تكون مصمم محترف.</p>
+
+    <div class="tool-card">
+      <div class="tool-number">01</div>
+      <div class="flex flex-wrap items-start justify-between gap-4 mb-4">
+        <div>
+          <div class="flex items-center gap-3 mb-2 flex-wrap">
+            <span class="text-2xl font-black text-white">Canva</span>
+            <span class="badge badge-freemium">🔵 مجاني مع Pro</span>
+            <span class="badge badge-hot">🔥 الأشهر</span>
+          </div>
+          <div class="rating-star text-lg">★★★★★</div>
+        </div>
+        <a href="https://canva.com" target="_blank" rel="nofollow noopener" class="bg-daoline text-white px-5 py-2 rounded-full font-black text-sm hover-bg-daoline transition">جرّبها مجاناً ←</a>
+      </div>
+      <p class="text-slate-300 leading-relaxed mb-5">الـ Canva هو <strong class="text-white">ملك</strong> أدوات التصميم للغير مصممين. بيديك آلاف التمبليتس الجاهزة لكل منصة — بوستات إنستاجرام، ريلز، ستوريز، بانرات، وحتى PDF كامل — وده كله في دقائق وبدون أي خبرة تصميم.</p>
+      <div class="grid md:grid-cols-3 gap-3 text-sm">
+        <div class="bg-green-500/10 border border-green-500/20 rounded-xl p-3"><p class="text-green-400 font-black mb-1">✅ الأفضل فيه</p><p class="text-slate-400">سهولة تامة، تمبليتس عربية، تصدير مباشر بأبعاد كل منصة</p></div>
+        <div class="bg-red-500/10 border border-red-500/20 rounded-xl p-3"><p class="text-red-400 font-black mb-1">❌ عيوبه</p><p class="text-slate-400">بعض التمبليتس المميزة مدفوعة، خيارات Font محدودة في المجاني</p></div>
+        <div class="bg-blue-500/10 border border-blue-500/20 rounded-xl p-3"><p class="text-blue-400 font-black mb-1">💡 نصيحة Daoline</p><p class="text-slate-400">ابدأ بالمجاني، وانتقل لـ Pro بس لما حجم شغلك يكبر</p></div>
+      </div>
+    </div>
+
+    <div class="tool-card">
+      <div class="tool-number">02</div>
+      <div class="flex flex-wrap items-start justify-between gap-4 mb-4">
+        <div>
+          <div class="flex items-center gap-3 mb-2 flex-wrap">
+            <span class="text-2xl font-black text-white">Adobe Express</span>
+            <span class="badge badge-freemium">🔵 مجاني مع بلانات</span>
+          </div>
+          <div class="rating-star text-lg">★★★★<span class="text-slate-600">★</span></div>
+        </div>
+        <a href="https://adobe.com/express" target="_blank" rel="nofollow noopener" class="bg-white/10 border border-white/20 text-white px-5 py-2 rounded-full font-black text-sm hover:bg-white/20 transition">جرّبه ←</a>
+      </div>
+      <p class="text-slate-300 leading-relaxed mb-5">البديل القوي من Adobe. لو عندك اشتراك Adobe Creative Cloud خد Adobe Express مجاني معاه. بيتكامل بشكل مميز مع Photoshop وIllustrator، وجودة الـ Export أعلى من Canva بشكل ملحوظ.</p>
+      <div class="grid md:grid-cols-2 gap-3 text-sm">
+        <div class="bg-green-500/10 border border-green-500/20 rounded-xl p-3"><p class="text-green-400 font-black mb-1">✅ الأفضل فيه</p><p class="text-slate-400">تكامل مع باقي أدوات Adobe، جودة Export عالية، أنيماشن سهل ومميز</p></div>
+        <div class="bg-red-500/10 border border-red-500/20 rounded-xl p-3"><p class="text-red-400 font-black mb-1">❌ عيوبه</p><p class="text-slate-400">تمبليتس أقل من Canva، واجهة أصعب شوية على المبتدئين</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Scheduling -->
+  <section class="mb-24">
+    <h2 class="section-title">02) أدوات الجدولة 📅</h2>
+    <p class="text-slate-300 text-lg mb-8 leading-relaxed">جدولة البوستات بتوفرلك وقت ومجهود ضخم. بدل ما تفضل واقف على التليفون كل يوم عشان تنشر، جهّز محتوى الأسبوع كله في ساعتين وسيبه يتنشر لوحده في الوقت الصح.</p>
+
+    <div class="tool-card">
+      <div class="tool-number">03</div>
+      <div class="flex flex-wrap items-start justify-between gap-4 mb-4">
+        <div>
+          <div class="flex items-center gap-3 mb-2 flex-wrap">
+            <span class="text-2xl font-black text-white">Buffer</span>
+            <span class="badge badge-free">✅ مجاني</span>
+            <span class="badge badge-hot">🔥 الأنسب للمبتدئين</span>
+          </div>
+          <div class="rating-star text-lg">★★★★★</div>
+        </div>
+        <a href="https://buffer.com" target="_blank" rel="nofollow noopener" class="bg-daoline text-white px-5 py-2 rounded-full font-black text-sm hover-bg-daoline transition">جرّبه مجاناً ←</a>
+      </div>
+      <p class="text-slate-300 leading-relaxed mb-5">Buffer هو أبسط أداة جدولة ممكن تلاقيها. النسخة المجانية بتديك 3 قنوات اجتماعية و10 بوستات لكل قناة، وده كافي جداً للبداية. بيشتغل مع Instagram وFacebook وTikTok وLinkedIn وX.</p>
+      <div class="grid md:grid-cols-3 gap-3 text-sm">
+        <div class="bg-green-500/10 border border-green-500/20 rounded-xl p-3"><p class="text-green-400 font-black mb-1">✅ الأفضل فيه</p><p class="text-slate-400">سهولة تامة، مجاني كافي للبداية، تحليلات بسيطة وواضحة</p></div>
+        <div class="bg-red-500/10 border border-red-500/20 rounded-xl p-3"><p class="text-red-400 font-black mb-1">❌ عيوبه</p><p class="text-slate-400">المجاني محدود بـ 10 بوستات، التحليلات المتقدمة مدفوعة</p></div>
+        <div class="bg-blue-500/10 border border-blue-500/20 rounded-xl p-3"><p class="text-blue-400 font-black mb-1">💡 نصيحة Daoline</p><p class="text-slate-400">ابدأ بيه قبل أي أداة جدولة تانية. الأبسط = الأفضل للمبتدئ</p></div>
+      </div>
+    </div>
+
+    <div class="tool-card">
+      <div class="tool-number">04</div>
+      <div class="flex flex-wrap items-start justify-between gap-4 mb-4">
+        <div>
+          <div class="flex items-center gap-3 mb-2 flex-wrap">
+            <span class="text-2xl font-black text-white">Later</span>
+            <span class="badge badge-freemium">🔵 مجاني مع بلانات</span>
+          </div>
+          <div class="rating-star text-lg">★★★★<span class="text-slate-600">★</span></div>
+        </div>
+        <a href="https://later.com" target="_blank" rel="nofollow noopener" class="bg-white/10 border border-white/20 text-white px-5 py-2 rounded-full font-black text-sm hover:bg-white/20 transition">جرّبه ←</a>
+      </div>
+      <p class="text-slate-300 leading-relaxed mb-5">Later متخصص في Instagram بشكل أساسي. ميزته الأهم إنه بيديك <strong class="text-white">Visual Grid Planner</strong>، يعني تشوف شكل الـ Grid كامل قبل النشر. مثالي لو الشكل البصري لحسابك أولوية عندك.</p>
+      <div class="grid md:grid-cols-2 gap-3 text-sm">
+        <div class="bg-green-500/10 border border-green-500/20 rounded-xl p-3"><p class="text-green-400 font-black mb-1">✅ الأفضل فيه</p><p class="text-slate-400">Visual Grid Preview، تحليلات Instagram قوية، Link in Bio مدمج</p></div>
+        <div class="bg-red-500/10 border border-red-500/20 rounded-xl p-3"><p class="text-red-400 font-black mb-1">❌ عيوبه</p><p class="text-slate-400">المجاني محدود جداً، الـ TikTok والـ LinkedIn أضعف من Buffer</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Analytics -->
+  <section class="mb-24">
+    <h2 class="section-title">03) أدوات التحليل 📊</h2>
+    <p class="text-slate-300 text-lg mb-8 leading-relaxed">من غير تحليل، إنت بتشتغل بالعمى! أدوات التحليل بتقولك إيه المحتوى الشغال وإيه اللي لازم تبطله.. وده بيوفرلك وقت ومجهود ضخم على المدى البعيد.</p>
+
+    <div class="tool-card">
+      <div class="tool-number">05</div>
+      <div class="flex flex-wrap items-start justify-between gap-4 mb-4">
+        <div>
+          <div class="flex items-center gap-3 mb-2 flex-wrap">
+            <span class="text-2xl font-black text-white">Meta Business Suite</span>
+            <span class="badge badge-free">✅ مجاني 100%</span>
+          </div>
+          <div class="rating-star text-lg">★★★★★</div>
+        </div>
+        <a href="https://business.facebook.com" target="_blank" rel="nofollow noopener" class="bg-daoline text-white px-5 py-2 rounded-full font-black text-sm hover-bg-daoline transition">افتحه الآن ←</a>
+      </div>
+      <p class="text-slate-300 leading-relaxed mb-5">لو عندك صفحة فيسبوك أو حساب إنستاجرام، ده الأداة المجانية الرسمية من Meta. بيديك تحليلات عميقة على الـ Reach والتفاعل والجمهور وأوقات الذروة.. وكمان تقدر منه تجدول البوستات مباشرة.</p>
+      <div class="advice-highlight !mt-0">
+        <p class="text-white font-black">🎯 نصيحة ذهبية: روّح على قسم "Insights" كل أسبوع وشوف أعلى 3 بوستات أداءً. الأسبوع الجاي اعمل محتوى مشابه ليهم.</p>
+      </div>
+    </div>
+
+    <div class="tool-card">
+      <div class="tool-number">06</div>
+      <div class="flex flex-wrap items-start justify-between gap-4 mb-4">
+        <div>
+          <div class="flex items-center gap-3 mb-2 flex-wrap">
+            <span class="text-2xl font-black text-white">TikTok Analytics</span>
+            <span class="badge badge-free">✅ مدمج مجاناً</span>
+          </div>
+          <div class="rating-star text-lg">★★★★<span class="text-slate-600">★</span></div>
+        </div>
+        <span class="bg-green-500/20 text-green-400 px-5 py-2 rounded-full font-black text-sm border border-green-500/30">داخل التطبيق</span>
+      </div>
+      <p class="text-slate-300 leading-relaxed mb-5">لو حسابك على TikTok Creator Account (مجاني)، هتلاقي تحليلات مدمجة قوية جداً. بتشوف Watch Time ومصدر الـ Traffic وتحليل الجمهور. <strong class="text-white">الـ Watch Time هو المقياس الأهم في TikTok</strong>، ركز عليه فوق أي رقم تاني.</p>
+      <div class="grid md:grid-cols-2 gap-3 text-sm">
+        <div class="bg-green-500/10 border border-green-500/20 rounded-xl p-3"><p class="text-green-400 font-black mb-1">📊 الأرقام المهمة</p><p class="text-slate-400">Watch Time أكتر من 50% = فيديو ناجح. Profile Views = اهتمام حقيقي</p></div>
+        <div class="bg-blue-500/10 border border-blue-500/20 rounded-xl p-3"><p class="text-blue-400 font-black mb-1">💡 نصيحة Daoline</p><p class="text-slate-400">بص على "Traffic Source" عشان تعرف الناس بتوصلك منين (Search ولا FYP)</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: Content & AI -->
+  <section class="mb-24">
+    <h2 class="section-title">04) أدوات المحتوى والـ AI ✍️</h2>
+    <p class="text-slate-300 text-lg mb-8 leading-relaxed">إنتاج المحتوى بانتظام تحدي حقيقي. الأدوات دي بتساعدك تولّد أفكار، تكتب كابشن قوي، وتوفر وقت ضخم في عملية الكتابة والتخطيط.</p>
+
+    <div class="tool-card">
+      <div class="tool-number">07</div>
+      <div class="flex flex-wrap items-start justify-between gap-4 mb-4">
+        <div>
+          <div class="flex items-center gap-3 mb-2 flex-wrap">
+            <span class="text-2xl font-black text-white">أدوات الـ AI للكتابة</span>
+            <span class="badge badge-freemium">🔵 مجاني مع بلانات</span>
+            <span class="badge badge-hot">🔥 الأهم في 2026</span>
+          </div>
+          <div class="rating-star text-lg">★★★★★</div>
+        </div>
+      </div>
+      <p class="text-slate-300 leading-relaxed mb-5">ChatGPT وClaude وGemini غيّروا قواعد اللعبة في كتابة المحتوى. بتقدر تولّد أفكار كاملة، تكتب كابشن احترافي، تعمل Content Calendar بالكامل، وتترجم محتواك لأي لغة.. كل ده في دقائق!</p>
+      <div class="grid md:grid-cols-3 gap-3 text-sm mb-5">
+        <div class="bg-white/5 border border-white/10 rounded-xl p-3 text-center"><p class="text-white font-black mb-1">ChatGPT</p><p class="text-slate-400">الأشهر والأكتر مرونة، ممتاز للعربي والإنجليزي</p></div>
+        <div class="bg-white/5 border border-white/10 rounded-xl p-3 text-center"><p class="text-white font-black mb-1">Claude</p><p class="text-slate-400">الأقوى في الكتابة الطويلة والتحليل المتعمق</p></div>
+        <div class="bg-white/5 border border-white/10 rounded-xl p-3 text-center"><p class="text-white font-black mb-1">Gemini</p><p class="text-slate-400">متكامل مع Google Workspace وGoogle Docs</p></div>
+      </div>
+      <div class="bg-yellow-500/10 border border-yellow-500/30 rounded-xl p-4">
+        <p class="text-yellow-300 font-black">⚠️ تحذير مهم: الـ AI مساعد مش بديل! لازم تراجع وتضيف صوتك الشخصي على كل محتوى بتنتجه.</p>
+      </div>
+    </div>
+
+    <div class="tool-card">
+      <div class="tool-number">08</div>
+      <div class="flex flex-wrap items-start justify-between gap-4 mb-4">
+        <div>
+          <div class="flex items-center gap-3 mb-2 flex-wrap">
+            <span class="text-2xl font-black text-white">Notion</span>
+            <span class="badge badge-free">✅ مجاني للأفراد</span>
+          </div>
+          <div class="rating-star text-lg">★★★★★</div>
+        </div>
+        <a href="https://notion.so" target="_blank" rel="nofollow noopener" class="bg-daoline text-white px-5 py-2 rounded-full font-black text-sm hover-bg-daoline transition">جرّبه مجاناً ←</a>
+      </div>
+      <p class="text-slate-300 leading-relaxed mb-5">Notion هو مكان تنظيم شغلك بالكامل. فيه تعمل <strong class="text-white">Content Calendar</strong> كامل، تسجّل أفكار المحتوى، تتتبع أداء البوستات، وتحتفظ بـ Swipe File من المحتوى اللي ألهمك. وكمان بيشتغل تيم كويس لو في ناس بتساعدك.</p>
+      <div class="advice-highlight !mt-0">
+        <p class="text-white font-black">💡 نصيحة Daoline: فيه Templates جاهزة لـ Content Calendar في Notion بالعربي. دور عليها في Notion Template Gallery وفضّل وقتك.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: Video -->
+  <section class="mb-24">
+    <h2 class="section-title">05) أدوات الفيديو والصور 🎬</h2>
+    <p class="text-slate-300 text-lg mb-8 leading-relaxed">الفيديو هو المحتوى الأعلى وصولاً في 2026 على كل المنصات. الأدوات دي بتخليك تعمل فيديو احترافي من موبايلك من غير تعقيد.</p>
+
+    <div class="tool-card">
+      <div class="tool-number">09</div>
+      <div class="flex flex-wrap items-start justify-between gap-4 mb-4">
+        <div>
+          <div class="flex items-center gap-3 mb-2 flex-wrap">
+            <span class="text-2xl font-black text-white">CapCut</span>
+            <span class="badge badge-free">✅ مجاني</span>
+            <span class="badge badge-hot">🔥 ملك المونتاج</span>
+          </div>
+          <div class="rating-star text-lg">★★★★★</div>
+        </div>
+        <a href="https://capcut.com" target="_blank" rel="nofollow noopener" class="bg-daoline text-white px-5 py-2 rounded-full font-black text-sm hover-bg-daoline transition">حمّله مجاناً ←</a>
+      </div>
+      <p class="text-slate-300 leading-relaxed mb-5">لو بتعمل Reels أو TikTok، CapCut هو رفيقك الأساسي. بيديك مونتاج احترافي من موبايلك، إضافة سبتايتل تلقائي (مهم جداً لـ TikTok SEO)، مؤثرات ضخمة، وانتقالات مميزة. وكل ده مجاني!</p>
+      <div class="grid md:grid-cols-3 gap-3 text-sm">
+        <div class="bg-green-500/10 border border-green-500/20 rounded-xl p-3"><p class="text-green-400 font-black mb-1">✅ الأفضل فيه</p><p class="text-slate-400">Auto-captions، تمبليتس التريند، تزامن تلقائي مع الموسيقى</p></div>
+        <div class="bg-red-500/10 border border-red-500/20 rounded-xl p-3"><p class="text-red-400 font-black mb-1">❌ عيوبه</p><p class="text-slate-400">Watermark في الـ PC، بعض الفيلترات للـ Pro</p></div>
+        <div class="bg-blue-500/10 border border-blue-500/20 rounded-xl p-3"><p class="text-blue-400 font-black mb-1">💡 نصيحة Daoline</p><p class="text-slate-400">فعّل Auto-captions فوراً! بتضاعف وصول فيديوهاتك على TikTok</p></div>
+      </div>
+    </div>
+
+    <div class="tool-card">
+      <div class="tool-number">10</div>
+      <div class="flex flex-wrap items-start justify-between gap-4 mb-4">
+        <div>
+          <div class="flex items-center gap-3 mb-2 flex-wrap">
+            <span class="text-2xl font-black text-white">Pexels &amp; Unsplash</span>
+            <span class="badge badge-free">✅ مجاني 100%</span>
+          </div>
+          <div class="rating-star text-lg">★★★★<span class="text-slate-600">★</span></div>
+        </div>
+        <a href="https://pexels.com" target="_blank" rel="nofollow noopener" class="bg-white/10 border border-white/20 text-white px-5 py-2 rounded-full font-black text-sm hover:bg-white/20 transition">تصفّح الصور ←</a>
+      </div>
+      <p class="text-slate-300 leading-relaxed mb-5">محتاج صور وفيديوهات Stock احترافية مجانية؟ Pexels وUnsplash بيوفروا ملايين الصور والفيديوهات عالية الجودة مجاناً وبدون أي حقوق ملكية. استخدمهم في بوستاتك وتصاميمك على Canva.</p>
+      <div class="bg-blue-500/10 border border-blue-500/20 rounded-xl p-4">
+        <p class="text-blue-300 font-black">🎯 Bonus: موقع Mixkit بيديك فيديوهات Stock مجانية لو محتاج B-Roll احترافي لـ Reels وTikTok بتاعتك!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison Table -->
+  <section class="mb-24">
+    <h2 class="section-title">06) مقارنة سريعة للـ 10 أدوات 📋</h2>
+    <div class="glass shadow-xl !p-0 overflow-hidden">
+      <div class="overflow-x-auto">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>الأداة</th>
+              <th>الاستخدام</th>
+              <th>السعر</th>
+              <th>الأنسب لـ</th>
+              <th>تقييمنا</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="text-white font-black">Canva</td><td>تصميم</td><td>مجاني / Pro</td><td>الكل</td><td class="rating-star">★★★★★</td></tr>
+            <tr><td class="text-white font-black">Adobe Express</td><td>تصميم</td><td>مجاني / CC</td><td>مستخدمي Adobe</td><td class="rating-star">★★★★<span class="text-slate-600">★</span></td></tr>
+            <tr><td class="text-white font-black">Buffer</td><td>جدولة</td><td>مجاني</td><td>المبتدئين</td><td class="rating-star">★★★★★</td></tr>
+            <tr><td class="text-white font-black">Later</td><td>جدولة</td><td>مجاني / مدفوع</td><td>Instagram</td><td class="rating-star">★★★★<span class="text-slate-600">★</span></td></tr>
+            <tr><td class="text-white font-black">Meta Business Suite</td><td>تحليل</td><td>مجاني</td><td>FB + IG</td><td class="rating-star">★★★★★</td></tr>
+            <tr><td class="text-white font-black">TikTok Analytics</td><td>تحليل</td><td>مجاني</td><td>TikTok</td><td class="rating-star">★★★★<span class="text-slate-600">★</span></td></tr>
+            <tr><td class="text-white font-black">AI Tools</td><td>كتابة</td><td>مجاني / مدفوع</td><td>الكل</td><td class="rating-star">★★★★★</td></tr>
+            <tr><td class="text-white font-black">Notion</td><td>تنظيم</td><td>مجاني</td><td>التخطيط</td><td class="rating-star">★★★★★</td></tr>
+            <tr><td class="text-white font-black">CapCut</td><td>مونتاج</td><td>مجاني</td><td>Reels + TikTok</td><td class="rating-star">★★★★★</td></tr>
+            <tr><td class="text-white font-black">Pexels / Unsplash</td><td>صور/فيديو</td><td>مجاني</td><td>الكل</td><td class="rating-star">★★★★<span class="text-slate-600">★</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recommended Starter Pack -->
+  <section class="mb-24">
+    <h2 class="section-title">07) ابدأ بـ "باقة المبتدئ" دي 🎒</h2>
+    <p class="text-slate-300 text-lg mb-8 leading-relaxed">مش محتاج 10 أدوات من الأول! دي أبسط باقة تقدر تبدأ بيها من النهارده:</p>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="bg-daoline/10 border-2 border-daoline/40 rounded-3xl p-6">
+        <h3 class="text-daoline font-black text-xl mb-4">🚀 الباقة الأساسية (صفر جنيه)</h3>
+        <ul class="space-y-3 text-slate-300 font-bold">
+          <li class="flex items-center gap-2">🎨 <span>Canva (مجاني) للتصميم</span></li>
+          <li class="flex items-center gap-2">📅 <span>Buffer (مجاني) للجدولة</span></li>
+          <li class="flex items-center gap-2">📊 <span>Meta Business Suite للتحليل</span></li>
+          <li class="flex items-center gap-2">🎬 <span>CapCut للفيديو</span></li>
+          <li class="flex items-center gap-2">🤖 <span>ChatGPT (المجاني) للأفكار</span></li>
+        </ul>
+      </div>
+      <div class="bg-blue-500/10 border-2 border-blue-500/40 rounded-3xl p-6">
+        <h3 class="text-blue-400 font-black text-xl mb-4">💼 لما تكبر الشغل</h3>
+        <ul class="space-y-3 text-slate-300 font-bold">
+          <li class="flex items-center gap-2">🎨 <span>Canva Pro (مميزات أكتر)</span></li>
+          <li class="flex items-center gap-2">📅 <span>Later (لو Instagram أساسي)</span></li>
+          <li class="flex items-center gap-2">📝 <span>Notion (لتنظيم الشغل)</span></li>
+          <li class="flex items-center gap-2">🤖 <span>ChatGPT Plus أو Claude Pro</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="mb-24">
+    <h2 class="section-title">08) أسئلة شائعة ❓</h2>
+    <div class="space-y-4">
+      <details class="group bg-slate-800/60 rounded-xl border border-slate-700 cursor-pointer">
+        <summary class="flex justify-between items-center font-bold p-5 text-white">
+          <span>هل Canva مجاني بالفعل ولا في حاجات مخفية؟</span>
+          <span class="transition group-open:rotate-180 text-daoline">▼</span>
+        </summary>
+        <div class="p-5 pt-0 text-slate-300 border-t border-slate-700/50 mt-2">نعم، Canva فيه إصدار مجاني قوي جداً يكفي للمبتدئين. بعض التمبليتس والعناصر مكتوب عليها Crown يعني Pro فقط. الإصدار المدفوع Pro بيضيف مميزات إضافية لكن مش ضرورية في البداية.</div>
+      </details>
+      <details class="group bg-slate-800/60 rounded-xl border border-slate-700 cursor-pointer">
+        <summary class="flex justify-between items-center font-bold p-5 text-white">
+          <span>ما الفرق بين Buffer وLater؟ أنهي الأنسب؟</span>
+          <span class="transition group-open:rotate-180 text-daoline">▼</span>
+        </summary>
+        <div class="p-5 pt-0 text-slate-300 border-t border-slate-700/50 mt-2">Buffer أبسط وأسهل للمبتدئين وبيشتغل مع أكتر منصات. Later أقوى في تحليلات Instagram تحديداً وعنده Visual Grid Preview. للمبتدئ، ابدأ بـ Buffer.</div>
+      </details>
+      <details class="group bg-slate-800/60 rounded-xl border border-slate-700 cursor-pointer">
+        <summary class="flex justify-between items-center font-bold p-5 text-white">
+          <span>هل أحتاج كل الأدوات دي في نفس الوقت؟</span>
+          <span class="transition group-open:rotate-180 text-daoline">▼</span>
+        </summary>
+        <div class="p-5 pt-0 text-slate-300 border-t border-slate-700/50 mt-2">أبداً! ابدأ بـ Canva وBuffer وCapCut بس. وبعد شهر لما تتعود، زود أداة تحليل زي Meta Business Suite. الإضافة التدريجية أفضل بكتير من محاولة تعلم كل حاجة في وقت واحد.</div>
+      </details>
+      <details class="group bg-slate-800/60 rounded-xl border border-slate-700 cursor-pointer">
+        <summary class="flex justify-between items-center font-bold p-5 text-white">
+          <span>هل الـ AI هيعمل المحتوى بدلاً مني؟</span>
+          <span class="transition group-open:rotate-180 text-daoline">▼</span>
+        </summary>
+        <div class="p-5 pt-0 text-slate-300 border-t border-slate-700/50 mt-2">الـ AI مساعد قوي جداً لكنه مش بديل. هو بيساعدك في الأفكار والكتابة، لكن صوتك الشخصي وخبرتك الحقيقية هما اللي بيخلوا الناس تثق فيك وتشتري منك.</div>
+      </details>
+    </div>
+  </section>
+
+  <!-- Summary -->
+  <div class="text-center mb-16 px-6">
+    <h2 class="text-2xl font-black text-white mb-4">الخلاصة 💡</h2>
+    <p class="text-slate-300 text-lg max-w-2xl mx-auto leading-relaxed">الأدوات المجانية في 2026 مش أقل من المدفوعة.. هي نفس الشغل بس بحدود أقل. <strong class="text-white">ابدأ بالباقة الأساسية الخمس أدوات</strong>، تعلمهم كويس، وبعدين وسّع تدريجياً. التنفيذ الصح بأداة بسيطة أفضل بكتير من عدم التنفيذ بأداة غالية!</p>
+  </div>
+
+  <!-- Internal Links -->
+  <section class="mb-10 text-center bg-slate-900/50 p-8 rounded-3xl border border-white/5">
+    <h3 class="text-xl font-bold text-white mb-6">🔗 كمّل رحلة التعلم مع Daoline:</h3>
+    <div class="flex flex-wrap justify-center gap-4">
+      <a href="#" class="px-6 py-3 bg-white/5 border border-white/10 hover:border-daoline rounded-full text-slate-300 hover:text-white transition">السوشيال ميديا للمبتدئين من الصفر</a>
+      <a href="#" class="px-6 py-3 bg-white/5 border border-white/10 hover:border-daoline rounded-full text-slate-300 hover:text-white transition">كيف تكتب كابشن يجذب التفاعل</a>
+      <a href="#" class="px-6 py-3 bg-white/5 border border-white/10 hover:border-daoline rounded-full text-slate-300 hover:text-white transition">كيف تتصدر TikTok في 2026</a>
+    </div>
+  </section>
+
+  <!-- Lead Magnet -->
+  <section id="leads-section" class="mb-20 mt-20 text-right">
+    <div id="lead-form-container">
+      <div class="glass border-4 border-daoline text-center shadow-[0_0_150px_rgba(192,19,166,0.3)]">
+        <div class="text-6xl mb-6">🛠️</div>
+        <h2 class="text-3xl md:text-4xl font-black mb-6 text-white italic">احصل على "قايمة أدوات Daoline" كاملة مجاناً!</h2>
+        <p class="text-slate-300 text-lg mb-10 leading-relaxed max-w-2xl mx-auto">PDF جاهز بـ <strong>كل الأدوات اللي بنستخدمها في Daoline</strong> مع شرح لكل أداة وإزاي نستخدمها + لينكات مباشرة للتحميل.</p>
+        <div class="max-w-xl mx-auto space-y-5">
+          <input type="text" id="lead-name" placeholder="اكتب اسمك هنا.." class="form-input">
+          <input type="email" id="lead-email" placeholder="بريدك الإلكتروني.." class="form-input">
+          <input type="tel" id="lead-whatsapp" placeholder="رقم الواتساب (عشان نبعتلك القايمة).." class="form-input">
+          <button id="submit-btn" onclick="handleLeadSubmission()" class="bg-daoline hover:bg-white hover:text-daoline text-white w-full py-5 rounded-2xl font-black text-2xl shadow-xl transition transform hover:scale-105 duration-300 cursor-pointer">
+            ابعتوا لي القايمة دلوقتي 🚀
+          </button>
+        </div>
+        <div id="status-msg"></div>
+        <p class="text-[11px] text-slate-500 mt-6 italic">بياناتك آمنة ومش هنشاركها مع أي طرف تالت.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- Footer -->
+<footer class="bg-black py-20 text-center border-t border-white/5">
+  <div class="flex flex-col items-center gap-6 mb-12">
+    <div class="font-black text-4xl text-white uppercase italic tracking-tighter">DAOLINE<span class="text-daoline">DIGITAL</span></div>
+  </div>
+  <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-10 text-right px-10 mb-16">
+    <div>
+      <h4 class="text-white text-2xl font-black mb-6 border-r-4 border-daoline pr-4 uppercase italic">Contact Details:</h4>
+      <div class="space-y-4 text-lg text-slate-400 font-medium">
+        <p>Website: <a href="https://daolinedigital.com" target="_blank" class="text-white hover:text-daoline underline">Daolinedigital.com</a></p>
+        <p>Email: <a href="mailto:info@daolinedigital.com" class="text-white hover:text-daoline underline">info@daolinedigital.com</a></p>
+      </div>
+    </div>
+    <div>
+      <h4 class="text-white text-2xl font-black mb-6 border-r-4 border-daoline pr-4 uppercase italic">Lead By:</h4>
+      <div class="space-y-2">
+        <p class="text-slate-400 text-sm mb-1 uppercase tracking-widest italic">Executive Director</p>
+        <a href="https://facebook.com/doaaseleat" target="_blank" class="text-daoline text-2xl font-black italic underline decoration-white underline-offset-8">Doaa Seleat</a>
+      </div>
+    </div>
+  </div>
+  <div class="pt-10 border-t border-white/5 mx-10 text-[11px] text-slate-700 uppercase font-black tracking-widest">© 2026 Daoline Digital Academy | All Rights Reserved</div>
+</footer>
+
+<div id="security-toast"></div>
+
+<script>
+  window.addEventListener('scroll', () => {
+    const s = document.documentElement.scrollTop;
+    const h = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    document.getElementById('reading-progress').style.width = (s/h*100) + '%';
+  });
+
+  const FORM_ACTION_URL = "https://docs.google.com/forms/d/e/1FAIpQLSdSXEvN7DMMC-pwXED9G5TRpe4ecQ5U7pMtsg3201d2ikinfQ/formResponse";
+  const ENTRY_NAME = "entry.1224669856";
+  const ENTRY_EMAIL = "entry.299023128";
+  const ENTRY_WHATSAPP = "entry.1712155557";
+
+  function showStatus(text, color) {
+    const m = document.getElementById('status-msg');
+    m.style.display = "block"; m.innerText = text; m.style.color = color;
+    m.style.backgroundColor = "rgba(0,0,0,0.5)"; m.style.borderColor = "rgba(255,255,255,0.12)";
+  }
+
+  async function handleLeadSubmission() {
+    const btn = document.getElementById('submit-btn');
+    const fc = document.getElementById('lead-form-container');
+    const name = document.getElementById('lead-name').value.trim();
+    const email = document.getElementById('lead-email').value.trim();
+    const wa = document.getElementById('lead-whatsapp').value.trim();
+    if (!name || !email || !wa) { showStatus("من فضلك املأ كل الخانات!", "#f87171"); return; }
+    try {
+      btn.disabled = true; btn.innerText = "جاري الإرسال...";
+      const fd = new FormData();
+      fd.append(ENTRY_NAME, name); fd.append(ENTRY_EMAIL, email); fd.append(ENTRY_WHATSAPP, wa);
+      await fetch(FORM_ACTION_URL, {method:"POST", mode:"no-cors", body:fd});
+      showStatus("تم التسجيل بنجاح! ✅", "#10b981"); btn.innerText = "تم بنجاح ✅";
+      setTimeout(() => {
+        fc.style.transition = "all 0.5s ease"; fc.style.opacity = "0"; fc.style.transform = "translateY(-20px)";
+        setTimeout(() => { window.location.href = "https://daolinedigital.com"; }, 500);
+      }, 1500);
+    } catch(e) {
+      showStatus("حصل خطأ.. جرب تاني.", "#f87171");
+      btn.disabled = false; btn.innerText = "ابعتوا لي القايمة دلوقتي 🚀";
+    }
+  }
+
+  document.addEventListener('contextmenu', e => { e.preventDefault(); showToast('المحتوى محمي لـ Daoline Digital 🔒'); });
+  document.addEventListener('keydown', e => {
+    const tag = (e.target?.tagName||"").toLowerCase();
+    if(tag==="input"||tag==="textarea") return;
+    const k = e.key.toLowerCase();
+    if((e.ctrlKey&&['c','u','s','i','a','p'].includes(k))||e.key==='F12'){e.preventDefault();showToast('حقوق النسخ محفوظة لـ Daoline 🔒');}
+  });
+  function showToast(msg) {
+    const t = document.getElementById('security-toast');
+    t.innerText = msg; t.style.opacity = '1';
+    setTimeout(()=>{t.style.opacity='0';},2000);
+  }
+</script>
+</body>
+</html>
