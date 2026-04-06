@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>دليل تحديثات Meta 2026 | Daoline Digital</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Changa:wght@700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --pink: #c013a6;
+      --pink2: #e040fb;
+      --blue: #2563eb;
+      --dark: #0a0f1e;
+      --card: #111827;
+      --border: rgba(255,255,255,0.07);
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Tajawal', sans-serif;
+      background: var(--dark);
+      color: var(--text);
+      direction: rtl;
+      text-align: right;
+      line-height: 1.8;
+      font-size: 1rem;
+      min-height: 100vh;
+    }
+
+    /* ── PAGE WRAPPER ── */
+    .page { max-width: 860px; margin: 0 auto; padding: 0 1.5rem 6rem; }
+
+    /* ── COVER ── */
+    .cover {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 4rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .cover::before {
+      content: '';
+      position: absolute;
+      top: -200px; left: -200px;
+      width: 700px; height: 700px;
+      background: radial-gradient(circle, rgba(192,19,166,0.18) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .cover::after {
+      content: '';
+      position: absolute;
+      bottom: -100px; right: -100px;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(37,99,235,0.12) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .cover-year {
+      font-family: 'Changa', sans-serif;
+      font-size: clamp(5rem, 20vw, 12rem);
+      font-weight: 900;
+      line-height: 1;
+      color: rgba(255,255,255,0.04);
+      position: absolute;
+      left: -10px; top: 50%;
+      transform: translateY(-50%);
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .cover-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(192,19,166,0.12);
+      border: 1px solid rgba(192,19,166,0.35);
+      color: #e879f9;
+      padding: 6px 18px;
+      border-radius: 999px;
+      font-weight: 900;
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+    }
+
+    .cover h1 {
+      font-family: 'Changa', sans-serif;
+      font-size: clamp(2.2rem, 6vw, 4.2rem);
+      font-weight: 900;
+      line-height: 1.15;
+      color: white;
+      margin-bottom: 1.5rem;
+      position: relative;
+      z-index: 1;
+    }
+    .cover h1 span { color: var(--pink); }
+
+    .cover-sub {
+      font-size: 1.15rem;
+      color: var(--muted);
+      max-width: 540px;
+      margin-bottom: 2.5rem;
+      position: relative;
+      z-index: 1;
+      line-height: 2;
+    }
+
+    .cover-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 3rem;
+      position: relative;
+      z-index: 1;
+    }
+    .cover-meta-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--muted);
+    }
+    .cover-meta-item span { color: white; }
+
+    .cover-divider {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, var(--pink), transparent);
+      margin-bottom: 3rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cover-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      width: 100%;
+      position: relative;
+      z-index: 1;
+    }
+    .cover-stat {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      padding: 1.2rem;
+      text-align: center;
+    }
+    .cover-stat-num {
+      font-family: 'Changa', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: var(--pink);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .cover-stat-label { font-size: 0.78rem; color: var(--muted); font-weight: 700; }
+
+    .cover-brand {
+      position: absolute;
+      top: 2rem; left: 0;
+      font-family: 'Changa', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 900;
+      color: white;
+      letter-spacing: 0.05em;
+      z-index: 2;
+    }
+    .cover-brand span { color: var(--pink); }
+
+    .cover-page-num {
+      position: absolute;
+      bottom: 2rem; left: 0;
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.2);
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      z-index: 2;
+    }
+
+    /* ── SECTION BREAK ── */
+    .section-break {
+      border-top: 1px solid var(--border);
+      margin: 4rem 0 3rem;
+      padding-top: 3rem;
+      position: relative;
+    }
+    .section-number {
+      position: absolute;
+      top: -1.1rem;
+      right: 0;
+      background: var(--dark);
+      padding: 0 1rem;
+      font-family: 'Changa', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 900;
+      color: var(--pink);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    /* ── SECTION TITLE ── */
+    .sec-title {
+      font-family: 'Changa', sans-serif;
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-weight: 900;
+      color: white;
+      margin-bottom: 0.5rem;
+      line-height: 1.2;
+    }
+    .sec-subtitle {
+      color: var(--muted);
+      font-size: 1rem;
+      margin-bottom: 2.5rem;
+      line-height: 1.9;
+    }
+
+    /* ── UPDATE CARD ── */
+    .update-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 1.25rem;
+      padding: 1.75rem;
+      margin-bottom: 1.25rem;
+      position: relative;
+      transition: border-color 0.25s;
+    }
+    .update-card:hover { border-color: rgba(192,19,166,0.4); }
+    .update-card-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+    .update-card-title {
+      font-weight: 900;
+      font-size: 1.1rem;
+      color: white;
+      line-height: 1.4;
+    }
+    .update-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 3px 12px;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      font-weight: 900;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .badge-critical { background: rgba(239,68,68,0.15); color: #f87171; border: 1px solid rgba(239,68,68,0.3); }
+    .badge-important { background: rgba(245,158,11,0.15); color: #fbbf24; border: 1px solid rgba(245,158,11,0.3); }
+    .badge-new { background: rgba(16,185,129,0.15); color: #34d399; border: 1px solid rgba(16,185,129,0.3); }
+    .badge-ai { background: rgba(139,92,246,0.15); color: #a78bfa; border: 1px solid rgba(139,92,246,0.3); }
+    .badge-ads { background: rgba(37,99,235,0.15); color: #60a5fa; border: 1px solid rgba(37,99,235,0.3); }
+
+    .update-body {
+      color: var(--muted);
+      font-size: 0.97rem;
+      line-height: 2;
+      margin-bottom: 1rem;
+    }
+    .update-impact {
+      background: rgba(192,19,166,0.07);
+      border-right: 3px solid var(--pink);
+      border-radius: 0 0.75rem 0.75rem 0;
+      padding: 0.75rem 1rem;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: #e879f9;
+    }
+    .update-impact::before { content: "⚡ تأثيره عليك: "; color: white; }
+
+    /* ── HIGHLIGHT BOX ── */
+    .highlight-box {
+      background: linear-gradient(135deg, rgba(192,19,166,0.1), rgba(37,99,235,0.08));
+      border: 1px solid rgba(192,19,166,0.25);
+      border-radius: 1.5rem;
+      padding: 2rem;
+      margin: 2rem 0;
+    }
+    .highlight-box-title {
+      font-weight: 900;
+      font-size: 1.15rem;
+      color: white;
+      margin-bottom: 0.75rem;
+    }
+    .highlight-box p { color: var(--muted); font-size: 0.97rem; line-height: 2; }
+
+    /* ── CHECKLIST ── */
+    .checklist { list-style: none; padding: 0; margin: 1.5rem 0; }
+    .checklist li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 0.6rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.97rem;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+    .checklist li:last-child { border-bottom: none; }
+    .checklist li .check {
+      width: 22px;
+      height: 22px;
+      border-radius: 6px;
+      border: 2px solid rgba(192,19,166,0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+      font-size: 0.7rem;
+      color: var(--pink);
+    }
+    .checklist li strong { color: white; }
+
+    /* ── STAT GRID ── */
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+    .stat-box {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 1.1rem;
+      padding: 1.5rem;
+      text-align: center;
+    }
+    .stat-box-num {
+      font-family: 'Changa', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: var(--pink);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .stat-box-label { font-size: 0.85rem; color: var(--muted); font-weight: 700; }
+
+    /* ── TIMELINE ── */
+    .mini-timeline { margin: 2rem 0; }
+    .mini-tl-item {
+      display: flex;
+      gap: 1rem;
+      padding-bottom: 1.5rem;
+      position: relative;
+    }
+    .mini-tl-item::before {
+      content: '';
+      position: absolute;
+      right: 14px;
+      top: 32px;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, rgba(192,19,166,0.4), transparent);
+    }
+    .mini-tl-item:last-child::before { display: none; }
+    .mini-tl-dot {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: rgba(192,19,166,0.15);
+      border: 2px solid rgba(192,19,166,0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 0.7rem;
+      color: var(--pink);
+      font-weight: 900;
+    }
+    .mini-tl-content { flex: 1; }
+    .mini-tl-title { font-weight: 900; color: white; font-size: 0.97rem; margin-bottom: 2px; }
+    .mini-tl-desc { font-size: 0.87rem; color: var(--muted); line-height: 1.8; }
+
+    /* ── TABLE ── */
+    .meta-table { width: 100%; border-collapse: separate; border-spacing: 0; margin: 1.5rem 0; }
+    .meta-table th {
+      background: rgba(192,19,166,0.12);
+      color: white;
+      padding: 12px 16px;
+      font-weight: 900;
+      font-size: 0.88rem;
+      border-bottom: 2px solid rgba(192,19,166,0.25);
+      text-align: right;
+    }
+    .meta-table td {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+    .meta-table tr:last-child td { border-bottom: none; }
+    .meta-table tr:hover td { background: rgba(255,255,255,0.02); }
+
+    /* ── PAGE FOOTER ── */
+    .page-footer {
+      margin-top: 5rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .page-footer-brand {
+      font-family: 'Changa', sans-serif;
+      font-weight: 900;
+      font-size: 1.2rem;
+      color: white;
+    }
+    .page-footer-brand span { color: var(--pink); }
+    .page-footer-info { font-size: 0.8rem; color: rgba(255,255,255,0.25); font-weight: 700; }
+
+    /* ── BACK COVER ── */
+    .back-cover {
+      min-height: 60vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 4rem 0;
+      position: relative;
+      overflow: hidden;
+      margin-top: 5rem;
+      border-top: 1px solid var(--border);
+    }
+    .back-cover::before {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(192,19,166,0.12) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .back-cover-logo {
+      font-family: 'Changa', sans-serif;
+      font-size: 3rem;
+      font-weight: 900;
+      color: white;
+      margin-bottom: 1rem;
+      position: relative;
+      z-index: 1;
+    }
+    .back-cover-logo span { color: var(--pink); }
+    .back-cover-tagline {
+      color: var(--muted);
+      font-size: 1rem;
+      margin-bottom: 2rem;
+      position: relative;
+      z-index: 1;
+    }
+    .back-cover-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      position: relative;
+      z-index: 1;
+    }
+    .back-cover-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border);
+      color: white;
+      padding: 8px 20px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: border-color 0.2s;
+    }
+    .back-cover-link:hover { border-color: var(--pink); }
+
+    /* ── PRINT / DOWNLOAD ── */
+    .print-btn {
+      position: fixed;
+      bottom: 2rem;
+      left: 2rem;
+      background: var(--pink);
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 999px;
+      font-family: 'Tajawal', sans-serif;
+      font-weight: 900;
+      font-size: 0.9rem;
+      cursor: pointer;
+      box-shadow: 0 8px 30px rgba(192,19,166,0.4);
+      transition: transform 0.2s, background 0.2s;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .print-btn:hover { transform: translateY(-2px); background: #a00f89; }
+
+    @media print {
+      .print-btn { display: none; }
+      body { background: white; color: #111; }
+      .cover::before, .cover::after { display: none; }
+    }
+
+    @media (max-width: 600px) {
+      .cover-stats { grid-template-columns: repeat(2,1fr); }
+      .stat-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ── SEPARATOR LINE ── */
+    .sep { width: 60px; height: 3px; background: var(--pink); border-radius: 999px; margin: 1rem 0 2rem; }
+  </style>
+</head>
+
+<body>
+<div class="page">
+
+  <!-- ══════════════════════════════════════
+       COVER PAGE
+  ══════════════════════════════════════ -->
+  <section class="cover">
+    <div class="cover-year">2026</div>
+    <div class="cover-brand">DAOLINE<span>DIGITAL</span></div>
+
+    <div class="cover-tag">🔴 إصدار خاص · أبريل 2026</div>
+
+    <h1>
+      دليل تحديثات<br>
+      <span>Meta</span> 2026<br>
+      الكامل
+    </h1>
+
+    <p class="cover-sub">
+      كل التحديثات المهمة اللي حصلت على Facebook وInstagram وMessenger وMeta Ads في 2026 — في مكان واحد، بلغة واضحة، مع التأثير الحقيقي على شغلك.
+    </p>
+
+    <div class="cover-meta">
+      <div class="cover-meta-item">📅 تاريخ الإصدار: <span>أبريل 2026</span></div>
+      <div class="cover-meta-item">📖 عدد الصفحات: <span>دليل شامل</span></div>
+      <div class="cover-meta-item">🎯 الجمهور: <span>ماركتير + أصحاب بيزنس</span></div>
+    </div>
+
+    <div class="cover-divider"></div>
+
+    <div class="cover-stats">
+      <div class="cover-stat">
+        <div class="cover-stat-num">12+</div>
+        <div class="cover-stat-label">تحديث مهم مغطّى</div>
+      </div>
+      <div class="cover-stat">
+        <div class="cover-stat-num">4</div>
+        <div class="cover-stat-label">منصات Meta</div>
+      </div>
+      <div class="cover-stat">
+        <div class="cover-stat-num">100%</div>
+        <div class="cover-stat-label">معلومات موثّقة</div>
+      </div>
+    </div>
+
+    <div class="cover-page-num">DAOLINE DIGITAL © 2026 · ALL RIGHTS RESERVED</div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════
+       SECTION 1 — MESSENGER SHUTDOWN
+  ══════════════════════════════════════ -->
+  <div class="section-break">
+    <div class="section-number">01 · الخبر الأكبر</div>
+  </div>
+
+  <h2 class="sec-title">إغلاق messenger.com</h2>
+  <div class="sep"></div>
+  <p class="sec-subtitle">التحديث الأكتر ضجة في أبريل 2026 — وإيه اللي يعنيه فعلاً.</p>
+
+  <div class="update-card">
+    <div class="update-card-header">
+      <div class="update-card-title">🔴 messenger.com بيتغلق في 16 أبريل 2026</div>
+      <div class="update-badge badge-critical">عاجل</div>
+    </div>
+    <p class="update-body">
+      Meta أعلنت رسمياً إن موقع messenger.com المستقل هيوقف تشغيله كمنصة رسائل ابتداءً من 16 أبريل 2026. كل من يفتح الرابط هيتحول تلقائياً لـ facebook.com/messages. ده جاء بعد إغلاق تطبيقات Messenger على Windows وMac في أكتوبر 2025.
+    </p>
+    <div class="update-impact">الرسائل على الويب هتبقى متاحة بس من داخل Facebook. تطبيق الموبايل مش هيتأثر.</div>
+  </div>
+
+  <div class="mini-timeline">
+    <div class="mini-tl-item">
+      <div class="mini-tl-dot">08</div>
+      <div class="mini-tl-content">
+        <div class="mini-tl-title">2008 — Facebook Chat</div>
+        <div class="mini-tl-desc">Messenger ظهر مدمج جوه Facebook كـ "Facebook Chat".</div>
+      </div>
+    </div>
+    <div class="mini-tl-item">
+      <div class="mini-tl-dot">14</div>
+      <div class="mini-tl-content">
+        <div class="mini-tl-title">2014 — الانفصال الإجباري</div>
+        <div class="mini-tl-desc">Meta أجبرت الكل على تطبيق Messenger المنفصل وشالت الرسائل من Facebook.</div>
+      </div>
+    </div>
+    <div class="mini-tl-item">
+      <div class="mini-tl-dot">23</div>
+      <div class="mini-tl-content">
+        <div class="mini-tl-title">2023 — الرجوع للدمج</div>
+        <div class="mini-tl-desc">Meta بدأت دمج Messenger تاني جوه Facebook app.</div>
+      </div>
+    </div>
+    <div class="mini-tl-item">
+      <div class="mini-tl-dot">🔴</div>
+      <div class="mini-tl-content">
+        <div class="mini-tl-title">16 أبريل 2026 — الإغلاق النهائي</div>
+        <div class="mini-tl-desc">messenger.com يبطل. facebook.com/messages هو البديل الوحيد على الويب.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="highlight-box">
+    <div class="highlight-box-title">✅ إيه اللي تعمله دلوقتي</div>
+    <ul class="checklist">
+      <li><div class="check">◻</div><div><strong>Bookmark</strong> رابط facebook.com/messages على المتصفح بتاعك دلوقتي.</div></li>
+      <li><div class="check">◻</div><div><strong>تأكد من الـ Backup PIN</strong> في إعدادات Messenger على الموبايل.</div></li>
+      <li><div class="check">◻</div><div>لو بيزنس: انتقل لـ <strong>Meta Business Suite</strong> لإدارة رسائل العملاء.</div></li>
+      <li><div class="check">◻</div><div>لو ما عندكش فيسبوك نشط: <strong>تطبيق الموبايل</strong> هو خيارك الوحيد على الويب.</div></li>
+    </ul>
+  </div>
+
+
+  <!-- ══════════════════════════════════════
+       SECTION 2 — FACEBOOK FEED UPDATES
+  ══════════════════════════════════════ -->
+  <div class="section-break">
+    <div class="section-number">02 · Facebook</div>
+  </div>
+
+  <h2 class="sec-title">تحديثات Facebook الكبيرة</h2>
+  <div class="sep"></div>
+  <p class="sec-subtitle">Facebook مش "قديمة" — التحديثات دي بتثبت إنها لسه المنافس الأقوى.</p>
+
+  <div class="update-card">
+    <div class="update-card-header">
+      <div class="update-card-title">🔄 تحديث الـ Feed وإعادة تصميم واجهة Facebook</div>
+      <div class="update-badge badge-important">مهم</div>
+    </div>
+    <p class="update-body">
+      Meta أطلقت تحديثات جوهرية على Facebook Feed تشمل: واجهة جديدة لـ Post Composer أبسط وأسرع، Layout أكتر immersive في الـ "For You" Feed، وتصميم Grid جديد في قسم البحث لكل أنواع المحتوى. كمان فيه أداة ضبط الخوارزمية وترشيحات صداقة بناءً على الاهتمامات المشتركة.
+    </p>
+    <div class="update-impact">بوستاتك هتتنافس بشكل أشرس في الـ For You Feed. التركيز على الـ Engagement الحقيقي بقى أهم من أي وقت.</div>
+  </div>
+
+  <div class="update-card">
+    <div class="update-card-header">
+      <div class="update-card-title">🔗 تحديد روابط الصفحات (اختبار محدود)</div>
+      <div class="update-badge badge-critical">تحذير</div>
+    </div>
+    <p class="update-body">
+      Meta بتختبر تحديداً على عدد الروابط الخارجية اللي صفحات الأعمال تقدر تنشرها. بعض الحسابات غير المشتركة في Meta Verified اتبلغت إنها متقدرش تنشر غير رابطين خارجيين في الشهر. لسه اختبار محدود ومافيش موعد رسمي للتطبيق الكامل.
+    </p>
+    <div class="update-impact">لو بيزنسك بيعتمد على روابط خارجية كتير على Facebook، ابدأ تفكر في استراتيجية بديلة وتنويع المحتوى.</div>
+  </div>
+
+  <div class="update-card">
+    <div class="update-card-header">
+      <div class="update-card-title">📊 مقارنة البوستات من Professional Dashboard</div>
+      <div class="update-badge badge-new">جديد</div>
+    </div>
+    <p class="update-body">
+      Facebook دلوقتي بيسمح للـ Creators والبيزنس يقارنوا أداء البوستات مباشرة من الـ Professional Dashboard. مميزة بتوفر وقت ومجهود في التحليل وبتساعدك تعرف بسرعة إيه المحتوى الأشغل.
+    </p>
+    <div class="update-impact">استخدم المقارنة دي كل أسبوع لتحديد أفضل 3 بوستات وكرّر نفس النوع في الأسبوع الجاي.</div>
+  </div>
+
+  <div class="update-card">
+    <div class="update-card-header">
+      <div class="update-card-title">🔒 Safe Browsing في Messenger</div>
+      <div class="update-badge badge-new">جديد</div>
+    </div>
+    <p class="update-body">
+      Meta أطلقت ميزة Safe Browsing في Messenger لحماية المستخدمين من الروابط الضارة والمشبوهة. التطبيق بيكون تلقائي من غير أي إعداد من المستخدم.
+    </p>
+    <div class="update-impact">ميزة أمان إيجابية. لو بيزنسك بيبعت روابط للعملاء، تأكد إن روابطك من دومين موثوق عشان ما تتوقفش.</div>
+  </div>
+
+
+  <!-- ══════════════════════════════════════
+       SECTION 3 — INSTAGRAM UPDATES
+  ══════════════════════════════════════ -->
+  <div class="section-break">
+    <div class="section-number">03 · Instagram</div>
+  </div>
+
+  <h2 class="sec-title">تحديثات Instagram</h2>
+  <div class="sep"></div>
+  <p class="sec-subtitle">Instagram بتتمسك بريادتها — وفيه تحديثات بتأثر على الـ Reach والـ Creators بشكل مباشر.</p>
+
+  <div class="update-card">
+    <div class="update-card-header">
+      <div class="update-card-title">📝 قواعد المحتوى الأصلي الجديدة (مارس 2026)</div>
+      <div class="update-badge badge-critical">حاسم</div>
+    </div>
+    <p class="update-body">
+      Meta حدّثت رسمياً قواعد المحتوى الأصلي على Facebook وInstagram وأطلقت أدوات Enforcement جديدة. المحتوى المنسوخ أو الـ Repost اللي من غير قيمة مضافة بيتعاقب بتقليل الـ Reach وخطر خسارة الـ Monetization. النتائج بتقول: مشاهدات Reels الأصلية اتضاعفت في 6 شهور، و20 مليون حساب مزيف اتحذف.
+    </p>
+    <div class="update-impact">لو بتعيد نشر محتوى من غير قيمة مضافة، وقف دلوقتي. المحتوى الأصلي هو الوحيد اللي الخوارزمية هتكافئه.</div>
+  </div>
+
+  <div class="update-card">
+    <div class="update-card-header">
+      <div class="update-card-title">🔍 Search Optimization لـ Meta Verified</div>
+      <div class="update-badge badge-new">جديد</div>
+    </div>
+    <p class="update-body">
+      Meta أضافت ميزة "Search Optimization" للمشتركين في Meta Verified — تساعد الحسابات تظهر أعلى في نتائج البحث داخل Instagram وFacebook. ده جزء من توجه Meta لتقوية الـ Search كقناة وصول موازية للـ Feed.
+    </p>
+    <div class="update-impact">Search بتكبر كقناة وصول. حتى من غير Meta Verified، ركز على الـ Keywords في الـ Bio والكابشن.</div>
+  </div>
+
+  <div class="update-card">
+    <div class="update-card-header">
+      <div class="update-card-title">🎬 Reels Trending Ads مع Events</div>
+      <div class="update-badge badge-ads">إعلانات</div>
+    </div>
+    <p class="update-body">
+      Meta وسّعت Reels Trending Ads بـ Content Lineups مرتبطة بأحداث كبيرة زي Fashion Week وF1 وNFL وBlack Friday. وأضافت فئات جديدة: TV & Movies، Travel، Business، Finance.
+    </p>
+    <div class="update-impact">لو إعلاناتك على Reels، فيه فرصة تستهدف جماهير أكبر في الأوقات ذات الإقبال العالي.</div>
+  </div>
+
+  <div class="update-card">
+    <div class="update-card-header">
+      <div class="update-card-title">🤝 Creator Marketplace وسّع قاعدته</div>
+      <div class="update-badge badge-new">جديد</div>
+    </div>
+    <p class="update-body">
+      Meta أعلنت إن Creator Marketplace على Instagram وصل لأكتر من 1.5 مليون Creator قابل للاكتشاف، مع تحديث Partnership Ads Hub بـ Insights موسّعة ولاوت جديد لتسهيل البحث عن الكريتيتورز.
+    </p>
+    <div class="update-impact">لو بتدور على Creator لبراند بتاعك، دلوقتي أسهل من أي وقت. ولو إنت Creator، خليك Discoverable.</div>
+  </div>
+
+
+  <!-- ══════════════════════════════════════
+       SECTION 4 — META AI & ADS
+  ══════════════════════════════════════ -->
+  <div class="section-break">
+    <div class="section-number">04 · AI والإعلانات</div>
+  </div>
+
+  <h2 class="sec-title">الذكاء الاصطناعي والإعلانات</h2>
+  <div class="sep"></div>
+  <p class="sec-subtitle">2026 هو سنة الـ AI في Meta — وعليك تفهمه عشان تتنافس.</p>
+
+  <div class="stat-grid">
+    <div class="stat-box">
+      <div class="stat-box-num">65%</div>
+      <div class="stat-box-label">من المعلنين بيستخدموا Advantage+ دلوقتي</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-box-num">32%</div>
+      <div class="stat-box-label">تخفيض CPA لمن انتقلوا لـ Advantage+</div>
+    </div>
+  </div>
+
+  <div class="update-card">
+    <div class="update-card-header">
+      <div class="update-card-title">🤖 Advantage+ — حملات إعلانية أتوماتيكية بالكامل</div>
+      <div class="update-badge badge-ai">AI</div>
+    </div>
+    <p class="update-body">
+      Meta Advantage+ دلوقتي بيدعم حملات مؤتمتة بالكامل من الأول للآخر. إنت بتدي الـ URL والميزانية، والـ AI بيعمل كل حاجة: توليد الإبداع، استهداف الجمهور، تحسين التوزيع، وإدارة الـ Bids. الـ CPA انخفض 32% لمن انتقلوا من الحملات اليدوية.
+    </p>
+    <div class="update-impact">لو لسه بتشغّل حملات يدوية بالكامل، إنت بتتنافس مع AI. ابدأ تجرب Advantage+ على ميزانية صغيرة.</div>
+  </div>
+
+  <div class="update-card">
+    <div class="update-card-header">
+      <div class="update-card-title">🗣️ AI Dubbing وترجمة فيديوهات الإعلانات</div>
+      <div class="update-badge badge-ai">AI</div>
+    </div>
+    <p class="update-body">
+      Meta أضافت ميزة AI Voiceover لإعادة تصويت الفيديوهات الإعلانية بلغات مختلفة، وكمان ترجمة تراكب نص على الفيديو بأي لغة. ده بيسمح للمعلنين يوصلوا جماهير متعددة من نفس الأصل الإبداعي.
+    </p>
+    <div class="update-impact">لو شغلتك في أسواق عربية متعددة (مصر + الخليج مثلاً)، ممكن تعمل فيديو واحد وتوصل للكل بلغاتهم.</div>
+  </div>
+
+  <div class="update-card">
+    <div class="update-card-header">
+      <div class="update-card-title">🌍 Meta AI — لغات جديدة منها العربي</div>
+      <div class="update-badge badge-new">جديد</div>
+    </div>
+    <p class="update-body">
+      Meta أضافت دعم لغات جديدة لميزة Live Translate في Meta AI، شاملة العربية لأول مرة. ده بيعني إن المحادثات والمحتوى بيتترجم في اللحظة داخل التطبيقات.
+    </p>
+    <div class="update-impact">محتوى السوشيال ميديا العربي بقى أسهل في الوصول لجماهير دولية. فرصة للتوسع في الـ Reach.</div>
+  </div>
+
+  <div class="update-card">
+    <div class="update-card-header">
+      <div class="update-card-title">🛠️ Manus AI متكامل مع Meta Ads</div>
+      <div class="update-badge badge-ai">AI</div>
+    </div>
+    <p class="update-body">
+      Meta بتروّج Manus AI كـ "AI work partner" لصفحات Facebook، وأضافت Manus AI Integrations لـ Meta Ads Manager وInstagram وInstagram Creator Marketplace وWhatsApp Business.
+    </p>
+    <div class="update-impact">أدوات الـ AI للإعلانات بتتطور بسرعة. خلي نفسك updated على كل integration جديد.</div>
+  </div>
+
+
+  <!-- ══════════════════════════════════════
+       SECTION 5 — ALGO & CONTENT RULES
+  ══════════════════════════════════════ -->
+  <div class="section-break">
+    <div class="section-number">05 · الخوارزمية والمحتوى</div>
+  </div>
+
+  <h2 class="sec-title">قواعد الخوارزمية والمحتوى</h2>
+  <div class="sep"></div>
+  <p class="sec-subtitle">Meta بتعيد تعريف "المحتوى الكويس" — وقواعد اللعبة اتغيرت.</p>
+
+  <div class="update-card">
+    <div class="update-card-header">
+      <div class="update-card-title">⚡ Hook أسرع = Reach أكبر</div>
+      <div class="update-badge badge-important">مهم</div>
+    </div>
+    <p class="update-body">
+      تحديثات خوارزمية Meta في 2026 بتكافئ المحتوى اللي بيجذب الانتباه في أول ثانيتين. الـ Watch Time والـ Completion Rate بقوا أهم مقاييس من اللايك والكومنت في تحديد الـ Reach.
+    </p>
+    <div class="update-impact">كل فيديو أو بوست لازم أول جملة فيه تكون Hook قوية تخلي الناس تكمل. مش رفاهية، ضرورة.</div>
+  </div>
+
+  <div class="update-card">
+    <div class="update-card-header">
+      <div class="update-card-title">📚 Creative Library بدل الأصل الواحد</div>
+      <div class="update-badge badge-important">مهم</div>
+    </div>
+    <p class="update-body">
+      Meta بتشجع المعلنين على بناء Creative Libraries كبيرة — مجموعة متنوعة من الأصول الإعلانية بدل الاعتماد على إعلان أو اتنين. الـ AI بيختار الأنسب تلقائياً لكل مستخدم بناءً على سلوكه.
+    </p>
+    <div class="update-impact">مش الإعلان الواحد المثالي هو الحل. اعمل 5-10 variations مختلفة وسيب الـ AI يختار الأنسب.</div>
+  </div>
+
+  <div class="update-card">
+    <div class="update-card-header">
+      <div class="update-card-title">📏 Page Viewer Metric يحل محل Reach القديم</div>
+      <div class="update-badge badge-important">مهم</div>
+    </div>
+    <p class="update-body">
+      Meta أطلقت Graph API v25.0 مع معيار جديد اسمه "Page Viewer Metric" هيحل محل مقاييس الـ Reach القديمة بحلول منتصف 2026. ده بيأثر على كل Dashboard وتقرير تحليلي بتستخدمه.
+    </p>
+    <div class="update-impact">لو بتستخدم أي أداة تحليلية مربوطة بـ Meta API، تأكد إنها محدّثة لتدعم المقاييس الجديدة.</div>
+  </div>
+
+
+  <!-- ══════════════════════════════════════
+       SECTION 6 — QUICK REFERENCE TABLE
+  ══════════════════════════════════════ -->
+  <div class="section-break">
+    <div class="section-number">06 · مرجع سريع</div>
+  </div>
+
+  <h2 class="sec-title">جدول التحديثات السريع</h2>
+  <div class="sep"></div>
+
+  <table class="meta-table">
+    <thead>
+      <tr>
+        <th>التحديث</th>
+        <th>المنصة</th>
+        <th>التأثير</th>
+        <th>الأولوية</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>إغلاق messenger.com</td>
+        <td>Messenger</td>
+        <td>التحول لـ facebook.com/messages</td>
+        <td style="color:#f87171;font-weight:900;">🔴 عاجل</td>
+      </tr>
+      <tr>
+        <td>قواعد المحتوى الأصلي</td>
+        <td>FB + IG</td>
+        <td>تقليل Reach للمحتوى المنسوخ</td>
+        <td style="color:#f87171;font-weight:900;">🔴 عاجل</td>
+      </tr>
+      <tr>
+        <td>Advantage+ Automated</td>
+        <td>Meta Ads</td>
+        <td>AI بيدير الحملة كاملة</td>
+        <td style="color:#fbbf24;font-weight:900;">🟡 مهم</td>
+      </tr>
+      <tr>
+        <td>تحديث Feed واجهة جديدة</td>
+        <td>Facebook</td>
+        <td>منافسة أشرس في For You Feed</td>
+        <td style="color:#fbbf24;font-weight:900;">🟡 مهم</td>
+      </tr>
+      <tr>
+        <td>Search Optimization</td>
+        <td>Instagram</td>
+        <td>ظهور أعلى في نتائج البحث</td>
+        <td style="color:#34d399;font-weight:900;">🟢 جديد</td>
+      </tr>
+      <tr>
+        <td>AI Dubbing للإعلانات</td>
+        <td>Meta Ads</td>
+        <td>ترجمة فيديوهات للغات متعددة</td>
+        <td style="color:#34d399;font-weight:900;">🟢 جديد</td>
+      </tr>
+      <tr>
+        <td>Creator Marketplace 1.5M</td>
+        <td>Instagram</td>
+        <td>اكتشاف Creators أسهل</td>
+        <td style="color:#34d399;font-weight:900;">🟢 جديد</td>
+      </tr>
+      <tr>
+        <td>Page Viewer Metric</td>
+        <td>Meta API</td>
+        <td>تغيير مقاييس الـ Reach</td>
+        <td style="color:#fbbf24;font-weight:900;">🟡 مهم</td>
+      </tr>
+      <tr>
+        <td>تحديد روابط الصفحات</td>
+        <td>Facebook</td>
+        <td>حد لروابط خارجية (اختبار)</td>
+        <td style="color:#fbbf24;font-weight:900;">🟡 متابعة</td>
+      </tr>
+      <tr>
+        <td>Meta AI بالعربية</td>
+        <td>الكل</td>
+        <td>دعم Live Translate للعربي</td>
+        <td style="color:#34d399;font-weight:900;">🟢 جديد</td>
+      </tr>
+      <tr>
+        <td>مقارنة بوستات من Dashboard</td>
+        <td>Facebook</td>
+        <td>تحليل أسرع لأداء المحتوى</td>
+        <td style="color:#34d399;font-weight:900;">🟢 جديد</td>
+      </tr>
+      <tr>
+        <td>Safe Browsing في Messenger</td>
+        <td>Messenger</td>
+        <td>حماية من روابط ضارة</td>
+        <td style="color:#34d399;font-weight:900;">🟢 جديد</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <!-- ══════════════════════════════════════
+       SECTION 7 — ACTION CHECKLIST
+  ══════════════════════════════════════ -->
+  <div class="section-break">
+    <div class="section-number">07 · الخطوات العملية</div>
+  </div>
+
+  <h2 class="sec-title">Checklist المسوّق الذكي</h2>
+  <div class="sep"></div>
+  <p class="sec-subtitle">كل حاجة محتاج تعملها دلوقتي بترتيب الأولوية.</p>
+
+  <div class="highlight-box">
+    <div class="highlight-box-title">🔴 عاجل — خلال أسبوع</div>
+    <ul class="checklist">
+      <li><div class="check">◻</div><div><strong>Bookmark</strong> facebook.com/messages قبل 16 أبريل.</div></li>
+      <li><div class="check">◻</div><div><strong>تأكد من Backup PIN</strong> في إعدادات Messenger.</div></li>
+      <li><div class="check">◻</div><div><strong>راجع محتواك</strong>: أي بوست Repost من غير قيمة مضافة = خطر.</div></li>
+      <li><div class="check">◻</div><div>لو بيزنس: انتقل لـ <strong>Meta Business Suite</strong> لإدارة الرسائل.</div></li>
+    </ul>
+  </div>
+
+  <div class="highlight-box" style="background: linear-gradient(135deg,rgba(245,158,11,0.08),rgba(37,99,235,0.06)); border-color: rgba(245,158,11,0.25);">
+    <div class="highlight-box-title">🟡 مهم — خلال شهر</div>
+    <ul class="checklist">
+      <li><div class="check">◻</div><div>اعمل تجربة على <strong>Advantage+ Campaigns</strong> بميزانية صغيرة.</div></li>
+      <li><div class="check">◻</div><div>ابدأ تبني <strong>Creative Library</strong> بـ 5-10 variations لإعلانات مختلفة.</div></li>
+      <li><div class="check">◻</div><div>قوّي <strong>Hook</strong> أول 3 ثواني في كل فيديو بتنشره.</div></li>
+      <li><div class="check">◻</div><div>راجع الـ Keywords في الـ Bio والكابشن للـ <strong>Search Optimization</strong>.</div></li>
+    </ul>
+  </div>
+
+  <div class="highlight-box" style="background: linear-gradient(135deg,rgba(16,185,129,0.08),rgba(37,99,235,0.06)); border-color: rgba(16,185,129,0.25);">
+    <div class="highlight-box-title">🟢 استراتيجي — خلال ربع سنة</div>
+    <ul class="checklist">
+      <li><div class="check">◻</div><div>طوّر محتوى أصلي 100% <strong>Original Content</strong> لكل منصة.</div></li>
+      <li><div class="check">◻</div><div>جرّب <strong>AI Dubbing</strong> لو بتوصل لأسواق عربية متعددة.</div></li>
+      <li><div class="check">◻</div><div>تأكد إن أدوات التحليل بتاعتك محدّثة لـ <strong>Page Viewer Metric</strong>.</div></li>
+      <li><div class="check">◻</div><div>دور على Creator مناسب في الـ <strong>Instagram Creator Marketplace</strong>.</div></li>
+    </ul>
+  </div>
+
+
+  <!-- ══════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════ -->
+  <div class="page-footer">
+    <div class="page-footer-brand">DAOLINE<span>DIGITAL</span></div>
+    <div class="page-footer-info">© 2026 · جميع الحقوق محفوظة · daolinedigital.com</div>
+  </div>
+
+
+  <!-- ══════════════════════════════════════
+       BACK COVER
+  ══════════════════════════════════════ -->
+  <div class="back-cover">
+    <div class="back-cover-logo">DAOLINE<span>DIGITAL</span></div>
+    <p class="back-cover-tagline">نتابع التحديثات عشانك تركّز إنت على الشغل 🎯</p>
+    <div class="back-cover-links">
+      <a href="https://daolinedigital.com" class="back-cover-link">🌐 الموقع</a>
+      <a href="mailto:info@daolinedigital.com" class="back-cover-link">📩 تواصل معنا</a>
+      <a href="https://facebook.com/doaaseleat" class="back-cover-link">👤 Doaa Seleat</a>
+    </div>
+  </div>
+
+</div><!-- /page -->
+
+<!-- Print Button -->
+<button class="print-btn" onclick="window.print()">
+  🖨️ حمّل / اطبع الدليل
+</button>
+
+</body>
+</html>
