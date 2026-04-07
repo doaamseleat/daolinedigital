@@ -14,126 +14,85 @@
       --primary: #c013a6;
       --primary-hover: #9a0e85;
       --bg: #07080c;
-      --bg2: #0b0d14;
       --card: #0f1220;
       --text: #f3f4f6;
       --muted: rgba(243,244,246,0.65);
       --border: rgba(255,255,255,0.08);
-      --shadow: 0 20px 50px rgba(0,0,0,0.6);
       --radius: 24px;
-      --max: 1000px;
     }
 
     * { box-sizing: border-box; outline: none; }
-    html { scroll-behavior: smooth; }
     body {
       margin: 0;
       font-family: "Tajawal", sans-serif;
       color: var(--text);
-      background: 
-        radial-gradient(circle at 15% 15%, rgba(192,19,166,0.18), transparent 45%),
-        radial-gradient(circle at 85% 30%, rgba(192,19,166,0.12), transparent 45%),
-        var(--bg);
+      background: radial-gradient(circle at 15% 15%, rgba(192,19,166,0.18), transparent 45%), var(--bg);
       line-height: 1.6;
       overflow-x: hidden;
     }
 
-    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+    .wrap { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
 
     /* --- Topbar --- */
     .topbar {
       position: sticky; top: 0; z-index: 100;
       backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
       background: rgba(7, 8, 12, 0.75);
       border-bottom: 1px solid var(--border);
     }
-    .nav {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 16px 0;
-    }
-    .brand { font-weight: 900; font-size: 1.4rem; letter-spacing: -0.5px; cursor: pointer; text-decoration: none; color: #fff; }
+    .nav { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; }
+    .brand { font-weight: 900; font-size: 1.4rem; text-decoration: none; color: #fff; }
     .brand span { color: var(--primary); }
 
     .btn {
       display: inline-flex; align-items: center; justify-content: center;
-      padding: 12px 28px; border-radius: 16px;
+      padding: 10px 24px; border-radius: 14px;
       border: 1px solid var(--border);
       background: rgba(255,255,255,0.05);
       font-weight: 800; font-size: 14px;
-      cursor: pointer; transition: all 0.3s ease;
-      text-decoration: none; color: white;
-      gap: 10px;
+      text-decoration: none; color: white; transition: 0.3s;
     }
-    .btn:hover { background: rgba(255,255,255,0.1); transform: translateY(-3px); border-color: rgba(255,255,255,0.2); }
-    .btn.primary {
-      background: linear-gradient(180deg, var(--primary), var(--primary-hover));
-      border: none; box-shadow: 0 10px 30px rgba(192, 19, 166, 0.35);
-    }
-    .btn.primary:hover { box-shadow: 0 15px 40px rgba(192, 19, 166, 0.5); }
-    .btn.loading { opacity: 0.7; cursor: wait; }
+    .btn:hover { background: rgba(255,255,255,0.1); transform: translateY(-2px); }
+    .btn.primary { background: var(--primary); border: none; box-shadow: 0 10px 25px rgba(192, 19, 166, 0.3); }
 
-    header { padding: 90px 0 50px; text-align: center; }
-    h1 { font-size: clamp(2.8rem, 9vw, 3.8rem); font-weight: 900; margin: 0 0 18px; letter-spacing: -1.5px; line-height: 1.1; }
-    .lead { font-size: 1.25rem; color: var(--muted); max-width: 750px; margin: 0 auto; line-height: 1.8; }
-    .lead b { color: #fff; font-weight: 800; border-bottom: 2px solid var(--primary); }
+    header { padding: 80px 0 40px; text-align: center; }
+    h1 { font-size: clamp(2.5rem, 8vw, 3.5rem); font-weight: 900; margin-bottom: 15px; }
+    .lead { font-size: 1.2rem; color: var(--muted); max-width: 700px; margin: 0 auto; }
 
-    .section-title { font-size: 2rem; font-weight: 900; margin-bottom: 35px; display: flex; align-items: center; gap: 20px; }
-    .section-title::after { content: ''; flex: 1; height: 1px; background: linear-gradient(90deg, var(--border), transparent); }
+    .section-title { font-size: 1.8rem; font-weight: 900; margin: 50px 0 30px; display: flex; align-items: center; gap: 15px; }
+    .section-title::after { content: ''; flex: 1; height: 1px; background: var(--border); }
 
-    .list { display: grid; gap: 30px; margin-bottom: 80px; }
+    /* --- Articles List --- */
+    .list { display: grid; gap: 25px; margin-bottom: 80px; }
     .card {
       background: var(--card);
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      padding: 40px;
-      position: relative;
-      transition: all 0.4s ease;
-      animation: slideUp 0.7s ease forwards;
-      opacity: 0;
+      padding: 35px;
+      transition: 0.4s ease;
     }
-    @keyframes slideUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    .card:hover { border-color: rgba(192,19,166,0.5); transform: translateY(-5px); box-shadow: var(--shadow); }
-
-    .tag-container { display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; }
-    .tag {
-      background: rgba(192,19,166,0.12);
-      border: 1px solid rgba(192,19,166,0.25);
-      padding: 6px 16px; border-radius: 50px;
-      font-size: 11.5px; font-weight: 800; color: #ff9ef4;
-      text-transform: uppercase; letter-spacing: 0.5px;
-    }
+    .card:hover { border-color: var(--primary); transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
 
     .new-badge {
-      background: var(--primary);
-      color: white;
-      padding: 6px 18px;
-      border-radius: 12px;
-      font-size: 13px;
-      font-weight: 900;
-      display: inline-block;
-      margin-bottom: 15px;
-      box-shadow: 0 8px 20px rgba(192, 19, 166, 0.4);
+      background: var(--primary); color: white; padding: 5px 15px; border-radius: 10px;
+      font-size: 12px; font-weight: 900; display: inline-block; margin-bottom: 15px;
     }
 
-    .card h2 { margin: 0 0 15px; font-size: 1.85rem; font-weight: 800; line-height: 1.4; }
+    .card h2 { margin: 0 0 12px; font-size: 1.7rem; font-weight: 800; }
     .card h2 a { color: var(--text); text-decoration: none; transition: 0.3s; }
     .card h2 a:hover { color: var(--primary); }
     
-    .desc { color: var(--muted); font-size: 1.1rem; margin-bottom: 35px; line-height: 1.7; }
+    .desc { color: var(--muted); font-size: 1.05rem; margin-bottom: 25px; }
 
-    .loader { text-align: center; padding: 120px 0; }
+    .loader { text-align: center; padding: 100px 0; }
     .spinner {
-      width: 50px; height: 50px; border: 4px solid rgba(192,19,166,0.1);
+      width: 40px; height: 40px; border: 3px solid rgba(192,19,166,0.1);
       border-left-color: var(--primary); border-radius: 50%;
-      margin: 0 auto 20px; animation: spin 1s linear infinite;
+      margin: 0 auto 15px; animation: spin 1s linear infinite;
     }
     @keyframes spin { to { transform: rotate(360deg); } }
 
-    footer { padding: 80px 0; text-align: center; border-top: 1px solid var(--border); color: var(--muted); font-size: 14px; font-weight: 600; }
+    footer { padding: 60px 0; text-align: center; border-top: 1px solid var(--border); color: var(--muted); font-size: 14px; }
   </style>
 </head>
 <body>
@@ -141,125 +100,89 @@
   <div class="topbar">
     <div class="wrap">
       <div class="nav">
-        <a href="https://daolinedigital.com" class="brand">Daoline <span>Digital</span></a>
-        <div style="display:flex; gap:10px;">
-          <a class="btn" href="https://daolinedigital.com">الرئيسية</a>
-        </div>
+        <a href="https://daolinedigital.com/" class="brand">Daoline <span>Digital</span></a>
+        <a class="btn" href="https://daolinedigital.com/">الرئيسية</a>
       </div>
     </div>
   </div>
 
   <header class="wrap">
     <h1>المكتبة الذكية</h1>
-    <p class="lead">
-      وجهتك الأولى للحصول على <b>مصادر متجددة</b> تضعك على طريق الاحتراف الرقمي 2026.
-    </p>
+    <p class="lead">وجهتك الأولى لاحتراف السوشيال ميديا في 2026 مع Daoline Digital.</p>
   </header>
 
   <main class="wrap">
-    <div class="section-title">أحدث الإصدارات والمقالات</div>
-    
+    <div class="section-title">أحدث الإصدارات</div>
     <div id="articlesList" class="list">
-        <div class="loader">
-            <div class="spinner"></div>
-            <p>جاري ترتيب أحدث المقالات من Daoline Digital...</p>
-        </div>
+        <div class="loader"><div class="spinner"></div><p>جاري ترتيب المقالات حسب الأحدث...</p></div>
     </div>
   </main>
 
-  <footer>
-    &copy; <span id="year"></span> Daoline Digital - جميع الحقوق محفوظة
-  </footer>
+  <footer>&copy; <span id="year"></span> Daoline Digital - جميع الحقوق محفوظة</footer>
 
   <script>
-    const GITHUB_CONFIG = {
-      owner: "doaamseleat",
-      repo: "daolinedigital",
-      path: "blog"
-    };
+    const CONFIG = { owner: "doaamseleat", repo: "daolinedigital", path: "blog" };
 
-    async function getArticlesList() {
-      const apiUrl = `https://api.github.com/repos/${GITHUB_CONFIG.owner}/${GITHUB_CONFIG.repo}/contents/${GITHUB_CONFIG.path}?t=${Date.now()}`;
+    async function getArticles() {
+      const url = `https://api.github.com/repos/${CONFIG.owner}/${CONFIG.repo}/contents/${CONFIG.path}?t=${Date.now()}`;
       try {
-        const response = await fetch(apiUrl);
-        if (!response.ok) throw new Error("GitHub API Error");
-        const data = await response.json();
+        const res = await fetch(url);
+        const data = await res.json();
         
-        // جلب ملفات الـ HTML فقط
+        // --- تعديل الترتيب الذكي ---
         return data
-          .filter(file => file.name.endsWith('.html') && file.name !== 'index.html')
-          .map(file => ({ name: file.name, downloadUrl: file.download_url })); 
-      } catch (err) {
-        console.error("Error fetching file list:", err);
-        return [];
-      }
+          .filter(f => f.name.endsWith('.html') && f.name !== 'index.html')
+          .sort((a, b) => {
+            // استخراج الأرقام من بداية اسم الملف (مثل 017)
+            const numA = parseInt(a.name.match(/^\d+/) || 0);
+            const numB = parseInt(b.name.match(/^\d+/) || 0);
+            return numB - numA; // ترتيب تنازلي (الأكبر فوق)
+          });
+      } catch (e) { return []; }
     }
 
-    async function fetchMetadata(fileObj) {
+    async function fetchInfo(file) {
       try {
-        const response = await fetch(fileObj.downloadUrl);
-        if (!response.ok) throw new Error("Fetch failed");
-
-        const html = await response.text();
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(html, 'text/html');
-
-        let rawTitle = doc.querySelector('title')?.innerText.split('|')[0].trim();
-        if (!rawTitle || rawTitle.toLowerCase().includes("not found")) {
-            rawTitle = "مقال تعليمي جديد";
-        }
-
+        const res = await fetch(file.download_url);
+        const html = await res.text();
+        const doc = new DOMParser().parseFromString(html, 'text/html');
         return {
-          title: rawTitle,
-          description: doc.querySelector('meta[name="description"]')?.getAttribute('content') || "اكتشف أحدث استراتيجيات التسويق الرقمي مع Daoline Digital.",
-          keywords: doc.querySelector('meta[name="keywords"]')?.getAttribute('content') || "Marketing, 2026",
-          url: `/blog/${fileObj.name}`
+          title: doc.querySelector('title')?.innerText.split('|')[0].trim() || "مقال جديد",
+          desc: doc.querySelector('meta[name="description"]')?.getAttribute('content') || "اكتشف أحدث دروس داولاين ديجيتال.",
+          url: `/blog/${file.name}`
         };
-      } catch (err) { 
-          return {
-            title: "مقال قيد التحديث",
-            description: "جاري مزامنة المحتوى الجديد.. يرجى المحاولة بعد قليل.",
-            keywords: "New",
-            url: `/blog/${fileObj.name}`
-          };
-      }
+      } catch (e) { return null; }
     }
 
     async function init() {
-      const container = document.getElementById('articlesList');
-      const files = await getArticlesList();
+      const list = document.getElementById('articlesList');
+      const files = await getArticles();
       
       if (files.length === 0) {
-        container.innerHTML = '<p style="text-align:center; padding:60px; opacity:0.5;">لا توجد مقالات منشورة حالياً في المكتبة.</p>';
+        list.innerHTML = '<p style="text-align:center; padding:40px;">لا توجد مقالات حالياً.</p>';
         return;
       }
 
-      const promises = files.map(file => fetchMetadata(file));
-      let results = await Promise.all(promises);
-      
-      // التعديل الجوهري: ترتيب الأحدث أولاً (عكس الترتيب الأبجدي)
-      results.reverse();
-      
-      container.innerHTML = ''; 
+      list.innerHTML = ''; // مسح اللودر
 
-      results.forEach((art, index) => {
-        const tags = art.keywords.split(',').map(t => `<span class="tag">${t.trim()}</span>`).join('');
+      for (let i = 0; i < files.length; i++) {
+        const info = await fetchInfo(files[i]);
+        if (!info) continue;
+
         const card = document.createElement('div');
         card.className = 'card';
-        card.style.animationDelay = `${index * 0.1}s`;
         
-        // إضافة بادج "صدر حديثاً" للمقال الأول فقط
-        const newBadge = index === 0 ? `<div class="new-badge">صدر حديثاً 🔥</div>` : '';
-        
+        // بادج "صدر حديثاً" لأول مقال في القائمة المرتبة
+        const badge = i === 0 ? `<div class="new-badge">صدر حديثاً 🔥</div>` : '';
+
         card.innerHTML = `
-          ${newBadge}
-          <div class="tag-container">${tags}</div>
-          <h2><a href="${art.url}">${art.title}</a></h2>
-          <p class="desc">${art.description}</p>
-          <a href="${art.url}" class="btn primary">استعرض المحتوى الآن 🚀</a>
+          ${badge}
+          <h2><a href="${info.url}">${info.title}</a></h2>
+          <p class="desc">${info.desc}</p>
+          <a href="${info.url}" class="btn primary">استعرض المحتوى 🚀</a>
         `;
-        container.appendChild(card);
-      });
+        list.appendChild(card);
+      }
     }
 
     window.onload = () => {
