@@ -52,7 +52,7 @@
       display: flex; align-items: center; justify-content: space-between;
       padding: 16px 0;
     }
-    .brand { font-weight: 900; font-size: 1.4rem; letter-spacing: -0.5px; cursor: default; }
+    .brand { font-weight: 900; font-size: 1.4rem; letter-spacing: -0.5px; cursor: pointer; text-decoration: none; color: #fff; }
     .brand span { color: var(--primary); }
 
     .btn {
@@ -71,45 +71,16 @@
       border: none; box-shadow: 0 10px 30px rgba(192, 19, 166, 0.35);
     }
     .btn.primary:hover { box-shadow: 0 15px 40px rgba(192, 19, 166, 0.5); }
-    /* حالة الانتظار للزر */
     .btn.loading { opacity: 0.7; cursor: wait; }
 
-    /* --- Header --- */
     header { padding: 90px 0 50px; text-align: center; }
     h1 { font-size: clamp(2.8rem, 9vw, 3.8rem); font-weight: 900; margin: 0 0 18px; letter-spacing: -1.5px; line-height: 1.1; }
     .lead { font-size: 1.25rem; color: var(--muted); max-width: 750px; margin: 0 auto; line-height: 1.8; }
     .lead b { color: #fff; font-weight: 800; border-bottom: 2px solid var(--primary); }
 
-    /* --- Features Grid --- */
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
-      margin-bottom: 80px;
-    }
-    .f-card {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid var(--border);
-      padding: 40px 30px;
-      border-radius: var(--radius);
-      text-align: center;
-      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    }
-    .f-card:hover { 
-      background: rgba(192,19,166,0.06); 
-      border-color: var(--primary); 
-      transform: translateY(-8px);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-    }
-    .f-icon { font-size: 2.5rem; margin-bottom: 20px; display: block; filter: drop-shadow(0 0 10px rgba(192,19,166,0.3)); }
-    .f-card h3 { margin: 0 0 12px; font-size: 1.3rem; font-weight: 800; color: #fff; }
-    .f-card p { margin: 0; font-size: 1rem; color: var(--muted); }
-
-    /* --- Section Title --- */
     .section-title { font-size: 2rem; font-weight: 900; margin-bottom: 35px; display: flex; align-items: center; gap: 20px; }
     .section-title::after { content: ''; flex: 1; height: 1px; background: linear-gradient(90deg, var(--border), transparent); }
 
-    /* --- Articles List & Cards --- */
     .list { display: grid; gap: 30px; margin-bottom: 80px; }
     .card {
       background: var(--card);
@@ -136,53 +107,24 @@
       text-transform: uppercase; letter-spacing: 0.5px;
     }
 
-    /* Fixed Link Colors */
+    .new-badge {
+      background: var(--primary);
+      color: white;
+      padding: 6px 18px;
+      border-radius: 12px;
+      font-size: 13px;
+      font-weight: 900;
+      display: inline-block;
+      margin-bottom: 15px;
+      box-shadow: 0 8px 20px rgba(192, 19, 166, 0.4);
+    }
+
     .card h2 { margin: 0 0 15px; font-size: 1.85rem; font-weight: 800; line-height: 1.4; }
     .card h2 a { color: var(--text); text-decoration: none; transition: 0.3s; }
     .card h2 a:hover { color: var(--primary); }
     
-    .desc { color: var(--muted); font-size: 1.1rem; margin-bottom: 35px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; line-height: 1.7; }
+    .desc { color: var(--muted); font-size: 1.1rem; margin-bottom: 35px; line-height: 1.7; }
 
-    /* --- Newsletter --- */
-    .newsletter {
-      background: linear-gradient(145deg, #161b33, #0b0d14);
-      border-radius: var(--radius);
-      padding: 60px 40px;
-      text-align: center;
-      margin-bottom: 100px;
-      border: 1px solid var(--border);
-      position: relative;
-      overflow: hidden;
-      box-shadow: var(--shadow);
-    }
-    .newsletter::before {
-      content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
-      background: radial-gradient(circle, rgba(192,19,166,0.08) 0%, transparent 70%);
-      pointer-events: none;
-    }
-    .newsletter h2 { font-size: 2.4rem; margin-bottom: 12px; font-weight: 900; color: #fff; }
-    .newsletter p { color: var(--muted); margin-bottom: 35px; font-size: 1.15rem; }
-    .n-form { display: flex; gap: 12px; max-width: 580px; margin: 0 auto; flex-wrap: wrap; position: relative; z-index: 1; }
-    .n-input {
-      flex: 1; min-width: 280px;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid var(--border);
-      padding: 18px 24px; border-radius: 18px;
-      color: white; font-family: inherit; font-size: 1rem;
-      transition: 0.3s;
-    }
-    .n-input:focus { outline: none; border-color: var(--primary); background: rgba(255,255,255,0.1); box-shadow: 0 0 20px rgba(192,19,166,0.2); }
-
-    /* --- Toast --- */
-    .toast {
-      position: fixed; bottom: 40px; left: 50%; transform: translateX(-50%);
-      background: var(--primary); color: white; padding: 16px 40px;
-      border-radius: 60px; font-weight: 800; box-shadow: 0 15px 40px rgba(0,0,0,0.5);
-      z-index: 1000; display: none; animation: popUp 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    }
-    @keyframes popUp { from { transform: translate(-50%, 100px); opacity: 0; } to { transform: translate(-50%, 0); opacity: 1; } }
-
-    /* --- Loader --- */
     .loader { text-align: center; padding: 120px 0; }
     .spinner {
       width: 50px; height: 50px; border: 4px solid rgba(192,19,166,0.1);
@@ -192,14 +134,6 @@
     @keyframes spin { to { transform: rotate(360deg); } }
 
     footer { padding: 80px 0; text-align: center; border-top: 1px solid var(--border); color: var(--muted); font-size: 14px; font-weight: 600; }
-    
-    @media (max-width: 650px) {
-      header { padding: 60px 0 40px; }
-      .newsletter { padding: 45px 20px; }
-      .n-form { flex-direction: column; }
-      .n-input, .newsletter .btn { width: 100%; }
-      .section-title { font-size: 1.6rem; }
-    }
   </style>
 </head>
 <body>
@@ -207,9 +141,8 @@
   <div class="topbar">
     <div class="wrap">
       <div class="nav">
-        <div class="brand">Daoline <span>Digital</span></div>
+        <a href="https://daolinedigital.com" class="brand">Daoline <span>Digital</span></a>
         <div style="display:flex; gap:10px;">
-          <!-- الزر الآن يوجه للدومين الرئيسي مباشرة -->
           <a class="btn" href="https://daolinedigital.com">الرئيسية</a>
         </div>
       </div>
@@ -219,79 +152,42 @@
   <header class="wrap">
     <h1>المكتبة الذكية</h1>
     <p class="lead">
-      وجهتك الأولى للحصول على <b>كورسات مجانية</b>، <b>كتيبات للتدريب</b>، و <b>مصادر متجددة</b> تضعك على طريق الاحتراف الرقمي.
+      وجهتك الأولى للحصول على <b>مصادر متجددة</b> تضعك على طريق الاحتراف الرقمي 2026.
     </p>
   </header>
-
-  <!-- أقسام المحتوى الغنية -->
-  <section class="wrap">
-    <div class="features-grid">
-      <div class="f-card">
-        <span class="f-icon">🎓</span>
-        <h3>كورسات مجانية</h3>
-        <p>دروس تطبيقية مكثفة تبدأ معك من الصفر في عالم التسويق الاستراتيجي وصناعة المحتوى.</p>
-      </div>
-      <div class="f-card">
-        <span class="f-icon">📚</span>
-        <h3>كتيبات للتدريب</h3>
-        <p>ملفات PDF عملية تحتوي على نماذج عمل Worksheets لتطبيق استراتيجياتك فوراً.</p>
-      </div>
-      <div class="f-card">
-        <span class="f-icon">🔗</span>
-        <h3>مصادر وأدوات</h3>
-        <p>قوائم منتقاة بأفضل الأدوات والمنصات التي نستخدمها لزيادة الإنتاجية وتحسين النتائج.</p>
-      </div>
-    </div>
-  </section>
 
   <main class="wrap">
     <div class="section-title">أحدث الإصدارات والمقالات</div>
     
-    <!-- القائمة البرمجية للمقالات -->
     <div id="articlesList" class="list">
         <div class="loader">
             <div class="spinner"></div>
-            <p>جاري مزامنة المحتوى التعليمي من GitHub...</p>
+            <p>جاري ترتيب أحدث المقالات من Daoline Digital...</p>
         </div>
     </div>
-
-    <!-- القائمة البريدية -->
-    <section class="newsletter">
-        <h2>انضم للقائمة البريدية ✉️</h2>
-        <p>كن أول من يحصل على الكتيبات الحصرية والمصادر الجديدة فور صدورها في بريدك.</p>
-        <form class="n-form" id="newsletterForm">
-            <input type="email" class="n-input" placeholder="بريدك الإلكتروني الحقيقي.." required>
-            <button type="submit" class="btn primary">سجلني الآن</button>
-        </form>
-    </section>
   </main>
-
-  <!-- رسالة التنبيه -->
-  <div class="toast" id="toast">تمت الإضافة بنجاح! 🎉</div>
 
   <footer>
     &copy; <span id="year"></span> Daoline Digital - جميع الحقوق محفوظة
   </footer>
 
   <script>
-    // إعدادات GitHub الخاصة بكِ
     const GITHUB_CONFIG = {
       owner: "doaamseleat",
       repo: "daolinedigital",
       path: "blog"
     };
 
-    // جلب قائمة الملفات
     async function getArticlesList() {
-      // نستخدم Time stamp لمنع الكاش والتأكد من جلب القائمة الجديدة دائماً
       const apiUrl = `https://api.github.com/repos/${GITHUB_CONFIG.owner}/${GITHUB_CONFIG.repo}/contents/${GITHUB_CONFIG.path}?t=${Date.now()}`;
       try {
         const response = await fetch(apiUrl);
         if (!response.ok) throw new Error("GitHub API Error");
         const data = await response.json();
         
+        // جلب ملفات الـ HTML فقط
         return data
-          .filter(file => file.name.endsWith('.html'))
+          .filter(file => file.name.endsWith('.html') && file.name !== 'index.html')
           .map(file => ({ name: file.name, downloadUrl: file.download_url })); 
       } catch (err) {
         console.error("Error fetching file list:", err);
@@ -299,11 +195,9 @@
       }
     }
 
-    // جلب بيانات المقال
     async function fetchMetadata(fileObj) {
       try {
         const response = await fetch(fileObj.downloadUrl);
-        
         if (!response.ok) throw new Error("Fetch failed");
 
         const html = await response.text();
@@ -311,42 +205,42 @@
         const doc = parser.parseFromString(html, 'text/html');
 
         let rawTitle = doc.querySelector('title')?.innerText.split('|')[0].trim();
-        
         if (!rawTitle || rawTitle.toLowerCase().includes("not found")) {
-            rawTitle = "مقال جديد";
+            rawTitle = "مقال تعليمي جديد";
         }
 
         return {
           title: rawTitle,
-          description: doc.querySelector('meta[name="description"]')?.getAttribute('content') || "اكتشف هذا الدرس التعليمي الجديد من Daoline Digital.",
-          keywords: doc.querySelector('meta[name="keywords"]')?.getAttribute('content') || "Marketing, Digital",
-          // *** التعديل الجذري: إضافة علامة / في البداية لجعل الرابط مطلقاً ***
+          description: doc.querySelector('meta[name="description"]')?.getAttribute('content') || "اكتشف أحدث استراتيجيات التسويق الرقمي مع Daoline Digital.",
+          keywords: doc.querySelector('meta[name="keywords"]')?.getAttribute('content') || "Marketing, 2026",
           url: `/blog/${fileObj.name}`
         };
       } catch (err) { 
           return {
-            title: "مقال قيد التجهيز",
-            description: "جاري رفع المحتوى، يرجى المحاولة بعد قليل.",
+            title: "مقال قيد التحديث",
+            description: "جاري مزامنة المحتوى الجديد.. يرجى المحاولة بعد قليل.",
             keywords: "New",
             url: `/blog/${fileObj.name}`
           };
       }
     }
 
-    // بناء الصفحة مع زر "فحص ذكي"
     async function init() {
       const container = document.getElementById('articlesList');
       const files = await getArticlesList();
       
       if (files.length === 0) {
-        container.innerHTML = '<p style="text-align:center; padding:60px; opacity:0.5;">لا توجد مقالات منشورة حالياً في مجلد blog.</p>';
+        container.innerHTML = '<p style="text-align:center; padding:60px; opacity:0.5;">لا توجد مقالات منشورة حالياً في المكتبة.</p>';
         return;
       }
 
       const promises = files.map(file => fetchMetadata(file));
-      const results = await Promise.all(promises);
+      let results = await Promise.all(promises);
       
-      container.innerHTML = ''; // مسح اللودر
+      // التعديل الجوهري: ترتيب الأحدث أولاً (عكس الترتيب الأبجدي)
+      results.reverse();
+      
+      container.innerHTML = ''; 
 
       results.forEach((art, index) => {
         const tags = art.keywords.split(',').map(t => `<span class="tag">${t.trim()}</span>`).join('');
@@ -354,77 +248,19 @@
         card.className = 'card';
         card.style.animationDelay = `${index * 0.1}s`;
         
+        // إضافة بادج "صدر حديثاً" للمقال الأول فقط
+        const newBadge = index === 0 ? `<div class="new-badge">صدر حديثاً 🔥</div>` : '';
+        
         card.innerHTML = `
+          ${newBadge}
           <div class="tag-container">${tags}</div>
-          <h2><a href="${art.url}" class="check-link">${art.title}</a></h2>
+          <h2><a href="${art.url}">${art.title}</a></h2>
           <p class="desc">${art.description}</p>
-          <button class="btn primary check-btn" data-url="${art.url}">استعرض المحتوى</button>
+          <a href="${art.url}" class="btn primary">استعرض المحتوى الآن 🚀</a>
         `;
         container.appendChild(card);
       });
-
-      setupSmartLinks();
     }
-
-    // وظيفة الفحص الذكي للروابط
-    function setupSmartLinks() {
-      const links = document.querySelectorAll('.check-btn, .check-link');
-      const toast = document.getElementById('toast');
-
-      document.body.addEventListener('click', async (e) => {
-        const link = e.target.closest('.check-btn, .check-link');
-        if (!link) return;
-
-        // وضع الدخول الإجباري
-        if (link.dataset.force === "true") {
-           if (link.tagName !== 'A') {
-             window.location.href = link.dataset.url;
-           }
-           return; 
-        }
-
-        e.preventDefault();
-        const url = link.getAttribute('data-url') || link.getAttribute('href');
-        const btn = link.classList.contains('btn') ? link : null;
-
-        if(btn) {
-           btn.textContent = "جاري الفحص...";
-           btn.classList.add('loading');
-        }
-
-        try {
-          const response = await fetch(url, { method: 'HEAD', cache: 'no-store' });
-          if (response.ok) {
-            window.location.href = url; 
-          } else {
-            throw new Error('Not found');
-          }
-        } catch (err) {
-          toast.textContent = "⏳ المقال قيد النشر.. اضغط مرة أخرى للدخول الإجباري.";
-          toast.style.background = "#eab308"; 
-          toast.style.display = 'block';
-          
-          link.dataset.force = "true";
-          
-          if(btn) {
-              btn.textContent = "دخول (تجاهل الفحص)";
-              btn.classList.remove('loading');
-          }
-          
-          setTimeout(() => { toast.style.display = 'none'; }, 5000);
-        }
-      });
-    }
-
-    document.getElementById('newsletterForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const toast = document.getElementById('toast');
-      toast.textContent = "تمت إضافتك بنجاح لمجتمعنا! 🎉";
-      toast.style.background = "#c013a6";
-      toast.style.display = 'block';
-      this.reset();
-      setTimeout(() => { toast.style.display = 'none'; }, 4000);
-    });
 
     window.onload = () => {
       document.getElementById("year").textContent = new Date().getFullYear();
