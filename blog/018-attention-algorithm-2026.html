@@ -3,20 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>خوارزمية الانتباه 2026 | Daoline Digital</title>
+  <title>خوارزمية الانتباه 2026: كيف تتصدر المشهد الرقمي؟ | Daoline Digital</title>
+  <meta name="description" content="تعرفي على أسرار خوارزمية الانتباه في 2026 وكيفية صناعة محتوى يخطف الأنظار في 3 ثوانٍ مع خبيرة التسويق دعاء سليط.">
   
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
+
   <style>
     :root { --primary: #c013a6; --bg: #020617; --surface: #0f172a; --text: #e2e8f0; --muted: #94a3b8; }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Tajawal', sans-serif; background: var(--bg); color: var(--text); line-height: 1.8; }
+    body { font-family: 'Tajawal', sans-serif; background: var(--bg); color: var(--text); line-height: 1.8; overflow-x: hidden; }
 
-    /* هيدر داولاين الثابت */
-    header { position: sticky; top: 0; z-index: 1000; background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(10px); border-bottom: 2px solid var(--primary); padding: 15px 20px; }
-    .nav { max-width: 1000px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
-    .nav a { color: #fff; text-decoration: none; font-weight: 700; font-size: 0.9rem; margin-left: 20px; transition: 0.3s; }
+    /* هيدر داولاين الثابت (الرحلة السهلة) */
+    header { position: sticky; top: 0; z-index: 1000; background: rgba(15, 23, 42, 0.96); backdrop-filter: blur(12px); border-bottom: 2px solid var(--primary); padding: 15px 20px; }
+    .nav { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+    .nav a { color: #fff; text-decoration: none; font-weight: 700; font-size: 0.95rem; margin-left: 20px; transition: 0.3s; }
     .nav a:hover { color: var(--primary); }
-    .logo { font-size: 1.3rem; font-weight: 900; color: #fff; text-decoration: none; }
+    .logo { font-size: 1.4rem; font-weight: 900; color: #fff; text-decoration: none; }
     .logo span { color: var(--primary); }
 
     /* حاوية المقال */
@@ -31,46 +35,52 @@
     h2 { color: var(--primary); font-size: 1.8rem; margin: 45px 0 20px; border-right: 5px solid var(--primary); padding-right: 15px; }
     p { margin-bottom: 25px; text-align: justify; }
 
-    /* صندوق جذب الليدز */
+    /* صندوق جذب الليدز (تركيز عالي على دليل مجاني) */
     .lead-box { 
       background: linear-gradient(145deg, #1e293b, #0f172a); 
       border: 2px dashed var(--primary); 
       border-radius: 25px; padding: 40px; margin: 60px 0; text-align: center;
+      position: relative; box-shadow: 0 15px 40px rgba(192, 19, 166, 0.2);
     }
-    .lead-box h3 { color: #fff; font-size: 1.6rem; margin-bottom: 15px; }
+    .ribbon { background: var(--primary); color: #fff; font-weight: 900; font-size: 0.8rem; padding: 5px 40px; position: absolute; top: 15px; left: -35px; transform: rotate(-45deg); }
     
-    .form-input { width: 100%; padding: 14px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.2); color: #fff; font-family: 'Tajawal'; margin-bottom: 15px; outline: none; }
-    .submit-btn { width: 100%; background: var(--primary); color: #fff; border: none; padding: 16px; border-radius: 12px; font-weight: 900; font-size: 1.2rem; cursor: pointer; transition: 0.3s; }
-    .submit-btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(192, 19, 166, 0.3); }
-    
-    /* الفوتر الذكي للتوجيه */
+    .free-badge { 
+      font-size: 3.5rem; font-weight: 900; color: var(--primary); margin: 10px 0; 
+      line-height: 1; text-shadow: 0 5px 15px rgba(192, 19, 166, 0.3);
+    }
+
+    .form-input { width: 100%; padding: 14px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.3); color: #fff; font-family: 'Tajawal'; margin-bottom: 15px; outline: none; text-align: right; }
+    .submit-btn { width: 100%; background: var(--primary); color: #fff; border: none; padding: 18px; border-radius: 12px; font-weight: 900; font-size: 1.2rem; cursor: pointer; transition: 0.3s; }
+    .submit-btn:hover { transform: translateY(-3px); background: #a00f89; }
+
+    /* الفوتر الذكي */
     .footer-action { margin-top: 60px; padding: 40px; background: #0f172a; border-radius: 20px; text-align: center; border: 1px solid rgba(255,255,255,0.05); }
     .footer-btn { display: inline-block; background: transparent; border: 1px solid var(--primary); color: var(--primary); padding: 12px 30px; border-radius: 10px; text-decoration: none; font-weight: bold; margin: 10px; transition: 0.3s; }
     .footer-btn:hover { background: var(--primary); color: #fff; }
 
-    @media (max-width: 768px) { h1 { font-size: 2rem; } .nav-menu { display: none; } }
+    @media (max-width: 768px) { h1 { font-size: 2.1rem; } .nav-menu { display: none; } .free-badge { font-size: 2.5rem; } }
   </style>
 </head>
 <body>
 
   <header>
     <div class="nav">
-      <a href="https://daolinedigital.com" class="logo">DAOLINE <span>DIGITAL</span></a>
+      <a href="https://daolinedigital.com/" class="logo">DAOLINE <span>DIGITAL</span></a>
       <div class="nav-menu">
-        <a href="https://daolinedigital.com">الرئيسية</a>
-        <a href="https://daolinedigital.com/library" style="color: var(--primary);">المكتبة 📚</a>
-        <a href="https://daolinedigital.com/services">الخدمات</a>
+        <a href="https://daolinedigital.com/">الرئيسية</a>
+        <a href="https://daolinedigital.com/blog/" style="color: var(--primary);">المكتبة المجانية 📚</a>
+        <a href="https://daolinedigital.com/#services">الخدمات</a>
       </div>
     </div>
   </header>
 
   <main class="container">
     <nav class="breadcrumbs">
-        <a href="https://daolinedigital.com">الرئيسية</a> / 
-        <a href="https://daolinedigital.com/library">المكتبة</a> / مقال 018
+        <a href="https://daolinedigital.com/">الرئيسية</a> / 
+        <a href="https://daolinedigital.com/blog/">المكتبة</a> / مقال 018
     </nav>
 
-    <h1>خوارزمية الانتباه 2026: كيف تتصدر المشهد الرقمي؟</h1>
+    <h1>خوارزمية الانتباه 2026: كيف تتصدر المشهد الرقمي وتضاعف مبيعاتك؟</h1>
     
     <div class="meta">
       <span>👤 بقلم: دعاء سليط</span>
@@ -78,56 +88,60 @@
     </div>
 
     <article class="article-content">
-      <p>في عالم السوشيال ميديا اليوم، الانتباه هو العملة الحقيقية. لو مقدرتيش تخطفي انتباه عميلك في أول 3 ثواني، فإنتي خارج اللعبة.</p>
+      <p>في عالم السوشيال ميديا اليوم، لم يعد المحتوى هو "الملك" كما قيل سابقاً، بل <strong>الانتباه هو العملة الحقيقية</strong>. نحن نعيش في عصر "اقتصاد الانتباه"، حيث تتنافس آلاف العلامات التجارية على خطف ثوانٍ معدودة من وقت عميلك المستهدف.</p>
 
-      <h2>قواعد اللعبة الجديدة</h2>
-      <p>الخوارزميات في 2026 بقت تعتمد على جودة المحتوى وتفاعل العميل الفوري. وعشان كدة، بنقدم لك في داولاين ديجيتال الخلاصة اللي تخليكي دايماً في الصدارة.</p>
+      <h2>لماذا فشلت الطرق التقليدية في 2026؟</h2>
+      <p>الخوارزميات أصبحت تعتمد كلياً على "جودة الانتباه". لم يعد كافياً أن يرى العميل فيديوهاتك، بل يجب أن "يتوقف" عن السكرول فوراً. العميل أصبح يمتلك حاسة سادسة لكشف الإعلانات المملة، وهنا يأتي دور الهوكات الاحترافية التي نبنيها في داولاين ديجيتال.</p>
 
       <section class="lead-box">
-        <h3>هدية مجانية: كتالوج الهوكات 🎁</h3>
-        <p style="color: var(--muted); margin-bottom: 25px;">سجلي بياناتك وهيوصلك الكتالوج فوراً على إيميلك.</p>
+        <div class="ribbon">حصري</div>
+        <h3 style="color: #fff; margin-bottom: 5px;">جاهزة لخطف الأنظار؟ 🧐</h3>
+        <div class="free-badge">دليل مجاني ✨</div>
+        <p style="color: #fff; font-size: 1.2rem; font-weight: 700; margin-bottom: 25px;">احصلي على "كتالوج الهوكات السحرية 2026" الآن!</p>
         
         <div style="max-width: 450px; margin: 0 auto;">
-          <input type="text" id="name" placeholder="الاسم.." class="form-input">
-          <input type="email" id="email" placeholder="الإيميل.." class="form-input">
-          <input type="tel" id="whatsapp" placeholder="الواتساب.." class="form-input">
-          <button onclick="handleLead()" id="submit-btn" class="submit-btn">احصلي على الهدية الآن 🚀</button>
+          <input type="text" id="name" placeholder="اسمك الكريم.." class="form-input">
+          <input type="email" id="email" placeholder="إيميلك لاستلام الملف.." class="form-input">
+          <input type="tel" id="whatsapp" placeholder="رقم الواتساب.." class="form-input">
+          <button onclick="handleLead()" id="submit-btn" class="submit-btn">احصلي على الدليل المجاني الآن 🚀</button>
           <div id="status" style="margin-top: 15px; font-weight: bold;"></div>
         </div>
       </section>
 
-      <p>تذكري دايماً، النجاح في المحتوى بيبدأ بهوك صح، وبينتهي بقيمة حقيقية بتقدميها لجمهورك.</p>
+      <h2>سر الثلاث ثوانٍ الأولى</h2>
+      <p>بناءً على خبرتي التي تتجاوز 15 عاماً في السوق، أستطيع أن أؤكد لك أن الفرق بين فيديو يحقق "مليون مشاهدة" وفيديو يحقق "صفر مشاهدة" هو الجملة الأولى (The Hook). الهوك ليس مجرد كلمات، بل هو مزيج من النص الصادم، الإيقاع السريع، والبصريات الجذابة.</p>
     </article>
 
     <section class="footer-action">
       <h3 style="margin-bottom: 10px; color: #fff;">استكشفي أكتر مع Daoline 🚀</h3>
-      <div style="margin-top: 25px;">
-        <a href="https://daolinedigital.com/library" class="footer-btn">المكتبة المجانية</a>
-        <a href="https://daolinedigital.com/services" class="footer-btn" style="background: var(--primary); color:#fff;">خدماتنا الاحترافية</a>
+      <p style="color: var(--muted); margin-bottom: 25px;">تطوير مشروعك يبدأ من هنا</p>
+      <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+        <a href="https://daolinedigital.com/blog/" class="footer-btn">الرجوع للمكتبة 🏛️</a>
+        <a href="https://daolinedigital.com/" class="footer-btn" style="background: var(--primary); color:#fff;">الخدمات والحلول</a>
       </div>
     </section>
   </main>
 
-  <footer style="text-align: center; padding: 40px; color: var(--muted); font-size: 0.8rem;">
+  <footer style="text-align: center; padding: 40px; color: var(--muted); font-size: 0.8rem; border-top: 1px solid rgba(255,255,255,0.05);">
     © 2026 Daoline Digital Academy | جميع الحقوق محفوظة
   </footer>
 
   <script>
     async function handleLead() {
-      const name = document.getElementById('name').value;
-      const email = document.getElementById('email').value;
-      const wa = document.getElementById('whatsapp').value;
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const wa = document.getElementById('whatsapp').value.trim();
       const status = document.getElementById('status');
       const btn = document.getElementById('submit-btn');
 
       if(!name || !email || !wa) {
-        status.innerText = "كملي البيانات الأول! ⚠️";
+        status.innerText = "من فضلك كملي البيانات الأول! ⚠️";
         status.style.color = "#f87171";
         return;
       }
 
       try {
-        btn.disabled = true; btn.innerText = "جاري الإرسال...";
+        btn.disabled = true; btn.innerText = "جاري التحضير...";
         const fd = new FormData();
         fd.append("entry.299023128", name);
         fd.append("entry.1712155557", email);
@@ -136,12 +150,13 @@
 
         await fetch("https://docs.google.com/forms/d/e/1FAIpQLSdSXEvN7DMMC-pwXED9G5TRpe4ecQ5U7pMtsg3201d2ikinfQ/formResponse", { method: "POST", mode: "no-cors", body: fd });
         
-        status.innerText = "تم بنجاح! ✅ الكتالوج وصل على إيميلك.";
+        status.innerText = "تم بنجاح! ✅ شيك على إيميلك الآن هتلاقي الدليل وصلك.";
         status.style.color = "#4ade80";
-        btn.innerText = "تم الإرسال ✅";
+        btn.innerText = "تم الإرسال بنجاح ✅";
       } catch (e) {
-        status.innerText = "حصلت مشكلة.. جربي تاني.";
+        status.innerText = "حدث خطأ.. حاولي مرة تانية.";
         btn.disabled = false;
+        btn.innerText = "احصلي على الدليل المجاني الآن 🚀";
       }
     }
   </script>
