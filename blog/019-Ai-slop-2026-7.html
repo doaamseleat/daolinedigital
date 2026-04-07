@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>الـ AI Slop قتل ثقة الجمهور: إزاي تنجح كـ Content Creator في 2026 | Daoline Digital</title>
+  <meta name="description" content="63% من المستخدمين بيتجنبوا المحتوى المصنوع بالـ AI. دليل شامل للـ Content Creators: إزاي تستخدمي الـ AI بذكاء وتحافظي على صوتك الأصيل في 2026.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root { --primary: #c013a6; --bg: #020617; --surface: #0f172a; --text: #e2e8f0; --muted: #94a3b8; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Tajawal', sans-serif; background: var(--bg); color: var(--text); line-height: 2.1; overflow-x: hidden; }
+
+    header { position: sticky; top: 0; z-index: 1000; background: rgba(15, 23, 42, 0.96); backdrop-filter: blur(12px); border-bottom: 2px solid var(--primary); padding: 15px 20px; }
+    .nav { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+    .nav a { color: #fff; text-decoration: none; font-weight: 700; font-size: 0.95rem; margin-left: 20px; transition: 0.3s; }
+    .nav a:hover { color: var(--primary); }
+    .logo { font-size: 1.4rem; font-weight: 900; color: #fff; text-decoration: none; }
+    .logo span { color: var(--primary); }
+
+    .container { max-width: 900px; margin: 40px auto; padding: 0 25px; }
+    .breadcrumbs { font-size: 0.85rem; color: var(--muted); margin-bottom: 20px; }
+    .breadcrumbs a { color: var(--primary); text-decoration: none; }
+
+    h1 { font-size: 3.4rem; font-weight: 900; color: #fff; line-height: 1.2; margin-bottom: 25px; }
+    .meta { font-size: 1rem; color: var(--muted); margin-bottom: 40px; display: flex; gap: 20px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 20px; flex-wrap: wrap; }
+
+    .article-content { font-size: 1.3rem; color: #cbd5e1; }
+    h2 { color: var(--primary); font-size: 2.35rem; margin: 50px 0 25px; border-right: 6px solid var(--primary); padding-right: 20px; font-weight: 900; }
+    h3 { color: #fff; font-size: 1.75rem; margin: 35px 0 15px; font-weight: 800; }
+    p { margin-bottom: 38px; text-align: justify; }
+    ul { margin-bottom: 30px; padding-right: 25px; }
+    li { margin-bottom: 16px; }
+
+    /* stat highlight */
+    .stat-highlight {
+      background: linear-gradient(135deg, rgba(192,19,166,0.12), rgba(192,19,166,0.03));
+      border: 1px solid rgba(192,19,166,0.4);
+      border-right: 5px solid var(--primary);
+      border-radius: 16px; padding: 30px 35px; margin: 40px 0;
+      display: flex; align-items: center; gap: 25px;
+    }
+    .stat-number { font-size: 4rem; font-weight: 900; color: var(--primary); line-height: 1; white-space: nowrap; }
+    .stat-text { font-size: 1.35rem; color: #e2e8f0; line-height: 1.6; }
+    .stat-source { font-size: 0.85rem; color: var(--muted); margin-top: 8px; }
+
+    /* two-col compare */
+    .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 40px 0; }
+    .compare-card { background: var(--surface); border-radius: 16px; padding: 24px; border: 1px solid rgba(255,255,255,0.06); }
+    .compare-card.bad  { border-color: rgba(239,68,68,0.35); }
+    .compare-card.good { border-color: rgba(192,19,166,0.4); background: linear-gradient(135deg, rgba(192,19,166,0.08), var(--surface)); }
+    .compare-label { font-size: 0.85rem; font-weight: 700; letter-spacing: 1px; margin-bottom: 14px; }
+    .compare-card.bad  .compare-label { color: #f87171; }
+    .compare-card.good .compare-label { color: var(--primary); }
+    .compare-card ul { padding-right: 20px; }
+    .compare-card li  { font-size: 1.05rem; color: #cbd5e1; margin-bottom: 10px; }
+
+    /* spectrum bar — unique to this article */
+    .spectrum { margin: 40px 0; background: var(--surface); border-radius: 16px; padding: 28px; border: 1px solid rgba(255,255,255,0.06); }
+    .spectrum-title { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 20px; }
+    .spectrum-bar { height: 14px; border-radius: 8px; background: linear-gradient(to left, var(--primary), #f87171); margin-bottom: 12px; }
+    .spectrum-labels { display: flex; justify-content: space-between; font-size: 0.88rem; color: var(--muted); }
+    .spectrum-items { margin-top: 18px; display: flex; flex-direction: column; gap: 10px; }
+    .spec-row { display: flex; align-items: center; gap: 12px; font-size: 0.95rem; color: #cbd5e1; }
+    .spec-dot { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; }
+
+    /* rule cards */
+    .rules-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 40px 0; }
+    .rule-card { background: var(--surface); border-radius: 14px; padding: 22px 24px; border: 1px solid rgba(255,255,255,0.06); border-top: 3px solid var(--primary); }
+    .rule-num { font-size: 2rem; font-weight: 900; color: var(--primary); line-height: 1; margin-bottom: 8px; }
+    .rule-card h3 { font-size: 1.05rem; color: #fff; margin: 0 0 8px; font-weight: 700; }
+    .rule-card p  { font-size: 1.02rem; color: var(--muted); line-height: 1.6; margin: 0; }
+
+    /* checklist */
+    .checklist { list-style: none; padding: 0; margin-bottom: 30px; }
+    .checklist li { padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.05); color: #cbd5e1; display: flex; gap: 12px; align-items: flex-start; font-size: 1.2rem; }
+    .checklist li::before { content: "✓"; color: var(--primary); font-weight: 900; font-size: 1.2rem; flex-shrink: 0; margin-top: 1px; }
+
+    /* pull quote */
+    .pull-quote { border-right: 5px solid var(--primary); padding: 20px 25px; margin: 40px 0; background: rgba(192,19,166,0.06); border-radius: 0 12px 12px 0; }
+    .pull-quote p { font-size: 1.42rem; font-weight: 700; color: #fff; margin: 0; font-style: italic; }
+    .pull-quote cite { font-size: 0.9rem; color: var(--muted); margin-top: 10px; display: block; font-style: normal; }
+
+    /* lead box */
+    .lead-box {
+      background: linear-gradient(145deg, #1e293b, #0f172a);
+      border: 3px dashed var(--primary);
+      border-radius: 30px; padding: 50px 40px; margin: 70px 0; text-align: center;
+      box-shadow: 0 25px 60px rgba(192, 19, 166, 0.3);
+    }
+    .free-badge { font-size: 4rem; font-weight: 900; color: var(--primary); margin: 10px 0 20px; line-height: 1; text-shadow: 0 10px 30px rgba(192,19,166,0.5); }
+    .form-input { width: 100%; padding: 16px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.4); color: #fff; font-family: 'Tajawal'; margin-bottom: 15px; outline: none; text-align: right; font-size: 1rem; }
+    .submit-btn { width: 100%; background: var(--primary); color: #fff; border: none; padding: 20px; border-radius: 15px; font-weight: 900; font-size: 1.3rem; cursor: pointer; transition: 0.4s; box-shadow: 0 10px 30px rgba(192,19,166,0.3); }
+    .submit-btn:hover { transform: scale(1.02); background: #a00f89; }
+
+    .footer-action { margin-top: 80px; padding: 60px 40px; background: #0f172a; border-radius: 30px; text-align: center; border: 1px solid rgba(192,19,166,0.1); }
+    .footer-btn { display: inline-block; background: transparent; border: 2px solid var(--primary); color: var(--primary); padding: 16px 40px; border-radius: 15px; text-decoration: none; font-weight: 900; margin: 10px; transition: 0.3s; }
+    .footer-btn:hover { background: var(--primary); color: #fff; }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 2.2rem; }
+      .nav-menu { display: none; }
+      .free-badge { font-size: 2.8rem; }
+      h2 { font-size: 1.7rem; }
+      .compare-grid, .rules-grid { grid-template-columns: 1fr; }
+      .stat-highlight { flex-direction: column; gap: 10px; }
+      .stat-number { font-size: 3rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="nav">
+      <a href="https://daolinedigital.com/" class="logo">DAOLINE <span>DIGITAL</span></a>
+      <div class="nav-menu">
+        <a href="https://daolinedigital.com/">الرئيسية</a>
+        <a href="https://daolinedigital.com/blog/" style="color: var(--primary);">المكتبة المجانية 📚</a>
+        <a href="https://daolinedigital.com/#services">الخدمات</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <nav class="breadcrumbs">
+      <a href="https://daolinedigital.com/">الرئيسية</a> /
+      <a href="https://daolinedigital.com/blog/">المكتبة</a> / مقال 020
+    </nav>
+
+    <h1>الـ AI Slop بيدمر ثقة الجمهور — وده فرصتك الذهبية كـ Content Creator</h1>
+
+    <div class="meta">
+      <span>👤 بقلم: دعاء سليط</span>
+      <span>⏱️ القراءة: 12 دقيقة</span>
+      <span>🎬 Content Creation</span>
+      <span>📅 أبريل 2026</span>
+    </div>
+
+    <article class="article-content">
+
+      <p>في 2026، الـ AI بقى متاح لكل الناس. أي حد يقدر يعمل فيديو، يكتب كابشن، يصمم بوست — في ثوانٍ. والنتيجة؟ الفيد بقى مليان بمحتوى <strong>يبدو زي بعضه تماماً</strong>. الغرب سمّاه "AI Slop" — وده المصطلح اللي بيتداول دلوقتي في كل مؤتمرات التسويق العالمية. لكن اللي محدش بيقوله بوضوح هو إن ده <strong>أحسن حاجة ممكن تحصل للـ Content Creator الأصيل.</strong></p>
+
+      <div class="stat-highlight">
+        <div class="stat-number">63%</div>
+        <div>
+          <div class="stat-text">من المستخدمين أقل احتمالاً إنهم يتفاعلوا مع محتوى مصنوع بالـ AI — حتى لو المحتوى نفسه كويس.</div>
+          <div class="stat-source">المصدر: Power Digital Marketing — State of Social Media 2026</div>
+        </div>
+      </div>
+
+      <p>مش بس كده. <strong>47% من المستخدمين</strong> بيكوّنوا رأي سلبي عن البراند اللي بيستخدم AI في ردود الكاستومر. يعني مجرد إن الناس تحسّ إن فيه آلة بتكلمها — الثقة بتطير. ده مش مجرد ترند، ده تحوّل في طريقة تفكير الجمهور بالكامل.</p>
+
+      <h2>أولاً: إيه هو الـ AI Slop بالظبط؟</h2>
+
+      <p>الـ AI Slop مش بالضرورة محتوى غلط أو معلومة وحشة. الـ AI Slop هو المحتوى اللي <strong>بيحس الجمهور إنه محدش كان موجود وراه.</strong> صورة مصنوعة بالـ AI من غير سياق، كابشن مكتوب بشكل مثالي أوي بيحس إنه Template، رد على كومنت بيبدأ بـ "بالتأكيد! سؤالك رائع جداً" — ده كله AI Slop.</p>
+
+      <div class="spectrum">
+        <div class="spectrum-title">مقياس الأصالة — فين محتواكِ؟</div>
+        <div class="spectrum-bar"></div>
+        <div class="spectrum-labels">
+          <span>🤖 AI Slop كامل</span>
+          <span>✨ أصيل 100%</span>
+        </div>
+        <div class="spectrum-items">
+          <div class="spec-row">
+            <div class="spec-dot" style="background:#f87171"></div>
+            <span><strong>AI Slop:</strong> كل حاجة مصنوعة بـ AI — الصورة، النص، حتى الرد على التعليقات</span>
+          </div>
+          <div class="spec-row">
+            <div class="spec-dot" style="background:#fb923c"></div>
+            <span><strong>AI مع تعديل بسيط:</strong> بيحس الجمهور بيه — مفيش صوت حقيقي ورا الكلام</span>
+          </div>
+          <div class="spec-row">
+            <div class="spec-dot" style="background:#facc15"></div>
+            <span><strong>AI كأداة مساعدة:</strong> الأيدياز إنسانية، الـ AI بيساعد في التنفيذ فقط</span>
+          </div>
+          <div class="spec-row">
+            <div class="spec-dot" style="background:var(--primary)"></div>
+            <span><strong>الأصالة الكاملة:</strong> صوتك، تجربتك، وجهة نظرك — الـ AI مجرد أداة في يدك</span>
+          </div>
+        </div>
+      </div>
+
+      <p>الجمهور في 2026 أذكى بكتير من إنه ينخدع. التقارير بتقول إن <strong>56% من المستخدمين</strong> بيشوفوا AI Slop على السوشيال كتير أو كتير جداً — يعني الناس بدأت تميّز. وده بالظبط هو الفرصة.</p>
+
+      <h2>ثانياً: ليه بره بيتكلموا عن ده كأزمة ثقة؟</h2>
+
+      <p>الغرب مش بس بيقول "الـ AI وحش" — الموضوع أعمق من كده. المشكلة إن الـ AI خلى المحتوى <strong>رخيصاً جداً</strong> — مش بمعنى المال، بمعنى القيمة المدركة. لما أي حد يقدر ينتج 50 فيديو في يوم، القيمة بتاعت كل فيديو بتقل في عقل المشاهد.</p>
+
+      <div class="pull-quote">
+        <p>"هنشوف 'AI slop' أكتر وأكتر في 2026 — وده بيخلق فرصة حقيقية للبراندات اللي مستعدة تظهر بشكل إنساني حقيقي."</p>
+        <cite>— Dan Murphy، SVP of Marketing at Liquid Death، نقلاً عن Marketing Brew 2026</cite>
+      </div>
+
+      <p>وفي نيش الـ Content Creation تحديداً، الأزمة أشد. الجمهور بتاع الكريتورز جاي أصلاً عشان <strong>الشخص</strong> مش بس المعلومة. لو حسّ إن مفيش شخص حقيقي موجود — راح يمشي فوراً. ومش بس هيمشي، هيفضل يتذكر إن البراند ده "مش حقيقي".</p>
+
+      <h2>ثالثاً: مقارنة — الـ AI Slop مقابل الـ AI الذكي</h2>
+
+      <div class="compare-grid">
+        <div class="compare-card bad">
+          <div class="compare-label">🔴 الـ AI Slop — اللي بيضر</div>
+          <ul>
+            <li>كابشن مثالي أوي بدون صوت شخصي</li>
+            <li>صور مصنوعة بـ AI من غير سياق حقيقي</li>
+            <li>ردود على كومنتس تبدأ بـ "رائع جداً!"</li>
+            <li>محتوى بيشبه باقي المحتوى في النيش بالظبط</li>
+            <li>قصص "تجربة شخصية" مكتوبة بالـ AI</li>
+          </ul>
+        </div>
+        <div class="compare-card good">
+          <div class="compare-label">💜 الـ AI الذكي — اللي بيبني</div>
+          <ul>
+            <li>الـ AI بيساعدك تنظّمي أفكارك الحقيقية</li>
+            <li>بتستخدميه للريسيرش والكيوردز مش للكلام</li>
+            <li>صوتك وتجربتك في المقدمة دايماً</li>
+            <li>الـ AI يساعدك في التنفيذ مش في التفكير</li>
+            <li>ردود على التعليقات بإيدك إنتِ دايماً</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="stat-highlight">
+        <div class="stat-number">65%</div>
+        <div>
+          <div class="stat-text">من المستخدمين مستريحين إن البراند يستخدم AI في خدمة العملاء — بس بشرط إنه يكون سريع ومفيد فعلاً. الفرق في السياق.</div>
+          <div class="stat-source">المصدر: Sprout Social Q4 2025 Pulse Survey</div>
+        </div>
+      </div>
+
+      <h2>رابعاً: القواعد الذهبية للـ Content Creator في عصر الـ AI</h2>
+
+      <div class="rules-grid">
+        <div class="rule-card">
+          <div class="rule-num">01</div>
+          <h3>الرأي الشخصي مش اختياري</h3>
+          <p>في عالم مليان بالـ AI، الرأي الحقيقي هو أندر حاجة. قولي "أنا شايفة إن..." و"من تجربتي..." — ده اللي الـ AI مش يقدر يعمله.</p>
+        </div>
+        <div class="rule-card">
+          <div class="rule-num">02</div>
+          <h3>التجربة الشخصية هي السلاح</h3>
+          <p>شاركي تجارب حقيقية — حتى لو كانت فشل. "جربت ده وما اشتغلش معايا عشان..." أقوى من أي نصيحة عامة يقدر الـ AI يكتبها.</p>
+        </div>
+        <div class="rule-card">
+          <div class="rule-num">03</div>
+          <h3>الـ AI = مساعد مش مبدع</h3>
+          <p>استخدمي الـ AI في الريسيرش، الكيوردز، التلخيص — بس الأيديا والصوت والرأي لازم يكونوا منك إنتِ. ده خط أحمر.</p>
+        </div>
+        <div class="rule-card">
+          <div class="rule-num">04</div>
+          <h3>الردود على التعليقات بإيدك</h3>
+          <p>الكومنتس هي أقرب نقطة بينك وبين جمهورك. لو استخدمتِ AI هنا، بتقطعي الخيط اللي بتبنيه. مش يستاهل.</p>
+        </div>
+        <div class="rule-card">
+          <div class="rule-num">05</div>
+          <h3>اكشفي وراء الكواليس</h3>
+          <p>الـ BTS — Behind The Scenes — مستحيل يتعمل بالـ AI. لما بتوري حياتك الحقيقية، عملك الحقيقي، الأخطاء الحقيقية — بتكسري الـ AI بالتعريف.</p>
+        </div>
+        <div class="rule-card">
+          <div class="rule-num">06</div>
+          <h3>الـ Imperfection هو الـ Brand</h3>
+          <p>المحتوى المثالي أوي بيحسّ بيه الناس. خليكِ إنسانية — تتلعثمي، تضحكي، تعترفي بإنك ما عرفتيش حاجة. ده مش ضعف، ده الـ authenticity.</p>
+        </div>
+      </div>
+
+      <section class="lead-box">
+        <h3 style="color: #fff; margin-bottom: 5px;">عاوزة تبني محتوى أصيل؟ 🎯</h3>
+        <div class="free-badge">دليل مجاني ✨</div>
+        <p style="color: #fff; font-size: 1.4rem; font-weight: 700; margin-bottom: 30px; line-height: 1.5;">
+          احصلي فوراً على <span style="color:var(--primary);">"Social SEO Keyword Catalog 2026"</span><br>
+          50+ كيورد لنيش الـ <strong>Content Creation</strong> — PDF جاهز للتحميل!
+        </p>
+        <div style="max-width: 500px; margin: 0 auto;">
+          <input type="text"  id="name"     placeholder="اسمك الكريم.."             class="form-input">
+          <input type="email" id="email"    placeholder="بريدك الإلكتروني.."         class="form-input">
+          <input type="tel"   id="whatsapp" placeholder="رقم الواتساب (للتواصل السريع).." class="form-input">
+          <button onclick="handleLead()" id="submit-btn" class="submit-btn">أرسل لي الكتالوج المجاني الآن 🚀</button>
+          <div id="status" style="margin-top: 15px; font-weight: bold;"></div>
+        </div>
+      </section>
+
+      <h2>خامساً: فرصة السوق العربي — ليه دلوقتي بالظبط؟</h2>
+
+      <p>الغرب اتكلم عن الـ AI Slop من تقريباً سنة. المسوّقون الكبار في أمريكا وأوروبا بدأوا يعدّلوا استراتيجياتهم. لكن في العالم العربي — وخصوصاً في نيش الـ Content Creation — <strong>لسه معظم الكريتورز ما اتكلموش في الموضوع ده صح.</strong></p>
+
+      <p>ده معناه إنك لو دلوقتي بنيتِ صوت أصيل وواضح، وبنيتِ علاقة حقيقية مع جمهورك — هتكوني في موقع تانٍ خالص بعد 6 شهور لما السوق هيتشبع بالـ AI Slop العربي.</p>
+
+      <div class="pull-quote">
+        <p>"لما الـ AI Slop هيغرق الفيد، اللي هيبقى واضح هو اللي عنده صوت حقيقي. السوق بيكافئ الأصالة أكتر من أي وقت."</p>
+        <cite>— Ogilvy Social.Lab، Social Trends Report 2026</cite>
+      </div>
+
+      <h2>سادساً: الخطوات العملية — ابدأي من النهارده</h2>
+
+      <ul class="checklist">
+        <li>راجعي آخر 5 بوستات — قدّري نسبة صوتك الحقيقي فيهم على ورقة</li>
+        <li>حددي جملة أو تعبير بتقوليه بشكل متكرر — ده صوتك، خليه في المحتوى</li>
+        <li>شاركي رأيك الشخصي في موضوع في نيشتك هذا الأسبوع — حتى لو مختلف</li>
+        <li>وري BTS لعملك لمدة يوم كامل — بدون تعديل أو تجميل</li>
+        <li>رُدّي على أول 10 تعليقات اليوم بإيدك وبصوتك الطبيعي</li>
+        <li>استخدمي الـ AI للريسيرش والكيوردز فقط — مش للكتابة النهائية</li>
+        <li>اسألي جمهورك سؤالاً حقيقياً بتحتاجي إجابته — مش سؤال تفاعلي فاضي</li>
+      </ul>
+
+      <p>في الختام، الـ AI مش عدوّك — ومش منقذك. هو أداة. والكريتور الذكي هو اللي بيستخدم الأداة من غير ما يخليها تحل محله. جمهورك جاء عشانك إنتِ — صوتك، رأيك، وتجربتك. لما تحافظي على ده، مفيش AI في الدنيا يقدر ينافسك.</p>
+
+    </article>
+
+    <section class="footer-action">
+      <h3 style="margin-bottom: 10px; color: #fff;">عاوزة تبني محتوى أصيل ومحسّن للـ SEO مع بعض؟ 🚀</h3>
+      <p style="color: var(--muted); margin-bottom: 30px;">استكشفي بقية خدماتنا الاحترافية أو عودي للمكتبة للمزيد من الدروس.</p>
+      <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+        <a href="https://daolinedigital.com/blog/" class="footer-btn">الرجوع للمكتبة 🏛️</a>
+        <a href="https://daolinedigital.com/" class="footer-btn" style="background: var(--primary); color:#fff;">الخدمات والحلول</a>
+      </div>
+    </section>
+  </main>
+
+  <footer style="text-align: center; padding: 50px 20px; color: var(--muted); font-size: 0.9rem; border-top: 1px solid rgba(255,255,255,0.05);">
+    © 2026 Daoline Digital Academy | إعداد دعاء سليط | جميع الحقوق محفوظة
+  </footer>
+
+  <script>
+    async function handleLead() {
+      const name  = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const wa    = document.getElementById('whatsapp').value.trim();
+      const status = document.getElementById('status');
+      const btn   = document.getElementById('submit-btn');
+
+      if (!name || !email || !wa) {
+        status.innerText = "من فضلك كملي البيانات الأول! ⚠️";
+        status.style.color = "#f87171";
+        return;
+      }
+
+      try {
+        btn.disabled = true; btn.innerText = "جاري تحضير الكتالوج...";
+        const fd = new FormData();
+        fd.append("entry.299023128",  name);
+        fd.append("entry.1712155557", email);
+        fd.append("entry.1224669856", wa);
+        fd.append("entry.334049848",  "ai_slop_article_020");
+
+        await fetch("https://docs.google.com/forms/d/e/1FAIpQLSdSXEvN7DMMC-pwXED9G5TRpe4ecQ5U7pMtsg3201d2ikinfQ/formResponse",
+          { method: "POST", mode: "no-cors", body: fd });
+
+        status.innerText = "تم بنجاح! ✅ شيك على إيميلك (والـ Spam) هتلاقي الكتالوج وصلك.";
+        status.style.color = "#4ade80";
+        btn.innerText = "تم الإرسال بنجاح ✅";
+      } catch (e) {
+        status.innerText = "حدث خطأ بسيط.. حاولي مرة تانية.";
+        btn.disabled = false;
+        btn.innerText = "أرسل لي الكتالوج المجاني الآن 🚀";
+      }
+    }
+  </script>
+
+</body>
+</html>
