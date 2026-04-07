@@ -3,509 +3,315 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>السوشيال ميديا قتلت Google: دليل Social SEO 2026 | Daoline Digital</title>
+  <meta name="description" content="1 من كل 3 مستخدمين بيدور على المنتجات على TikTok وInstagram قبل Google. دليل شامل يشرح Social SEO وكيف تظهري في نتائج بحث السوشيال ميديا 2026.">
 
-  <!-- SEO Meta Tags -->
-  <title>دليل المبتدئين: استراتيجية المحتوى الرقمي في 2026 (Playbook عملي)</title>
-  <meta name="description" content="كتيب مدروس للمبتدئين في السوشيال ميديا. تعلم التأسيس، فهم الجمهور، هندسة المحتوى، وتطبيق القوالب الجاهزة لتحقيق أهدافك في 2026.">
-  <meta name="keywords" content="Social Media Guide 2026, استراتيجية محتوى للمبتدئين, دليل سوشيال ميديا, Daoline Digital, Smart Goals">
-
-  <!-- Google Fonts: Tajawal -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
-
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
 
   <style>
-    :root{
-      --primary:#c013a6;
-      --primary2:#a00f89;
-      --bg:#0f172a;
-      --text:#e2e8f0;
-      --muted:rgba(226,232,240,.78);
-      --muted2:rgba(226,232,240,.65);
-      --border:rgba(255,255,255,.08);
-    }
+    :root { --primary: #c013a6; --bg: #020617; --surface: #0f172a; --text: #e2e8f0; --muted: #94a3b8; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Tajawal', sans-serif; background: var(--bg); color: var(--text); line-height: 1.8; overflow-x: hidden; }
 
-    /* Base */
-    html{ scroll-behavior:smooth; }
-    body{
-      font-family:'Tajawal',sans-serif;
-      background-color: var(--bg);
-      color: var(--text);
-      overflow-x:hidden;
-      font-size: 1.1rem; /* زيادة حجم الخط العام */
+    header { position: sticky; top: 0; z-index: 1000; background: rgba(15, 23, 42, 0.96); backdrop-filter: blur(12px); border-bottom: 2px solid var(--primary); padding: 15px 20px; }
+    .nav { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+    .nav a { color: #fff; text-decoration: none; font-weight: 700; font-size: 0.95rem; margin-left: 20px; transition: 0.3s; }
+    .nav a:hover { color: var(--primary); }
+    .logo { font-size: 1.4rem; font-weight: 900; color: #fff; text-decoration: none; }
+    .logo span { color: var(--primary); }
 
-      /* Text Selection Protection */
-      -webkit-user-select:none;
-      -ms-user-select:none;
-      user-select:none;
-    }
+    .container { max-width: 900px; margin: 40px auto; padding: 0 25px; }
+    .breadcrumbs { font-size: 0.85rem; color: var(--muted); margin-bottom: 20px; }
+    .breadcrumbs a { color: var(--primary); text-decoration: none; }
 
-    /* Brand Colors */
-    .text-daoline{ color: var(--primary); }
-    .bg-daoline{ background-color: var(--primary); }
-    .border-daoline{ border-color: var(--primary); }
-    .hover-bg-daoline:hover{ background-color: var(--primary2); transition: .25s ease; }
+    h1 { font-size: 3.2rem; font-weight: 900; color: #fff; line-height: 1.2; margin-bottom: 25px; }
+    .meta { font-size: 0.95rem; color: var(--muted); margin-bottom: 40px; display: flex; gap: 20px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 20px; flex-wrap: wrap; }
 
-    /* Visuals */
-    .hero-gradient{
-      background: radial-gradient(circle at top center, rgba(192,19,166,.15) 0%, transparent 70%);
-    }
-    .glass{
-      background: rgba(30, 41, 59, 0.40);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.06);
-    }
+    .article-content { font-size: 1.2rem; color: #cbd5e1; }
+    h2 { color: var(--primary); font-size: 2.2rem; margin: 50px 0 25px; border-right: 6px solid var(--primary); padding-right: 20px; font-weight: 900; }
+    h3 { color: #fff; font-size: 1.6rem; margin: 35px 0 15px; font-weight: 800; }
+    p { margin-bottom: 30px; text-align: justify; }
+    ul { margin-bottom: 30px; padding-right: 25px; }
+    li { margin-bottom: 12px; }
 
-    /* Typography tuning - زيادة أحجام الخطوط */
-    h1,h2,h3{ letter-spacing: .2px; }
-    h1{ line-height:1.25 !important; }
-    p{ line-height:2; color: var(--muted); }
-    .prose-strong{ color:#fff; font-weight:900; }
-    .muted2{ color: var(--muted2); }
+    /* stat highlight box */
+    .stat-highlight {
+      background: linear-gradient(135deg, rgba(192,19,166,0.12), rgba(192,19,166,0.03));
+      border: 1px solid rgba(192,19,166,0.4);
+      border-right: 5px solid var(--primary);
+      border-radius: 16px;
+      padding: 30px 35px;
+      margin: 40px 0;
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
+    .stat-number { font-size: 4rem; font-weight: 900; color: var(--primary); line-height: 1; white-space: nowrap; }
+    .stat-text { font-size: 1.25rem; color: #e2e8f0; line-height: 1.6; }
+    .stat-source { font-size: 0.85rem; color: var(--muted); margin-top: 8px; }
 
-    /* Custom Scrollbar */
-    ::-webkit-scrollbar{ width:8px; }
-    ::-webkit-scrollbar-track{ background:#0f172a; }
-    ::-webkit-scrollbar-thumb{ background:#334155; border-radius:4px; }
-    ::-webkit-scrollbar-thumb:hover{ background: var(--primary); }
+    /* comparison table */
+    .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 40px 0; }
+    .compare-card { background: var(--surface); border-radius: 16px; padding: 24px; border: 1px solid rgba(255,255,255,0.06); }
+    .compare-card.old { border-color: rgba(255,255,255,0.08); }
+    .compare-card.new { border-color: rgba(192,19,166,0.4); background: linear-gradient(135deg, rgba(192,19,166,0.08), var(--surface)); }
+    .compare-label { font-size: 0.85rem; font-weight: 700; letter-spacing: 1px; margin-bottom: 14px; }
+    .compare-card.old .compare-label { color: var(--muted); }
+    .compare-card.new .compare-label { color: var(--primary); }
+    .compare-card ul { padding-right: 20px; }
+    .compare-card li { font-size: 1rem; color: #cbd5e1; margin-bottom: 10px; }
 
-    /* Accordion */
-    details > summary{ list-style:none; outline:none; }
-    details > summary::-webkit-details-marker{ display:none; }
-    details[open] summary ~ *{ animation: sweep .45s ease-in-out; }
-    @keyframes sweep{
-      0%{ opacity:0; transform:translateY(-10px) }
-      100%{ opacity:1; transform:translateY(0) }
-    }
+    /* checklist */
+    .checklist { list-style: none; padding: 0; margin-bottom: 30px; }
+    .checklist li { padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.05); color: #cbd5e1; display: flex; gap: 12px; align-items: flex-start; font-size: 1.1rem; }
+    .checklist li::before { content: "✓"; color: var(--primary); font-weight: 900; font-size: 1.2rem; flex-shrink: 0; margin-top: 1px; }
 
-    /* Table Styling for Dark Mode */
-    .daoline-table {
-      width: 100%;
-      border-collapse: separate;
-      border-spacing: 0;
-      text-align: right;
-    }
-    .daoline-table th {
-      background-color: rgba(192, 19, 166, 0.15);
-      color: #fff;
-      padding: 16px; /* زيادة الحشو */
-      font-weight: 900;
-      font-size: 1.1rem; /* تكبير خط العنوان */
-      border-bottom: 2px solid rgba(192, 19, 166, 0.3);
-    }
-    .daoline-table td {
-      padding: 16px; /* زيادة الحشو */
-      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-      color: var(--muted);
-      font-size: 1.05rem; /* تكبير خط الخلية */
-    }
-    .daoline-table tr:last-child td { border-bottom: none; }
+    /* platform cards */
+    .platform-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 40px 0; }
+    .platform-card { background: var(--surface); border-radius: 14px; padding: 20px; text-align: center; border: 1px solid rgba(255,255,255,0.06); }
+    .platform-icon { font-size: 2.2rem; margin-bottom: 10px; }
+    .platform-name { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 6px; }
+    .platform-tip { font-size: 0.9rem; color: var(--muted); line-height: 1.5; }
 
-    /* Free courses bar */
-    .freebar{
-      background: linear-gradient(90deg, rgba(192,19,166,.95), rgba(160,15,137,.85));
-      border-bottom: 1px solid rgba(255,255,255,.12);
+    /* lead box */
+    .lead-box {
+      background: linear-gradient(145deg, #1e293b, #0f172a);
+      border: 3px dashed var(--primary);
+      border-radius: 30px; padding: 50px 40px; margin: 70px 0; text-align: center;
+      position: relative; box-shadow: 0 25px 60px rgba(192, 19, 166, 0.3);
     }
-    .freebar a{
-      background: rgba(15,23,42,.86);
-      border:1px solid rgba(255,255,255,.10);
+    .free-badge {
+      font-size: 4rem; font-weight: 900; color: var(--primary); margin: 10px 0 20px 0;
+      line-height: 1; text-shadow: 0 10px 30px rgba(192, 19, 166, 0.5);
     }
-    .freebar a:hover{
-      background:#0b1224;
-      border-color: rgba(255,255,255,.18);
-      transform: translateY(-1px);
-      transition:.2s ease;
+    .form-input { width: 100%; padding: 16px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.4); color: #fff; font-family: 'Tajawal'; margin-bottom: 15px; outline: none; text-align: right; font-size: 1rem; }
+    .submit-btn { width: 100%; background: var(--primary); color: #fff; border: none; padding: 20px; border-radius: 15px; font-weight: 900; font-size: 1.3rem; cursor: pointer; transition: 0.4s; box-shadow: 0 10px 30px rgba(192, 19, 166, 0.3); }
+    .submit-btn:hover { transform: scale(1.02); background: #a00f89; }
+
+    /* quote */
+    .pull-quote { border-right: 5px solid var(--primary); padding: 20px 25px; margin: 40px 0; background: rgba(192,19,166,0.06); border-radius: 0 12px 12px 0; }
+    .pull-quote p { font-size: 1.3rem; font-weight: 700; color: #fff; margin: 0; font-style: italic; }
+    .pull-quote cite { font-size: 0.9rem; color: var(--muted); margin-top: 10px; display: block; font-style: normal; }
+
+    .footer-action { margin-top: 80px; padding: 60px 40px; background: #0f172a; border-radius: 30px; text-align: center; border: 1px solid rgba(192,19,166,0.1); }
+    .footer-btn { display: inline-block; background: transparent; border: 2px solid var(--primary); color: var(--primary); padding: 16px 40px; border-radius: 15px; text-decoration: none; font-weight: 900; margin: 10px; transition: 0.3s; }
+    .footer-btn:hover { background: var(--primary); color: #fff; }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 2.2rem; }
+      .nav-menu { display: none; }
+      .free-badge { font-size: 2.8rem; }
+      h2 { font-size: 1.7rem; }
+      .compare-grid { grid-template-columns: 1fr; }
+      .platform-grid { grid-template-columns: 1fr 1fr; }
+      .stat-highlight { flex-direction: column; gap: 10px; }
+      .stat-number { font-size: 3rem; }
     }
   </style>
 </head>
+<body>
 
-<body class="relative">
-
-  <!-- Sticky Nav -->
-  <nav class="sticky top-0 z-50 bg-[#0f172a]/90 backdrop-blur-md border-b border-slate-800">
-    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-      <a href="/index.html" class="font-black text-lg md:text-xl tracking-wide">
-        Daoline<span class="text-daoline">Digital</span>
-      </a>
-
-      <div class="flex gap-2 sm:gap-3 text-sm flex-wrap">
-        <a href="/blog/" class="px-4 py-1.5 rounded-full border border-slate-700 bg-slate-800/60 hover:bg-slate-700/60 font-bold text-xs md:text-sm transition">
-          المدونة
-        </a>
-        <a href="/index.html" class="bg-daoline text-white px-4 py-1.5 rounded-full hover-bg-daoline font-bold text-xs md:text-sm shadow-lg shadow-pink-500/10 transition-all">
-          الرئيسية
-        </a>
+  <header>
+    <div class="nav">
+      <a href="https://daolinedigital.com/" class="logo">DAOLINE <span>DIGITAL</span></a>
+      <div class="nav-menu">
+        <a href="https://daolinedigital.com/">الرئيسية</a>
+        <a href="https://daolinedigital.com/blog/" style="color: var(--primary);">المكتبة المجانية 📚</a>
+        <a href="https://daolinedigital.com/#services">الخدمات</a>
       </div>
-    </div>
-  </nav>
-
-  <!-- Free Courses Bar (Blog-aligned) -->
-  <div class="freebar sticky top-[56px] z-40">
-    <div class="container mx-auto px-4 py-2 flex flex-wrap items-center justify-between gap-3">
-      <div class="font-black text-white text-sm md:text-[15px]">
-        🎓 Daoline Free Courses
-        <span class="muted2 font-bold">— Social Media Free Course (مقالات + أدوات مجانية)</span>
-      </div>
-      <a href="/blog/" class="px-4 py-2 rounded-full font-black text-white text-xs md:text-sm transition">
-        دخول المكتبة →
-      </a>
-    </div>
-  </div>
-
-  <!-- Hero Section -->
-  <header class="hero-gradient pt-14 md:pt-16 pb-10 md:pb-12 px-4 text-center relative">
-    <span class="inline-block py-1 px-3 rounded-full bg-daoline/10 text-daoline text-[11px] md:text-xs font-black border border-daoline/20 mb-4 uppercase tracking-widest">
-      📘 The Beginner's Playbook 2026
-    </span>
-
-    <h1 class="text-3xl md:text-5xl lg:text-6xl font-black mb-5 leading-tight max-w-4xl mx-auto text-white">
-      دليل المبتدئين في السوشيال ميديا
-      <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-200 to-slate-400 block md:inline">
-        من الصفر للاحتراف
-      </span>
-    </h1>
-
-    <p class="text-slate-300/80 max-w-2xl mx-auto text-lg md:text-2xl leading-relaxed font-medium">
-      مرشدك الشامل لبناء استراتيجية محتوى رقمية في 2026. كتيب عملي يضم الجداول، القوالب، والأمثلة لتعرف "بتكتب ليه؟" و"بتكلم لمن؟".
-    </p>
-
-    <div class="mt-6 flex items-center justify-center gap-3 flex-wrap">
-      <a href="/blog/" class="px-5 py-2 rounded-full border border-slate-700 bg-slate-900/40 hover:bg-slate-800/50 font-black text-sm transition">
-        ← رجوع للمدونة
-      </a>
-      <a href="/index.html" class="px-5 py-2 rounded-full bg-daoline hover-bg-daoline text-white font-black text-sm transition shadow-lg shadow-pink-500/10">
-        زيارة Daoline Digital
-      </a>
     </div>
   </header>
 
-  <!-- Main Content -->
-  <main class="container mx-auto px-4 max-w-3xl pb-16">
+  <main class="container">
+    <nav class="breadcrumbs">
+      <a href="https://daolinedigital.com/">الرئيسية</a> /
+      <a href="https://daolinedigital.com/blog/">المكتبة</a> / مقال 019
+    </nav>
 
-    <!-- Intro -->
-    <section class="mb-12">
-      <p class="text-slate-300/80 text-lg md:text-xl leading-loose mb-4">
-        مرحباً بيك في عالم السوشيال ميديا! في 2026، السوشيال ميديا مش بس مكان للدردشة، بل أداة قوية للأعمال والعلامات التجارية. التحديات الجديدة زي الذكاء الاصطناعي (AI)، إرهاق الجمهور من المحتوى غير الأصيل، والخوارزميات الذكية.
-      </p>
-      <p class="text-slate-300/80 text-lg md:text-xl leading-loose">
-        العلامات الناجحة تركز على <span class="text-daoline font-bold">المحتوى الحقيقي، المجتمعات، والتجارة الإلكترونية</span> داخل التطبيقات. لماذا تحتاج استراتيجية؟ لأن بدونها، النشر عشوائي وغير فعال. هدفنا هنا: نمو مستدام، زيادة التفاعل، والمبيعات.
-      </p>
-    </section>
+    <h1>السوشيال ميديا قتلت Google: إزاي تبقي أول حاجة تظهر لما حد يدور عليكِ؟</h1>
 
-    <!-- Chapter 1 & 2: Strategy & Foundations -->
-    <details class="group bg-slate-800/50 rounded-2xl overflow-hidden cursor-pointer border border-slate-700 mb-6">
-      <summary class="flex justify-between items-center font-black p-6 text-slate-100 hover:bg-slate-700/40 transition">
-        <span class="text-xl md:text-2xl">1) التأسيس الاستراتيجي: إزاي تبدأ صح؟</span>
-        <span class="transition group-open:rotate-180 text-daoline">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg>
-        </span>
-      </summary>
-      <div class="text-slate-300/80 p-6 pt-0 leading-loose border-t border-slate-700/50 mt-2">
-        <p class="mb-6 text-lg">الخطوة الأولى: حدد أهدافك بمنهجية <strong>SMART</strong> (محدد، قابل للقياس، واقعي، ذا صلة، زمني). مثال: "زيادة التعليقات بنسبة 20% على فيديوهات إنستغرام في شهر واحد."</p>
-        
-        <h3 class="text-white font-bold mb-4 mt-8 text-xl">أمثلة حقيقية حسب نوع العمل:</h3>
-        <div class="overflow-x-auto">
-          <table class="daoline-table mb-6">
-            <thead>
-              <tr>
-                <th>نوع العمل</th>
-                <th>مثال هدف SMART</th>
-                <th>نوع المحتوى المفضل</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="text-white text-lg">B2C (تجارة إلكترونية)</td>
-                <td class="text-lg">ROAS 500% من Reels</td>
-                <td class="text-lg">UGC، فيديوهات shoppable</td>
-              </tr>
-              <tr>
-                <td class="text-white text-lg">B2B (خدمات أعمال)</td>
-                <td class="text-lg">60 lead شهرياً من LinkedIn</td>
-                <td class="text-lg">دراسات حالة، webinars</td>
-              </tr>
-              <tr>
-                <td class="text-white text-lg">علامة شخصية</td>
-                <td class="text-lg">نمو متابعين 15%</td>
-                <td class="text-lg">قصص شخصية، نصائح</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <p class="text-base bg-slate-900/50 p-3 rounded text-daoline font-bold inline-block">💡 نصيحة للمبتدئين: ابدأ بـ 1-2 أهداف فقط، وراجعها كل شهر.</p>
-      </div>
-    </details>
+    <div class="meta">
+      <span>👤 بقلم: دعاء سليط</span>
+      <span>⏱️ القراءة: 12 دقيقة</span>
+      <span>🌍 مصادر بحثية غربية حصرية</span>
+      <span>📅 أبريل 2026</span>
+    </div>
 
-    <!-- Chapter 3 & 4: Audience & Voice -->
-    <details class="group bg-slate-800/50 rounded-2xl overflow-hidden cursor-pointer border border-slate-700 mb-6">
-      <summary class="flex justify-between items-center font-black p-6 text-slate-100 hover:bg-slate-700/40 transition">
-        <span class="text-xl md:text-2xl">2) فهم الجمهور ونبرة الصوت</span>
-        <span class="transition group-open:rotate-180 text-daoline">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg>
-        </span>
-      </summary>
-      <div class="text-slate-300/80 p-6 pt-0 leading-loose border-t border-slate-700/50 mt-2">
-        <p class="mb-6 text-lg">مش بس العمر والجنس، بل المعتقدات، نقاط الألم، والحواجز. ابْنِ "شخصيات المشتري" (Buyer Personas).</p>
-        
-        <div class="bg-slate-900/50 p-5 rounded-lg border-r-2 border-daoline mb-8">
-          <strong class="text-white block mb-2 text-lg">👤 مثال شخصية (Persona):</strong>
-          "أحمد، 25 سنة، يبحث عن توفير وقت في التسوق، يخاف من المنتجات المزيفة."
-        </div>
+    <article class="article-content">
 
-        <h3 class="text-white font-bold mb-4 text-xl">اختيار نبرة الصوت (Tone of Voice):</h3>
-        <div class="overflow-x-auto">
-          <table class="daoline-table">
-            <thead>
-              <tr>
-                <th>القطاع</th>
-                <th>نبرة مقترحة</th>
-                <th>مثال جملة</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="text-white text-lg">استشارات مالية</td>
-                <td class="text-lg">جدي، رسمي</td>
-                <td class="text-lg">"تحليل دقيق لأسواق 2026."</td>
-              </tr>
-              <tr>
-                <td class="text-white text-lg">توصيل طعام</td>
-                <td class="text-lg">مضحك، غير رسمي</td>
-                <td class="text-lg">"جوعان؟ طلبك واصل أسرع من البرق! 🍕"</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <p class="text-base text-slate-500 mt-3">* وثيقة Do’s/Don’ts: اكتب ما تقوله وما تتجنبه للحفاظ على الاتساق.</p>
-      </div>
-    </details>
+      <p>في 2026، لو إنتِ كريتور أو صاحبة مشروع وبتستنّي الناس تيجي تدوّر عليكِ على Google — خسرتِ السباق من أوله. الغرب اكتشف حاجة إحنا في العالم العربي لسه بنتجاهلها: <strong>السوشيال ميديا بقت محرك البحث الجديد</strong>، ومش بس للترفيه — للشراء والقرارات الحقيقية.</p>
 
-    <!-- Chapter 5 & 6: Content & Platforms -->
-    <details class="group bg-slate-800/50 rounded-2xl overflow-hidden cursor-pointer border border-slate-700 mb-6">
-      <summary class="flex justify-between items-center font-black p-6 text-slate-100 hover:bg-slate-700/40 transition">
-        <span class="text-xl md:text-2xl">3) هندسة المحتوى واختيار المنصات</span>
-        <span class="transition group-open:rotate-180 text-daoline">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg>
-        </span>
-      </summary>
-      <div class="text-slate-300/80 p-6 pt-0 leading-loose border-t border-slate-700/50 mt-2">
-        <p class="mb-6 text-lg">ركائز المحتوى: تعليمي، إلهامي، ترفيهي، ترويجي، مجتمعي. استخدم قاعدة <strong class="text-daoline">60-30-10</strong> (60% قيمة، 30% مشارك، 10% ترويج).</p>
-
-        <h3 class="text-white font-bold mb-4 text-xl">أين تنشر؟ (Platform Selection):</h3>
-        <div class="overflow-x-auto mb-4">
-          <table class="daoline-table">
-            <thead>
-              <tr>
-                <th>المنصة</th>
-                <th>مثال استخدام</th>
-                <th>B2B/B2C</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="text-white text-lg">Instagram</td>
-                <td class="text-lg">Reels بصرية</td>
-                <td class="text-lg">قوي B2C</td>
-              </tr>
-              <tr>
-                <td class="text-white text-lg">LinkedIn</td>
-                <td class="text-lg">دراسات</td>
-                <td class="text-lg">#1 B2B</td>
-              </tr>
-              <tr>
-                <td class="text-white text-lg">TikTok</td>
-                <td class="text-lg">فيديوهات فيروسية</td>
-                <td class="text-lg">B2C</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <p class="text-base text-slate-500">* جديد في 2026: تقليل hashtags، ركز على المحتوى الأصيل.</p>
-      </div>
-    </details>
-
-    <!-- Chapter 7 & 8: Operations & KPIs (Expanded) -->
-    <details class="group bg-slate-800/50 rounded-2xl overflow-hidden cursor-pointer border border-slate-700 mb-6">
-      <summary class="flex justify-between items-center font-black p-6 text-slate-100 hover:bg-slate-700/40 transition">
-        <span class="text-xl md:text-2xl">4) التنفيذ والقياس (Ops & KPIs)</span>
-        <span class="transition group-open:rotate-180 text-daoline">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg>
-        </span>
-      </summary>
-      <div class="text-slate-300/80 p-6 pt-0 leading-loose border-t border-slate-700/50 mt-2">
-        <p class="mb-8 text-lg">استخدم تقويم أسبوعي: الإثنين (إلهام)، الثلاثاء (نصائح)، إلخ. النجاح مش في النشر، بل في إزاي تقيس النتائج وتتعلم منها.</p>
-        
-        <h3 class="text-white font-bold mb-4 text-xl border-b border-slate-700 pb-2">مقاييس النجاح (KPIs) بتفصيل أعمق:</h3>
-        
-        <ul class="space-y-8">
-          <li>
-            <strong class="text-daoline block text-xl mb-2">1. Reach (الوصول والوعي)</strong>
-            <p class="text-base text-slate-400">ده عدد الناس اللي شافوا المحتوى بتاعك. انتبه إن "الرقم كبير" مش دايماً معناه نجاح. لازم تكون "الجمهور المناسب" هو اللي شافك، مش أي حد عشوائي.</p>
-          </li>
-          <li>
-            <strong class="text-daoline block text-xl mb-2">2. Engagement Rate (معدل التفاعل)</strong>
-            <p class="text-base text-slate-400">ده أهم رقم. احسب النسبة (التفاعل مقسوم على الوصول). الـ <strong>Comments</strong> (التعليقات) أغلى من الـ Likes لأنها بتديلك فكرة عن "الاهتمام الحقيقي". الـ Shares بتعني إن المحتوى بيهم الناس.</p>
-          </li>
-          <li>
-            <strong class="text-daoline block text-xl mb-2">3. Click-Through Rate (CTR) والتحويل</strong>
-            <p class="text-base text-slate-400">لو هدفك بيع أو زيارة موقع، شوف النفاذ (Clicks). زيادة الزيارات مش معناها كلام لسه، لازم النسبة بتاعهم تحسن بمرور الوقت.</p>
-          </li>
-          <li>
-            <strong class="text-daoline block text-xl mb-2">4. Retention (الاحتفاظ بالمشاهدة)</strong>
-            <p class="text-base text-slate-400">على إنستغرام وفيسبوك، شوف متوسط مدة المشاهدة. لو الناس بتخرج قبل أول 3 ثواني، عندك مشكلة في الهوك (Hook).</p>
-          </li>
-        </ul>
-
-        <div class="bg-slate-900/50 p-5 rounded-lg border-r-4 border-yellow-500 mt-8">
-          <strong class="text-white block mb-2 text-lg">⚠️ تحذير من "القياسات الوهمية" (Vanity Metrics):</strong>
-          <p class="text-base text-slate-400">لا تتباهى بالعدد الكبير من اللايكات لو مفيش ولا كومنت واحد ولا ولا عملية بيع حقيقية.</p>
+      <div class="stat-highlight">
+        <div class="stat-number">1 من 3</div>
+        <div>
+          <div class="stat-text">مستخدمين دلوقتي بيبدأوا بحثهم عن المنتجات على TikTok وInstagram، مش Google — وده بيتزيد كل شهر.</div>
+          <div class="stat-source">المصدر: Sprout Social Q2 2025 · National University Research 2026</div>
         </div>
       </div>
-    </details>
 
-    <!-- Chapter 9: Case Studies -->
-    <section class="mb-12">
-      <h2 class="text-2xl md:text-3xl font-black text-white mb-8 border-b border-slate-800 pb-2">5) قصص نجاح ملهمة (Case Studies)</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div class="bg-slate-800/60 p-6 rounded-xl border border-slate-700">
-          <h4 class="text-white font-bold mb-2 text-lg">Duolingo</h4>
-          <p class="text-base text-slate-400">فكاهة فيروسية على TikTok، زيادة احتفاظ 30%.</p>
+      <p>المفهوم ده اسمه <strong>Social SEO</strong>، وهو حرفياً الـ SEO بتاع السوشيال ميديا. وزي ما في زمان كنّا بنعمل كيورد ريسيرش لـ Google، دلوقتي لازم تعملي نفس الحاجة للـ TikTok Search والـ Instagram Explore والـ YouTube. الفرق؟ إن الخوارزمية هنا بتسمع صوتكِ، بتقرأ الكابشن، وبتفهم السياق كله تلقائياً.</p>
+
+      <h2>أولاً: ليه ده بيحصل دلوقتي بالظبط؟</h2>
+
+      <p>عشان تفهمي الموضوع من جذوره، لازم تعرفي إن الجيل الجديد (Gen Z و Alpha) نشأ على إن "البحث" = سكرول. لما يسألوا نفسهم "ايه أحسن مطعم في وسط البلد؟" — مش بيفتحوا Google، بيفتحوا TikTok ويكتبوا السؤال ده بالظبط في البحث.</p>
+
+      <div class="pull-quote">
+        <p>"السوشيال ميديا بقت المصدر الرئيسي للبحث عن البراندات للفئة العمرية 16-34 — السكرول تجاوز محركات البحث التقليدية كطريقة اكتشاف."</p>
+        <cite>— We Are Social Global Digital Report 2026</cite>
+      </div>
+
+      <p>وده مش بس كلام. <strong>51% من الناس</strong> بيقولوا إن TikTok هو أكتر منصة بتأثر في قرارات الشراء العفوية عندهم — وده حسب Adobe Research. يعني لما حد يشوف فيديوكِ، قرار الشراء ممكن يحصل في نفس الثانية.</p>
+
+      <h2>ثانياً: إيه الفرق بين SEO القديم وSocial SEO الجديد؟</h2>
+
+      <div class="compare-grid">
+        <div class="compare-card old">
+          <div class="compare-label">⚫ SEO التقليدي (Google)</div>
+          <ul>
+            <li>نص مكتوب وكيورد ريسيرش</li>
+            <li>بيحتاج وقت طويل جداً (شهور)</li>
+            <li>الناس تدور عليكِ بالاسم</li>
+            <li>مش شايف المحتوى البصري</li>
+            <li>الخوارزمية جامدة وبطيئة</li>
+          </ul>
         </div>
-        <div class="bg-slate-800/60 p-6 rounded-xl border border-slate-700">
-          <h4 class="text-white font-bold mb-2 text-lg">Nike</h4>
-          <p class="text-base text-slate-400">قصص إلهامية، تفاعل +25%.</p>
-        </div>
-        <div class="bg-slate-800/60 p-6 rounded-xl border border-slate-700">
-          <h4 class="text-white font-bold mb-2 text-lg">Airbnb</h4>
-          <p class="text-base text-slate-400">UGC، حجوزات +20%.</p>
-        </div>
-        <div class="bg-slate-800/60 p-6 rounded-xl border border-slate-700">
-          <h4 class="text-white font-bold mb-2 text-lg">Barbie</h4>
-          <p class="text-base text-slate-400">حملة تفاعلية، مبيعات +50%.</p>
-        </div>
-        <div class="bg-slate-800/60 p-6 rounded-xl border border-slate-700">
-          <h4 class="text-white font-bold mb-2 text-lg">Leapsome (B2B)</h4>
-          <p class="text-base text-slate-400">فكاهة، engagement +394%.</p>
-        </div>
-        <div class="bg-slate-800/60 p-6 rounded-xl border border-slate-700">
-          <h4 class="text-white font-bold mb-2 text-lg">ModSquad (B2B)</h4>
-          <p class="text-base text-slate-400">قيادة فكرية، leads محسنة.</p>
+        <div class="compare-card new">
+          <div class="compare-label">💜 Social SEO (TikTok / IG / YouTube)</div>
+          <ul>
+            <li>صوت + صورة + نص كلهم بيتحسبوا</li>
+            <li>ممكن تظهري في يوم واحد</li>
+            <li>الناس تلاقيكِ حتى لو مش شايفاكِ قبل</li>
+            <li>الخوارزمية بتسمع كل كلمة بتقوليها</li>
+            <li>النتايج فورية وبتتجدد باستمرار</li>
+          </ul>
         </div>
       </div>
-    </section>
 
-    <!-- Conclusion -->
-    <section class="text-center mb-12">
-      <h3 class="text-2xl md:text-3xl font-black text-white mb-6">الخاتمة: خطواتك التالية</h3>
-      <p class="text-slate-300 leading-loose max-w-2xl mx-auto text-lg md:text-xl">
-        ابدأ صغيراً: حدد هدف، اختر منصة، نفذ أسبوعياً. تذكر: المرونة مفتاح النجاح. راجع كل ربع، ودع البيانات تقودك. نجاحك في السوشيال ميديا يبدأ الآن!
-      </p>
-    </section>
+      <h2>ثالثاً: الأسلوب العلمي اللي بيستخدمه الغرب في Social SEO</h2>
 
-    <!-- CTA: Fixed Link to Article 3 -->
-    <div class="bg-gradient-to-br from-slate-800 to-slate-900 border border-daoline/30 rounded-2xl p-8 text-center mb-10 relative overflow-hidden shadow-2xl shadow-pink-900/10">
-      <div class="absolute top-0 right-0 w-40 h-40 bg-daoline blur-3xl opacity-10"></div>
-      <div class="relative z-10">
-        <h3 class="text-2xl md:text-3xl font-black text-white mb-4">حمل خطة الـ 90 يوماً (The Full Plan)</h3>
-        <p class="text-slate-300 mb-6 max-w-lg mx-auto text-sm md:text-base">
-          دي الخطة التنفيذية اللي بتشمل الجداول اليومية، الأهداف التفصيلية، والخوارزميات. خطة الـ 90 يوم اللي هتحولك من مبتدئ لخبير.
+      <h3>1. الكيورد بيبدأ من "طريقة الكلام" مش من أداة بحث</h3>
+      <p>في Google، الناس كانت بتكتب "كريم ترطيب بشرة". على TikTok، بيكتبوا "إيه أحسن كريم للبشرة الجافة في الشتا؟". الفرق ضخم جداً. علشان كده، في Social SEO، إنتِ مش بتدوري على الكيورد — إنتِ بتفكري في السؤال اللي جمهوركِ بيسأله فعلاً، وتجاوبي عليه بمحتوى.</p>
+
+      <p>الخوارزمية دلوقتي <strong>بتفهم اللغة المحكية</strong>، يعني لو قلتِ في الفيديو "كريم للبشرة الجافة وبيجيب نتيجة سريعة" — الـ AI هيفهم إنك بتجاوبي على سؤال "ايه أحسن كريم للبشرة الجافة"، حتى لو الجملة مش متطابقة.</p>
+
+      <h3>2. قاعدة "المحتوى المتوافق" — Visual + Text + Audio</h3>
+      <p>الـ Platform AI بتقرأ 3 أشياء في نفس الوقت: <strong>اللي بتقوليه</strong> (صوت)، <strong>اللي بتكتبيه</strong> في الكابشن والأون-سكرين تكست، <strong>واللي بيظهر في الصورة</strong>. لما الـ 3 دول بيقولوا نفس المعلومة بطرق مختلفة، الخوارزمية بتفهم السياق بدقة أكبر وبتوزع المحتوى على ناس بيدوروا على الموضوع ده.</p>
+
+      <h3>3. الكابشن مش ديكور — ده نص SEO كامل</h3>
+      <p>كتير منّا بتكتب كابشن زي "رأيكم إيه؟ 💬✨". الغرب اتعلم إن الكابشن لازم يبدأ بـ <strong>الجملة الأهم أولاً</strong> (لأن الباقي بيتقطع)، ويحتوي على الكيوردز بشكل طبيعي في الكلام. مثلاً بدل "رأيكم إيه؟" — تكتبي "أحسن طريقة لتنظيم وقتكِ كفريلانسر — شيلي اللي بيشغلك أكتر!"</p>
+
+      <section class="lead-box">
+        <h3 style="color: #fff; margin-bottom: 5px;">مش عارفة تبدأي فين؟ 🧐</h3>
+        <div class="free-badge">دليل مجاني ✨</div>
+        <p style="color: #fff; font-size: 1.4rem; font-weight: 700; margin-bottom: 30px; line-height: 1.5;">
+          احصلي فوراً على <span style="color:var(--primary);">"دليل Social SEO 2026"</span><br>الكيوردز + الكابشن + الأون-سكرين تكست — كل حاجة جاهزة!
         </p>
-        <a href="https://daolinedigital.com/blog/article-3.html" class="bg-white text-slate-900 hover:bg-daoline hover:text-white transition px-10 py-4 rounded-full font-black shadow-lg shadow-pink-500/20 transform hover:scale-105 duration-300 text-lg flex items-center justify-center mx-auto gap-2">
-          <span>🔓 افتح خطة الـ 90 يوماً</span>
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
-        </a>
-      </div>
-    </div>
+        <div style="max-width: 500px; margin: 0 auto;">
+          <input type="text" id="name" placeholder="اسمك الكريم.." class="form-input">
+          <input type="email" id="email" placeholder="بريدك الإلكتروني.." class="form-input">
+          <input type="tel" id="whatsapp" placeholder="رقم الواتساب (للتواصل السريع).." class="form-input">
+          <button onclick="handleLead()" id="submit-btn" class="submit-btn">أرسل لي الدليل المجاني الآن 🚀</button>
+          <div id="status" style="margin-top: 15px; font-weight: bold;"></div>
+        </div>
+      </section>
 
-    <!-- Podcast Recommendation -->
-    <section class="glass p-6 md:p-8 rounded-2xl border border-daoline/20 relative overflow-hidden group mb-6">
-      <div class="flex flex-col md:flex-row items-center gap-6 relative z-10">
-        <div class="w-20 h-20 bg-daoline rounded-2xl flex items-center justify-center shadow-xl flex-shrink-0 group-hover:rotate-3 transition-transform">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" /></svg>
+      <h2>رابعاً: كل منصة ليها "لغة بحث" مختلفة</h2>
+
+      <p>غلطة شائعة جداً إن الناس بتعامل كل المنصات بنفس الطريقة. الحقيقة إن لكل منصة عقل مختلف وجمهور بيدور بطريقة مختلفة:</p>
+
+      <div class="platform-grid">
+        <div class="platform-card">
+          <div class="platform-icon">🎵</div>
+          <div class="platform-name">TikTok</div>
+          <div class="platform-tip">الأسرع نمواً كمحرك بحث. الجمهور بيدور بأسئلة طويلة ومحكية. ركّزي على أول 3 ثواني + الكلام المنطوق.</div>
         </div>
-        <div class="text-center md:text-right">
-          <h3 class="text-xl font-black text-white mb-2">بودكاست سر الـ 1% 🎙️</h3>
-          <p class="text-slate-300/70 text-sm md:text-base mb-4 leading-relaxed font-medium">
-            مش بس استراتيجيات—إحنا بنجيب لك الخلاصة من تجارب حقيقية خلت الـ 1% يسيطروا على السوق.
-          </p>
-          <a href="https://www.facebook.com/doaaseleat/reels/" target="_blank" rel="noopener" class="inline-block bg-white text-daoline font-black px-6 py-2 rounded-xl hover:bg-daoline hover:text-white transition-all text-sm md:text-base">
-            اسمع الحلقات دلوقتي
-          </a>
+        <div class="platform-card">
+          <div class="platform-icon">📸</div>
+          <div class="platform-name">Instagram</div>
+          <div class="platform-tip">الـ Alt Text والكابشن والهاشتاج كلهم بيتحسبوا. الـ Reels بيظهروا في نتايج البحث حتى لأناس مش بيتابعوكِ.</div>
         </div>
+        <div class="platform-card">
+          <div class="platform-icon">▶️</div>
+          <div class="platform-name">YouTube</div>
+          <div class="platform-tip">ثاني أكبر محرك بحث في العالم أصلاً. العنوان والوصف والـ Chapters كلهم بيأثروا على ظهورك في نتايج البحث.</div>
+        </div>
+      </div>
+
+      <h2>خامساً: 7 خطوات تطبّقيها من بكره</h2>
+
+      <ul class="checklist">
+        <li>افتحي TikTok وابحثي في نيشتك — شوفي الأسئلة اللي الناس بتكتبها فعلاً وابني محتوى حواليها</li>
+        <li>أول جملة في كل فيديو لازم تكون هي نفسها السؤال اللي الناس بتسأله</li>
+        <li>اكتبي الكيوردز بشكل طبيعي في الكابشن من أول 2 سطر</li>
+        <li>ضيفي أون-سكرين تكست بيلخّص المحتوى — الخوارزمية بتقراه</li>
+        <li>اتكلمي بوضوح وببطء نسبياً — الـ AI بيفهم الكلام المنطوق ويحوّله لتكست</li>
+        <li>في YouTube، اكتبي وصف من 200 كلمة على الأقل مع الكيوردز بشكل طبيعي</li>
+        <li>راجعي Analytics كل أسبوعين — دوري على "Search Terms" اللي جاب ليكِ مشاهدات</li>
+      </ul>
+
+      <h2>سادساً: ليه ده فرصة ذهبية للعالم العربي دلوقتي؟</h2>
+
+      <p>في الوقت اللي الغرب اتكلم عن Social SEO أكتر من سنة — الكريتورز العرب لسه ما بيعملوهوش بشكل صح. ده معناه إن الساحة <strong>شبه فاضية</strong> في النيشات العربية. لو إنتِ دلوقتي بدأتِ تعملي محتوى optimized للبحث على TikTok وInstagram — هتظهري في نتايج مفيش فيها منافسة تقريباً.</p>
+
+      <div class="stat-highlight">
+        <div class="stat-number">51%</div>
+        <div>
+          <div class="stat-text">من الناس بيقولوا إن TikTok هو أكتر منصة بتأثر في قرارات الشراء العفوية — يعني محتوى محسّن = مبيعات مباشرة.</div>
+          <div class="stat-source">المصدر: Adobe Research 2026 · National University Digital Report</div>
+        </div>
+      </div>
+
+      <p>في الختام، Social SEO مش تقنية معقدة — ده تغيير في طريقة التفكير. بدل ما تفكري "أنا عاوزة أوصل لناس كتير"، فكّري "الناس دي بتدور على إيه، وكيف أكون أنا الإجابة؟". لما تغيّري السؤال، هتغيّري النتيجة.</p>
+    </article>
+
+    <section class="footer-action">
+      <h3 style="margin-bottom: 10px; color: #fff;">جاهزة تشتغلي على Social SEO بمساعدة Daoline؟ 🚀</h3>
+      <p style="color: var(--muted); margin-bottom: 30px;">استكشفي بقية خدماتنا الاحترافية أو عودي للمكتبة للمزيد من الدروس.</p>
+      <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+        <a href="https://daolinedigital.com/blog/" class="footer-btn">الرجوع للمكتبة 🏛️</a>
+        <a href="https://daolinedigital.com/" class="footer-btn" style="background: var(--primary); color:#fff;">الخدمات والحلول</a>
       </div>
     </section>
-
-    <!-- Bottom Navigation -->
-    <div class="mt-12 flex items-center justify-center gap-3 flex-wrap">
-      <a href="/blog/" class="px-5 py-2 rounded-full border border-slate-700 bg-slate-900/40 hover:bg-slate-800/50 font-black text-sm transition">
-        ← رجوع للمدونة
-      </a>
-      <a href="/index.html" class="px-5 py-2 rounded-full bg-daoline hover-bg-daoline text-white font-black text-sm transition shadow-lg shadow-pink-500/10">
-        الصفحة الرئيسية
-      </a>
-    </div>
-
   </main>
 
-  <!-- Footer -->
-  <footer class="border-t border-slate-800 bg-slate-900 py-8 text-center text-slate-500 text-sm">
-    <p>&copy; 2026 Daoline Digital. All Rights Reserved.</p>
+  <footer style="text-align: center; padding: 50px 20px; color: var(--muted); font-size: 0.9rem; border-top: 1px solid rgba(255,255,255,0.05);">
+    © 2026 Daoline Digital Academy | إعداد دعاء سليط | جميع الحقوق محفوظة
   </footer>
 
-  <!-- Protection Script -->
   <script>
-    // Disable Right Click
-    document.addEventListener('contextmenu', event => {
-      event.preventDefault();
-      showToast('المحتوى محمي بحقوق الملكية لـ Daoline Digital 🔒');
-    });
+    async function handleLead() {
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const wa = document.getElementById('whatsapp').value.trim();
+      const status = document.getElementById('status');
+      const btn = document.getElementById('submit-btn');
 
-    // Disable Shortcuts (Ctrl+C, Ctrl+U, Ctrl+S, Ctrl+I, F12)
-    document.addEventListener('keydown', event => {
-      const key = event.key.toLowerCase();
-      if (
-        (event.ctrlKey && (key === 'c' || key === 'u' || key === 's' || key === 'i')) ||
-        event.key === 'F12'
-      ) {
-        event.preventDefault();
-        showToast('عفواً، حقوق النسخ والتفتيش محفوظة 🔒');
+      if (!name || !email || !wa) {
+        status.innerText = "من فضلك كملي البيانات الأول! ⚠️";
+        status.style.color = "#f87171";
+        return;
       }
-    });
 
-    function showToast(message) {
-      let toast = document.getElementById('security-toast');
-      if (toast) toast.remove();
+      try {
+        btn.disabled = true; btn.innerText = "جاري تحضير دليلك...";
+        const fd = new FormData();
+        fd.append("entry.299023128", name);
+        fd.append("entry.1712155557", email);
+        fd.append("entry.1224669856", wa);
+        fd.append("entry.334049848", "social_seo_guide");
 
-      toast = document.createElement('div');
-      toast.id = 'security-toast';
-      toast.innerText = message;
-      toast.style.cssText = `
-        position: fixed;
-        bottom: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-        background-color: #c013a6;
-        color: white;
-        padding: 12px 24px;
-        border-radius: 999px;
-        font-family: 'Tajawal', sans-serif;
-        font-size: 14px;
-        font-weight: 900;
-        box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-        z-index: 9999;
-        opacity: 0;
-        transition: all 0.25s ease;
-      `;
-      document.body.appendChild(toast);
+        await fetch("https://docs.google.com/forms/d/e/1FAIpQLSdSXEvN7DMMC-pwXED9G5TRpe4ecQ5U7pMtsg3201d2ikinfQ/formResponse", { method: "POST", mode: "no-cors", body: fd });
 
-      setTimeout(() => { toast.style.opacity = '1'; }, 10);
-      setTimeout(() => {
-        toast.style.opacity = '0';
-        setTimeout(() => toast.remove(), 250);
-      }, 2200);
+        status.innerText = "تم بنجاح! ✅ شيك على إيميلك الآن (والـ Spam) هتلاقي الدليل وصلك.";
+        status.style.color = "#4ade80";
+        btn.innerText = "تم الإرسال بنجاح ✅";
+      } catch (e) {
+        status.innerText = "حدث خطأ بسيط.. حاولي مرة تانية.";
+        btn.disabled = false;
+        btn.innerText = "أرسل لي الدليل المجاني الآن 🚀";
+      }
     }
   </script>
 
