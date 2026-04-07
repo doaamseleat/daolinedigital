@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO Meta Tags -->
+  <title>🔥 دليلك الشامل لـ Social Media SEO في 2026 | Daoline</title>
+  <meta name="description" content="تعلم كيف تتصدر نتائج البحث على السوشيال ميديا وتيك توك في 2026 باستخدام أحدث الأدوات وتكنيكات الـ SEO لتحويل المتابعين لعملاء.">
+  <meta name="keywords" content="سيو تيك توك, Social Media SEO, تصدر تيك توك, الكلمات المفتاحية, تسويق رقمي 2026, Daoline Digital">
+
+  <!-- Google Fonts: Tajawal & Changa -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Changa:wght@400;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    :root {
+      --primary: #c013a6; 
+      --primary2: #a00f89;
+      --secondary: #0f172a;
+      --secondary-light: #2563eb; 
+      --bg: #0f172a;
+      --text: #e2e8f0;
+      --muted: rgba(226,232,240,.78);
+    }
+
+    /* حماية المحتوى */
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Tajawal', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+      line-height: 2;
+      font-size: 1.1rem;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    /* السماح بالكتابة داخل الفورم */
+    input, textarea, button, a {
+      -webkit-user-select: auto !important;
+      -ms-user-select: auto !important;
+      user-select: auto !important;
+    }
+
+    /* Brand Style */
+    .text-daoline { color: var(--primary); }
+    .bg-daoline { background-color: var(--primary); }
+    .hover-bg-daoline:hover { background-color: var(--primary2); transition: .25s ease; }
+
+    /* Visual Elements */
+    .hero-gradient { background: radial-gradient(circle at top center, rgba(192,19,166,.15) 0%, transparent 75%); }
+    .glass { 
+        background: rgba(30, 41, 59, 0.45); 
+        backdrop-filter: blur(12px); 
+        border: 1px solid rgba(255, 255, 255, 0.08); 
+        border-radius: 2rem;
+        padding: 3rem;
+        margin-bottom: 4rem;
+    }
+
+    /* Titles */
+    .section-title {
+        font-size: 2rem;
+        font-weight: 900;
+        background: white;
+        color: black;
+        padding: 10px 35px;
+        display: inline-block;
+        border-radius: 6px;
+        margin-bottom: 3rem;
+        box-shadow: 8px 8px 0px var(--secondary-light);
+        transform: rotate(-1deg);
+    }
+    
+    .advice-highlight {
+        border-right: 6px solid var(--primary);
+        border-left: 6px solid var(--primary);
+        background: rgba(255, 255, 255, 0.04);
+        padding: 2rem;
+        border-radius: 1rem;
+        margin-top: 2rem;
+    }
+
+    /* Table Styles */
+    .daoline-table { width: 100%; border-collapse: separate; border-spacing: 0; text-align: right; margin-bottom: 1.5rem; }
+    .daoline-table th { background-color: rgba(192, 19, 166, 0.15); color: #fff; padding: 16px; font-weight: 900; border-bottom: 2px solid rgba(192, 19, 166, 0.3); font-size: 1.1rem;}
+    .daoline-table td { padding: 16px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); color: var(--muted); font-size: 1.1rem; font-weight: 700;}
+    .daoline-table tr:last-child td { border-bottom: none; }
+
+    /* Header/Footer Bars */
+    .freebar {
+      background: linear-gradient(90deg, rgba(192,19,166,.95), rgba(37,99,235,.85));
+      border-bottom: 1px solid rgba(255,255,255,.12);
+      backdrop-filter: blur(10px);
+    }
+
+    .form-input {
+        width: 100%;
+        background: rgba(255, 255, 255, 0.05);
+        border: 2px solid rgba(255, 255, 255, 0.1);
+        border-radius: 1rem;
+        padding: 1.2rem 1.5rem;
+        color: white;
+        outline: none;
+        text-align: right;
+    }
+    .form-input:focus { border-color: var(--primary); background: rgba(255, 255, 255, 0.08); }
+
+    /* Locked Overlay Effect */
+    .locked-container { position: relative; overflow: hidden; border-radius: 2rem; margin-top: 60px; padding-bottom: 60px;}
+    .locked-blur { filter: blur(14px); opacity: 0.18; pointer-events: none; transition: 0.5s; }
+    .watermark-text {
+        position: absolute;
+        top: 28%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(-12deg);
+        font-size: 3.5rem;
+        font-weight: 900;
+        color: rgba(255, 255, 255, 0.05);
+        z-index: 1;
+        text-align: center;
+        white-space: nowrap;
+        pointer-events: none;
+    }
+
+    .lead-box { background: linear-gradient(180deg, rgba(30,41,59,0.95), rgba(15,23,42,0.98)); border: 2px solid rgba(192,19,166,0.35); box-shadow: 0 0 80px rgba(192,19,166,0.18); border-radius: 24px; padding: 40px 28px; text-align: center; position: relative; z-index: 3; }
+
+    #status-msg { display: none; margin-top: 1.5rem; font-weight: bold; padding: 14px; border-radius: 12px; text-align: center; font-size: 1rem; border: 1px solid transparent; }
+    #security-toast { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background-color: var(--primary); color: white; padding: 12px 24px; border-radius: 999px; font-weight: 900; box-shadow: 0 10px 25px rgba(0,0,0,0.5); z-index: 9999; opacity: 0; transition: all 0.3s ease; pointer-events: none; }
+  </style>
+</head>
+
+<body oncontextmenu="return false;">
+
+  <!-- Sticky Nav -->
+  <nav class="sticky top-0 z-50 bg-[#0f172a]/95 backdrop-blur-md border-b border-slate-800">
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center text-white">
+      <a href="https://daolinedigital.com" class="font-black text-lg md:text-xl tracking-wide">
+        Daoline<span class="text-daoline">Digital</span>
+      </a>
+      <div class="flex gap-2 sm:gap-3 text-sm flex-wrap">
+        <a href="/blog/" class="px-4 py-1.5 rounded-full border border-slate-700 bg-slate-800/60 hover:bg-slate-700/60 font-bold text-xs md:text-sm transition text-slate-300">المدونة</a>
+        <a href="https://daolinedigital.com" class="bg-daoline text-white px-4 py-1.5 rounded-full hover-bg-daoline font-bold text-xs md:text-sm shadow-lg shadow-pink-500/10 transition-all">الرئيسية</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Free Resources Bar -->
+  <div class="freebar sticky top-[56px] z-40">
+    <div class="container mx-auto px-4 py-2 flex flex-wrap items-center justify-between gap-3 text-white">
+      <div class="font-black text-sm md:text-[15px]">
+        🎓 Daoline Free Resources
+        <span class="opacity-80 font-bold">— كتالوج الهوكات السحرية (متاح الآن للتحميل)</span>
+      </div>
+      <a href="#leads-section" class="bg-[#0f172a] px-4 py-1 rounded-full font-black text-white text-xs md:text-sm transition hover:bg-black shadow-lg">
+        احصل على النسخة الكاملة PDF →
+      </a>
+    </div>
+  </div>
+
+  <!-- Hero Header -->
+  <header class="hero-gradient pt-20 pb-14 px-4 text-center">
+    <span class="inline-block py-1 px-4 rounded-full bg-daoline/10 text-daoline text-[11px] font-black border border-daoline/20 mb-6 uppercase tracking-widest">
+      🚀 SEO MASTERY 2026
+    </span>
+    <h1 class="text-4xl md:text-6xl font-black mb-8 leading-tight text-white max-w-5xl mx-auto">
+      دليلك الشامل لـ Social Media SEO <br>
+      <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-300 to-slate-500 italic text-3xl md:text-5xl mt-4 block">
+        كيف تجعل الخوارزميات تعمل لصالحك؟
+      </span>
+    </h1>
+    <p class="text-slate-300 max-w-4xl mx-auto text-xl md:text-2xl leading-relaxed mb-10 italic">
+        بحث شامل ومحدث (أبريل 2026) | التركيز 100% على السوشيال ميديا. تعلم إزاي تتصدر نتائج البحث وتخلي العميل يدور عليك بدل ما تدور عليه إنت.
+    </p>
+    <div class="flex flex-col items-center p-6 border-2 border-white/10 rounded-[2.5rem] bg-white/5 inline-block mx-auto shadow-2xl mt-6">
+        <p class="text-white opacity-60 text-sm mb-1 uppercase tracking-widest">إعداد وتقديم</p>
+        <a href="https://facebook.com/doaaseleat" target="_blank" class="text-3xl font-black text-daoline hover:text-white transition">Doaa Seleat</a>
+    </div>
+  </header>
+
+  <!-- Main Article Content -->
+  <main class="container mx-auto px-4 max-w-5xl pb-24 text-right">
+
+    <!-- Section 1 -->
+    <section class="mb-24 pt-10 text-right">
+      <h2 class="section-title">01) أهم 10 أدوات لاستكشاف الكلمات المفتاحية في 2026 🛠️</h2>
+      <div class="glass shadow-2xl">
+        <p class="text-slate-200 text-xl leading-relaxed mb-10">
+          دي أقوى أدوات (Social Keyword Tools) مخصصة لتيك توك، إنستجرام، ويوتيوب عشان تعرف العميل بيبحث عن إيه بالظبط.
+        </p>
+        
+        <div class="overflow-x-auto border border-white/10 rounded-3xl mb-12 shadow-xl bg-slate-900/50">
+            <table class="daoline-table w-full text-right">
+                <thead>
+                    <tr>
+                        <th class="py-4">م</th>
+                        <th class="py-4">الأداة</th>
+                        <th class="py-4">المنصة</th>
+                        <th class="py-4">التكلفة</th>
+                        <th class="py-4">أهم المميزات</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="border-b border-white/5 hover:bg-white/5 transition">
+                        <td class="py-4 text-white font-bold">1</td>
+                        <td class="text-white font-black">TikTok Creative Center</td>
+                        <td><span class="bg-black text-white px-3 py-1 rounded-full text-xs font-bold shadow-md">TikTok</span></td>
+                        <td class="text-green-400">مجاني تماماً</td>
+                        <td class="text-slate-300 text-sm">Keyword Insights + Trend Discovery</td>
+                    </tr>
+                    <tr class="border-b border-white/5 hover:bg-white/5 transition">
+                        <td class="py-4 text-white font-bold">2</td>
+                        <td class="text-white font-black">Keyword Tool.io</td>
+                        <td><span class="bg-slate-600 text-white px-3 py-1 rounded-full text-xs font-bold shadow-md">All Social</span></td>
+                        <td class="text-yellow-400">مجاني محدود</td>
+                        <td class="text-slate-300 text-sm">Autocomplete من كل المنصات</td>
+                    </tr>
+                    <tr class="border-b border-white/5 hover:bg-white/5 transition">
+                        <td class="py-4 text-white font-bold">3</td>
+                        <td class="text-white font-black">TubeBuddy + VidIQ</td>
+                        <td><span class="bg-red-600 text-white px-3 py-1 rounded-full text-xs font-bold shadow-md">YouTube</span></td>
+                        <td class="text-yellow-400">Freemium</td>
+                        <td class="text-slate-300 text-sm">تحليل كلمات المنافسين و Tag suggestions</td>
+                    </tr>
+                    <tr class="border-b border-white/5 hover:bg-white/5 transition">
+                        <td class="py-4 text-white font-bold">4</td>
+                        <td class="text-white font-black">Inflact + Flick</td>
+                        <td><span class="bg-pink-600 text-white px-3 py-1 rounded-full text-xs font-bold shadow-md">Instagram</span></td>
+                        <td class="text-pink-400">مدفوع</td>
+                        <td class="text-slate-300 text-sm">AI Hashtag Generator + فلترة الهاشتاجات</td>
+                    </tr>
+                    <tr class="border-b border-white/5 hover:bg-white/5 transition">
+                        <td class="py-4 text-white font-bold">5</td>
+                        <td class="text-white font-black">Semrush Analytics</td>
+                        <td><span class="bg-red-600 text-white px-3 py-1 rounded-full text-xs font-bold shadow-md">YouTube</span></td>
+                        <td class="text-pink-400">مدفوع (للمحترفين)</td>
+                        <td class="text-slate-300 text-sm">تحليل الـ Trending وحجم البحث و Intent</td>
+                    </tr>
+                    <tr class="border-b border-white/5 hover:bg-white/5 transition">
+                        <td class="py-4 text-white font-bold">6</td>
+                        <td class="text-white font-black">OutlierKit</td>
+                        <td><span class="bg-red-600 text-white px-3 py-1 rounded-full text-xs font-bold shadow-md">YouTube</span></td>
+                        <td class="text-pink-400">مدفوع</td>
+                        <td class="text-slate-300 text-sm">أفضل أداة لتحليل "الفيديوهات الشاذة"</td>
+                    </tr>
+                    <tr class="border-b border-white/5 hover:bg-white/5 transition">
+                        <td class="py-4 text-white font-bold">7</td>
+                        <td class="text-white font-black">kwrds.ai</td>
+                        <td><span class="bg-red-600 text-white px-3 py-1 rounded-full text-xs font-bold shadow-md">YouTube</span></td>
+                        <td class="text-green-400">مجاني غير محدود</td>
+                        <td class="text-slate-300 text-sm">تعدين الاقتراحات التلقائية (Autocomplete)</td>
+                    </tr>
+                    <tr class="border-b border-white/5 hover:bg-white/5 transition">
+                        <td class="py-4 text-white font-bold">8</td>
+                        <td class="text-white font-black">Hashtagify + Display P.</td>
+                        <td><span class="bg-blue-500 text-white px-3 py-1 rounded-full text-xs font-bold shadow-md">IG + X</span></td>
+                        <td class="text-yellow-400">Freemium</td>
+                        <td class="text-slate-300 text-sm">تحليل الـ Trending hashtags</td>
+                    </tr>
+                    <tr class="border-b border-white/5 hover:bg-white/5 transition">
+                        <td class="py-4 text-white font-bold">9</td>
+                        <td class="text-white font-black">Hootsuite Hashtag Gen.</td>
+                        <td><span class="bg-pink-600 text-white px-3 py-1 rounded-full text-xs font-bold shadow-md">Instagram</span></td>
+                        <td class="text-green-400">مجاني</td>
+                        <td class="text-slate-300 text-sm">توليد هاشتاجات سريعة بالذكاء الاصطناعي</td>
+                    </tr>
+                    <tr class="hover:bg-white/5 transition">
+                        <td class="py-4 text-white font-bold">10</td>
+                        <td class="text-white font-black">Glimpse + TikTok Suggest</td>
+                        <td><span class="bg-black text-white px-3 py-1 rounded-full text-xs font-bold shadow-md">TikTok</span></td>
+                        <td class="text-green-400">مجاني</td>
+                        <td class="text-slate-300 text-sm">تتبع عمليات البحث الرائجة في الوقت الفعلي</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="p-8 bg-white/5 border-l-4 border-daoline rounded-xl shadow-lg">
+            <h4 class="text-daoline font-black text-xl mb-3 italic">💡 نصيحة ذهبية (Workflow):</h4>
+            <p class="text-lg leading-relaxed text-white">
+                ابدأ دائماً بالأدوات الرسمية (TikTok Creative Center + YouTube Search Suggest) لمعرفة ما يبحث عنه الناس فعلياً، ثم استخدم الأدوات المدفوعة للفلترة ومعرفة حجم المنافسة الدقيق.
+            </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2 -->
+    <section class="mb-24">
+      <h2 class="section-title">02) التكنيكات الجديدة لـ Social SEO (2026) 🚀</h2>
+      <div class="glass shadow-xl text-right">
+        <p class="text-slate-200 text-xl leading-relaxed mb-10">
+          الكلمات المفتاحية لم تعد "كلمة واحدة"، المستخدمون يكتبون جملاً كاملة وأسئلة. إليك 8 أسرار لتصدر البحث:
+        </p>
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="p-8 bg-white/5 border border-white/10 rounded-3xl border-r-4 border-blue-500 hover:bg-white/10 transition">
+                <h4 class="text-white font-black text-xl mb-4 leading-relaxed text-blue-400">1. القاعدة الذهبية (أول 3-5 ثواني) ⏱️</h4>
+                <p class="text-slate-300 mb-4 text-sm">الخوارزميات الآن تستخدم تقنية (ASR) للتعرف على الصوت. الكلمة المنطوقة + المكتوبة = قوة مضاعفة.</p>
+                <ul class="text-sm text-slate-400 space-y-2">
+                    <li>🎯 انطق الكلمة المفتاحية <strong>بصوتك (Voice-over)</strong> في أول 3 ثوانٍ.</li>
+                    <li>🎯 ضعها كـ <strong>نص مرئي (Text Overlay)</strong> واضح على الشاشة.</li>
+                </ul>
+            </div>
+            <div class="p-8 bg-white/5 border border-white/10 rounded-3xl border-r-4 border-purple-500 hover:bg-white/10 transition">
+                <h4 class="text-white font-black text-xl mb-4 leading-relaxed text-purple-400">2. نية البحث (Search Intent) 🧠</h4>
+                <p class="text-slate-300 mb-4 text-sm">لا تفكر بعقلية بحث جوجل. ركز على الأسئلة الحقيقية والمباشرة.</p>
+                <ul class="text-sm text-slate-400 space-y-2">
+                    <li>🎯 مثل: "إزاي أبدأ صناعة محتوى بدون معدات 2026" بدلاً من "صناعة المحتوى".</li>
+                    <li>🎯 استخدم AnswerThePublic لاصطياد هذه الأسئلة.</li>
+                </ul>
+            </div>
+            <div class="p-8 bg-white/5 border border-white/10 rounded-3xl border-r-4 border-green-500 hover:bg-white/10 transition">
+                <h4 class="text-white font-black text-xl mb-4 leading-relaxed text-green-400">3. سد فجوة البحث (Search Gap) 🔍</h4>
+                <p class="text-slate-300 text-sm leading-relaxed">ابحث عن المواضيع والأسئلة التي يكتبها الناس في شريط بحث تيك توك وإنستجرام ولا يجدون لها فيديوهات عالية الجودة والمصداقية.. ثم قم بصناعة هذا الفيديو فوراً لتتصدر النتائج.</p>
+            </div>
+            <div class="p-8 bg-white/5 border border-white/10 rounded-3xl border-r-4 border-red-500 hover:bg-white/10 transition">
+                <h4 class="text-white font-black text-xl mb-4 leading-relaxed text-red-400">4. هاشتاجات النيش (Niche Hashtags) 🏷️</h4>
+                <p class="text-slate-300 text-sm leading-relaxed">توقف عن استخدام الهاشتاجات العامة مثل #Motivation. استخدم هاشتاجات دقيقة جداً وموجهة لمجالك مباشرة مثل #SkinTok أو #CorporateMaxxing.</p>
+            </div>
+            <div class="p-8 bg-white/5 border border-white/10 rounded-3xl border-r-4 border-yellow-500 hover:bg-white/10 transition">
+                <h4 class="text-white font-black text-xl mb-4 leading-relaxed text-yellow-400">5. التسويق في الظلام (Dark Social) 🕶️</h4>
+                <p class="text-slate-300 text-sm leading-relaxed">لا تعتمد على الخوارزمية 100%. ركز على قنوات البث المباشر (Broadcast Channels)، الأتمتة عبر الرسائل (DM Automation) لضمان وصول بنسبة 100%.</p>
+            </div>
+            <div class="p-8 bg-white/5 border border-white/10 rounded-3xl border-r-4 border-pink-500 hover:bg-white/10 transition">
+                <h4 class="text-white font-black text-xl mb-4 leading-relaxed text-pink-400">6. استراتيجية الفيديو الهجين 🪝</h4>
+                <p class="text-slate-300 mb-4 text-sm">ادمج بين نوعين من المحتوى في مسارك التسويقي:</p>
+                <ul class="text-sm text-slate-400 space-y-2">
+                    <li>🎯 <strong>Short-form:</strong> تعمل كسنارة لاكتشاف جمهور جديد.</li>
+                    <li>🎯 <strong>Long-form:</strong> تعمل على بناء الثقة العميقة وإتمام المبيعات.</li>
+                </ul>
+            </div>
+            <div class="p-8 bg-white/5 border border-white/10 rounded-3xl border-r-4 border-teal-500 hover:bg-white/10 transition">
+                <h4 class="text-white font-black text-xl mb-4 leading-relaxed text-teal-400">7. الذكاء الاصطناعي + اللمسة البشرية 🤖</h4>
+                <p class="text-slate-300 text-sm leading-relaxed">استخدم الـ AI لتوليد أفكار الكلمات المفتاحية وهيكلة المحتوى، ولكن يجب أن يكون الإلقاء والمصداقية <strong>خاماً وحقيقياً (Raw Authenticity)</strong>. الجمهور ينفر من المحتوى الآلي.</p>
+            </div>
+            <div class="p-8 bg-white/5 border border-white/10 rounded-3xl border-r-4 border-orange-500 hover:bg-white/10 transition">
+                <h4 class="text-white font-black text-xl mb-4 leading-relaxed text-orange-400">8. تطبيق E-E-A-T على السوشيال 🏆</h4>
+                <p class="text-slate-300 text-sm leading-relaxed">أثبت خبرتك العملية (Experience + Expertise) في أول 10 ثوانٍ من الفيديو. الخوارزميات أصبحت تعاقب المحتوى المنسوخ وترفع من شأن الخبراء الحقيقيين.</p>
+            </div>
+        </div>
+
+        <div class="advice-highlight bg-gradient-to-r from-yellow-900/20 to-orange-900/20 border-yellow-500 mt-12 shadow-2xl">
+            <h3 class="text-2xl font-black text-yellow-500 mb-4">🌍 كيف نطوع هذا التكنيك للمحتوى العربي؟</h3>
+            <p class="text-lg text-slate-200 leading-relaxed mb-4">المحتوى العربي له طبيعة خاصة بسبب اختلاف الفصحى عن العامية. إليك السر:</p>
+            <ul class="space-y-3 text-slate-300 font-bold">
+                <li>✅ <strong>في الصوت والنص المرئي:</strong> استخدم اللهجة العامية الدارجة التي يكتبها المستخدم بيده في شريط البحث (مثل: "ازاي تخس بسرعة" وليس "كيف تفقد الوزن").</li>
+                <li>✅ <strong>في الوصف والنص البديل (Alt Text):</strong> ادمج بين الكلمة العامية والكلمة بالفصحى لاصطياد الخوارزمية من الجهتين وتوسيع دائرة الوصول لكل الدول العربية.</li>
+            </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3 -->
+    <section class="mb-24">
+      <h2 class="section-title">03) تحليل المحتوى المنافس 🕵️‍♂️</h2>
+      <div class="glass shadow-xl text-right">
+        <p class="text-slate-200 text-xl leading-relaxed mb-10">
+          لا تقلد منافسيك.. بل اكتشف الفجوات التي تركوها وسيطر عليها!
+        </p>
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="p-8 bg-white/5 border border-white/10 rounded-3xl border-r-4 border-blue-500 hover:bg-white/10 transition">
+                <h4 class="text-white font-black text-xl mb-4 leading-relaxed text-blue-400">1. التنقيب في التعليقات (Comment Mining) ⛏️</h4>
+                <p class="text-slate-300">الكنز الحقيقي ليس في محتوى المنافس، بل في تعليقات جمهوره. ابحث عن الأسئلة التي لم يُجب عليها المنافس، أو الشكاوى من نقص معلومات معينة، وحولها فوراً إلى فيديو (Video Reply) أو محتوى جديد.</p>
+            </div>
+            <div class="p-8 bg-white/5 border border-white/10 rounded-3xl border-r-4 border-purple-500 hover:bg-white/10 transition">
+                <h4 class="text-white font-black text-xl mb-4 leading-relaxed text-purple-400">2. الهندسة العكسية للهوك (Reverse-Engineering Hooks) 🪝</h4>
+                <p class="text-slate-300">قم بتحليل أول 3 ثوانٍ لأنجح 5 فيديوهات لدى منافسيك. هل يعتمدون على طرح سؤال مستفز؟ أم عرض نتيجة نهائية صادمة؟ استخدم نفس "الهيكل النفسي" للهوك ولكن مع محتواك وخبرتك الخاصة.</p>
+            </div>
+            <div class="p-8 bg-white/5 border border-white/10 rounded-3xl border-r-4 border-green-500 hover:bg-white/10 transition">
+                <h4 class="text-white font-black text-xl mb-4 leading-relaxed text-green-400">3. تحليل فجوة القالب البصري (Format Gap) 🎬</h4>
+                <p class="text-slate-300">إذا كان كل منافسيك يظهرون بوجههم (Talking Head) يتحدثون للكاميرا، جرب أنت استخدام لقطات جمالية متحركة (B-roll) مع تعليق صوتي قوي (Voice-over). التميز البصري يكسر "العمى الإعلاني" لدى المشاهد.</p>
+            </div>
+            <div class="p-8 bg-white/5 border border-white/10 rounded-3xl border-r-4 border-red-500 hover:bg-white/10 transition">
+                <h4 class="text-white font-black text-xl mb-4 leading-relaxed text-red-400">4. كشف الكلمات المفتاحية المخفية (Hidden Keywords) 🥷</h4>
+                <p class="text-slate-300">استخدم أدوات مثل <strong>VidIQ</strong> أو تقنيات مراقبة السوشيال ميديا (Social Listening) لاكتشاف الكلمات المفتاحية الثانوية التي يجلب منها منافسوك زيارات، وقم بتضمينها بذكاء في نصوص فيديوهاتك.</p>
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lead Magnet Form (Hooks Playbook) -->
+    <section id="leads-section" class="locked-container mb-40 text-right">
+      <div class="watermark-text text-right">كتالوج الهوكات السحرية - الإصدار الكامل PDF</div>
+      
+      <div class="text-center mb-16 relative z-10">
+        <h2 class="section-title">خطوتك الجاية للسيطرة على التيك توك 🚀</h2>
+        <p class="text-slate-400 font-bold text-xl italic underline decoration-daoline">The Ultimate Hooks Playbook PDF</p>
+      </div>
+      
+      <!-- Blurred Template Preview -->
+      <div id="locked-visual" class="locked-blur">
+          <div class="glass shadow-2xl text-right">
+            <div class="space-y-12">
+                <h3 class="text-2xl font-black bg-white/10 text-white p-4 px-10 inline-block mb-8 rounded-xl italic">1) هوكات الفضول والتشويق</h3>
+                <div class="h-20 border-b-2 border-dashed border-gray-600 mb-20"></div>
+                <h3 class="text-2xl font-black bg-white/10 text-white p-4 px-10 inline-block mb-8 rounded-xl italic">2) هوكات حل المشكلات</h3>
+                <div class="h-20 border-b-2 border-dashed border-gray-600"></div>
+            </div>
+          </div>
+      </div>
+
+      <!-- Lead Gen Form Overlay -->
+      <div id="lead-form-container" class="relative z-50 -mt-80">
+        <div class="glass border-4 border-daoline text-center shadow-[0_0_180px_rgba(192,19,166,0.5)]">
+            <div class="w-20 h-20 bg-daoline rounded-2xl flex items-center justify-center text-white text-4xl font-black mx-auto mb-6 shadow-lg shadow-daoline/50">🪝</div>
+            <h2 class="text-4xl font-black mb-8 text-white italic">احصل على "كتالوج الهوكات" مجاناً! 🔥</h2>
+            <p class="text-slate-200 text-xl mb-12 leading-relaxed max-w-2xl mx-auto italic">
+                عشان تتصدر نتائج بحث تيك توك، الـ SEO لوحده مش كفاية! لازم <strong class="text-daoline">الهوك</strong> بتاعك يكون قوي ويخطف عين العميل في أول 3 ثواني. سجل بياناتك وهنبعتلك <strong>كتالوج الـ 3 ثواني</strong> اللي فيه 50 هوك جاهز للنسخ بصيغة <strong>PDF</strong>.
+            </p>
+            
+            <div class="max-w-xl mx-auto space-y-5">
+                <input type="text" id="lead-name" placeholder="اكتب اسمك هنا.." class="form-input">
+                <input type="email" id="lead-email" placeholder="بريدك الإلكتروني.." class="form-input">
+                <input type="tel" id="lead-whatsapp" placeholder="رقم الواتساب (لإرسال الكتالوج).." class="form-input">
+                
+                <button id="submit-btn" onclick="handleLeadSubmission()" class="bg-daoline hover-bg-daoline text-white w-full py-5 rounded-2xl font-black text-2xl shadow-[0_10px_30px_rgba(192,19,166,0.4)] transition transform hover:scale-105 duration-300 cursor-pointer">
+                    أرسل لي كتالوج الهوكات دلوقتي 🚀
+                </button>
+            </div>
+            
+            <div id="status-msg"></div>
+            <p class="text-[12px] text-slate-500 mt-10 italic font-bold">المعلومات المسجلة تُستخدم فقط لإرسال المحتوى التعليمي والملفات من Daoline Digital.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-black py-40 text-center border-t border-white/5">
+    <div class="flex flex-col items-center gap-10 mb-20">
+        <div class="font-black text-5xl text-white uppercase italic tracking-tighter">
+          DAOLINE<span class="text-daoline font-black">DIGITAL</span>
+        </div>
+    </div>
+    
+    <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-20 text-right px-10 mb-32">
+        <div>
+            <h4 class="text-white text-3xl font-black mb-10 border-r-8 border-daoline pr-5 uppercase italic">Contact Details:</h4>
+            <div class="space-y-8 text-2xl text-slate-400 font-medium">
+                <p>Website: <a href="https://daolinedigital.com" target="_blank" class="text-white hover:text-daoline underline">Daolinedigital.com</a></p>
+                <p>Email: <a href="mailto:info@daolinedigital.com" class="text-white hover:text-daoline underline">info@daolinedigital.com</a></p>
+                <p>Support: <a href="https://facebook.com/daolinedigital" target="_blank" class="text-white hover:text-daoline underline italic">Messenger Support</a></p>
+            </div>
+        </div>
+        <div>
+            <h4 class="text-white text-2xl font-black mb-8 border-r-4 border-daoline pr-4 uppercase italic">Lead By:</h4>
+            <div class="space-y-4">
+                <p class="text-slate-400 text-xl font-medium mb-2 uppercase tracking-widest italic">Executive Director</p>
+                <a href="https://facebook.com/doaaseleat" target="_blank" class="text-daoline text-4xl font-black italic underline decoration-white underline-offset-8">Doaa Seleat</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="pt-10 border-t border-white/5 mx-10 text-[11px] text-slate-800 uppercase font-black tracking-widest leading-relaxed">
+        © 2026 Daoline Digital Academy | All Rights Reserved | Blog Edition <br>
+        Crafted with Passion by <a href="https://facebook.com/doaaseleat" target="_blank" class="hover:text-slate-600 underline">Doaa Seleat</a>
+    </div>
+  </footer>
+
+  <!-- Google Forms Script -->
+  <script>
+    // Google Form endpoint
+    const FORM_ACTION_URL = "https://docs.google.com/forms/d/e/1FAIpQLSdSXEvN7DMMC-pwXED9G5TRpe4ecQ5U7pMtsg3201d2ikinfQ/formResponse";
+
+    // Entry IDs
+    const ENTRY_NAME = "entry.299023128";
+    const ENTRY_EMAIL = "entry.1712155557";
+    const ENTRY_WHATSAPP = "entry.1224669856";
+    const ENTRY_CATALOG = "entry.334049848";
+
+    // الكود الخاص بالملف المرسل (كتالوج الهوكات)
+    const CATALOG_CODE = "hooks_playbook";
+
+    function showStatus(text, color) {
+      const msgBox = document.getElementById('status-msg');
+      msgBox.style.display = "block";
+      msgBox.innerText = text;
+      msgBox.style.color = color;
+      msgBox.style.backgroundColor = "rgba(0,0,0,0.5)";
+      msgBox.style.border = "1px solid " + color;
+    }
+
+    async function handleLeadSubmission() {
+      const btn = document.getElementById('submit-btn');
+
+      const name = document.getElementById('lead-name').value.trim();
+      const email = document.getElementById('lead-email').value.trim();
+      const whatsapp = document.getElementById('lead-whatsapp').value.trim();
+
+      if (!name || !email || !whatsapp) {
+        showStatus("من فضلك املأ جميع الخانات عشان نقدر نبعتلك الكتالوج!", "#f87171");
+        return;
+      }
+
+      try {
+        btn.disabled = true;
+        btn.innerText = "جاري إرسال الكتالوج...";
+
+        const fd = new FormData();
+        fd.append(ENTRY_NAME, name);
+        fd.append(ENTRY_EMAIL, email);
+        fd.append(ENTRY_WHATSAPP, whatsapp);
+        fd.append(ENTRY_CATALOG, CATALOG_CODE);
+
+        await fetch(FORM_ACTION_URL, {
+          method: "POST",
+          mode: "no-cors",
+          body: fd
+        });
+
+        showStatus("تم التسجيل بنجاح! سيتم إرسال الكتالوج على بريدك الإلكتروني ✅", "#4ade80");
+        btn.innerText = "تم بنجاح ✅";
+
+        // Redirect to Home
+        setTimeout(() => {
+            window.location.href = "https://daolinedigital.com"; 
+        }, 1800);
+
+      } catch (e) {
+        showStatus("حدث خطأ في الاتصال.. حاول مجدداً.", "#f87171");
+        btn.disabled = false;
+        btn.innerText = "أرسل لي الكتالوج الآن 🚀";
+      }
+    }
+
+    // Protection Logic
+    document.addEventListener('contextmenu', e => { e.preventDefault(); showToast('المحتوى محمي لـ Daoline Digital 🔒'); });
+    document.addEventListener('keydown', e => {
+        const tag = (e.target && e.target.tagName) ? e.target.tagName.toLowerCase() : "";
+        if (tag === "input" || tag === "textarea") return;
+
+        const key = e.key.toLowerCase();
+        if ((e.ctrlKey && (key === 'c' || key === 'u' || key === 's' || key === 'i' || key === 'a' || key === 'p')) || e.key === 'F12') {
+            e.preventDefault();
+            showToast('حقوق النسخ والتفتيش محفوظة لـ Daoline 🔒');
+        }
+    });
+
+    function showToast(message) {
+      let toast = document.getElementById('security-toast');
+      if (!toast) {
+          toast = document.createElement('div');
+          toast.id = 'security-toast';
+          document.body.appendChild(toast);
+      }
+      toast.innerText = message;
+      toast.style.opacity = '1';
+      setTimeout(() => { toast.style.opacity = '0'; }, 2000);
+    }
+  </script>
+
+</body>
+</html>
