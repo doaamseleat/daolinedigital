@@ -354,21 +354,25 @@
         fd.append("entry.1712155557", email);
         fd.append("entry.1224669856", wa);
         
-        // تم التعديل لتطابق الشيت (باضافة الـ Underscore)
+        // الكلمة السحرية زي ما هي في الشيت
         fd.append("entry.334049848", "Social_Seo"); 
 
         const formUrl = "https://docs.google.com/forms/d/e/1FAIpQLSdSXEvN7DMMC-pwXED9G5TRpe4ecQ5U7pMtsg3201d2ikinfQ/formResponse";
         
         await fetch(formUrl, { method: "POST", mode: "no-cors", body: fd });
         
-        // إخفاء الفورم وإظهار منطقة النجاح (زي التمبلت بالظبط)
+        // إخفاء الفورم وإظهار رسالة النجاح وزر التحميل
         document.getElementById('form-container').style.display = 'none';
         document.getElementById('download-area').style.display = 'block';
 
-        const fileId = "19qK1TzDfmGI2QfCsYaExE94fmdUbW1Ap";
+        // الـ ID الجديد الخاص بملف الـ PDF المباشر
+        const fileId = "17cowog4YFyWvjWWXsJ41xeyyX4XtLDGI";
         const driveLink = `https://drive.google.com/file/d/${fileId}/view?usp=sharing`;
         
+        // ربط الزرار اليدوي
         document.getElementById('direct-download').href = driveLink;
+        
+        // فتح الملف التلقائي
         window.open(driveLink, "_blank");
 
       } catch (e) {
