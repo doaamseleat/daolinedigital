@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تقرير السعادة العالمي 2026: السوشيال ميديا بتأذي مين بالظبط؟ | Daoline Digital</title>
+  <meta name="description" content="جامعة Oxford نشرت أكبر دراسة عالمية عن السوشيال ميديا والصحة النفسية. النتايج صادمة — وفيها فرصة كبيرة للكريتور العربي ما حدش بيتكلم فيها.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root { --primary: #c013a6; --bg: #020617; --surface: #0f172a; --text: #e2e8f0; --muted: #94a3b8; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Tajawal', sans-serif; background: var(--bg); color: var(--text); line-height: 2.1; overflow-x: hidden; }
+
+    header { position: sticky; top: 0; z-index: 1000; background: rgba(15,23,42,0.96); backdrop-filter: blur(12px); border-bottom: 2px solid var(--primary); padding: 15px 20px; }
+    .nav { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+    .nav a { color: #fff; text-decoration: none; font-weight: 700; font-size: 0.95rem; margin-left: 20px; transition: 0.3s; }
+    .nav a:hover { color: var(--primary); }
+    .logo { font-size: 1.4rem; font-weight: 900; color: #fff; text-decoration: none; }
+    .logo span { color: var(--primary); }
+
+    .container { max-width: 900px; margin: 40px auto; padding: 0 25px; }
+    .breadcrumbs { font-size: 0.85rem; color: var(--muted); margin-bottom: 20px; }
+    .breadcrumbs a { color: var(--primary); text-decoration: none; }
+
+    h1 { font-size: 3.4rem; font-weight: 900; color: #fff; line-height: 1.2; margin-bottom: 25px; }
+    .meta { font-size: 1rem; color: var(--muted); margin-bottom: 40px; display: flex; gap: 20px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 20px; flex-wrap: wrap; }
+
+    .article-content { font-size: 1.3rem; color: #cbd5e1; }
+    h2 { color: var(--primary); font-size: 2.35rem; margin: 50px 0 25px; border-right: 6px solid var(--primary); padding-right: 20px; font-weight: 900; }
+    h3 { color: #fff; font-size: 1.75rem; margin: 35px 0 15px; font-weight: 800; }
+    p { margin-bottom: 38px; text-align: justify; }
+    ul { margin-bottom: 38px; padding-right: 25px; }
+    li { margin-bottom: 16px; }
+
+    /* stat highlight */
+    .stat-highlight {
+      background: linear-gradient(135deg, rgba(192,19,166,0.12), rgba(192,19,166,0.03));
+      border: 1px solid rgba(192,19,166,0.4);
+      border-right: 5px solid var(--primary);
+      border-radius: 16px; padding: 30px 35px; margin: 40px 0;
+      display: flex; align-items: center; gap: 25px;
+    }
+    .stat-number { font-size: 4rem; font-weight: 900; color: var(--primary); line-height: 1; white-space: nowrap; }
+    .stat-text { font-size: 1.35rem; color: #e2e8f0; line-height: 1.6; }
+    .stat-source { font-size: 0.85rem; color: var(--muted); margin-top: 8px; }
+
+    /* pull quote */
+    .pull-quote { border-right: 5px solid var(--primary); padding: 20px 25px; margin: 40px 0; background: rgba(192,19,166,0.06); border-radius: 0 12px 12px 0; }
+    .pull-quote p { font-size: 1.42rem; font-weight: 700; color: #fff; margin: 0; font-style: italic; text-align: right; }
+    .pull-quote cite { font-size: 0.9rem; color: var(--muted); margin-top: 10px; display: block; font-style: normal; }
+
+    /* world map visual — unique element */
+    .world-split { display: grid; grid-template-columns: 1fr 1fr; gap: 0; margin: 40px 0; border-radius: 16px; overflow: hidden; }
+    .world-side { padding: 32px 28px; }
+    .world-side.west { background: linear-gradient(135deg, rgba(239,68,68,0.15), rgba(239,68,68,0.05)); border: 1px solid rgba(239,68,68,0.25); border-radius: 16px 0 0 16px; }
+    .world-side.east { background: linear-gradient(135deg, rgba(192,19,166,0.12), rgba(192,19,166,0.03)); border: 1px solid rgba(192,19,166,0.3); border-right: none; border-radius: 0 16px 16px 0; border-right: 1px solid rgba(192,19,166,0.3); }
+    .world-region { font-size: 0.8rem; font-weight: 700; letter-spacing: 1px; margin-bottom: 10px; }
+    .world-side.west .world-region { color: #f87171; }
+    .world-side.east .world-region { color: var(--primary); }
+    .world-score { font-size: 2.8rem; font-weight: 900; line-height: 1; margin-bottom: 8px; }
+    .world-side.west .world-score { color: #f87171; }
+    .world-side.east .world-score { color: var(--primary); }
+    .world-label { font-size: 0.92rem; color: var(--muted); line-height: 1.6; margin-bottom: 16px; }
+    .world-countries { font-size: 0.82rem; color: #cbd5e1; line-height: 1.8; }
+
+    /* factors grid */
+    .factors-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 40px 0; }
+    .factor-card { background: var(--surface); border-radius: 12px; padding: 20px 22px; border: 1px solid rgba(255,255,255,0.06); display: flex; gap: 14px; align-items: flex-start; }
+    .factor-icon { font-size: 1.6rem; flex-shrink: 0; margin-top: 2px; }
+    .factor-title { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 4px; }
+    .factor-desc { font-size: 0.9rem; color: var(--muted); line-height: 1.6; }
+
+    /* opportunity banner */
+    .opportunity { background: linear-gradient(135deg, rgba(192,19,166,0.14), rgba(192,19,166,0.04)); border: 1px solid rgba(192,19,166,0.35); border-right: 5px solid var(--primary); border-radius: 16px; padding: 28px 30px; margin: 40px 0; }
+    .opportunity-label { font-size: 0.8rem; font-weight: 700; color: var(--primary); letter-spacing: 1px; margin-bottom: 10px; }
+    .opportunity h3 { font-size: 1.2rem; color: #fff; font-weight: 700; margin-bottom: 10px; }
+    .opportunity p { font-size: 1rem; color: #cbd5e1; margin: 0; line-height: 1.7; }
+
+    /* checklist */
+    .checklist { list-style: none; padding: 0; margin-bottom: 38px; }
+    .checklist li { padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.05); color: #cbd5e1; display: flex; gap: 12px; align-items: flex-start; font-size: 1.2rem; }
+    .checklist li::before { content: "✓"; color: var(--primary); font-weight: 900; font-size: 1.2rem; flex-shrink: 0; margin-top: 2px; }
+
+    /* lead box */
+    .lead-box {
+      background: linear-gradient(145deg, #1e293b, #0f172a);
+      border: 3px dashed var(--primary);
+      border-radius: 30px; padding: 50px 40px; margin: 70px 0; text-align: center;
+      box-shadow: 0 25px 60px rgba(192,19,166,0.3);
+    }
+    .free-badge { font-size: 4rem; font-weight: 900; color: var(--primary); margin: 10px 0 20px; line-height: 1; text-shadow: 0 10px 30px rgba(192,19,166,0.5); }
+    .form-input { width: 100%; padding: 16px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.4); color: #fff; font-family: 'Tajawal'; margin-bottom: 15px; outline: none; text-align: right; font-size: 1rem; }
+    .submit-btn { width: 100%; background: var(--primary); color: #fff; border: none; padding: 20px; border-radius: 15px; font-weight: 900; font-size: 1.3rem; cursor: pointer; transition: 0.4s; box-shadow: 0 10px 30px rgba(192,19,166,0.3); }
+    .submit-btn:hover { transform: scale(1.02); background: #a00f89; }
+
+    .footer-action { margin-top: 80px; padding: 60px 40px; background: #0f172a; border-radius: 30px; text-align: center; border: 1px solid rgba(192,19,166,0.1); }
+    .footer-btn { display: inline-block; background: transparent; border: 2px solid var(--primary); color: var(--primary); padding: 16px 40px; border-radius: 15px; text-decoration: none; font-weight: 900; margin: 10px; transition: 0.3s; }
+    .footer-btn:hover { background: var(--primary); color: #fff; }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 2.2rem; }
+      .nav-menu { display: none; }
+      h2 { font-size: 1.75rem; }
+      .world-split { grid-template-columns: 1fr; }
+      .world-side.west { border-radius: 16px 16px 0 0; }
+      .world-side.east { border-radius: 0 0 16px 16px; border-right: 1px solid rgba(192,19,166,0.3); }
+      .factors-grid { grid-template-columns: 1fr; }
+      .stat-highlight { flex-direction: column; gap: 10px; }
+      .stat-number { font-size: 3rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="nav">
+      <a href="https://daolinedigital.com/" class="logo">DAOLINE <span>DIGITAL</span></a>
+      <div class="nav-menu">
+        <a href="https://daolinedigital.com/">الرئيسية</a>
+        <a href="https://daolinedigital.com/blog/" style="color: var(--primary);">المكتبة المجانية 📚</a>
+        <a href="https://daolinedigital.com/#services">الخدمات</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <nav class="breadcrumbs">
+      <a href="https://daolinedigital.com/">الرئيسية</a> /
+      <a href="https://daolinedigital.com/blog/">المكتبة</a> / مقال 022
+    </nav>
+
+    <h1>تقرير السعادة العالمي 2026: السوشيال ميديا بتأذي مين بالظبط — وليه العالم العربي مختلف؟</h1>
+
+    <div class="meta">
+      <span>👤 بقلم: دعاء سليط</span>
+      <span>⏱️ القراءة: 12 دقيقة</span>
+      <span>🔬 بحث حصري</span>
+      <span>📅 أبريل 2026</span>
+    </div>
+
+    <article class="article-content">
+
+      <p>في مارس 2026، جامعة Oxford نشرت الطبعة الرابعة عشرة من تقرير السعادة العالمي — وجزء كبير منه كان عن السوشيال ميديا وتأثيرها على الصحة النفسية. النتايج اللي طلعت <strong>عكست كل حاجة الناس فاكرينها</strong>. والأهم من كده — فيها درس مباشر لكل Content Creator في العالم العربي.</p>
+
+      <div class="stat-highlight">
+        <div class="stat-number">−1</div>
+        <div>
+          <div class="stat-text">نقطة كاملة على مقياس السعادة من 10 — ده الانخفاض اللي حصل في رفاهية الشباب تحت 25 سنة في أمريكا وكندا وأستراليا خلال العشر سنين الأخيرة. في نفس الوقت، باقي العالم ارتفع.</div>
+          <div class="stat-source">المصدر: World Happiness Report 2026 — Wellbeing Research Centre, University of Oxford · Gallup World Poll</div>
+        </div>
+      </div>
+
+      <p>نقطة واحدة على مقياس السعادة تبدو بسيطة — لكن لما الباحثين بيقيسوا ملايين الناس، دي كارثة إحصائية. ومش بس كده — <strong>باقي العالم في نفس الفترة ارتفع</strong>. ده معناه إن المشكلة مش في السوشيال ميديا نفسها — المشكلة في <em>طريقة الاستخدام</em> وفي السياق الثقافي.</p>
+
+      <h2>أولاً: التقرير بيقول إيه بالظبط؟</h2>
+
+      <p>التقرير بيفرّق بين نوعين من العلاقة بالسوشيال ميديا: العلاقة السلبية اللي بتنتج أذى نفسي حقيقي، والعلاقة الإيجابية اللي بتدي تواصل ودعم حقيقي. والمفاجأة إن الفرق مش في <strong>كم</strong> الاستخدام — الفرق في <strong>كيف ولماذا.</strong></p>
+
+      <div class="world-split">
+        <div class="world-side west">
+          <div class="world-region">🔴 الدول الناطقة بالإنجليزية</div>
+          <div class="world-score">↓ −1.0</div>
+          <div class="world-label">انخفاض في رفاهية الشباب تحت 25 خلال 10 سنين — مرتبط بشكل مباشر بالاستخدام الكثيف للسوشيال ميديا</div>
+          <div class="world-countries">🇺🇸 أمريكا · 🇨🇦 كندا · 🇦🇺 أستراليا · 🇳🇿 نيوزيلندا</div>
+        </div>
+        <div class="world-side east">
+          <div class="world-region">💜 باقي العالم</div>
+          <div class="world-score">↑ ارتفع</div>
+          <div class="world-label">نفس معدلات استخدام السوشيال ميديا — لكن نتايج مختلفة تماماً في الرفاهية والصحة النفسية</div>
+          <div class="world-countries">أوروبا الوسطى · آسيا · أمريكا اللاتينية · الشرق الأوسط</div>
+        </div>
+      </div>
+
+      <p>التفسير اللي بيقدمه الباحثون مش بسيط — لكن فيه خيط مشترك: في الدول اللي انخفضت فيها السعادة، السوشيال ميديا <strong>حلّت محل</strong> التواصل الحقيقي. في باقي العالم، السوشيال ميديا <strong>أضافت عليه</strong>. والفرق ده ضخم جداً.</p>
+
+      <h2>ثانياً: العوامل اللي بتحدد التأثير — مش الوقت</h2>
+
+      <p>التقرير جاء بنتيجة مفاجئة: <strong>عدد ساعات الاستخدام مش المتغير الأهم.</strong> المراهق اللي بيقضي 3 ساعات على السوشيال ميديا يوميًا ممكن يكون أفضل نفسيًا من اللي بيقضي ساعة — حسب السياق والطريقة.</p>
+
+      <div class="factors-grid">
+        <div class="factor-card">
+          <div class="factor-icon">👁️</div>
+          <div>
+            <div class="factor-title">المقارنة الاجتماعية</div>
+            <div class="factor-desc">المحتوى اللي بيخلي المستخدم يحسّ إنه أقل من الآخرين هو الأكتر ضرراً — مش المحتوى نفسه</div>
+          </div>
+        </div>
+        <div class="factor-card">
+          <div class="factor-icon">💬</div>
+          <div>
+            <div class="factor-title">التفاعل الحقيقي</div>
+            <div class="factor-desc">السوشيال ميديا اللي بتدعم علاقات حقيقية بتزيد الرفاهية — اللي بتحل محلها بتنقصها</div>
+          </div>
+        </div>
+        <div class="factor-card">
+          <div class="factor-icon">🌙</div>
+          <div>
+            <div class="factor-title">الاستخدام قبل النوم</div>
+            <div class="factor-desc">الاستخدام الكثيف ليلاً هو الأكتر ارتباطاً بالأذى النفسي — مش الاستخدام في النهار</div>
+          </div>
+        </div>
+        <div class="factor-card">
+          <div class="factor-icon">🎯</div>
+          <div>
+            <div class="factor-title">هدف الاستخدام</div>
+            <div class="factor-desc">البحث عن معلومة أو التواصل مع شخص ≠ السكرول اللانهائي بدون هدف — التأثير مختلف تماماً</div>
+          </div>
+        </div>
+        <div class="factor-card">
+          <div class="factor-icon">🏠</div>
+          <div>
+            <div class="factor-title">السياق الثقافي</div>
+            <div class="factor-desc">في مجتمعات الروابط الاجتماعية القوية، السوشيال ميديا بتعزّزها — في مجتمعات الفردية بتعزّز العزلة</div>
+          </div>
+        </div>
+        <div class="factor-card">
+          <div class="factor-icon">👧</div>
+          <div>
+            <div class="factor-title">الجنس والسن</div>
+            <div class="factor-desc">البنات بين 13-17 هم الأكتر تضرراً في الدول الناطقة بالإنجليزية — الفجوة مش موجودة بنفس الحدة في العالم العربي</div>
+          </div>
+        </div>
+      </div>
+
+      <h2>ثالثاً: ليه العالم العربي مختلف؟</h2>
+
+      <p>ده السؤال اللي محدش بيسأله بالعربي — لكن التقرير بيجاوب عليه ضمنياً. الباحثون لاحظوا إن الدول اللي فيها <strong>روابط اجتماعية وعائلية قوية</strong> كانت الأكتر مقاومة للتأثيرات السلبية للسوشيال ميديا. مش لأن الناس بتستخدمها أقل — لأن السوشيال ميديا عندهم <strong>بتكمّل</strong> التواصل الحقيقي مش بتحل محله.</p>
+
+      <div class="pull-quote">
+        <p>"الأدلة العالمية واضحة: التأثير بيعتمد على أي منصة، مين بيستخدمها، إزاي، وقد إيه. الاستخدام الكثيف مضر — لكن اللي مش على السوشيال خالص كمان بيخسر فوايد حقيقية."</p>
+        <cite>— Prof. Jan-Emmanuel De Neve، مدير Wellbeing Research Centre — University of Oxford، World Happiness Report 2026</cite>
+      </div>
+
+      <p>وده بيعني حاجة مهمة جداً: السوشيال ميديا في حد ذاتها مش مشكلة ومش حل. هي <strong>مضخّم</strong> — بتكبّر اللي موجود. لو في تواصل حقيقي وروابط اجتماعية، بتكبّرهم. لو في عزلة وفردية، بتكبّرها.</p>
+
+      <h2>رابعاً: إيه علاقة ده بالـ Content Creator؟</h2>
+
+      <p>العلاقة مباشرة جداً — وبتتكلم في اتجاهين:</p>
+
+      <h3>الاتجاه الأول: مسؤوليتك كـ Creator</h3>
+
+      <p>التقرير بيقول صراحة إن <strong>المحتوى اللي بيحفّز المقارنة الاجتماعية</strong> هو الأكتر ضرراً. الصورة المثالية أوي، الحياة اللي بتبدو كاملة، الأرقام المبهرة من غير سياق — ده المحتوى اللي بيعمل أذى. والكريتور اللي بيبني محتواه على الأصالة والواقعية مش بس أكتر نجاحاً في 2026 — هو أكتر مسؤولية.</p>
+
+      <div class="opportunity">
+        <div class="opportunity-label">💡 الفرصة الحصرية</div>
+        <h3>المحتوى العربي اللي بيبني تواصل — مش بيبيع وهم</h3>
+        <p>في وقت الغرب بيعاني من أزمة ثقة وأزمة صحة نفسية بسبب المحتوى السطحي — الكريتور العربي اللي بيبني محتوى حقيقي وبيعزّز الروابط الاجتماعية عنده فرصة ذهبية. الجمهور جاهز لمحتوى بيحسّسه بالانتماء مش بالنقص.</p>
+      </div>
+
+      <h3>الاتجاه التاني: فرصة موضوع محتوى ما اتلمسش</h3>
+
+      <p>تقرير بحجم Oxford عن السوشيال ميديا والصحة النفسية — وما فيش كريتور عربي واحد بالغ تقريباً اتكلم فيه بجدية. ده موضوع بيجمع <strong>بحث حقيقي + جدل + صلة مباشرة بحياة الجمهور</strong> — المعادلة المثالية للمحتوى اللي بيانتشر.</p>
+
+      <div class="stat-highlight">
+        <div class="stat-number">88%</div>
+        <div>
+          <div class="stat-text">من المستخدمين بيقولوا إن ظهور أدوات توليد الفيديو بالـ AI خلّاهم يثقوا في الأخبار والمحتوى على السوشيال بشكل أقل. الأصالة والمصدر الموثوق بقوا أندر وأغلى.</div>
+          <div class="stat-source">المصدر: Sprout Social Q1 2026 Pulse Survey</div>
+        </div>
+      </div>
+
+      <h2>خامساً: كيف تترجمي ده لمحتوى فعلي؟</h2>
+
+      <ul class="checklist">
+        <li>تكلّمي في إنجازاتك مع السياق الكامل — مش الرقم لوحده</li>
+        <li>شاركي التحديات والأوقات الصعبة بنفس اهتمام شاركي النجاحات</li>
+        <li>عملي محتوى بيحفّز تواصل الجمهور مع بعض — مش بس معاكِ</li>
+        <li>تجنّبي المقارنات المباشرة اللي بتحسّس الجمهور إنه ناقص</li>
+        <li>اعملي محتوى عن الصحة النفسية والسوشيال ميديا — الموضوع ده ناقص بالعربي</li>
+        <li>وثّقي رحلتك الحقيقية بما فيها الأوقات الصعبة — ده بيبني ثقة مش بيكسرها</li>
+        <li>اسألي جمهورك عن علاقتهم بالسوشيال ميديا — السؤال ده بيجيب تفاعل عالي جداً</li>
+      </ul>
+
+      <section class="lead-box">
+        <h3 style="color: #fff; margin-bottom: 5px;">عاوزة تبني محتوى بيبني — مش بيهدم؟ 🌱</h3>
+        <div class="free-badge">كتالوج مجاني ✨</div>
+        <p style="color: #fff; font-size: 1.4rem; font-weight: 700; margin-bottom: 30px; line-height: 1.5;">
+          احصلي على <span style="color:var(--primary);">"Social SEO Keyword Catalog 2026"</span><br>
+          50+ كيورد لنيش الـ <strong>Content Creation</strong> — PDF جاهز للتحميل!
+        </p>
+        <div style="max-width: 500px; margin: 0 auto;">
+          <input type="text"  id="name"     placeholder="اسمك الكريم.."                  class="form-input">
+          <input type="email" id="email"    placeholder="بريدك الإلكتروني.."              class="form-input">
+          <input type="tel"   id="whatsapp" placeholder="رقم الواتساب (للتواصل السريع).." class="form-input">
+          <button onclick="handleLead()" id="submit-btn" class="submit-btn">أرسل لي الكتالوج المجاني الآن 🚀</button>
+          <div id="status" style="margin-top: 15px; font-weight: bold;"></div>
+        </div>
+      </section>
+
+      <p>في الختام، التقرير ده مش مجرد أخبار — ده مرآة. بيقولك إن السوشيال ميديا مش شريرة ومش مقدّسة. هي أداة — وتأثيرها بيتحدد بإيدنا إحنا اللي بنصنع المحتوى. الكريتور اللي بيفهم ده بيقدر يبني محتوى مش بس بيجيب views — بيبني مجتمع حقيقي.</p>
+
+    </article>
+
+    <section class="footer-action">
+      <h3 style="margin-bottom: 10px; color: #fff;">عاوزة تبني استراتيجية محتوى قايمة على بيانات حقيقية؟ 🚀</h3>
+      <p style="color: var(--muted); margin-bottom: 30px;">استكشفي خدماتنا الاحترافية أو ارجعي للمكتبة للمزيد من الدروس.</p>
+      <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+        <a href="https://daolinedigital.com/blog/" class="footer-btn">الرجوع للمكتبة 🏛️</a>
+        <a href="https://daolinedigital.com/" class="footer-btn" style="background: var(--primary); color:#fff;">الخدمات والحلول</a>
+      </div>
+    </section>
+  </main>
+
+  <footer style="text-align: center; padding: 50px 20px; color: var(--muted); font-size: 0.9rem; border-top: 1px solid rgba(255,255,255,0.05);">
+    © 2026 Daoline Digital Academy | إعداد دعاء سليط | جميع الحقوق محفوظة
+  </footer>
+
+  <script>
+    async function handleLead() {
+      const name   = document.getElementById('name').value.trim();
+      const email  = document.getElementById('email').value.trim();
+      const wa     = document.getElementById('whatsapp').value.trim();
+      const status = document.getElementById('status');
+      const btn    = document.getElementById('submit-btn');
+
+      if (!name || !email || !wa) {
+        status.innerText = "من فضلك كملي البيانات الأول! ⚠️";
+        status.style.color = "#f87171";
+        return;
+      }
+
+      try {
+        btn.disabled = true; btn.innerText = "جاري تحضير الكتالوج...";
+        const fd = new FormData();
+        fd.append("entry.299023128",  name);
+        fd.append("entry.1712155557", email);
+        fd.append("entry.1224669856", wa);
+        fd.append("entry.334049848",  "happiness_report_article_022");
+
+        await fetch("https://docs.google.com/forms/d/e/1FAIpQLSdSXEvN7DMMC-pwXED9G5TRpe4ecQ5U7pMtsg3201d2ikinfQ/formResponse",
+          { method: "POST", mode: "no-cors", body: fd });
+
+        status.innerText = "تم بنجاح! ✅ شيك على إيميلك (والـ Spam) هتلاقي الكتالوج وصلك.";
+        status.style.color = "#4ade80";
+        btn.innerText = "تم الإرسال بنجاح ✅";
+      } catch (e) {
+        status.innerText = "حدث خطأ بسيط.. حاولي مرة تانية.";
+        btn.disabled = false;
+        btn.innerText = "أرسل لي الكتالوج المجاني الآن 🚀";
+      }
+    }
+  </script>
+
+</body>
+</html>
