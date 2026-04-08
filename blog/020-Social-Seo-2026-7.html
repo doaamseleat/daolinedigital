@@ -53,29 +53,79 @@
     .tech-card { background: var(--surface); border: 1px solid rgba(255,255,255,0.05); border-right: 4px solid var(--secondary); padding: 25px; border-radius: 15px; transition: 0.3s; }
     .tech-card:hover { transform: translateY(-5px); border-color: var(--primary); }
 
-    /* Lead Box System (ثابت) */
-    .lead-box { 
+    /* --- كود Daoline Lead Box الجديد --- */
+    .daoline-lead-box { 
       background: linear-gradient(145deg, #1e293b, #0f172a); 
-      border: 3px dashed var(--primary); 
-      border-radius: 30px; padding: 50px 40px; margin: 70px 0; text-align: center;
-      position: relative; box-shadow: 0 25px 60px rgba(192, 19, 166, 0.3);
+      border: 3px dashed #c013a6; 
+      border-radius: 30px; 
+      padding: 50px 40px; 
+      margin: 50px 0; 
+      text-align: center;
+      box-shadow: 0 25px 60px rgba(192, 19, 166, 0.2);
+      font-family: 'Tajawal', sans-serif;
+      direction: rtl;
+      position: relative;
     }
-    .free-badge { 
-      font-size: 4rem; font-weight: 900; color: var(--primary); margin: 10px 0 20px 0; 
-      line-height: 1; text-shadow: 0 10px 30px rgba(192, 19, 166, 0.5);
+    .daoline-free-badge { 
+      font-size: clamp(2.5rem, 5vw, 4rem); 
+      font-weight: 900; 
+      color: #c013a6; 
+      margin: 10px 0 20px 0; 
+      line-height: 1; 
+      text-shadow: 0 10px 30px rgba(192, 19, 166, 0.4);
     }
-    .form-input { width: 100%; padding: 16px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.4); color: #fff; font-family: 'Tajawal'; margin-bottom: 15px; outline: none; text-align: right; font-size: 1rem; }
-    .submit-btn { width: 100%; background: var(--primary); color: #fff; border: none; padding: 20px; border-radius: 15px; font-weight: 900; font-size: 1.3rem; cursor: pointer; transition: 0.4s; box-shadow: 0 10px 30px rgba(192, 19, 166, 0.3); }
-    .submit-btn:hover { transform: scale(1.02); background: #a00f89; }
+    .daoline-input { 
+      width: 100%; 
+      padding: 16px; 
+      border-radius: 15px; 
+      border: 1px solid rgba(255,255,255,0.1); 
+      background: rgba(0,0,0,0.4); 
+      color: #fff; 
+      font-family: 'Tajawal', sans-serif; 
+      margin-bottom: 15px; 
+      outline: none; 
+      text-align: right; 
+      font-size: 1rem; 
+      box-sizing: border-box;
+    }
+    .daoline-input:focus {
+      border-color: #c013a6;
+    }
+    .daoline-submit-btn { 
+      width: 100%; 
+      background: #c013a6; 
+      color: #fff; 
+      border: none; 
+      padding: 20px; 
+      border-radius: 15px; 
+      font-weight: 900; 
+      font-size: 1.3rem; 
+      cursor: pointer; 
+      transition: 0.3s ease; 
+      box-shadow: 0 10px 30px rgba(192, 19, 166, 0.3);
+      font-family: 'Tajawal', sans-serif; 
+    }
+    .daoline-submit-btn:hover { 
+      transform: scale(1.02); 
+      background: #a00f89; 
+    }
+    .daoline-status {
+      margin-top: 15px; 
+      font-weight: bold; 
+      font-size: 1.1rem;
+    }
 
     .footer-action { margin-top: 80px; padding: 60px 40px; background: #0f172a; border-radius: 30px; text-align: center; border: 1px solid rgba(192,19,166,0.1); }
     .footer-btn { display: inline-block; background: transparent; border: 2px solid var(--primary); color: var(--primary); padding: 16px 40px; border-radius: 15px; text-decoration: none; font-weight: 900; margin: 10px; transition: 0.3s; }
     .footer-btn:hover { background: var(--primary); color: #fff; }
 
+    #security-toast { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background-color: var(--primary); color: white; padding: 12px 24px; border-radius: 999px; font-weight: 900; box-shadow: 0 10px 25px rgba(0,0,0,0.5); z-index: 9999; opacity: 0; transition: all 0.3s ease; pointer-events: none; }
+
     @media (max-width: 768px) { 
         h1 { font-size: 2rem; } 
         .tech-grid { grid-template-cols: 1fr; }
         .nav-menu { display: none; }
+        .daoline-lead-box { padding: 30px 20px; }
     }
   </style>
 </head>
@@ -169,27 +219,27 @@
         </div>
       </div>
 
-      <h2>ثالثاً: تحليل المحتوى المنافس 🕵️‍♂️</h2>
-      <p>لا تقلد منافسيك، بل ابحث عن "الكنز" في تعليقات جمهورهم. ابحث عن الأسئلة التي لم يُجب عليها المنافس، وحولها فوراً إلى فيديو رد (Video Reply) لتخطف هذا الجمهور إلى صفحتك.</p>
-
-      <!-- نظام التسجيل الثابت (Lead Box) -->
-      <section class="lead-box" id="leads-section">
-        <h3 style="color: #fff; margin-bottom: 5px;">عايزة تطبقي الـ SEO صح؟ 🧐</h3>
-        <div class="free-badge">هدية مجانية ✨</div>
+      <!-- --- صندوق التسجيل الثابت (Daoline Lead Box) --- -->
+      <div class="daoline-lead-box">
+        <h3 style="color: #fff; margin-bottom: 5px; font-size: 1.6rem;">مش عارفة تبدأي منين؟ 🧐</h3>
+        <div class="daoline-free-badge">دليل مجاني ✨</div>
+        
         <p style="color: #fff; font-size: 1.4rem; font-weight: 700; margin-bottom: 30px; line-height: 1.5;">
-          عشان الـ SEO ينجح، لازم "الهوك" بتاعك يخطف العين!<br>
-          احصلي فوراً على <span style="color:var(--primary);">"كتالوج الهوكات السحرية 2026"</span><br>
-          أكثر من 50 صيغة جاهزة للنسخ والاستخدام.
+          احصلي فوراً على <span style="color:#c013a6;">"كتالوج الهوكات السحرية 2026"</span><br>أكثر من 100 صيغة جاهزة للنسخ والاستخدام!
         </p>
         
         <div style="max-width: 500px; margin: 0 auto;">
-          <input type="text" id="name" placeholder="اسمك الكريم.." class="form-input">
-          <input type="email" id="email" placeholder="بريدك الإلكتروني.." class="form-input">
-          <input type="tel" id="whatsapp" placeholder="رقم الواتساب (عشان نبعتلك الملف).." class="form-input">
-          <button onclick="handleLead()" id="submit-btn" class="submit-btn">أرسل لي الكتالوج المجاني الآن 🚀</button>
-          <div id="status" style="margin-top: 15px; font-weight: bold;"></div>
+          <input type="text" id="lead-name" placeholder="اسمك الكريم.." class="daoline-input">
+          <input type="email" id="lead-email" placeholder="بريدك الإلكتروني.." class="daoline-input">
+          <input type="tel" id="lead-whatsapp" placeholder="رقم الواتساب (للتواصل السريع).." class="daoline-input">
+          
+          <button onclick="submitDaolineLead()" id="lead-btn" class="daoline-submit-btn">أرسل لي الدليل المجاني الآن 🚀</button>
+          <div id="lead-status" class="daoline-status"></div>
         </div>
-      </section>
+      </div>
+
+      <h2>ثالثاً: تحليل المحتوى المنافس 🕵️‍♂️</h2>
+      <p>لا تقلد منافسيك، بل ابحث عن "الكنز" في تعليقات جمهورهم. ابحث عن الأسئلة التي لم يُجب عليها المنافس، وحولها فوراً إلى فيديو رد (Video Reply) لتخطف هذا الجمهور إلى صفحتك.</p>
 
       <h2>رابعاً: كيف نطوع التكنيك للمحتوى العربي؟</h2>
       <p>المحتوى العربي له طبيعة خاصة. إليكِ السر:</p>
@@ -215,12 +265,13 @@
   </footer>
 
   <script>
-    async function handleLead() {
-      const name = document.getElementById('name').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const wa = document.getElementById('whatsapp').value.trim();
-      const status = document.getElementById('status');
-      const btn = document.getElementById('submit-btn');
+    // دالة إرسال البيانات للفورم
+    async function submitDaolineLead() {
+      const name = document.getElementById('lead-name').value.trim();
+      const email = document.getElementById('lead-email').value.trim();
+      const wa = document.getElementById('lead-whatsapp').value.trim();
+      const status = document.getElementById('lead-status');
+      const btn = document.getElementById('lead-btn');
 
       if(!name || !email || !wa) {
         status.innerText = "من فضلك كملي البيانات الأول! ⚠️";
@@ -230,42 +281,58 @@
 
       try {
         btn.disabled = true; 
-        btn.innerText = "جاري تحضير ملفك...";
+        btn.innerText = "جاري تحضير دليلك...";
         
         const fd = new FormData();
-        // الحقول الخاصة بجدول Daoline لكتالوج الهوكات
+        // الحقول الخاصة بجدول Daoline
         fd.append("entry.299023128", name);
         fd.append("entry.1712155557", email);
         fd.append("entry.1224669856", wa);
-        fd.append("entry.334049848", "hooks_catalog_from_seo_blog"); // كود لتمييز مصدر الليد
-
-        await fetch("https://docs.google.com/forms/d/e/1FAIpQLSdSXEvN7DMMC-pwXED9G5TRpe4ecQ5U7pMtsg3201d2ikinfQ/formResponse", { 
-            method: "POST", 
-            mode: "no-cors", 
-            body: fd 
-        });
+        fd.append("entry.334049848", "new_catalog"); 
         
-        status.innerText = "تم بنجاح! ✅ شيكي على إيميلك دلوقتي هتلاقي كتالوج الهوكات وصلك.";
+        const formUrl = "https://docs.google.com/forms/d/e/1FAIpQLSdSXEvN7DMMC-pwXED9G5TRpe4ecQ5U7pMtsg3201d2ikinfQ/formResponse";
+        
+        await fetch(formUrl, { method: "POST", mode: "no-cors", body: fd });
+        
+        status.innerText = "تم بنجاح! ✅ شيك على إيميلك الآن (والـ Spam) هتلاقي الدليل وصلك.";
         status.style.color = "#4ade80";
         btn.innerText = "تم الإرسال بنجاح ✅";
         
-        // تحويل بسيط لصفحة الشكر أو الرئيسية بعد ثانيتين
+        // مسح الخانات
+        document.getElementById('lead-name').value = '';
+        document.getElementById('lead-email').value = '';
+        document.getElementById('lead-whatsapp').value = '';
+
+        // تحويل بعد 3 ثواني
         setTimeout(() => {
             window.location.href = "https://daolinedigital.com";
-        }, 2500);
+        }, 3000);
 
       } catch (e) {
         status.innerText = "حدث خطأ بسيط.. حاولي مرة تانية.";
+        status.style.color = "#f87171";
         btn.disabled = false;
-        btn.innerText = "أرسل لي الكتالوج الآن 🚀";
+        btn.innerText = "أرسل لي الدليل المجاني الآن 🚀";
       }
     }
 
-    // منع النسخ
+    // حماية المحتوى
     document.addEventListener('contextmenu', e => e.preventDefault());
     document.addEventListener('keydown', e => {
         if (e.ctrlKey && (e.key === 'c' || e.key === 'u' || e.key === 's')) e.preventDefault();
     });
+
+    function showToast(message) {
+      let toast = document.getElementById('security-toast');
+      if (!toast) {
+          toast = document.createElement('div');
+          toast.id = 'security-toast';
+          document.body.appendChild(toast);
+      }
+      toast.innerText = message;
+      toast.style.opacity = '1';
+      setTimeout(() => { toast.style.opacity = '0'; }, 2000);
+    }
   </script>
 </body>
 </html>
