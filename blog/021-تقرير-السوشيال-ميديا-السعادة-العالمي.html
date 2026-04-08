@@ -85,17 +85,26 @@
     .checklist li { padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.05); color: #e6edf5; display: flex; gap: 12px; align-items: flex-start; font-size: 1.2rem; }
     .checklist li::before { content: "✓"; color: var(--primary); font-weight: 900; font-size: 1.2rem; flex-shrink: 0; margin-top: 2px; }
 
-    /* lead box */
+    /* =====================================================================
+       التمبلت الثابت لصندوق التحميل (Daoline Lead Box) - مضاف منطقة النجاح 
+       ===================================================================== */
     .lead-box {
       background: linear-gradient(145deg, #1e293b, #0f172a);
       border: 3px dashed var(--primary);
       border-radius: 30px; padding: 50px 40px; margin: 70px 0; text-align: center;
-      box-shadow: 0 25px 60px rgba(192,19,166,0.3);
+      box-shadow: 0 25px 60px rgba(192, 19, 166, 0.3);
+      position: relative;
     }
     .free-badge { font-size: 4rem; font-weight: 900; color: var(--primary); margin: 10px 0 20px; line-height: 1; text-shadow: 0 10px 30px rgba(192,19,166,0.5); }
     .form-input { width: 100%; padding: 16px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.4); color: #fff; font-family: 'Tajawal'; margin-bottom: 15px; outline: none; text-align: right; font-size: 1rem; }
+    .form-input:focus { border-color: var(--primary); }
     .submit-btn { width: 100%; background: var(--primary); color: #fff; border: none; padding: 20px; border-radius: 15px; font-weight: 900; font-size: 1.3rem; cursor: pointer; transition: 0.4s; box-shadow: 0 10px 30px rgba(192,19,166,0.3); }
     .submit-btn:hover { transform: scale(1.02); background: #a00f89; }
+    
+    /* حركات وتنسيقات منطقة التحميل بعد التسجيل */
+    .success-area { display: none; margin-top: 30px; animation: fadeIn 0.5s; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    /* ===================================================================== */
 
     .footer-action { margin-top: 80px; padding: 60px 40px; background: #0f172a; border-radius: 30px; text-align: center; border: 1px solid rgba(192,19,166,0.1); }
     .footer-btn { display: inline-block; background: transparent; border: 2px solid var(--primary); color: var(--primary); padding: 16px 40px; border-radius: 15px; text-decoration: none; font-weight: 900; margin: 10px; transition: 0.3s; }
@@ -111,6 +120,7 @@
       .factors-grid { grid-template-columns: 1fr; }
       .stat-highlight { flex-direction: column; gap: 10px; }
       .stat-number { font-size: 3rem; }
+      .lead-box { padding: 30px 20px; }
     }
   </style>
 </head>
@@ -275,21 +285,36 @@
         <li>اسألي جمهورك عن علاقتهم بالسوشيال ميديا — السؤال ده بيجيب تفاعل عالي جداً</li>
       </ul>
 
-      <section class="lead-box">
+      <!-- =====================================================================
+           صندوق التحميل الثابت والمصحح (Master Template)
+           ===================================================================== -->
+      <section class="lead-box" id="lead-section">
         <h3 style="color: #fff; margin-bottom: 5px;">حمّلي الدليل الحصري مجاناً 📥</h3>
         <div class="free-badge">سوشيال سيو ✨</div>
         <p style="color: #fff; font-size: 1.4rem; font-weight: 700; margin-bottom: 30px; line-height: 1.5;">
           احصلي فوراً على <span style="color:var(--primary);">"الدليل الحصري من Daoline Digital"</span><br>
           <strong>Social Media SEO</strong> — كل اللي محتاجاه عشان تظهري في بحث السوشيال في 2026!
         </p>
-        <div style="max-width: 500px; margin: 0 auto;">
-          <input type="text"  id="name"     placeholder="اسمك الكريم.."                  class="form-input">
-          <input type="email" id="email"    placeholder="بريدك الإلكتروني.."              class="form-input">
-          <input type="tel"   id="whatsapp" placeholder="رقم الواتساب (للتواصل السريع).." class="form-input">
+        
+        <div style="max-width: 500px; margin: 0 auto;" id="form-container">
+          <input type="text"  id="name"     placeholder="اسمك الكريم.."                  class="form-input" required>
+          <input type="email" id="email"    placeholder="بريدك الإلكتروني.."              class="form-input" required>
+          <input type="tel"   id="whatsapp" placeholder="رقم الواتساب (لإرسال الملف).." class="form-input" required>
           <button onclick="handleLead()" id="submit-btn" class="submit-btn">أرسل لي الدليل المجاني الآن 🚀</button>
           <div id="status" style="margin-top: 15px; font-weight: bold;"></div>
         </div>
+
+        <!-- منطقة التحميل المباشر بعد التسجيل -->
+        <div class="success-area" id="download-area">
+          <div style="font-size: 50px; margin-bottom: 15px;">✅</div>
+          <h3 style="color: #4ade80; margin-bottom: 10px; font-size: 1.8rem;">تم تسجيل بياناتك بنجاح!</h3>
+          <p style="margin-bottom: 20px; font-size: 1.1rem; color: #e2e8f0;">جاري تحميل "دليل السوشيال سيو" فوراً..<br>اضغطي بالأسفل إذا لم يبدأ التحميل تلقائياً.</p>
+          <a id="direct-download" href="#" class="submit-btn" style="background:#4ade80; color:#0f172a; text-decoration:none; display:inline-block; max-width:300px;">
+            تحميل الملف يدوياً 📂
+          </a>
+        </div>
       </section>
+      <!-- ===================================================================== -->
 
       <p>في الختام، التقرير ده مش مجرد أخبار — ده مرآة. بيقولك إن السوشيال ميديا مش شريرة ومش مقدّسة. هي أداة — وتأثيرها بيتحدد بإيدنا إحنا اللي بنصنع المحتوى. الكريتور اللي بيفهم ده بيقدر يبني محتوى مش بس بيجيب views — بيبني مجتمع حقيقي.</p>
 
@@ -325,30 +350,38 @@
 
       try {
         btn.disabled = true; btn.innerText = "جاري تحضير الدليل...";
+        
         const fd = new FormData();
         fd.append("entry.299023128",  name);
         fd.append("entry.1712155557", email);
         fd.append("entry.1224669856", wa);
-        fd.append("entry.334049848",  "Social Seo");
+        
+        // الكود مطابق تماماً للصورة المرفوعة لضمان عمل الأتمتة وإرسال الإيميل
+        fd.append("entry.334049848",  "Social_Seo");
 
+        // إرسال البيانات لجوجل فورم بصمت
         await fetch("https://docs.google.com/forms/d/e/1FAIpQLSdSXEvN7DMMC-pwXED9G5TRpe4ecQ5U7pMtsg3201d2ikinfQ/formResponse",
           { method: "POST", mode: "no-cors", body: fd });
 
-        window.open("https://drive.google.com/file/d/19qK1TzDfmGI2QfCsYaExE94fmdUbW1Ap/view?usp=sharing", "_blank");
+        // إخفاء الفورم وإظهار منطقة التحميل المباشر
+        document.getElementById('form-container').style.display = 'none';
+        document.getElementById('download-area').style.display = 'block';
 
-        status.innerText = "تم بنجاح! ✅ الدليل اتفتح في تاب جديد.";
-        status.style.color = "#4ade80";
+        // رابط التحميل المباشر من جوجل درايف (مأخوذ من الـ ID في الصورة المرفوعة)
+        const fileId = "19qK1TzDfmGI2QfCsYaExE94fmdUbW1Ap";
+        const downloadUrl = `https://drive.google.com/uc?export=download&id=${fileId}`;
+        
+        // تعيين الرابط للزر اليدوي
+        document.getElementById('direct-download').href = downloadUrl;
 
-        const link = document.createElement('a');
-        link.href = "https://drive.google.com/file/d/19qK1TzDfmGI2QfCsYaExE94fmdUbW1Ap/view?usp=sharing";
-        link.target = "_blank";
-        link.style.cssText = "color:#4ade80;display:block;margin-top:8px;font-size:1rem;";
-        link.innerText = "⬇️ اضغطي هنا لو ما اتفتحش";
-        status.appendChild(link);
+        // تفعيل التحميل التلقائي الفوري كضمان للعميل
+        const autoLink = document.createElement('a');
+        autoLink.href = downloadUrl;
+        autoLink.click();
 
-        btn.innerText = "تم الإرسال بنجاح ✅";
       } catch (e) {
         status.innerText = "حدث خطأ بسيط.. حاولي مرة تانية.";
+        status.style.color = "#f87171";
         btn.disabled = false;
         btn.innerText = "أرسل لي الدليل المجاني الآن 🚀";
       }
