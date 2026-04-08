@@ -3,65 +3,198 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>تقرير السعادة العالمي 2026: السوشيال ميديا بتأذي مين بالظبط؟ | Daoline Digital</title>
-  <meta name="description" content="جامعة Oxford نشرت أكبر دراسة عالمية عن السوشيال ميديا والصحة النفسية. النتايج صادمة — وفيها فرصة كبيرة للكريتور العربي.">
+  <title>دليل الـ Social Media SEO في 2026 | Daoline Digital</title>
+  <meta name="description" content="كيف تتصدر نتائج البحث في تيك توك وإنستجرام؟ دليل شامل للأدوات والتكنيكات الحديثة لسنة 2026 مع دعاء سليط.">
+ 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
   <style>
-    :root { --primary: #c013a6; --bg: #020617; --surface: #0f172a; --text: #ecf1f8; --muted: #a8b8cc; }
+    :root {
+        --primary: #c013a6;
+        --bg: #020617;
+        --surface: #0f172a;
+        --text: #e2e8f0;
+        --muted: #94a3b8;
+        --secondary: #2563eb;
+    }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Tajawal', sans-serif; background: var(--bg); color: var(--text); line-height: 2.1; overflow-x: hidden; }
-    header { position: sticky; top: 0; z-index: 1000; background: rgba(15,23,42,0.96); backdrop-filter: blur(12px); border-bottom: 2px solid var(--primary); padding: 15px 20px; }
+    body { font-family: 'Tajawal', sans-serif; background: var(--bg); color: var(--text); line-height: 1.8; overflow-x: hidden; }
+    header { position: sticky; top: 0; z-index: 1000; background: rgba(15, 23, 42, 0.96); backdrop-filter: blur(12px); border-bottom: 2px solid var(--primary); padding: 15px 20px; }
     .nav { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
     .nav a { color: #fff; text-decoration: none; font-weight: 700; font-size: 0.95rem; margin-left: 20px; transition: 0.3s; }
     .nav a:hover { color: var(--primary); }
     .logo { font-size: 1.4rem; font-weight: 900; color: #fff; text-decoration: none; }
     .logo span { color: var(--primary); }
-    .container { max-width: 900px; margin: 40px auto; padding: 0 25px; }
+    .container { max-width: 1000px; margin: 40px auto; padding: 0 25px; }
     .breadcrumbs { font-size: 0.85rem; color: var(--muted); margin-bottom: 20px; }
     .breadcrumbs a { color: var(--primary); text-decoration: none; }
-    h1 { font-size: 3.4rem; font-weight: 900; color: #fff; line-height: 1.2; margin-bottom: 25px; }
-    .meta { font-size: 1rem; color: var(--muted); margin-bottom: 40px; display: flex; gap: 20px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 20px; flex-wrap: wrap; }
-    .article-content { font-size: 1.3rem; color: #e6edf5; }
-    h2 { color: var(--primary); font-size: 2.35rem; margin: 50px 0 25px; border-right: 6px solid var(--primary); padding-right: 20px; font-weight: 900; }
-    h3 { color: #fff; font-size: 1.75rem; margin: 35px 0 15px; font-weight: 800; }
-    p { margin-bottom: 38px; text-align: justify; }
-    ul { margin-bottom: 38px; padding-right: 25px; }
-    li { margin-bottom: 16px; }
-    .stat-highlight, .opportunity, .lead-box { /* ... نفس الستايل السابق ... */ }
-    /* (الستايل كامل زي ما هو، مش هطوله هنا عشان الرد ما يطولش) */
+   
+    h1 { font-size: 3rem; font-weight: 900; color: #fff; line-height: 1.2; margin-bottom: 25px; text-align: center; }
+    .meta { font-size: 0.95rem; color: var(--muted); margin-bottom: 40px; display: flex; justify-content: center; gap: 20px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 20px; }
+    .article-content { font-size: 1.2rem; color: #cbd5e1; }
+    h2 { color: var(--primary); font-size: 2rem; margin: 50px 0 25px; border-right: 6px solid var(--primary); padding-right: 20px; font-weight: 900; }
+    h3 { color: #fff; font-size: 1.5rem; margin: 35px 0 15px; font-weight: 800; }
+    p { margin-bottom: 25px; text-align: justify; }
+    /* Tables */
+    .styled-table { width: 100%; border-collapse: collapse; margin: 25px 0; font-size: 1rem; background: var(--surface); border-radius: 15px; overflow: hidden; }
+    .styled-table thead tr { background-color: var(--primary); color: #ffffff; text-align: right; }
+    .styled-table th, .styled-table td { padding: 15px 20px; border-bottom: 1px solid rgba(255,255,255,0.05); }
+    .styled-table tbody tr:hover { background: rgba(255,255,255,0.02); }
+    .badge { padding: 4px 10px; border-radius: 5px; font-size: 0.8rem; font-weight: bold; color: #fff; }
+    /* Tech Cards */
+    .tech-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 30px 0; }
+    .tech-card { background: var(--surface); border: 1px solid rgba(255,255,255,0.05); border-right: 4px solid var(--secondary); padding: 25px; border-radius: 15px; transition: 0.3s; }
+    .tech-card:hover { transform: translateY(-5px); border-color: var(--primary); }
+    /* --- Lead Box System --- */
+    .lead-box {
+      background: linear-gradient(145deg, #1e293b, #0f172a);
+      border: 3px dashed var(--primary);
+      border-radius: 30px; padding: 50px 40px; margin: 70px 0; text-align: center;
+      position: relative; box-shadow: 0 25px 60px rgba(192, 19, 166, 0.3);
+    }
+    .free-badge {
+      font-size: 4rem; font-weight: 900; color: var(--primary); margin: 10px 0 20px 0;
+      line-height: 1; text-shadow: 0 10px 30px rgba(192, 19, 166, 0.5);
+    }
+    .form-input { width: 100%; padding: 16px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.4); color: #fff; font-family: 'Tajawal'; margin-bottom: 15px; outline: none; text-align: right; font-size: 1rem; }
+    .submit-btn { width: 100%; background: var(--primary); color: #fff; border: none; padding: 20px; border-radius: 15px; font-weight: 900; font-size: 1.3rem; cursor: pointer; transition: 0.4s; box-shadow: 0 10px 30px rgba(192, 19, 166, 0.3); }
+    .submit-btn:hover { transform: scale(1.02); background: #a00f89; }
+    .footer-action { margin-top: 80px; padding: 60px 40px; background: #0f172a; border-radius: 30px; text-align: center; border: 1px solid rgba(192,19,166,0.1); }
+    .footer-btn { display: inline-block; background: transparent; border: 2px solid var(--primary); color: var(--primary); padding: 16px 40px; border-radius: 15px; text-decoration: none; font-weight: 900; margin: 10px; transition: 0.3s; }
+    .footer-btn:hover { background: var(--primary); color: #fff; }
+    #security-toast { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background-color: var(--primary); color: white; padding: 12px 24px; border-radius: 999px; font-weight: 900; box-shadow: 0 10px 25px rgba(0,0,0,0.5); z-index: 9999; opacity: 0; transition: all 0.3s ease; pointer-events: none; }
+    @media (max-width: 768px) {
+        h1 { font-size: 2rem; }
+        .tech-grid { grid-template-columns: 1fr; }
+        .nav-menu { display: none; }
+        .free-badge { font-size: 2.8rem; }
+        h2 { font-size: 1.7rem; }
+    }
   </style>
 </head>
 <body>
-  <!-- باقي الكود كامل (Header + Article + Footer) كما هو تماماً -->
-
-  <!-- صندوق التحميل المحدث (الجزء المهم) -->
-  <section class="lead-box" id="lead-section">
-    <h3 style="color: #fff; margin-bottom: 5px;">حمّلي الكتالوج الحصري مجاناً 📥</h3>
-    <div class="free-badge">Social Media SEO 2026</div>
-    <p style="color: #fff; font-size: 1.4rem; font-weight: 700; margin-bottom: 30px; line-height: 1.5;">
-      كتالوج <strong>Social Media SEO 2026</strong> — الدليل المتكامل لتحويل منصات السوشيال ميديا إلى محركات بحث قوية
-    </p>
-    
-    <div style="max-width: 500px; margin: 0 auto;" id="form-container">
-      <input type="text" id="name" placeholder="اسمك الكريم.." class="form-input" required>
-      <input type="email" id="email" placeholder="بريدك الإلكتروني.." class="form-input" required>
-      <input type="tel" id="whatsapp" placeholder="رقم الواتساب (لإرسال الملف).." class="form-input" required>
-      <button onclick="handleLead()" id="submit-btn" class="submit-btn">أرسل لي الكتالوج فوراً 🚀</button>
-      <div id="status" style="margin-top: 15px; font-weight: bold;"></div>
+  <header>
+    <div class="nav">
+      <a href="https://daolinedigital.com/" class="logo">DAOLINE <span>DIGITAL</span></a>
+      <div class="nav-menu">
+        <a href="https://daolinedigital.com/">الرئيسية</a>
+        <a href="https://daolinedigital.com/blog/" style="color: var(--primary);">المكتبة المجانية 📚</a>
+        <a href="https://daolinedigital.com/#services">الخدمات</a>
+      </div>
     </div>
-
-    <div class="success-area" id="download-area">
-      <div style="font-size: 50px; margin-bottom: 15px;">✅</div>
-      <h3 style="color: #4ade80; margin-bottom: 10px; font-size: 1.8rem;">تم تسجيل بياناتك بنجاح!</h3>
-      <p style="margin-bottom: 20px; font-size: 1.1rem; color: #e2e8f0;">جاري تحميل <strong>كتالوج Social Media SEO 2026</strong> فوراً..<br>اضغطي بالأسفل إذا لم يبدأ التحميل.</p>
-      <a id="direct-download" href="#" class="submit-btn" style="background:#4ade80; color:#0f172a; text-decoration:none; display:inline-block; max-width:320px;">
-        تحميل الكتالوج يدوياً 📂
-      </a>
+  </header>
+  <main class="container">
+    <nav class="breadcrumbs">
+        <a href="https://daolinedigital.com/">الرئيسية</a> /
+        <a href="https://daolinedigital.com/blog/">المكتبة</a> / سيو السوشيال ميديا
+    </nav>
+    <h1>🔥 دليلك الشامل لـ Social Media SEO في 2026: كيف تتصدر الخوارزميات؟</h1>
+   
+    <div class="meta">
+      <span>👤 إعداد: دعاء سليط</span>
+      <span>⏱️ القراءة: 10 دقائق</span>
+      <span>⭐ تحديث أبريل 2026</span>
     </div>
-  </section>
+    <article class="article-content">
+      <p>في 2026، تغيرت قواعد اللعبة تماماً. لم يعد البحث مقتصرًا على جوجل، بل أصبح تيك توك وإنستجرام هما المحركين الأساسيين للبحث لدى الجيل الجديد. لكي تنجح علامتك التجارية، يجب أن تفهم كيف تجعل الخوارزمية تعرض فيديوهاتك لكل من يبحث عن حل لمشكلته.</p>
+      <h2>أولاً: أهم 10 أدوات لاستكشاف الكلمات المفتاحية</h2>
+      <p>بدلاً من التخمين، استخدم هذه الأدوات الاحترافية لمعرفة ما يكتبه جمهورك في شريط البحث فعلياً:</p>
+      <table class="styled-table">
+        <thead>
+          <tr>
+            <th>الأداة</th>
+            <th>المنصة المستهدفة</th>
+            <th>أهم ميزة</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>TikTok Creative Center</strong></td>
+            <td><span class="badge" style="background: #000;">TikTok</span></td>
+            <td>اكتشاف الكلمات والتريندات الصاعدة.</td>
+          </tr>
+          <tr>
+            <td><strong>Keyword Tool.io</strong></td>
+            <td><span class="badge" style="background: #64748b;">All Social</span></td>
+            <td>استخراج الاقتراحات التلقائية (Autocomplete).</td>
+          </tr>
+          <tr>
+            <td><strong>TubeBuddy + VidIQ</strong></td>
+            <td><span class="badge" style="background: #ef4444;">YouTube</span></td>
+            <td>تحليل كلمات المنافسين ونمو القنوات.</td>
+          </tr>
+          <tr>
+            <td><strong>Inflact</strong></td>
+            <td><span class="badge" style="background: #e1306c;">Instagram</span></td>
+            <td>توليد هاشتاجات دقيقة بالذكاء الاصطناعي.</td>
+          </tr>
+          <tr>
+            <td><strong>OutlierKit</strong></td>
+            <td><span class="badge" style="background: #2563eb;">YouTube</span></td>
+            <td>تحليل الفيديوهات التي حققت نمواً "شاذًا" وسريعاً.</td>
+          </tr>
+        </tbody>
+      </table>
+      <h2>ثانياً: التكنيكات الجديدة لـ Social SEO</h2>
+      <div class="tech-grid">
+        <div class="tech-card">
+          <h3>1. القاعدة الذهبية (الكلمة المسموعة) ⏱️</h3>
+          <p>الخوارزميات الآن تستخدم تقنية ASR للتعرف على الصوت. انطق الكلمة المفتاحية في أول 3 ثوانٍ من الفيديو واكتبها كـ Text Overlay على الشاشة.</p>
+        </div>
+        <div class="tech-card">
+          <h3>2. نية البحث (Search Intent) 🧠</h3>
+          <p>ركز على الأسئلة المباشرة. بدلاً من "صناعة المحتوى"، استخدم "إزاي أبدأ صناعة محتوى بدون معدات في 2026".</p>
+        </div>
+        <div class="tech-card">
+          <h3>3. سد فجوة البحث 🔍</h3>
+          <p>ابحث عن المواضيع التي يكتبها الناس ولا يجدون لها فيديوهات عالية الجودة، وكن أنت أول من يقدم الحل.</p>
+        </div>
+        <div class="tech-card">
+          <h3>4. تطبيق E-E-A-T 🏆</h3>
+          <p>أثبت خبرتك العملية في أول 10 ثوانٍ. الخوارزمية ترفع من شأن المحتوى الذي يقدمه خبراء حقيقيون وليس مجرد ناقلين للمعلومات.</p>
+        </div>
+      </div>
 
+      <!-- === صندوق التحميل المعدل (إيميل فقط) === -->
+      <section class="lead-box">
+        <h3 style="color: #fff; margin-bottom: 5px;">كتالوج Social Media SEO 2026 مجاناً 📥</h3>
+        <div class="free-badge">Social Media SEO ✨</div>
+        <p style="color: #fff; font-size: 1.4rem; font-weight: 700; margin-bottom: 30px; line-height: 1.5;">
+          احصلي فوراً على <span style="color:var(--primary);">كتالوج Social Media SEO 2026</span><br>
+          الدليل المتكامل لتصدر نتائج البحث في تيك توك وإنستجرام ويوتيوب
+        </p>
+       
+        <div style="max-width: 500px; margin: 0 auto;">
+          <input type="text" id="name" placeholder="اسمك الكريم.." class="form-input">
+          <input type="email" id="email" placeholder="بريدك الإلكتروني.." class="form-input">
+          <input type="tel" id="whatsapp" placeholder="رقم الواتساب (للتواصل السريع).." class="form-input">
+          <button onclick="handleLead()" id="submit-btn" class="submit-btn">أرسل لي الكتالوج المجاني الآن 🚀</button>
+          <div id="status" style="margin-top: 15px; font-weight: bold;"></div>
+        </div>
+      </section>
+
+      <h2>ثالثاً: تحليل المحتوى المنافس 🕵️‍♂️</h2>
+      <p>لا تقلد منافسيك، بل ابحث عن "الكنز" في تعليقات جمهورهم. ابحث عن الأسئلة التي لم يُجب عليها المنافس، وحولها فوراً إلى فيديو رد (Video Reply) لتخطف هذا الجمهور إلى صفحتك.</p>
+      <h2>رابعاً: كيف نطوع التكنيك للمحتوى العربي؟</h2>
+      <p>المحتوى العربي له طبيعة خاصة. إليكِ السر:</p>
+      <ul>
+        <li><strong>في الصوت والنص المرئي:</strong> استخدمي اللهجة العامية الدارجة التي يكتبها المستخدم بيده في شريط البحث (مثل: "ازاي اخس" وليس "كيف أفقد الوزن").</li>
+        <li><strong>في الوصف (Caption):</strong> ادمجي بين الكلمة العامية والفصحى لاصطياد الخوارزمية من الجهتين.</li>
+      </ul>
+    </article>
+    <section class="footer-action">
+      <h3 style="margin-bottom: 10px; color: #fff;">جاهزة لتصدر نتائج البحث مع Daoline؟ 🚀</h3>
+      <p style="color: var(--muted); margin-bottom: 30px;">استكشفي بقية خدماتنا الاحترافية أو عودي للمكتبة للمزيد من الدروس.</p>
+      <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+        <a href="https://daolinedigital.com/blog/" class="footer-btn">الرجوع للمكتبة 🏛️</a>
+        <a href="https://daolinedigital.com/" class="footer-btn" style="background: var(--primary); color:#fff;">الخدمات والحلول</a>
+      </div>
+    </section>
+  </main>
+  <footer style="text-align: center; padding: 50px 20px; color: var(--muted); font-size: 0.9rem; border-top: 1px solid rgba(255,255,255,0.05);">
+    © 2026 Daoline Digital Academy | إعداد دعاء سليط | جميع الحقوق محفوظة
+  </footer>
   <script>
     async function handleLead() {
       const name = document.getElementById('name').value.trim();
@@ -69,43 +202,63 @@
       const wa = document.getElementById('whatsapp').value.trim();
       const status = document.getElementById('status');
       const btn = document.getElementById('submit-btn');
-
-      if (!name || !email || !wa) {
+      
+      if(!name || !email || !wa) {
         status.innerText = "من فضلك كملي البيانات الأول! ⚠️";
         status.style.color = "#f87171";
         return;
       }
-
+      
       try {
         btn.disabled = true; 
         btn.innerText = "جاري تحضير الكتالوج...";
-
+        
         const fd = new FormData();
         fd.append("entry.299023128", name);
         fd.append("entry.1712155557", email);
         fd.append("entry.1224669856", wa);
-        fd.append("entry.334049848", "Social_Seo");   // ← مهم جداً
-
-        await fetch("https://docs.google.com/forms/d/e/1FAIpQLSdSXEvN7DMMC-pwXED9G5TRpe4ecQ5U7pMtsg3201d2ikinfQ/formResponse", 
-          { method: "POST", mode: "no-cors", body: fd });
-
-        document.getElementById('form-container').style.display = 'none';
-        document.getElementById('download-area').style.display = 'block';
-
-        const fileId = "19qK1TzDfmGI2QfCsYaExE94fmdUbW1Ap";   // ← الملف الجديد Social Media SEO
-        const downloadUrl = `https://drive.google.com/uc?export=download&id=${fileId}`;
-
-        document.getElementById('direct-download').href = downloadUrl;
-
-        const autoLink = document.createElement('a');
-        autoLink.href = downloadUrl;
-        autoLink.click();
+        fd.append("entry.334049848", "Social_Seo");   // ← مهم: اسم الكتالوج الجديد
+        
+        await fetch("https://docs.google.com/forms/d/e/1FAIpQLSdSXEvN7DMMC-pwXED9G5TRpe4ecQ5U7pMtsg3201d2ikinfQ/formResponse", {
+            method: "POST",
+            mode: "no-cors",
+            body: fd
+        });
+        
+        status.innerText = "تم بنجاح! ✅ شيكي على إيميلك الآن (والـ Spam) هتلاقي الكتالوج وصلك.";
+        status.style.color = "#4ade80";
+        btn.innerText = "تم الإرسال بنجاح ✅";
+        
+        // تنظيف الحقول
+        document.getElementById('name').value = '';
+        document.getElementById('email').value = '';
+        document.getElementById('whatsapp').value = '';
       } catch (e) {
         status.innerText = "حدث خطأ بسيط.. حاولي مرة تانية.";
         status.style.color = "#f87171";
         btn.disabled = false;
-        btn.innerText = "أرسل لي الكتالوج فوراً 🚀";
+        btn.innerText = "أرسل لي الكتالوج المجاني الآن 🚀";
       }
+    }
+
+    // حماية المحتوى (كما في الكود الأصلي)
+    document.addEventListener('contextmenu', e => { e.preventDefault(); showToast("غير مسموح بنسخ المحتوى 🚫"); });
+    document.addEventListener('keydown', e => {
+        if (e.ctrlKey && (e.key === 'c' || e.key === 'u' || e.key === 's')) {
+            e.preventDefault();
+            showToast("غير مسموح بنسخ المحتوى 🚫");
+        }
+    });
+    function showToast(message) {
+      let toast = document.getElementById('security-toast');
+      if (!toast) {
+          toast = document.createElement('div');
+          toast.id = 'security-toast';
+          document.body.appendChild(toast);
+      }
+      toast.innerText = message;
+      toast.style.opacity = '1';
+      setTimeout(() => { toast.style.opacity = '0'; }, 2000);
     }
   </script>
 </body>
