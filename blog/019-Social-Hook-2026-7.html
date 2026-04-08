@@ -8,219 +8,198 @@
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
 
   <style>
-    :root { --primary: #c013a6; --bg: #020617; --surface: #0f172a; --text: #e2e8f0; --muted: #94a3b8; }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Tajawal', sans-serif; background: var(--bg); color: var(--text); line-height: 1.8; overflow-x: hidden; }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-    header { position: sticky; top: 0; z-index: 1000; background: rgba(15, 23, 42, 0.96); backdrop-filter: blur(12px); border-bottom: 2px solid var(--primary); padding: 15px 20px; }
-    .nav { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
-    .nav a { color: #fff; text-decoration: none; font-weight: 700; font-size: 0.95rem; margin-left: 20px; transition: 0.3s; }
-    .nav a:hover { color: var(--primary); }
-    .logo { font-size: 1.4rem; font-weight: 900; color: #fff; text-decoration: none; }
+    :root {
+      --primary: #c013a6;
+      --bg: #07080c;
+      --surface: #0f1220;
+      --text: #f3f4f6;
+      --muted: #94a3b8;
+      --border: rgba(255,255,255,0.08);
+    }
+
+    body {
+      font-family: 'Tajawal', sans-serif;
+      background: radial-gradient(circle at 15% 15%, rgba(192,19,166,0.12), transparent 45%), var(--bg);
+      color: var(--text);
+      line-height: 1.8;
+      font-size: 19px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ====== HEADER ====== */
+    .site-header {
+      position: sticky; top: 0; z-index: 1000; width: 100%;
+      background: rgba(7, 8, 12, 0.85); backdrop-filter: blur(20px);
+      border-bottom: 2px solid var(--primary);
+    }
+    .header-inner {
+      max-width: 1200px; margin: 0 auto; padding: 0 24px;
+      display: flex; align-items: center; justify-content: space-between; height: 75px;
+    }
+    .logo { font-size: 22px; font-weight: 900; color: #fff; text-decoration: none; }
     .logo span { color: var(--primary); }
 
-    .container { max-width: 900px; margin: 40px auto; padding: 0 25px; }
-    .breadcrumbs { font-size: 0.85rem; color: var(--muted); margin-bottom: 20px; }
-    .breadcrumbs a { color: var(--primary); text-decoration: none; }
+    /* ====== ARTICLE BODY ====== */
+    .article-body { max-width: 850px; margin: 0 auto; padding: 60px 24px 100px; }
     
-    h1 { font-size: 3.2rem; font-weight: 900; color: #fff; line-height: 1.2; margin-bottom: 25px; }
-    .meta { font-size: 0.95rem; color: var(--muted); margin-bottom: 40px; display: flex; gap: 20px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 20px; }
+    h1 { font-size: clamp(30px, 6vw, 48px); font-weight: 900; color: #fff; line-height: 1.2; margin-bottom: 30px; text-align: center; }
+    
+    .h2-heading { display: flex; align-items: center; gap: 15px; font-size: 28px; font-weight: 900; color: #fff; margin: 50px 0 25px; }
+    .h2-heading .bar { width: 6px; height: 35px; background: var(--primary); border-radius: 10px; }
+    
+    p { margin-bottom: 25px; text-align: justify; color: #cbd5e1; }
+    .hl { background: rgba(192,19,166,0.25); color: #f472b6; padding: 2px 8px; border-radius: 6px; font-weight: 700; }
 
-    .article-content { font-size: 1.2rem; color: #cbd5e1; }
-    h2 { color: var(--primary); font-size: 2.2rem; margin: 50px 0 25px; border-right: 6px solid var(--primary); padding-right: 20px; font-weight: 900; }
-    h3 { color: #fff; font-size: 1.6rem; margin: 35px 0 15px; font-weight: 800; }
-    p { margin-bottom: 30px; text-align: justify; }
-    ul { margin-bottom: 30px; padding-right: 25px; }
-    li { margin-bottom: 12px; }
-
-    .lead-box { 
-      background: linear-gradient(145deg, #1e293b, #0f172a); 
-      border: 3px dashed var(--primary); 
-      border-radius: 30px; padding: 50px 40px; margin: 70px 0; text-align: center;
-      position: relative; box-shadow: 0 25px 60px rgba(192, 19, 166, 0.3);
+    /* Info Box */
+    .info-box {
+      border-radius: 24px; padding: 35px; margin: 40px 0;
+      background: linear-gradient(135deg, rgba(192,19,166,0.15), rgba(15,23,42,0.6));
+      border: 1px solid rgba(192,19,166,0.3);
     }
-    .free-badge { 
-      font-size: 4rem; font-weight: 900; color: var(--primary); margin: 10px 0 20px 0; 
-      line-height: 1; text-shadow: 0 10px 30px rgba(192, 19, 166, 0.5);
+    .box-title { color: var(--primary); font-weight: 900; font-size: 22px; margin-bottom: 15px; }
+
+    /* FORM BOX */
+    .lead-box {
+      border: 2px dashed var(--primary); border-radius: 24px; padding: 45px 30px; margin: 60px 0;
+      text-align: center; background: rgba(192, 19, 166, 0.05);
     }
+    .form-inp {
+      width: 100%; padding: 18px; margin-bottom: 15px; border-radius: 15px;
+      border: 1px solid var(--border); background: rgba(0,0,0,0.4); color: #fff;
+      font-family: inherit; outline: none; font-size: 17px;
+    }
+    .submit-btn {
+      width: 100%; padding: 22px; background: var(--primary); color: #fff;
+      border: none; border-radius: 15px; font-weight: 900; font-size: 20px;
+      cursor: pointer; transition: 0.3s; box-shadow: 0 10px 30px rgba(192,19,166,0.3);
+    }
+    .submit-btn:hover { background: #a00f89; transform: translateY(-3px); }
+    .submit-btn:disabled { opacity: 0.6; cursor: not-allowed; }
 
-    .form-input { width: 100%; padding: 16px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.4); color: #fff; font-family: 'Tajawal'; margin-bottom: 15px; outline: none; text-align: right; font-size: 1rem; }
-    .submit-btn { width: 100%; background: var(--primary); color: #fff; border: none; padding: 20px; border-radius: 15px; font-weight: 900; font-size: 1.3rem; cursor: pointer; transition: 0.4s; box-shadow: 0 10px 30px rgba(192, 19, 166, 0.3); }
-    .submit-btn:hover { transform: scale(1.02); background: #a00f89; }
+    .success-area { display: none; margin-top: 30px; animation: fadeIn 0.5s; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-    .footer-action { margin-top: 80px; padding: 60px 40px; background: #0f172a; border-radius: 30px; text-align: center; border: 1px solid rgba(192,19,166,0.1); }
-    .footer-btn { display: inline-block; background: transparent; border: 2px solid var(--primary); color: var(--primary); padding: 16px 40px; border-radius: 15px; text-decoration: none; font-weight: 900; margin: 10px; transition: 0.3s; }
-    .footer-btn:hover { background: var(--primary); color: #fff; }
-
-    @media (max-width: 768px) { h1 { font-size: 2.2rem; } .nav-menu { display: none; } .free-badge { font-size: 2.8rem; } h2 { font-size: 1.7rem; } }
+    footer { text-align: center; padding: 60px; border-top: 1px solid var(--border); color: var(--muted); font-size: 15px; }
   </style>
 </head>
 <body>
 
-  <header>
-    <div class="nav">
-      <a href="https://daolinedigital.com/" class="logo">DAOLINE <span>DIGITAL</span></a>
-      <div class="nav-menu">
-        <a href="https://daolinedigital.com/">الرئيسية</a>
-        <a href="https://daolinedigital.com/blog/" style="color: var(--primary);">المكتبة المجانية 📚</a>
-        <a href="https://daolinedigital.com/#services">الخدمات</a>
-      </div>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="https://daolinedigital.com/" class="logo">DAOLINE<span>DIGITAL</span></a>
+      <a href="https://daolinedigital.com/blog/" style="color:var(--primary); text-decoration:none; font-weight:700; font-size:16px;">المكتبة الرقمية 📚</a>
     </div>
   </header>
 
-  <main class="container">
-    <nav class="breadcrumbs">
-        <a href="https://daolinedigital.com/">الرئيسية</a> / 
-        <a href="https://daolinedigital.com/blog/">المكتبة</a> / مقال الهوكات السحرية
-    </nav>
-
+  <main class="article-body">
     <h1>إزاي تكتب هوك يوقف السكرول في 3 ثواني: الدليل الشامل 2026</h1>
     
-    <div class="meta">
-      <span>👤 بقلم: دعاء سليط</span>
-      <span>⏱️ القراءة: 8 دقائق</span>
-      <span>⭐ مرجع حصري</span>
+    <p>في 2026، خوارزميات السوشيال ميديا بقت شرسة بشكل مش متخيله. كلهم بيستخدموا <span class="hl">نظام الـ 3 ثواني الذهبية</span>. يعني لو الفيديو بتاعك ملفتهملش في أول لحظة، إنتِ خسرتِ العميل ده للأبد.</p>
+
+    <div class="info-box">
+      <div class="box-title">خلاصة خبرة 15 عاماً 💡</div>
+      <p>في Daoline Digital، قمنا بتحليل مئات الحملات الناجحة، ولقينا إن الهوك القوي بيزود معدل البقاء (Retention) بنسبة 400% عن الفيديوهات العادية اللي بتبدأ بمقدمات تقليدية.</p>
     </div>
 
-    <article class="article-content">
-      <p>في عام 2026، خوارزميات السوشيال ميديا بقت شرسة بشكل مش متخيله. كلهم بيستخدموا نظام <strong>"الـ 3 ثواني الذهبية"</strong>. يعني لو الفيديو بتاعك ملفتهملش في أول لحظة، إنتِ خسرتِ العميل ده للأبد.</p>
+    <h2 class="h2-heading"><span class="bar"></span> إيه هو الهوك (Hook) بالظبط؟</h2>
+    <p>الهوك هو "الخطاف" اللي بيخطف عين العميل وهو بيعمل سكرول سريع. هو أداة نفسية بتلعب على الفضول أو الخوف من ضياع الفرصة. الهوك الصح بيخلي العقل يقول: "استنى.. أنا لازم أعرف إيه ده!".</p>
 
-      <h2>أولاً: إيه هو الهوك (Hook) بالظبط؟</h2>
-      <p>الهوك هو "الخطاف" اللي بيخطف عين العميل وهو بيعمل سكرول سريع. هو أداة نفسية بتلعب على الفضول أو الخوف من ضياع الفرصة. الهوك الصح بيخلي العقل يقول: "استنى.. أنا لازم أعرف إيه ده!".</p>
+    <div class="lead-box" id="lead-section">
+      <h2 style="margin-bottom:10px; color:#fff;">نزّلي "كتالوج الهوكات السحرية" مجاناً 🎁</h2>
+      <p style="margin-bottom:25px; font-size: 17px; color: var(--muted);">سجلي بياناتك وهيتم تحميل الكتالوج اللي فيه 50+ هوك لعام 2026 فوراً.</p>
       
-      <h3>خلاصة خبرة 15 عاماً 💡</h3>
-      <p>في Daoline Digital، قمنا بتحليل مئات الحملات الناجحة، ولقينا إن الهوك القوي بيزود معدل البقاء (Retention Rate) بنسبة 400% عن الفيديوهات العادية اللي بتبدأ بمقدمات تقليدية ومملة.</p>
-
-      <!-- صندوق التحميل المباشر والتسجيل (التمبلت الثابت) -->
-      <section class="lead-box">
-        <h3 style="color: #fff; margin-bottom: 5px;">عايزة هوكات جاهزة لمجالك؟ 🧐</h3>
-        <div class="free-badge">كتالوج مجاني ✨</div>
-        <p style="color: #fff; font-size: 1.4rem; font-weight: 700; margin-bottom: 30px; line-height: 1.5;">
-          احصلي فوراً على <span style="color:var(--primary);">"كتالوج الهوكات السحرية 2026"</span><br>أكثر من 50 صيغة جاهزة للنسخ والتصوير!
-        </p>
-        
-        <div style="max-width: 500px; margin: 0 auto;">
-          <input type="text" id="name" placeholder="اسمك الكريم.." class="form-input">
-          <input type="email" id="email" placeholder="بريدك الإلكتروني.." class="form-input">
-          <input type="tel" id="whatsapp" placeholder="رقم الواتساب (للتواصل السريع).." class="form-input">
-          <button onclick="handleLead()" id="submit-btn" class="submit-btn">حملي الكتالوج بصيغة PDF فوراً 🚀</button>
-          <div id="status" style="margin-top: 15px; font-weight: bold; font-size: 1.1rem;"></div>
-        </div>
-      </section>
-
-      <h2>ثانياً: أقوى نماذج الهوكات في 2026</h2>
-      <p>عشان نسهل عليكي، دي أمثلة عملية لأقوى الهوكات اللي شغالة دلوقتي وتقدري تطبقيها فوراً على محتواك:</p>
-      
-      <h3>1. هوك "الخسارة الوشيكة" (FOMO)</h3>
-      <p><strong>المبدأ:</strong> الناس تخاف من خسارة شيء تملكه أكثر من رغبتها في ربح شيء جديد.<br>
-      <strong>المثال:</strong> "إنت بتعمل الغلطة دي كل يوم في [مجالك] وإنت مش حاسس.. وشوف الكارثة اللي هتحصلك!"</p>
-
-      <h3>2. هوك "القصة والسرد" (Storytelling)</h3>
-      <p><strong>المبدأ:</strong> الناس بتعشق القصص اللي فيها تحدي ونجاح.<br>
-      <strong>المثال:</strong> "عميل جالي وهو فاقد الأمل تماماً وقالي مستحيل أوصل للنتيجة دي.. شوفوا عملنا إيه النهاردة!"</p>
-
-      <h3>3. هوك "الصدمة وكسر المألوف" (Shock)</h3>
-      <p><strong>المبدأ:</strong> مهاجمة فكرة شائعة لتبدو كخبير يمتلك الحقيقة.<br>
-      <strong>المثال:</strong> "شركات [مجالك] بيضحكوا عليك وعايزينك تشتري المنتج ده.. دي الحقيقة الصادمة!"</p>
-
-      <h2>ثالثاً: تريكة من Daoline (إزاي تقول الهوك صح؟)</h2>
-      <p>الهوك المكتوب مش كفاية لو أداءك قدام الكاميرا ضعيف. لما تيجي تصور التزم بالآتي:</p>
-      <ul>
-        <li><strong>بلاش مقدمات:</strong> إياك تبدأ بـ "السلام عليكم". ادخل في الهوك فوراً (Pattern Interrupt).</li>
-        <li><strong>لغة الجسد:</strong> اتحرك خطوة لقدام ناحية الكاميرا وأنت بتقول الهوك عشان تخلق ديناميكية.</li>
-        <li><strong>النص على الشاشة:</strong> لازم الهوك يكون مكتوب بخط كبير وواضح في أول 3 ثواني للناس اللي بتتفرج من غير صوت.</li>
-      </ul>
-
-      <h2>رابعاً: معادلة الفيديو الفيروسي الكاملة</h2>
-      <p>الهوك لوحده مش كفاية، عشان الفيديو يبيع بجد لازم تمشي على الهيكل ده:</p>
-      <ul>
-        <li><strong>0-3 ثواني:</strong> الهوك (خطف العين والانتباه).</li>
-        <li><strong>3-10 ثواني:</strong> التثبيت (أكدله إنه في المكان الصح وإقناعه يكمل).</li>
-        <li><strong>10-45 ثانية:</strong> القيمة الحقيقية (المعلومة أو الحل السريع اللي داخل عشانه).</li>
-        <li><strong>45-60 ثانية:</strong> الطلب المباشر CTA (اعمل سيف، فولو، أو ابعت رسالة).</li>
-      </ul>
-      <p>في الختام، تذكري أن الانتباه هو العملة الأغلى في 2026. عندما تقدمين قيمة حقيقية مغلفة بهوك ذكي، ستجدين الخوارزمية هي من تبحث عنكِ وليس العكس.</p>
-    </article>
-
-    <section class="footer-action">
-      <h3 style="margin-bottom: 10px; color: #fff;">جاهزة لتطوير مشروعك مع Daoline؟ 🚀</h3>
-      <p style="color: var(--muted); margin-bottom: 30px;">استكشفي بقية خدماتنا الاحترافية أو عودي للمكتبة للمزيد من الدروس.</p>
-      <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
-        <a href="https://daolinedigital.com/blog/" class="footer-btn">الرجوع للمكتبة 🏛️</a>
-        <a href="https://daolinedigital.com/" class="footer-btn" style="background: var(--primary); color:#fff;">الخدمات والحلول</a>
+      <div style="max-width: 500px; margin: 0 auto;" id="form-container">
+        <input type="text" id="user-name" placeholder="اسمك الكريم.." class="form-inp">
+        <input type="email" id="user-email" placeholder="بريدك الإلكتروني الحقيقي.." class="form-inp">
+        <input type="tel" id="user-whatsapp" placeholder="رقم الواتساب (لإرسال الكتالوج).." class="form-inp">
+        <button onclick="handleLeadSubmission()" id="submit-button" class="submit-btn">سجل وحمل الكتالوج الآن 🚀</button>
+        <div id="form-status" style="margin-top:15px; font-weight:800; font-size:15px;"></div>
       </div>
-    </section>
+
+      <div class="success-area" id="download-area">
+        <div style="font-size: 50px; margin-bottom: 15px;">✅</div>
+        <h3 style="color: #4ade80; margin-bottom: 10px;">تم تسجيل بياناتك بنجاح!</h3>
+        <p style="margin-bottom: 20px;">اضغطي على الزرار تحت لو التحميل مابدأش لوحده، وراجعى إيميلك.</p>
+        <a id="direct-download" href="#" class="submit-btn" style="background:#4ade80; text-decoration:none; display:inline-block;" download="Daoline-Hooks-Catalog-2026.pdf">تحميل الملف الآن 📂</a>
+      </div>
+    </div>
+
+    <h2 class="h2-heading"><span class="bar"></span> قاعدة الـ 3 ثواني في 2026</h2>
+    <p>بلاش مقدمات مملة! "السلام عليكم" أو "أهلاً بيكم" بتضيع أهم ثواني في الفيديو. ادخلي في الموضوع فوراً. استخدمي جملة صادمة، أو سؤال بيضرب "نقطة الألم" عند جمهورك.</p>
+
+    <div class="info-box">
+        <div class="box-title">معادلة الفيديو الفيروسي ✨</div>
+        <p>• <b>0-3 ثواني:</b> الهوك (خطف العين).<br>
+           • <b>3-10 ثواني:</b> التثبيت (ليه يكمل؟).<br>
+           • <b>10-45 ثانية:</b> القيمة الحقيقية.<br>
+           • <b>45-60 ثانية:</b> الطلب المباشر (CTA).</p>
+    </div>
   </main>
 
-  <footer style="text-align: center; padding: 50px 20px; color: var(--muted); font-size: 0.9rem; border-top: 1px solid rgba(255,255,255,0.05);">
-    © 2026 Daoline Digital Academy | إعداد دعاء سليط | جميع الحقوق محفوظة
+  <footer>
+    © 2026 Daoline Digital Academy | إعداد دعاء سليط
   </footer>
 
   <script>
-    // كود الـ PDF لكتالوج الهوكات (مشفر لضمان التحميل الفوري المباشر)
+    // بيانات ملف الـ PDF المشفرة للتحميل المباشر
     const PDF_BASE64 = "JVBERi0xLjQKJZOMi54gUmVwb3J0TGFiIEdlbmVyYXRlZCBQREYgZG9jdW1lbnQgKG9wZW5zb3VyY2UpCjEgMCBvYmoKPDwKL0YxIDIgMCBSIC9GMiAzIDAgUiAvRjMgNCAwIFIgL0Y0IDYgMCBSIC9GNSAxMCAwIFIKPj4KZW5kb2JqCjIgMCBvYmoKPDwKL0Jhc2VGb250IC9IZWx2ZXRpY2EgL0VuY29kaW5nIC9XaW5BbnNpRW5jb2RpbmcgL05hbWUgL0YxIC9TdWJ0eXBlIC9UeXBlMSAvVHlwZSAvRm9udAo+PgplbmRvYmoKMyAwIG9iago8PAovQmFzZUZvbnQgL0hlbHZldGljYS1Cb2xkIC9FbmNvZGluZyAvV2luQW5zaUVuY29kaW5nIC9OYW1lIC9GMiAvU3VidHlwZSAvVHlwZTEgL1R5cGUgL0ZvbnQKPj4KZW5kb2JqCjQgMCBvYmoKPDwKL0Jhc2VGb250IC9aYXBmRGluZ2JhdHMgL05hbWUgL0YzIC9TdWJ0eXBlIC9UeXBlMSAvVHlwZSAvRm9udAo+PgplbmRvYmoKNSAwIG9iago8PAovQ29udGVudHMgMTcgMCBSIC9NZWRpYUJveCBbIDAgMCA1OTUuMjc1NiA4NDEuODg5OCBdIC9QYXJlbnQgMTYgMCBSIC9SZXNvdXJjZXMgPDwKL0ZvbnQgMSAwIFIgL1Byb2NTZXQgWyAvUERGIC9UZXh0IC9JbWFnZUIgL0ltYWdlQyAvSW1hZ2VJIF0KPj4gL1JvdGF0ZSAwIC9UcmFucyA8PAoKPj4gCiAgL1R5cGUgL1BhZ2UKPj4KZW5kb2JqCjYgMCBvYmoKPDwKL0Jhc2VGb250IC9IZWx2ZXRpY2EtT2JsaXF1ZSAvRW5jb2RpbmcgL1dpbkFuc2lFbmNvZGluZyAvTmFtZSAvRjQgL1N1YnR5cGUgL1R5cGUxIC9UeXBlIC9Gb250Cj4+CmVuZG9iago3IDAgb2JqCjw8Ci9Db250ZW50cyAxOCAwIFIgL01lZGlhQm94IFsgMCAwIDU5NS4yNzU2IDg0MS44ODk4IF0gL1BhcmVudCAxNiAwIFIgL1Jlc291cmNlcyA8PAovRm9udCAxIDAgUiAvUHJvY1NldCBbIC9QREYgL1RleHQgL0ltYWdlQiAvSW1hZ2VDIC9JbWFnZUkgXQo+PiAvUm90YXRlIDAgL1RyYW5zIDw8Cgo+PiAKICAvVHlwZSAvUGFnZQo+PgplbmRvYmoKOCAwIG9iago8PAovQ29udGVudHMgMTkgMCBSIC9NZWRpYUJveCBbIDAgMCA1OTUuMjc1NiA4NDEuODg5OCBdIC9QYXJlbnQgMTYgMCBSIC9SZXNvdXJjZXMgPDwKL0ZvbnQgMSAwIFIgL1Byb2NTZXQgWyAvUERGIC9UZXh0IC9JbWFnZUIgL0ltYWdlQyAvSW1hZ2VJIF0KPj4gL1JvdGF0ZSAwIC9UcmFucyA8PAoKPj4gCiAgL1R5cGUgL1BhZ2UKPj4KZW5kb2JqCjkgMCBvYmoKPDwKL0NvbnRlbnRzIDIwIDAgUiAvTWVkaWFCb3ggWyAwIDAgNTk1LjI3NTYgODQxLjg4OTggXSAvUGFyZW50IDE2IDAgUiAvUmVzb3VyY2VzIDw8Ci9Gb250IDEgMCBSIC9Qcm9jU2V0IFsgL1BERiAvVGV4dCAvSW1hZ2VCIC9JbWFnZUMgL0ltYWdlSSBdCj4+IC9Sb3RhdGUgMCAvVHJhbnMgPDwKCj4+IAogIC9UeXBlIC9QYWdlCj4+CmVuZG9iagoxMCAwIG9iago8PAovQmFzZUZvbnQgL0NvdXJpZXIgL0VuY29kaW5nIC9XaW5BbnNpRW5jb2RpbmcgL05hbWUgL0Y1IC9TdWJ0eXBlIC9UeXBlMSAvVHlwZSAvRm9udAo+PgplbmRvYmoKMTEgMCBvYmoKPDwKL0NvbnRlbnRzIDIxIDAgUiAvTWVkaWFCb3ggWyAwIDAgNTk1LjI3NTYgODQxLjg4OTggXSAvUGFyZW50IDE2IDAgUiAvUmVzb3VyY2VzIDw8Ci9Gb250IDEgMCBSIC9Qcm9jU2V0IFsgL1BERiAvVGV4dCAvSW1hZ2VCIC9JbWFnZUMgL0ltYWdlSSBdCj4+IC9Sb3RhdGUgMCAvVHJhbnMgPDwKCj4+IAogIC9UeXBlIC9QYWdlCj4+CmVuZG9iagoxMiAwIG9iago8PAovQ29udGVudHMgMjIgMCBSIC9NZWRpYUJveCBbIDAgMCA1OTUuMjc1NiA4NDEuODg5OCBdIC9QYXJlbnQgMTYgMCBSIC9SZXNvdXJjZXMgPDwKL0ZvbnQgMSAwIFIgL1Byb2NTZXQgWyAvUERGIC9UZXh0IC9JbWFnZUIgL0ltYWdlQyAvSW1hZ2VJIF0KPj4gL1JvdGF0ZSAwIC9UcmFucyA8PAoKPj4gCiAgL1R5cGUgL1BhZ2UKPj4KZW5kb2JqCjEzIDAgb2JqCjw8Ci9Db250ZW50cyAyMyAwIFIgL01lZGlhQm94IFsgMCAwIDU5NS4yNzU2IDg0MS44ODk4IF0gL1BhcmVudCAxNiAwIFIgL1Jlc291cmNlcyA8PAovRm9udCAxIDAgUiAvUHJvY1NldCBbIC9QREYgL1RleHQgL0ltYWdlQiAvSW1hZ2VDIC9JbWFnZUkgXQo+PiAvUm90YXRlIDAgL1RyYW5zIDw8Cgo+PiAKICAvVHlwZSAvUGFnZQo+PgplbmRvYmoKMTQgMCBvYmoKPDwKL1BhZ2VNb2RlIC9Vc2VOb25lIC9QYWdlcyAxNiAwIFIgL1R5cGUgL0NhdGFsb2cKPj4KZW5kb2JqCjE1IDAgb2JqCjw8Ci9BdXRob3IgKGFub255bW91cykgL0NyZWF0aW9uRGF0ZSAoRDoyMDI2MDQwNzAxNDEzMyswMCcwMCcpIC9DcmVhdG9yIChhbm9ueW1vdXMpIC9LZXl3b3JkcyAoKSAvTW9kRGF0ZSAoRDoyMDI2MDQwNzAxNDEzMyswMCcwMCcpIC9Qcm9kdWNlciAoUmVwb3J0TGFiIFBERiBMaWJyYXJ5IC0gXChvcGVuc291cmNlXCkpIAogIC9TdWJqZWN0ICh1bnNwZWNpZmllZCkgL1RpdGxlICh1bnRpdGxlZCkgL1RyYXBwZWQgL0ZhbHNlCj4+CmVuZG9iagoxNiAwIG9iago8PAovQ291bnQgNyAvS2lkcyBbIDUgMCBSIDcgMCBSIDggMCBSIDkgMCBSIDExIDAgUiAxMiAwIFIgMTMgMCBSIF0gL1R5cGUgL1BhZ2VzCj4+CmVuZG9iagoxNyAwIG9iago8PAovRmlsdGVyIFsgL0FTQ0lJODVEZWNvZGUgL0ZsYXRlRGVjb2RlIF0gL0xlbmd0aCAxMjE0Cj4+CnN0cmVhbQpHYXUwQjlsQ1w6JkE/RG5XKyxoLGUoJWFTKzVCMGctbURocVMlNVctUVhPQC8/SCskc04iP1VkSVZacVpoPGQwLjskYVZrT2U5NmxJRCUqaEpzSj9VVEMhIUQ8PVF1ZSZDPF1AJldkXG1JMCF1J1Y2b3JJLzE+P2RSamNVXTBmbXJsPTZuOCQsOmhnLTVwMCxNX3VRODFJIWY2TDcuODNUSlcwalMuK0J0YilAXDRIaENFW1ZBQC40XiZRVGNqN2JnKFdMZGtoIiRwSSdKJ0VXTSJQXUtBNUJlLmM5T0dxR08tKjw4Vy07JFBvZWxFKTVrUzRzRk9HTU5wTyxmSVwtKUBZQDpeS2Q3LWA0ZkpnMW1SQlFOQGRsNzZJaDsqOic7JV0wWl5ZMiRBbEtUIypEOGhHPGcvaFQvbnJPLkElVkczZm5uMmclYDNTPTdTW1sqJz9WNHQ4SHNOaV8xJm91WylobzA6Tmw2Ml9uVGNjPjIpJ2lEZiRPdFs5cyVCZjwza09scWNfMCVPdClpIi5PcnFNdXRNTHI4XWtATk8nUmdxJ3NoRU5eNExWIzk5Jk5gNGdIKzNTSlhsIUMiQnNWWmZyZCltbEZBZCpUQD88T2wxUGs3M25xSVoqM1g7XlsqTSI0Y1lyP0taZignYC0qcUM+Zm9ZWU44R004U1xsZzgvcEwiIjtAZyVMcDQzJC4+XEVGciI2aks6WVRlc2A9cm9zLDYtXiYxayhUKWFsUGNJWkYzYzFScjpOU2phJ15YY2FWLy0sWihgV0kmcGdlVDZpZjM9QzAyanFxV2JBJm1FakBcM2oxMGQnZ2dcV25jU00ha1lIck5CSU5BN189YUA5YVM3Yk5QZDQ0dUhIKT0lRDVaO0EnSCUsdUEkZiEhUD8mIyVnSVtgVl1vYiQvImg/Jj9cX042WGIhQjhzTiUuPkVNXzNTJmsrPEY/UCRQYUtcMVBnUl1dKz4uWFtDbFluUllwbEhkVCFDUF09J1BXLV10LmpzOkAjZFw2ISZkTmB0dFM7aW1AZFA9YTMoLCZXM0FkXkY1P2s7K1BWWkczWjpqYT1cNTlAYmFIQ1tlNS5mPC9AaE1NLj5OZVZQI2IrZyltYzpUQ1ViVz1QUlhGTCY/MG0pQjRGQmdKWDklQVdyanRWJ3JHayxVK1prbFlubUJcJC8sXC1vNy9YPV5bRzAmcG9kQk1QMVNtTVI9ImwlJ0E7Y1c1K0EiO2FzQEwpMCknW2BqLiEjQ2BdcE40Y2VTZ11tYStLLTVuViVeU0YiaWcqYCZaRUU2ZWpuMmhva10wcEFwUTckOCRnUVg2bmItQyYrUFtaUCxVcWcrK2g8cmVKXz8qPCdiWkdXbEpQRUZBbHEoQTBMLWgrUmVqPlRaMytaczsuO2JfLFVFb1lvXEJIZz89ZDAoSk80aGFLOCtFNlleRlZ1JFVURTcucEc+SDtVcmhUPDlgPzJ1cjBiUC9oXmZaalxLYmJvTDFyOy5mdVJaWEs4W0ExY1hZNEEoZlU/UlpoVzxsKDBDImFxYikxaTJbcyJNaC9Xbm0iNXAzRF1CKz9ZW0NmaGdYXHVTKkM0b0FIRGpLNShxWl4lIiIhJUJuJ0V+PmVuZHN0cmVhbQplbmRvYmoKMTggMCBvYmoKPDwKL0ZpbHRlciBbIC9BU0NJSTg1RGVjb2RlIC9GbGF0ZURlY29kZSBdIC9MZW5ndGggMzM3NAo+PgpzdHJlYW0KR2IhO2dEL1VFJyZjUjZvQF9XVVM7TyQvOzk+M0RdQEtcOjBlZVYncm4vIzZBLXUpTDw2XkE4dGFILGUvUV5qSyJeInEvLjxgZHJZSS5EP0tpUVNXdUxaRlVyTkosJ0hyVixsW0J0Y2ZNXkFVVlw4aVBxSjFzLTBbU0gjX2VuVShLT3I0VF5HaDZwJGBFXkMjb1JxUyhDMHVgOW1oPkhpZzhkKSZVPEszKlYzciYyPmsza0A7Vy5QQXU0MGpTTjwmISQqQ0ZNV1gjLT4zNTVPYik6OHEnOj4zWFRCMW91Lks7LyllTWdJMWo2cyYjXnQnM2dIN18lR3JNNzFwamMsY0pFQ2tZOmhmWV0tJSgwcixxdHFobVtlT1MoQUpOKFJzZWxVRiE5XXJiLmBCMCIuODhnTkUsKnAha3BJZVJCVV5sc2c5V2JPKlIrYzF1alhvNUFaSSw1SWEnLEI/QmA1Kkg8LFxJcDQtJzFNMGlvOGVnMUZlY0psbCFpLVhmYXU8XCs/Y1UmK2lwMVdbUFIwJixYcT8zalkiOkdhbi85UERLIjp0TDlBZ2ohXkYrUm5NanNlZSNtNWxGNid1XlpkUitlbkZTL2xrZGowIilKPzIhTl47JWI5Jz9JRVJqPEJNcCgmKVk5IXVSajViZjNzOUc1YGYyXU5hJztyN3UxMSVdclJAcmNwdGVIcFJhQVFoVCxTWDAjSF02Z2AoP3RJJm4tdSglWi10R0NSY2BfZ1todTVPaWZpMUkraGdXO1NcQFQ7XjNTYThhZ1A+QlUmKmwuJ2BMaylsKmcmc1JQIkE8T21wU2pAJyRMSVJARiRlJWQwZiZiQzwpITJRRTNYa28xWy1uX09wJGBWO2U/OGRQMm9aZmwhdU9sWzojNUhTNilzPV4/XDNfbmknKllJRCI4bGVEPSFwImZLKHJkJm9RbC9UYi9oSHJOOi9vSlo2QCZwK1ZecS84TSdrI15iXG9nITYjLGRkTFloQmRHMC9scmJQVGY+b0NhNVppREg5cWUmXFBSWUQsc2gzK2V0YDNZX1hyTFUpKGE9Ym44UGNcUWc8PVsxdSFJZCFBIzA2SS45ci5fYFRZPnE2PGBPXDpRRlotQ0UvcGFQcnMoX3BIT2M0R29KLlRTcG1FMl9pTWM+MVFJVkNrcmJZLmdPXSQuXzc0XT5OLSltK0FdazA7PFBkMi1xVTE+RnM1SWYvTiw3OEdfNCNMNiUvJFhoalhxMGEtLiIpMktYLjUmMnU4JD5xVTdqNS42WnFULmwuS0FAOmg3OGpFKC9VOUQzaXVQRTtZLWx1R0IrY2diVyJeJUFxXW5oJ2duTFxzXWU6ZWxASmJNdE8jKjU8aEcjZSEndE1vLD9kVWVfQkhoc1xjJjE5WmZOaTZRTF5DPUNXQVZNUj4yb21uKUo8ME9fV2kkSSd0XCopTmAhKHBmLiUpQic9NjMyTnMqQjNBMHNzMW4jT2lqNlJaKlYzTkNlcFZaZlt0NmdBIlRmSXE2QnJxLGkvZUlMMFhfOE9DRGxVOjdQW3AiaENnOEM6MVtTbD1WcC9VJGsiWjlTbTdvXTpaUDZMNyRgN1FgYylqb1lwcXMmc1plNil0MFUpN1RSLlc6KVVsOV8uRUJnbC1kJmxgTWRsQmMsM2RQbjQoTjApU2dNMFxgLTxqc0ZAVGA+WDVhZDtGcmFiRS9fRWlPMVtWJy8+OmU+UDU3JmlHK2wlSyFtV3F0KT9xMFpiaElkUUY2ciYiYiNbakQhOGgtdDc5T0dvRTo9QG5tLiJPQ0I9J2c+OVlBYGwuYDFybyo5Y3JWPShmaDVAbVBfZ1F0NXI2UDppPWhGQUJyTXUiNiYqckJGcVhhUkNtZGFHKlNjPm05b0JMNCEvYCg8UCs1bDJIcVU+MCteMjpkbnB0a2M2Yi1cYmwyXW9TLjpqaVA/QkFdWi5oVSFNKSVaUlA6RD5OXyZHUCQmWExYWSlQP2lLTT5XdDFyWUokODxPa2llYDdxP1hMdG9pJnBdUEBrQDMiIkFeaEQ7KyJhLWwzRVskJVRoJVpvSDFnKThwW1AzRUxOWEZjRmBTNkFQTUVQLz4sKk4lZT9CLHFVPF9KZS8mbClXYTQvQ11ZR19caS1kbzZIbT5SVHJiOiskVzxwYkAjN3BUI0x0XSsjVidsOiwtO14rOFJTSSdBSmhfLWMzXkhuWVJNVi1dJj9hX0xxTT84YSknO0pqQFFcZlppZSROKVVJXmlWdGhRVjxYXDQmJiNUZ0BNQVFBQSFYUjBVNVI4ZipjVV9SNVQobzMzTTE2YmQ6alohKk9gS3IxI3BLOVMsUThRXVo2QVpvaUEiOHJzI2deaFplUmxBOHReUFc2cVVWN2EvNyZtS1YyNyZTK2Y9RkIwRmglcm4jRWxaWWhrdXJwLjYkaGBwXWguMTBqNClGVWwoNU9gJylZL1gxO2ovLmk/RCsiWi9JOmlYLmYuZ0Y1PmFZI1UyM29wRzxFT3ROP2tQdDdmN2spJVg5XnRqUnM5cTFjakNdLittN0ZgTkA5QVs+ZD9VJmU1Zy1ZOyVjOS4+ITRaMDxDWz5GLiFeNm0+Zl8tNkdLYSMoP08qZys3cj1tT1MkbUZuRVslZTBqQzkwMztXa0c9MGc1YCVDNHFbXzY3TyM+XDIlKUg4Ik0udGpPbShrR0RyRCI8MCNLYDZQTVNFS0AuTCNcRTYpa0NUOm0pQyl0VlFSQ2UuZGVDZ3VsQzZXPW8/YzonQlg2LiwyP2I2Y15AVmFcW2RJJElJVmAoJ05ISkc2MyYnbE47SFsyMWhzM0w7KSspKl1PZWokI3BYTk5jUUJIUSwlI3JVNGY7X1dLO1RybzRLbEFDX1w4Z0NGQ0hvMio9WERQay8+ImRMIiYhVCxJVy1lO2o5YHF0QmA/cExwRTM2OFsoW0hyNWQ0TzJtLDEuMzkyLSk/XTInX1p1WlFBYDInWSxSOTspKm9KO0g8KHIkODlEUyEiciQ2TmRNTD4kKSozS1AocDpIWkhXTGNmay5ObjBJRktQM0M+KGZQKFNuNTdEIS8haEo5dTxWQTlrXyJcViEvZHU5WkExJj83MFArNShRKzJSVkFWb1dGXlxOTSlnMEBoSSIpI2diKkI0P2k7JzVQTl9FcUEkWSJrQ20xZSRXVW5ELE0hPV9McSNcJUo/X0lmNGxfY1tMbnVeJEdzM15AVSxyYWBZPm4nTlc7UGFVYChLNkUzLyxRYzgiSzo+Pkw+cWBkJCQrN1E6YClGXj9ua2leM18xN1lvXEQ1cWRXNCopSiolTSN0NSIuWiVDZC9NLmdnZ1doX1pOLC06ZENQSipaY29Jc2JrJVFpTDJAMi1wOGouciteUjAwPlo/bEQ8UFYnVT49Qy5xNWVBQnBhZm9wLkYwMztpXjA/TEFgK3NxKGNVM2pIazY/YUFwX20nS1w3big6MjZGZW1IU1E6Q00xTGElRiZMMl8raEFIc1EoTGdfRjcoTUdHTlpsWGcsPlhIXVE7Q1E+UTs4Lk9nZWxVJSRqLU9UQVhDSWBXK0x0ZU9ISjY9OytWPzNQcEQ+KCxQZUZkKSV0I1dVYU9HRlwpb3I5K2k+PzskUyY4c0orcGUnYi9UP0MnZV8sLU8zQFFXXU5iMXJYQXAmdEk1Oyk/anJcMjFoaTlkSlMlJjx1R0JKNSosSlJhVS0+ZClmNENiZzU6V0lFb2tZXCklXjNlRlFQX2RdOE50VWMsYSpfa1YzYlp1SiVAJkBHX0kwWzY4X0VzYURNW0M5U3UjRWc+ckEycz4nRmhwZ1MjWFJuK2YmQWJPKlouSlUyW3EmPkFcQF0xKkskN0ctXXVgN1gwSmAvcUZtUyxqQzIrXV1oIUYiY1pDYz4xXjhbTjldSTdDQD0/WytcWzRrZ1tMLEBaa1RTTy8raSNiXlNdTU47VTxlMD9ybEQrLkdHNkhoSG11SEo6WSc0NzhzU0trJWRiOFBlMCwzUGd1SSxFNm0kb0lhcSpTbnNGVGNtQmhnOkw0byJfMlktVV05bTojJV9jQC5cRSpWbC5FYTo5QVpORUNYK0V1TGI0N0RpUmwib0lmOU4xNC49Rk5SYXA5NEBAcCNXZWpMYmc0S2c4TypUb3RaJV4tZ0RPU1E5MGxQNkBQQyZPb1lmKGVKZGtOcSw+QkNCNWsvVmBjSWptKzZgIlVsPjY/USpNaGJTJV1uXlxBYjhrZGs6US1QNEphI1VqdS9WXVk9MCpJbU47aW9BOnVaNjdJYlM0XEdQOlpjNVJLVi5VUTknQFQyXGtscm9sOFw/TkhiRmMqPFVfUWMyODBuaWxPWC1tLGFOdVhvZzFwKCVPVkInNEFBMEIxPnVGQCRVRGA4SyFMP3VZSlhDP21MNkBWQ0VFWDRMWyIoUS1lIi9zclYnTTYlbXBHSCZXSGxmN0hQSDVyZmlxKCclVVJxXDVqNCNXYEomMWkqa24qL0FAS2ZiUztMcU81RCljL2A7fj5lbmRzdHJlYW0KZW5kb2JqCjE5IDAgb2JqCjw8Ci9GaWx0ZXIgWyAvQVNDSUk4NURlY29kZSAvRmxhdGVEZWNvZGUgXSAvTGVuZ3RoIDQwNDQKPj4Kc3RyZWFtCkdiITtnPkFrSiQnbjU+TCh1dWlAZFVvaCxoX2ljOWBqbHNdZEBfKTUoQFZdK1hYMk80ZkIiPDlNdU5MQ2ZxITEtPS1RLWcvXClYKThLWyxDSFMyV1xoY3VzVyQiKDpASXMuc0QyczlKbG4kVVM1U1xKJVUnaSg+IlVxU3BfISFIWjBiSzcmKmw+J2Fva18jbiovdWtxU2U+Y0FhXjc1bmJTKF9SVlBnT2RPKDQ7TjZsY2dtbU1sOzhAQ050QWllbF06M2I/LWI0ZiNAYiVJJzYxS0xLYmc4V2t1QCo2OGcrWFpNUlltXitNYHEqYC9FZm9LJio+Ii8iLjYpZWE1bmNAMEo/b0JBVT9vJWkzUT9eZ15KbUhSJE9RdThkWnAvNzprZzhQJCRwJEsrbGJhND1jRygpSCxPI2xYJWEiRFw6UidrT1FXOlBNPG8uU1FbTWBSWUk8MDlNcW5AYzlYR2I7WltKI103IkVUWkhLQVlaPVAuWGI7NzgoZjs0RTNUZmNYb1RuS11aL2I+RFFNJFUkOjFSW0kvVWI3MGZgSF1zMTFfZ2UiKkhIaGVJMllrYG1tbTAkPT8vVixqNGhkYEM/Ym04Lzw0QDpJXnFGOismM25wUG87YXVgWkEwLUk0W1ViRS1APS1yRjRHNWpzU2RAQ3JNY1FDRlNyMWtpO3EzKi1lK21sUys0XWE7amplYzB1ZTtJPF9oOT1WYmY1aT50Nl82WT1HTT0qUUZTbXApPVQlK2ZScSFPXDZKczU5RmtDSDxmOGBbckU9dSlxbjlyQFtBQ00xcSNPZlNqa21PXGdocWdDaFJYOTEpWDVTYzNfP1cwOmZhQUdMamE2MDNodEhLQElfYCRcZC1XWClyPD9iRStiKygyJ0QnbTljL2o+YENmVzVGclJmdFNGbCkqdFluZ29FYDU2JSUrUzUoJlcoV08iaktzcGpORUBtJF9ONllGNSVjZDxbWVYzXmw/X0dxZmFWJ2UvSEBQWyRXXlhwWShbTEcpQ2Q3ZmZYSTVCI2A8YnUqREA0VkwrM0hZNV1rNFRmdEolXSplQmFLJmkhY0w3QVohLUw3MjloMz9kU2VFIlJoYi9nUTIhJjNDJVhhT0ckSDI+UUIwUHAoQ1k5cShxZClwQGZpKUonUSYzblY8OCZaMWFgWFVBSnJNKEwmM0U3X2Y6KHFhaD8kRzxOaS9XblxwUjgiTlZMOkEoQW4/UEEtUXAkMko6LUtkVSc+PlhwPWZqQjVNInNURDE6b2RbRVxXPF8vZ1FgLUBXbV1WUicwSl8+Nl5PYD9IOShVN0EwayFzNjArJ1NeNjJiW3I2Sz8nSVk0S2wkWSZIcl5IN3RWUDJRaTVJLCtaNmFuX2wrTnBYMS4pPEspOUxETGE8PVZuTDwmVmIrQ11fZTpBVGdhMnFuUWNRP2IoIWFLWFc9NC1PTy9qM15wYT5GZUNoSHFkIiJdMG9VcUAuSSc0NUVuTnV1Nj5qVWI4TDYpYmhIYFldMDZcYyk2RGNKQlJMRj42cjpJXkwoSUlKQ0k9N1MsZ2kiM2w1aD1MbExVcTU9ZT4/NzNjI2c/alpSajQxLio6PklnMiRBUkIlPiRGRz8/UlxFNEdXQmBtKStYWVlgVklGVWwnT14uWE41WSEyYVFJXWk9TGtIXCs0XlVOZllmP2lgQmwqb3BOQGJyWUs6JXE8UHFlV2xeZiM7Ok1EayNWdVFfIWpcI0lrO0pObFo5T01kVDZBcTYqbGdlVTQtImInVWFMYztWJltmaSpcZyssc3VTciJEaXNsW1ZQXVNuQ1JqRkB0YmwiYitoWjhcTmoqYEg9ai1DUlEmM0dRSDdlYiNqLmgsWVAzLmtocjpHOE9lZidBOyRZYm50bXRkTCdAVHBxP0YlQkktaDlDMUNsZis0O2FJKFIoMDxxN2VDZCpLSF9YNy1vKl4xZS1hOzhFUHQ5XzNrQ0RUJVlpJVJnZC5ObCY3ZjxtT3MnPy5WVjtZbFJiOj9UPFhhUGExa1dAYDwldWY3VlRZJyo8QCxqO18rVmA9RDozNW89Q2EmJENBPUpwMUZUUF0mQmpHKCIhVSduJkxJVnVANVBuOF0wSVFcJC1XcXNAbFlgRmEvRmRoM2FJaXBVWExMWEVYRD9mal9CKmlEYlpOVSVzUCNWUTBUXVBmclxNVyg5RlRCVyxqSmgqJFxdS2BqZyZKQEhFPDkuUnVbQWprKlk7U0NacSVoLSheS0BDRyhaKFE6Y0UuZWU4QjY9TGNEWXVCLylJI1hpQWkxOFZGayh0c2AlaDoiWG4rdE8hcWVZRWBmJzV1QTtRb1xcSFRlTVFvM1NOYT1jaD0xJDYrO2M/RTBManFGW21FbF9bckdUXHBTJWxGS2o7RkxASnBYNzdMJ1toKU1NaVs+YDNnJFJXXCljdDxKUUheKSIvWkNbKGckaXRzKEE7SXJAcygpITpgImVZOjJuYyNZM1BecCY7WWBCK1lRRylxSTNUI0dsZEIuV0poVmA2SkszZE1qayxHSCVEP0koTShVbjNLYiYtKlhJJFdOXDJUM2QzKExVNE5RImFxTFdOWWRNSydwS2VdZ1deN0trPldeQUFDSVlGcFQ/bUk5UEpDRnU9bjYxJTpDLWxDZUFpOmdWX1tqW1MoXyQ1S3A1N0tjODw5bmdxKjliYyhQa1kySkphRmlhPVwkVj5fSjZDJF0zdSRMbjE3XWszSSw7NiciYkNnY3NRXHE9XHJQSXMiVXRZLFE7IlVnNV90RzNUams/PFdHNSRRYE1caCYsK14rWFpOcCh0Sy9MLkpyMVlXI1BPXmxEQDJjX25MMC4mcThMJSdrKzw3b1FrWWhPIkRWSDRZYTlhZTpXLi5VK1k1bTFKYikpKjUpJW05Xyo1RWtCL1M1M0RXQG5rQk5CSURzIU9pSUxrT0daZyt0dWBZQkZGNVw2VyJobkp1L0tOaTMqbSNSalAlQT47Pl49TzxIXFhkKGFqLDRFMS9fRjNRTXMwcjg/IV91ZlJFY1c+RTopTSdvOkkoNmo2Mk8lUj1pQVRjZlxTI2tTKUduTzEkM0A+dWNPWFVGbzFUSnFSWVglKDFsYFlpPjFeTFclJkdobUhrNmlYRG1sWFMrdWQzIThXLkszbGk0YUFkUjQ7Rzc/JWFbMkFWLzhSalUoNkxFNExeUHFYRjxOQXQjMikjcDYpS1soLzdgZ2pBOltUYV9eXFYqOydAMltXIj5cNS0zbFQ2TmowMyYvNE5QT0VCYEw0OFRJVkYmP0wxTjgtMl4vaCxEZV8xRWElMzY6LltwYC5KT1QkUkI9LiE/IS4sI1U8ZEMqOitlPCVvPV9OXElVWmJpXi4/XWUhVyYxRU01NV1DTS9qOmJgSVJeVEEvR3Iobmo4Ji1rWytYM0xyajcxWDsmWjZFdV9SLW9zI1VxVVU5TzsiKyZqRT5ITklAWWMzT0MoLDhNN2pMYW1tTzUzQUduYG8nXnQ2VUk3I0JASlkiQmEkUDFVXC1SKytQLyldZ11iWUZFZjFTU0ZLNiIoI24hL3Q6K3EkSCx1TDdlPzxQcTlyXi4uclxyLSIzcDY0VWh1MVtudEs5PG4xPCs2NVEnOkVPNlE0ZWVBMWpyX1prcHJiX0w/OGghT24zJ0QmIVBJJSRycHM1LDFqR01TTGg8V2NiLlFvQ2tDbzBtNFdGbzRyX28+LW5vLWYxJ2BRa3VTXSxZYSNAcDs8b0RKW05cYWxIYkMzRnA2J1ZsYGs+IiksM1UsLWonYmcuWzJXT1BLKU5II20jLXM1UzIjKU86TExrIWVSQFVicChaUXFSMTAsOklkWys6cjdra0FPQjFvMSxmPCRXIUcyLGtlZTdXNktBaksrQVlMQDpwTilRSzozWEAocG0xbyZnZ1IrQDNkM3BtKnBUcjNGdVUwbElsTGFDOHNPKE41NyFZS000KEg/IlM5TiE+LUpEI25wTCwwVWRmUj5wJzBZIkslJDYwVDpoQDEkVzJdOilCX3VrUWBNNjspWiJcLGcmUzhSMF1TQjopInJ1PlcuLTpqcnU/KFFKIiJnbGlXVDZJSEBic0ksb24ySzIsOzRHOSpBTzdHL05RTGtxVXIqb3ErXEhXJS8yOlV0N1Ehb05bbVJxQSJocUpFczgvczgtW105byVpTFJWPChiI1JLdDpERUxcYlsuPD1vW3MnOWU1KXAxWCUidF06TTFWaGVPJTA/QzplQDlgYEs6XmslYmRSU0MmQTJNMGIsTTxIaT86Kk9MLThganBLaWBNZVFILWYrIl9GPlcsLlJyJGcsKSRVRVZKcVVjWyUhQEg5R1lVVSsqRk90cEpUV2gkIU0sSDZuL2JWQUdGVjRAYW4xUXA/Ikg6ZClvU1BkK1tfUC84NTlHOis5VzA3XHJbYXVLQnNUSStCKGM5KjNxUnJpOThsWzFMSj1QN3RjX0c3dGY6VytVb3JPODlwRmpraENvPzdnOjpcaVpjVHUlLkRKXTE6bnR1WjVbVz9PYy4wXkBUKSwsYGFdZGkkVWMzVUBIP2BAQFE+V0FWbDVDSDNhTFtqVUU9W0o4Ni01aHI1ZCU+Ym9qLy9oQihcITB1QjJDOU5JMC5YO25OZWpqNDYwM1YkMExOYyMnKy0vS1xQRyIrPDBRJF4yXCtZZW9dZmZBPWBeO2RnMCxdITQ/KUZtOztSMEgoaVhCMVVRVEl0cyhEPCZkLTwtVlJrJidiMWQzbWVyTltiSGRmZjwuKChqZVpeQENLQm9TKUxicEpsPTBVPUhvN1tJXj8rbSllXVwmUEl1SltYcEJbNnVUQjlGVzEmWkZmS3I7O1VURGdmVD5eL1MrPz9lZXFOV0hjUEpsbW0sZUA+X2opZjh1ImslY1ElTkFgSiJgbVYvc2QzZVJIODY2cldLRk0/VmZXWk1uQ2RjUikscWNubmMvSjFtKTJzPHEtN1JrPVZOLzRWS0pvXzdSa2shdV49XXQ+OV5MT0c3ZitqTUtKQnMjSFQ8ITZobF9za1xePEdMKExwSEJfY2lMUURSOmlLNDhGRF8mMm8xSkA3KGtCP2NYal1KNlcwKWAna000YDlcPzYwT0c+JTJZY0pAbStkRSZkQjg8Uylzc2E9N2YraFEsVTZQUEpIYjBbLzE2YjoxJjovPFFdNkZUWkkuTTkoVkNmMk1MKiYnTG4sSl4yVEAtaEBdLS4wcSY0Pjs3TWJQRDxERDpWZicuQlBESUM+MWhlbE4mK1ltRSpBXDFnK2MpL3IjXldpNztPbWM0TTpzMT8iNF89Nk5JMmwrZmNNQFheQkRtVSJfZStlaCMtWWM5I18xNmZZQ2g1YF5NIlIvVnI3ZDFeMjcxcFFaI2ZrNUxJQTxXQD8/WEopKDlTVzt+PmVuZHN0cmVhbQplbmRvYmoKeHJlZgowIDI0CjAwMDAwMDAwMDAgNjU1MzUgZiAKMDAwMDAwMDA2MSAwMDAwMCBuIAowMDAwMDAwMTMzIDAwMDAwIG4gCjAwMDAwMDAyNDAgMDAwMDAgbiAKMDAwMDAwMDM1MiAwMDAwMCBuIAowMDAwMDAwNDM1IDAwMDAwIG4gCjAwMDAwMDA2NDAgMDAwMDAgbiAKMDAwMDAwMDc1NSAwMDAwMCBuIAowMDAwMDAwOTYwIDAwMDAwIG4gCjAwMDAwMDExNjUgMDAwMDAgbiAKMDAwMDAwMTM3MCAwMDAwMCBuIAowMDAwMDAxNDc2IDAwMDAwIG4gCjAwMDAwMDE2ODIgMDAwMDAgbiAKMDAwMDAwMTg4OCAwMDAwMCBuIAowMDAwMDAyMDk0IDAwMDAwIG4gCjAwMDAwMDIxNjQgMDAwMDAgbiAKMDAwMDAwMjQyNiAwMDAwMCBuIAowMDAwMDAyNTI1IDAwMDAwIG4gCjAwMDAwMDM1MTEgMDAwMDAgbiAKMDAwMDAwNjk3NyAwMDAwMCBuIAowMDAwMDExMTEzIDAwMDAwIG4gCjAwMDAwMTUxODAgMDAwMDAgbiAKMDAwMDAxNjg3OCAwMDAwMCBuIAowMDAwMDE5MzcwIDAwMDAwIG4gCnRyYWlsZXIKPDwKL0lEIApbPDQ4OTEyNDk2MTNhYWJlMWI5OTEyOGU1NDRmYmQzN2MyPjw0ODkxMjQ5NjEzYWFiZTFiOTkxMjhlNTQ0ZmJkMzdjMj5dCiUgUmVwb3J0TGFiIGdlbmVyYXRlZCBQREYgZG9jdW1lbnQgLS0gZGlnZXN0IChvcGVuc291cmNlKQoKL0luZm8gMTUgMCBSCi9Sb290IDE0IDAgUgovU2l6ZSAyNAo+PgpzdGFydHhyZWYKMjA0NjcKJSVFT0YK";
 
-    async function handleLead() {
-      const name = document.getElementById('name').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const wa = document.getElementById('whatsapp').value.trim();
-      const status = document.getElementById('status');
-      const btn = document.getElementById('submit-btn');
+    async function handleLeadSubmission() {
+      const name = document.getElementById('user-name').value.trim();
+      const email = document.getElementById('user-email').value.trim();
+      const status = document.getElementById('form-status');
+      const btn = document.getElementById('submit-button');
 
-      if(!name || !email || !wa) {
-        status.innerText = "من فضلك كملي البيانات الأول! ⚠️";
-        status.style.color = "#f87171";
-        return;
-      }
+      if(!name || !email) {
+        status.innerText = "من فضلك كملي البيانات الأول يا ديدي! ⚠️";
+        status.style.color = "#f87171";
+        return;
+      }
 
-      try {
-        btn.disabled = true; 
-        btn.innerText = "جاري تحضير دليلك...";
-        
-        const fd = new FormData();
-        fd.append("entry.299023128", name);
-        fd.append("entry.1712155557", email);
-        fd.append("entry.1224669856", wa);
-        fd.append("entry.334049848", "hooks_catalog_from_blog"); 
+      btn.disabled = true; 
+      btn.innerText = "جاري التحضير...";
+      
+      const formData = new FormData();
+      formData.append("entry.299023128", name); 
+      formData.append("entry.1712155557", email);
+      formData.append("entry.334049848", "hook_guide_page_2026"); 
 
-        // إرسال البيانات لجوجل شيت بصمت
-        await fetch("https://docs.google.com/forms/d/e/1FAIpQLSdSXEvN7DMMC-pwXED9G5TRpe4ecQ5U7pMtsg3201d2ikinfQ/formResponse", { method: "POST", mode: "no-cors", body: fd });
-        
-        // إظهار واجهة النجاح والتحميل
-        document.getElementById('form-container').style.display = 'none';
-        document.getElementById('download-area').style.display = 'block';
+      try {
+        // إرسال البيانات لجوجل شيت
+        await fetch("https://docs.google.com/forms/d/e/1FAIpQLSdSXEvN7DMMC-pwXED9G5TRpe4ecQ5U7pMtsg3201d2ikinfQ/formResponse", {
+          method: "POST", mode: "no-cors", body: formData
+        });
 
-        // تحويل الـ Base64 إلى ملف PDF وتنزيله فوراً
-        const bytes = atob(PDF_BASE64);
-        const array = new Uint8Array(bytes.length);
-        for (let i = 0; i < bytes.length; i++) array[i] = bytes.charCodeAt(i);
-        const blob = new Blob([array], { type: 'application/pdf' });
-        const url = URL.createObjectURL(blob);
-        
-        // ربط الرابط اليدوي بالملف
-        document.getElementById('direct-download').href = url;
+        // إظهار منطقة التحميل وتوليد ملف الـ PDF
+        document.getElementById('form-container').style.display = 'none';
+        document.getElementById('download-area').style.display = 'block';
 
-        // بدء التحميل التلقائي
-        const autoLink = document.createElement('a');
-        autoLink.href = url;
-        autoLink.download = 'Daoline-Hooks-Catalog-2026.pdf';
-        autoLink.click();
+        const bytes = atob(PDF_BASE64);
+        const array = new Uint8Array(bytes.length);
+        for (let i = 0; i < bytes.length; i++) array[i] = bytes.charCodeAt(i);
+        const blob = new Blob([array], { type: 'application/pdf' });
+        const url = URL.createObjectURL(blob);
+        
+        document.getElementById('direct-download').href = url;
 
-      } catch (e) {
-        status.innerText = "حدث خطأ بسيط.. حاولي مرة تانية.";
-        btn.disabled = false;
-        btn.innerText = "أرسل لي الدليل المجاني الآن 🚀";
-      }
-    }
+        // بدء التحميل التلقائي للملف القديم
+        const autoLink = document.createElement('a');
+        autoLink.href = url;
+        autoLink.download = 'Daoline-Hooks-Catalog-2026.pdf';
+        autoLink.click();
 
-    // منع النسخ
-    document.addEventListener('contextmenu', e => e.preventDefault());
-    document.addEventListener('keydown', e => {
-        if (e.ctrlKey && (e.key === 'c' || e.key === 'u' || e.key === 's')) e.preventDefault();
-    });
-  </script>
+      } catch (e) {
+        status.innerText = "حصل خطأ بسيط.. حاولي تاني.";
+        btn.disabled = false;
+        btn.innerText = "سجل وحمل الكتالوج الآن 🚀";
+      }
+    }
+  </script>
+
 </body>
 </html>
