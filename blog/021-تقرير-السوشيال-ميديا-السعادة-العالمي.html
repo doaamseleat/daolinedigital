@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>تقرير السعادة العالمي 2026: السوشيال ميديا بتأذي مين بالظبط؟ | Daoline Digital</title>
-  <meta name="description" content="جامعة Oxford نشرت أكبر دراسة عالمية عن السوشيال ميديا والصحة النفسية. النتايج صادمة — وفيها فرصة كبيرة للكريتور العربي ما حدش بيتكلم فيها.">
+  <title>المحتوى التسلسلي: سر الـ 7.8 مليار دولار اللي الغرب اكتشفه | Daoline Digital</title>
+  <meta name="description" content="Deloitte بتتوقع 7.8 مليار دولار من Micro-Dramas في 2026. دليل شامل للـ Content Creators: إزاي تبني محتوى تسلسلي يخلي الجمهور يرجع كل مرة.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
 
   <style>
-    :root { --primary: #c013a6; --bg: #020617; --surface: #0f172a; --text: #e2e8f0; --muted: #94a3b8; }
+    :root { --primary: #c013a6; --bg: #020617; --surface: #0f172a; --text: #ecf1f8; --muted: #a8b8cc; }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: 'Tajawal', sans-serif; background: var(--bg); color: var(--text); line-height: 2.1; overflow-x: hidden; }
 
@@ -29,7 +29,7 @@
     h1 { font-size: 3.4rem; font-weight: 900; color: #fff; line-height: 1.2; margin-bottom: 25px; }
     .meta { font-size: 1rem; color: var(--muted); margin-bottom: 40px; display: flex; gap: 20px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 20px; flex-wrap: wrap; }
 
-    .article-content { font-size: 1.3rem; color: #cbd5e1; }
+    .article-content { font-size: 1.3rem; color: #e6edf5; }
     h2 { color: var(--primary); font-size: 2.35rem; margin: 50px 0 25px; border-right: 6px solid var(--primary); padding-right: 20px; font-weight: 900; }
     h3 { color: #fff; font-size: 1.75rem; margin: 35px 0 15px; font-weight: 800; }
     p { margin-bottom: 38px; text-align: justify; }
@@ -45,7 +45,7 @@
       display: flex; align-items: center; gap: 25px;
     }
     .stat-number { font-size: 4rem; font-weight: 900; color: var(--primary); line-height: 1; white-space: nowrap; }
-    .stat-text { font-size: 1.35rem; color: #e2e8f0; line-height: 1.6; }
+    .stat-text { font-size: 1.35rem; color: #f3f6fb; line-height: 1.6; }
     .stat-source { font-size: 0.85rem; color: var(--muted); margin-top: 8px; }
 
     /* pull quote */
@@ -53,32 +53,52 @@
     .pull-quote p { font-size: 1.42rem; font-weight: 700; color: #fff; margin: 0; font-style: italic; text-align: right; }
     .pull-quote cite { font-size: 0.9rem; color: var(--muted); margin-top: 10px; display: block; font-style: normal; }
 
-    /* world map visual — unique element */
-    .world-split { display: grid; grid-template-columns: 1fr 1fr; gap: 0; margin: 40px 0; border-radius: 16px; overflow: hidden; }
-    .world-side { padding: 32px 28px; }
-    .world-side.west { background: linear-gradient(135deg, rgba(239,68,68,0.15), rgba(239,68,68,0.05)); border: 1px solid rgba(239,68,68,0.25); border-radius: 16px 0 0 16px; }
-    .world-side.east { background: linear-gradient(135deg, rgba(192,19,166,0.12), rgba(192,19,166,0.03)); border: 1px solid rgba(192,19,166,0.3); border-right: none; border-radius: 0 16px 16px 0; border-right: 1px solid rgba(192,19,166,0.3); }
-    .world-region { font-size: 0.8rem; font-weight: 700; letter-spacing: 1px; margin-bottom: 10px; }
-    .world-side.west .world-region { color: #f87171; }
-    .world-side.east .world-region { color: var(--primary); }
-    .world-score { font-size: 2.8rem; font-weight: 900; line-height: 1; margin-bottom: 8px; }
-    .world-side.west .world-score { color: #f87171; }
-    .world-side.east .world-score { color: var(--primary); }
-    .world-label { font-size: 0.92rem; color: var(--muted); line-height: 1.6; margin-bottom: 16px; }
-    .world-countries { font-size: 0.82rem; color: #cbd5e1; line-height: 1.8; }
+    /* series anatomy — unique element */
+    .series-anatomy { margin: 40px 0; }
+    .anatomy-row {
+      display: flex; align-items: stretch; gap: 0; margin-bottom: 10px;
+    }
+    .anatomy-ep {
+      background: var(--primary); color: #fff;
+      font-size: 0.82rem; font-weight: 900;
+      padding: 14px 16px; border-radius: 12px 0 0 12px;
+      display: flex; align-items: center; min-width: 80px;
+      justify-content: center; text-align: center; flex-shrink: 0;
+    }
+    .anatomy-content {
+      background: var(--surface); border: 1px solid rgba(255,255,255,0.07);
+      border-right: none; border-radius: 0 12px 12px 0;
+      padding: 14px 20px; flex: 1;
+    }
+    .anatomy-title { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 4px; }
+    .anatomy-hook { font-size: 0.9rem; color: var(--muted); }
+    .anatomy-cliffhanger {
+      font-size: 0.8rem; color: var(--primary); font-weight: 700;
+      margin-top: 6px; display: flex; align-items: center; gap: 6px;
+    }
+    .anatomy-cliffhanger::before { content: "⬇"; font-size: 0.7rem; }
 
-    /* factors grid */
-    .factors-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 40px 0; }
-    .factor-card { background: var(--surface); border-radius: 12px; padding: 20px 22px; border: 1px solid rgba(255,255,255,0.06); display: flex; gap: 14px; align-items: flex-start; }
-    .factor-icon { font-size: 1.6rem; flex-shrink: 0; margin-top: 2px; }
-    .factor-title { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 4px; }
-    .factor-desc { font-size: 0.9rem; color: var(--muted); line-height: 1.6; }
+    /* format cards */
+    .format-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 40px 0; }
+    .format-card {
+      background: var(--surface); border: 1px solid rgba(255,255,255,0.06);
+      border-top: 3px solid var(--primary); border-radius: 14px; padding: 22px 20px;
+    }
+    .format-icon { font-size: 2rem; margin-bottom: 10px; }
+    .format-name { font-size: 1.05rem; font-weight: 700; color: #fff; margin-bottom: 6px; }
+    .format-desc { font-size: 0.92rem; color: var(--muted); line-height: 1.6; }
+    .format-example { font-size: 0.82rem; color: var(--primary); margin-top: 10px; font-style: italic; }
 
-    /* opportunity banner */
-    .opportunity { background: linear-gradient(135deg, rgba(192,19,166,0.14), rgba(192,19,166,0.04)); border: 1px solid rgba(192,19,166,0.35); border-right: 5px solid var(--primary); border-radius: 16px; padding: 28px 30px; margin: 40px 0; }
-    .opportunity-label { font-size: 0.8rem; font-weight: 700; color: var(--primary); letter-spacing: 1px; margin-bottom: 10px; }
-    .opportunity h3 { font-size: 1.2rem; color: #fff; font-weight: 700; margin-bottom: 10px; }
-    .opportunity p { font-size: 1rem; color: #cbd5e1; margin: 0; line-height: 1.7; }
+    /* compare */
+    .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 40px 0; }
+    .compare-card { background: var(--surface); border-radius: 16px; padding: 24px; border: 1px solid rgba(255,255,255,0.06); }
+    .compare-card.old { border-color: rgba(255,255,255,0.08); }
+    .compare-card.new { border-color: rgba(192,19,166,0.4); background: linear-gradient(135deg, rgba(192,19,166,0.08), var(--surface)); }
+    .compare-label { font-size: 0.85rem; font-weight: 700; letter-spacing: 1px; margin-bottom: 14px; }
+    .compare-card.old .compare-label { color: var(--muted); }
+    .compare-card.new .compare-label { color: var(--primary); }
+    .compare-card ul { padding-right: 20px; }
+    .compare-card li { font-size: 1.05rem; color: #e6edf5; margin-bottom: 10px; }
 
     /* checklist */
     .checklist { list-style: none; padding: 0; margin-bottom: 38px; }
@@ -105,12 +125,11 @@
       h1 { font-size: 2.2rem; }
       .nav-menu { display: none; }
       h2 { font-size: 1.75rem; }
-      .world-split { grid-template-columns: 1fr; }
-      .world-side.west { border-radius: 16px 16px 0 0; }
-      .world-side.east { border-radius: 0 0 16px 16px; border-right: 1px solid rgba(192,19,166,0.3); }
-      .factors-grid { grid-template-columns: 1fr; }
+      .compare-grid { grid-template-columns: 1fr; }
+      .format-grid { grid-template-columns: 1fr 1fr; }
       .stat-highlight { flex-direction: column; gap: 10px; }
       .stat-number { font-size: 3rem; }
+      .anatomy-ep { min-width: 60px; font-size: 0.75rem; }
     }
   </style>
 </head>
@@ -130,157 +149,166 @@
   <main class="container">
     <nav class="breadcrumbs">
       <a href="https://daolinedigital.com/">الرئيسية</a> /
-      <a href="https://daolinedigital.com/blog/">المكتبة</a> / مقال 022
+      <a href="https://daolinedigital.com/blog/">المكتبة</a> / مقال 021
     </nav>
 
-    <h1>تقرير السعادة العالمي 2026: السوشيال ميديا بتأذي مين بالظبط — وليه العالم العربي مختلف؟</h1>
+    <h1>المحتوى التسلسلي: سر الـ 7.8 مليار دولار اللي الغرب اكتشفه — وإحنا لسه صاحيين</h1>
 
     <div class="meta">
       <span>👤 بقلم: دعاء سليط</span>
       <span>⏱️ القراءة: 12 دقيقة</span>
-      <span>🔬 بحث حصري</span>
+      <span>🎬 Content Creation</span>
       <span>📅 أبريل 2026</span>
     </div>
 
     <article class="article-content">
 
-      <p>في مارس 2026، جامعة Oxford نشرت الطبعة الرابعة عشرة من تقرير السعادة العالمي — وجزء كبير منه كان عن السوشيال ميديا وتأثيرها على الصحة النفسية. النتايج اللي طلعت <strong>عكست كل حاجة الناس فاكرينها</strong>. والأهم من كده — فيها درس مباشر لكل Content Creator في العالم العربي.</p>
+      <p>كل يوم بتنشري فيديو — وكل يوم بتبدأي من الصفر. جمهور جديد، هوك جديد، مجهود كامل. والنتيجة؟ الفيديو بيعدي وما فيش حد بيفتكر إنه كان موجود. ده مش مشكلة في محتواكِ — ده مشكلة في <strong>النموذج</strong>. والغرب بدأ يحلها من سنة.</p>
 
       <div class="stat-highlight">
-        <div class="stat-number">−1</div>
+        <div class="stat-number">$7.8B</div>
         <div>
-          <div class="stat-text">نقطة كاملة على مقياس السعادة من 10 — ده الانخفاض اللي حصل في رفاهية الشباب تحت 25 سنة في أمريكا وكندا وأستراليا خلال العشر سنين الأخيرة. في نفس الوقت، باقي العالم ارتفع.</div>
-          <div class="stat-source">المصدر: World Happiness Report 2026 — Wellbeing Research Centre, University of Oxford · Gallup World Poll</div>
+          <div class="stat-text">متوقع إن الـ Micro-Dramas — المحتوى التسلسلي القصير على السوشيال — يجيب 7.8 مليار دولار إيرادات في 2026.</div>
+          <div class="stat-source">المصدر: Deloitte 2026 Media Report — نقله Hootsuite Social Trends 2026</div>
         </div>
       </div>
 
-      <p>نقطة واحدة على مقياس السعادة تبدو بسيطة — لكن لما الباحثين بيقيسوا ملايين الناس، دي كارثة إحصائية. ومش بس كده — <strong>باقي العالم في نفس الفترة ارتفع</strong>. ده معناه إن المشكلة مش في السوشيال ميديا نفسها — المشكلة في <em>طريقة الاستخدام</em> وفي السياق الثقافي.</p>
+      <p>مش بيتكلموا عن مسلسلات Netflix. بيتكلموا عن <strong>سلاسل فيديو قصيرة على TikTok وInstagram وYouTube</strong> — كل حلقة من دقيقة لخمس دقايق — بتخلي الجمهور يتابع ويرجع يدور على الجزء الجديد. ده اللي بيسموه Micro-Drama، وده بالظبط اللي بيبنيه الـ Content Creators الكبار دلوقتي.</p>
 
-      <h2>أولاً: التقرير بيقول إيه بالظبط؟</h2>
+      <h2>أولاً: ليه الفيديو المنفرد بقى مش كفاية؟</h2>
 
-      <p>التقرير بيفرّق بين نوعين من العلاقة بالسوشيال ميديا: العلاقة السلبية اللي بتنتج أذى نفسي حقيقي، والعلاقة الإيجابية اللي بتدي تواصل ودعم حقيقي. والمفاجأة إن الفرق مش في <strong>كم</strong> الاستخدام — الفرق في <strong>كيف ولماذا.</strong></p>
+      <p>الخوارزمية في 2026 بتشتغل بشكل مختلف تماماً عن زمان. زمان، الفيديو الكويس كان بيتوزع لوحده. دلوقتي، الخوارزمية بتقيس حاجة تانية: <strong>هل الجمهور بيدور على المزيد منك؟</strong></p>
 
-      <div class="world-split">
-        <div class="world-side west">
-          <div class="world-region">🔴 الدول الناطقة بالإنجليزية</div>
-          <div class="world-score">↓ −1.0</div>
-          <div class="world-label">انخفاض في رفاهية الشباب تحت 25 خلال 10 سنين — مرتبط بشكل مباشر بالاستخدام الكثيف للسوشيال ميديا</div>
-          <div class="world-countries">🇺🇸 أمريكا · 🇨🇦 كندا · 🇦🇺 أستراليا · 🇳🇿 نيوزيلندا</div>
-        </div>
-        <div class="world-side east">
-          <div class="world-region">💜 باقي العالم</div>
-          <div class="world-score">↑ ارتفع</div>
-          <div class="world-label">نفس معدلات استخدام السوشيال ميديا — لكن نتايج مختلفة تماماً في الرفاهية والصحة النفسية</div>
-          <div class="world-countries">أوروبا الوسطى · آسيا · أمريكا اللاتينية · الشرق الأوسط</div>
-        </div>
-      </div>
-
-      <p>التفسير اللي بيقدمه الباحثون مش بسيط — لكن فيه خيط مشترك: في الدول اللي انخفضت فيها السعادة، السوشيال ميديا <strong>حلّت محل</strong> التواصل الحقيقي. في باقي العالم، السوشيال ميديا <strong>أضافت عليه</strong>. والفرق ده ضخم جداً.</p>
-
-      <h2>ثانياً: العوامل اللي بتحدد التأثير — مش الوقت</h2>
-
-      <p>التقرير جاء بنتيجة مفاجئة: <strong>عدد ساعات الاستخدام مش المتغير الأهم.</strong> المراهق اللي بيقضي 3 ساعات على السوشيال ميديا يوميًا ممكن يكون أفضل نفسيًا من اللي بيقضي ساعة — حسب السياق والطريقة.</p>
-
-      <div class="factors-grid">
-        <div class="factor-card">
-          <div class="factor-icon">👁️</div>
-          <div>
-            <div class="factor-title">المقارنة الاجتماعية</div>
-            <div class="factor-desc">المحتوى اللي بيخلي المستخدم يحسّ إنه أقل من الآخرين هو الأكتر ضرراً — مش المحتوى نفسه</div>
-          </div>
-        </div>
-        <div class="factor-card">
-          <div class="factor-icon">💬</div>
-          <div>
-            <div class="factor-title">التفاعل الحقيقي</div>
-            <div class="factor-desc">السوشيال ميديا اللي بتدعم علاقات حقيقية بتزيد الرفاهية — اللي بتحل محلها بتنقصها</div>
-          </div>
-        </div>
-        <div class="factor-card">
-          <div class="factor-icon">🌙</div>
-          <div>
-            <div class="factor-title">الاستخدام قبل النوم</div>
-            <div class="factor-desc">الاستخدام الكثيف ليلاً هو الأكتر ارتباطاً بالأذى النفسي — مش الاستخدام في النهار</div>
-          </div>
-        </div>
-        <div class="factor-card">
-          <div class="factor-icon">🎯</div>
-          <div>
-            <div class="factor-title">هدف الاستخدام</div>
-            <div class="factor-desc">البحث عن معلومة أو التواصل مع شخص ≠ السكرول اللانهائي بدون هدف — التأثير مختلف تماماً</div>
-          </div>
-        </div>
-        <div class="factor-card">
-          <div class="factor-icon">🏠</div>
-          <div>
-            <div class="factor-title">السياق الثقافي</div>
-            <div class="factor-desc">في مجتمعات الروابط الاجتماعية القوية، السوشيال ميديا بتعزّزها — في مجتمعات الفردية بتعزّز العزلة</div>
-          </div>
-        </div>
-        <div class="factor-card">
-          <div class="factor-icon">👧</div>
-          <div>
-            <div class="factor-title">الجنس والسن</div>
-            <div class="factor-desc">البنات بين 13-17 هم الأكتر تضرراً في الدول الناطقة بالإنجليزية — الفجوة مش موجودة بنفس الحدة في العالم العربي</div>
-          </div>
-        </div>
-      </div>
-
-      <h2>ثالثاً: ليه العالم العربي مختلف؟</h2>
-
-      <p>ده السؤال اللي محدش بيسأله بالعربي — لكن التقرير بيجاوب عليه ضمنياً. الباحثون لاحظوا إن الدول اللي فيها <strong>روابط اجتماعية وعائلية قوية</strong> كانت الأكتر مقاومة للتأثيرات السلبية للسوشيال ميديا. مش لأن الناس بتستخدمها أقل — لأن السوشيال ميديا عندهم <strong>بتكمّل</strong> التواصل الحقيقي مش بتحل محله.</p>
+      <p>لما حد يشوف فيديوهاتك ويفضل يدور على "الجزء التاني" أو "الحلقة الجاية" — ده إشارة قوية جداً للخوارزمية إن محتواكِ بيخلق dependency حقيقي. والخوارزمية بتكافئ ده بإنها توزع محتواكِ أكتر على ناس تانية.</p>
 
       <div class="pull-quote">
-        <p>"الأدلة العالمية واضحة: التأثير بيعتمد على أي منصة، مين بيستخدمها، إزاي، وقد إيه. الاستخدام الكثيف مضر — لكن اللي مش على السوشيال خالص كمان بيخسر فوايد حقيقية."</p>
-        <cite>— Prof. Jan-Emmanuel De Neve، مدير Wellbeing Research Centre — University of Oxford، World Happiness Report 2026</cite>
+        <p>"المشاهدة المتعمدة، المحتوى التسلسلي، وكريتورز الأخبار — ده اللي بيشكّل مستقبل السوشيال ميديا في 2026."</p>
+        <cite>— Sprout Social Q1 2026 Pulse Survey — State of Social Media</cite>
       </div>
 
-      <p>وده بيعني حاجة مهمة جداً: السوشيال ميديا في حد ذاتها مش مشكلة ومش حل. هي <strong>مضخّم</strong> — بتكبّر اللي موجود. لو في تواصل حقيقي وروابط اجتماعية، بتكبّرهم. لو في عزلة وفردية، بتكبّرها.</p>
+      <p>وبالأرقام: الـ Content Creator اللي بيعمل Series بيحصل على <strong>Watch Time أعلى بكتير</strong>، لأن المشاهد مش بس بيتفرج — هو <strong>بيستثمر</strong> في القصة. ولما حد يستثمر وقته في حاجة، بيفضل مع آخرها.</p>
 
-      <h2>رابعاً: إيه علاقة ده بالـ Content Creator؟</h2>
+      <h2>ثانياً: الـ Micro-Drama — إيه هو بالظبط؟</h2>
 
-      <p>العلاقة مباشرة جداً — وبتتكلم في اتجاهين:</p>
+      <p>الـ Micro-Drama مش مسلسل وعمل فني ضخم. هو <strong>سلسلة محتوى منظّمة</strong> بتشتغل على مبدأ واحد: <strong>كل حلقة بتجاوب سؤال وبتفتح سؤال جديد.</strong> ده بالظبط نفس مبدأ المسلسلات الكبيرة — بس في شكل سوشيال ميديا.</p>
 
-      <h3>الاتجاه الأول: مسؤوليتك كـ Creator</h3>
+      <p>شايفة إزاي ده بيشتغل في الـ Content Creation نيش؟ تخيّلي سلسلة اسمها "من الصفر لـ 10K متابع في 90 يوم" — كل فيديو حلقة، كل حلقة فيها تقدم وتحدي وسؤال مفتوح. الجمهور مش بس هيتفرج — هيترقّب.</p>
 
-      <p>التقرير بيقول صراحة إن <strong>المحتوى اللي بيحفّز المقارنة الاجتماعية</strong> هو الأكتر ضرراً. الصورة المثالية أوي، الحياة اللي بتبدو كاملة، الأرقام المبهرة من غير سياق — ده المحتوى اللي بيعمل أذى. والكريتور اللي بيبني محتواه على الأصالة والواقعية مش بس أكتر نجاحاً في 2026 — هو أكتر مسؤولية.</p>
-
-      <div class="opportunity">
-        <div class="opportunity-label">💡 الفرصة الحصرية</div>
-        <h3>المحتوى العربي اللي بيبني تواصل — مش بيبيع وهم</h3>
-        <p>في وقت الغرب بيعاني من أزمة ثقة وأزمة صحة نفسية بسبب المحتوى السطحي — الكريتور العربي اللي بيبني محتوى حقيقي وبيعزّز الروابط الاجتماعية عنده فرصة ذهبية. الجمهور جاهز لمحتوى بيحسّسه بالانتماء مش بالنقص.</p>
-      </div>
-
-      <h3>الاتجاه التاني: فرصة موضوع محتوى ما اتلمسش</h3>
-
-      <p>تقرير بحجم Oxford عن السوشيال ميديا والصحة النفسية — وما فيش كريتور عربي واحد بالغ تقريباً اتكلم فيه بجدية. ده موضوع بيجمع <strong>بحث حقيقي + جدل + صلة مباشرة بحياة الجمهور</strong> — المعادلة المثالية للمحتوى اللي بيانتشر.</p>
-
-      <div class="stat-highlight">
-        <div class="stat-number">88%</div>
-        <div>
-          <div class="stat-text">من المستخدمين بيقولوا إن ظهور أدوات توليد الفيديو بالـ AI خلّاهم يثقوا في الأخبار والمحتوى على السوشيال بشكل أقل. الأصالة والمصدر الموثوق بقوا أندر وأغلى.</div>
-          <div class="stat-source">المصدر: Sprout Social Q1 2026 Pulse Survey</div>
+      <div class="series-anatomy">
+        <div class="anatomy-row">
+          <div class="anatomy-ep">الحلقة<br>01</div>
+          <div class="anatomy-content">
+            <div class="anatomy-title">البداية — الوعد والتحدي</div>
+            <div class="anatomy-hook">قرّرت أوصّل لـ 10K في 90 يوم بدون إعلانات — وهقولك كل حاجة بعمله</div>
+            <div class="anatomy-cliffhanger">أول خطوة هعملها هتفاجئك — في الحلقة الجاية</div>
+          </div>
+        </div>
+        <div class="anatomy-row">
+          <div class="anatomy-ep">الحلقة<br>02</div>
+          <div class="anatomy-content">
+            <div class="anatomy-title">التنفيذ — الخطوة الأولى + النتيجة</div>
+            <div class="anatomy-hook">جربت الاستراتيجية دي — النتيجة في أول 7 أيام كانت صادمة</div>
+            <div class="anatomy-cliffhanger">الأسبوع التاني كان مختلف تماماً — والسبب في الحلقة 03</div>
+          </div>
+        </div>
+        <div class="anatomy-row">
+          <div class="anatomy-ep">الحلقة<br>03</div>
+          <div class="anatomy-content">
+            <div class="anatomy-title">التحوّل — المشكلة الكبيرة</div>
+            <div class="anatomy-hook">وصلت لـ 500 متابع في أسبوعين — وبعدين وقفت تماماً. عرفت السبب؟</div>
+            <div class="anatomy-cliffhanger">الحل اللي غيّر كل حاجة — الحلقة القادمة</div>
+          </div>
+        </div>
+        <div class="anatomy-row">
+          <div class="anatomy-ep">الحلقة<br>N</div>
+          <div class="anatomy-content">
+            <div class="anatomy-title">النهاية — النتيجة الكاملة + الدرس</div>
+            <div class="anatomy-hook">يوم الـ 90: إيه اللي حصل، إيه اللي اتعلمته، وإيه اللي هعمله بعد كده</div>
+            <div class="anatomy-cliffhanger">السلسلة الجاية — موعد يوم الأحد</div>
+          </div>
         </div>
       </div>
 
-      <h2>خامساً: كيف تترجمي ده لمحتوى فعلي؟</h2>
+      <h2>ثالثاً: أنواع المحتوى التسلسلي للـ Content Creator</h2>
 
-      <ul class="checklist">
-        <li>تكلّمي في إنجازاتك مع السياق الكامل — مش الرقم لوحده</li>
-        <li>شاركي التحديات والأوقات الصعبة بنفس اهتمام شاركي النجاحات</li>
-        <li>عملي محتوى بيحفّز تواصل الجمهور مع بعض — مش بس معاكِ</li>
-        <li>تجنّبي المقارنات المباشرة اللي بتحسّس الجمهور إنه ناقص</li>
-        <li>اعملي محتوى عن الصحة النفسية والسوشيال ميديا — الموضوع ده ناقص بالعربي</li>
-        <li>وثّقي رحلتك الحقيقية بما فيها الأوقات الصعبة — ده بيبني ثقة مش بيكسرها</li>
-        <li>اسألي جمهورك عن علاقتهم بالسوشيال ميديا — السؤال ده بيجيب تفاعل عالي جداً</li>
-      </ul>
+      <div class="format-grid">
+        <div class="format-card">
+          <div class="format-icon">🧪</div>
+          <div class="format-name">تحدي مؤقّت</div>
+          <div class="format-desc">تجربة بمدة محددة بتوثّقي فيها رحلة حقيقية — النتايج بتفتح فضول طبيعي</div>
+          <div class="format-example">"30 يوم بنشر كل يوم — إيه اللي حصل؟"</div>
+        </div>
+        <div class="format-card">
+          <div class="format-icon">🎓</div>
+          <div class="format-name">الكورس المجاني</div>
+          <div class="format-desc">سلسلة تعليمية بترقيم — كل حلقة بتكمّل اللي قبلها وبتطلب اللي بعدها</div>
+          <div class="format-example">"Social SEO الجزء 1 من 5 — ابدأي من هنا"</div>
+        </div>
+        <div class="format-card">
+          <div class="format-icon">📖</div>
+          <div class="format-name">قصة حقيقية</div>
+          <div class="format-desc">حكاية بدأت من نقطة وجاية لنقطة — الجمهور بيتفاعل لأنه بيحس بالمسار</div>
+          <div class="format-example">"قصة مشروعي من الخسارة للربح"</div>
+        </div>
+        <div class="format-card">
+          <div class="format-icon">🔍</div>
+          <div class="format-name">البحث والاكتشاف</div>
+          <div class="format-desc">بتبحثي في موضوع وبتشاركي الجمهور الاكتشافات — ده بيخليهم يحسوا إنهم معاكِ</div>
+          <div class="format-example">"جربت كل أدوات الـ AI للكريتورز — النتايج هنا"</div>
+        </div>
+        <div class="format-card">
+          <div class="format-icon">👥</div>
+          <div class="format-name">سلسلة الضيوف</div>
+          <div class="format-desc">كل حلقة مع شخص مختلف بنفس الأسئلة — بتبني مقارنة طبيعية بين الحلقات</div>
+          <div class="format-example">"سألت 10 كريتورز ناجحين نفس 3 أسئلة"</div>
+        </div>
+        <div class="format-card">
+          <div class="format-icon">⚔️</div>
+          <div class="format-name">المقارنة التسلسلية</div>
+          <div class="format-desc">اختبارات تطلع بنتيجة — كل اختبار بيبني توقع للاختبار الجاي</div>
+          <div class="format-example">"أي منصة أحسن للكريتور العربي — الاختبار الكامل"</div>
+        </div>
+      </div>
+
+      <h2>رابعاً: الفرق بين الفيديو العادي والـ Series</h2>
+
+      <div class="compare-grid">
+        <div class="compare-card old">
+          <div class="compare-label">⚫ الفيديو المنفرد — النموذج القديم</div>
+          <ul>
+            <li>كل فيديو بيبدأ من الصفر</li>
+            <li>الجمهور بيتفرج ويمشي</li>
+            <li>مفيش سبب للرجوع تاني</li>
+            <li>الخوارزمية بتعاملك كـ stranger كل مرة</li>
+            <li>مجهود كبير مقابل أثر قصير</li>
+          </ul>
+        </div>
+        <div class="compare-card new">
+          <div class="compare-label">💜 المحتوى التسلسلي — النموذج الجديد</div>
+          <ul>
+            <li>كل فيديو بيكمّل اللي قبله ويفتح اللي بعده</li>
+            <li>الجمهور بيرجع عشان عنده "رصيد" في القصة</li>
+            <li>الترقّب هو المحرك — مش الخوارزمية</li>
+            <li>Watch Time أعلى = توزيع أوسع تلقائي</li>
+            <li>مجهود متراكم بأثر طويل الأمد</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="stat-highlight">
+        <div class="stat-number">3×</div>
+        <div>
+          <div class="stat-text">المحتوى التسلسلي بيجيب تفاعل أعلى بـ 3 أضعاف من الفيديو المنفرد في نفس النيش — لأن الجمهور مستثمر في القصة مش بس في الفيديو.</div>
+          <div class="stat-source">المصدر: Brandience Social Media Trends 2026 — Series Content Analysis</div>
+        </div>
+      </div>
 
       <section class="lead-box">
-        <h3 style="color: #fff; margin-bottom: 5px;">عاوزة تبني محتوى بيبني — مش بيهدم؟ 🌱</h3>
+        <h3 style="color: #fff; margin-bottom: 5px;">عاوزة تبدأي سلسلتك الأولى؟ 🎬</h3>
         <div class="free-badge">كتالوج مجاني ✨</div>
         <p style="color: #fff; font-size: 1.4rem; font-weight: 700; margin-bottom: 30px; line-height: 1.5;">
           احصلي على <span style="color:var(--primary);">"Social SEO Keyword Catalog 2026"</span><br>
-          50+ كيورد لنيش الـ <strong>Content Creation</strong> — PDF جاهز للتحميل!
+          50+ كيورد لنيش الـ <strong>Content Creation</strong> — هتساعدك تختاري موضوع سلسلتك الأولى!
         </p>
         <div style="max-width: 500px; margin: 0 auto;">
           <input type="text"  id="name"     placeholder="اسمك الكريم.."                  class="form-input">
@@ -291,12 +319,33 @@
         </div>
       </section>
 
-      <p>في الختام، التقرير ده مش مجرد أخبار — ده مرآة. بيقولك إن السوشيال ميديا مش شريرة ومش مقدّسة. هي أداة — وتأثيرها بيتحدد بإيدنا إحنا اللي بنصنع المحتوى. الكريتور اللي بيفهم ده بيقدر يبني محتوى مش بس بيجيب views — بيبني مجتمع حقيقي.</p>
+      <h2>خامساً: إزاي تبدأي سلسلتك الأولى — من النهارده</h2>
+
+      <h3>الخطوة الأولى: اختاري فكرة قابلة للتقسيم</h3>
+      <p>مش كل فكرة تصلح تبقى سلسلة. الفكرة الكويسة هي اللي فيها <strong>رحلة واضحة</strong> — نقطة بداية ونقطة نهاية وتحديات في النص. "نصايح الـ Content Creation" مش سلسلة. "رحلتي من 0 لـ 5K في 60 يوم" سلسلة.</p>
+
+      <h3>الخطوة التانية: حطّي خريطة الحلقات قبل ما تبدأي</h3>
+      <p>اكتبي على ورقة: الحلقة 1 بتقول إيه، الحلقة 2 بتقول إيه، وهيتربطوا بإيه. <strong>Cliffhanger</strong> كل حلقة مش اختياري — ده اللي بيخلي الجمهور يرجع. السؤال المفتوح في نهاية كل فيديو هو المغناطيس.</p>
+
+      <h3>الخطوة التالتة: العنونة والـ Numbering مش تفصيل</h3>
+      <p>اكتبي في العنوان "الجزء 1" أو "الحلقة 01" أو "Week 1" — ده بيقول للجمهور إن في حاجة جاية. وبيقول للخوارزمية إن ده محتوى متسلسل يستحق توزيع خاص.</p>
+
+      <ul class="checklist">
+        <li>فكّري في أهم رحلة عشتيها في نيشتك — ده أقوى موضوع لسلسلتك الأولى</li>
+        <li>قسّمي الرحلة دي لـ 4 حلقات على الأقل — كل حلقة بتجاوب سؤال وبتفتح سؤال</li>
+        <li>ابدأي كل عنوان بـ "الجزء X" أو "الحلقة X" — الترقيم مش تفصيل</li>
+        <li>اكتبي الـ Cliffhanger قبل ما تسجّلي — مش بعد</li>
+        <li>حددي يوم ثابت للنشر — الجمهور محتاج يعرف يترقّب امتى</li>
+        <li>في كل حلقة، اذكري الحلقة السابقة في أول 10 ثواني عشان تجيبي جمهور جديد معاكِ</li>
+        <li>في نهاية السلسلة، اعملي "Best Of" أو ملخّص — ده بيجيب views جديدة على الحلقات القديمة</li>
+      </ul>
+
+      <p>في الختام، المحتوى التسلسلي مش بس استراتيجية — ده تحوّل في علاقتك بجمهورك. لما الناس بتترقّب محتواكِ، إنتِ بقيتِ جزء من روتينهم. وده اللي يعجز أي خوارزمية تصنعه بدلاً منك.</p>
 
     </article>
 
     <section class="footer-action">
-      <h3 style="margin-bottom: 10px; color: #fff;">عاوزة تبني استراتيجية محتوى قايمة على بيانات حقيقية؟ 🚀</h3>
+      <h3 style="margin-bottom: 10px; color: #fff;">عاوزة تبني استراتيجية محتوى تسلسلي كاملة؟ 🚀</h3>
       <p style="color: var(--muted); margin-bottom: 30px;">استكشفي خدماتنا الاحترافية أو ارجعي للمكتبة للمزيد من الدروس.</p>
       <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
         <a href="https://daolinedigital.com/blog/" class="footer-btn">الرجوع للمكتبة 🏛️</a>
@@ -329,7 +378,7 @@
         fd.append("entry.299023128",  name);
         fd.append("entry.1712155557", email);
         fd.append("entry.1224669856", wa);
-        fd.append("entry.334049848",  "happiness_report_article_022");
+        fd.append("entry.334049848",  "series_content_article_021");
 
         await fetch("https://docs.google.com/forms/d/e/1FAIpQLSdSXEvN7DMMC-pwXED9G5TRpe4ecQ5U7pMtsg3201d2ikinfQ/formResponse",
           { method: "POST", mode: "no-cors", body: fd });
