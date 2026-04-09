@@ -3,25 +3,50 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>كتالوج الهوكات - الدليل العملي | Daoline Digital</title>
+
+  <title>تحديثات خوارزميات السوشيال ميديا 2026: أسرار الـ AI | Daoline Digital</title>
+  <meta name="description" content="دليل عملي من Daoline Digital يشرح تحديثات خوارزميات تيك توك وإنستجرام لعام 2026، وكيف تستخدم الـ Social SEO لمضاعفة وصولك الأورجانيك.">
+  <meta name="keywords" content="خوارزميات, السوشيال ميديا, تحديثات 2026, Social SEO, تيك توك, ريلز, تسويق رقمي, Daoline Digital, الذكاء الاصطناعي">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Changa:wght@400;700;800&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
   <style>
     :root {
-      --primary:   #c013a6;
-      --secondary: #2563eb;
-      --accent:    #10b981;
+      --primary:   #c013a6; 
+      --primary2:  #a00f89;
+      --secondary: #2563eb; 
       --bg:        #0f172a;
       --surface:   #1e293b;
       --card:      rgba(30, 41, 59, 0.7);
       --text:      #e2e8f0;
       --muted:     #94a3b8;
+      --accent:    #10b981;
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Tajawal', sans-serif; background: var(--bg); color: var(--text); line-height: 1.8; font-size: 1rem; }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Tajawal', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+      line-height: 2;
+      font-size: 1.1rem;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    a, button, input, textarea {
+      -webkit-user-select: auto !important;
+      -ms-user-select: auto !important;
+      user-select: auto !important;
+    }
 
     /* FREEBAR */
     .freebar { position: sticky; top: 0; z-index: 200; background: linear-gradient(90deg, rgba(192,19,166,.95), rgba(37,99,235,.85)); border-bottom: 1px solid rgba(255,255,255,.12); backdrop-filter: blur(10px); }
@@ -40,17 +65,6 @@
     .nav-link-primary { background: var(--primary); border-color: var(--primary); color: #fff; }
     .nav-link-primary:hover { background: #a00f89; }
 
-    /* LEAD FORM */
-    .lead-section { position: relative; overflow: hidden; border-radius: 20px; margin: 60px auto 0; max-width: 900px; padding: 0 20px 60px; }
-    .lead-blur-preview { filter: blur(14px); opacity: .18; pointer-events: none; }
-    .lead-box { background: linear-gradient(180deg, rgba(30,41,59,.97), rgba(15,23,42,.99)); border: 2px solid rgba(192,19,166,.35); box-shadow: 0 0 80px rgba(192,19,166,.18); border-radius: 24px; padding: 40px 28px; text-align: center; position: relative; z-index: 3; margin-top: -120px; }
-    .form-input { width: 100%; box-sizing: border-box; background: rgba(255,255,255,.05); border: 2px solid rgba(255,255,255,.1); border-radius: 1rem; padding: 1rem 1.2rem; color: #fff; outline: none; text-align: right; font-family: 'Tajawal', sans-serif; font-size: 1rem; margin-bottom: 14px; display: block; }
-    .form-input:focus { border-color: var(--primary); background: rgba(255,255,255,.08); }
-    .submit-btn { background: linear-gradient(90deg, var(--primary), #a00f89); color: #fff; border: none; width: 100%; padding: 18px 20px; border-radius: 16px; font-family: 'Tajawal', sans-serif; font-weight: 900; font-size: 1.2rem; cursor: pointer; transition: .25s ease; box-shadow: 0 12px 25px rgba(192,19,166,.25); }
-    .submit-btn:hover { transform: translateY(-2px); }
-    #status-msg { display: none; margin-top: 1rem; font-weight: bold; padding: 14px; border-radius: 12px; text-align: center; font-size: 1rem; border: 1px solid transparent; }
-    #security-toast { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: var(--primary); color: #fff; padding: 12px 24px; border-radius: 999px; font-weight: 900; box-shadow: 0 10px 25px rgba(0,0,0,.5); z-index: 9999; opacity: 0; transition: all .3s ease; pointer-events: none; }
-
     /* PAGE WRAPPER */
     .page-wrapper { max-width: 210mm; margin: 36px auto 60px; background: var(--surface); border-radius: 16px; overflow: hidden; box-shadow: 0 30px 60px rgba(0,0,0,.55); border: 1px solid rgba(255,255,255,.05); }
 
@@ -66,25 +80,28 @@
     .content-area { padding: 50px 60px; }
     .intro-box { background: rgba(37,99,235,.06); border-right: 5px solid var(--secondary); border-radius: 12px; padding: 24px 28px; margin-bottom: 48px; color: #cbd5e1; font-size: 1.05rem; line-height: 1.9; }
     .intro-box strong { color: var(--primary); }
+    
     .hook-section { margin-bottom: 48px; }
     .section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
     .section-number { background: var(--primary); color: #fff; font-weight: 900; font-size: .85rem; padding: 4px 12px; border-radius: 50px; white-space: nowrap; }
     .section-title { font-size: 1.55rem; font-weight: 900; color: #fff; border-bottom: 3px solid var(--primary); padding-bottom: 10px; flex: 1; }
     .section-desc { color: var(--muted); font-size: .98rem; margin-bottom: 22px; }
+    
     .hook-list { list-style: none; padding: 0; }
     .hook-item { background: var(--card); border: 1px solid rgba(255,255,255,.07); border-radius: 12px; padding: 22px 24px; margin-bottom: 16px; transition: transform .25s, border-color .25s, box-shadow .25s; }
     .hook-item:hover { transform: translateX(-6px); border-color: var(--primary); box-shadow: 0 8px 24px rgba(0,0,0,.25); }
     .hook-ar { font-size: 1.25rem; font-weight: 900; color: #fff; line-height: 1.6; margin-bottom: 14px; }
+    
     .hook-analysis { background: rgba(0,0,0,.2); border-right: 3px solid var(--secondary); border-radius: 8px; padding: 14px 16px; }
     .hook-why { font-size: .92rem; color: var(--muted); margin-bottom: 6px; }
     .hook-ex   { font-size: .98rem; color: #cbd5e1; font-weight: 700; }
     .hook-ex span { color: var(--accent); }
-    .img-placeholder { border: 2px dashed #475569; background: rgba(255,255,255,.03); border-radius: 12px; padding: 28px; text-align: center; color: var(--muted); font-weight: 700; font-size: 1.1rem; margin-bottom: 18px; }
-    .img-placeholder small { display: block; font-weight: 400; font-size: .88rem; margin-top: 6px; }
+    
     .tip-box { background: linear-gradient(135deg, rgba(192,19,166,.09), rgba(37,99,235,.09)); border: 1px solid rgba(192,19,166,.25); border-radius: 14px; padding: 28px 32px; margin: 48px 0; }
     .tip-box h3 { color: var(--primary); font-size: 1.3rem; margin-bottom: 14px; }
     .tip-box p  { color: #cbd5e1; line-height: 1.9; font-size: 1rem; }
     .tip-box strong { color: #fff; }
+    
     .bonus-section { background: rgba(37,99,235,.05); border: 2px solid var(--secondary); border-radius: 16px; padding: 36px 40px; margin-top: 48px; }
     .bonus-section h2 { font-size: 1.7rem; font-weight: 900; color: var(--secondary); margin-bottom: 8px; }
     .bonus-section .section-desc { margin-bottom: 24px; }
@@ -98,8 +115,22 @@
     .formula-item:nth-child(3) .formula-step span { color: #f59e0b; }
     .formula-item:nth-child(4) .formula-step span { color: var(--accent); }
     .formula-desc { font-size: .94rem; color: var(--muted); }
+    
     .page-footer { text-align: center; padding: 36px 40px 40px; border-top: 1px solid #334155; margin-top: 50px; color: #64748b; font-size: .95rem; }
     .page-footer strong { display: block; font-size: 1.4rem; font-weight: 900; color: #475569; margin-bottom: 6px; }
+
+    /* LEAD FORM */
+    .lead-section { position: relative; overflow: hidden; border-radius: 20px; margin: 60px auto 0; max-width: 900px; padding: 0 20px 60px; }
+    .lead-blur-preview { filter: blur(14px); opacity: .18; pointer-events: none; }
+    .lead-box { background: linear-gradient(180deg, rgba(30,41,59,.97), rgba(15,23,42,.99)); border: 2px solid rgba(192,19,166,.35); box-shadow: 0 0 80px rgba(192,19,166,.18); border-radius: 24px; padding: 40px 28px; text-align: center; position: relative; z-index: 3; margin-top: -120px; }
+    .form-input { width: 100%; box-sizing: border-box; background: rgba(255,255,255,.05); border: 2px solid rgba(255,255,255,.1); border-radius: 1rem; padding: 1rem 1.2rem; color: #fff; outline: none; text-align: right; font-family: 'Tajawal', sans-serif; font-size: 1rem; margin-bottom: 14px; display: block; }
+    .form-input:focus { border-color: var(--primary); background: rgba(255,255,255,.08); }
+    .submit-btn { background: linear-gradient(90deg, var(--primary), #a00f89); color: #fff; border: none; width: 100%; padding: 18px 20px; border-radius: 16px; font-family: 'Tajawal', sans-serif; font-weight: 900; font-size: 1.2rem; cursor: pointer; transition: .25s ease; box-shadow: 0 12px 25px rgba(192,19,166,.25); }
+    .submit-btn:hover { transform: translateY(-2px); }
+    #status-msg { display: none; margin-top: 1rem; font-weight: bold; padding: 14px; border-radius: 12px; text-align: center; font-size: 1rem; border: 1px solid transparent; }
+    #security-toast { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: var(--primary); color: #fff; padding: 12px 24px; border-radius: 999px; font-weight: 900; box-shadow: 0 10px 25px rgba(0,0,0,.5); z-index: 9999; opacity: 0; transition: all .3s ease; pointer-events: none; }
+
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
     @media print {
       @page { size: A4 portrait; margin: 14mm 16mm 16mm 16mm; }
@@ -126,7 +157,6 @@
       .hook-why { color: #64748b !important; font-size: 9pt !important; }
       .hook-ex  { color: #0f172a !important; font-size: 10pt !important; }
       .hook-ex span { color: #059669 !important; }
-      .img-placeholder { border-color: #cbd5e1 !important; background: #f1f5f9 !important; color: #64748b !important; padding: 18px !important; font-size: 10pt !important; }
       .tip-box { break-inside: avoid; page-break-inside: avoid; background: #fdf4ff !important; border: 1px solid #e879f9 !important; border-radius: 10px !important; padding: 20px !important; margin: 28px 0 !important; }
       .tip-box h3 { color: #c013a6 !important; font-size: 12pt !important; }
       .tip-box p  { color: #334155 !important; font-size: 10pt !important; }
@@ -150,16 +180,14 @@
 </head>
 <body>
 
-  <!-- FREEBAR -->
-  <div class="freebar">
+  <div class="freebar no-print">
     <div class="freebar-inner">
-      <div>🎓 Daoline Free Resources — كتالوج الهوكات من Daoline جاهز الآن</div>
-      <a href="#lead-download" class="freebar-btn">احصل على النسخة الكاملة PDF</a>
+      <div>🚀 Daoline Free Resources — دليلك العملي لتحديثات 2026</div>
+      <a href="#lead-download" class="freebar-btn">حمل دليل Social SEO مجاناً</a>
     </div>
   </div>
 
-  <!-- NAV -->
-  <nav class="top-nav">
+  <nav class="top-nav no-print">
     <div class="top-nav-inner">
       <a href="https://daolinedigital.com" class="nav-logo">Daoline<span>Digital</span></a>
       <div class="nav-links">
@@ -169,207 +197,155 @@
     </div>
   </nav>
 
-  <!-- DOCUMENT -->
-  <div class="page-wrapper">
+  <div class="no-print text-center py-6">
+    <button onclick="downloadPDF()" style="background: linear-gradient(90deg, var(--primary), var(--secondary)); color: #fff; padding: 12px 30px; border-radius: 50px; font-weight: 900; font-size: 1.1rem; border: none; cursor: pointer; box-shadow: 0 10px 20px rgba(0,0,0,0.3);">
+      📥 تحميل المقال كـ PDF 
+    </button>
+  </div>
+
+  <div class="page-wrapper" id="pdf-content">
 
     <div class="cover-page">
-      <span class="cover-emoji">🪝</span>
-      <h1 class="cover-title">كتالوج الـ 3 ثواني السحرية</h1>
-      <p class="cover-sub">الدليل العملي لصناع المحتوى: إزاي تكتب "هوك" يوقف السكرول، يتصدر الخوارزميات، ويحقق مبيعات فعلية 2026</p>
+      <span class="cover-emoji">🤖</span>
+      <h1 class="cover-title">خوارزميات 2026: أسرار الـ AI</h1>
+      <p class="cover-sub">الدليل الشامل لفهم التحديثات الجديدة في تيك توك وإنستجرام، وكيف تتصدر نتائج البحث (Social SEO) لزيادة مبيعاتك.</p>
       <span class="cover-badge">Daoline Digital Academy</span>
     </div>
 
     <div class="content-area">
 
       <div class="intro-box">
-        <strong style="font-size: 1.15rem;">ليه صناعة المحتوى في 2026 محتاجة هوك مش مجرد كاميرا حلوة؟</strong><br><br>
-        خوارزميات السوشيال ميديا (تيك توك، إنستجرام ريلز، فيسبوك) بقت شرسة. عمر الانتباه عند المشاهد <strong>3 ثواني</strong> بالحد الأقصى! لو الجملة الأولى ملقتش أذنه، مستحيل يكمل. عشان كده جمعنا في Daoline Digital أقوى الهوكات بعامية مصرية احترافية، مبنية على علم النفس التسويقي، عشان كل صانع محتوى يملك سلاحه السري.
+        <strong style="font-size: 1.15rem;">ليه الريتش الأورجانيك واقع في 2026؟</strong><br><br>
+        لو حاسس إن فيديوهاتك مبقتش بتجيب مشاهدات زي زمان، العيب مش فيك، العيب إنك لسه بتلعب بقواعد 2024. في 2026، الخوارزميات بقت بتعتمد بنسبة 100% على <strong>الذكاء الاصطناعي (AI)</strong> في تصنيف المحتوى. المنصات زي تيك توك وإنستجرام تحولت رسمياً لـ "محركات بحث". لو الفيديو بتاعك مش مهيأ للـ Social SEO، الخوارزمية مش هتشوفه أصلاً. في الدليل ده، هنكشفلك الأسرار اللي الخبراء مخبينها عنك!
       </div>
 
-      <!-- 01 -->
       <div class="hook-section">
-        <div class="section-header"><span class="section-number">01</span><h2 class="section-title">هوكات الفضول والتشويق</h2></div>
-        <p class="section-desc">الفضول أقوى غريزة عند البشر. زرع سؤال في دماغ المشاهد في أول ثانية = مستحيل يقفل الفيديو.</p>
+        <div class="section-header"><span class="section-number">01</span><h2 class="section-title">تيك توك: نهاية عصر الهاشتاجات</h2></div>
+        <p class="section-desc">تيك توك مبقاش محتاج هاشتاج عشان يفهم الفيديو بتاعك، الـ AI بقى بيشوف وبيسمع!</p>
         <ul class="hook-list">
-          <li class="hook-item"><div class="hook-ar">"إنت بتعمل [الكارثة/الغلطة دي] كل يوم وإنت مش حاسس.. وشوف النتيجة هتوصلك لفين!"</div><div class="hook-analysis"><div class="hook-why">🧠 <strong>ليه بيشتغل؟</strong> يضرب على وتر الخوف من الخسارة (FOMO).</div><div class="hook-ex">💡 <strong>مثال:</strong> "إنتِ بتغسلي وشك بالغسول ده كل يوم وإنتِ مش حاسة.. <span>وشوفي الكارثة اللي هيعملها في بشرتك بعد شهر!</span>"</div></div></li>
-          <li class="hook-item"><div class="hook-ar">"تغيير تافه جداً عملته، نقلني من الصفر لإن مبيعاتي تضرب في السما في [المجال]."</div><div class="hook-analysis"><div class="hook-why">🧠 <strong>ليه بيشتغل؟</strong> يعد بنتيجة ضخمة مقابل مجهود بسيط.</div><div class="hook-ex">💡 <strong>مثال:</strong> "تغيير تافه في الكابشن <span>نقلني من الصفر لإن مبيعاتي تضرب في السما.</span>"</div></div></li>
-          <li class="hook-item"><div class="hook-ar">"ليه محدش من الحيتان والخبراء بيجيب سيرة التريكة دي في [المجال]؟"</div><div class="hook-analysis"><div class="hook-why">🧠 <strong>ليه بيشتغل؟</strong> يلعب على نظرية المؤامرة — في سر الكبار مخبينه.</div><div class="hook-ex">💡 <strong>مثال:</strong> "ليه محدش من حيتان العقارات <span>بيجيب سيرة التريكة دي لما تيجي تشتري شقة؟</span>"</div></div></li>
-          <li class="hook-item"><div class="hook-ar">"كنت فاكر إن الحركة دي تضييع وقت.. لحد ما جربتها وجات الصدمة!"</div><div class="hook-analysis"><div class="hook-why">🧠 <strong>ليه بيشتغل؟</strong> يكسر التوقعات — حاجة كلنا فاكرينها غلط تطلع هي الصح.</div><div class="hook-ex">💡 <strong>مثال:</strong> "كنت فاكر إن كارديو بعد الحديد تضييع وقت.. <span>لحد ما شفت الصدمة على الميزان!</span>"</div></div></li>
+          <li class="hook-item">
+            <div class="hook-ar">تقنية التعرف على الصوت (ASR)</div>
+            <div class="hook-analysis">
+              <div class="hook-why">🧠 <strong>إزاي بتشتغل؟</strong> الخوارزمية بتحلل كل كلمة بتقولها في الفيديو وبتحولها لنص مخفي بتصنف بيه الفيديو.</div>
+              <div class="hook-ex">💡 <strong>الحل:</strong> لازم تنطق "الكلمة المفتاحية" الخاصة بمجالك <span>في أول 3 ثواني من الفيديو بصوت واضح.</span></div>
+            </div>
+          </li>
+          <li class="hook-item">
+            <div class="hook-ar">تحليل العناصر البصرية (Visual Recognition)</div>
+            <div class="hook-analysis">
+              <div class="hook-why">🧠 <strong>إزاي بتشتغل؟</strong> الـ AI بيعمل Scan لكل حاجة في الكادر (هدومك، الخلفية، الألوان) عشان يفهم السياق.</div>
+              <div class="hook-ex">💡 <strong>الحل:</strong> لو بتبيع عقارات، <span>لازم تظهر في خلفية بتعكس الفخامة مش في عربية بتسوقها.</span></div>
+            </div>
+          </li>
+          <li class="hook-item">
+            <div class="hook-ar">أهمية الأون-سكرين تكست (On-Screen Text)</div>
+            <div class="hook-analysis">
+              <div class="hook-why">🧠 <strong>إزاي بتشتغل؟</strong> الكلام اللي بتكتبه جوه تطبيق تيك توك نفسه هو أقوى إشارة للـ SEO.</div>
+              <div class="hook-ex">💡 <strong>الحل:</strong> اكتب سؤال العميل المباشر على الشاشة <span>(مثال: إزاي تخس 5 كيلو في شهر؟).</span></div>
+            </div>
+          </li>
         </ul>
       </div>
 
-      <!-- 02 -->
       <div class="hook-section">
-        <div class="section-header"><span class="section-number">02</span><h2 class="section-title">هوكات القصص والسرد</h2></div>
-        <p class="section-desc">الناس بتنسى الأرقام لكن مستحيل تنسى قصة. القصة بتبني ثقة ومصداقية لا مثيل لهم.</p>
+        <div class="section-header"><span class="section-number">02</span><h2 class="section-title">إنستجرام: خوارزمية الـ Semantic Search</h2></div>
+        <p class="section-desc">إنستجرام غيّر محرك البحث بتاعه عشان يفهم "سياق الكلام" مش بس الكلمات المتقطعة.</p>
         <ul class="hook-list">
-          <li class="hook-item"><div class="hook-ar">"كنت خلاص هجيب آخري وأرمي الفوطة وأسيب [المجال].. لحد ما اكتشفت الثغرة دي."</div><div class="hook-analysis"><div class="hook-why">🧠 <strong>ليه بيشتغل؟</strong> يخلق تعاطف — يبين الضعف الإنساني قبل النجاح.</div><div class="hook-ex">💡 "كنت خلاص هجيب آخري وأقفل البراند.. <span>لحد ما اكتشفت الثغرة دي في إعلانات الفيسبوك.</span>"</div></div></li>
-          <li class="hook-item"><div class="hook-ar">"إزاي قدرت أتحول من [وضع كارثي] لـ [نجاح مبهر] في 30 يوم بس؟ هحكيلك القصة."</div><div class="hook-analysis"><div class="hook-why">🧠 <strong>ليه بيشتغل؟</strong> رحلة البطل من نقطة أ لنقطة ب في وقت قياسي.</div><div class="hook-ex">💡 "إزاي قدرت أتحول من مبيعرفش يركب كلمتين إنجليزي.. <span>لواحد بيشتغل مع شركات أجنبية في 6 شهور.</span>"</div></div></li>
-          <li class="hook-item"><div class="hook-ar">"أسوأ نصيحة سمعتها في حياتي عن [المجال].. واللي ودتني في داهية!"</div><div class="hook-analysis"><div class="hook-why">🧠 <strong>ليه بيشتغل؟</strong> الجدل يشد. الناس بتحب تعرف النصيحة السيئة عشان تتجنبها.</div><div class="hook-ex">💡 "أسوأ نصيحة سمعتها عن الدايت.. <span>نصيحة (امنع النشويات خالص) اللي ودتني في داهية!</span>"</div></div></li>
+          <li class="hook-item">
+            <div class="hook-ar">الكابشن الطويل رجع بقوة (Micro-Blogging)</div>
+            <div class="hook-analysis">
+              <div class="hook-why">🧠 <strong>إزاي بتشتغل؟</strong> كل ما الكابشن كان مليان كلمات متعلقة بمجالك، فرصة ظهورك في הـ Explore بتزيد جداً.</div>
+              <div class="hook-ex">💡 <strong>الحل:</strong> بطل تكتب "رأيكم إيه؟" <span>واكتب كابشن من 3 فقرات بيشرح قيمة حقيقية فيها كلمات مفتاحية.</span></div>
+            </div>
+          </li>
+          <li class="hook-item">
+            <div class="hook-ar">الـ Alt Text المخفي</div>
+            <div class="hook-analysis">
+              <div class="hook-why">🧠 <strong>إزاي بتشتغل؟</strong> النص البديل (Alt Text) اللي بتضيفه للصور قبل ما تنشرها بيخلي إنستجرام يقترح صورتك في بحث جوجل نفسه!</div>
+              <div class="hook-ex">💡 <strong>الحل:</strong> ادخل على Advanced Settings قبل النشر <span>واكتب وصف دقيق للي في الصورة.</span></div>
+            </div>
+          </li>
         </ul>
       </div>
 
-      <!-- 03 -->
-      <div class="hook-section">
-        <div class="section-header"><span class="section-number">03</span><h2 class="section-title">هوكات حل المشكلات</h2></div>
-        <p class="section-desc">لو دخلت الفيديو بذكر مشكلة العميل بالظبط، هيحس إنك قاعد جنبه وبتقرأ أفكاره.</p>
-        <ul class="hook-list">
-          <li class="hook-item"><div class="hook-ar">"زهقت من [المشكلة] اللي بتسحب طاقتك ووقتك؟ الحل طلع أتفه مما تتخيل!"</div><div class="hook-analysis"><div class="hook-why">🧠 <strong>ليه بيشتغل؟</strong> يلمس نقطة ألم مباشرة ويعرض حل سهل.</div><div class="hook-ex">💡 "زهقت من الميتينجات الكتير اللي بتسحب طاقتك؟ <span>الحل طلع في الأداة دي!</span>"</div></div></li>
-          <li class="hook-item"><div class="hook-ar">"أكبر 3 غلطات بتعملهم كل يوم وبيمنعوك توصل لـ [الهدف]."</div><div class="hook-analysis"><div class="hook-why">🧠 <strong>ليه بيشتغل؟</strong> القوائم بتريح الدماغ. المشاهد عايز يقيّم نفسه.</div><div class="hook-ex">💡 "أكبر 3 غلطات بتعمليهم وإنتِ بتنسقي هدومك.. <span>وبيمنعوكِ تظهري بشكل شيك!</span>"</div></div></li>
-          <li class="hook-item"><div class="hook-ar">"الخطة العملية خطوة بخطوة عشان تخلص من كابوس [المشكلة] للأبد."</div><div class="hook-analysis"><div class="hook-why">🧠 <strong>ليه بيشتغل؟</strong> الـ Blueprint الواضحة = إحساس بقيمة عالية مجانية.</div><div class="hook-ex">💡 "الخطة العملية خطوة بخطوة <span>عشان تخلصي من كابوس بقع الانتريه للأبد.</span>"</div></div></li>
-        </ul>
-      </div>
-
-      <!-- TIP BOX -->
       <div class="tip-box">
-        <h3>💡 تريكة من Daoline: إزاي تقول الهوك صح؟</h3>
+        <h3>💡 تريكة من Daoline: إزاي تقرأ دماغ الخوارزمية؟</h3>
         <p>
-          الهوك المكتوب مش كفاية لو الأداء ضعيف. لما تصور:<br>
-          <strong>1. بلاش مقدمات:</strong> لا تبدأ بـ "السلام عليكم معاكم فلان" — ادخل في الهوك فوراً.<br>
-          <strong>2. لغة الجسد:</strong> اتحرك خطوة لقدام ناحية الكاميرا وأنت بتقول الهوك عشان تخلق ديناميكية.<br>
-          <strong>3. نص على الشاشة:</strong> اكتب الهوك بخط كبير في أول 3 ثواني عشان من بيتفرج بدون صوت يلاقيه.
+          الخوارزمية في 2026 بتدور على حاجة واحدة بس: <strong>(الاحتفاظ بالمشاهد - Retention)</strong>.<br>
+          لو الفيديو بتاعك خلى العميل يتفرج للآخر، ويعمل Save عشان يرجعله تاني، الـ AI هيعتبر الفيديو ده "كنز" وهيبدأ يقترحه للناس اللي مش متابعاك (Unconnected Distribution). ركز على الـ Save أكتر من اللايك!
         </p>
       </div>
 
-      <!-- 04 -->
       <div class="hook-section">
-        <div class="section-header"><span class="section-number">04</span><h2 class="section-title">هوكات الصدمة وكسر المألوف</h2></div>
-        <p class="section-desc">لما تطلع تقول رأي صادم أو عكس التيار، بتجبر الناس تتفرج عشان تعترض أو تتفق.</p>
+        <div class="section-header"><span class="section-number">03</span><h2 class="section-title">أخطاء بتدمر الريتش الفوري (Shadowban Triggers)</h2></div>
+        <p class="section-desc">الـ AI في 2026 ذكي جداً، وفي تصرفات بيعاقب عليها فوراً بخفض المشاهدات لـ صفر.</p>
         <ul class="hook-list">
-          <li class="hook-item"><div class="hook-ar">"ممكن تزعل مني وتقفل الفيديو لما أقولك كده.. بس حد كان لازم يصدمك بالحقيقة."</div><div class="hook-analysis"><div class="hook-why">🧠 <strong>ليه بيشتغل؟</strong> يلعب على التحدي — المشاهد بيقول لنفسه: إيه اللي هيزعلني؟</div><div class="hook-ex">💡 "ممكن تزعل مني.. <span>بس لو مشروعك مجابش أرباح في أول 6 شهور، تقفل أحسن!</span>"</div></div></li>
-          <li class="hook-item"><div class="hook-ar">"إنسى كل اللي اتعلمته أو سمعته عن [الموضوع].. قواعد اللعبة اتغيرت النهاردة!"</div><div class="hook-analysis"><div class="hook-why">🧠 <strong>ليه بيشتغل؟</strong> يُبطل المعلومات القديمة ويحسس المشاهد إن في تحديث فاته.</div><div class="hook-ex">💡 "إنسى كل اللي سمعته عن أسعار السفر.. <span>قواعد اللعبة اتغيرت النهاردة!</span>"</div></div></li>
-          <li class="hook-item"><div class="hook-ar">"كله كلام فاضي وتسويق وهمي! دي الحقيقة اللي الشركات مش عايزاك تعرفها."</div><div class="hook-analysis"><div class="hook-why">🧠 <strong>ليه بيشتغل؟</strong> يلعب دور كاشف الأسرار — الناس بتثق فيمن يهاجم الكبار.</div><div class="hook-ex">💡 "كله كلام فاضي! <span>دي الحقيقة اللي شركات الموبايلات مش عايزاك تعرفها.</span>"</div></div></li>
+          <li class="hook-item">
+            <div class="hook-ar">العلامات المائية (Watermarks)</div>
+            <div class="hook-analysis">
+              <div class="hook-why">🧠 <strong>المشكلة:</strong> تنزيل فيديو من تيك توك ورفعه على إنستجرام ريلز بنفس اللوجو.</div>
+              <div class="hook-ex">💡 <strong>الحل:</strong> استخدم برامج زي Snaptik لنزع اللوجو، <span>أو صور من كاميرا الموبايل العادية وارفع لكل منصة لوحدها.</span></div>
+            </div>
+          </li>
+          <li class="hook-item">
+            <div class="hook-ar">الـ Clickbait الكاذب (Engagement Bait)</div>
+            <div class="hook-analysis">
+              <div class="hook-why">🧠 <strong>المشكلة:</strong> تطلب من الناس بشكل مباشر "اعمل لايك وشير عشان تكسب". الخوارزمية بتعتبره Spam.</div>
+              <div class="hook-ex">💡 <strong>الحل:</strong> قدم قيمة حقيقية تخلي العميل <span>هو اللي يعوز يعمل شير لصاحبه من نفسه.</span></div>
+            </div>
+          </li>
         </ul>
       </div>
 
-      <!-- 05 -->
-      <div class="hook-section">
-        <div class="section-header"><span class="section-number">05</span><h2 class="section-title">هوكات التعليم السريع</h2></div>
-        <p class="section-desc">الناس بتحب المحتوى اللي يحسسهم بإنهم أذكى. ممتاز لزيادة الـ Save.</p>
-        <ul class="hook-list">
-          <li class="hook-item"><div class="hook-ar">"دليل المبتدئين (اللي ميبيضوش أي حاجة) عشان يبدأوا في [المجال] صح من الصفر."</div><div class="hook-analysis"><div class="hook-why">🧠 <strong>ليه بيشتغل؟</strong> يشيل الرهبة ويطمن المشاهد إنه مش محتاج يكون خبير.</div><div class="hook-ex">💡 "دليل المبتدئين اللي ميفهموش في البورصة.. <span>عشان يبدأوا يستثمروا بأمان.</span>"</div></div></li>
-          <li class="hook-item"><div class="hook-ar">"إزاي تقدر توصل لـ [النتيجة] من غير ما تمر بـ [المعاناة أو التكلفة]؟"</div><div class="hook-analysis"><div class="hook-why">🧠 <strong>ليه بيشتغل؟</strong> (الرغبة) + (بدون الألم) = مش مقاوَم.</div><div class="hook-ex">💡 "إزاي تعمل ابتسامة هوليود <span>من غير ما تبرد أسنانك أو تحس بوجع الإبرة؟</span>"</div></div></li>
-          <li class="hook-item"><div class="hook-ar">"لو قدامي 3 شهور بس وميزانية زيرو عشان أعمل [الهدف].. دي الخطة اللي همشي عليها."</div><div class="hook-analysis"><div class="hook-why">🧠 <strong>ليه بيشتغل؟</strong> يحدد وقت زمني ويلغي عائق الفلوس — تركيبة قوية.</div><div class="hook-ex">💡 "لو قدامي 3 شهور وميزانية زيرو عشان أتكلم ألماني.. <span>دي الخطة المجانية اللي همشي عليها.</span>"</div></div></li>
-        </ul>
-      </div>
-
-      <!-- 06 -->
-      <div class="hook-section">
-        <div class="section-header"><span class="section-number">06</span><h2 class="section-title">هوكات إثبات السلطة والخبرة</h2></div>
-        <p class="section-desc">اعرض خبرتك بشكل غير مباشر من خلال نتائج العملاء وتجاربك الحقيقية.</p>
-        <ul class="hook-list">
-          <li class="hook-item"><div class="hook-ar">"دي أهم خطوة بطلبها من عملائي اللي بيدفعولي آلاف الجنيهات عشان يوصلوا لـ [النتيجة]."</div></li>
-          <li class="hook-item"><div class="hook-ar">"من واقع شغلي كـ [مسمى وظيفي]: إزاي نقلت عميل من [وضع صعب] لـ [نجاح] في أيام."</div></li>
-          <li class="hook-item"><div class="hook-ar">"أكبر كارثة بشوفها كل يوم في شغلي، والناس بتعملها وهي فاكرة إنها صح!"</div></li>
-        </ul>
-      </div>
-
-      <!-- 07 -->
-      <div class="hook-section">
-        <div class="section-header"><span class="section-number">07</span><h2 class="section-title">هوكات التحول والتغيير</h2></div>
-        <p class="section-desc">رحلة "قبل وبعد" من أقوى ما في الـ Copywriting.</p>
-        <ul class="hook-list">
-          <li class="hook-item"><div class="hook-ar">"من [فترة] وأنا بعمل [الحركة] والنتيجة كانت [كده].. شوف اللي اتغير."</div></li>
-          <li class="hook-item"><div class="hook-ar">"اللحظة اللي قلبت حياتي رأساً على عقب كانت لما..."</div></li>
-          <li class="hook-item"><div class="hook-ar">"قبل [فترة] كنت في [وضع صعب].. والنهاردة بقيت في [حالة تانية تماماً]."</div></li>
-        </ul>
-      </div>
-
-      <!-- 08 -->
-      <div class="hook-section">
-        <div class="section-header"><span class="section-number">08</span><h2 class="section-title">هوكات الاتصال العاطفي</h2></div>
-        <p class="section-desc">الناس بتشتري بالمشاعر وتبرر بالمنطق. هوكات العاطفة بتبني مجتمع وولاء حقيقي.</p>
-        <ul class="hook-list">
-          <li class="hook-item"><div class="hook-ar">"مش عارف مين محتاج يسمع الكلام ده.. بس حابب أقوله."</div></li>
-          <li class="hook-item"><div class="hook-ar">"اعتبر الكلام ده تذكرة لك إنك بتعمل [حاجة مهمة] من غير ما تحسها."</div></li>
-          <li class="hook-item"><div class="hook-ar">"لو حاسس بـ [مشاعر معينة] قبل كده.. فالكلام ده بيتكلم عنك أنت."</div></li>
-        </ul>
-      </div>
-
-      <!-- 09 -->
-      <div class="hook-section">
-        <div class="section-header"><span class="section-number">09</span><h2 class="section-title">هوكات المشكلة والحل بالصور</h2></div>
-        <p class="section-desc">الصورة الأولى هي الهوك البصري. اختار صور تصدم وتشد العين فوراً.</p>
-        <div class="img-placeholder">📸 صورة توضح المشكلة أو الغلطة <small>مثال: مكان فوضوي، إعلان خسران، بشرة متعبة</small></div>
-        <ul class="hook-list">
-          <li class="hook-item"><div class="hook-ar">"اعمل الخطوة دي فوراً قبل ما تحصل معاك كارثة وتلاقي نفسك في [المنظر ده]."</div></li>
-        </ul>
-        <div class="img-placeholder" style="margin-top:20px;">📸 صورة توضح الحل والنتيجة المبهرة <small>مثال: إعلان ناجح، مكان منظم، نتيجة إيجابية واضحة</small></div>
-        <ul class="hook-list">
-          <li class="hook-item"><div class="hook-ar">"المرة الجاية لما تعمل [حاجة]، افتكر تنفذ [الحل ده] عشان توصل لـ [النتيجة دي]."</div></li>
-        </ul>
-      </div>
-
-      <!-- 10 -->
-      <div class="hook-section">
-        <div class="section-header"><span class="section-number">10</span><h2 class="section-title">هوكات توفير الوقت والمجهود</h2></div>
-        <p class="section-desc">الوقت أغلى من الفلوس في 2026. لو قدرت توعد المشاهد بتوفير وقت = هو معاك فوراً.</p>
-        <ul class="hook-list">
-          <li class="hook-item"><div class="hook-ar">"إزاي تضاعف نتايجك 10 مرات وتعمل [الهدف] في نص الوقت؟"</div></li>
-          <li class="hook-item"><div class="hook-ar">"بطل تضيع وقتك وتحرق مجهودك في [الطريقة القديمة]! السر في الأداة دي."</div></li>
-          <li class="hook-item"><div class="hook-ar">"5 عادات غريبة بعملها كل يوم الصبح، خلتني أوصل لـ [النجاح ده]."</div></li>
-          <li class="hook-item"><div class="hook-ar">"الأداة دي هتوفر عليك ساعات شغل في ثواني — وأكيد محدش قالك عنها."</div></li>
-        </ul>
-      </div>
-
-      <!-- 11 -->
-      <div class="hook-section">
-        <div class="section-header"><span class="section-number">11</span><h2 class="section-title">هوكات الأخطاء الشائعة</h2></div>
-        <p class="section-desc">إيه أسهل طريقة تخلي حد يتفرج؟ قوله إنه ممكن يكون غلطان دلوقتي من غير ما يعرف.</p>
-        <ul class="hook-list">
-          <li class="hook-item"><div class="hook-ar">"في 3 غلطات لسه بتعملها في [المجال] لحد دلوقتي.. وهما السبب في النتائج الواطية!"</div></li>
-          <li class="hook-item"><div class="hook-ar">"في 3 خرافات لسه الناس بتصدقها لحد النهاردة.. وهما بيكلفوهم غالي!"</div></li>
-          <li class="hook-item"><div class="hook-ar">"إزاي توصل لـ [النتيجة] بالطريقة السهلة من غير ما تقع في الفخ ده؟"</div></li>
-          <li class="hook-item"><div class="hook-ar">"3 طرق عملية عشان تصلح النتائج الواطية وتعوض الوقت اللي ضيّعته."</div></li>
-        </ul>
-      </div>
-
-      <!-- BONUS -->
       <div class="bonus-section">
-        <h2>🎁 الهدية: معادلة الفيديو الفيروسي الكاملة</h2>
-        <p class="section-desc">الهوك لوحده مش كفاية — الفيديو الكامل لازم يمشي على الهيكل ده:</p>
-        <div class="formula-item"><div class="formula-step"><span>الخطوة 1 — الهوك (الثانية 0 إلى 3):</span></div><div class="formula-desc">اخطف انتباهه بجملة من الكتالوج ده، واكتبها بخط عريض على الشاشة.</div></div>
-        <div class="formula-item"><div class="formula-step"><span>الخطوة 2 — التثبيت (الثانية 3 إلى 10):</span></div><div class="formula-desc">أكدله إنه في المكان الصح. مثال: "وعشان كده في الفيديو ده هقولك على الـ 3 خطوات."</div></div>
-        <div class="formula-item"><div class="formula-step"><span>الخطوة 3 — القيمة (الثانية 10 إلى 45):</span></div><div class="formula-desc">ادخل في الموضوع بسرعة. قدم القيمة في نقط واضحة ومختصرة.</div></div>
-        <div class="formula-item"><div class="formula-step"><span>الخطوة 4 — الطلب المباشر CTA (الثانية 45 إلى 60):</span></div><div class="formula-desc">اطلب حاجة واحدة بس بوضوح: اعمل سيف، ابعت رسالة، اضغط على اللينك.</div></div>
+        <h2>🎁 الهدية: معادلة الـ Social SEO في 4 خطوات</h2>
+        <p class="section-desc">طبق المعادلة دي على فيديوهاتك الجاية وشوف الفرق في الأورجانيك ريتش:</p>
+        <div class="formula-item"><div class="formula-step"><span>الخطوة 1 — ابحث زي العميل:</span></div><div class="formula-desc">افتح شريط بحث تيك توك، اكتب كلمتك، وشوف الاقتراحات اللي بتظهر (Autocomplete). دي أسئلة الناس الحقيقية.</div></div>
+        <div class="formula-item"><div class="formula-step"><span>الخطوة 2 — الهوك الصوتي:</span></div><div class="formula-desc">أول جملة تطلع من بؤك لازم تكون هي نفسها الجملة اللي الناس بتبحث عنها.</div></div>
+        <div class="formula-item"><div class="formula-step"><span>الخطوة 3 — النص على الشاشة (Native Text):</span></div><div class="formula-desc">استخدم الـ Editor بتاع المنصة نفسها (تيك توك أو انستجرام) عشان تكتب العنوان العريض، بلاش برامج خارجية للموضوع ده.</div></div>
+        <div class="formula-item"><div class="formula-step"><span>الخطوة 4 — الكابشن الغني:</span></div><div class="formula-desc">اكتب وصف من 3 لـ 5 سطور، مليان بالكلمات المفتاحية بطريقة طبيعية (بدون حشو Hashtags عشوائية).</div></div>
       </div>
 
       <footer class="page-footer">
         <strong>Daoline Digital Academy</strong>
         <span>© 2026 All Rights Reserved.</span>
-        <p style="margin-top:8px;">تم إعداد هذا المرجع ليكون الدليل العملي الأول لكل صانع محتوى مصري وعربي.</p>
+        <p style="margin-top:8px;">تم إعداد هذا المرجع ليكون دليلك لمواكبة التحديثات الرقمية السريعة.</p>
       </footer>
 
     </div>
-  </div><!-- end .page-wrapper -->
-
-  <!-- LEAD FORM -->
-  <section id="lead-download" class="lead-section">
+  </div><section id="lead-download" class="lead-section no-print">
     <div class="lead-blur-preview">
       <div style="background:rgba(30,41,59,0.6);border:1px solid rgba(255,255,255,.08);padding:40px;border-radius:12px;">
-        <h3 style="color:#c013a6;font-size:1.4rem;font-weight:900;margin-bottom:12px;">📦 النسخة الكاملة جاهزة</h3>
-        <p style="color:#94a3b8;font-size:1.1rem;">نسخة PDF منظمة + مرجع سريع + صياغات جاهزة تناسب مجالات مختلفة.</p>
-        <div style="background:rgba(255,255,255,.05);border:2px dashed #475569;padding:24px;border-radius:12px;color:#64748b;text-align:center;font-weight:bold;font-size:1.1rem;margin-top:20px;">المعاينة الكاملة مقفولة — سجّل لتحصل على النسخة النهائية</div>
+        <h3 style="color:#c013a6;font-size:1.4rem;font-weight:900;margin-bottom:12px;">📦 دليل الـ Social SEO كامل جاهز للتحميل</h3>
+        <p style="color:#94a3b8;font-size:1.1rem;">استراتيجيات مفصلة + أدوات مجانية لاكتشاف الكلمات المفتاحية + خطة محتوى.</p>
+        <div style="background:rgba(255,255,255,.05);border:2px dashed #475569;padding:24px;border-radius:12px;color:#64748b;text-align:center;font-weight:bold;font-size:1.1rem;margin-top:20px;">المعاينة مقفولة — سجّل لتحصل على النسخة النهائية مجاناً</div>
       </div>
     </div>
 
     <div class="lead-box">
       <div style="width:70px;height:70px;background:var(--primary);color:#fff;border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:2rem;font-weight:900;margin:0 auto 18px auto;">D</div>
-      <h2 style="font-size:1.8rem;font-weight:900;color:#fff;margin-bottom:12px;">احصل على كتالوج الهوكات كاملًا الآن! 🔥</h2>
+      <h2 style="font-size:1.8rem;font-weight:900;color:#fff;margin-bottom:12px;">احصل على الدليل العملي لـ Social SEO الآن! 🔥</h2>
       <p style="color:#94a3b8;font-size:1.05rem;margin-bottom:28px;max-width:500px;margin-left:auto;margin-right:auto;line-height:1.7;">
-        سجّل بياناتك وسيصلك الكتالوج مباشرة على إيميلك بصيغة PDF خلال دقيقتين.
+        لو عايز تتصدر نتائج بحث السوشيال ميديا في 2026، الدليل ده ليك. سجّل بياناتك وهنبعتهولك فوراً على إيميلك بصيغة PDF.
       </p>
-      <div style="max-width:460px;margin:0 auto;">
-        <input type="text"  id="lead-name"     placeholder="اكتب اسمك هنا.."               class="form-input">
-        <input type="email" id="lead-email"    placeholder="بريدك الإلكتروني.."             class="form-input">
-        <input type="tel"   id="lead-whatsapp" placeholder="رقم الواتساب (للتواصل السريع).." class="form-input">
-        <button id="submit-btn" onclick="handleLeadSubmission()" class="submit-btn">أرسل لي الكتالوج الآن 🚀</button>
+
+      <div id="form-container" style="max-width:460px;margin:0 auto;">
+        <input type="text"  id="lead-name"     placeholder="اكتب اسمك هنا.."                class="form-input" required>
+        <input type="email" id="lead-email"    placeholder="بريدك الإلكتروني.."              class="form-input" required>
+        <input type="tel"   id="lead-whatsapp" placeholder="رقم الواتساب (للتواصل السريع).." class="form-input" required>
+        <button id="submit-btn" onclick="handleLeadSubmission()" class="submit-btn mt-2">أرسلوا لي الدليل على الإيميل 🚀</button>
+        <div id="status-msg"></div>
       </div>
-      <div id="status-msg"></div>
+
+      <div class="success-area" id="download-area" style="display: none; margin-top: 30px; animation: fadeIn 0.5s;">
+        <div style="font-size: 50px; margin-bottom: 15px;">✅</div>
+        <h3 style="color: #4ade80; margin-bottom: 10px; font-size: 1.6rem; font-weight: 900;">تم تسجيل طلبك بنجاح!</h3>
+        <p style="margin-bottom: 20px; font-size: 1.05rem; color: #e2e8f0; line-height: 1.8;">شيكي على بريدك الإلكتروني الآن (والـ Spam أيضاً).<br>ستجدي "دليل Social SEO" بانتظارك هناك.</p>
+      </div>
+
       <p style="font-size:.75rem;color:#475569;margin-top:18px;font-style:italic;">المعلومات المسجلة تُستخدم فقط لإرسال المحتوى التعليمي من Daoline.</p>
     </div>
   </section>
-
   <script>
     document.addEventListener('contextmenu', e => { e.preventDefault(); showToast('المحتوى محمي لـ Daoline Digital 🔒'); });
     document.addEventListener('keydown', e => {
@@ -390,7 +366,9 @@
     const ENTRY_EMAIL     = "entry.1712155557";
     const ENTRY_WHATSAPP  = "entry.1224669856";
     const ENTRY_CATALOG   = "entry.334049848";
-    const CATALOG_CODE    = "new_catalog";
+    
+    // تم ربط الكود بملف السوشيال سيو زي ما طلبتي
+    const CATALOG_CODE    = "Social_Seo"; 
 
     function showStatus(text, color) {
       const m = document.getElementById('status-msg');
@@ -409,20 +387,62 @@
         showStatus('من فضلك املأ جميع الخانات ليتم الإرسال!', '#f87171');
         return;
       }
+      
       try {
         btn.disabled = true; btn.innerText = 'جاري الإرسال...';
+        
         const fd = new FormData();
-        fd.append(ENTRY_NAME, name); fd.append(ENTRY_EMAIL, email);
-        fd.append(ENTRY_WHATSAPP, wa); fd.append(ENTRY_CATALOG, CATALOG_CODE);
+        fd.append(ENTRY_NAME, name); 
+        fd.append(ENTRY_EMAIL, email);
+        fd.append(ENTRY_WHATSAPP, wa); 
+        fd.append(ENTRY_CATALOG, CATALOG_CODE);
+        
         await fetch(FORM_ACTION_URL, { method: 'POST', mode: 'no-cors', body: fd });
-        showStatus('تم التسجيل ✅ — تفقد إيميلك خلال دقيقتين (تأكد من مجلد Spam لو مش لاقيه 📧)', '#4ade80');
-        btn.innerText = 'تم بنجاح ✅';
-        setTimeout(() => { window.location.href = 'https://daolinedigital.com'; }, 6000);
+        
+        // إخفاء الفورم وإظهار رسالة النجاح (بدون تحويل لصفحات تانية)
+        document.getElementById('form-container').style.display = 'none';
+        document.getElementById('download-area').style.display = 'block';
+        
       } catch (err) {
         showStatus('حدث خطأ.. حاول مجددًا.', '#f87171');
-        btn.disabled = false; btn.innerText = 'أرسل لي الكتالوج الآن 🚀';
+        btn.disabled = false; btn.innerText = 'أرسلوا لي الدليل على الإيميل 🚀';
       }
     }
+
+    // طباعة / تحميل الـ PDF
+    function downloadPDF() {
+          window.scrollTo(0, 0);
+          const element = document.getElementById('pdf-content');
+          showToast('⏳ جاري تجهيز الملف بدقة عالية...');
+
+          const opt = {
+              margin:       [5, 5, 10, 5], 
+              filename:     'تحديثات_الخوارزميات_Daoline_2026.pdf',
+              image:        { type: 'jpeg', quality: 1 },
+              html2canvas:  { 
+                  scale: 2, 
+                  useCORS: true, 
+                  backgroundColor: '#0f172a',
+                  scrollY: 0,  
+                  scrollX: 0
+              },
+              jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' },
+              pagebreak:    { 
+                  mode: ['css', 'legacy'], 
+                  before: ['.hook-section', '.bonus-section'], 
+                  avoid: ['.hook-item', '.hook-analysis', '.highlight-box', '.placeholder', '.visual-hook-img', 'h2'] 
+              }
+          };
+
+          setTimeout(() => {
+              html2pdf().set(opt).from(element).save().then(() => {
+                  showToast('✅ تم تحميل المقال بنجاح!');
+              }).catch(err => {
+                  console.error('Error generating PDF:', err);
+                  showToast('❌ حدث خطأ، جرب مرة أخرى');
+              });
+          }, 100);
+      }
   </script>
 
 </body>
