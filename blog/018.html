@@ -4,20 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- SEO Meta Tags -->
   <title>دليل الـ 3 ثواني: 50 خطاف (Hook) جاهز لنسخة 2026 | Daoline Digital</title>
   <meta name="description" content="دليل عملي من Daoline Digital يضم أقوى الهوكات لصناع المحتوى في 2026، مع شرح نفسي وتسويقي وأمثلة تطبيقية تساعدك توقف السكرول وتزيد مبيعاتك.">
   <meta name="keywords" content="صناعة المحتوى, هوكات, Hooks, تيك توك, ريلز, تسويق رقمي, Daoline Digital, كتابة محتوى">
 
-  <!-- Google Fonts: Tajawal & Changa -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Changa:wght@400;700;800&display=swap" rel="stylesheet">
 
-  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   
-  <!-- مكتبة تحويل الـ HTML إلى PDF مباشرة -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
   <style>
@@ -107,6 +103,8 @@
     #status-msg { display: none; margin-top: 1rem; font-weight: bold; padding: 14px; border-radius: 12px; text-align: center; font-size: 1rem; border: 1px solid transparent; }
     #security-toast { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background-color: var(--primary); color: white; padding: 12px 24px; border-radius: 999px; font-weight: 900; box-shadow: 0 10px 25px rgba(0,0,0,0.5); z-index: 9999; opacity: 0; transition: all 0.3s ease; pointer-events: none; }
 
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
     /* Print Styles */
     @media print {
       @page { size: A4; margin: 10mm 15mm; } 
@@ -146,7 +144,6 @@
 
 <body oncontextmenu="return false;">
 
-  <!-- Free Resources Bar -->
   <div class="freebar no-print">
     <div class="freebar-inner">
       <div>🪝 Daoline Free Resources — كتالوج الهوكات من Daoline جاهز الآن</div>
@@ -154,7 +151,6 @@
     </div>
   </div>
 
-  <!-- Sticky Nav -->
   <nav class="sticky top-[53px] z-40 bg-[#0f172a]/95 backdrop-blur-md border-b border-slate-800 no-print">
     <div class="container mx-auto px-4 py-3 flex justify-between items-center text-white">
       <a href="https://daolinedigital.com" class="font-black text-lg md:text-xl tracking-wide">
@@ -167,16 +163,13 @@
     </div>
   </nav>
 
-  <!-- Print/Download Button -->
   <div class="no-print text-center py-6">
     <button onclick="downloadPDF()" class="bg-gradient-to-r from-daoline to-secondary text-white px-8 py-3 rounded-full font-black text-lg shadow-xl hover:scale-105 transition-all">
       📥 تحميل الكتالوج كـ PDF 
     </button>
   </div>
 
-  <!-- Main Content Wrapper for PDF Generation -->
   <div id="pdf-content">
-      <!-- Hero Header -->
       <header class="hero-gradient pt-10 pb-14 px-4 text-center">
         <span class="inline-block py-1 px-4 rounded-full bg-daoline/10 text-daoline text-[11px] font-black border border-daoline/20 mb-6 uppercase tracking-widest">
           🪝 أسرار صناعة المحتوى 2026
@@ -193,10 +186,8 @@
         </div>
       </header>
 
-      <!-- Main Article Content -->
       <main class="container mx-auto px-4 max-w-5xl pb-10 text-right">
 
-        <!-- Intro -->
         <section class="mb-16">
             <div class="bg-slate-800/40 border-r-4 border-secondary p-8 rounded-2xl">
                 <h3 class="text-2xl font-black text-white mb-4">ليه صناعة المحتوى محتاجة "هوك" مش مجرد كاميرا حلوة؟</h3>
@@ -207,7 +198,6 @@
             </div>
         </section>
 
-        <!-- Section 1 -->
         <section class="mb-24">
           <h2 class="section-title">01) هوكات الفضول والتشويق 🧲</h2>
           <div class="glass !p-6 md:!p-10">
@@ -245,7 +235,6 @@
           </div>
         </section>
 
-        <!-- Section 2 -->
         <section class="mb-24">
           <h2 class="section-title">02) هوكات القصص والسرد 📖</h2>
           <div class="glass !p-6 md:!p-10">
@@ -283,7 +272,6 @@
           </div>
         </section>
 
-        <!-- Section 3 -->
         <section class="mb-24">
           <h2 class="section-title">03) هوكات حل المشكلات 🧩</h2>
           <div class="glass !p-6 md:!p-10">
@@ -321,7 +309,6 @@
           </div>
         </section>
 
-        <!-- Highlight Box -->
         <section class="mb-24">
             <div class="bg-gradient-to-r from-blue-900/40 to-purple-900/40 border border-blue-500/30 p-8 rounded-3xl shadow-xl">
                 <h3 class="text-2xl font-black text-blue-400 mb-4">💡 تريكة من Daoline: إزاي تقول الهوك صح؟</h3>
@@ -334,7 +321,6 @@
             </div>
         </section>
 
-        <!-- Section 4 -->
         <section class="mb-24">
           <h2 class="section-title">04) هوكات الصدمة وكسر المألوف ⚡</h2>
           <div class="glass !p-6 md:!p-10">
@@ -372,14 +358,12 @@
           </div>
         </section>
 
-        <!-- Section 5 -->
         <section class="mb-24">
           <h2 class="section-title">05) المشكلة والحل (بالصور 📸)</h2>
           <div class="glass !p-6 md:!p-10">
             <p class="text-slate-300 text-lg mb-8">الصورة بتخطف العين أسرع من الكلام. اعرض المشكلة في أول ثانية (الهوك البصري) وبعدين ادمجها بالحل.</p>
             
             <div class="grid md:grid-cols-2 gap-10">
-                <!-- Problem -->
                 <div>
                     <img src="https://images.unsplash.com/photo-1584820927498-cafe3c157921?auto=format&fit=crop&w=800&q=80" alt="مكان فوضوي" class="visual-hook-img mb-4">
                     <div class="bg-slate-900/60 border border-slate-700 p-6 rounded-2xl">
@@ -388,7 +372,6 @@
                     </div>
                 </div>
                 
-                <!-- Solution -->
                 <div>
                     <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=800&q=80" alt="مكان منظم" class="visual-hook-img mb-4">
                     <div class="bg-slate-900/60 border border-slate-700 p-6 rounded-2xl">
@@ -400,7 +383,6 @@
           </div>
         </section>
 
-        <!-- Section 6 -->
         <section class="mb-24">
           <h2 class="section-title">06) هوكات توفير الوقت والمجهود ⏳</h2>
           <div class="glass !p-6 md:!p-10">
@@ -419,7 +401,6 @@
           </div>
         </section>
 
-        <!-- Bonus Section -->
         <section class="mb-24">
             <div class="bg-indigo-950 border-4 border-daoline p-8 md:p-12 rounded-[2rem] shadow-2xl">
                 <h2 class="text-3xl font-black text-white mb-6">🎁 الهدية: معادلة الفيديو الفيروسي الكاملة</h2>
@@ -449,7 +430,6 @@
       </main>
   </div>
 
-  <!-- Lead Form Section (Locked Download Box) -->
   <section id="lead-download" class="locked-container no-print px-4 pb-20">
     <div class="container mx-auto max-w-4xl text-right">
         <div class="watermark-text text-right">كتالوج الهوكات من Daoline — النسخة الكاملة PDF</div>
@@ -471,17 +451,22 @@
             سجّل بياناتك وسيصلك <strong>كتالوج الهوكات من Daoline</strong> مباشرة على الإيميل بصيغة PDF.
           </p>
 
-          <div class="max-w-xl mx-auto space-y-4">
-            <input type="text" id="lead-name" class="form-input" placeholder="اكتب اسمك هنا..">
-            <input type="email" id="lead-email" class="form-input" placeholder="بريدك الإلكتروني..">
-            <input type="tel" id="lead-whatsapp" class="form-input" placeholder="رقم الواتساب..">
+          <div id="form-container" class="max-w-xl mx-auto space-y-4">
+            <input type="text" id="lead-name" class="form-input" placeholder="اكتب اسمك هنا.." required>
+            <input type="email" id="lead-email" class="form-input" placeholder="بريدك الإلكتروني.." required>
+            <input type="tel" id="lead-whatsapp" class="form-input" placeholder="رقم الواتساب.." required>
 
             <button id="submit-btn" onclick="handleLeadSubmission()" class="submit-btn mt-2">
-              أرسل لي الكتالوج الآن 🚀
+              أرسلوا لي الكتالوج على الإيميل 🚀
             </button>
+            <div id="status-msg"></div>
           </div>
 
-          <div id="status-msg"></div>
+          <div class="success-area" id="download-area" style="display: none; margin-top: 30px; animation: fadeIn 0.5s;">
+            <div style="font-size: 50px; margin-bottom: 15px;">✅</div>
+            <h3 style="color: #4ade80; margin-bottom: 10px; font-size: 1.8rem; font-weight: 900;">تم تسجيل طلبك بنجاح!</h3>
+            <p style="margin-bottom: 20px; font-size: 1.1rem; color: #e2e8f0; line-height: 1.8;">شيكي على بريدك الإلكتروني الآن (والـ Spam أيضاً).<br>ستجدي "كتالوج الهوكات" بانتظارك هناك.</p>
+          </div>
 
           <p class="text-sm text-slate-500 mt-6">
             البيانات تستخدم فقط لإرسال المحتوى التعليمي وموارد Daoline Digital.
@@ -490,7 +475,6 @@
     </div>
   </section>
 
-  <!-- Return to Home CTA -->
   <section class="mb-10 text-center no-print">
       <h3 class="text-2xl font-black text-white mb-8">جاهز لتطبيق الاستراتيجية على مشروعك؟</h3>
       <div class="flex justify-center">
@@ -500,7 +484,6 @@
       </div>
   </section>
 
-  <!-- Footer -->
   <footer class="bg-black py-20 text-center border-t border-white/5">
     <div class="flex flex-col items-center gap-6 mb-12">
         <div class="font-black text-4xl text-white uppercase italic tracking-tighter">
@@ -553,14 +536,6 @@
       setTimeout(() => { toast.style.opacity = '0'; }, 2000);
     }
 
-    // إرسال الـ Leads
-    const FORM_ACTION_URL = "https://docs.google.com/forms/d/e/1FAIpQLSdSXEvN7DMMC-pwXED9G5TRpe4ecQ5U7pMtsg3201d2ikinfQ/formResponse";
-    const ENTRY_NAME = "entry.334049848"; 
-    const ENTRY_EMAIL = "entry.1712155557";
-    const ENTRY_WHATSAPP = "entry.1224669856";
-    const ENTRY_CATALOG = "entry.299023128"; 
-    const CATALOG_CODE = "new_catalog";
-
     function showStatus(text, color) {
       const msgBox = document.getElementById('status-msg');
       msgBox.style.display = "block";
@@ -570,9 +545,9 @@
       msgBox.style.border = "1px solid " + color;
     }
 
+    // إرسال الفورم للسيستم (وإخفائه بعدها)
     async function handleLeadSubmission() {
       const btn = document.getElementById('submit-btn');
-
       const name = document.getElementById('lead-name').value.trim();
       const email = document.getElementById('lead-email').value.trim();
       const whatsapp = document.getElementById('lead-whatsapp').value.trim();
@@ -587,28 +562,28 @@
         btn.innerText = "جاري الإرسال...";
 
         const fd = new FormData();
-        fd.append(ENTRY_NAME, name);
-        fd.append(ENTRY_EMAIL, email);
-        fd.append(ENTRY_WHATSAPP, whatsapp);
-        fd.append(ENTRY_CATALOG, CATALOG_CODE);
+        // تم تصحيح الـ IDs لتطابق الإدخالات السليمة الخاصة بكِ
+        fd.append("entry.299023128", name);
+        fd.append("entry.1712155557", email);
+        fd.append("entry.1224669856", whatsapp);
+        fd.append("entry.334049848", "new_catalog");
 
-        await fetch(FORM_ACTION_URL, {
+        const formUrl = "https://docs.google.com/forms/d/e/1FAIpQLSdSXEvN7DMMC-pwXED9G5TRpe4ecQ5U7pMtsg3201d2ikinfQ/formResponse";
+
+        await fetch(formUrl, {
           method: "POST",
           mode: "no-cors",
           body: fd
         });
 
-        showStatus("تم التسجيل بنجاح! سيتم إرسال الكتالوج على بريدك الإلكتروني ✅", "#4ade80");
-        btn.innerText = "تم بنجاح ✅";
-
-        setTimeout(() => {
-            window.location.href = "https://daolinedigital.com";
-        }, 2000);
+        // إخفاء الفورم وإظهار رسالة النجاح بدون تحويل
+        document.getElementById('form-container').style.display = 'none';
+        document.getElementById('download-area').style.display = 'block';
 
       } catch (e) {
         showStatus("حدث خطأ.. حاول مجددًا.", "#f87171");
         btn.disabled = false;
-        btn.innerText = "أرسل لي الكتالوج الآن 🚀";
+        btn.innerText = "أرسلوا لي الكتالوج على الإيميل 🚀";
       }
     }
 
@@ -618,7 +593,6 @@
 
           const element = document.getElementById('pdf-content');
           
-          // Toast رسالة للمستخدم
           showToast('⏳ جاري تجهيز الملف بدقة عالية...');
 
           const opt = {
