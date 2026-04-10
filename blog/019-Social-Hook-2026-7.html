@@ -27,107 +27,221 @@
       background: radial-gradient(circle at 15% 15%, rgba(192,19,166,0.12), transparent 45%), var(--bg);
       color: var(--text);
       line-height: 1.8;
-      font-size: 19px; 
+      font-size: 19px;
       -webkit-font-smoothing: antialiased;
     }
 
     /* ====== HEADER ====== */
     .site-header {
-      position: sticky; top: 0; z-index: 1000; width: 100%;
-      background: rgba(7, 8, 12, 0.85); backdrop-filter: blur(20px);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      width: 100%;
+      background: rgba(7, 8, 12, 0.85);
+      backdrop-filter: blur(20px);
       border-bottom: 2px solid var(--primary);
     }
+
     .header-inner {
-      max-width: 1200px; margin: 0 auto; padding: 0 24px;
-      display: flex; align-items: center; justify-content: space-between; height: 75px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 75px;
     }
-    .logo { font-size: 22px; font-weight: 900; color: #fff; text-decoration: none; }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 900;
+      color: #fff;
+      text-decoration: none;
+    }
+
     .logo span { color: var(--primary); }
 
     /* ====== ARTICLE BODY ====== */
-    .article-body { max-width: 850px; margin: 0 auto; padding: 60px 24px 100px; }
-    
-    h1 { font-size: clamp(30px, 6vw, 48px); font-weight: 900; color: #fff; line-height: 1.2; margin-bottom: 30px; text-align: center; }
-    
-    .h2-heading { display: flex; align-items: center; gap: 15px; font-size: 28px; font-weight: 900; color: #fff; margin: 50px 0 25px; }
-    .h2-heading .bar { width: 6px; height: 35px; background: var(--primary); border-radius: 10px; }
-    
-    p { margin-bottom: 25px; text-align: justify; color: #cbd5e1; }
-    .hl { background: rgba(192,19,166,0.25); color: #f472b6; padding: 2px 8px; border-radius: 6px; font-weight: 700; }
+    .article-body {
+      max-width: 850px;
+      margin: 0 auto;
+      padding: 60px 24px 100px;
+    }
+
+    h1 {
+      font-size: clamp(30px, 6vw, 48px);
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.2;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .h2-heading {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      font-size: 28px;
+      font-weight: 900;
+      color: #fff;
+      margin: 50px 0 25px;
+    }
+
+    .h2-heading .bar {
+      width: 6px;
+      height: 35px;
+      background: var(--primary);
+      border-radius: 10px;
+    }
+
+    p {
+      margin-bottom: 25px;
+      text-align: justify;
+      color: #cbd5e1;
+    }
+
+    .hl {
+      background: rgba(192,19,166,0.25);
+      color: #f472b6;
+      padding: 2px 8px;
+      border-radius: 6px;
+      font-weight: 700;
+    }
 
     /* Info Box */
     .info-box {
-      border-radius: 24px; padding: 35px; margin: 40px 0;
+      border-radius: 24px;
+      padding: 35px;
+      margin: 40px 0;
       background: linear-gradient(135deg, rgba(192,19,166,0.15), rgba(15,23,42,0.6));
       border: 1px solid rgba(192,19,166,0.3);
     }
-    .box-title { color: var(--primary); font-weight: 900; font-size: 22px; margin-bottom: 15px; }
 
-    /* ====== الكود الثابت المستخرج بدقة لـ LEAD BOX ====== */
-    .daoline-lead-box { 
-      background: linear-gradient(145deg, #1e293b, #0f172a); 
-      border: 3px dashed #c013a6; 
-      border-radius: 30px; 
-      padding: 50px 40px; 
-      margin: 50px 0; 
+    .box-title {
+      color: var(--primary);
+      font-weight: 900;
+      font-size: 22px;
+      margin-bottom: 15px;
+    }
+
+    /* ====== LEAD BOX ====== */
+    .daoline-lead-box {
+      background: linear-gradient(145deg, #1e293b, #0f172a);
+      border: 3px dashed #c013a6;
+      border-radius: 30px;
+      padding: 50px 40px;
+      margin: 50px 0;
       text-align: center;
       box-shadow: 0 25px 60px rgba(192, 19, 166, 0.2);
       font-family: 'Tajawal', sans-serif;
       direction: rtl;
       position: relative;
     }
-    .daoline-free-badge { 
-      font-size: clamp(2.5rem, 5vw, 4rem); 
-      font-weight: 900; 
-      color: #c013a6; 
-      margin: 10px 0 20px 0; 
-      line-height: 1; 
+
+    .daoline-free-badge {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 900;
+      color: #c013a6;
+      margin: 10px 0 20px 0;
+      line-height: 1;
       text-shadow: 0 10px 30px rgba(192, 19, 166, 0.4);
     }
-    .daoline-input { 
-      width: 100%; 
-      padding: 16px; 
-      border-radius: 15px; 
-      border: 1px solid rgba(255,255,255,0.1); 
-      background: rgba(0,0,0,0.4); 
-      color: #fff; 
-      font-family: 'Tajawal', sans-serif; 
-      margin-bottom: 15px; 
-      outline: none; 
-      text-align: right; 
-      font-size: 1rem; 
+
+    .daoline-input {
+      width: 100%;
+      padding: 16px;
+      border-radius: 15px;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(0,0,0,0.4);
+      color: #fff;
+      font-family: 'Tajawal', sans-serif;
+      margin-bottom: 15px;
+      outline: none;
+      text-align: right;
+      font-size: 1rem;
       box-sizing: border-box;
     }
-    .daoline-input:focus {
-      border-color: #c013a6;
-    }
-    .daoline-submit-btn { 
-      width: 100%; 
-      background: #c013a6; 
-      color: #fff; 
-      border: none; 
-      padding: 20px; 
-      border-radius: 15px; 
-      font-weight: 900; 
-      font-size: 1.3rem; 
-      cursor: pointer; 
-      transition: 0.3s ease; 
+
+    .daoline-input:focus { border-color: #c013a6; }
+
+    .daoline-submit-btn {
+      width: 100%;
+      background: #c013a6;
+      color: #fff;
+      border: none;
+      padding: 20px;
+      border-radius: 15px;
+      font-weight: 900;
+      font-size: 1.3rem;
+      cursor: pointer;
+      transition: 0.3s ease;
       box-shadow: 0 10px 30px rgba(192, 19, 166, 0.3);
-      font-family: 'Tajawal', sans-serif; 
+      font-family: 'Tajawal', sans-serif;
     }
-    .daoline-submit-btn:hover { 
-      transform: scale(1.02); 
-      background: #a00f89; 
+
+    .daoline-submit-btn:hover {
+      transform: scale(1.02);
+      background: #a00f89;
     }
+
     .daoline-status {
-      margin-top: 15px; 
-      font-weight: bold; 
+      margin-top: 15px;
+      font-weight: bold;
       font-size: 1.1rem;
     }
 
-    footer { text-align: center; padding: 60px; border-top: 1px solid var(--border); color: var(--muted); font-size: 15px; }
+    /* ====== RELATED ARTICLES ====== */
+    .related-articles {
+      margin-top: 60px;
+      padding: 28px;
+      border-radius: 24px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.03), rgba(192,19,166,0.08));
+      border: 1px solid rgba(255,255,255,0.08);
+    }
 
-    @media (max-width: 768px) { .daoline-lead-box { padding: 30px 20px; } }
+    .related-articles h3 {
+      color: #ffffff;
+      font-size: 24px;
+      font-weight: 800;
+      margin-bottom: 18px;
+    }
+
+    .related-articles ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .related-articles li {
+      margin-bottom: 14px;
+    }
+
+    .related-articles a {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 500;
+      transition: 0.3s ease;
+    }
+
+    .related-articles a:hover {
+      color: #f472b6;
+    }
+
+    footer {
+      text-align: center;
+      padding: 60px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    @media (max-width: 768px) {
+      .daoline-lead-box { padding: 30px 20px; }
+      .related-articles { padding: 22px 18px; }
+      .related-articles h3 { font-size: 22px; }
+      .related-articles a { font-size: 17px; }
+    }
   </style>
 </head>
 <body>
@@ -152,7 +266,6 @@
     <h2 class="h2-heading"><span class="bar"></span> إيه هو الهوك (Hook) بالظبط؟</h2>
     <p>الهوك هو "الخطاف" اللي بيخطف عين العميل وهو بيعمل سكرول سريع. هو أداة نفسية بتلعب على الفضول أو الخوف من ضياع الفرصة. الهوك الصح بيخلي العقل يقول: "استنى.. أنا لازم أعرف إيه ده!".</p>
 
-    <!-- ====== الكود الثابت المستخرج لـ LEAD BOX ====== -->
     <div class="daoline-lead-box">
       <h3 style="color: #fff; margin-bottom: 5px; font-size: 1.6rem;">مش عارفة تبدأي منين؟ 🧐</h3>
       <div class="daoline-free-badge">دليل مجاني ✨</div>
@@ -170,27 +283,40 @@
         <div id="lead-status" class="daoline-status"></div>
       </div>
     </div>
-    <!-- ================================================= -->
 
     <h2 class="h2-heading"><span class="bar"></span> قاعدة الـ 3 ثواني في 2026</h2>
     <p>بلاش مقدمات مملة! "السلام عليكم" أو "أهلاً بيكم" بتضيع أهم ثواني في الفيديو. ادخلي في الموضوع فوراً. استخدمي جملة صادمة، أو سؤال بيضرب "نقطة الألم" عند جمهورك.</p>
 
     <div class="info-box">
-        <div class="box-title">معادلة الفيديو الفيروسي ✨</div>
-        <p style="margin-bottom: 0;">
-           • <b>0-3 ثواني:</b> الهوك (خطف العين).<br>
-           • <b>3-10 ثواني:</b> التثبيت (ليه يكمل؟).<br>
-           • <b>10-45 ثانية:</b> القيمة الحقيقية.<br>
-           • <b>45-60 ثانية:</b> الطلب المباشر (CTA).
-        </p>
+      <div class="box-title">معادلة الفيديو الفيروسي ✨</div>
+      <p style="margin-bottom: 0;">
+        • <b>0-3 ثواني:</b> الهوك (خطف العين).<br>
+        • <b>3-10 ثواني:</b> التثبيت (ليه يكمل؟).<br>
+        • <b>10-45 ثانية:</b> القيمة الحقيقية.<br>
+        • <b>45-60 ثانية:</b> الطلب المباشر (CTA).
+      </p>
     </div>
+
+    <section class="related-articles">
+      <h3>اقرأ أيضًا</h3>
+      <ul>
+        <li>
+          <a href="/blog/018.html">المقال التالي</a>
+        </li>
+        <li>
+          <a href="/blog/019-social-seo-strategy-2026.html">استراتيجية السوشيال SEO</a>
+        </li>
+        <li>
+          <a href="/blog/020-Social-Seo-2026-7.html">دليل السوشيال SEO</a>
+        </li>
+      </ul>
+    </section>
   </main>
 
   <footer>
     © 2026 Daoline Digital Academy | إعداد دعاء سليط
   </footer>
 
-  <!-- ====== الكود الثابت المستخرج للسكريبت ====== -->
   <script>
     async function submitDaolineLead() {
       const name = document.getElementById('lead-name').value.trim();
@@ -199,34 +325,34 @@
       const status = document.getElementById('lead-status');
       const btn = document.getElementById('lead-btn');
 
-      if(!name || !email || !wa) {
+      if (!name || !email || !wa) {
         status.innerText = "من فضلك كملي البيانات الأول! ⚠️";
         status.style.color = "#f87171";
         return;
       }
 
       try {
-        btn.disabled = true; 
+        btn.disabled = true;
         btn.innerText = "جاري تحضير دليلك...";
-        
+
         const fd = new FormData();
-        // الأرقام دي متطابقة تماماً مع كودك عشان الفورم يستقبلها صح
         fd.append("entry.299023128", name);
         fd.append("entry.1712155557", email);
         fd.append("entry.1224669856", wa);
-        
-        // الكلمة السحرية لبرنامج الإيميلات بتاعك
-        fd.append("entry.334049848", "new_catalog"); 
-        
+        fd.append("entry.334049848", "new_catalog");
+
         const formUrl = "https://docs.google.com/forms/d/e/1FAIpQLSdSXEvN7DMMC-pwXED9G5TRpe4ecQ5U7pMtsg3201d2ikinfQ/formResponse";
-        
-        await fetch(formUrl, { method: "POST", mode: "no-cors", body: fd });
-        
+
+        await fetch(formUrl, {
+          method: "POST",
+          mode: "no-cors",
+          body: fd
+        });
+
         status.innerText = "تم بنجاح! ✅ شيك على إيميلك الآن (والـ Spam) هتلاقي الدليل وصلك.";
         status.style.color = "#4ade80";
         btn.innerText = "تم الإرسال بنجاح ✅";
-        
-        // مسح الخانات بعد الإرسال
+
         document.getElementById('lead-name').value = '';
         document.getElementById('lead-email').value = '';
         document.getElementById('lead-whatsapp').value = '';
@@ -239,28 +365,6 @@
       }
     }
   </script>
-  <!-- ================================================= -->
-<!-- اقرأ أيضًا -->
-<h3 style="color:#ffffff;">اقرأ أيضًا</h3>
 
-<ul>
-  <li>
-    <a href="/blog/018.html" style="color:#ffffff; text-decoration:none;">
-      المقال التالي
-    </a>
-  </li>
-
-  <li>
-    <a href="/blog/019-social-seo-strategy-2026.html" style="color:#ffffff; text-decoration:none;">
-      استراتيجية السوشيال SEO
-    </a>
-  </li>
-
-  <li>
-    <a href="/blog/020-Social-Seo-2026-7.html" style="color:#ffffff; text-decoration:none;">
-      دليل السوشيال SEO
-    </a>
-  </li>
-</ul>
 </body>
 </html>
