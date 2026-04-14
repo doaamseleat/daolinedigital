@@ -3,8 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>المكتبة الذكية | Daoline Digital</title>
-  
+
+  <title>المكتبة الذكية | مقالات السوشيال ميديا والتسويق 2026 | Daoline Digital</title>
+  <meta name="description" content="المكتبة الذكية من Daoline Digital: مقالات ودروس عملية في السوشيال ميديا، المحتوى، والإعلانات في 2026، مرتبة بطريقة سهلة وسريعة للوصول لأحدث الإصدارات." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://daolinedigital.com/blog/" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
@@ -19,80 +23,307 @@
       --muted: rgba(243,244,246,0.65);
       --border: rgba(255,255,255,0.08);
       --radius: 24px;
+      --shadow: 0 20px 40px rgba(0,0,0,0.35);
     }
 
-    * { box-sizing: border-box; outline: none; }
+    * {
+      box-sizing: border-box;
+      outline: none;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       font-family: "Tajawal", sans-serif;
       color: var(--text);
-      background: radial-gradient(circle at 15% 15%, rgba(192,19,166,0.18), transparent 45%), var(--bg);
-      line-height: 1.6;
+      background:
+        radial-gradient(circle at 15% 15%, rgba(192,19,166,0.18), transparent 45%),
+        radial-gradient(circle at 85% 10%, rgba(255,255,255,0.03), transparent 25%),
+        var(--bg);
+      line-height: 1.7;
       overflow-x: hidden;
     }
 
-    .wrap { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .wrap {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
 
     /* --- Topbar --- */
     .topbar {
-      position: sticky; top: 0; z-index: 100;
+      position: sticky;
+      top: 0;
+      z-index: 100;
       backdrop-filter: blur(18px);
-      background: rgba(7, 8, 12, 0.75);
+      background: rgba(7, 8, 12, 0.78);
       border-bottom: 1px solid var(--border);
     }
-    .nav { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; }
-    .brand { font-weight: 900; font-size: 1.4rem; text-decoration: none; color: #fff; }
-    .brand span { color: var(--primary); }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 16px 0;
+    }
+
+    .brand {
+      font-weight: 900;
+      font-size: 1.4rem;
+      color: #fff;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .brand span {
+      color: var(--primary);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
 
     .btn {
-      display: inline-flex; align-items: center; justify-content: center;
-      padding: 10px 24px; border-radius: 14px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 20px;
+      border-radius: 14px;
       border: 1px solid var(--border);
       background: rgba(255,255,255,0.05);
-      font-weight: 800; font-size: 14px;
-      text-decoration: none; color: white; transition: 0.3s;
+      font-weight: 800;
+      font-size: 14px;
+      text-decoration: none;
+      color: white;
+      transition: 0.3s;
+      white-space: nowrap;
     }
-    .btn:hover { background: rgba(255,255,255,0.1); transform: translateY(-2px); }
-    .btn.primary { background: var(--primary); border: none; box-shadow: 0 10px 25px rgba(192, 19, 166, 0.3); }
 
-    header { padding: 80px 0 40px; text-align: center; }
-    h1 { font-size: clamp(2.5rem, 8vw, 3.5rem); font-weight: 900; margin-bottom: 15px; }
-    .lead { font-size: 1.2rem; color: var(--muted); max-width: 700px; margin: 0 auto; }
+    .btn:hover {
+      background: rgba(255,255,255,0.1);
+      transform: translateY(-2px);
+    }
 
-    .section-title { font-size: 1.8rem; font-weight: 900; margin: 50px 0 30px; display: flex; align-items: center; gap: 15px; }
-    .section-title::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+    .btn.primary {
+      background: var(--primary);
+      border-color: transparent;
+      box-shadow: 0 10px 25px rgba(192, 19, 166, 0.3);
+    }
+
+    .btn.primary:hover {
+      background: var(--primary-hover);
+    }
+
+    /* --- Hero --- */
+    header {
+      padding: 78px 0 38px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: clamp(2.4rem, 8vw, 3.5rem);
+      font-weight: 900;
+      margin: 0 0 15px;
+      line-height: 1.15;
+    }
+
+    .lead {
+      font-size: 1.15rem;
+      color: var(--muted);
+      max-width: 720px;
+      margin: 0 auto;
+      line-height: 1.9;
+    }
+
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 26px;
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      font-weight: 900;
+      margin: 50px 0 30px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .section-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
 
     /* --- Articles List --- */
-    .list { display: grid; gap: 25px; margin-bottom: 80px; }
+    .list {
+      display: grid;
+      gap: 25px;
+      margin-bottom: 80px;
+    }
+
     .card {
       background: var(--card);
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      padding: 35px;
-      transition: 0.4s ease;
+      padding: 32px;
+      transition: 0.35s ease;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.18);
     }
-    .card:hover { border-color: var(--primary); transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
+
+    .card:hover {
+      border-color: rgba(192,19,166,0.75);
+      transform: translateY(-5px);
+      box-shadow: var(--shadow);
+    }
 
     .new-badge {
-      background: var(--primary); color: white; padding: 5px 15px; border-radius: 10px;
-      font-size: 12px; font-weight: 900; display: inline-block; margin-bottom: 15px;
+      background: var(--primary);
+      color: white;
+      padding: 5px 15px;
+      border-radius: 10px;
+      font-size: 12px;
+      font-weight: 900;
+      display: inline-block;
+      margin-bottom: 15px;
     }
 
-    .card h2 { margin: 0 0 12px; font-size: 1.7rem; font-weight: 800; }
-    .card h2 a { color: var(--text); text-decoration: none; transition: 0.3s; }
-    .card h2 a:hover { color: var(--primary); }
-    
-    .desc { color: var(--muted); font-size: 1.05rem; margin-bottom: 25px; }
+    .card h2 {
+      margin: 0 0 12px;
+      font-size: 1.65rem;
+      font-weight: 800;
+      line-height: 1.4;
+    }
 
-    .loader { text-align: center; padding: 100px 0; }
+    .card h2 a {
+      color: var(--text);
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .card h2 a:hover {
+      color: var(--primary);
+    }
+
+    .desc {
+      color: var(--muted);
+      font-size: 1.04rem;
+      line-height: 1.9;
+      margin-bottom: 16px;
+    }
+
+    .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 22px;
+    }
+
+    .meta-pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 7px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 800;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: rgba(243,244,246,0.78);
+    }
+
+    .loader {
+      text-align: center;
+      padding: 100px 0;
+    }
+
     .spinner {
-      width: 40px; height: 40px; border: 3px solid rgba(192,19,166,0.1);
-      border-left-color: var(--primary); border-radius: 50%;
-      margin: 0 auto 15px; animation: spin 1s linear infinite;
+      width: 40px;
+      height: 40px;
+      border: 3px solid rgba(192,19,166,0.1);
+      border-left-color: var(--primary);
+      border-radius: 50%;
+      margin: 0 auto 15px;
+      animation: spin 1s linear infinite;
     }
-    @keyframes spin { to { transform: rotate(360deg); } }
 
-    footer { padding: 60px 0; text-align: center; border-top: 1px solid var(--border); color: var(--muted); font-size: 14px; }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .empty-state {
+      text-align: center;
+      padding: 50px 20px 80px;
+      color: var(--muted);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,0.03);
+      margin-bottom: 80px;
+    }
+
+    footer {
+      padding: 60px 0;
+      text-align: center;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      .wrap {
+        padding: 0 18px;
+      }
+
+      .nav {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .nav-actions {
+        width: 100%;
+        justify-content: stretch;
+      }
+
+      .nav-actions .btn {
+        flex: 1;
+      }
+
+      header {
+        padding: 56px 0 28px;
+      }
+
+      .lead {
+        font-size: 1.05rem;
+      }
+
+      .card {
+        padding: 24px;
+      }
+
+      .card h2 {
+        font-size: 1.4rem;
+      }
+
+      .desc {
+        font-size: 1rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -101,86 +332,133 @@
     <div class="wrap">
       <div class="nav">
         <a href="https://daolinedigital.com/" class="brand">Daoline <span>Digital</span></a>
-        <a class="btn" href="https://daolinedigital.com/">الرئيسية</a>
+
+        <div class="nav-actions">
+          <a class="btn" href="https://daolinedigital.com/">الرئيسية</a>
+          <a class="btn primary" href="https://daolinedigital.com/contact.html">تواصل الآن</a>
+        </div>
       </div>
     </div>
   </div>
 
   <header class="wrap">
     <h1>المكتبة الذكية</h1>
-    <p class="lead">وجهتك الأولى لاحتراف السوشيال ميديا في 2026 مع Daoline Digital.</p>
+    <p class="lead">وجهتك العملية لاكتشاف أحدث مقالات السوشيال ميديا، صناعة المحتوى، وSocial SEO في 2026 مع Daoline Digital.</p>
+
+    <div class="hero-actions">
+      <a class="btn primary" href="https://daolinedigital.com/">العودة للموقع</a>
+      <a class="btn" href="https://daolinedigital.com/contact.html">اطلب تقييمًا أوليًا</a>
+    </div>
   </header>
 
   <main class="wrap">
     <div class="section-title">أحدث الإصدارات</div>
+
     <div id="articlesList" class="list">
-        <div class="loader"><div class="spinner"></div><p>جاري ترتيب المقالات حسب الأحدث...</p></div>
+      <div class="loader">
+        <div class="spinner"></div>
+        <p>جاري تحميل أحدث المقالات...</p>
+      </div>
     </div>
   </main>
 
   <footer>&copy; <span id="year"></span> Daoline Digital - جميع الحقوق محفوظة</footer>
 
   <script>
-    const CONFIG = { owner: "doaamseleat", repo: "daolinedigital", path: "blog" };
+    const CONFIG = {
+      owner: "doaamseleat",
+      repo: "daolinedigital",
+      path: "blog"
+    };
 
     async function getArticles() {
       const url = `https://api.github.com/repos/${CONFIG.owner}/${CONFIG.repo}/contents/${CONFIG.path}?t=${Date.now()}`;
+
       try {
         const res = await fetch(url);
+        if (!res.ok) throw new Error("Failed to fetch repository contents");
+
         const data = await res.json();
-        
-        // --- تعديل الترتيب الذكي ---
+
         return data
-          .filter(f => f.name.endsWith('.html') && f.name !== 'index.html')
+          .filter(file => file.name.endsWith('.html') && file.name !== 'index.html')
           .sort((a, b) => {
-            // استخراج الأرقام من بداية اسم الملف (مثل 017)
-            const numA = parseInt(a.name.match(/^\d+/) || 0);
-            const numB = parseInt(b.name.match(/^\d+/) || 0);
-            return numB - numA; // ترتيب تنازلي (الأكبر فوق)
+            const matchA = a.name.match(/^(\d+)/);
+            const matchB = b.name.match(/^(\d+)/);
+
+            const numA = matchA ? parseInt(matchA[1], 10) : 0;
+            const numB = matchB ? parseInt(matchB[1], 10) : 0;
+
+            return numB - numA;
           });
-      } catch (e) { return []; }
+      } catch (e) {
+        return [];
+      }
     }
 
     async function fetchInfo(file) {
       try {
         const res = await fetch(file.download_url);
+        if (!res.ok) throw new Error("Failed to fetch article");
+
         const html = await res.text();
         const doc = new DOMParser().parseFromString(html, 'text/html');
+
+        const title =
+          doc.querySelector('title')?.innerText.split('|')[0].trim() ||
+          "مقال جديد";
+
+        const desc =
+          doc.querySelector('meta[name="description"]')?.getAttribute('content') ||
+          "اكتشف أحدث دروس Daoline Digital في التسويق والسوشيال ميديا.";
+
         return {
-          title: doc.querySelector('title')?.innerText.split('|')[0].trim() || "مقال جديد",
-          desc: doc.querySelector('meta[name="description"]')?.getAttribute('content') || "اكتشف أحدث دروس داولاين ديجيتال.",
+          title,
+          desc,
           url: `/blog/${file.name}`
         };
-      } catch (e) { return null; }
+      } catch (e) {
+        return null;
+      }
     }
 
     async function init() {
       const list = document.getElementById('articlesList');
       const files = await getArticles();
-      
+
       if (files.length === 0) {
-        list.innerHTML = '<p style="text-align:center; padding:40px;">لا توجد مقالات حالياً.</p>';
+        list.innerHTML = `
+          <div class="empty-state">
+            <p>لا توجد مقالات متاحة حاليًا. أضف مقالات جديدة إلى مجلد blog وسيتم عرضها هنا تلقائيًا.</p>
+          </div>
+        `;
         return;
       }
 
-      list.innerHTML = ''; // مسح اللودر
+      list.innerHTML = '';
 
       for (let i = 0; i < files.length; i++) {
         const info = await fetchInfo(files[i]);
         if (!info) continue;
 
-        const card = document.createElement('div');
+        const card = document.createElement('article');
         card.className = 'card';
-        
-        // بادج "صدر حديثاً" لأول مقال في القائمة المرتبة
-        const badge = i === 0 ? `<div class="new-badge">صدر حديثاً 🔥</div>` : '';
+
+        const badge = i === 0
+          ? `<div class="new-badge">صدر حديثًا 🔥</div>`
+          : '';
 
         card.innerHTML = `
           ${badge}
           <h2><a href="${info.url}">${info.title}</a></h2>
           <p class="desc">${info.desc}</p>
-          <a href="${info.url}" class="btn primary">استعرض المحتوى 🚀</a>
+          <div class="meta-row">
+            <span class="meta-pill">مقال عملي</span>
+            <span class="meta-pill">قراءة سريعة</span>
+          </div>
+          <a href="${info.url}" class="btn primary">اقرأ المقال ←</a>
         `;
+
         list.appendChild(card);
       }
     }
@@ -190,5 +468,6 @@
       init();
     };
   </script>
+
 </body>
 </html>
