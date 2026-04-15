@@ -5,6 +5,9 @@ on:
     branches:
       - main
 
+permissions:
+  contents: write
+
 jobs:
   generate-sitemap:
     runs-on: ubuntu-latest
@@ -13,16 +16,46 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Generate sitemap for blog articles only
+      - name: Generate sitemap
         run: |
           echo '<?xml version="1.0" encoding="UTF-8"?>' > sitemap.xml
           echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' >> sitemap.xml
 
-          for file in blog/article-*.html; do
-            if [ -f "$file" ]; then
+          echo '  <url>' >> sitemap.xml
+          echo '    <loc>https://daolinedigital.com/</loc>' >> sitemap.xml
+          echo '    <changefreq>weekly</changefreq>' >> sitemap.xml
+          echo '    <priority>1.0</priority>' >> sitemap.xml
+          echo '  </url>' >> sitemap.xml
+
+          echo '  <url>' >> sitemap.xml
+          echo '    <loc>https://daolinedigital.com/blog/</loc>' >> sitemap.xml
+          echo '    <changefreq>daily</changefreq>' >> sitemap.xml
+          echo '    <priority>0.9</priority>' >> sitemap.xml
+          echo '  </url>' >> sitemap.xml
+
+          echo '  <url>' >> sitemap.xml
+          echo '    <loc>https://daolinedigital.com/contact.html</loc>' >> sitemap.xml
+          echo '    <changefreq>yearly</changefreq>' >> sitemap.xml
+          echo '    <priority>0.4</priority>' >> sitemap.xml
+          echo '  </url>' >> sitemap.xml
+
+          echo '  <url>' >> sitemap.xml
+          echo '    <loc>https://daolinedigital.com/privacy.html</loc>' >> sitemap.xml
+          echo '    <changefreq>yearly</changefreq>' >> sitemap.xml
+          echo '    <priority>0.3</priority>' >> sitemap.xml
+          echo '  </url>' >> sitemap.xml
+
+          echo '  <url>' >> sitemap.xml
+          echo '    <loc>https://daolinedigital.com/terms.html</loc>' >> sitemap.xml
+          echo '    <changefreq>yearly</changefreq>' >> sitemap.xml
+          echo '    <priority>0.3</priority>' >> sitemap.xml
+          echo '  </url>' >> sitemap.xml
+
+          for file in blog/*.html; do
+            if [ -f "$file" ] && [ "$(basename "$file")" != "index.html" ]; then
               echo "  <url>" >> sitemap.xml
               echo "    <loc>https://daolinedigital.com/$file</loc>" >> sitemap.xml
-              echo "    <changefreq>weekly</changefreq>" >> sitemap.xml
+              echo "    <changefreq>monthly</changefreq>" >> sitemap.xml
               echo "    <priority>0.8</priority>" >> sitemap.xml
               echo "  </url>" >> sitemap.xml
             fi
@@ -35,5 +68,5 @@ jobs:
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
           git add sitemap.xml
-          git commit -m "Update sitemap (articles only)" || echo "No changes"
+          git diff --cached --quiet || git commit -m "Update sitemap"
           git push
