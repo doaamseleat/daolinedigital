@@ -25,10 +25,31 @@ body {
   padding:20px;
 }
 
+/* زر الرجوع */
+.home-btn {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:10px 18px;
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,0.08);
+  background:rgba(255,255,255,0.05);
+  color:#fff;
+  text-decoration:none;
+  font-weight:800;
+  transition:0.3s;
+  margin-bottom:30px;
+}
+
+.home-btn:hover {
+  background:rgba(255,255,255,0.1);
+  transform:translateY(-2px);
+}
+
 h1 {
   text-align:center;
   font-size:2.4rem;
-  margin-top:40px;
+  margin-bottom:10px;
 }
 
 .lead {
@@ -37,12 +58,25 @@ h1 {
   line-height:1.8;
 }
 
+.value {
+  text-align:center;
+  margin-top:10px;
+  font-size:14px;
+  color:#888;
+}
+
 .card {
   background:#0f1220;
   padding:25px;
   margin:20px 0;
   border-radius:20px;
   border:1px solid rgba(255,255,255,0.08);
+  transition:0.3s;
+}
+
+.card:hover {
+  border-color:#c013a6;
+  transform:translateY(-5px);
 }
 
 .card h2 {
@@ -61,6 +95,17 @@ h1 {
   border-radius:10px;
   color:#fff;
   text-decoration:none;
+  font-weight:bold;
+}
+
+.btn:hover {
+  background:#9a0e85;
+}
+
+footer {
+  text-align:center;
+  margin-top:60px;
+  color:#777;
 }
 </style>
 </head>
@@ -69,6 +114,9 @@ h1 {
 
 <div class="wrap">
 
+<!-- زر الرجوع -->
+<a href="https://daolinedigital.com/" class="home-btn">← العودة للرئيسية</a>
+
 <h1>المكتبة المجانية لتعلم التسويق الرقمي</h1>
 
 <p class="lead">
@@ -76,7 +124,15 @@ h1 {
 هنا هتلاقي مقالات بسيطة تساعدك تفهم السوشيال ميديا والمحتوى خطوة خطوة.
 </p>
 
+<div class="value">
+📚 مقالات عملية + أفكار محتوى + استراتيجيات قابلة للتطبيق
+</div>
+
 <div id="articles"></div>
+
+<footer>
+© Daoline Digital
+</footer>
 
 </div>
 
