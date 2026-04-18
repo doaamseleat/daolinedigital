@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>عصر الـ Attention Economy خلص — جه عصر المعنى | Daoline Digital</title>
+  <meta name="description" content="Ogilvy بتقول إن المنافسة مش على الـ Attention — على الـ Meaning. إزاي تبني محتوى بيغيّر حياة جمهورك في 2026 كـ Content Creator؟">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --primary: #c013a6;
+      --h2-color: #f7c5e8;
+      --bg: #07080c;
+      --surface: #0f1220;
+      --text: #f4f7fc;
+      --muted: #a8b8cc;
+      --border: rgba(255,255,255,0.08);
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Tajawal', sans-serif;
+      background: radial-gradient(circle at 15% 15%, rgba(192,19,166,0.12), transparent 45%), var(--bg);
+      color: var(--text);
+      line-height: 2.1;
+      font-size: 19px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* READING PROGRESS */
+    #reading-progress { position: fixed; top: 0; left: 0; height: 3px; background: linear-gradient(90deg, var(--primary), #7c3aed); z-index: 9999; width: 0%; transition: width 0.1s; }
+
+    /* HEADER */
+    .site-header { position: sticky; top: 0; z-index: 1000; width: 100%; background: rgba(7,8,12,0.85); backdrop-filter: blur(20px); border-bottom: 2px solid var(--primary); }
+    .header-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 75px; }
+    .logo { font-size: 22px; font-weight: 900; color: #fff; text-decoration: none; }
+    .logo span { color: var(--primary); }
+
+    /* ARTICLE */
+    .article-body { max-width: 850px; margin: 0 auto; padding: 60px 24px 100px; }
+
+    h1 { font-size: clamp(30px, 6vw, 48px); font-weight: 900; color: #fff; line-height: 1.2; margin-bottom: 30px; text-align: center; }
+
+    .article-meta { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; font-size: 0.92rem; color: var(--muted); margin-bottom: 50px; padding-bottom: 24px; border-bottom: 1px solid var(--border); }
+
+    .h2-heading { display: flex; align-items: center; gap: 15px; font-size: 28px; font-weight: 900; color: var(--h2-color); margin: 50px 0 25px; }
+    .h2-heading .bar { width: 6px; height: 35px; background: var(--primary); border-radius: 10px; flex-shrink: 0; }
+
+    h3 { font-size: 22px; font-weight: 800; color: #fff; margin: 35px 0 15px; }
+    p { margin-bottom: 30px; text-align: justify; color: #e6edf5; }
+    ul { margin-bottom: 30px; padding-right: 25px; }
+    li { margin-bottom: 14px; color: #e6edf5; }
+
+    .hl { background: rgba(192,19,166,0.2); color: #f472b6; padding: 2px 8px; border-radius: 6px; font-weight: 700; }
+
+    /* INLINE LINKS */
+    .inline-link { color: #fff; font-weight: 700; text-decoration: underline; text-decoration-color: rgba(255,255,255,0.35); text-underline-offset: 4px; transition: color 0.2s; }
+    .inline-link:hover { color: #f472b6; text-decoration-color: #f472b6; }
+
+    /* STAT HIGHLIGHT */
+    .stat-highlight { background: linear-gradient(135deg, rgba(192,19,166,0.12), rgba(192,19,166,0.03)); border: 1px solid rgba(192,19,166,0.4); border-right: 5px solid var(--primary); border-radius: 16px; padding: 30px 35px; margin: 40px 0; display: flex; align-items: center; gap: 25px; }
+    .stat-number { font-size: 4rem; font-weight: 900; color: var(--primary); line-height: 1; white-space: nowrap; }
+    .stat-text { font-size: 1.25rem; color: #f3f6fb; line-height: 1.6; }
+    .stat-source { font-size: 0.82rem; color: var(--muted); margin-top: 8px; }
+
+    /* PULL QUOTE */
+    .pull-quote { border-right: 5px solid var(--primary); padding: 20px 25px; margin: 40px 0; background: rgba(192,19,166,0.06); border-radius: 0 12px 12px 0; }
+    .pull-quote p { font-size: 1.35rem; font-weight: 700; color: #fff; margin: 0; font-style: italic; text-align: right; }
+    .pull-quote cite { font-size: 0.88rem; color: var(--muted); margin-top: 10px; display: block; font-style: normal; }
+
+    /* INFO BOX */
+    .info-box { border-radius: 16px; padding: 28px 30px; margin: 40px 0; background: linear-gradient(135deg, rgba(192,19,166,0.12), rgba(15,18,32,0.6)); border: 1px solid rgba(192,19,166,0.25); }
+    .info-box .box-title { color: var(--h2-color); font-weight: 900; font-size: 1.1rem; margin-bottom: 12px; }
+    .info-box p { color: #e6edf5; margin: 0; }
+
+    /* ERA TIMELINE — unique element */
+    .era-timeline { margin: 40px 0; display: flex; flex-direction: column; gap: 0; position: relative; }
+    .era-timeline::before { content: ''; position: absolute; right: 23px; top: 0; bottom: 0; width: 2px; background: linear-gradient(to bottom, var(--primary), rgba(192,19,166,0.1)); }
+    .era-item { display: flex; gap: 20px; align-items: flex-start; padding: 20px 0; position: relative; }
+    .era-dot { width: 48px; height: 48px; border-radius: 50%; border: 2px solid var(--primary); background: var(--bg); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; font-weight: 900; flex-shrink: 0; color: var(--primary); z-index: 1; }
+    .era-item.active .era-dot { background: var(--primary); color: #fff; }
+    .era-content { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 18px 22px; flex: 1; }
+    .era-item.active .era-content { border-color: rgba(192,19,166,0.4); background: linear-gradient(135deg, rgba(192,19,166,0.08), var(--surface)); }
+    .era-year { font-size: 0.78rem; font-weight: 700; color: var(--primary); letter-spacing: 1px; margin-bottom: 4px; }
+    .era-name { font-size: 1.05rem; font-weight: 700; color: #fff; margin-bottom: 6px; }
+    .era-desc { font-size: 0.9rem; color: var(--muted); line-height: 1.6; }
+
+    /* MEANING vs ATTENTION */
+    .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 40px 0; }
+    .compare-card { background: var(--surface); border-radius: 16px; padding: 24px; border: 1px solid var(--border); }
+    .compare-card.old { border-color: rgba(255,255,255,0.08); }
+    .compare-card.new { border-color: rgba(247,197,232,0.4); background: linear-gradient(135deg, rgba(247,197,232,0.05), var(--surface)); }
+    .compare-label { font-size: 0.85rem; font-weight: 700; letter-spacing: 1px; margin-bottom: 14px; }
+    .compare-card.old .compare-label { color: var(--muted); }
+    .compare-card.new .compare-label { color: var(--h2-color); }
+    .compare-card ul { padding-right: 20px; }
+    .compare-card li { font-size: 1rem; color: #e6edf5; margin-bottom: 10px; }
+
+    /* MEANING PILLARS */
+    .pillars-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 40px 0; }
+    .pillar-card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 24px 18px; text-align: center; border-top: 3px solid var(--primary); }
+    .pillar-icon { font-size: 2rem; margin-bottom: 10px; }
+    .pillar-name { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 8px; }
+    .pillar-desc { font-size: 0.88rem; color: var(--muted); line-height: 1.6; }
+
+    /* CHECKLIST */
+    .checklist { list-style: none; padding: 0; margin-bottom: 38px; }
+    .checklist li { padding: 14px 0; border-bottom: 1px solid var(--border); color: #e6edf5; display: flex; gap: 12px; align-items: flex-start; font-size: 1.1rem; }
+    .checklist li::before { content: "✓"; color: var(--primary); font-weight: 900; font-size: 1.2rem; flex-shrink: 0; margin-top: 2px; }
+
+    /* INLINE LEAD BOX (mid-article) */
+    .lead-box-wrap { display: flex; justify-content: center; margin: 70px 0; }
+    .daoline-lead-box { background: linear-gradient(145deg, #1a2235, #0d1422); border: 2px solid rgba(192,19,166,0.5); border-radius: 24px; padding: 40px 36px; text-align: center; box-shadow: 0 20px 50px rgba(192,19,166,0.18), inset 0 1px 0 rgba(255,255,255,0.05); font-family: 'Tajawal', sans-serif; direction: rtl; width: 100%; max-width: 540px; }
+    .daoline-free-badge { font-size: 2.6rem; font-weight: 900; color: #c013a6; margin: 8px 0 16px; line-height: 1; text-shadow: 0 8px 24px rgba(192,19,166,0.4); }
+    .daoline-input { width: 100%; padding: 13px 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.35); color: #fff; font-family: 'Tajawal', sans-serif; margin-bottom: 12px; outline: none; text-align: right; font-size: 0.95rem; box-sizing: border-box; transition: border-color 0.2s; }
+    .daoline-input:focus { border-color: #c013a6; }
+    .daoline-submit-btn { width: 100%; background: #c013a6; color: #fff; border: none; padding: 16px; border-radius: 12px; font-weight: 900; font-size: 1.15rem; cursor: pointer; transition: 0.3s ease; box-shadow: 0 8px 24px rgba(192,19,166,0.3); font-family: 'Tajawal', sans-serif; }
+    .daoline-submit-btn:hover { transform: translateY(-2px); background: #a00f89; }
+    .daoline-status { margin-top: 12px; font-weight: bold; font-size: 1rem; }
+
+    /* ═══════════════════════════════════════
+       FLOATING LEAD WIDGET
+    ═══════════════════════════════════════ */
+    #float-trigger {
+      position: fixed;
+      left: 24px;
+      bottom: 32px;
+      z-index: 8888;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.4s ease, transform 0.4s ease;
+      pointer-events: none;
+    }
+    #float-trigger.visible {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: all;
+    }
+    #float-trigger.hidden { display: none; }
+
+    .float-btn {
+      width: 56px; height: 56px; border-radius: 50%;
+      background: var(--primary); border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 8px 24px rgba(192,19,166,0.5);
+      transition: transform 0.2s, box-shadow 0.2s;
+      font-size: 1.4rem;
+    }
+    .float-btn:hover { transform: scale(1.1); box-shadow: 0 12px 32px rgba(192,19,166,0.65); }
+
+    /* Floating panel */
+    #float-panel {
+      position: fixed;
+      left: 24px;
+      bottom: 100px;
+      z-index: 8888;
+      width: 300px;
+      background: linear-gradient(145deg, #1a2235, #0d1422);
+      border: 1.5px solid rgba(192,19,166,0.5);
+      border-radius: 20px;
+      padding: 24px 20px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.6), 0 0 0 1px rgba(192,19,166,0.1);
+      direction: rtl;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(16px) scale(0.95);
+      transition: opacity 0.35s ease, transform 0.35s ease;
+      pointer-events: none;
+    }
+    #float-panel.open {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      pointer-events: all;
+    }
+
+    .float-close {
+      position: absolute; top: 10px; left: 12px;
+      background: none; border: none; color: var(--muted);
+      font-size: 1rem; cursor: pointer; line-height: 1; padding: 4px;
+      transition: color 0.2s;
+    }
+    .float-close:hover { color: #fff; }
+
+    .float-badge { font-size: 1.8rem; font-weight: 900; color: #c013a6; margin: 4px 0 10px; line-height: 1; text-shadow: 0 4px 16px rgba(192,19,166,0.4); }
+    .float-title { font-size: 0.95rem; font-weight: 700; color: #fff; margin-bottom: 4px; }
+    .float-sub { font-size: 0.78rem; color: var(--muted); margin-bottom: 14px; line-height: 1.5; }
+
+    .float-input { width: 100%; padding: 10px 12px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.35); color: #fff; font-family: 'Tajawal', sans-serif; margin-bottom: 8px; outline: none; text-align: right; font-size: 0.88rem; box-sizing: border-box; transition: border-color 0.2s; }
+    .float-input:focus { border-color: #c013a6; }
+
+    .float-submit { width: 100%; background: #c013a6; color: #fff; border: none; padding: 12px; border-radius: 10px; font-weight: 900; font-size: 0.95rem; cursor: pointer; transition: 0.3s; font-family: 'Tajawal', sans-serif; box-shadow: 0 6px 18px rgba(192,19,166,0.3); }
+    .float-submit:hover { background: #a00f89; transform: translateY(-1px); }
+    .float-status { margin-top: 8px; font-size: 0.82rem; font-weight: 700; }
+
+    /* RELATED */
+    .related-articles { margin-top: 60px; padding: 28px; border-radius: 24px; background: linear-gradient(135deg, rgba(255,255,255,0.03), rgba(192,19,166,0.08)); border: 1px solid var(--border); }
+    .related-articles h3 { color: #fff; font-size: 22px; font-weight: 800; margin-bottom: 16px; }
+    .related-articles ul { list-style: none; padding: 0; margin: 0; }
+    .related-articles li { margin-bottom: 12px; }
+    .related-articles a { color: #fff; text-decoration: none; font-size: 17px; font-weight: 500; transition: 0.3s; }
+    .related-articles a:hover { color: #f472b6; }
+
+    footer { text-align: center; padding: 60px; border-top: 1px solid var(--border); color: var(--muted); font-size: 15px; }
+
+    @media (max-width: 768px) {
+      .daoline-lead-box { padding: 28px 18px; }
+      .stat-highlight { flex-direction: column; gap: 12px; }
+      .stat-number { font-size: 3rem; }
+      .compare-grid, .pillars-grid { grid-template-columns: 1fr; }
+      .h2-heading { font-size: 22px; }
+      #float-panel { width: calc(100vw - 48px); }
+    }
+  </style>
+</head>
+<body>
+
+<div id="reading-progress"></div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="https://daolinedigital.com/" class="logo">DAOLINE<span>DIGITAL</span></a>
+    <a href="https://daolinedigital.com/blog/" style="color:var(--primary); text-decoration:none; font-weight:700; font-size:16px;">المكتبة الرقمية 📚</a>
+  </div>
+</header>
+
+<!-- ═══ FLOATING WIDGET ═══ -->
+<div id="float-trigger">
+  <button class="float-btn" onclick="toggleFloat()" aria-label="احصل على الدليل المجاني">🎁</button>
+</div>
+
+<div id="float-panel">
+  <button class="float-close" onclick="closeFloat()" aria-label="إغلاق">✕</button>
+  <div class="float-badge">سوشيال سيو ✨</div>
+  <div class="float-title">احصل على الدليل الحصري مجاناً</div>
+  <div class="float-sub">Social Media SEO — 50+ كيورد جاهز للـ Content Creators</div>
+  <input type="text"  id="f-name"  placeholder="اسمك.."          class="float-input">
+  <input type="email" id="f-email" placeholder="إيميلك.."         class="float-input">
+  <input type="tel"   id="f-wa"    placeholder="واتساب.."          class="float-input">
+  <button onclick="submitFloat()" id="f-btn" class="float-submit">أرسل لي الدليل 🚀</button>
+  <div id="f-status" class="float-status"></div>
+</div>
+
+<main class="article-body">
+
+  <h1>عصر الـ Attention Economy خلص — جه عصر المعنى</h1>
+
+  <div class="article-meta">
+    <span>👤 بقلم: دعاء سليط</span>
+    <span>⏱️ القراءة: 12 دقيقة</span>
+    <span>🎬 Content Creation</span>
+    <span>📅 أبريل 2026</span>
+  </div>
+
+  <p>لسنوات، كان السؤال الوحيد في التسويق الرقمي هو: <strong>"إزاي تخطف انتباه الناس؟"</strong> الـ Hooks، الـ Clickbait، الألوان الصارخة، الأصوات المفاجئة — كل ده كان في خدمة هدف واحد: الـ Attention. لكن في 2026، <span class="hl">Ogilvy بتقول إن الـ Attention Economy خلصت</span> — وجه شيء أعمق وأقوى. اسمه عصر المعنى.</p>
+
+  <div class="stat-highlight">
+    <div class="stat-number">↓</div>
+    <div>
+      <div class="stat-text">وقت الناس على السوشيال ميديا بدأ يتراجع لأول مرة منذ 2022 — رغم إن عدد المنصات بيزيد. الناس بقت أكثر انتقائية لأن الـ Feed بقى مزدحم ومتشابه.</div>
+      <div class="stat-source">المصدر: Ogilvy Social.Lab 2026 Report · GWI Digital Habits Study — 250,000 Adults</div>
+    </div>
+  </div>
+
+  <p>ده مش معناه إن الـ Hook مات — <a href="https://daolinedigital.com/blog/019-Social-Hook-2026-7.html" class="inline-link">الـ Hook لسه ضروري لوقف السكرول</a>. المعنى هو اللي بيجيب بعد الـ Hook. الفرق بين المحتوى اللي الناس بتشوفه وتنساه، والمحتوى اللي بيغيّر حاجة في تفكيرها.</p>
+
+  <h2 class="h2-heading"><span class="bar"></span> أولاً: تطور الاقتصاد الرقمي — من الوصول للمعنى</h2>
+
+  <div class="era-timeline">
+    <div class="era-item">
+      <div class="era-dot">1</div>
+      <div class="era-content">
+        <div class="era-year">2005 — 2012</div>
+        <div class="era-name">عصر الوجود (Presence Economy)</div>
+        <div class="era-desc">الفوز كان لمن يكون موجوداً على المنصة أصلاً. مجرد Page أو Account كان ميزة تنافسية.</div>
+      </div>
+    </div>
+    <div class="era-item">
+      <div class="era-dot">2</div>
+      <div class="era-content">
+        <div class="era-year">2012 — 2020</div>
+        <div class="era-name">عصر المحتوى (Content Economy)</div>
+        <div class="era-desc">من ينشر أكثر يفوز. الكم كان الملك. الـ Content Calendar والـ Posting Schedule بقوا أساس كل استراتيجية.</div>
+      </div>
+    </div>
+    <div class="era-item">
+      <div class="era-dot">3</div>
+      <div class="era-content">
+        <div class="era-year">2020 — 2024</div>
+        <div class="era-name">عصر الانتباه (Attention Economy)</div>
+        <div class="era-desc">الـ Hook، الـ Viral Content، الـ Algorithm Hacking. من يخطف الانتباه يفوز — حتى لو المحتوى فاضي.</div>
+      </div>
+    </div>
+    <div class="era-item active">
+      <div class="era-dot">4</div>
+      <div class="era-content">
+        <div class="era-year">2025 — الآن</div>
+        <div class="era-name">عصر المعنى (Meaning Economy) ← إحنا هنا</div>
+        <div class="era-desc">الجمهور بقى يبحث عن محتوى بيغيّر حاجة في تفكيره أو حياته. الـ Attention شرط، لكن المعنى هو اللي بيبني الولاء الحقيقي.</div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="h2-heading"><span class="bar"></span> ثانياً: إيه الفرق بين محتوى الـ Attention ومحتوى المعنى؟</h2>
+
+  <div class="compare-grid">
+    <div class="compare-card old">
+      <div class="compare-label">⚡ محتوى الـ Attention — القديم</div>
+      <ul>
+        <li>بيخطف نظرك — وبعدين بتنساه</li>
+        <li>بيلعب على الفضول والمفاجأة</li>
+        <li>Views عالية — Conversion منخفض</li>
+        <li>بيبني جمهور عابر مش مخلص</li>
+        <li>النجاح بيتقاس بالمشاهدات</li>
+      </ul>
+    </div>
+    <div class="compare-card new">
+      <div class="compare-label">💜 محتوى المعنى — الجديد</div>
+      <ul>
+        <li>بيخطف نظرك — وبيفضل معاك</li>
+        <li>بيغيّر طريقة تفكيرك أو تصرفك</li>
+        <li>Views معقولة — Conversion عالي</li>
+        <li>بيبني Community مخلصة ومستعدة تدفع</li>
+        <li>النجاح بيتقاس بالتغيير الحقيقي في حياة الجمهور</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="pull-quote">
+    <p>"السوشيال بدأت مرحلة جديدة — المنافسة مش على الـ Attention، على الـ Meaning. المحتوى اللي بيفوز هو اللي بيحسّس الجمهور إنه اتغيّر بعد مشاهدته."</p>
+    <cite>— Ogilvy Social.Lab — 2026 Social Trends Report</cite>
+  </div>
+
+  <!-- ═══ MID-ARTICLE LEAD BOX ═══ -->
+  <div class="lead-box-wrap">
+    <div class="daoline-lead-box">
+      <h3 style="color:#fff; margin-bottom:5px; font-size:1.3rem;">عاوزة تبني محتوى بمعنى حقيقي؟ 🎯</h3>
+      <div class="daoline-free-badge">سوشيال سيو ✨</div>
+      <p style="color:#e6edf5; font-size:1.05rem; font-weight:700; margin-bottom:20px; line-height:1.6;">
+        احصلي فوراً على <span style="color:#c013a6;">"الدليل الحصري من Daoline Digital"</span><br>
+        <span style="font-weight:400; font-size:0.9rem; color:#a8b8cc;">Social Media SEO — كل اللي محتاجاه عشان تظهري في بحث السوشيال في 2026</span>
+      </p>
+      <input type="text"  id="lead-name"     placeholder="اسمك الكريم.."                  class="daoline-input">
+      <input type="email" id="lead-email"    placeholder="بريدك الإلكتروني.."              class="daoline-input">
+      <input type="tel"   id="lead-whatsapp" placeholder="رقم الواتساب (للتواصل السريع).." class="daoline-input">
+      <button onclick="submitDaolineLead()" id="lead-btn" class="daoline-submit-btn">أرسل لي الدليل المجاني الآن 🚀</button>
+      <div id="lead-status" class="daoline-status"></div>
+    </div>
+  </div>
+
+  <h2 class="h2-heading"><span class="bar"></span> ثالثاً: أعمدة المحتوى ذي المعنى</h2>
+
+  <p>المعنى مش حاجة مجردة — هو نتيجة 4 عناصر محددة لازم تتوفر في المحتوى:</p>
+
+  <div class="pillars-grid">
+    <div class="pillar-card">
+      <div class="pillar-icon">💡</div>
+      <div class="pillar-name">الإدراك الجديد</div>
+      <div class="pillar-desc">المحتوى بيديكِ معلومة أو زاوية نظر ما كنتيش تعرفيها — بيشعر إنك اتعلمتِ حاجة فعلاً</div>
+    </div>
+    <div class="pillar-card">
+      <div class="pillar-icon">🤝</div>
+      <div class="pillar-name">الانتماء</div>
+      <div class="pillar-desc">المحتوى بيحسّسك إنك مش لوحدك — في ناس تانية بتمر بنفس التجربة والتحديات</div>
+    </div>
+    <div class="pillar-card">
+      <div class="pillar-icon">⚡</div>
+      <div class="pillar-name">التحفيز للفعل</div>
+      <div class="pillar-desc">المحتوى بيخليكِ تعمل حاجة مختلفة بعد مشاهدته — حتى لو حاجة صغيرة</div>
+    </div>
+    <div class="pillar-card">
+      <div class="pillar-icon">🔮</div>
+      <div class="pillar-name">التحدي الذهني</div>
+      <div class="pillar-desc">المحتوى بيخليكِ تفكّري في حاجة من زاوية مختلفة — بيكسر افتراض قديم عندك</div>
+    </div>
+    <div class="pillar-card">
+      <div class="pillar-icon">❤️</div>
+      <div class="pillar-name">التأثير العاطفي</div>
+      <div class="pillar-desc">المحتوى بيحرّك عاطفة حقيقية — فرح، دهشة، تعاطف — مش مجرد استجابة سطحية</div>
+    </div>
+    <div class="pillar-card">
+      <div class="pillar-icon">🌱</div>
+      <div class="pillar-name">القيمة الدائمة</div>
+      <div class="pillar-desc">المحتوى ممكن ترجعيله بعد أسبوع أو شهر وتلاقيه لسه مفيد ومؤثر</div>
+    </div>
+  </div>
+
+  <h2 class="h2-heading"><span class="bar"></span> رابعاً: إزاي تحوّلي محتواكِ من Attention لـ Meaning؟</h2>
+
+  <h3>الخطوة الأولى: اسأل "ليه" قبل "إيه"</h3>
+  <p>قبل ما تعملي أي محتوى، اسأل نفسك: <strong>ليه المتابع هيستفيد من ده؟ إيه اللي هيتغير في حياته بعد ما يشوفه؟</strong> لو الإجابة "هيتسلى شوية" — ده محتوى Attention. لو الإجابة "هيبدأ يشتغل بطريقة مختلفة" — ده محتوى معنى. وكمان مهم إنك <a href="https://daolinedigital.com/blog/025-private-community-2026.html" class="inline-link">تبني الـ Community حوالين المحتوى ده</a> عشان الأثر يتراكم.</p>
+
+  <h3>الخطوة التانية: اربطي المحتوى بحياة الجمهور الحقيقية</h3>
+  <p>المحتوى ذي المعنى مش بيتكلم عن نفسه — بيتكلم عن المشاهد. <strong>"أنا عملت كذا وكانت النتيجة كذا"</strong> محتوى Attention. <strong>"لو بتعاني من كذا — اللي اكتشفته هيغيّر طريقة تعاملك معاه"</strong> محتوى معنى. الفرق هو تحويل التجربة الشخصية لقيمة عامة.</p>
+
+  <h3>الخطوة التالتة: اختاري عمق على عرض</h3>
+  <p>عشرة فيديوهات سطحية عن عشر مواضيع مختلفة أقل تأثيراً من ثلاث فيديوهات عميقة في موضوع واحد. الجمهور اللي بيحس إنك <a href="https://daolinedigital.com/blog/021-%D8%AA%D9%82%D8%B1%D9%8A%D8%B1-%D8%A7%D9%84%D8%B3%D9%88%D8%B4%D9%8A%D8%A7%D9%84-%D9%85%D9%8A%D8%AF%D9%8A%D8%A7-%D8%A7%D9%84%D8%B3%D8%B9%D8%A7%D8%AF%D8%A9-%D8%A7%D9%84%D8%B9%D8%A7%D9%84%D9%85%D9%8A.html" class="inline-link">فاهمة موضوعك عميق</a> هو الجمهور اللي بيثق فيكِ ويدفع ليكِ.</p>
+
+  <h2 class="h2-heading"><span class="bar"></span> خامساً: ابدأي التحول دلوقتي</h2>
+
+  <ul class="checklist">
+    <li>قبل كل محتوى اسأل: "إيه اللي هيتغير في حياة المتابع بعد مشاهدة ده؟"</li>
+    <li>حولي كل تجربة شخصية لقيمة عامة يستفيد منها جمهورك</li>
+    <li>اختاري 2-3 مواضيع عميقة بدل 10 مواضيع سطحية</li>
+    <li>وثّقي التحولات الحقيقية في تفكيرك — مش بس النجاحات</li>
+    <li>اقيسي النجاح بالتغيير الحقيقي لا بعدد المشاهدات</li>
+    <li>اصنعي محتوى تسلسلي بيبني على نفسه — كل حلقة تكمّل اللي قبلها</li>
+    <li>اسأل جمهورك: "إيه اللي اتغيّر عندك بعد المحتوى ده؟" — الإجابات هتدلّك على الاتجاه الصح</li>
+  </ul>
+
+  <p>في الختام، الـ Attention Economy علّمتنا نوقف السكرول. عصر المعنى بيعلّمنا حاجة أصعب وأهم — <strong>نستحق الوقت اللي الناس بتديهولنا.</strong> اللي يفهم ده هيبقى مش بس كريتور ناجح — هيبقى كريتور مؤثر.</p>
+
+  <section class="related-articles">
+    <h3>اقرأي أيضاً من المكتبة</h3>
+    <ul>
+      <li><a href="https://daolinedigital.com/blog/019-Social-Hook-2026-7.html">كيف تكتبي هوك يوقف السكرول في 3 ثواني — الدليل الشامل 2026</a></li>
+      <li><a href="https://daolinedigital.com/blog/021-%D8%AA%D9%82%D8%B1%D9%8A%D8%B1-%D8%A7%D9%84%D8%B3%D9%88%D8%B4%D9%8A%D8%A7%D9%84-%D9%85%D9%8A%D8%AF%D9%8A%D8%A7-%D8%A7%D9%84%D8%B3%D8%B9%D8%A7%D8%AF%D8%A9-%D8%A7%D9%84%D8%B9%D8%A7%D9%84%D9%85%D9%8A.html">تقرير السعادة العالمي 2026: السوشيال ميديا بتأذي مين بالظبط؟</a></li>
+      <li><a href="https://daolinedigital.com/blog/024-article-uae-license.html">الإمارات رخّصت الانفلونسرز رسمياً — هل ده مستقبل الكريتورز العرب؟</a></li>
+      <li><a href="https://daolinedigital.com/blog/025-private-community-2026.html">الـ Community المخفية: ليه الكريتورز بيهربوا من الفيد العام؟</a></li>
+      <li><a href="https://daolinedigital.com/blog/026-twitter-x-traffic-2026.html">X (تويتر) في 2026: كيف تستغليه لرفع الـ Traffic على محتواكِ</a></li>
+    </ul>
+  </section>
+
+</main>
+
+<footer>© 2026 Daoline Digital Academy | إعداد دعاء سليط | <a href="https://daolinedigital.com" style="color:var(--primary)">daolinedigital.com</a></footer>
+
+<script>
+  // Reading progress
+  window.addEventListener('scroll', () => {
+    const scrollTop = document.documentElement.scrollTop;
+    const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    document.getElementById('reading-progress').style.width = ((scrollTop / scrollHeight) * 100) + '%';
+  });
+
+  // ═══ FLOATING WIDGET LOGIC ═══
+  let floatDismissed = false;
+  let floatOpen = false;
+
+  window.addEventListener('scroll', () => {
+    if (floatDismissed) return;
+    const trigger = document.getElementById('float-trigger');
+    const scrolled = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
+    if (scrolled > 0.30) {
+      trigger.classList.add('visible');
+    }
+  });
+
+  function toggleFloat() {
+    floatOpen = !floatOpen;
+    document.getElementById('float-panel').classList.toggle('open', floatOpen);
+  }
+
+  function closeFloat() {
+    floatOpen = false;
+    floatDismissed = true;
+    document.getElementById('float-panel').classList.remove('open');
+    const trigger = document.getElementById('float-trigger');
+    trigger.classList.remove('visible');
+    setTimeout(() => trigger.classList.add('hidden'), 400);
+  }
+
+  // ═══ FLOAT FORM SUBMIT ═══
+  async function submitFloat() {
+    const name  = document.getElementById('f-name').value.trim();
+    const email = document.getElementById('f-email').value.trim();
+    const wa    = document.getElementById('f-wa').value.trim();
+    const status = document.getElementById('f-status');
+    const btn   = document.getElementById('f-btn');
+
+    if (!name || !email || !wa) {
+      status.innerText = "كملي البيانات الأول ⚠️";
+      status.style.color = "#f87171";
+      return;
+    }
+    try {
+      btn.disabled = true; btn.innerText = "جاري الإرسال...";
+      const fd = new FormData();
+      fd.append("entry.299023128",  name);
+      fd.append("entry.1712155557", email);
+      fd.append("entry.1224669856", wa);
+      fd.append("entry.334049848",  "Social_Seo");
+      await fetch("https://docs.google.com/forms/d/e/1FAIpQLSdSXEvN7DMMC-pwXED9G5TRpe4ecQ5U7pMtsg3201d2ikinfQ/formResponse",
+        { method: "POST", mode: "no-cors", body: fd });
+      status.innerText = "✅ تم! شيك على إيميلك";
+      status.style.color = "#4ade80";
+      btn.innerText = "تم ✅";
+      setTimeout(() => closeFloat(), 2500);
+    } catch(e) {
+      status.innerText = "خطأ — حاولي تاني";
+      status.style.color = "#f87171";
+      btn.disabled = false;
+      btn.innerText = "أرسل لي الدليل 🚀";
+    }
+  }
+
+  // ═══ INLINE FORM SUBMIT ═══
+  async function submitDaolineLead() {
+    const name   = document.getElementById('lead-name').value.trim();
+    const email  = document.getElementById('lead-email').value.trim();
+    const wa     = document.getElementById('lead-whatsapp').value.trim();
+    const status = document.getElementById('lead-status');
+    const btn    = document.getElementById('lead-btn');
+
+    if (!name || !email || !wa) {
+      status.innerText = "من فضلك كملي البيانات الأول! ⚠️";
+      status.style.color = "#f87171";
+      return;
+    }
+    try {
+      btn.disabled = true; btn.innerText = "جاري تحضير دليلك...";
+      const fd = new FormData();
+      fd.append("entry.299023128",  name);
+      fd.append("entry.1712155557", email);
+      fd.append("entry.1224669856", wa);
+      fd.append("entry.334049848",  "Social_Seo");
+      await fetch("https://docs.google.com/forms/d/e/1FAIpQLSdSXEvN7DMMC-pwXED9G5TRpe4ecQ5U7pMtsg3201d2ikinfQ/formResponse",
+        { method: "POST", mode: "no-cors", body: fd });
+      status.innerText = "تم بنجاح! ✅ شيك على إيميلك الآن (والـ Spam) هتلاقي الدليل وصلك.";
+      status.style.color = "#4ade80";
+      btn.innerText = "تم الإرسال بنجاح ✅";
+      document.getElementById('lead-name').value = '';
+      document.getElementById('lead-email').value = '';
+      document.getElementById('lead-whatsapp').value = '';
+    } catch(e) {
+      status.innerText = "حدث خطأ بسيط.. حاولي مرة تانية.";
+      status.style.color = "#f87171";
+      btn.disabled = false;
+      btn.innerText = "أرسل لي الدليل المجاني الآن 🚀";
+    }
+  }
+</script>
+
+</body>
+</html>
