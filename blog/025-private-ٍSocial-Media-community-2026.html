@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>الـ Community المخفية: ليه الكريتورز بيهربوا من الفيد العام؟ | Daoline Digital</title>
+  <meta name="description" content="Discord تجاوز 200 مليون مستخدم والمجتمعات الخاصة نمت 31%. ليه الكريتورز الكبار بيبنوا مجتمعات مخفية — وإزاي تعملي زيهم في 2026؟">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --primary: #c013a6;
+      --bg: #07080c;
+      --surface: #0f1220;
+      --text: #f4f7fc;
+      --muted: #a8b8cc;
+      --border: rgba(255,255,255,0.08);
+    }
+
+    body {
+      font-family: 'Tajawal', sans-serif;
+      background: radial-gradient(circle at 15% 15%, rgba(192,19,166,0.12), transparent 45%), var(--bg);
+      color: var(--text);
+      line-height: 2.1;
+      font-size: 19px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* HEADER */
+    .site-header {
+      position: sticky; top: 0; z-index: 1000; width: 100%;
+      background: rgba(7,8,12,0.85); backdrop-filter: blur(20px);
+      border-bottom: 2px solid var(--primary);
+    }
+    .header-inner {
+      max-width: 1200px; margin: 0 auto; padding: 0 24px;
+      display: flex; align-items: center; justify-content: space-between; height: 75px;
+    }
+    .logo { font-size: 22px; font-weight: 900; color: #fff; text-decoration: none; }
+    .logo span { color: var(--primary); }
+
+    /* ARTICLE */
+    .article-body { max-width: 850px; margin: 0 auto; padding: 60px 24px 100px; }
+
+    h1 {
+      font-size: clamp(30px, 6vw, 48px); font-weight: 900; color: #fff;
+      line-height: 1.2; margin-bottom: 30px; text-align: center;
+    }
+
+    .article-meta {
+      display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;
+      font-size: 0.92rem; color: var(--muted);
+      margin-bottom: 50px; padding-bottom: 24px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .h2-heading {
+      display: flex; align-items: center; gap: 15px;
+      font-size: 28px; font-weight: 900; color: #fff;
+      margin: 50px 0 25px;
+    }
+    .h2-heading .bar { width: 6px; height: 35px; background: var(--primary); border-radius: 10px; }
+
+    h3 { font-size: 22px; font-weight: 800; color: #fff; margin: 35px 0 15px; }
+
+    p { margin-bottom: 30px; text-align: justify; color: #e6edf5; }
+
+    .hl {
+      background: rgba(192,19,166,0.2); color: #f472b6;
+      padding: 2px 8px; border-radius: 6px; font-weight: 700;
+    }
+
+    /* STAT HIGHLIGHT */
+    .stat-highlight {
+      background: linear-gradient(135deg, rgba(192,19,166,0.12), rgba(192,19,166,0.03));
+      border: 1px solid rgba(192,19,166,0.4);
+      border-right: 5px solid var(--primary);
+      border-radius: 16px; padding: 30px 35px; margin: 40px 0;
+      display: flex; align-items: center; gap: 25px;
+    }
+    .stat-number { font-size: 4rem; font-weight: 900; color: var(--primary); line-height: 1; white-space: nowrap; }
+    .stat-text { font-size: 1.25rem; color: #f3f6fb; line-height: 1.6; }
+    .stat-source { font-size: 0.82rem; color: var(--muted); margin-top: 8px; }
+
+    /* PULL QUOTE */
+    .pull-quote {
+      border-right: 5px solid var(--primary); padding: 20px 25px; margin: 40px 0;
+      background: rgba(192,19,166,0.06); border-radius: 0 12px 12px 0;
+    }
+    .pull-quote p { font-size: 1.35rem; font-weight: 700; color: #fff; margin: 0; font-style: italic; }
+    .pull-quote cite { font-size: 0.88rem; color: var(--muted); margin-top: 10px; display: block; font-style: normal; }
+
+    /* INFO BOX */
+    .info-box {
+      border-radius: 16px; padding: 28px 30px; margin: 40px 0;
+      background: linear-gradient(135deg, rgba(192,19,166,0.12), rgba(15,18,32,0.6));
+      border: 1px solid rgba(192,19,166,0.25);
+    }
+    .info-box .box-title { color: var(--primary); font-weight: 900; font-size: 1.1rem; margin-bottom: 12px; }
+    .info-box p { color: #e6edf5; margin: 0; }
+
+    /* PLATFORM COMPARE — unique element */
+    .platform-compare { margin: 40px 0; display: flex; flex-direction: column; gap: 10px; }
+    .platform-row {
+      display: grid; grid-template-columns: 140px 1fr 1fr;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 12px; overflow: hidden;
+    }
+    .platform-row.header { background: rgba(192,19,166,0.12); border-color: rgba(192,19,166,0.3); }
+    .platform-cell {
+      padding: 14px 16px; font-size: 0.95rem; color: #e6edf5;
+      border-left: 1px solid var(--border);
+    }
+    .platform-cell:last-child { border-left: none; }
+    .platform-row.header .platform-cell { font-weight: 700; color: var(--primary); font-size: 0.85rem; letter-spacing: 0.5px; }
+    .platform-name { font-weight: 700; color: #fff; display: flex; align-items: center; gap: 8px; }
+    .platform-badge {
+      font-size: 0.7rem; padding: 2px 8px; border-radius: 8px; font-weight: 700;
+    }
+    .badge-hot { background: rgba(192,19,166,0.2); color: var(--primary); }
+    .badge-rise { background: rgba(16,185,129,0.15); color: #34d399; }
+    .badge-stable { background: rgba(255,255,255,0.08); color: var(--muted); }
+
+    /* COMMUNITY LEVELS */
+    .levels { margin: 40px 0; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+    .level-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 14px; padding: 22px 18px; text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .level-card::before {
+      content: ''; position: absolute; top: 0; right: 0; left: 0;
+      height: 3px; background: var(--primary); opacity: 0.4;
+    }
+    .level-card:nth-child(2)::before { opacity: 0.7; }
+    .level-card:nth-child(3)::before { opacity: 1; }
+    .level-num { font-size: 2rem; font-weight: 900; color: var(--primary); line-height: 1; margin-bottom: 8px; }
+    .level-name { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 6px; }
+    .level-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.6; }
+    .level-example { font-size: 0.8rem; color: var(--primary); margin-top: 10px; font-style: italic; }
+
+    /* CHECKLIST */
+    .checklist { list-style: none; padding: 0; margin-bottom: 38px; }
+    .checklist li {
+      padding: 14px 0; border-bottom: 1px solid var(--border);
+      color: #e6edf5; display: flex; gap: 12px; align-items: flex-start; font-size: 1.1rem;
+    }
+    .checklist li::before { content: "✓"; color: var(--primary); font-weight: 900; font-size: 1.2rem; flex-shrink: 0; margin-top: 2px; }
+
+    /* INLINE LINKS */
+    .inline-link { color: #fff; font-weight: 700; text-decoration: underline; text-decoration-color: rgba(255,255,255,0.35); text-underline-offset: 4px; transition: color 0.2s, text-decoration-color 0.2s; }
+    .inline-link:hover { color: #f472b6; text-decoration-color: #f472b6; }
+
+    /* LEAD BOX */
+    .daoline-lead-box {
+      background: linear-gradient(145deg, #1e293b, #0f172a);
+      border: 3px dashed #c013a6; border-radius: 30px;
+      padding: 50px 40px; margin: 70px 0; text-align: center;
+      box-shadow: 0 25px 60px rgba(192,19,166,0.2);
+      font-family: 'Tajawal', sans-serif; direction: rtl;
+    }
+    .daoline-free-badge {
+      font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; color: #c013a6;
+      margin: 10px 0 20px; line-height: 1;
+      text-shadow: 0 10px 30px rgba(192,19,166,0.4);
+    }
+    .daoline-input {
+      width: 100%; padding: 16px; border-radius: 15px;
+      border: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.4);
+      color: #fff; font-family: 'Tajawal', sans-serif;
+      margin-bottom: 15px; outline: none; text-align: right;
+      font-size: 1rem; box-sizing: border-box;
+    }
+    .daoline-input:focus { border-color: #c013a6; }
+    .daoline-submit-btn {
+      width: 100%; background: #c013a6; color: #fff; border: none;
+      padding: 20px; border-radius: 15px; font-weight: 900; font-size: 1.3rem;
+      cursor: pointer; transition: 0.3s ease;
+      box-shadow: 0 10px 30px rgba(192,19,166,0.3);
+      font-family: 'Tajawal', sans-serif;
+    }
+    .daoline-submit-btn:hover { transform: scale(1.02); background: #a00f89; }
+    .daoline-status { margin-top: 15px; font-weight: bold; font-size: 1.1rem; }
+
+    /* RELATED */
+    .related-articles {
+      margin-top: 60px; padding: 28px; border-radius: 24px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.03), rgba(192,19,166,0.08));
+      border: 1px solid var(--border);
+    }
+    .related-articles h3 { color: #fff; font-size: 22px; font-weight: 800; margin-bottom: 16px; }
+    .related-articles ul { list-style: none; padding: 0; margin: 0; }
+    .related-articles li { margin-bottom: 12px; }
+    .related-articles a { color: #fff; text-decoration: none; font-size: 17px; font-weight: 500; transition: 0.3s; }
+    .related-articles a:hover { color: #f472b6; }
+
+    footer {
+      text-align: center; padding: 60px; border-top: 1px solid var(--border);
+      color: var(--muted); font-size: 15px;
+    }
+
+    @media (max-width: 768px) {
+      .daoline-lead-box { padding: 30px 20px; }
+      .stat-highlight { flex-direction: column; gap: 12px; }
+      .stat-number { font-size: 3rem; }
+      .levels { grid-template-columns: 1fr; }
+      .platform-row { grid-template-columns: 100px 1fr 1fr; }
+      .platform-cell { font-size: 0.85rem; padding: 10px 12px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="https://daolinedigital.com/" class="logo">DAOLINE<span>DIGITAL</span></a>
+      <a href="https://daolinedigital.com/blog/" style="color:var(--primary); text-decoration:none; font-weight:700; font-size:16px;">المكتبة الرقمية 📚</a>
+    </div>
+  </header>
+
+  <main class="article-body">
+
+    <h1>الـ Community المخفية: ليه الكريتورز الكبار بيهربوا من الفيد العام؟</h1>
+
+    <div class="article-meta">
+      <span>👤 بقلم: دعاء سليط</span>
+      <span>⏱️ القراءة: 12 دقيقة</span>
+      <span>🎬 Content Creation</span>
+      <span>📅 أبريل 2026</span>
+    </div>
+
+    <p>في 2026، الكريتور اللي عنده مليون متابع على TikTok ممكن يكون أقل تأثيراً من كريتور تاني عنده 5,000 عضو في مجتمع خاص على Discord. ده مش كلام — ده <span class="hl">تحوّل حقيقي في طريقة بناء الجمهور</span>، والغرب بيتكلم فيه من أكتر من سنة. إحنا في العالم العربي لسه ما استوعبناهوش. وده نفس المنطق اللي بنشرحه في <a href="https://daolinedigital.com/blog/019-Social-Hook-2026-7.html" class="inline-link">مقالنا عن الهوكات والـ Content Creation</a> — الجمهور مش بيدور على محتوى، بيدور على اتصال حقيقي.</p>
+
+    <div class="stat-highlight">
+      <div class="stat-number">200M</div>
+      <div>
+        <div class="stat-text">مستخدم شهري تجاوزهم Discord في 2026 — والمجتمعات الخاصة على كل المنصات نمت 31% سنة على سنة.</div>
+        <div class="stat-source">المصدر: Discord Annual Report 2026 · Sprout Social State of Social Media Q1 2026</div>
+      </div>
+    </div>
+
+    <p>الناس مش بتهرب من السوشيال ميديا — بتهرب من <strong>الضوضاء.</strong> الفيد العام بقى مكان مزدحم ومحبط — محتوى AI، إعلانات، وناس بتتنافس على نفس الانتباه. المجتمع الخاص هو الحل البديل اللي بيقول للجمهور: <strong>"هنا مختلف. هنا إنت بتنتمي."</strong> وبينما الفيد العام بيعتمد على الخوارزمية، <a href="https://daolinedigital.com/blog/021-%D8%AA%D9%82%D8%B1%D9%8A%D8%B1-%D8%A7%D9%84%D8%B3%D9%88%D8%B4%D9%8A%D8%A7%D9%84-%D9%85%D9%8A%D8%AF%D9%8A%D8%A7-%D8%A7%D9%84%D8%B3%D8%B9%D8%A7%D8%AF%D8%A9-%D8%A7%D9%84%D8%B9%D8%A7%D9%84%D9%85%D9%8A.html" class="inline-link">تقرير السعادة والسوشيال ميديا</a> هو اللي بيجيب أعضاء جدد للCommunity دي باستمرار.</p>
+
+    <h2 class="h2-heading"><span class="bar"></span> أولاً: إيه الفرق بين الفيد العام والمجتمع الخاص؟</h2>
+
+    <div class="platform-compare">
+      <div class="platform-row header">
+        <div class="platform-cell">المعيار</div>
+        <div class="platform-cell">الفيد العام</div>
+        <div class="platform-cell">المجتمع الخاص</div>
+      </div>
+      <div class="platform-row">
+        <div class="platform-cell"><span class="platform-name">العلاقة</span></div>
+        <div class="platform-cell">كريتور ← جمهور (اتجاه واحد)</div>
+        <div class="platform-cell">كريتور ↔ جمهور ↔ جمهور (شبكة)</div>
+      </div>
+      <div class="platform-row">
+        <div class="platform-cell"><span class="platform-name">الولاء</span></div>
+        <div class="platform-cell">هش — الخوارزمية تتغير وتروح</div>
+        <div class="platform-cell">قوي — الانتماء مش بيتحكم فيه ألجوريزم</div>
+      </div>
+      <div class="platform-row">
+        <div class="platform-cell"><span class="platform-name">التحويل</span></div>
+        <div class="platform-cell">منخفض — الجمهور عابر</div>
+        <div class="platform-cell">عالي — العضو مستثمر عاطفياً</div>
+      </div>
+      <div class="platform-row">
+        <div class="platform-cell"><span class="platform-name">الخوارزمية</span></div>
+        <div class="platform-cell">تتحكم في مين يشوف إيه</div>
+        <div class="platform-cell">مفيش خوارزمية — المحتوى وصل لكل الأعضاء</div>
+      </div>
+      <div class="platform-row">
+        <div class="platform-cell"><span class="platform-name">الدخل</span></div>
+        <div class="platform-cell">إعلانات وبراند ديلز</div>
+        <div class="platform-cell">اشتراكات + مبيعات مباشرة + براند ديلز</div>
+      </div>
+    </div>
+
+    <h2 class="h2-heading"><span class="bar"></span> ثانياً: المنصات والفرص في 2026</h2>
+
+    <div class="platform-compare">
+      <div class="platform-row header">
+        <div class="platform-cell">المنصة</div>
+        <div class="platform-cell">المميزات</div>
+        <div class="platform-cell">الأنسب لـ</div>
+      </div>
+      <div class="platform-row">
+        <div class="platform-cell">
+          <span class="platform-name">Discord <span class="platform-badge badge-hot">الأقوى</span></span>
+        </div>
+        <div class="platform-cell">غرف متخصصة، صوت، فيديو، Bots للأتمتة</div>
+        <div class="platform-cell">Gaming، Tech، Education، Communities عميقة</div>
+      </div>
+      <div class="platform-row">
+        <div class="platform-cell">
+          <span class="platform-name">Broadcast Channel <span class="platform-badge badge-hot">IG/WA</span></span>
+        </div>
+        <div class="platform-cell">إرسال مباشر للمتابعين بدون خوارزمية</div>
+        <div class="platform-cell">إعلانات فورية، محتوى حصري، تواصل سريع</div>
+      </div>
+      <div class="platform-row">
+        <div class="platform-cell">
+          <span class="platform-name">Substack <span class="platform-badge badge-rise">ناشئ</span></span>
+        </div>
+        <div class="platform-cell">نشرة + سوشيال فيد + اشتراكات مدفوعة</div>
+        <div class="platform-cell">كريتورز الكتابة، الأفكار، التحليل</div>
+      </div>
+      <div class="platform-row">
+        <div class="platform-cell">
+          <span class="platform-name">Patreon <span class="platform-badge badge-stable">ثابت</span></span>
+        </div>
+        <div class="platform-cell">مستويات اشتراك، محتوى حصري مدفوع</div>
+        <div class="platform-cell">كريتورز عندهم جمهور مخلص ومستعد يدفع</div>
+      </div>
+      <div class="platform-row">
+        <div class="platform-cell">
+          <span class="platform-name">WhatsApp <span class="platform-badge badge-stable">عربي</span></span>
+        </div>
+        <div class="platform-cell">وصول مباشر، ثقة عالية، انتشار واسع</div>
+        <div class="platform-cell">السوق العربي — الأعلى في معدلات الفتح</div>
+      </div>
+    </div>
+
+    <h2 class="h2-heading"><span class="bar"></span> ثالثاً: مستويات بناء الـ Community</h2>
+
+    <p>مش لازم تبدأي بكل حاجة مرة واحدة. الـ Community بيتبنى بالتدريج — من الأبسط للأعمق:</p>
+
+    <div class="levels">
+      <div class="level-card">
+        <div class="level-num">01</div>
+        <div class="level-name">قناة البث</div>
+        <div class="level-desc">Broadcast Channel على Instagram أو WhatsApp — أبسط بداية وأسرع وصول</div>
+        <div class="level-example">ابدأي هنا إذا عندك 1,000+ متابع</div>
+      </div>
+      <div class="level-card">
+        <div class="level-num">02</div>
+        <div class="level-name">مجموعة خاصة</div>
+        <div class="level-desc">WhatsApp Group أو Facebook Group مغلق — تفاعل حقيقي بين الأعضاء</div>
+        <div class="level-example">مثالي للـ Niche communities العربية</div>
+      </div>
+      <div class="level-card">
+        <div class="level-num">03</div>
+        <div class="level-name">مجتمع متكامل</div>
+        <div class="level-desc">Discord أو Patreon — غرف متخصصة، مستويات عضوية، محتوى حصري مدفوع</div>
+        <div class="level-example">للكريتور اللي عنده جمهور مخلص ومستعد يستثمر</div>
+      </div>
+    </div>
+
+    <div class="pull-quote">
+      <p>"الـ Community مش بديل للسوشيال ميديا — هو الوجهة اللي السوشيال ميديا بتوصّل ليها. الفيد بيجيب جمهور جديد، والـ Community بيحوّله لعضو مخلص."</p>
+      <cite>— Sprout Social — Community Management Trend Report 2026</cite>
+    </div>
+
+    <h2 class="h2-heading"><span class="bar"></span> رابعاً: فرصة السوق العربي</h2>
+
+    <p>في الغرب، كل كريتور كبير عنده مجتمع خاص. في العالم العربي، ده لسه نادر جداً. الجمهور العربي بطبعه بيحب الانتماء للجماعة والتواصل الشخصي — ده بالظبط اللي بيخلي الـ Community أقوى بكتير في منطقتنا من الغرب. وأحسن طريقة تبني بيها Community هي <a href="https://daolinedigital.com/blog/024-article-uae-license.html" class="inline-link">قوانين الانفلونسرز في الإمارات</a> اللي بيخلي الجمهور يرجع كل مرة.</p>
+
+    <div class="info-box">
+      <div class="box-title">💡 الفرصة الذهبية دلوقتي</div>
+      <p>WhatsApp في مصر والخليج بيفتح بمعدل 98% — أعلى بكتير من أي إيميل أو نوتيفيكيشن. الكريتور اللي يبني قناة بث على WhatsApp دلوقتي بيوصل لجمهوره بدون خوارزمية وبدون منافسة تقريباً.</p>
+    </div>
+
+    <div class="stat-highlight">
+      <div class="stat-number">31%</div>
+      <div>
+        <div class="stat-text">نمو في المجتمعات الخاصة سنة على سنة — والكريتورز اللي عندهم Community بيحققوا دخل أعلى بـ 3 أضعاف من اللي بيعتمدوا على الفيد العام بس.</div>
+        <div class="stat-source">المصدر: Go-Globe Social Media 2026 Report · Sprout Social Index 2025</div>
+      </div>
+    </div>
+
+    <h2 class="h2-heading"><span class="bar"></span> خامساً: ابدأي Communityكِ من النهارده</h2>
+
+    <ul class="checklist">
+      <li>افتحي Broadcast Channel على Instagram أو WhatsApp دلوقتي — ده أسرع خطوة ممكنة</li>
+      <li>حددي موضوع واحد فقط للCommunity — التخصص هو اللي بيخلي الناس تنضم</li>
+      <li>انشري محتوى حصري في الـ Community مش موجود على الفيد العام — ده هو الـ Incentive</li>
+      <li>تفاعلي مع الأعضاء بالاسم — ده بيبني انتماء حقيقي مش ممكن تشتريه بإعلانات</li>
+      <li>اعملي سؤال أسبوعي للأعضاء — التفاعل بين بعض هو روح الـ Community</li>
+      <li>وثّقي نمو الـ Community وشاركيه على الفيد — ده بيجيب أعضاء جدد باستمرار</li>
+      <li>فكّري في مستوى مدفوع بعد ما تبلغي 500 عضو نشط — ده أول خطوة للدخل الثابت</li>
+    </ul>
+
+    <div class="daoline-lead-box">
+      <h3 style="color:#fff; margin-bottom:5px; font-size:1.6rem;">عاوزة تبني Community بتيجي منها مبيعات؟ 🎯</h3>
+      <div class="daoline-free-badge">سوشيال سيو ✨</div>
+      <p style="color:#fff; font-size:1.4rem; font-weight:700; margin-bottom:30px; line-height:1.5;">
+        احصلي فوراً على <span style="color:#c013a6;">"الدليل الحصري من Daoline Digital"</span><br>
+        <strong>Social Media SEO</strong> — كل اللي محتاجاه عشان تظهري في بحث السوشيال في 2026!
+      </p>
+      <div style="max-width:500px; margin:0 auto;">
+        <input type="text"  id="lead-name"     placeholder="اسمك الكريم.."                  class="daoline-input">
+        <input type="email" id="lead-email"    placeholder="بريدك الإلكتروني.."              class="daoline-input">
+        <input type="tel"   id="lead-whatsapp" placeholder="رقم الواتساب (للتواصل السريع).." class="daoline-input">
+        <button onclick="submitDaolineLead()" id="lead-btn" class="daoline-submit-btn">أرسل لي الدليل المجاني الآن 🚀</button>
+        <div id="lead-status" class="daoline-status"></div>
+      </div>
+    </div>
+
+    <p>في الختام، الـ Community مش ترند — ده هو المستقبل. الكريتور اللي بيبني مجتمع حقيقي بيبني أصل لا يقدر أي تغيير في الخوارزمية يأثر عليه. الجمهور اللي بيحسّ إنه ينتمي لحاجة — ما بيمشيش.</p>
+
+    <section class="related-articles">
+      <h3>اقرأي أيضاً من المكتبة</h3>
+      <ul>
+        <li><a href="https://daolinedigital.com/blog/019-Social-Hook-2026-7.html">كيف تكتبي هوك يوقف السكرول في 3 ثواني — الدليل الشامل 2026</a></li>
+        <li><a href="https://daolinedigital.com/blog/021-%D8%AA%D9%82%D8%B1%D9%8A%D8%B1-%D8%A7%D9%84%D8%B3%D9%88%D8%B4%D9%8A%D8%A7%D9%84-%D9%85%D9%8A%D8%AF%D9%8A%D8%A7-%D8%A7%D9%84%D8%B3%D8%B9%D8%A7%D8%AF%D8%A9-%D8%A7%D9%84%D8%B9%D8%A7%D9%84%D9%85%D9%8A.html">تقرير السعادة العالمي 2026: السوشيال ميديا بتأذي مين بالظبط؟</a></li>
+        <li><a href="https://daolinedigital.com/blog/024-article-uae-license.html">الإمارات رخّصت الانفلونسرز رسمياً — هل ده مستقبل الكريتورز العرب؟</a></li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer>© 2026 Daoline Digital Academy | إعداد دعاء سليط</footer>
+
+  <script>
+    async function submitDaolineLead() {
+      const name   = document.getElementById('lead-name').value.trim();
+      const email  = document.getElementById('lead-email').value.trim();
+      const wa     = document.getElementById('lead-whatsapp').value.trim();
+      const status = document.getElementById('lead-status');
+      const btn    = document.getElementById('lead-btn');
+
+      if (!name || !email || !wa) {
+        status.innerText = "من فضلك كملي البيانات الأول! ⚠️";
+        status.style.color = "#f87171";
+        return;
+      }
+
+      try {
+        btn.disabled = true;
+        btn.innerText = "جاري تحضير دليلك...";
+
+        const fd = new FormData();
+        fd.append("entry.299023128",  name);
+        fd.append("entry.1712155557", email);
+        fd.append("entry.1224669856", wa);
+        fd.append("entry.334049848",  "Social_Seo");
+
+        await fetch(
+          "https://docs.google.com/forms/d/e/1FAIpQLSdSXEvN7DMMC-pwXED9G5TRpe4ecQ5U7pMtsg3201d2ikinfQ/formResponse",
+          { method: "POST", mode: "no-cors", body: fd }
+        );
+
+        status.innerText = "تم بنجاح! ✅ شيك على إيميلك الآن (والـ Spam) هتلاقي الدليل وصلك.";
+        status.style.color = "#4ade80";
+        btn.innerText = "تم الإرسال بنجاح ✅";
+
+        document.getElementById('lead-name').value = '';
+        document.getElementById('lead-email').value = '';
+        document.getElementById('lead-whatsapp').value = '';
+
+      } catch (e) {
+        status.innerText = "حدث خطأ بسيط.. حاولي مرة تانية.";
+        status.style.color = "#f87171";
+        btn.disabled = false;
+        btn.innerText = "أرسل لي الدليل المجاني الآن 🚀";
+      }
+    }
+  </script>
+
+</body>
+</html>
