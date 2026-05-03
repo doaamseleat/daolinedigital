@@ -25,7 +25,6 @@ body {
   padding:20px;
 }
 
-/* زر الرجوع */
 .home-btn {
   display:inline-flex;
   align-items:center;
@@ -63,6 +62,16 @@ h1 {
   margin-top:10px;
   font-size:14px;
   color:#888;
+  margin-bottom:35px;
+}
+
+.loading {
+  text-align:center;
+  color:#bbb;
+  background:#0f1220;
+  padding:25px;
+  border-radius:18px;
+  border:1px solid rgba(255,255,255,0.08);
 }
 
 .card {
@@ -81,11 +90,14 @@ h1 {
 
 .card h2 {
   margin:0 0 10px;
+  font-size:1.45rem;
+  line-height:1.5;
 }
 
 .desc {
   color:#bbb;
   margin-bottom:15px;
+  line-height:1.8;
 }
 
 .btn {
@@ -102,10 +114,39 @@ h1 {
   background:#9a0e85;
 }
 
+.error-box {
+  background:#1a0f16;
+  border:1px solid rgba(192,19,166,0.45);
+  padding:25px;
+  border-radius:20px;
+  color:#fff;
+  text-align:center;
+  line-height:1.8;
+}
+
 footer {
   text-align:center;
   margin-top:60px;
   color:#777;
+}
+
+@media (max-width:600px) {
+  h1 {
+    font-size:1.9rem;
+    line-height:1.5;
+  }
+
+  .wrap {
+    padding:16px;
+  }
+
+  .card {
+    padding:20px;
+  }
+
+  .card h2 {
+    font-size:1.2rem;
+  }
 }
 </style>
 </head>
@@ -114,7 +155,6 @@ footer {
 
 <div class="wrap">
 
-<!-- زر الرجوع -->
 <a href="https://daolinedigital.com/" class="home-btn">← العودة للرئيسية</a>
 
 <h1>المكتبة المجانية لتعلم التسويق الرقمي</h1>
@@ -128,7 +168,9 @@ footer {
 📚 مقالات عملية + أفكار محتوى + استراتيجيات قابلة للتطبيق
 </div>
 
-<div id="articles"></div>
+<div id="articles">
+  <div class="loading">جاري تحميل المقالات...</div>
+</div>
 
 <footer>
 © Daoline Digital
@@ -137,34 +179,108 @@ footer {
 </div>
 
 <script>
-async function loadArticles(){
-  const res = await fetch("https://api.github.com/repos/doaamseleat/daolinedigital/contents/blog");
-  const data = await res.json();
-
-  const articles = data
-    .filter(f => f.name.endsWith(".html") && f.name !== "index.html")
-    .sort((a,b)=>parseInt(b.name)-parseInt(a.name));
-
+async function loadArticles() {
   const container = document.getElementById("articles");
 
-  for(let file of articles){
-    let html = await fetch(file.download_url).then(r=>r.text());
-    let doc = new DOMParser().parseFromString(html,"text/html");
+  try {
+    container.innerHTML = '<div class="loading">جاري تحميل المقالات...</div>';
 
-    let title = doc.querySelector("title")?.innerText || "مقال";
-    let desc = doc.querySelector('meta[name="description"]')?.content || "";
+    const apiUrl = "https://api.github.com/repos/doaamseleat/daolinedigital/contents/blog?ref=main";
+    const res = await fetch(apiUrl, {
+      headers: {
+        "Accept": "application/vnd.github.v3+json"
+      }
+    });
 
-    let card = document.createElement("div");
-    card.className="card";
+    if (!res.ok) {
+      throw new Error("GitHub API Error: " + res.status);
+    }
 
-    card.innerHTML=`
-      <h2>${title}</h2>
-      <p class="desc">${desc}</p>
-      <a href="/blog/${file.name}" class="btn">اقرأ المقال ←</a>
+    const data = await res.json();
+
+    const articles = data
+      .filter(file =>
+        file.type === "file" &&
+        file.name.endsWith(".html") &&
+        file.name !== "index.html"
+      )
+      .sort((a, b) => {
+        const numA = parseInt((a.name.match(/\d+/) || ["0"])[0], 10);
+        const numB = parseInt((b.name.match(/\d+/) || ["0"])[0], 10);
+        return numB - numA;
+      });
+
+    container.innerHTML = "";
+
+    if (!articles.length) {
+      container.innerHTML = `
+        <div class="error-box">
+          لا توجد مقالات متاحة حاليًا.
+        </div>
+      `;
+      return;
+    }
+
+    for (const file of articles) {
+      try {
+        const articleRes = await fetch(file.download_url);
+        const html = await articleRes.text();
+
+        const doc = new DOMParser().parseFromString(html, "text/html");
+
+        const title =
+          doc.querySelector("title")?.innerText?.trim() ||
+          file.name.replace(".html", "");
+
+        const desc =
+          doc.querySelector('meta[name="description"]')?.getAttribute("content")?.trim() ||
+          "مقال جديد من Daoline Digital لتعلم التسويق الرقمي بطريقة عملية وبسيطة.";
+
+        const card = document.createElement("div");
+        card.className = "card";
+
+        card.innerHTML = `
+          <h2>${escapeHTML(title)}</h2>
+          <p class="desc">${escapeHTML(desc)}</p>
+          <a href="/blog/${encodeURIComponent(file.name)}" class="btn">اقرأ المقال ←</a>
+        `;
+
+        container.appendChild(card);
+
+      } catch (articleError) {
+        console.warn("Article skipped:", file.name, articleError);
+      }
+    }
+
+    if (!container.children.length) {
+      container.innerHTML = `
+        <div class="error-box">
+          المقالات موجودة، لكن لم يتم تحميل بياناتها الآن. جربي تحديث الصفحة.
+        </div>
+      `;
+    }
+
+  } catch (error) {
+    container.innerHTML = `
+      <div class="error-box">
+        <h2>تعذر تحميل المقالات مؤقتًا</h2>
+        <p>
+          المقالات موجودة على الموقع، لكن الاتصال بقائمة GitHub لم يكتمل الآن.
+          جربي تحديث الصفحة بعد دقيقة.
+        </p>
+      </div>
     `;
-
-    container.appendChild(card);
+    console.error(error);
   }
+}
+
+function escapeHTML(str) {
+  return String(str)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
 }
 
 loadArticles();
