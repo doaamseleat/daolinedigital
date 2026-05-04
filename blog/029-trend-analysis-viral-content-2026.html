@@ -1242,7 +1242,7 @@
       <div class="lead-form" id="lead-form">
         <input type="text" id="course-name" placeholder="اسمك" required>
         <input type="email" id="course-email" placeholder="إيميلك" required>
-        <input type="tel" id="course-phone" placeholder="رقم الواتساب" required>
+        <input type="tel" id="course-phone" placeholder="رقم التليفون" required>
         <button class="lead-btn" type="button" onclick="submitCourseLead()">🎓 سجّل في الكورس المجاني الآن</button>
       </div>
       <div class="lead-success" id="lead-success">✅ تم تسجيلك بنجاح. هيوصلك كل جديد عن الكورس قريبًا.</div>
@@ -1290,7 +1290,7 @@
     <h4>🎓 سجّل في الكورس المجاني</h4>
     <input type="text" id="float-name" placeholder="اسمك" />
     <input type="email" id="float-email" placeholder="إيميلك" />
-    <input type="tel" id="float-phone" placeholder="رقم الواتساب" />
+    <input type="tel" id="float-phone" placeholder="رقم التليفون" />
     <button class="float-submit" onclick="submitFloatCourse()">تسجيل</button>
   </div>
   <button class="float-btn" onclick="toggleFloat()">🎓 سجّل في الكورس المجاني</button>
@@ -1318,7 +1318,7 @@
 
   function sendCourseLead(name, email, phone, source, onSuccess, onError) {
     if (!name || !email || !phone) {
-      alert('من فضلك اكتب الاسم والإيميل ورقم الواتساب');
+      alert('من فضلك اكتب الاسم والإيميل ورقم التليفون');
       return;
     }
 
