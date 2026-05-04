@@ -10,7 +10,8 @@
   <meta property="og:title" content="ترند ضياء العوضي والطيبات — دروس في السوشيال ميديا وكيف تحلل الترند">
   <meta property="og:description" content="درس عملي في تحليل الترند من خلال قصة ضياء العوضي – تعلم كيف تقرأ موجة الانتشار وتستفيد منها في تسويقك">
   <meta property="og:type" content="article">
-  <link rel="canonical" href="https://daolinedigital.com/blog/028-trend-analysis-viral-content-2026.html">
+  <meta property="og:image" content="https://daolinedigital.com/blog/diaa-trend.jpg">
+  <link rel="canonical" href="https://daolinedigital.com/blog/029-trend-analysis-viral-content-2026.html">
 
   <script type="application/ld+json">
   {
@@ -22,7 +23,8 @@
     "publisher": { "@type": "Organization", "name": "Daoline Digital", "url": "https://daolinedigital.com" },
     "datePublished": "2026-05-04",
     "dateModified": "2026-05-04",
-    "url": "https://daolinedigital.com/blog/028-trend-analysis-viral-content-2026.html",
+    "url": "https://daolinedigital.com/blog/029-trend-analysis-viral-content-2026.html",
+    "image": "https://daolinedigital.com/blog/diaa-trend.jpg",
     "inLanguage": "ar",
     "articleSection": "تسويق رقمي",
     "keywords": ["تحليل الترند", "سوشيال ميديا", "محتوى فيروسي", "خوارزمية", "Daoline Digital"]
@@ -418,6 +420,119 @@
     .signal-card strong { display: block; font-size: 0.95rem; font-weight: 800; color: #f472b6; margin-bottom: 4px; }
     .signal-card span { font-size: 0.88rem; color: var(--muted); line-height: 1.7; }
 
+
+    /* ── ARTICLE VISUALS / COURSE ICONS ── */
+    .article-image {
+      margin: 2rem 0;
+      border: 1px solid var(--border);
+      border-radius: 1.35rem;
+      overflow: hidden;
+      background: rgba(13,15,24,0.65);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.24);
+    }
+    .article-image img {
+      width: 100%;
+      max-height: 430px;
+      object-fit: cover;
+      object-position: center;
+      filter: saturate(1.04) contrast(1.02);
+    }
+    .article-image figcaption {
+      padding: 10px 16px;
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.7;
+      border-top: 1px solid var(--border);
+      background: rgba(7,8,12,0.65);
+    }
+    .mini-icons-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+      margin: 1.75rem 0 2.25rem;
+    }
+    .mini-icon-card {
+      background: rgba(13,15,24,0.68);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      padding: 1rem;
+      text-align: center;
+    }
+    .mini-icon-card span {
+      display: block;
+      font-size: 1.55rem;
+      margin-bottom: 6px;
+    }
+    .mini-icon-card strong {
+      color: #f472b6;
+      font-size: 0.9rem;
+      font-weight: 900;
+    }
+    .course-author-note {
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      gap: 1rem;
+      align-items: center;
+      background: linear-gradient(135deg, rgba(192,19,166,0.09), rgba(37,99,235,0.05));
+      border: 1px solid var(--border);
+      border-radius: 1.35rem;
+      padding: 1.15rem;
+      margin: 2rem 0;
+    }
+    .course-author-note a.img-link {
+      display: block;
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 2px solid var(--primary);
+      box-shadow: 0 0 0 6px rgba(192,19,166,0.08);
+      flex-shrink: 0;
+    }
+    .course-author-note img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .course-author-note strong {
+      display: block;
+      color: #f472b6;
+      font-size: 1rem;
+      font-weight: 900;
+      margin-bottom: 0.25rem;
+    }
+    .course-author-note p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.94rem;
+      line-height: 1.75;
+    }
+    .course-author-note .course-link {
+      display: inline-block;
+      margin-top: 0.55rem;
+      color: white;
+      font-size: 0.88rem;
+      font-weight: 900;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(244,114,182,0.7);
+    }
+    .course-author-note .course-link:hover { color: #f472b6; }
+    .lead-course-image {
+      width: 96px;
+      height: 96px;
+      margin: 0 auto 1rem;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 3px solid var(--primary);
+      box-shadow: 0 0 0 8px rgba(192,19,166,0.11), 0 18px 40px rgba(0,0,0,0.25);
+      display: block;
+    }
+    .lead-course-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
     /* ── LEAD BOX ── */
     .lead-box {
       background: linear-gradient(135deg, rgba(192,19,166,0.1), rgba(244,114,182,0.04));
@@ -577,6 +692,12 @@
       .lead-box { padding: 2rem 1.25rem; }
       .step-card { grid-template-columns: 40px 1fr; }
       .signals-grid { grid-template-columns: 1fr 1fr; }
+
+      .mini-icons-row { grid-template-columns: 1fr; }
+      .course-author-note { grid-template-columns: 58px 1fr; padding: 1rem; }
+      .course-author-note a.img-link { width: 58px; height: 58px; }
+      .article-image img { max-height: 320px; }
+
       .float-widget { bottom: 16px; left: 16px; }
       .nav-links { display: none; }
       .section-title { font-size: 1.4rem; padding: 8px 20px; }
@@ -602,8 +723,8 @@
 <!-- Free Bar -->
 <div class="freebar">
   <div class="freebar-inner">
-    <div class="freebar-text">📊 هدية من Daoline <span>— كتالوج السوشيال ميديا والـ SEO (مجاني)</span></div>
-    <a href="#lead-section" class="freebar-btn">حمّل مجاناً →</a>
+    <div class="freebar-text">🎓 هدية من Daoline <span>— الكورس المجاني بالكامل لتعلم السوشيال ميديا</span></div>
+    <a href="#lead-section" class="freebar-btn">سجّل مجاناً →</a>
   </div>
 </div>
 
@@ -637,6 +758,30 @@
   <p>
     الترند مش بس موجة تركب عليها — هو <strong>فرصة تحليل</strong> تفهم منها إزاي الخوارزمية بتشتغل، إيه اللي بيخلي المحتوى ينتشر، وإزاي تستفيد منه من غير ما تغرق في ضوضائه. في المقال ده، هنستخدم قصة ضياء العوضي كـ case study حي لنتعلم <strong>تقنية تحليل الترند</strong>.
   </p>
+
+  <figure class="article-image">
+    <img src="diaa-trend.jpg" alt="صورة توضيحية لضياء العوضي ضمن تحليل ترند السوشيال ميديا" loading="lazy">
+    <figcaption>
+      صورة توضيحية مستخدمة داخل المقال لأغراض تحليلية وتعليمية ضمن سياق دراسة الترند، مع الحفاظ على نسبتها للمصدر الأصلي عند الاستخدام.
+    </figcaption>
+  </figure>
+
+  <div class="course-author-note">
+    <a href="#lead-section" class="img-link" aria-label="التسجيل في الكورس المجاني">
+      <img src="doaa-course-icon.jpg" alt="Doaa Seleat - الكورس المجاني">
+    </a>
+    <div>
+      <strong>تحليل من دعاء سليط — وربط عملي بالكورس المجاني</strong>
+      <p>المقال ده جزء من منهج مبسط لفهم الترندات، الخوارزميات، وسلوك الجمهور بطريقة قابلة للتطبيق في شغلك اليومي.</p>
+      <a href="#lead-section" class="course-link">سجّل في الكورس المجاني بالكامل ←</a>
+    </div>
+  </div>
+
+  <div class="mini-icons-row" aria-label="محاور المقال">
+    <div class="mini-icon-card"><span>🔍</span><strong>تحليل الترند</strong></div>
+    <div class="mini-icon-card"><span>🤖</span><strong>كشف المصنوع</strong></div>
+    <div class="mini-icon-card"><span>📊</span><strong>قراءة السلوك</strong></div>
+  </div>
 
   <div class="highlight-box">
     <p>الترند مش معناه إن الموضوع صح أو مهم. أحياناً الموضوع الأكتر انتشاراً هو الأكثر خطورة. الذكي هو اللي يعرف يقرأ الترند ويحول الضوضاء لفرصة تسويقية.</p>
@@ -958,8 +1103,25 @@
     <p>
       الترند العضوي بيكون فيه <strong>تنوع في الرأي</strong> حتى بين المؤيدين — ناس بتشرح بطرق مختلفة، بتضيف تجاربها الشخصية، وبتختلف في التفاصيل. الـ Botnet بيكرر <strong>نفس الرسالة بنفس الصياغة</strong> مع اختلاف بسيط في الكلمات عشان يتجنب الكشف الآلي.
     </p>
+    <p>
+      من أبسط الطرق للكشف اللي بيستخدمها المحللون: <strong>ادخل على الأكونت وشوف بوستاته القديمة</strong> — لو مفيش تفاعل حقيقي من ناس بتعرفه، ولو الأكونت صحي فجأة مع الترند بس — ده مؤشر واضح. والسكرين شوت اللي قدامك ده مثال حقيقي على نمط الأكونتات دي:
+    </p>
+
+    <!-- Screenshot -->
+    <div style="margin:1.5rem 0;border:1px solid var(--border);border-radius:1rem;overflow:hidden;">
+      <img
+        src="trend-screenshot.png"
+        alt="مثال على أكونت تم تحديث بروفايله مؤخراً مع غياب البوستات — من مؤشرات الـ Coordinated Inauthentic Behavior"
+        style="width:100%;height:auto;display:block;"
+        loading="lazy"
+      >
+      <div style="padding:10px 16px;background:rgba(13,15,24,0.8);font-size:0.82rem;color:var(--muted);line-height:1.7;">
+        📌 <strong style="color:var(--h2-color);">لاحظ:</strong> الأكونت اتنشأ من سنين (Joined 2016) لكن "Profile updated: 2 days ago" مع غياب تام للبوستات — ده نمط كلاسيكي لأكونتات الـ CIB اللي بتتفعّل وقت الترندات.
+      </div>
+    </div>
+
     <p style="margin:0;">
-      وزي ما قالت دوا بذكاء: <em>"تدخل على الأكونت تلاقي مفيش Bobby عامل كومنت على بوستاته"</em> — ده مش ملاحظة عشوائية، ده <strong>Digital Forensics</strong> بالحدس قبل ما تيجي الأدوات.
+      ده مش مجرد فضول — ده <strong>Digital Forensics</strong> بسيط تقدر تعمله بعينيك من غير أدوات. وكل ما اتعلمت تلاقي النمط ده، كل ما قدرت تميز الترند الحقيقي من المصنوع.
     </p>
   </div>
 
@@ -1024,9 +1186,9 @@
   </div>
 
   <p>هتلاقي مقالات مكملة ومفيدة في الروابط دي:
-    <a href="https://daolinedigital.com/blog/025-social-media-algorithm-2025.html" class="inline-link">إزاي تتعامل مع خوارزمية السوشيال ميديا</a>،
-    و<a href="https://daolinedigital.com/blog/026-content-strategy-arabic-2025.html" class="inline-link">استراتيجية المحتوى العربي من الصفر</a>،
-    و<a href="https://daolinedigital.com/blog/027-meta-ads-beginners-2026.html" class="inline-link">دليل الإعلانات على ميتا للمبتدئين</a>.
+    <a href="https://daolinedigital.com/blog/018-attention-algorithm-2026.html" class="inline-link">الدليل الشامل لخوارزمية الانتباه 2026</a>،
+    و<a href="https://daolinedigital.com/blog/019-social-seo-strategy-2026.html" class="inline-link">استراتيجية Social SEO 2026</a>،
+    و<a href="https://daolinedigital.com/blog/027-meaning-economy-2026.html" class="inline-link">عصر المعنى في صناعة المحتوى</a>.
   </p>
 
   <!-- FAQ -->
@@ -1062,25 +1224,28 @@
   <section style="margin-bottom:2.5rem;text-align:center;background:rgba(13,15,24,0.5);padding:2rem;border-radius:1.75rem;border:1px solid rgba(255,255,255,0.05);">
     <h3 style="font-size:1.1rem;font-weight:900;color:white;margin-bottom:1.25rem;">🔗 كمّل رحلة التعلم مع Daoline:</h3>
     <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:0.75rem;">
-      <a href="https://daolinedigital.com/blog/025-social-media-algorithm-2025.html" style="padding:10px 20px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:999px;color:var(--muted);text-decoration:none;font-size:0.88rem;font-weight:700;transition:all 0.2s;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='white'" onmouseout="this.style.borderColor='rgba(255,255,255,0.1)';this.style.color='var(--muted)'">خوارزمية السوشيال ميديا 2025</a>
-      <a href="https://daolinedigital.com/blog/026-content-strategy-arabic-2025.html" style="padding:10px 20px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:999px;color:var(--muted);text-decoration:none;font-size:0.88rem;font-weight:700;transition:all 0.2s;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='white'" onmouseout="this.style.borderColor='rgba(255,255,255,0.1)';this.style.color='var(--muted)'">استراتيجية المحتوى العربي</a>
-      <a href="https://daolinedigital.com/blog/027-meta-ads-beginners-2026.html" style="padding:10px 20px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:999px;color:var(--muted);text-decoration:none;font-size:0.88rem;font-weight:700;transition:all 0.2s;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='white'" onmouseout="this.style.borderColor='rgba(255,255,255,0.1)';this.style.color='var(--muted)'">دليل إعلانات ميتا للمبتدئين</a>
+      <a href="https://daolinedigital.com/blog/018-attention-algorithm-2026.html" style="padding:10px 20px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:999px;color:var(--muted);text-decoration:none;font-size:0.88rem;font-weight:700;transition:all 0.2s;">خوارزمية الانتباه 2026</a>
+      <a href="https://daolinedigital.com/blog/019-social-seo-strategy-2026.html" style="padding:10px 20px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:999px;color:var(--muted);text-decoration:none;font-size:0.88rem;font-weight:700;transition:all 0.2s;">استراتيجية Social SEO</a>
+      <a href="https://daolinedigital.com/blog/026-twitter-x-traffic-2026.html" style="padding:10px 20px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:999px;color:var(--muted);text-decoration:none;font-size:0.88rem;font-weight:700;transition:all 0.2s;">ترافيك X في 2026</a>
+      <a href="https://daolinedigital.com/blog/027-meaning-economy-2026.html" style="padding:10px 20px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:999px;color:var(--muted);text-decoration:none;font-size:0.88rem;font-weight:700;transition:all 0.2s;">عصر المعنى في المحتوى</a>
     </div>
   </section>
 
   <!-- Lead Box -->
   <div class="lead-box" id="lead-section">
     <div style="position:relative;z-index:1;">
-      <div style="font-size:3rem;margin-bottom:1rem;">📥</div>
-      <h3>احصل على كتالوج السوشيال ميديا والـ SEO مجاناً!</h3>
-      <p>دليلك الشامل لبناء حضورك الرقمي من الصفر — مجاناً ومباشرة على إيميلك.</p>
+      <a href="#lead-section" class="lead-course-image" aria-label="الكورس المجاني بالكامل">
+        <img src="doaa-course-icon.jpg" alt="Doaa Seleat - الكورس المجاني بالكامل">
+      </a>
+      <h3>سجّل في الكورس المجاني بالكامل</h3>
+      <p>تعلم السوشيال ميديا وتحليل الترندات وصناعة المحتوى خطوة بخطوة — مجاناً ومباشرة على إيميلك.</p>
       <div class="lead-form" id="lead-form">
         <input type="text" id="lead-name" placeholder="اسمك" />
         <input type="email" id="lead-email" placeholder="إيميلك" />
         <input type="tel" id="lead-wa" placeholder="واتساب (اختياري)" />
-        <button class="lead-btn" onclick="submitDaolineLead()">📩 أرسل لي الكتالوج مجاناً</button>
+        <button class="lead-btn" onclick="submitDaolineLead()">📩 سجّلني في الكورس المجاني</button>
       </div>
-      <div class="lead-success" id="lead-success">✅ تم الإرسال! هتوصلك الرسالة على إيميلك خلال دقائق 🎉</div>
+      <div class="lead-success" id="lead-success">✅ تم التسجيل! هتوصلك تفاصيل الكورس على إيميلك خلال دقائق 🎉</div>
       <p style="font-size:0.72rem;color:rgba(255,255,255,0.3);margin-top:1rem;margin-bottom:0;">بياناتك آمنة ومش هنشاركها مع أي طرف تالت.</p>
     </div>
   </div>
@@ -1089,21 +1254,21 @@
   <div class="related-section">
     <h2>مقالات ذات صلة</h2>
     <div class="related-grid">
-      <a href="https://daolinedigital.com/blog/025-social-media-algorithm-2025.html" class="related-card">
+      <a href="https://daolinedigital.com/blog/018-attention-algorithm-2026.html" class="related-card">
         <span class="related-tag">خوارزمية</span>
-        <h4>إزاي تتعامل مع خوارزمية السوشيال ميديا في 2025</h4>
+        <h4>الدليل الشامل لخوارزمية الانتباه 2026</h4>
       </a>
-      <a href="https://daolinedigital.com/blog/026-content-strategy-arabic-2025.html" class="related-card">
-        <span class="related-tag">استراتيجية</span>
-        <h4>استراتيجية المحتوى العربي من الصفر للمبتدئين</h4>
+      <a href="https://daolinedigital.com/blog/019-social-seo-strategy-2026.html" class="related-card">
+        <span class="related-tag">Social SEO</span>
+        <h4>السوشيال ميديا قتلت Google: دليل Social SEO 2026</h4>
       </a>
-      <a href="https://daolinedigital.com/blog/027-meta-ads-beginners-2026.html" class="related-card">
-        <span class="related-tag">إعلانات</span>
-        <h4>دليل إعلانات ميتا للمبتدئين في 2026</h4>
+      <a href="https://daolinedigital.com/blog/026-twitter-x-traffic-2026.html" class="related-card">
+        <span class="related-tag">Traffic</span>
+        <h4>X في 2026: كيف ترفعي الترافيك على محتواك؟</h4>
       </a>
-      <a href="https://daolinedigital.com/blog/024-seo-arabic-blog-2025.html" class="related-card">
-        <span class="related-tag">SEO</span>
-        <h4>كيف تكتب مقال SEO عربي يصل لأول نتائج البحث</h4>
+      <a href="https://daolinedigital.com/blog/027-meaning-economy-2026.html" class="related-card">
+        <span class="related-tag">Content</span>
+        <h4>عصر الـ Attention Economy خلص — جه عصر المعنى</h4>
       </a>
     </div>
   </div>
@@ -1122,12 +1287,12 @@
 <div class="float-widget hidden" id="float-widget">
   <div class="float-panel" id="float-panel">
     <button class="float-close" onclick="toggleFloat()">✕</button>
-    <h4>📥 نزّل الكتالوج مجاناً</h4>
+    <h4>📥 سجّل في الكورس المجاني</h4>
     <input type="text" id="float-name" placeholder="اسمك" />
     <input type="email" id="float-email" placeholder="إيميلك" />
     <button class="float-submit" onclick="submitFloat()">إرسال</button>
   </div>
-  <button class="float-btn" onclick="toggleFloat()">🎁 كتالوج مجاني</button>
+  <button class="float-btn" onclick="toggleFloat()">🎁 كورس مجاني</button>
 </div>
 
 <script>
@@ -1145,7 +1310,7 @@
   }
 
   const FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSdSXEvN7DMMC-pwXED9G5TRpe4ecQ5U7pMtsg3201d2ikinfQ/formResponse';
-  const CATALOG = 'Social_Seo';
+  const CATALOG = 'Free_Course';
 
   function submitDaolineLead() {
     const name = document.getElementById('lead-name').value.trim();
