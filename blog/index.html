@@ -27,8 +27,6 @@ body {
 
 .home-btn {
   display: inline-flex;
-  align-items: center;
-  justify-content: center;
   padding: 10px 18px;
   border-radius: 14px;
   border: 1px solid rgba(255,255,255,0.08);
@@ -36,13 +34,11 @@ body {
   color: #fff;
   text-decoration: none;
   font-weight: 800;
-  transition: 0.3s;
   margin-bottom: 30px;
 }
 
 .home-btn:hover {
   background: rgba(255,255,255,0.1);
-  transform: translateY(-2px);
 }
 
 h1 {
@@ -98,13 +94,6 @@ h1 {
   color: #bbb;
   margin-bottom: 15px;
   line-height: 1.8;
-}
-
-.article-num {
-  color: #c013a6;
-  font-size: 13px;
-  font-weight: 900;
-  margin-bottom: 12px;
 }
 
 .btn {
@@ -190,37 +179,15 @@ async function loadArticles() {
   const container = document.getElementById("articles");
 
   try {
-    container.innerHTML = '<div class="loading">جاري تحميل المقالات...</div>';
-
-    const apiUrl = "https://api.github.com/repos/doaamseleat/daolinedigital/contents/blog?ref=main";
-
-    const res = await fetch(apiUrl, {
-      headers: {
-        "Accept": "application/vnd.github.v3+json"
-      }
-    });
+    const res = await fetch("/blog/articles.json?v=" + Date.now());
 
     if (!res.ok) {
-      throw new Error("GitHub API Error: " + res.status);
+      throw new Error("لم يتم العثور على ملف articles.json");
     }
 
-    const data = await res.json();
+    const articles = await res.json();
 
-    const articles = data
-      .filter(file =>
-        file.type === "file" &&
-        file.name.endsWith(".html") &&
-        file.name !== "index.html"
-      )
-      .sort((a, b) => {
-        const numA = getArticleNumber(a.name);
-        const numB = getArticleNumber(b.name);
-        return numB - numA;
-      });
-
-    container.innerHTML = "";
-
-    if (!articles.length) {
+    if (!Array.isArray(articles) || articles.length === 0) {
       container.innerHTML = `
         <div class="error-box">
           لا توجد مقالات متاحة حاليًا.
@@ -229,78 +196,34 @@ async function loadArticles() {
       return;
     }
 
-    for (const file of articles) {
-      try {
-        const articleRes = await fetch(file.download_url);
+    container.innerHTML = "";
 
-        if (!articleRes.ok) continue;
+    articles.forEach(article => {
+      const card = document.createElement("div");
+      card.className = "card";
 
-        const html = await articleRes.text();
-        const doc = new DOMParser().parseFromString(html, "text/html");
-
-        const title =
-          doc.querySelector("title")?.innerText?.trim() ||
-          cleanFileName(file.name);
-
-        const desc =
-          doc.querySelector('meta[name="description"]')?.getAttribute("content")?.trim() ||
-          "مقال جديد من Daoline Digital لتعلم التسويق الرقمي بطريقة عملية وبسيطة.";
-
-        const articleNumber = getArticleNumber(file.name);
-
-        const card = document.createElement("div");
-        card.className = "card";
-
-        card.innerHTML = `
-          <div class="article-num">مقال رقم ${articleNumber || ""}</div>
-          <h2>${escapeHTML(title)}</h2>
-          <p class="desc">${escapeHTML(desc)}</p>
-          <a href="/blog/${encodeURIComponent(file.name)}" class="btn">اقرأ المقال ←</a>
-        `;
-
-        container.appendChild(card);
-
-      } catch (articleError) {
-        console.warn("Article skipped:", file.name, articleError);
-      }
-    }
-
-    if (!container.children.length) {
-      container.innerHTML = `
-        <div class="error-box">
-          المقالات موجودة، لكن لم يتم تحميل بياناتها الآن. جربي تحديث الصفحة.
-        </div>
+      card.innerHTML = `
+        <h2>${escapeHTML(article.title)}</h2>
+        <p class="desc">${escapeHTML(article.desc)}</p>
+        <a href="/blog/${encodeURIComponent(article.link)}" class="btn">اقرأ المقال ←</a>
       `;
-    }
+
+      container.appendChild(card);
+    });
 
   } catch (error) {
     container.innerHTML = `
       <div class="error-box">
-        <h2>تعذر تحميل المقالات مؤقتًا</h2>
-        <p>
-          المقالات موجودة على الموقع، لكن الاتصال بقائمة GitHub لم يكتمل الآن.
-          جربي تحديث الصفحة بعد دقيقة.
-        </p>
+        <h2>في مشكلة في تحميل المقالات</h2>
+        <p>تأكدي إن ملف <b>articles.json</b> موجود داخل فولدر <b>blog</b>.</p>
       </div>
     `;
     console.error(error);
   }
 }
 
-function getArticleNumber(fileName) {
-  const match = fileName.match(/\d+/);
-  return match ? parseInt(match[0], 10) : 0;
-}
-
-function cleanFileName(fileName) {
-  return fileName
-    .replace(".html", "")
-    .replaceAll("-", " ")
-    .replaceAll("_", " ");
-}
-
 function escapeHTML(str) {
-  return String(str)
+  return String(str || "")
     .replaceAll("&", "&amp;")
     .replaceAll("<", "&lt;")
     .replaceAll(">", "&gt;")
