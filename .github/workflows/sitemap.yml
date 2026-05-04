@@ -4,6 +4,12 @@ on:
   push:
     branches:
       - main
+    paths:
+      - "*.html"
+      - "blog/*.html"
+      - ".github/workflows/sitemap.yml"
+
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -15,58 +21,66 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Generate sitemap
         run: |
-          echo '<?xml version="1.0" encoding="UTF-8"?>' > sitemap.xml
-          echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' >> sitemap.xml
+          python3 << 'PY'
+          from pathlib import Path
+          from urllib.parse import quote
+          from datetime import datetime
 
-          echo '  <url>' >> sitemap.xml
-          echo '    <loc>https://daolinedigital.com/</loc>' >> sitemap.xml
-          echo '    <changefreq>weekly</changefreq>' >> sitemap.xml
-          echo '    <priority>1.0</priority>' >> sitemap.xml
-          echo '  </url>' >> sitemap.xml
+          BASE = "https://daolinedigital.com"
 
-          echo '  <url>' >> sitemap.xml
-          echo '    <loc>https://daolinedigital.com/blog/</loc>' >> sitemap.xml
-          echo '    <changefreq>daily</changefreq>' >> sitemap.xml
-          echo '    <priority>0.9</priority>' >> sitemap.xml
-          echo '  </url>' >> sitemap.xml
+          urls = [
+              ("/", "weekly", "1.0"),
+              ("/blog/", "daily", "0.9"),
+              ("/contact.html", "yearly", "0.4"),
+              ("/privacy.html", "yearly", "0.3"),
+              ("/terms.html", "yearly", "0.3"),
+          ]
 
-          echo '  <url>' >> sitemap.xml
-          echo '    <loc>https://daolinedigital.com/contact.html</loc>' >> sitemap.xml
-          echo '    <changefreq>yearly</changefreq>' >> sitemap.xml
-          echo '    <priority>0.4</priority>' >> sitemap.xml
-          echo '  </url>' >> sitemap.xml
+          blog_dir = Path("blog")
 
-          echo '  <url>' >> sitemap.xml
-          echo '    <loc>https://daolinedigital.com/privacy.html</loc>' >> sitemap.xml
-          echo '    <changefreq>yearly</changefreq>' >> sitemap.xml
-          echo '    <priority>0.3</priority>' >> sitemap.xml
-          echo '  </url>' >> sitemap.xml
+          for file in sorted(blog_dir.glob("*.html")):
+              if file.name == "index.html":
+                  continue
 
-          echo '  <url>' >> sitemap.xml
-          echo '    <loc>https://daolinedigital.com/terms.html</loc>' >> sitemap.xml
-          echo '    <changefreq>yearly</changefreq>' >> sitemap.xml
-          echo '    <priority>0.3</priority>' >> sitemap.xml
-          echo '  </url>' >> sitemap.xml
+              encoded_path = "/blog/" + quote(file.name)
+              urls.append((encoded_path, "monthly", "0.8"))
 
-          for file in blog/*.html; do
-            if [ -f "$file" ] && [ "$(basename "$file")" != "index.html" ]; then
-              echo "  <url>" >> sitemap.xml
-              echo "    <loc>https://daolinedigital.com/$file</loc>" >> sitemap.xml
-              echo "    <changefreq>monthly</changefreq>" >> sitemap.xml
-              echo "    <priority>0.8</priority>" >> sitemap.xml
-              echo "  </url>" >> sitemap.xml
-            fi
-          done
+          today = datetime.utcnow().date().isoformat()
 
-          echo '</urlset>' >> sitemap.xml
+          sitemap = ['<?xml version="1.0" encoding="UTF-8"?>']
+          sitemap.append('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">')
+
+          for path, changefreq, priority in urls:
+              sitemap.append("  <url>")
+              sitemap.append(f"    <loc>{BASE}{path}</loc>")
+              sitemap.append(f"    <lastmod>{today}</lastmod>")
+              sitemap.append(f"    <changefreq>{changefreq}</changefreq>")
+              sitemap.append(f"    <priority>{priority}</priority>")
+              sitemap.append("  </url>")
+
+          sitemap.append("</urlset>")
+
+          Path("sitemap.xml").write_text("\n".join(sitemap), encoding="utf-8")
+          PY
 
       - name: Commit sitemap
         run: |
-          git config user.name "github-actions"
-          git config user.email "github-actions@github.com"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
           git add sitemap.xml
-          git diff --cached --quiet || git commit -m "Update sitemap"
-          git push
+
+          if git diff --cached --quiet; then
+            echo "No sitemap changes"
+            exit 0
+          fi
+
+          git commit -m "Auto update sitemap.xml"
+
+          git pull --rebase origin main
+          git push origin main
