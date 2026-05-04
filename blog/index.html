@@ -13,145 +13,146 @@
 
 <style>
 body {
-  margin:0;
-  font-family:"Tajawal",sans-serif;
-  background:#07080c;
-  color:#fff;
+  margin: 0;
+  font-family: "Tajawal", sans-serif;
+  background: #07080c;
+  color: #fff;
 }
 
 .wrap {
-  max-width:900px;
-  margin:auto;
-  padding:20px;
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
 }
 
 .home-btn {
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  padding:10px 18px;
-  border-radius:14px;
-  border:1px solid rgba(255,255,255,0.08);
-  background:rgba(255,255,255,0.05);
-  color:#fff;
-  text-decoration:none;
-  font-weight:800;
-  transition:0.3s;
-  margin-bottom:30px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 18px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.05);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 800;
+  transition: 0.3s;
+  margin-bottom: 30px;
 }
 
 .home-btn:hover {
-  background:rgba(255,255,255,0.1);
-  transform:translateY(-2px);
+  background: rgba(255,255,255,0.1);
+  transform: translateY(-2px);
 }
 
 h1 {
-  text-align:center;
-  font-size:2.4rem;
-  margin-bottom:10px;
+  text-align: center;
+  font-size: 2.4rem;
+  margin-bottom: 10px;
 }
 
 .lead {
-  text-align:center;
-  color:#aaa;
-  line-height:1.8;
+  text-align: center;
+  color: #aaa;
+  line-height: 1.8;
 }
 
 .value {
-  text-align:center;
-  margin-top:10px;
-  font-size:14px;
-  color:#888;
-  margin-bottom:35px;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 35px;
 }
 
 .loading {
-  text-align:center;
-  color:#bbb;
-  background:#0f1220;
-  padding:25px;
-  border-radius:18px;
-  border:1px solid rgba(255,255,255,0.08);
+  text-align: center;
+  color: #bbb;
+  background: #0f1220;
+  padding: 25px;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.08);
 }
 
 .card {
-  background:#0f1220;
-  padding:25px;
-  margin:20px 0;
-  border-radius:20px;
-  border:1px solid rgba(255,255,255,0.08);
-  transition:0.3s;
+  background: #0f1220;
+  padding: 25px;
+  margin: 20px 0;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: 0.3s;
 }
 
 .card:hover {
-  border-color:#c013a6;
-  transform:translateY(-5px);
+  border-color: #c013a6;
+  transform: translateY(-5px);
 }
 
 .card h2 {
-  margin:0 0 10px;
-  font-size:1.45rem;
-  line-height:1.5;
+  margin: 0 0 10px;
+  font-size: 1.45rem;
+  line-height: 1.5;
 }
 
 .desc {
-  color:#bbb;
-  margin-bottom:15px;
-  line-height:1.8;
+  color: #bbb;
+  margin-bottom: 15px;
+  line-height: 1.8;
 }
 
-.date {
-  color:#888;
-  font-size:13px;
-  margin-bottom:12px;
+.article-num {
+  color: #c013a6;
+  font-size: 13px;
+  font-weight: 900;
+  margin-bottom: 12px;
 }
 
 .btn {
-  display:inline-block;
-  padding:10px 16px;
-  background:#c013a6;
-  border-radius:10px;
-  color:#fff;
-  text-decoration:none;
-  font-weight:bold;
+  display: inline-block;
+  padding: 10px 16px;
+  background: #c013a6;
+  border-radius: 10px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 .btn:hover {
-  background:#9a0e85;
+  background: #9a0e85;
 }
 
 .error-box {
-  background:#1a0f16;
-  border:1px solid rgba(192,19,166,0.45);
-  padding:25px;
-  border-radius:20px;
-  color:#fff;
-  text-align:center;
-  line-height:1.8;
+  background: #1a0f16;
+  border: 1px solid rgba(192,19,166,0.45);
+  padding: 25px;
+  border-radius: 20px;
+  color: #fff;
+  text-align: center;
+  line-height: 1.8;
 }
 
 footer {
-  text-align:center;
-  margin-top:60px;
-  color:#777;
+  text-align: center;
+  margin-top: 60px;
+  color: #777;
 }
 
-@media (max-width:600px) {
+@media (max-width: 600px) {
   h1 {
-    font-size:1.9rem;
-    line-height:1.5;
+    font-size: 1.9rem;
+    line-height: 1.5;
   }
 
   .wrap {
-    padding:16px;
+    padding: 16px;
   }
 
   .card {
-    padding:20px;
+    padding: 20px;
   }
 
   .card h2 {
-    font-size:1.2rem;
+    font-size: 1.2rem;
   }
 }
 </style>
@@ -192,6 +193,7 @@ async function loadArticles() {
     container.innerHTML = '<div class="loading">جاري تحميل المقالات...</div>';
 
     const apiUrl = "https://api.github.com/repos/doaamseleat/daolinedigital/contents/blog?ref=main";
+
     const res = await fetch(apiUrl, {
       headers: {
         "Accept": "application/vnd.github.v3+json"
@@ -204,47 +206,21 @@ async function loadArticles() {
 
     const data = await res.json();
 
-    let articles = data.filter(file =>
-      file.type === "file" &&
-      file.name.endsWith(".html") &&
-      file.name !== "index.html"
-    );
-
-    const articlesWithDates = await Promise.all(
-      articles.map(async (file) => {
-        try {
-          const commitUrl =
-            `https://api.github.com/repos/doaamseleat/daolinedigital/commits?path=blog/${encodeURIComponent(file.name)}&per_page=1`;
-
-          const commitRes = await fetch(commitUrl, {
-            headers: {
-              "Accept": "application/vnd.github.v3+json"
-            }
-          });
-
-          if (!commitRes.ok) {
-            return { ...file, lastDate: "2000-01-01T00:00:00Z" };
-          }
-
-          const commits = await commitRes.json();
-          const lastDate =
-            commits?.[0]?.commit?.committer?.date ||
-            commits?.[0]?.commit?.author?.date ||
-            "2000-01-01T00:00:00Z";
-
-          return { ...file, lastDate };
-
-        } catch (err) {
-          return { ...file, lastDate: "2000-01-01T00:00:00Z" };
-        }
-      })
-    );
-
-    articlesWithDates.sort((a, b) => new Date(b.lastDate) - new Date(a.lastDate));
+    const articles = data
+      .filter(file =>
+        file.type === "file" &&
+        file.name.endsWith(".html") &&
+        file.name !== "index.html"
+      )
+      .sort((a, b) => {
+        const numA = getArticleNumber(a.name);
+        const numB = getArticleNumber(b.name);
+        return numB - numA;
+      });
 
     container.innerHTML = "";
 
-    if (!articlesWithDates.length) {
+    if (!articles.length) {
       container.innerHTML = `
         <div class="error-box">
           لا توجد مقالات متاحة حاليًا.
@@ -253,32 +229,30 @@ async function loadArticles() {
       return;
     }
 
-    for (const file of articlesWithDates) {
+    for (const file of articles) {
       try {
         const articleRes = await fetch(file.download_url);
 
-        if (!articleRes.ok) {
-          continue;
-        }
+        if (!articleRes.ok) continue;
 
         const html = await articleRes.text();
         const doc = new DOMParser().parseFromString(html, "text/html");
 
         const title =
           doc.querySelector("title")?.innerText?.trim() ||
-          file.name.replace(".html", "");
+          cleanFileName(file.name);
 
         const desc =
           doc.querySelector('meta[name="description"]')?.getAttribute("content")?.trim() ||
           "مقال جديد من Daoline Digital لتعلم التسويق الرقمي بطريقة عملية وبسيطة.";
 
-        const formattedDate = formatArabicDate(file.lastDate);
+        const articleNumber = getArticleNumber(file.name);
 
         const card = document.createElement("div");
         card.className = "card";
 
         card.innerHTML = `
-          <div class="date">آخر تحديث: ${escapeHTML(formattedDate)}</div>
+          <div class="article-num">مقال رقم ${articleNumber || ""}</div>
           <h2>${escapeHTML(title)}</h2>
           <p class="desc">${escapeHTML(desc)}</p>
           <a href="/blog/${encodeURIComponent(file.name)}" class="btn">اقرأ المقال ←</a>
@@ -313,17 +287,16 @@ async function loadArticles() {
   }
 }
 
-function formatArabicDate(dateString) {
-  try {
-    const date = new Date(dateString);
-    return date.toLocaleDateString("ar-EG", {
-      year: "numeric",
-      month: "long",
-      day: "numeric"
-    });
-  } catch {
-    return "غير محدد";
-  }
+function getArticleNumber(fileName) {
+  const match = fileName.match(/\d+/);
+  return match ? parseInt(match[0], 10) : 0;
+}
+
+function cleanFileName(fileName) {
+  return fileName
+    .replace(".html", "")
+    .replaceAll("-", " ")
+    .replaceAll("_", " ");
 }
 
 function escapeHTML(str) {
