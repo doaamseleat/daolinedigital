@@ -182,7 +182,7 @@ async function loadArticles() {
     const res = await fetch("/blog/articles.json?v=" + Date.now());
 
     if (!res.ok) {
-      throw new Error("لم يتم العثور على ملف articles.json");
+      throw new Error("articles.json not found");
     }
 
     const articles = await res.json();
@@ -199,13 +199,17 @@ async function loadArticles() {
     container.innerHTML = "";
 
     articles.forEach(article => {
+      const title = article.title || "مقال من Daoline Digital";
+      const desc = article.desc || "مقال جديد من مكتبة Daoline Digital.";
+      const link = article.link || "#";
+
       const card = document.createElement("div");
       card.className = "card";
 
       card.innerHTML = `
-        <h2>${escapeHTML(article.title)}</h2>
-        <p class="desc">${escapeHTML(article.desc)}</p>
-        <a href="/blog/${encodeURIComponent(article.link)}" class="btn">اقرأ المقال ←</a>
+        <h2>${escapeHTML(title)}</h2>
+        <p class="desc">${escapeHTML(desc)}</p>
+        <a href="/blog/${encodeURIComponent(link)}" class="btn">اقرأ المقال ←</a>
       `;
 
       container.appendChild(card);
@@ -215,7 +219,9 @@ async function loadArticles() {
     container.innerHTML = `
       <div class="error-box">
         <h2>في مشكلة في تحميل المقالات</h2>
-        <p>تأكدي إن ملف <b>articles.json</b> موجود داخل فولدر <b>blog</b>.</p>
+        <p>
+          تأكدي إن ملف <b>articles.json</b> اتولد داخل فولدر <b>blog</b> بعد تشغيل GitHub Action.
+        </p>
       </div>
     `;
     console.error(error);
