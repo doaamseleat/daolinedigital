@@ -26,6 +26,11 @@
     <priority>0.3</priority>
   </url>
   <url>
+    <loc>https://daolinedigital.com/blog/009-content-engineering-2026.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://daolinedigital.com/blog/015.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -147,11 +152,6 @@
   </url>
   <url>
     <loc>https://daolinedigital.com/blog/article-8.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://daolinedigital.com/blog/beginner-social-media-2026-9.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
