@@ -100,6 +100,12 @@ h1 {
   line-height:1.8;
 }
 
+.date {
+  color:#888;
+  font-size:13px;
+  margin-bottom:12px;
+}
+
 .btn {
   display:inline-block;
   padding:10px 16px;
@@ -198,21 +204,47 @@ async function loadArticles() {
 
     const data = await res.json();
 
-    const articles = data
-      .filter(file =>
-        file.type === "file" &&
-        file.name.endsWith(".html") &&
-        file.name !== "index.html"
-      )
-      .sort((a, b) => {
-        const numA = parseInt((a.name.match(/\d+/) || ["0"])[0], 10);
-        const numB = parseInt((b.name.match(/\d+/) || ["0"])[0], 10);
-        return numB - numA;
-      });
+    let articles = data.filter(file =>
+      file.type === "file" &&
+      file.name.endsWith(".html") &&
+      file.name !== "index.html"
+    );
+
+    const articlesWithDates = await Promise.all(
+      articles.map(async (file) => {
+        try {
+          const commitUrl =
+            `https://api.github.com/repos/doaamseleat/daolinedigital/commits?path=blog/${encodeURIComponent(file.name)}&per_page=1`;
+
+          const commitRes = await fetch(commitUrl, {
+            headers: {
+              "Accept": "application/vnd.github.v3+json"
+            }
+          });
+
+          if (!commitRes.ok) {
+            return { ...file, lastDate: "2000-01-01T00:00:00Z" };
+          }
+
+          const commits = await commitRes.json();
+          const lastDate =
+            commits?.[0]?.commit?.committer?.date ||
+            commits?.[0]?.commit?.author?.date ||
+            "2000-01-01T00:00:00Z";
+
+          return { ...file, lastDate };
+
+        } catch (err) {
+          return { ...file, lastDate: "2000-01-01T00:00:00Z" };
+        }
+      })
+    );
+
+    articlesWithDates.sort((a, b) => new Date(b.lastDate) - new Date(a.lastDate));
 
     container.innerHTML = "";
 
-    if (!articles.length) {
+    if (!articlesWithDates.length) {
       container.innerHTML = `
         <div class="error-box">
           لا توجد مقالات متاحة حاليًا.
@@ -221,11 +253,15 @@ async function loadArticles() {
       return;
     }
 
-    for (const file of articles) {
+    for (const file of articlesWithDates) {
       try {
         const articleRes = await fetch(file.download_url);
-        const html = await articleRes.text();
 
+        if (!articleRes.ok) {
+          continue;
+        }
+
+        const html = await articleRes.text();
         const doc = new DOMParser().parseFromString(html, "text/html");
 
         const title =
@@ -236,10 +272,13 @@ async function loadArticles() {
           doc.querySelector('meta[name="description"]')?.getAttribute("content")?.trim() ||
           "مقال جديد من Daoline Digital لتعلم التسويق الرقمي بطريقة عملية وبسيطة.";
 
+        const formattedDate = formatArabicDate(file.lastDate);
+
         const card = document.createElement("div");
         card.className = "card";
 
         card.innerHTML = `
+          <div class="date">آخر تحديث: ${escapeHTML(formattedDate)}</div>
           <h2>${escapeHTML(title)}</h2>
           <p class="desc">${escapeHTML(desc)}</p>
           <a href="/blog/${encodeURIComponent(file.name)}" class="btn">اقرأ المقال ←</a>
@@ -271,6 +310,19 @@ async function loadArticles() {
       </div>
     `;
     console.error(error);
+  }
+}
+
+function formatArabicDate(dateString) {
+  try {
+    const date = new Date(dateString);
+    return date.toLocaleDateString("ar-EG", {
+      year: "numeric",
+      month: "long",
+      day: "numeric"
+    });
+  } catch {
+    return "غير محدد";
   }
 }
 
