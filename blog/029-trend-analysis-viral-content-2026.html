@@ -1234,19 +1234,19 @@
   <!-- Lead Box -->
   <div class="lead-box" id="lead-section">
     <div style="position:relative;z-index:1;">
-      <a href="#lead-section" class="lead-course-image" aria-label="الكورس المجاني بالكامل">
+      <div class="lead-course-image" aria-label="الكورس المجاني بالكامل">
         <img src="doaa-course-icon.jpg" alt="Doaa Seleat - الكورس المجاني بالكامل">
-      </a>
-      <h3>سجّل في الكورس المجاني بالكامل</h3>
-      <p>تعلم السوشيال ميديا وتحليل الترندات وصناعة المحتوى خطوة بخطوة — مجاناً ومباشرة على إيميلك.</p>
-      <div class="lead-form" id="lead-form">
-        <input type="text" id="lead-name" placeholder="اسمك" />
-        <input type="email" id="lead-email" placeholder="إيميلك" />
-        <input type="tel" id="lead-wa" placeholder="واتساب (اختياري)" />
-        <button class="lead-btn" onclick="submitDaolineLead()">📩 سجّلني في الكورس المجاني</button>
       </div>
-      <div class="lead-success" id="lead-success">✅ تم التسجيل! هتوصلك تفاصيل الكورس على إيميلك خلال دقائق 🎉</div>
-      <p style="font-size:0.72rem;color:rgba(255,255,255,0.3);margin-top:1rem;margin-bottom:0;">بياناتك آمنة ومش هنشاركها مع أي طرف تالت.</p>
+      <h3>سجّل في الكورس المجاني بالكامل</h3>
+      <p>تعلم السوشيال ميديا وتحليل الترندات وصناعة المحتوى خطوة بخطوة — التسجيل يتم من هنا مباشرة بدون فتح Google Form.</p>
+      <div class="lead-form" id="lead-form">
+        <input type="text" id="course-name" placeholder="اسمك" required>
+        <input type="email" id="course-email" placeholder="إيميلك" required>
+        <input type="tel" id="course-phone" placeholder="رقم الواتساب" required>
+        <button class="lead-btn" type="button" onclick="submitCourseLead()">🎓 سجّل في الكورس المجاني الآن</button>
+      </div>
+      <div class="lead-success" id="lead-success">✅ تم تسجيلك بنجاح. هيوصلك كل جديد عن الكورس قريبًا.</div>
+      <p style="font-size:0.72rem;color:rgba(255,255,255,0.3);margin-top:1rem;margin-bottom:0;">سيتم حفظ التسجيل في شيت الكورس المنفصل، وإرسال تنبيه إلى info@daolinedigital.com.</p>
     </div>
   </div>
 
@@ -1287,12 +1287,13 @@
 <div class="float-widget hidden" id="float-widget">
   <div class="float-panel" id="float-panel">
     <button class="float-close" onclick="toggleFloat()">✕</button>
-    <h4>📥 سجّل في الكورس المجاني</h4>
+    <h4>🎓 سجّل في الكورس المجاني</h4>
     <input type="text" id="float-name" placeholder="اسمك" />
     <input type="email" id="float-email" placeholder="إيميلك" />
-    <button class="float-submit" onclick="submitFloat()">إرسال</button>
+    <input type="tel" id="float-phone" placeholder="رقم الواتساب" />
+    <button class="float-submit" onclick="submitFloatCourse()">تسجيل</button>
   </div>
-  <button class="float-btn" onclick="toggleFloat()">🎁 كورس مجاني</button>
+  <button class="float-btn" onclick="toggleFloat()">🎓 سجّل في الكورس المجاني</button>
 </div>
 
 <script>
@@ -1309,35 +1310,67 @@
     document.getElementById('float-panel').classList.toggle('open');
   }
 
-  const FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSdSXEvN7DMMC-pwXED9G5TRpe4ecQ5U7pMtsg3201d2ikinfQ/formResponse';
-  const CATALOG = 'Free_Course';
+  const COURSE_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbzFcWGX7Qw1EFS2Z1cq6gl7RIvkI3Ot-7a2-jHMxpgfz4f9im3hyDH165iZHYtXrbV2/exec';
 
-  function submitDaolineLead() {
-    const name = document.getElementById('lead-name').value.trim();
-    const email = document.getElementById('lead-email').value.trim();
-    const wa = document.getElementById('lead-wa').value.trim();
-    if (!name || !email) { alert('من فضلك أدخل اسمك وإيميلك'); return; }
-    const data = new FormData();
-    data.append('entry.299023128', name);
-    data.append('entry.1712155557', email);
-    data.append('entry.1224669856', wa);
-    data.append('entry.334049848', CATALOG);
-    fetch(FORM_URL, { method: 'POST', body: data, mode: 'no-cors' });
-    document.getElementById('lead-form').style.display = 'none';
-    document.getElementById('lead-success').style.display = 'block';
+  function isValidEmail(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   }
 
-  function submitFloat() {
+  function sendCourseLead(name, email, phone, source, onSuccess, onError) {
+    if (!name || !email || !phone) {
+      alert('من فضلك اكتب الاسم والإيميل ورقم الواتساب');
+      return;
+    }
+
+    if (!isValidEmail(email)) {
+      alert('من فضلك اكتب إيميل صحيح');
+      return;
+    }
+
+    const data = new FormData();
+    data.append('name', name);
+    data.append('email', email);
+    data.append('phone', phone);
+    data.append('source', source || 'trend-article');
+
+    fetch(COURSE_WEB_APP_URL, {
+      method: 'POST',
+      body: data,
+      mode: 'no-cors'
+    })
+    .then(() => onSuccess && onSuccess())
+    .catch(() => onError && onError());
+  }
+
+  function submitCourseLead() {
+    const btn = document.querySelector('#lead-form .lead-btn');
+    const name = document.getElementById('course-name').value.trim();
+    const email = document.getElementById('course-email').value.trim();
+    const phone = document.getElementById('course-phone').value.trim();
+
+    btn.disabled = true;
+    btn.textContent = 'جاري التسجيل...';
+
+    sendCourseLead(name, email, phone, 'main-course-form', () => {
+      document.getElementById('lead-form').style.display = 'none';
+      document.getElementById('lead-success').style.display = 'block';
+    }, () => {
+      alert('حصلت مشكلة في التسجيل. جربي مرة تانية.');
+      btn.disabled = false;
+      btn.textContent = '🎓 سجّل في الكورس المجاني الآن';
+    });
+  }
+
+  function submitFloatCourse() {
     const name = document.getElementById('float-name').value.trim();
     const email = document.getElementById('float-email').value.trim();
-    if (!name || !email) { alert('من فضلك أدخل اسمك وإيميلك'); return; }
-    const data = new FormData();
-    data.append('entry.299023128', name);
-    data.append('entry.1712155557', email);
-    data.append('entry.1224669856', '');
-    data.append('entry.334049848', CATALOG);
-    fetch(FORM_URL, { method: 'POST', body: data, mode: 'no-cors' });
-    document.getElementById('float-panel').innerHTML = '<p style="color:#86efac;text-align:center;padding:10px;">✅ تم الإرسال بنجاح!</p>';
+    const phone = document.getElementById('float-phone').value.trim();
+
+    sendCourseLead(name, email, phone, 'floating-course-form', () => {
+      document.getElementById('float-panel').innerHTML = '<p style="color:#86efac;text-align:center;padding:10px;">✅ تم تسجيلك بنجاح!</p>';
+    }, () => {
+      alert('حصلت مشكلة في التسجيل. جربي مرة تانية.');
+    });
   }
 
   // Prevent copy
