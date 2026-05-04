@@ -1,0 +1,63 @@
+name: Generate Articles JSON
+
+on:
+  push:
+    paths:
+      - 'blog/*.html'
+      - '.github/workflows/generate-articles.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Generate articles.json
+        run: |
+          python3 << 'PY'
+          import os, re, json
+          from pathlib import Path
+
+          blog_dir = Path("blog")
+          articles = []
+
+          for file in blog_dir.glob("*.html"):
+              if file.name == "index.html":
+                  continue
+
+              text = file.read_text(encoding="utf-8", errors="ignore")
+
+              title_match = re.search(r"<title>(.*?)</title>", text, re.S | re.I)
+              desc_match = re.search(r'<meta\s+name=["\']description["\']\s+content=["\'](.*?)["\']', text, re.S | re.I)
+
+              title = title_match.group(1).strip() if title_match else file.stem
+              desc = desc_match.group(1).strip() if desc_match else "مقال من Daoline Digital."
+
+              nums = re.findall(r"\d+", file.name)
+              number = int(nums[0]) if nums else 0
+
+              articles.append({
+                  "title": title,
+                  "desc": desc,
+                  "link": file.name,
+                  "number": number
+              })
+
+          articles.sort(key=lambda x: x["number"], reverse=True)
+
+          out = blog_dir / "articles.json"
+          out.write_text(json.dumps(articles, ensure_ascii=False, indent=2), encoding="utf-8")
+          PY
+
+      - name: Commit articles.json
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add blog/articles.json
+          git commit -m "Auto update articles.json" || echo "No changes"
+          git push
