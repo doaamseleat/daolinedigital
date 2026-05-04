@@ -1297,17 +1297,25 @@
 </div>
 
 <script>
-  // Reading progress
+  // Reading progress + floating widget
   window.addEventListener('scroll', () => {
-    const s = document.documentElement.scrollTop;
-    const h = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    document.getElementById('reading-progress').style.width = (s / h * 100) + '%';
-    const w = document.getElementById('float-widget');
-    s > 400 ? w.classList.remove('hidden') : w.classList.add('hidden');
+    const progress = document.getElementById('reading-progress');
+    const widget = document.getElementById('float-widget');
+    const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+    const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+
+    if (progress && scrollHeight > 0) {
+      progress.style.width = (scrollTop / scrollHeight * 100) + '%';
+    }
+
+    if (widget) {
+      scrollTop > 400 ? widget.classList.remove('hidden') : widget.classList.add('hidden');
+    }
   });
 
   function toggleFloat() {
-    document.getElementById('float-panel').classList.toggle('open');
+    const panel = document.getElementById('float-panel');
+    if (panel) panel.classList.toggle('open');
   }
 
   const COURSE_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbzFcWGX7Qw1EFS2Z1cq6gl7RIvkI3Ot-7a2-jHMxpgfz4f9im3hyDH165iZHYtXrbV2/exec';
@@ -1316,69 +1324,112 @@
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   }
 
+  function normalizePhone(phone) {
+    return String(phone || '').replace(/[\s\-()]/g, '').trim();
+  }
+
+  function isValidPhone(phone) {
+    const normalized = normalizePhone(phone);
+    return /^(\+?\d{10,15}|01\d{9})$/.test(normalized);
+  }
+
+  function setButtonState(button, isLoading, defaultText) {
+    if (!button) return;
+    button.disabled = isLoading;
+    button.textContent = isLoading ? 'جاري التسجيل...' : defaultText;
+  }
+
   function sendCourseLead(name, email, phone, source, onSuccess, onError) {
     if (!name || !email || !phone) {
       alert('من فضلك اكتب الاسم والإيميل ورقم التليفون');
-      return;
+      return false;
     }
 
     if (!isValidEmail(email)) {
       alert('من فضلك اكتب إيميل صحيح');
-      return;
+      return false;
     }
 
-    const data = new FormData();
-    data.append('name', name);
-    data.append('email', email);
-    data.append('phone', phone);
-    data.append('source', source || 'trend-article');
+    if (!isValidPhone(phone)) {
+      alert('من فضلك اكتب رقم تليفون صحيح');
+      return false;
+    }
+
+    const payload = new URLSearchParams();
+    payload.append('name', name);
+    payload.append('email', email);
+    payload.append('phone', normalizePhone(phone));
+    payload.append('source', source || 'trend-article');
+    payload.append('page', window.location.href);
 
     fetch(COURSE_WEB_APP_URL, {
       method: 'POST',
-      body: data,
-      mode: 'no-cors'
+      mode: 'no-cors',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+      },
+      body: payload.toString()
     })
-    .then(() => onSuccess && onSuccess())
-    .catch(() => onError && onError());
+    .then(() => {
+      if (typeof onSuccess === 'function') onSuccess();
+    })
+    .catch(() => {
+      if (typeof onError === 'function') onError();
+    });
+
+    return true;
   }
 
   function submitCourseLead() {
     const btn = document.querySelector('#lead-form .lead-btn');
-    const name = document.getElementById('course-name').value.trim();
-    const email = document.getElementById('course-email').value.trim();
-    const phone = document.getElementById('course-phone').value.trim();
+    const defaultText = '🎓 سجّل في الكورس المجاني الآن';
 
-    btn.disabled = true;
-    btn.textContent = 'جاري التسجيل...';
+    const name = document.getElementById('course-name')?.value.trim() || '';
+    const email = document.getElementById('course-email')?.value.trim() || '';
+    const phone = document.getElementById('course-phone')?.value.trim() || '';
 
-    sendCourseLead(name, email, phone, 'main-course-form', () => {
-      document.getElementById('lead-form').style.display = 'none';
-      document.getElementById('lead-success').style.display = 'block';
+    const isSent = sendCourseLead(name, email, phone, 'main-course-form', () => {
+      const form = document.getElementById('lead-form');
+      const success = document.getElementById('lead-success');
+      if (form) form.style.display = 'none';
+      if (success) success.style.display = 'block';
     }, () => {
       alert('حصلت مشكلة في التسجيل. جربي مرة تانية.');
-      btn.disabled = false;
-      btn.textContent = '🎓 سجّل في الكورس المجاني الآن';
+      setButtonState(btn, false, defaultText);
     });
+
+    if (isSent) setButtonState(btn, true, defaultText);
   }
 
   function submitFloatCourse() {
-    const name = document.getElementById('float-name').value.trim();
-    const email = document.getElementById('float-email').value.trim();
-    const phone = document.getElementById('float-phone').value.trim();
+    const btn = document.querySelector('#float-panel .float-submit');
+    const defaultText = 'تسجيل';
 
-    sendCourseLead(name, email, phone, 'floating-course-form', () => {
-      document.getElementById('float-panel').innerHTML = '<p style="color:#86efac;text-align:center;padding:10px;">✅ تم تسجيلك بنجاح!</p>';
+    const name = document.getElementById('float-name')?.value.trim() || '';
+    const email = document.getElementById('float-email')?.value.trim() || '';
+    const phone = document.getElementById('float-phone')?.value.trim() || '';
+
+    const isSent = sendCourseLead(name, email, phone, 'floating-course-form', () => {
+      const panel = document.getElementById('float-panel');
+      if (panel) {
+        panel.innerHTML = '<p style="color:#86efac;text-align:center;padding:10px;line-height:1.8;">✅ تم تسجيلك في الكورس بنجاح!</p>';
+      }
     }, () => {
       alert('حصلت مشكلة في التسجيل. جربي مرة تانية.');
+      setButtonState(btn, false, defaultText);
     });
+
+    if (isSent) setButtonState(btn, true, defaultText);
   }
 
-  // Prevent copy
+  // Prevent copy except form fields
   document.addEventListener('contextmenu', e => e.preventDefault());
   document.addEventListener('keydown', e => {
     const tag = (e.target?.tagName || '').toLowerCase();
     if (tag === 'input' || tag === 'textarea') return;
-    if ((e.ctrlKey && ['c','u','s','i','a','p'].includes(e.key.toLowerCase())) || e.key === 'F12') e.preventDefault();
+    if ((e.ctrlKey && ['c','u','s','i','a','p'].includes(e.key.toLowerCase())) || e.key === 'F12') {
+      e.preventDefault();
+    }
   });
 </script>
 
