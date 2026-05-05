@@ -11,6 +11,15 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;700;900&display=swap" rel="stylesheet">
 
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YBMX53C4R4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-YBMX53C4R4');
+</script>
+
 <style>
 body {
   margin: 0;
@@ -126,6 +135,96 @@ footer {
   color: #777;
 }
 
+/* Floating Registration Widget */
+.float-widget {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  z-index: 1000;
+  transition: transform 0.3s ease;
+}
+
+.float-widget.hidden {
+  transform: translateY(140px);
+}
+
+.float-btn {
+  background: linear-gradient(135deg, #c013a6, #9b00d3);
+  color: white;
+  border: none;
+  border-radius: 999px;
+  padding: 13px 22px;
+  font-family: "Tajawal", sans-serif;
+  font-size: 0.93rem;
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(192,19,166,0.5);
+}
+
+.float-panel {
+  display: none;
+  position: absolute;
+  bottom: 60px;
+  left: 0;
+  background: rgba(13,15,24,0.97);
+  border: 1px solid rgba(192,19,166,0.35);
+  border-radius: 20px;
+  padding: 24px;
+  width: 280px;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.5);
+}
+
+.float-panel.open {
+  display: block;
+}
+
+.float-panel h4 {
+  margin: 0 0 15px;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.float-panel input {
+  width: 100%;
+  box-sizing: border-box;
+  background: #07080c;
+  border: 1px solid rgba(192,19,166,0.35);
+  border-radius: 10px;
+  padding: 11px 13px;
+  color: #fff;
+  font-family: "Tajawal", sans-serif;
+  margin-bottom: 9px;
+  text-align: right;
+}
+
+.float-submit {
+  width: 100%;
+  background: #c013a6;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  padding: 11px;
+  font-family: "Tajawal", sans-serif;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.float-submit:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.float-close {
+  position: absolute;
+  top: 8px;
+  left: 10px;
+  background: none;
+  border: none;
+  color: #aaa;
+  cursor: pointer;
+  font-size: 16px;
+}
+
 @media (max-width: 600px) {
   h1 {
     font-size: 1.9rem;
@@ -142,6 +241,15 @@ footer {
 
   .card h2 {
     font-size: 1.2rem;
+  }
+
+  .float-widget {
+    bottom: 16px;
+    left: 16px;
+  }
+
+  .float-panel {
+    width: 270px;
   }
 }
 </style>
@@ -172,6 +280,19 @@ footer {
 © Daoline Digital
 </footer>
 
+</div>
+
+<!-- Floating Registration Widget -->
+<div class="float-widget hidden" id="float-widget">
+  <div class="float-panel" id="float-panel">
+    <button class="float-close" onclick="toggleFloat()">✕</button>
+    <h4>🎓 سجّل في الكورس المجاني</h4>
+    <input type="text" id="float-name" placeholder="اسمك" />
+    <input type="email" id="float-email" placeholder="إيميلك" />
+    <input type="tel" id="float-phone" placeholder="رقم الواتساب" />
+    <button class="float-submit" onclick="submitFloatCourse()">تسجيل</button>
+  </div>
+  <button class="float-btn" onclick="toggleFloat()">🎓 سجّل في الكورس المجاني</button>
 </div>
 
 <script>
@@ -238,6 +359,97 @@ function escapeHTML(str) {
 }
 
 loadArticles();
+
+/* Floating Widget */
+window.addEventListener("scroll", function () {
+  const widget = document.getElementById("float-widget");
+  if (widget) {
+    window.scrollY > 350
+      ? widget.classList.remove("hidden")
+      : widget.classList.add("hidden");
+  }
+});
+
+function toggleFloat() {
+  const panel = document.getElementById("float-panel");
+  if (panel) panel.classList.toggle("open");
+}
+
+const COURSE_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbzFcWGX7Qw1EFS2Z1cq6gl7RIvkI3Ot-7a2-jHMxpgfz4f9im3hyDH165iZHYtXrbV2/exec";
+
+function isValidEmail(email) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+function normalizePhone(phone) {
+  return String(phone || "").replace(/[\s\-()]/g, "").trim();
+}
+
+function isValidPhone(phone) {
+  const normalized = normalizePhone(phone);
+  return /^(\+?\d{10,15}|01\d{9})$/.test(normalized);
+}
+
+function submitFloatCourse() {
+  const btn = document.querySelector(".float-submit");
+  const name = document.getElementById("float-name").value.trim();
+  const email = document.getElementById("float-email").value.trim();
+  const phone = document.getElementById("float-phone").value.trim();
+
+  if (!name || !email || !phone) {
+    alert("من فضلك اكتب الاسم والإيميل ورقم الواتساب");
+    return;
+  }
+
+  if (!isValidEmail(email)) {
+    alert("من فضلك اكتب إيميل صحيح");
+    return;
+  }
+
+  if (!isValidPhone(phone)) {
+    alert("من فضلك اكتب رقم واتساب صحيح");
+    return;
+  }
+
+  btn.disabled = true;
+  btn.textContent = "جاري التسجيل...";
+
+  const payload = new URLSearchParams();
+  payload.append("name", name);
+  payload.append("email", email);
+  payload.append("phone", normalizePhone(phone));
+  payload.append("source", "blog-index-floating-widget");
+  payload.append("page", window.location.href);
+
+  fetch(COURSE_WEB_APP_URL, {
+    method: "POST",
+    mode: "no-cors",
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
+    },
+    body: payload.toString()
+  })
+  .then(() => {
+    if (typeof gtag === "function") {
+      gtag("event", "generate_lead", {
+        event_category: "lead",
+        event_label: "blog-index-floating-widget"
+      });
+    }
+
+    const panel = document.getElementById("float-panel");
+    panel.innerHTML = `
+      <p style="color:#86efac;text-align:center;line-height:1.8;margin:0;">
+        ✅ تم تسجيلك بنجاح!
+      </p>
+    `;
+  })
+  .catch(() => {
+    alert("حصلت مشكلة في التسجيل. جرب مرة تانية.");
+    btn.disabled = false;
+    btn.textContent = "تسجيل";
+  });
+}
 </script>
 
 </body>
