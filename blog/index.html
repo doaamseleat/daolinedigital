@@ -12,12 +12,17 @@
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;700;900&display=swap" rel="stylesheet">
 
 <!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-YBMX53C4R4"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DCECS21BFZ"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
+
+  function gtag(){
+    dataLayer.push(arguments);
+  }
+
   gtag('js', new Date());
-  gtag('config', 'G-YBMX53C4R4');
+
+  gtag('config', 'G-DCECS21BFZ');
 </script>
 
 <style>
@@ -135,7 +140,6 @@ footer {
   color: #777;
 }
 
-/* Floating Registration Widget */
 .float-widget {
   position: fixed;
   bottom: 24px;
@@ -282,17 +286,24 @@ footer {
 
 </div>
 
-<!-- Floating Registration Widget -->
 <div class="float-widget hidden" id="float-widget">
   <div class="float-panel" id="float-panel">
     <button class="float-close" onclick="toggleFloat()">✕</button>
+
     <h4>🎓 سجّل في الكورس المجاني</h4>
+
     <input type="text" id="float-name" placeholder="اسمك" />
     <input type="email" id="float-email" placeholder="إيميلك" />
     <input type="tel" id="float-phone" placeholder="رقم الواتساب" />
-    <button class="float-submit" onclick="submitFloatCourse()">تسجيل</button>
+
+    <button class="float-submit" onclick="submitFloatCourse()">
+      تسجيل
+    </button>
   </div>
-  <button class="float-btn" onclick="toggleFloat()">🎓 سجّل في الكورس المجاني</button>
+
+  <button class="float-btn" onclick="toggleFloat()">
+    🎓 سجّل في الكورس المجاني
+  </button>
 </div>
 
 <script>
@@ -330,7 +341,9 @@ async function loadArticles() {
       card.innerHTML = `
         <h2>${escapeHTML(title)}</h2>
         <p class="desc">${escapeHTML(desc)}</p>
-        <a href="/blog/${encodeURIComponent(link)}" class="btn">اقرأ المقال ←</a>
+        <a href="/blog/${encodeURIComponent(link)}" class="btn">
+          اقرأ المقال ←
+        </a>
       `;
 
       container.appendChild(card);
@@ -341,10 +354,15 @@ async function loadArticles() {
       <div class="error-box">
         <h2>في مشكلة في تحميل المقالات</h2>
         <p>
-          تأكدي إن ملف <b>articles.json</b> اتولد داخل فولدر <b>blog</b> بعد تشغيل GitHub Action.
+          تأكدي إن ملف
+          <b>articles.json</b>
+          اتولد داخل فولدر
+          <b>blog</b>
+          بعد تشغيل GitHub Action.
         </p>
       </div>
     `;
+
     console.error(error);
   }
 }
@@ -360,9 +378,9 @@ function escapeHTML(str) {
 
 loadArticles();
 
-/* Floating Widget */
 window.addEventListener("scroll", function () {
   const widget = document.getElementById("float-widget");
+
   if (widget) {
     window.scrollY > 350
       ? widget.classList.remove("hidden")
@@ -372,29 +390,42 @@ window.addEventListener("scroll", function () {
 
 function toggleFloat() {
   const panel = document.getElementById("float-panel");
-  if (panel) panel.classList.toggle("open");
+
+  if (panel) {
+    panel.classList.toggle("open");
+  }
 }
 
-const COURSE_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbzFcWGX7Qw1EFS2Z1cq6gl7RIvkI3Ot-7a2-jHMxpgfz4f9im3hyDH165iZHYtXrbV2/exec";
+const COURSE_WEB_APP_URL =
+"https://script.google.com/macros/s/AKfycbzFcWGX7Qw1EFS2Z1cq6gl7RIvkI3Ot-7a2-jHMxpgfz4f9im3hyDH165iZHYtXrbV2/exec";
 
 function isValidEmail(email) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
 function normalizePhone(phone) {
-  return String(phone || "").replace(/[\s\-()]/g, "").trim();
+  return String(phone || "")
+    .replace(/[\s\-()]/g, "")
+    .trim();
 }
 
 function isValidPhone(phone) {
   const normalized = normalizePhone(phone);
+
   return /^(\+?\d{10,15}|01\d{9})$/.test(normalized);
 }
 
 function submitFloatCourse() {
   const btn = document.querySelector(".float-submit");
-  const name = document.getElementById("float-name").value.trim();
-  const email = document.getElementById("float-email").value.trim();
-  const phone = document.getElementById("float-phone").value.trim();
+
+  const name =
+    document.getElementById("float-name").value.trim();
+
+  const email =
+    document.getElementById("float-email").value.trim();
+
+  const phone =
+    document.getElementById("float-phone").value.trim();
 
   if (!name || !email || !phone) {
     alert("من فضلك اكتب الاسم والإيميل ورقم الواتساب");
@@ -415,6 +446,7 @@ function submitFloatCourse() {
   btn.textContent = "جاري التسجيل...";
 
   const payload = new URLSearchParams();
+
   payload.append("name", name);
   payload.append("email", email);
   payload.append("phone", normalizePhone(phone));
@@ -425,11 +457,14 @@ function submitFloatCourse() {
     method: "POST",
     mode: "no-cors",
     headers: {
-      "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
+      "Content-Type":
+      "application/x-www-form-urlencoded;charset=UTF-8"
     },
     body: payload.toString()
   })
+
   .then(() => {
+
     if (typeof gtag === "function") {
       gtag("event", "generate_lead", {
         event_category: "lead",
@@ -437,15 +472,19 @@ function submitFloatCourse() {
       });
     }
 
-    const panel = document.getElementById("float-panel");
+    const panel =
+      document.getElementById("float-panel");
+
     panel.innerHTML = `
       <p style="color:#86efac;text-align:center;line-height:1.8;margin:0;">
         ✅ تم تسجيلك بنجاح!
       </p>
     `;
   })
+
   .catch(() => {
     alert("حصلت مشكلة في التسجيل. جرب مرة تانية.");
+
     btn.disabled = false;
     btn.textContent = "تسجيل";
   });
