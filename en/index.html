@@ -117,7 +117,7 @@
     .mini-card{ border-radius:14px; padding:16px; background:rgba(7,8,12,.8); border:1px solid rgba(255,255,255,.10); color:#fff; font-weight:800; box-shadow:0 10px 20px rgba(0,0,0,.3); font-size: 15px;}
     .mini-card span{ display:block; color:var(--primary); font-size:12px; font-weight:700; margin-top:6px; }
 
-    /* ====== ARTICLES GRID ====== */
+    /* ====== ARTICLES GRID (DYNAMIC) ====== */
     .grid-articles{ display:grid; grid-template-columns:repeat(3, 1fr); gap:20px; }
     .article-card{ padding:26px; border-radius:24px; border:1px solid var(--border); background:rgba(15,18,32,.5); transition:.3s ease; display:flex; flex-direction:column; }
     .article-card:hover{ transform:translateY(-5px); border-color:rgba(192,19,166,.4); background:rgba(15,18,32,.8); box-shadow: 0 20px 40px rgba(0,0,0,0.4);}
@@ -129,17 +129,12 @@
     .read-link{ color:#fff; font-weight:700; font-size:14px; transition: 0.2s;}
     .article-card:hover .read-link { color: var(--primary); }
 
+    /* Loading State */
+    .loading-state { text-align: center; color: #a8b8cc; background: rgba(15,18,32,.5); padding: 40px; border-radius: 20px; border: 1px solid var(--border); grid-column: 1 / -1; font-weight: 600;}
+    .error-box { text-align: center; color: #f87171; background: rgba(239,68,68,0.05); padding: 40px; border-radius: 20px; border: 1px dashed rgba(239,68,68,0.3); grid-column: 1 / -1; }
+
     /* ====== LEAD BOX (Instant Download) ====== */
-    .daoline-lead-box { 
-      margin: 40px auto 0; 
-      background: linear-gradient(145deg, #1e293b, #0f172a); 
-      border: 2px dashed var(--primary); 
-      border-radius: 30px; 
-      padding: 50px 40px; 
-      text-align: center;
-      box-shadow: 0 25px 60px rgba(192, 19, 166, 0.15);
-      max-width: 800px;
-    }
+    .daoline-lead-box { margin: 40px auto 0; background: linear-gradient(145deg, #1e293b, #0f172a); border: 2px dashed var(--primary); border-radius: 30px; padding: 50px 40px; text-align: center; box-shadow: 0 25px 60px rgba(192, 19, 166, 0.15); max-width: 800px; }
     .daoline-free-badge { font-size: clamp(2rem, 4vw, 2.5rem); font-weight: 900; color: #fff; margin: 0 0 15px 0; line-height: 1.2; }
     .daoline-free-badge span { color: var(--primary); }
     .daoline-input { width: 100%; padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.4); color: #fff; font-family: inherit; margin-bottom: 12px; outline: none; font-size: 1rem; }
@@ -150,12 +145,24 @@
     .success-area { display: none; margin-top: 20px; animation: fadeIn 0.5s; }
     @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-    /* ====== MINI ABOUT SECTION ====== */
+    /* ====== FLOATING WIDGET ====== */
+    .float-widget { position: fixed; bottom: 24px; right: 24px; z-index: 1000; transition: transform 0.3s ease; }
+    .float-widget.hidden { transform: translateY(140px); }
+    .float-btn { background: linear-gradient(135deg, var(--primary), #9b00d3); color: white; border: none; border-radius: 999px; padding: 13px 22px; font-family: inherit; font-size: 0.95rem; font-weight: 900; cursor: pointer; box-shadow: 0 4px 20px rgba(192,19,166,0.5); display: flex; align-items: center; gap: 8px; transition: 0.2s ease; }
+    .float-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(192,19,166,0.6); }
+    .float-panel { display: none; position: absolute; bottom: 60px; right: 0; background: rgba(13,15,24,0.97); border: 1px solid rgba(192,19,166,0.25); border-radius: 1.25rem; padding: 1.5rem; width: 280px; box-shadow: 0 16px 40px rgba(0,0,0,0.5); backdrop-filter: blur(12px); text-align: left;}
+    .float-panel.open { display: block; }
+    .float-panel h4 { font-size: 0.95rem; font-weight: 900; color: white; margin: 0 0 1rem; }
+    .float-panel input { width: 100%; background: rgba(7,8,12,0.8); border: 1px solid rgba(192,19,166,0.25); border-radius: 8px; padding: 10px 14px; color: white; font-family: inherit; font-size: 0.9rem; outline: none; margin-bottom: 8px; text-align: left; }
+    .float-panel input:focus { border-color: var(--primary); }
+    .float-submit { width: 100%; background: linear-gradient(135deg, var(--primary), #9b00d3); border: none; border-radius: 8px; padding: 11px; color: white; font-family: inherit; font-size: 0.95rem; font-weight: 900; cursor: pointer; margin-top: 4px; }
+    .float-submit:disabled { opacity: 0.7; cursor: not-allowed; }
+    .float-close { position: absolute; top: 10px; right: 10px; background: none; border: none; color: rgba(243,244,246,0.72); cursor: pointer; font-size: 1rem; padding: 4px; }
+
+    /* ====== MINI ABOUT & FOOTER ====== */
     .mini-about { border-top: 1px solid var(--border); padding-top: 60px; margin-top: 60px; display: grid; grid-template-columns: 1fr 2fr; gap: 40px; align-items: center;}
     .mini-about h3 { font-size: 1.8rem; font-weight: 900; color: #fff; margin-bottom: 10px;}
     .mini-about p { color: var(--muted); font-size: 16px; line-height: 1.8;}
-
-    /* ====== FOOTER ====== */
     .footer{ border-top:1px solid var(--border); padding:30px 20px; color:var(--muted); text-align:center; font-size:14px; margin-top: 60px;}
 
     @media (max-width:980px){
@@ -169,6 +176,7 @@
       h1{ font-size:2.2rem; }
       .daoline-lead-box { padding: 30px 20px; }
       .nav-links { display: none; }
+      .float-widget { bottom: 16px; right: 16px; }
     }
   </style>
 </head>
@@ -184,6 +192,7 @@
         </a>
         <nav class="nav-links">
           <a href="https://daolinedigital.com/en/" class="nav-btn">🏠 Agency Home</a>
+          <!-- رابط النسخة العربية -->
           <a href="/blog/" class="nav-btn">🌍 Arabic Library</a>
           <a href="#leads-section" class="nav-btn primary">🎁 Free Playbooks</a>
         </nav>
@@ -217,22 +226,9 @@
     </div>
   </section>
 
-  <!-- Categories Bar -->
-  <div class="categories-bar">
-    <div class="wrap">
-      <div class="cat-list">
-        <button class="cat-btn active">All Topics</button>
-        <button class="cat-btn">Content Strategy</button>
-        <button class="cat-btn">Social SEO</button>
-        <button class="cat-btn">AI Marketing</button>
-        <button class="cat-btn">Copywriting</button>
-      </div>
-    </div>
-  </div>
-
   <div class="wrap">
     
-    <!-- Featured Article -->
+    <!-- Featured Article (Static for SEO importance) -->
     <section id="featured">
       <div class="section-head">
         <h2>Featured Playbook</h2>
@@ -265,80 +261,15 @@
       </article>
     </section>
 
-    <!-- Articles Grid -->
+    <!-- Dynamic Articles Grid -->
     <section id="articles" style="padding-top: 20px;">
       <div class="section-head">
         <h2>Latest Articles & Guides</h2>
       </div>
 
-      <div class="grid-articles">
-        
-        <!-- Article 1 -->
-        <article class="article-card">
-          <span class="tag">Content Strategy</span>
-          <h3>Smart Content Engineering 2026</h3>
-          <p>A complete framework for building flexible content systems, audience maps, and repeatable social media execution without burnout.</p>
-          <div class="card-footer">
-            <span class="read-time">8 min read</span>
-            <a class="read-link" href="#">Read Article &rarr;</a>
-          </div>
-        </article>
-
-        <!-- Article 2 -->
-        <article class="article-card">
-          <span class="tag">AI Marketing</span>
-          <h3>The AI Slop Crisis: How to Survive</h3>
-          <p>63% of users ignore AI-generated content. Learn how to use AI as an assistant while maintaining your authentic human brand voice.</p>
-          <div class="card-footer">
-            <span class="read-time">12 min read</span>
-            <a class="read-link" href="#">Read Article &rarr;</a>
-          </div>
-        </article>
-
-        <!-- Article 3 -->
-        <article class="article-card">
-          <span class="tag">Copywriting</span>
-          <h3>The Ultimate Hooks Playbook</h3>
-          <p>Attention spans are down to 3 seconds. Learn the psychological formulas to write hooks that stop the scroll instantly.</p>
-          <div class="card-footer">
-            <span class="read-time">7 min read</span>
-            <a class="read-link" href="#">Read Article &rarr;</a>
-          </div>
-        </article>
-
-        <!-- Article 4 -->
-        <article class="article-card">
-          <span class="tag">Analytics & ROI</span>
-          <h3>Ad Budget Calculator 2026</h3>
-          <p>Stop losing money on ads. Understand your CAC, ROAS, and exactly when to scale or kill a campaign with simple math.</p>
-          <div class="card-footer">
-            <span class="read-time">10 min read</span>
-            <a class="read-link" href="#">Read Article &rarr;</a>
-          </div>
-        </article>
-
-        <!-- Article 5 -->
-        <article class="article-card">
-          <span class="tag">Research</span>
-          <h3>2026 World Happiness Report</h3>
-          <p>Oxford's massive study reveals the true impact of social media. Find out why building communities is better than chasing followers.</p>
-          <div class="card-footer">
-            <span class="read-time">12 min read</span>
-            <a class="read-link" href="#">Read Article &rarr;</a>
-          </div>
-        </article>
-
-        <!-- Article 6 -->
-        <article class="article-card">
-          <span class="tag">Social Media</span>
-          <h3>Social Media Strategy 2026</h3>
-          <p>A practical guide to choosing the right platforms, defining smart goals, and measuring what actually matters for your business.</p>
-          <div class="card-footer">
-            <span class="read-time">9 min read</span>
-            <a class="read-link" href="#">Read Article &rarr;</a>
-          </div>
-        </article>
-
+      <!-- سيتم جلب المقالات هنا عبر الجافاسكريبت -->
+      <div class="grid-articles" id="dynamic-articles">
+        <div class="loading-state">Loading latest playbooks... ⏳</div>
       </div>
     </section>
 
@@ -386,12 +317,153 @@
 
   </div> <!-- End Wrap -->
 
+  <!-- Floating Registration Widget (Linked to the Course script) -->
+  <div class="float-widget hidden" id="float-widget">
+    <div class="float-panel" id="float-panel">
+      <button class="float-close" onclick="toggleFloat()">✕</button>
+      <h4>🎓 Register for the Free Course</h4>
+      <input type="text" id="float-name" placeholder="Your Name" />
+      <input type="email" id="float-email" placeholder="Your Email" />
+      <input type="tel" id="float-phone" placeholder="WhatsApp Number" />
+      <button class="float-submit" onclick="submitFloatCourse()">Register Now</button>
+    </div>
+    <button class="float-btn" onclick="toggleFloat()">🎓 Register for Free Course</button>
+  </div>
+
   <footer class="footer">
     © 2026 Daoline Digital Academy — All rights reserved.
   </footer>
 
-  <!-- Lead Submission Logic -->
   <script>
+    /* ================================================================= */
+    /* 1. Dynamic Articles Fetcher (Pure English Logic)                  */
+    /* ================================================================= */
+    async function loadEnglishArticles() {
+      const container = document.getElementById("dynamic-articles");
+      
+      // Fallback data ensures the preview doesn't break if blob/file protocol blocks the fetch
+      // You will eventually put this data into /en/blog/articles_en.json
+      const fallbackArticles = [
+        {
+          en_title: "Smart Content Engineering 2026",
+          en_desc: "A complete framework for building flexible content systems, audience maps, and repeatable social media execution without burnout.",
+          en_link: "smart-content-engineering-2026.html",
+          en_tag: "Content Strategy",
+          readTime: "8 min read"
+        },
+        {
+          en_title: "The AI Slop Crisis: How to Survive",
+          en_desc: "63% of users ignore AI-generated content. Learn how to use AI as an assistant while maintaining your authentic human brand voice.",
+          en_link: "ai-slop-crisis-2026.html",
+          en_tag: "AI Marketing",
+          readTime: "12 min read"
+        },
+        {
+          en_title: "The Ultimate Hooks Playbook",
+          en_desc: "Attention spans are down to 3 seconds. Learn the psychological formulas to write hooks that stop the scroll instantly.",
+          en_link: "hooks-guide-2026.html",
+          en_tag: "Copywriting",
+          readTime: "7 min read"
+        },
+        {
+          en_title: "Ad Budget Calculator 2026",
+          en_desc: "Stop losing money on ads. Understand your CAC, ROAS, and exactly when to scale or kill a campaign with simple math.",
+          en_link: "ad-budget-calculator-2026.html",
+          en_tag: "Analytics & ROI",
+          readTime: "10 min read"
+        },
+        {
+          en_title: "2026 World Happiness Report",
+          en_desc: "Oxford's massive study reveals the true impact of social media. Find out why building communities is better than chasing followers.",
+          en_link: "happiness-report-2026.html",
+          en_tag: "Research",
+          readTime: "12 min read"
+        },
+        {
+          en_title: "Social Media Strategy 2026",
+          en_desc: "A practical guide to choosing the right platforms, defining smart goals, and measuring what actually matters for your business.",
+          en_link: "social-media-strategy-2026.html",
+          en_tag: "Social Media",
+          readTime: "9 min read"
+        }
+      ];
+
+      try {
+        let articles = fallbackArticles;
+
+        // Try network fetch exclusively for the English JSON file
+        if (window.location.protocol !== 'blob:' && window.location.protocol !== 'file:') {
+          try {
+            const res = await fetch("/en/blog/articles_en.json?v=" + Date.now()); 
+            if (res.ok) {
+              articles = await res.json();
+            }
+          } catch (e) {
+            console.warn("Fetch failed, using local English fallback data.", e);
+          }
+        }
+
+        renderArticles(articles, container);
+
+      } catch (error) {
+        container.innerHTML = `
+          <div class="error-box">
+            <h3 style="margin-bottom: 10px;">⚠️ Library is updating</h3>
+            <p>We are currently updating our English playbooks. Please check back shortly.</p>
+          </div>
+        `;
+        console.error("Error loading articles:", error);
+      }
+    }
+
+    function renderArticles(articles, container) {
+        if (!Array.isArray(articles) || articles.length === 0) {
+          container.innerHTML = `<div class="loading-state">No articles available yet.</div>`;
+          return;
+        }
+
+        container.innerHTML = ""; // Clear loading state
+
+        articles.forEach(article => {
+          const title = article.en_title || article.title || "Marketing Playbook";
+          const desc = article.en_desc || article.desc || "Learn the latest strategies for 2026.";
+          const link = article.en_link || article.link || "#";
+          const tag = article.en_tag || "Strategy";
+          const readTime = article.readTime || "5 min read";
+
+          const card = document.createElement("article");
+          card.className = "article-card";
+          card.innerHTML = `
+            <span class="tag">${escapeHTML(tag)}</span>
+            <h3>${escapeHTML(title)}</h3>
+            <p>${escapeHTML(desc)}</p>
+            <div class="card-footer">
+              <span class="read-time">${escapeHTML(readTime)}</span>
+              <a class="read-link" href="/en/blog/${encodeURIComponent(link)}">Read Article &rarr;</a>
+            </div>
+          `;
+          container.appendChild(card);
+        });
+    }
+
+    function escapeHTML(str) {
+      return String(str || "")
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+
+    // Load articles when page is ready
+    document.addEventListener("DOMContentLoaded", loadEnglishArticles);
+
+
+    /* ================================================================= */
+    /* 2. Form Submissions (Lead Box & Floating Widget)                  */
+    /* ================================================================= */
+    
+    // A) Static Lead Box (Google Forms) -> Downloads SEO PDF
     async function submitDaolineLead() {
       const name = document.getElementById('lead-name').value.trim();
       const email = document.getElementById('lead-email').value.trim();
@@ -445,6 +517,62 @@
         btn.disabled = false;
         btn.innerText = "Download PDF Now 🚀";
       }
+    }
+
+    // B) Floating Course Widget (Google Apps Script)
+    function toggleFloat() {
+      const panel = document.getElementById("float-panel");
+      if (panel) panel.classList.toggle("open");
+    }
+
+    window.addEventListener("scroll", function () {
+      const widget = document.getElementById("float-widget");
+      if (widget) {
+        window.scrollY > 350 ? widget.classList.remove("hidden") : widget.classList.add("hidden");
+      }
+    });
+
+    const COURSE_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbzFcWGX7Qw1EFS2Z1cq6gl7RIvkI3Ot-7a2-jHMxpgfz4f9im3hyDH165iZHYtXrbV2/exec";
+
+    function submitFloatCourse() {
+      const btn = document.querySelector(".float-submit");
+      const name = document.getElementById("float-name").value.trim();
+      const email = document.getElementById("float-email").value.trim();
+      const phone = document.getElementById("float-phone").value.trim();
+
+      if (!name || !email || !phone) {
+        alert("Please fill in Name, Email, and WhatsApp");
+        return;
+      }
+
+      btn.disabled = true;
+      btn.textContent = "Registering...";
+
+      const payload = new URLSearchParams();
+      payload.append("name", name);
+      payload.append("email", email);
+      payload.append("phone", String(phone).replace(/[\s\-()]/g, "").trim());
+      payload.append("source", "en-blog-index-floating");
+      payload.append("page", window.location.href);
+
+      fetch(COURSE_WEB_APP_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8" },
+        body: payload.toString()
+      })
+      .then(() => {
+        if (typeof gtag === "function") {
+          gtag("event", "generate_lead", { event_category: "lead", event_label: "en-blog-index-floating" });
+        }
+        const panel = document.getElementById("float-panel");
+        panel.innerHTML = `<p style="color:#86efac;text-align:center;line-height:1.8;margin:0;">✅ Successfully Registered!</p>`;
+      })
+      .catch(() => {
+        alert("A registration error occurred. Please try again.");
+        btn.disabled = false;
+        btn.textContent = "Register Now";
+      });
     }
   </script>
 
