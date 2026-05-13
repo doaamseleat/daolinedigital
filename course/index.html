@@ -6,9 +6,34 @@
 
   <title>سوّق بنفسك | كورس مجاني من Daoline Digital Academy</title>
   <meta name="description" content="كورس مجاني عملي يساعد أصحاب المشاريع الصغيرة على فهم التسويق الرقمي، بناء محتوى واضح، وتجهيز أول حملة إعلانية بخطوات بسيطة." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://daolinedigital.com/course/" />
+
+  <meta property="og:title" content="سوّق بنفسك | كورس مجاني من Daoline Digital Academy" />
+  <meta property="og:description" content="كورس مجاني عملي لتعلم أساسيات التسويق الرقمي والسوشيال ميديا خطوة بخطوة." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://daolinedigital.com/course/" />
+  <meta property="og:site_name" content="Daoline Digital Academy" />
+  <meta property="og:locale" content="ar_AR" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="سوّق بنفسك | كورس مجاني" />
+  <meta name="twitter:description" content="كورس مجاني عملي يساعدك تبدأ تسويق مشروعك بخطوات واضحة." />
+
+  <meta name="theme-color" content="#07080c" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Tajawal:wght@400;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DCECS21BFZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-DCECS21BFZ");
+  </script>
 
   <style>
     :root {
@@ -47,6 +72,7 @@
 
     a {
       text-decoration: none;
+      color: inherit;
     }
 
     .nav {
@@ -74,14 +100,36 @@
       font-weight: 500;
     }
 
+    .nav-actions {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .nav-link,
     .nav-cta {
-      background: var(--brand);
-      color: #fff;
       border-radius: 100px;
-      padding: 9px 24px;
+      padding: 9px 20px;
       font-size: 13px;
       font-weight: 800;
       transition: 0.2s;
+      white-space: nowrap;
+    }
+
+    .nav-link {
+      color: var(--text2);
+      border: 1px solid var(--border);
+      background: #fff;
+    }
+
+    .nav-link:hover {
+      border-color: rgba(192, 19, 166, 0.35);
+      color: var(--brand);
+    }
+
+    .nav-cta {
+      background: var(--brand);
+      color: #fff;
     }
 
     .nav-cta:hover {
@@ -334,6 +382,7 @@
       border-radius: 999px;
       font-size: 12px;
       font-weight: 800;
+      margin-bottom: 14px;
     }
 
     .video-placeholder {
@@ -350,6 +399,15 @@
       color: #cfcfe7;
       position: relative;
       overflow: hidden;
+    }
+
+    .video-placeholder iframe,
+    .video-placeholder video {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      border-radius: 18px;
+      display: block;
     }
 
     .play {
@@ -745,8 +803,16 @@
     }
 
     @media (max-width: 640px) {
+      .nav {
+        padding: 0.8rem 1rem;
+      }
+
       .nav-cta {
         display: none;
+      }
+
+      .nav-link {
+        padding: 8px 13px;
       }
 
       .float-btn {
@@ -776,7 +842,12 @@
 
   <nav class="nav">
     <a class="logo" href="https://daolinedigital.com">Daoline <span>Digital Academy</span></a>
-    <a class="nav-cta" href="#register">سجّل في الكورس مجانًا</a>
+
+    <div class="nav-actions">
+      <a class="nav-link" href="/">الرئيسية</a>
+      <a class="nav-link" href="/blog/">المكتبة</a>
+      <a class="nav-cta" href="#register">سجّل في الكورس مجانًا</a>
+    </div>
   </nav>
 
   <section class="hero">
@@ -876,12 +947,29 @@
           </p>
         </div>
 
-        <div class="video-placeholder">
+        <div class="video-placeholder" id="courseVideoBox">
           <div>
             <div class="play"></div>
             <strong>مكان الفيديو المسجل</strong>
             <small>يمكن وضع YouTube Embed أو فيديو MP4 لاحقًا</small>
           </div>
+
+          <!-- 
+          عند تجهيز الفيديو لاحقًا:
+          احذفي محتوى div السابق وضعي iframe مثل المثال:
+
+          <iframe 
+            src="https://www.youtube.com/embed/VIDEO_ID"
+            title="فيديو تعريف كورس سوّق بنفسك"
+            allowfullscreen>
+          </iframe>
+
+          أو فيديو MP4:
+
+          <video controls poster="course-poster.jpg">
+            <source src="course-intro.mp4" type="video/mp4">
+          </video>
+          -->
         </div>
       </div>
     </div>
@@ -1089,7 +1177,8 @@
   </button>
 
   <script>
-    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzFcWGX7Qw1EFS2Z1cq6gl7RIvkI3Ot-7a2-jHMxpgfz4f9im3hyDH165iZHYtXrbV2/exec";
+    const COURSE_WEB_APP_URL =
+      "https://script.google.com/macros/s/AKfycbzFcWGX7Qw1EFS2Z1cq6gl7RIvkI3Ot-7a2-jHMxpgfz4f9im3hyDH165iZHYtXrbV2/exec";
 
     const form = document.getElementById("courseForm");
     const msg = document.getElementById("formMsg");
@@ -1097,43 +1186,88 @@
     const formWrap = document.getElementById("formWrap");
     const successState = document.getElementById("successState");
 
-    form.addEventListener("submit", async function(e) {
-      e.preventDefault();
+    function isValidEmail(email) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
 
-      btn.disabled = true;
-      btn.textContent = "جاري التسجيل...";
-      msg.className = "form-msg";
-      msg.style.display = "none";
+    function normalizePhone(phone) {
+      return String(phone || "").replace(/[\s\-()]/g, "").trim();
+    }
+
+    function isValidPhone(phone) {
+      return /^(\+?\d{10,15}|01\d{9})$/.test(normalizePhone(phone));
+    }
+
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
 
       const fd = new FormData(form);
 
-      const data = {
-        action: "register",
-        name: fd.get("name"),
-        email: fd.get("email"),
-        whatsapp: fd.get("whatsapp"),
-        course: fd.get("course"),
-        source: "Course Landing Page - Soweq Nafsak"
-      };
+      const name = fd.get("name")?.trim() || "";
+      const email = fd.get("email")?.trim() || "";
+      const phone = fd.get("whatsapp")?.trim() || "";
+      const courseType = fd.get("course") || "";
 
-      try {
-        await fetch(SCRIPT_URL, {
-          method: "POST",
-          mode: "no-cors",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(data)
-        });
+      if (!name || !email || !phone) {
+        alert("من فضلك اكتب الاسم والإيميل ورقم الواتساب");
+        return;
+      }
 
-        formWrap.style.display = "none";
-        successState.style.display = "block";
+      if (!isValidEmail(email)) {
+        alert("من فضلك اكتب إيميل صحيح");
+        return;
+      }
 
-      } catch (err) {
-        msg.className = "form-msg error";
-        msg.textContent = "حصل خطأ أثناء التسجيل. جرّب مرة أخرى.";
-        msg.style.display = "block";
+      if (!isValidPhone(phone)) {
+        alert("من فضلك اكتب رقم واتساب صحيح");
+        return;
+      }
+
+      btn.disabled = true;
+      btn.textContent = "جاري التسجيل...";
+
+      if (msg) {
+        msg.className = "form-msg";
+        msg.style.display = "none";
+      }
+
+      const payload = new URLSearchParams();
+      payload.append("name", name);
+      payload.append("email", email);
+      payload.append("phone", normalizePhone(phone));
+      payload.append("course", courseType);
+      payload.append("source", "course-landing-page");
+      payload.append("page", window.location.href);
+
+      fetch(COURSE_WEB_APP_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
+        },
+        body: payload.toString()
+      })
+      .then(() => {
+        if (typeof gtag === "function") {
+          gtag("event", "generate_lead", {
+            event_category: "lead",
+            event_label: "course-landing-page"
+          });
+        }
+
+        if (formWrap) formWrap.style.display = "none";
+        if (successState) successState.style.display = "block";
+      })
+      .catch(() => {
+        if (msg) {
+          msg.className = "form-msg error";
+          msg.textContent = "حصل خطأ أثناء التسجيل. جرّب مرة أخرى.";
+          msg.style.display = "block";
+        }
+
         btn.disabled = false;
         btn.textContent = "سجّل في الكورس مجانًا";
-      }
+      });
     });
   </script>
 
