@@ -4,26 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Daoline Digital English Library | Social Media & AI Marketing Playbooks 2026</title>
-  <meta name="description" content="Explore Daoline Digital English resources for social media strategy, Social SEO, AI content workflows, and practical marketing playbooks for 2026.">
+  <title>Daoline Digital English Library | Marketing Playbooks 2026</title>
+  <meta name="description" content="Explore Daoline Digital English resources: Social SEO, AI content workflows, and practical marketing playbooks for 2026.">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://daolinedigital.com/en/">
+  <link rel="canonical" href="https://daolinedigital.com/en/blog/">
 
   <!-- Open Graph -->
   <meta property="og:title" content="Daoline Digital English Library | Marketing Playbooks 2026">
   <meta property="og:description" content="Practical English marketing guides from Daoline Digital covering Social SEO, AI content strategy, and scalable content systems.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://daolinedigital.com/en/">
+  <meta property="og:url" content="https://daolinedigital.com/en/blog/">
   <meta property="og:image" content="https://daolinedigital.com/a_digital_graphic_design_promotional_banner_for_da.png">
-  <meta property="og:image:alt" content="Daoline Digital - English Marketing Library">
   <meta property="og:site_name" content="Daoline Digital">
   <meta property="og:locale" content="en_US">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Daoline Digital English Library | Marketing Playbooks 2026">
-  <meta name="twitter:description" content="Explore practical English marketing guides from Daoline Digital.">
-  <meta name="twitter:image" content="https://daolinedigital.com/a_digital_graphic_design_promotional_banner_for_da.png">
 
   <meta name="theme-color" content="#07080c">
 
@@ -61,12 +54,11 @@
     *{ box-sizing:border-box; margin:0; padding:0; }
     html{ scroll-behavior:smooth; }
     body{
-      font-family:"Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family:"Inter", system-ui, -apple-system, sans-serif;
       color:var(--text);
       background:
-        radial-gradient(900px 520px at 12% 8%, rgba(192,19,166,.17), transparent 60%),
-        radial-gradient(800px 480px at 92% 15%, rgba(37,99,235,.11), transparent 58%),
-        radial-gradient(850px 520px at 50% 110%, rgba(255,255,255,.05), transparent 60%),
+        radial-gradient(900px 520px at 85% 10%, rgba(192,19,166,.15), transparent 60%),
+        radial-gradient(800px 480px at 10% 20%, rgba(37,99,235,.10), transparent 58%),
         linear-gradient(180deg, var(--bg), var(--bg2));
       line-height:1.75;
       overflow-x:hidden;
@@ -77,691 +69,368 @@
 
     .wrap{ max-width:var(--max); margin:auto; padding:0 20px; }
 
-    .topbar{
-      position:sticky;
-      top:0;
-      z-index:1000;
-      background:rgba(7,8,12,.84);
-      backdrop-filter:blur(16px);
-      border-bottom:1px solid var(--border);
-    }
-
-    .topbar-inner{
-      min-height:70px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:16px;
-    }
-
-    .logo{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      font-weight:900;
-      font-size:20px;
-      letter-spacing:-.03em;
-      white-space:nowrap;
-    }
-
-    .logo img{
-      width:42px;
-      height:42px;
-      object-fit:contain;
-    }
-
+    /* ====== HEADER ====== */
+    .topbar{ position:sticky; top:0; z-index:1000; background:rgba(7,8,12,.84); backdrop-filter:blur(16px); border-bottom:1px solid var(--border); }
+    .topbar-inner{ min-height:70px; display:flex; align-items:center; justify-content:space-between; gap:16px; }
+    .logo{ display:inline-flex; align-items:center; gap:10px; font-weight:900; font-size:20px; letter-spacing:-.03em; white-space:nowrap; }
     .logo span:last-child{ color:var(--primary); }
+    
+    .nav-links{ display:flex; align-items:center; gap:10px; flex-wrap:wrap; justify-content:flex-end; }
+    .nav-btn{ padding:9px 14px; border-radius:999px; border:1px solid var(--border); background:rgba(255,255,255,.05); color:rgba(244,247,252,.90); font-size:14px; font-weight:700; transition:.2s ease; white-space:nowrap; }
+    .nav-btn:hover{ background:rgba(255,255,255,.1); }
+    .nav-btn.primary{ background:var(--primary); border-color:var(--primary); color:#fff; }
+    .nav-btn.primary:hover{ background:var(--primary2); }
 
-    .nav-links{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      flex-wrap:wrap;
-      justify-content:flex-end;
+    /* ====== LIBRARY HERO ====== */
+    .hero{ padding:60px 0 40px; text-align:center; border-bottom: 1px solid var(--border); background: rgba(255,255,255,0.02); }
+    .eyebrow{ display:inline-block; padding:6px 12px; border-radius:999px; color:#ffd7f6; background:rgba(192,19,166,.12); border:1px solid rgba(192,19,166,.32); font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:.08em; margin-bottom:20px; }
+    h1{ font-size:clamp(2.5rem, 5vw, 4.5rem); line-height:1.1; letter-spacing:-.05em; font-weight:900; color:#fff; max-width:800px; margin:0 auto 20px; }
+    .hero p{ max-width:650px; margin:0 auto 28px; color:rgba(244,247,252,.76); font-size:18px; line-height:1.7; }
+
+    /* ====== CATEGORIES BAR ====== */
+    .categories-bar { padding: 20px 0; border-bottom: 1px solid var(--border); background: rgba(15,18,32,0.4); }
+    .cat-list { display: flex; gap: 12px; overflow-x: auto; padding-bottom: 8px; scrollbar-width: none; }
+    .cat-list::-webkit-scrollbar { display: none; }
+    .cat-btn { padding: 8px 18px; border-radius: 999px; background: transparent; border: 1px solid var(--border); color: var(--muted); font-size: 14px; font-weight: 600; cursor: pointer; transition: 0.2s; white-space: nowrap;}
+    .cat-btn:hover { border-color: rgba(192,19,166,.45); color: #fff; }
+    .cat-btn.active { background: rgba(192,19,166,.15); border-color: var(--primary); color: #fff; }
+
+    /* ====== SECTION STYLES ====== */
+    section{ padding:60px 0; }
+    .section-head{ margin-bottom:30px; }
+    .section-head h2{ font-size:2rem; line-height:1.2; letter-spacing:-.04em; font-weight:900; color: #fff;}
+
+    /* ====== FEATURED ARTICLE ====== */
+    .featured-card{ display:grid; grid-template-columns:1.05fr .95fr; gap:30px; padding:35px; border-radius:30px; border:1px solid var(--border); background: radial-gradient(500px 260px at 80% 10%, rgba(192,19,166,.15), transparent 70%), rgba(15,18,32,.70); box-shadow:var(--shadow); overflow:hidden; }
+    .featured-kicker{ display:inline-flex; padding:6px 12px; border-radius:999px; background: var(--primary); color:#fff; font-size:12px; font-weight:800; margin-bottom:20px; text-transform: uppercase; letter-spacing: 1px;}
+    .featured-card h3{ font-size:2.5rem; line-height:1.1; letter-spacing:-.04em; font-weight:900; margin-bottom:16px; color:#fff; }
+    .featured-card p{ color:rgba(244,247,252,.76); font-size:17px; margin-bottom:25px; line-height: 1.8;}
+    
+    .meta-row{ display:flex; gap:10px; flex-wrap:wrap; margin-bottom:30px; }
+    .meta-pill{ padding:6px 12px; border-radius:8px; background:rgba(255,255,255,.05); color:var(--muted); font-size:13px; font-weight:600; display: flex; align-items: center; gap: 6px;}
+
+    /* Visual Graphic inside Featured */
+    .visual-panel{ border-radius:20px; border:1px solid var(--border); background: linear-gradient(135deg, rgba(37,99,235,.12), rgba(192,19,166,.20)); display:flex; align-items:center; justify-content:center; padding: 40px 20px;}
+    .visual-stack{ width: 100%; max-width: 320px; display:grid; gap:12px; }
+    .mini-card{ border-radius:14px; padding:16px; background:rgba(7,8,12,.8); border:1px solid rgba(255,255,255,.10); color:#fff; font-weight:800; box-shadow:0 10px 20px rgba(0,0,0,.3); font-size: 15px;}
+    .mini-card span{ display:block; color:var(--primary); font-size:12px; font-weight:700; margin-top:6px; }
+
+    /* ====== ARTICLES GRID ====== */
+    .grid-articles{ display:grid; grid-template-columns:repeat(3, 1fr); gap:20px; }
+    .article-card{ padding:26px; border-radius:24px; border:1px solid var(--border); background:rgba(15,18,32,.5); transition:.3s ease; display:flex; flex-direction:column; }
+    .article-card:hover{ transform:translateY(-5px); border-color:rgba(192,19,166,.4); background:rgba(15,18,32,.8); box-shadow: 0 20px 40px rgba(0,0,0,0.4);}
+    .tag{ display:inline-block; padding:5px 12px; border-radius:6px; background:rgba(192,19,166,.10); color:#ffd7f6; font-size:12px; font-weight:700; text-transform:uppercase; margin-bottom: 16px; align-self: flex-start;}
+    .article-card h3{ color:#fff; font-size:1.4rem; line-height:1.3; font-weight: 800; margin-bottom:12px; }
+    .article-card p{ color:var(--muted); font-size:15px; margin-bottom:20px; line-height: 1.7; flex-grow: 1;}
+    .card-footer { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border); padding-top: 16px; margin-top: auto;}
+    .read-time { font-size: 13px; color: #64748b; font-weight: 500;}
+    .read-link{ color:#fff; font-weight:700; font-size:14px; transition: 0.2s;}
+    .article-card:hover .read-link { color: var(--primary); }
+
+    /* ====== LEAD BOX (Instant Download) ====== */
+    .daoline-lead-box { 
+      margin: 60px auto; 
+      background: linear-gradient(145deg, #1e293b, #0f172a); 
+      border: 2px dashed var(--primary); 
+      border-radius: 30px; 
+      padding: 50px 40px; 
+      text-align: center;
+      box-shadow: 0 25px 60px rgba(192, 19, 166, 0.15);
+      max-width: 800px;
     }
+    .daoline-free-badge { font-size: clamp(2rem, 4vw, 2.5rem); font-weight: 900; color: #fff; margin: 0 0 15px 0; line-height: 1.2; }
+    .daoline-free-badge span { color: var(--primary); }
+    .daoline-input { width: 100%; padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.4); color: #fff; font-family: inherit; margin-bottom: 12px; outline: none; font-size: 1rem; }
+    .daoline-input:focus { border-color: var(--primary); }
+    .daoline-submit-btn { width: 100%; background: var(--primary); color: #fff; border: none; padding: 18px; border-radius: 12px; font-weight: 800; font-size: 1.1rem; cursor: pointer; transition: 0.3s; }
+    .daoline-submit-btn:hover { background: var(--primary2); }
+    .daoline-status { margin-top: 15px; font-weight: bold; font-size: 1rem; }
+    .success-area { display: none; margin-top: 20px; animation: fadeIn 0.5s; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-    .nav-btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:7px;
-      padding:9px 14px;
-      border-radius:999px;
-      border:1px solid var(--border);
-      background:rgba(255,255,255,.05);
-      color:rgba(244,247,252,.90);
-      font-size:14px;
-      font-weight:800;
-      transition:.2s ease;
-      white-space:nowrap;
-    }
+    /* ====== MINI ABOUT SECTION ====== */
+    .mini-about { border-top: 1px solid var(--border); padding-top: 60px; margin-top: 40px; display: grid; grid-template-columns: 1fr 2fr; gap: 40px; align-items: center;}
+    .mini-about h3 { font-size: 1.8rem; font-weight: 900; color: #fff; margin-bottom: 10px;}
+    .mini-about p { color: var(--muted); font-size: 16px; line-height: 1.8;}
 
-    .nav-btn:hover{
-      transform:translateY(-1px);
-      border-color:rgba(192,19,166,.45);
-      background:rgba(192,19,166,.12);
-    }
+    /* ====== FOOTER ====== */
+    .footer{ border-top:1px solid var(--border); padding:30px 20px; color:var(--muted); text-align:center; font-size:14px; margin-top: 60px;}
 
-    .nav-btn.primary{
-      background:linear-gradient(180deg, var(--primary), var(--primary2));
-      border-color:rgba(192,19,166,.75);
-      color:#fff;
-      box-shadow:0 16px 38px rgba(192,19,166,.18);
-    }
-
-    .resource-banner{
-      position:sticky;
-      top:70px;
-      z-index:900;
-      background:linear-gradient(90deg, rgba(192,19,166,.96), rgba(130,35,210,.86));
-      border-bottom:1px solid rgba(255,255,255,.16);
-    }
-
-    .resource-inner{
-      min-height:48px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:12px;
-      flex-wrap:wrap;
-      padding:8px 0;
-    }
-
-    .resource-title{
-      font-weight:900;
-      font-size:14px;
-      color:#fff;
-    }
-
-    .resource-title span{
-      opacity:.82;
-      font-weight:700;
-    }
-
-    .resource-actions{
-      display:flex;
-      align-items:center;
-      gap:8px;
-      flex-wrap:wrap;
-    }
-
-    .banner-link{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding:7px 13px;
-      border-radius:999px;
-      background:rgba(7,8,12,.86);
-      color:#fff;
-      border:1px solid rgba(255,255,255,.14);
-      font-size:13px;
-      font-weight:900;
-      transition:.2s ease;
-      white-space:nowrap;
-    }
-
-    .banner-link:hover{
-      transform:translateY(-1px);
-      background:#05060a;
-    }
-
-    .hero{
-      padding:76px 0 50px;
-      text-align:center;
-    }
-
-    .eyebrow{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding:8px 14px;
-      border-radius:999px;
-      color:#ffd7f6;
-      background:rgba(192,19,166,.12);
-      border:1px solid rgba(192,19,166,.32);
-      font-size:12px;
-      font-weight:900;
-      text-transform:uppercase;
-      letter-spacing:.08em;
-      margin-bottom:20px;
-    }
-
-    h1{
-      font-size:clamp(2.55rem, 6vw, 5.1rem);
-      line-height:1;
-      letter-spacing:-.075em;
-      font-weight:900;
-      color:#fff;
-      max-width:930px;
-      margin:0 auto 22px;
-    }
-
-    .hero p{
-      max-width:790px;
-      margin:0 auto 28px;
-      color:rgba(244,247,252,.76);
-      font-size:19px;
-      line-height:1.85;
-    }
-
-    .hero-actions{
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      flex-wrap:wrap;
-    }
-
-    section{ padding:46px 0; }
-
-    .section-head{
-      display:flex;
-      align-items:flex-end;
-      justify-content:space-between;
-      gap:18px;
-      margin-bottom:20px;
-      flex-wrap:wrap;
-    }
-
-    .section-head h2{
-      font-size:2rem;
-      line-height:1.2;
-      letter-spacing:-.045em;
-      font-weight:900;
-    }
-
-    .section-head p{
-      color:var(--muted);
-      max-width:560px;
-      font-size:15px;
-    }
-
-    .about-panel{
-      display:grid;
-      grid-template-columns:1fr .9fr;
-      gap:18px;
-      padding:28px;
-      border-radius:30px;
-      border:1px solid var(--border);
-      background:
-        radial-gradient(520px 300px at 14% 0%, rgba(192,19,166,.22), transparent 70%),
-        rgba(15,18,32,.70);
-      box-shadow:var(--shadow);
-    }
-
-    .about-panel h2{
-      font-size:2.35rem;
-      line-height:1.12;
-      letter-spacing:-.055em;
-      margin:10px 0 14px;
-    }
-
-    .about-panel p{
-      color:rgba(244,247,252,.75);
-      margin-bottom:14px;
-      font-size:16px;
-    }
-
-    .service-list{
-      display:grid;
-      gap:10px;
-      margin-top:8px;
-    }
-
-    .service-item{
-      padding:14px;
-      border-radius:18px;
-      background:rgba(255,255,255,.045);
-      border:1px solid var(--border);
-    }
-
-    .service-item strong{
-      color:#fff;
-      display:block;
-      margin-bottom:3px;
-    }
-
-    .service-item span{
-      color:var(--muted);
-      font-size:14px;
-    }
-
-    .featured-card{
-      display:grid;
-      grid-template-columns:1.05fr .95fr;
-      gap:18px;
-      padding:26px;
-      border-radius:30px;
-      border:1px solid var(--border);
-      background:
-        radial-gradient(500px 260px at 16% 8%, rgba(192,19,166,.22), transparent 70%),
-        rgba(15,18,32,.70);
-      box-shadow:var(--shadow);
-      overflow:hidden;
-      position:relative;
-    }
-
-    .featured-kicker{
-      display:inline-flex;
-      padding:7px 12px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,.12);
-      background:rgba(255,255,255,.05);
-      color:#fff;
-      font-size:12px;
-      font-weight:900;
-      margin-bottom:16px;
-    }
-
-    .featured-card h3{
-      font-size:2.3rem;
-      line-height:1.1;
-      letter-spacing:-.06em;
-      font-weight:900;
-      margin-bottom:14px;
-      color:#fff;
-    }
-
-    .featured-card p{
-      color:rgba(244,247,252,.76);
-      font-size:17px;
-      margin-bottom:20px;
-      max-width:620px;
-    }
-
-    .meta-row{
-      display:flex;
-      gap:8px;
-      flex-wrap:wrap;
-      margin-bottom:20px;
-    }
-
-    .meta-pill{
-      padding:7px 11px;
-      border-radius:999px;
-      background:rgba(255,255,255,.045);
-      border:1px solid var(--border);
-      color:var(--muted);
-      font-size:12px;
-      font-weight:800;
-    }
-
-    .visual-panel{
-      min-height:300px;
-      border-radius:24px;
-      border:1px solid var(--border);
-      background:
-        linear-gradient(135deg, rgba(192,19,166,.20), rgba(37,99,235,.12)),
-        rgba(255,255,255,.04);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      position:relative;
-      overflow:hidden;
-    }
-
-    .visual-panel::before{
-      content:"SEO";
-      position:absolute;
-      font-size:8rem;
-      font-weight:900;
-      letter-spacing:-.08em;
-      color:rgba(255,255,255,.05);
-      transform:rotate(-10deg);
-    }
-
-    .visual-stack{
-      position:relative;
-      z-index:2;
-      width:min(86%, 330px);
-      display:grid;
-      gap:12px;
-    }
-
-    .mini-card{
-      border-radius:18px;
-      padding:14px;
-      background:rgba(7,8,12,.72);
-      border:1px solid rgba(255,255,255,.10);
-      color:#fff;
-      font-weight:900;
-      box-shadow:0 16px 34px rgba(0,0,0,.28);
-    }
-
-    .mini-card span{
-      display:block;
-      color:var(--muted);
-      font-size:12px;
-      font-weight:700;
-      margin-top:4px;
-    }
-
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(2, minmax(0, 1fr));
-      gap:16px;
-    }
-
-    .article-card{
-      padding:22px;
-      border-radius:24px;
-      border:1px solid var(--border);
-      background:rgba(15,18,32,.62);
-      box-shadow:0 14px 46px rgba(0,0,0,.26);
-      transition:.2s ease;
-      min-height:260px;
-      display:flex;
-      flex-direction:column;
-      justify-content:space-between;
-    }
-
-    .article-card:hover{
-      transform:translateY(-3px);
-      border-color:rgba(192,19,166,.36);
-      background:rgba(15,18,32,.82);
-    }
-
-    .article-card h3{
-      color:#fff;
-      font-size:1.45rem;
-      line-height:1.22;
-      letter-spacing:-.035em;
-      margin:10px 0;
-    }
-
-    .article-card p{
-      color:var(--muted);
-      font-size:15px;
-      margin-bottom:18px;
-    }
-
-    .tag{
-      display:inline-flex;
-      align-self:flex-start;
-      padding:6px 10px;
-      border-radius:999px;
-      background:rgba(192,19,166,.10);
-      border:1px solid rgba(192,19,166,.28);
-      color:#ffd7f6;
-      font-size:11px;
-      font-weight:900;
-      text-transform:uppercase;
-      letter-spacing:.05em;
-    }
-
-    .read-link{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      color:#fff;
-      font-weight:900;
-      font-size:14px;
-      margin-top:auto;
-    }
-
-    .read-link:hover{ color:#ffd7f6; }
-
-    .cta-box{
-      margin:34px 0 20px;
-      padding:34px;
-      border-radius:30px;
-      background:
-        radial-gradient(420px 220px at 20% 0%, rgba(192,19,166,.24), transparent 65%),
-        rgba(15,18,32,.78);
-      border:1px solid var(--border);
-      box-shadow:var(--shadow);
-      text-align:center;
-    }
-
-    .cta-box h2{
-      font-size:2rem;
-      letter-spacing:-.05em;
-      margin-bottom:10px;
-    }
-
-    .cta-box p{
-      color:var(--muted);
-      max-width:680px;
-      margin:0 auto 22px;
-    }
-
-    .footer{
-      border-top:1px solid var(--border);
-      padding:30px 20px;
-      color:var(--muted);
-      text-align:center;
-      font-size:14px;
-      background:rgba(0,0,0,.16);
-    }
-
-    @media (max-width:880px){
-      .about-panel,
-      .featured-card{
-        grid-template-columns:1fr;
-      }
-
-      .grid{ grid-template-columns:1fr; }
-      .visual-panel{ min-height:240px; }
+    @media (max-width:980px){
+      .featured-card{ grid-template-columns:1fr; }
+      .grid-articles{ grid-template-columns:repeat(2, 1fr); }
+      .mini-about { grid-template-columns: 1fr; text-align: center; }
     }
 
     @media (max-width:760px){
-      .topbar-inner{
-        align-items:flex-start;
-        flex-direction:column;
-        padding:12px 0;
-      }
-
-      .resource-banner{ top:102px; }
-      .resource-inner{ align-items:flex-start; }
-      .hero{ padding-top:56px; }
+      .grid-articles{ grid-template-columns:1fr; }
+      h1{ font-size:2.2rem; }
+      .daoline-lead-box { padding: 30px 20px; }
+      .nav-links { display: none; } /* Hide complex nav on mobile for clean look */
     }
   </style>
 </head>
 
 <body>
 
+  <!-- Header -->
   <header class="topbar">
     <div class="wrap">
       <div class="topbar-inner">
-        <a href="/" class="logo" aria-label="Daoline Digital Home">
-          <img src="/logo-daoline.png" alt="Daoline Digital Logo">
-          <span>Daoline</span><span>Digital</span>
+        <a href="https://daolinedigital.com/en/" class="logo">
+          Daoline<span>Digital</span>
         </a>
-
-        <nav class="nav-links" aria-label="Main Navigation">
-          <a href="/" class="nav-btn">Home</a>
-          <a href="/blog/" class="nav-btn">Arabic Library</a>
-          <a href="#about-daoline" class="nav-btn">About</a>
-          <a href="#articles" class="nav-btn">Articles</a>
-          <a href="#free-resources" class="nav-btn primary">Free Resources</a>
+        <nav class="nav-links">
+          <a href="https://daolinedigital.com/en/" class="nav-btn">Agency Home</a>
+          <a href="/blog/" class="nav-btn">🌍 Arabic Library</a>
+          <a href="#leads-section" class="nav-btn primary">Download Playbooks</a>
         </nav>
       </div>
     </div>
   </header>
 
-  <div class="resource-banner">
+  <!-- Library Hero -->
+  <section class="hero">
     <div class="wrap">
-      <div class="resource-inner">
-        <div class="resource-title">
-          🎓 Daoline English Library
-          <span>— Practical social media, AI, and content strategy guides</span>
-        </div>
+      <div class="eyebrow">Marketing Resources 2026</div>
+      <h1>The English Playbook Library</h1>
+      <p>
+        Actionable guides, templates, and strategies designed for creators and businesses who want to dominate social media algorithms and drive real revenue.
+      </p>
+    </div>
+  </section>
 
-        <div class="resource-actions">
-          <a class="banner-link" href="/blog/">🌍 العربية</a>
-          <a class="banner-link" href="/">Back to Main Site</a>
-        </div>
+  <!-- Categories Bar -->
+  <div class="categories-bar">
+    <div class="wrap">
+      <div class="cat-list">
+        <button class="cat-btn active">All Topics</button>
+        <button class="cat-btn">Content Strategy</button>
+        <button class="cat-btn">Social SEO</button>
+        <button class="cat-btn">AI Marketing</button>
+        <button class="cat-btn">Copywriting</button>
       </div>
     </div>
   </div>
 
-  <section class="hero">
-    <div class="wrap">
-      <div class="eyebrow">English Marketing Library 2026</div>
-      <h1>Smarter Social Media Growth Starts Here</h1>
-      <p>
-        Explore practical Daoline Digital playbooks for Social Media SEO, AI-assisted content strategy, audience systems, and scalable marketing workflows.
-      </p>
-      <div class="hero-actions">
-        <a href="#featured" class="nav-btn primary">Start Reading</a>
-        <a href="/blog/" class="nav-btn">Browse Arabic Library</a>
-      </div>
-    </div>
-  </section>
-
-  <section id="about-daoline">
-    <div class="wrap">
+  <div class="wrap">
+    
+    <!-- Featured Article -->
+    <section id="featured">
       <div class="section-head">
-        <div>
-          <h2>About Daoline Digital</h2>
-        </div>
-        <p>A practical digital marketing studio focused on strategy, content, paid campaigns, and measurable growth.</p>
-      </div>
-
-      <div class="about-panel">
-        <div>
-          <span class="eyebrow">Digital Marketing Studio</span>
-          <h2>A practical system for building a scalable online presence</h2>
-          <p>
-            Daoline Digital helps brands build a stronger digital presence through content strategy, social media management, paid campaigns, performance tracking, and clear marketing workflows.
-          </p>
-          <p>
-            Led by Doaa Seleat, with more than 15 years of experience across social media operations, digital campaigns, brand communication, and content planning.
-          </p>
-
-          <div class="hero-actions" style="justify-content:flex-start;margin-top:18px;">
-            <a href="/#contact" class="nav-btn primary">Work With Us</a>
-            <a href="/" class="nav-btn">Visit Main Website</a>
-          </div>
-        </div>
-
-        <div class="service-list">
-          <div class="service-item">
-            <strong>Content Strategy</strong>
-            <span>Content pillars, audience positioning, and monthly planning.</span>
-          </div>
-          <div class="service-item">
-            <strong>Social Media Management</strong>
-            <span>Publishing systems, copywriting, creative direction, and daily operation.</span>
-          </div>
-          <div class="service-item">
-            <strong>Paid Campaigns</strong>
-            <span>Campaign setup, optimization, conversion thinking, and performance reports.</span>
-          </div>
-          <div class="service-item">
-            <strong>Free Learning Resources</strong>
-            <span>Practical articles, templates, and playbooks for smarter marketing decisions.</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="featured">
-    <div class="wrap">
-      <div class="section-head">
-        <div>
-          <h2>Featured Article</h2>
-        </div>
-        <p>The first article to publish and connect from your Arabic homepage language button.</p>
+        <h2>Featured Playbook</h2>
       </div>
 
       <article class="featured-card">
         <div>
-          <span class="featured-kicker">Featured Playbook</span>
-          <h3>Social Media SEO 2026</h3>
+          <span class="featured-kicker">Must Read</span>
+          <h3>Social Media SEO 2026: The Ultimate Guide</h3>
           <p>
-            Learn how social platforms are becoming search engines, and how to structure content so it can be discovered, trusted, and converted across Instagram, TikTok, LinkedIn, and Google.
+            Social platforms are the new search engines. If you're not optimizing your content for discovery on TikTok and Instagram, your competitors will steal your traffic. Learn the exact workflows.
           </p>
 
           <div class="meta-row">
-            <span class="meta-pill">Social SEO</span>
-            <span class="meta-pill">10 min read</span>
-            <span class="meta-pill">2026 Guide</span>
+            <span class="meta-pill">🗓️ April 2026</span>
+            <span class="meta-pill">⏱️ 10 min read</span>
+            <span class="meta-pill">👤 Doaa Seleat</span>
           </div>
 
-          <a class="nav-btn primary" href="/en/social-media-seo-2026.html">Read the Article →</a>
+          <!-- Link points to the English version of the article -->
+          <a class="nav-btn primary" href="/en/social-media-seo-2026.html" style="font-size: 16px; padding: 12px 24px;">Read the Full Guide &rarr;</a>
         </div>
 
-        <div class="visual-panel" aria-hidden="true">
+        <div class="visual-panel">
           <div class="visual-stack">
-            <div class="mini-card">Search-first content <span>Keywords • Intent • Discovery</span></div>
-            <div class="mini-card">Social visibility <span>Reels • Carousels • Captions</span></div>
-            <div class="mini-card">Conversion path <span>Trust • CTA • Lead magnet</span></div>
+            <div class="mini-card">1. Keyword Discovery <span>Creative Center & Intent</span></div>
+            <div class="mini-card">2. Visual & Audio SEO <span>ASR Tech & Text Overlays</span></div>
+            <div class="mini-card">3. Search Gap Domination <span>Finding unanswered questions</span></div>
           </div>
         </div>
       </article>
-    </div>
-  </section>
+    </section>
 
-  <section id="articles">
-    <div class="wrap">
+    <!-- Articles Grid -->
+    <section id="articles" style="padding-top: 20px;">
       <div class="section-head">
-        <div>
-          <h2>Latest Playbooks</h2>
-        </div>
-        <p>Recommended publishing order for the first English content folder.</p>
+        <h2>Latest Articles & Guides</h2>
       </div>
 
-      <div class="grid">
+      <div class="grid-articles">
+        
+        <!-- Article 1 -->
         <article class="article-card">
-          <div>
-            <span class="tag">Content Strategy</span>
-            <h3>Smart Content Engineering 2026</h3>
-            <p>A complete framework for building flexible content systems, audience maps, AI workflows, and repeatable social media execution.</p>
+          <span class="tag">Content Strategy</span>
+          <h3>Smart Content Engineering 2026</h3>
+          <p>A complete framework for building flexible content systems, audience maps, and repeatable social media execution without burnout.</p>
+          <div class="card-footer">
+            <span class="read-time">8 min read</span>
+            <a class="read-link" href="#">Read Article &rarr;</a>
           </div>
-          <a class="read-link" href="/en/smart-content-engineering-2026.html">Read when published →</a>
         </article>
 
+        <!-- Article 2 -->
         <article class="article-card">
-          <div>
-            <span class="tag">AI Marketing</span>
-            <h3>AI Content Strategy 2026</h3>
-            <p>How to use AI as a strategic assistant without losing brand voice, human judgment, or trust with your audience.</p>
+          <span class="tag">AI Marketing</span>
+          <h3>The AI Slop Crisis: How to Survive</h3>
+          <p>63% of users ignore AI-generated content. Learn how to use AI as an assistant while maintaining your authentic human brand voice.</p>
+          <div class="card-footer">
+            <span class="read-time">12 min read</span>
+            <a class="read-link" href="#">Read Article &rarr;</a>
           </div>
-          <a class="read-link" href="/en/ai-content-strategy-2026.html">Read when published →</a>
         </article>
 
+        <!-- Article 3 -->
         <article class="article-card">
-          <div>
-            <span class="tag">Social Media</span>
-            <h3>Social Media Strategy 2026</h3>
-            <p>A practical guide to choosing platforms, defining goals, creating content pillars, and measuring what actually matters.</p>
+          <span class="tag">Copywriting</span>
+          <h3>The Ultimate Hooks Playbook</h3>
+          <p>Attention spans are down to 3 seconds. Learn the psychological formulas to write hooks that stop the scroll instantly.</p>
+          <div class="card-footer">
+            <span class="read-time">7 min read</span>
+            <a class="read-link" href="/en/hooks-guide-2026.html">Read Article &rarr;</a>
           </div>
-          <a class="read-link" href="/en/social-media-strategy-2026.html">Read when published →</a>
         </article>
 
+        <!-- Article 4 -->
         <article class="article-card">
-          <div>
-            <span class="tag">Planning</span>
-            <h3>Content Calendar 2026</h3>
-            <p>How to build a flexible monthly content calendar that balances education, engagement, brand authority, and sales.</p>
+          <span class="tag">Analytics & ROI</span>
+          <h3>Ad Budget Calculator 2026</h3>
+          <p>Stop losing money on ads. Understand your CAC, ROAS, and exactly when to scale or kill a campaign with simple math.</p>
+          <div class="card-footer">
+            <span class="read-time">10 min read</span>
+            <a class="read-link" href="#">Read Article &rarr;</a>
           </div>
-          <a class="read-link" href="/en/content-calendar-2026.html">Read when published →</a>
         </article>
+
+        <!-- Article 5 -->
+        <article class="article-card">
+          <span class="tag">Research</span>
+          <h3>2026 World Happiness Report</h3>
+          <p>Oxford's massive study reveals the true impact of social media. Find out why building communities is better than chasing followers.</p>
+          <div class="card-footer">
+            <span class="read-time">12 min read</span>
+            <a class="read-link" href="#">Read Article &rarr;</a>
+          </div>
+        </article>
+
+        <!-- Article 6 -->
+        <article class="article-card">
+          <span class="tag">Social Media</span>
+          <h3>Social Media Strategy 2026</h3>
+          <p>A practical guide to choosing the right platforms, defining smart goals, and measuring what actually matters for your business.</p>
+          <div class="card-footer">
+            <span class="read-time">9 min read</span>
+            <a class="read-link" href="#">Read Article &rarr;</a>
+          </div>
+        </article>
+
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="free-resources">
-    <div class="wrap">
-      <div class="cta-box">
-        <h2>Get Free Daoline Resources</h2>
-        <p>
-          Daoline Digital publishes practical guides, templates, and playbooks for business owners, creators, and marketing teams who want smarter social media growth.
+    <!-- Lead Box (Instant Download System) -->
+    <section id="leads-section">
+      <div class="daoline-lead-box">
+        <div style="font-size: 3rem; margin-bottom: 10px;">📦</div>
+        <h2 class="daoline-free-badge">Unlock the <span>SEO Playbook</span></h2>
+        <p style="color: #cbd5e1; font-size: 1.1rem; margin-bottom: 30px;">
+          Get instant access to the PDF version of our <strong>Social Media SEO Guide 2026</strong>. Downloads automatically upon registration.
         </p>
+        
+        <div style="max-width: 450px; margin: 0 auto;" id="form-container">
+          <input type="text" id="lead-name" placeholder="Your Name" class="daoline-input" required>
+          <input type="email" id="lead-email" placeholder="Your Email Address" class="daoline-input" required>
+          <input type="tel" id="lead-whatsapp" placeholder="WhatsApp Number" class="daoline-input" required>
+          <button onclick="submitDaolineLead()" id="lead-btn" class="daoline-submit-btn">Download PDF Now</button>
+          <div id="lead-status" class="daoline-status"></div>
+          <p style="font-size: 12px; color: #64748b; margin-top: 15px;">Your information is 100% secure.</p>
+        </div>
 
-        <div class="hero-actions">
-          <a href="/#contact" class="nav-btn primary">Contact Daoline Digital</a>
-          <a href="/blog/" class="nav-btn">Go to Arabic Library</a>
+        <div class="success-area" id="download-area">
+          <div style="font-size: 50px; margin-bottom: 10px;">✅</div>
+          <h3 style="color: #4ade80; margin-bottom: 10px; font-size: 1.5rem;">Successfully Registered!</h3>
+          <p style="margin-bottom: 20px; font-size: 1rem; color: #e2e8f0;">Your playbook is opening in a new tab...<br>Click below if it doesn't open.</p>
+          <a id="direct-download" href="#" target="_blank" class="daoline-submit-btn" style="background:#4ade80; color:#0f172a; text-decoration:none; display:inline-block; max-width:250px;">
+            Download Manually
+          </a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <!-- Mini About Section -->
+    <section class="mini-about">
+      <div>
+        <h3>About Daoline Digital</h3>
+        <a href="https://daolinedigital.com/en/" class="nav-btn" style="margin-top: 10px;">Visit Agency Website &rarr;</a>
+      </div>
+      <div>
+        <p>
+          Daoline Digital is a practical digital marketing studio focused on strategy, content, paid campaigns, and measurable growth. Led by Doaa Seleat, with over 15 years of experience, we help brands build scalable online presences through data-driven workflows and creative content.
+        </p>
+      </div>
+    </section>
+
+  </div> <!-- End Wrap -->
 
   <footer class="footer">
-    © 2026 Daoline Digital — All rights reserved.
+    © 2026 Daoline Digital Academy — All rights reserved.
   </footer>
+
+  <!-- Lead Submission Logic -->
+  <script>
+    async function submitDaolineLead() {
+      const name = document.getElementById('lead-name').value.trim();
+      const email = document.getElementById('lead-email').value.trim();
+      const wa = document.getElementById('lead-whatsapp').value.trim();
+      const status = document.getElementById('lead-status');
+      const btn = document.getElementById('lead-btn');
+
+      if(!name || !email || !wa) {
+        status.innerText = "Please fill in all fields! ⚠️";
+        status.style.color = "#f87171";
+        return;
+      }
+
+      try {
+        btn.disabled = true; 
+        btn.innerText = "Preparing your download...";
+        
+        const fd = new FormData();
+        fd.append("entry.299023128", name);
+        fd.append("entry.1712155557", email);
+        fd.append("entry.1224669856", wa);
+        fd.append("entry.334049848", "Social_Seo"); 
+        
+        const formUrl = "https://docs.google.com/forms/d/e/1FAIpQLSdSXEvN7DMMC-pwXED9G5TRpe4ecQ5U7pMtsg3201d2ikinfQ/formResponse";
+        
+        // Send data silently
+        await fetch(formUrl, { method: "POST", mode: "no-cors", body: fd });
+        
+        // Show Success UI
+        document.getElementById('form-container').style.display = 'none';
+        document.getElementById('download-area').style.display = 'block';
+
+        // Google Drive Link for Social SEO Guide
+        const fileId = "19qK1TzDfmGI2QfCsYaExE94fmdUbW1Ap";
+        const driveLink = `https://drive.google.com/file/d/${fileId}/view?usp=sharing`;
+        
+        // Set fallback link
+        document.getElementById('direct-download').href = driveLink;
+
+        // Auto-open download link
+        window.open(driveLink, "_blank");
+
+        // Send GA4 Event
+        if (typeof gtag === 'function') {
+          gtag('event', 'generate_lead', { event_category: 'lead', event_label: 'english_library_download' });
+        }
+
+      } catch (e) {
+        status.innerText = "An error occurred. Please try again.";
+        status.style.color = "#f87171";
+        btn.disabled = false;
+        btn.innerText = "Download PDF Now";
+      }
+    }
+  </script>
 
 </body>
 </html>
