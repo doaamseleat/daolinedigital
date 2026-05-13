@@ -39,7 +39,6 @@
     :root {
       --brand: #c013a6;
       --brand-dark: #8a0d75;
-      --brand-soft: rgba(192, 19, 166, 0.14);
       --dark: #07080c;
       --dark2: #101323;
       --text: #1c1c2e;
@@ -86,6 +85,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 14px;
     }
 
     .logo {
@@ -93,6 +93,7 @@
       font-size: 19px;
       font-weight: 900;
       color: var(--brand);
+      white-space: nowrap;
     }
 
     .logo span {
@@ -104,6 +105,8 @@
       display: flex;
       gap: 10px;
       align-items: center;
+      flex-wrap: wrap;
+      justify-content: flex-end;
     }
 
     .nav-link,
@@ -427,7 +430,6 @@
       height: 0;
       border-top: 12px solid transparent;
       border-bottom: 12px solid transparent;
-      border-right: 0;
       border-left: 18px solid #fff;
       margin-right: 4px;
     }
@@ -805,6 +807,15 @@
     @media (max-width: 640px) {
       .nav {
         padding: 0.8rem 1rem;
+        align-items: flex-start;
+      }
+
+      .logo {
+        font-size: 16px;
+      }
+
+      .nav-actions {
+        gap: 6px;
       }
 
       .nav-cta {
@@ -812,7 +823,8 @@
       }
 
       .nav-link {
-        padding: 8px 13px;
+        padding: 7px 11px;
+        font-size: 12px;
       }
 
       .float-btn {
@@ -907,22 +919,27 @@
           <span class="pain-icon">😤</span>
           <p>بتنشر كتير، بس مفيش استفسارات حقيقية أو مبيعات واضحة.</p>
         </div>
+
         <div class="pain-card">
           <span class="pain-icon">🤯</span>
           <p>مش عارف تبدأ منين، وكل نصيحة على السوشيال ميديا شكلها عكس التانية.</p>
         </div>
+
         <div class="pain-card">
           <span class="pain-icon">💸</span>
           <p>جربت إعلان قبل كده أو خايف تبدأ علشان الميزانية محدودة.</p>
         </div>
+
         <div class="pain-card">
           <span class="pain-icon">📲</span>
           <p>المحتوى بيتعمل، لكن مش متربط بهدف واضح ولا بيحوّل لعملاء.</p>
         </div>
+
         <div class="pain-card">
           <span class="pain-icon">🔍</span>
           <p>مش عارف تخلي الناس تلاقيك لما يدوروا على خدمتك أو منتجك.</p>
         </div>
+
         <div class="pain-card">
           <span class="pain-icon">🧭</span>
           <p>محتاج خطة بسيطة تمشي عليها بدل التجربة العشوائية كل أسبوع.</p>
@@ -954,11 +971,11 @@
             <small>يمكن وضع YouTube Embed أو فيديو MP4 لاحقًا</small>
           </div>
 
-          <!-- 
-          عند تجهيز الفيديو لاحقًا:
-          احذفي محتوى div السابق وضعي iframe مثل المثال:
+          <!--
+          بعد تجهيز الفيديو:
+          احذفي المحتوى الداخلي وضعي iframe مثل:
 
-          <iframe 
+          <iframe
             src="https://www.youtube.com/embed/VIDEO_ID"
             title="فيديو تعريف كورس سوّق بنفسك"
             allowfullscreen>
@@ -1120,23 +1137,23 @@
           <div class="form-row">
             <div class="field">
               <label>الاسم بالكامل</label>
-              <input type="text" name="name" placeholder="اكتب اسمك هنا" required />
+              <input type="text" name="name" id="name" placeholder="اكتب اسمك هنا" required />
             </div>
 
             <div class="field">
               <label>رقم واتساب</label>
-              <input type="tel" name="whatsapp" placeholder="01xxxxxxxxx" required />
+              <input type="tel" name="whatsapp" id="whatsapp" placeholder="01xxxxxxxxx" required />
             </div>
           </div>
 
           <div class="field">
             <label>الإيميل</label>
-            <input type="email" name="email" placeholder="example@email.com" required />
+            <input type="email" name="email" id="email" placeholder="example@email.com" required />
           </div>
 
           <div class="field">
             <label>أقرب وصف ليك</label>
-            <select name="course" required>
+            <select name="course" id="course" required>
               <option value="Small Business Owner">صاحب مشروع صغير</option>
               <option value="Freelancer">فريلانسر / مستقل</option>
               <option value="Online Seller">ببيع أونلاين / عندي متجر</option>
@@ -1195,7 +1212,8 @@
     }
 
     function isValidPhone(phone) {
-      return /^(\+?\d{10,15}|01\d{9})$/.test(normalizePhone(phone));
+      const normalized = normalizePhone(phone);
+      return /^(\+?\d{10,15}|01\d{9})$/.test(normalized);
     }
 
     form.addEventListener("submit", function(e) {
@@ -1206,7 +1224,7 @@
       const name = fd.get("name")?.trim() || "";
       const email = fd.get("email")?.trim() || "";
       const phone = fd.get("whatsapp")?.trim() || "";
-      const courseType = fd.get("course") || "";
+      const courseType = fd.get("course") || "Daoline Free Course";
 
       if (!name || !email || !phone) {
         alert("من فضلك اكتب الاسم والإيميل ورقم الواتساب");
@@ -1231,13 +1249,31 @@
         msg.style.display = "none";
       }
 
+      const cleanPhone = normalizePhone(phone);
+
       const payload = new URLSearchParams();
+
       payload.append("name", name);
+      payload.append("Name", name);
+
       payload.append("email", email);
-      payload.append("phone", normalizePhone(phone));
+      payload.append("Email", email);
+
+      payload.append("phone", cleanPhone);
+      payload.append("Phone", cleanPhone);
+      payload.append("Phone number", cleanPhone);
+      payload.append("whatsapp", cleanPhone);
+      payload.append("WhatsApp", cleanPhone);
+
       payload.append("course", courseType);
+      payload.append("Course", courseType);
+
       payload.append("source", "course-landing-page");
+      payload.append("Source", "course-landing-page");
+      payload.append("Column 1", "course-landing-page");
+
       payload.append("page", window.location.href);
+      payload.append("Page", window.location.href);
 
       fetch(COURSE_WEB_APP_URL, {
         method: "POST",
