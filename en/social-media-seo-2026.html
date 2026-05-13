@@ -151,20 +151,28 @@
     .step-box { background: var(--surface); border: 1px solid var(--border); border-radius: 18px; padding: 22px; margin: 18px 0; }
     .step-box strong { color: #f7c5e8; }
 
+    /* ====== LEAD BOX ====== */
     .lead-box {
       background: linear-gradient(145deg, #1a2235, #0d1422);
-      border: 2px solid rgba(192,19,166,0.45);
+      border: 2px dashed rgba(192,19,166,0.6);
       border-radius: 24px;
-      padding: 30px 24px;
+      padding: 40px 24px;
       text-align: center;
       margin: 60px 0;
+      box-shadow: 0 15px 40px rgba(192, 19, 166, 0.15);
     }
-    .lead-box h3 { color: #fff; font-size: 1.4rem; margin-bottom: 10px; font-weight: 800;}
-    .lead-box p { color: var(--muted); text-align: center; margin-bottom: 18px; font-size: 15px;}
-    .lead-box a { display: inline-block; background: var(--primary); color: #fff; padding: 12px 22px; border-radius: 14px; font-weight: 900; transition: 0.2s;}
-    .lead-box a:hover { background: #9f0d89; transform: translateY(-2px); }
+    .lead-box h3 { color: #fff; font-size: 1.8rem; margin-bottom: 10px; font-weight: 900;}
+    .lead-box p { color: var(--muted); text-align: center; margin-bottom: 25px; font-size: 16px;}
+    
+    .form-input { width: 100%; padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.4); color: #fff; font-family: inherit; margin-bottom: 12px; outline: none; font-size: 1rem; }
+    .form-input:focus { border-color: var(--primary); }
+    .submit-btn { width: 100%; background: var(--primary); color: #fff; border: none; padding: 18px; border-radius: 12px; font-weight: 800; font-size: 1.1rem; cursor: pointer; transition: 0.3s; }
+    .submit-btn:hover { background: #9f0d89; transform: translateY(-2px); }
+    
+    .success-area { display: none; margin-top: 20px; animation: fadeIn 0.5s; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-    /* ====== RELATED ARTICLES (NEW) ====== */
+    /* ====== RELATED ARTICLES ====== */
     .related-articles {
       margin-top: 60px;
       padding-top: 50px;
@@ -211,19 +219,20 @@
         Daoline<span>Digital</span>
       </a>
 
+      <!-- Unified Promotional Navigation -->
       <nav class="nav-links">
-        <a href="https://daolinedigital.com/en/" class="nav-btn">Home</a>
-        <a href="/en/" class="nav-btn">English Library</a>
-        <a href="/blog/" class="nav-btn">Arabic Library</a>
+        <a href="https://daolinedigital.com/en/" class="nav-btn">🏠 Agency Home</a>
+        <a href="/blog/" class="nav-btn">🌍 Arabic Library</a>
+        <a href="/en/blog/" class="nav-btn primary">🎁 Free Playbooks</a>
       </nav>
     </div>
   </header>
 
   <main class="article-wrap">
 
-    <!-- زر الرجوع للمكتبة الإنجليزية (مرتبط بالـ Index الإنجليزي) -->
-    <a href="/en/" class="back-link">
-      &larr; Back to English Library
+    <!-- Unified Promotional Back Link -->
+    <a href="/en/blog/" class="back-link">
+      &larr; Back to Free Playbooks
     </a>
 
     <h1 class="article-title">
@@ -370,52 +379,66 @@
 
     </article>
 
-    <!-- Lead Box -->
-    <section class="lead-box" id="free-course">
-      <h3>Learn Social Media with Daoline Digital</h3>
+    <!-- ====== LEAD BOX (Instant Download System) ====== -->
+    <section class="lead-box" id="leads-section">
+      <div style="font-size: 3.5rem; margin-bottom: 10px;">📦</div>
+      <h3>Unlock the <span style="color: var(--primary);">SEO Playbook</span></h3>
       <p>
-        Explore our free Arabic library for practical guides, content ideas, and digital marketing resources.
+        Get instant access to the PDF version of our <strong>Social Media SEO Guide 2026</strong>. Downloads automatically upon registration.
       </p>
-      <a href="/blog/">Open Free Arabic Library</a>
+      
+      <div style="max-width: 450px; margin: 0 auto;" id="form-container">
+        <input type="text" id="lead-name" placeholder="Your Name" class="form-input" required>
+        <input type="email" id="lead-email" placeholder="Your Best Email" class="form-input" required>
+        <input type="tel" id="lead-whatsapp" placeholder="WhatsApp Number" class="form-input" required>
+        <button onclick="submitDaolineLead()" id="lead-btn" class="submit-btn">Download PDF Now 🚀</button>
+        <div id="lead-status" style="margin-top: 15px; font-weight: bold; font-size: 1rem;"></div>
+        <p style="font-size: 12px; color: #64748b; margin-top: 15px;">Your information is 100% secure. We hate spam too.</p>
+      </div>
+
+      <div class="success-area" id="download-area">
+        <div style="font-size: 50px; margin-bottom: 10px;">✅</div>
+        <h3 style="color: #4ade80; margin-bottom: 10px; font-size: 1.5rem;">Successfully Registered!</h3>
+        <p style="margin-bottom: 20px; font-size: 1rem; color: #e2e8f0;">Your playbook is opening in a new tab...<br>Click below if it doesn't open automatically.</p>
+        <a id="direct-download" href="#" target="_blank" style="display: inline-block; background: #4ade80; color: #0f172a; padding: 12px 22px; border-radius: 14px; font-weight: 900; text-decoration: none;">
+          Download Manually 📂
+        </a>
+      </div>
     </section>
 
     <!-- ======================================================== -->
-    <!-- RELATED ARTICLES SECTION (يُبقّي العميل داخل موقعك) -->
+    <!-- RELATED ARTICLES SECTION -->
     <!-- ======================================================== -->
     <section class="related-articles">
       <h3>Keep Reading: More Playbooks & Guides</h3>
       <div class="grid-articles">
         
-        <!-- المقال الأول من الفهرس -->
         <article class="article-card">
           <span class="tag">Content Strategy</span>
           <h4>Smart Content Engineering 2026</h4>
           <p>A complete framework for building flexible content systems, audience maps, AI workflows, and repeatable social media execution.</p>
-          <a class="read-link" href="/en/smart-content-engineering-2026.html">Read Article &rarr;</a>
+          <a class="read-link" href="/en/blog/smart-content-engineering-2026.html">Read Article &rarr;</a>
         </article>
 
-        <!-- المقال الثاني من الفهرس -->
         <article class="article-card">
           <span class="tag">AI Marketing</span>
           <h4>AI Content Strategy 2026</h4>
           <p>How to use AI as a strategic assistant without losing brand voice, human judgment, or trust with your audience.</p>
-          <a class="read-link" href="/en/ai-content-strategy-2026.html">Read Article &rarr;</a>
+          <a class="read-link" href="/en/blog/ai-slop-crisis-2026.html">Read Article &rarr;</a>
         </article>
 
-        <!-- المقال الثالث من الفهرس -->
         <article class="article-card">
-          <span class="tag">Social Media</span>
-          <h4>Social Media Strategy 2026</h4>
-          <p>A practical guide to choosing platforms, defining goals, creating content pillars, and measuring what actually matters.</p>
-          <a class="read-link" href="/en/social-media-strategy-2026.html">Read Article &rarr;</a>
+          <span class="tag">Copywriting</span>
+          <h4>The Ultimate Hooks Playbook</h4>
+          <p>Attention spans are down to 3 seconds. Learn the psychological formulas to write hooks that stop the scroll instantly.</p>
+          <a class="read-link" href="/en/blog/hooks-guide-2026.html">Read Article &rarr;</a>
         </article>
 
-        <!-- المقال الرابع من الفهرس -->
         <article class="article-card">
           <span class="tag">Planning</span>
           <h4>Content Calendar 2026</h4>
           <p>How to build a flexible monthly content calendar that balances education, engagement, brand authority, and sales.</p>
-          <a class="read-link" href="/en/content-calendar-2026.html">Read Article &rarr;</a>
+          <a class="read-link" href="/en/blog/content-calendar-2026.html">Read Article &rarr;</a>
         </article>
 
       </div>
@@ -426,6 +449,64 @@
   <footer>
     © 2026 Daoline Digital — All rights reserved
   </footer>
+
+  <!-- Lead Submission Logic -->
+  <script>
+    async function submitDaolineLead() {
+      const name = document.getElementById('lead-name').value.trim();
+      const email = document.getElementById('lead-email').value.trim();
+      const wa = document.getElementById('lead-whatsapp').value.trim();
+      const status = document.getElementById('lead-status');
+      const btn = document.getElementById('lead-btn');
+
+      if(!name || !email || !wa) {
+        status.innerText = "Please fill in all fields! ⚠️";
+        status.style.color = "#f87171";
+        return;
+      }
+
+      try {
+        btn.disabled = true; 
+        btn.innerText = "Preparing your download...";
+        
+        const fd = new FormData();
+        fd.append("entry.299023128", name);
+        fd.append("entry.1712155557", email);
+        fd.append("entry.1224669856", wa);
+        fd.append("entry.334049848", "Social_Seo"); 
+        
+        const formUrl = "https://docs.google.com/forms/d/e/1FAIpQLSdSXEvN7DMMC-pwXED9G5TRpe4ecQ5U7pMtsg3201d2ikinfQ/formResponse";
+        
+        // Send data silently
+        await fetch(formUrl, { method: "POST", mode: "no-cors", body: fd });
+        
+        // Show Success UI
+        document.getElementById('form-container').style.display = 'none';
+        document.getElementById('download-area').style.display = 'block';
+
+        // Google Drive Link for Social SEO Guide
+        const fileId = "19qK1TzDfmGI2QfCsYaExE94fmdUbW1Ap";
+        const driveLink = `https://drive.google.com/file/d/${fileId}/view?usp=sharing`;
+        
+        // Set fallback link
+        document.getElementById('direct-download').href = driveLink;
+
+        // Auto-open download link
+        window.open(driveLink, "_blank");
+
+        // Send GA4 Event
+        if (typeof gtag === 'function') {
+          gtag('event', 'generate_lead', { event_category: 'lead', event_label: 'english_seo_article_download' });
+        }
+
+      } catch (e) {
+        status.innerText = "An error occurred. Please try again.";
+        status.style.color = "#f87171";
+        btn.disabled = false;
+        btn.innerText = "Download PDF Now 🚀";
+      }
+    }
+  </script>
 
 </body>
 </html>
