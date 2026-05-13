@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Daoline Digital | Social Media Agency & Growth Strategy</title>
+  <title data-key="page_title">Daoline Digital | Social Media Agency & Growth Strategy</title>
   <meta name="description" content="Daoline Digital وكالة متخصصة في بناء حضور رقمي قابل للنمو: استراتيجية محتوى، إدارة منصات، إعلانات مدفوعة، متابعة وتحليل نتائج." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://daolinedigital.com/" />
@@ -30,13 +30,14 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 
   <!-- Google AdSense -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9549277321717950"
-    crossorigin="anonymous"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9549277321717950" crossorigin="anonymous"></script>
 
-  <!-- Google Analytics 4 -->
+  <!-- ============================================== -->
+  <!-- Google Analytics 4 (التتبع الأساسي) -->
+  <!-- ============================================== -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-DCECS21BFZ"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -62,9 +63,9 @@
 
     *{ box-sizing:border-box; }
     html{ scroll-behavior:smooth; }
-    body{
+    
+    body {
       margin:0;
-      font-family:"Tajawal", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       color:var(--text);
       background:
         radial-gradient(900px 600px at 10% 10%, rgba(192,19,166,.18), transparent 60%),
@@ -72,7 +73,10 @@
         radial-gradient(900px 600px at 50% 110%, rgba(255,255,255,.05), transparent 60%),
         linear-gradient(180deg, var(--bg), var(--bg2));
       overflow-x:hidden;
+      transition: font-family 0.3s ease;
     }
+    body[dir="rtl"] { font-family: "Tajawal", system-ui, sans-serif; font-size: 16px; }
+    body[dir="ltr"] { font-family: "Inter", system-ui, sans-serif; font-size: 15px; }
 
     a{ color:inherit; text-decoration:none; }
     img{ max-width:100%; display:block; }
@@ -95,7 +99,7 @@
     .brand .sub{ font-size:12px; color:var(--muted); margin-top:2px; }
 
     .menu{ display:flex; align-items:center; gap:10px; flex-wrap:wrap; justify-content:center; }
-    .menu a{ font-size:14px; color:rgba(243,244,246,.85); padding:8px 10px; border-radius:12px; border:1px solid transparent; transition:.2s ease; }
+    .menu a{ font-size:14px; color:rgba(243,244,246,.85); padding:8px 10px; border-radius:12px; border:1px solid transparent; transition:.2s ease; font-weight: 600;}
     .menu a:hover{ border-color:rgba(192,19,166,.45); background:rgba(192,19,166,.10); }
 
     .cta{ display:flex; gap:10px; align-items:center; justify-content:flex-end; min-width:220px; flex-shrink:0; }
@@ -103,29 +107,36 @@
     .btn:hover{ transform:translateY(-1px); border-color:rgba(255,255,255,.18); }
     .btn.primary{ border-color:rgba(192,19,166,.65); background:linear-gradient(180deg, rgba(192,19,166,.95), rgba(192,19,166,.65)); box-shadow:0 16px 40px rgba(192,19,166,.18); }
     .btn.primary:hover{ box-shadow:0 18px 45px rgba(192,19,166,.22); }
+    
+    .lang-toggle-btn { background: rgba(192,19,166,0.1); border: 1px dashed var(--primary); color: #fff; padding: 8px 14px; border-radius: 14px; font-weight: 800; cursor: pointer; transition: 0.2s; font-size: 14px; }
+    .lang-toggle-btn:hover { background: var(--primary); border-style: solid; }
 
     .menuToggle{ display:none; width:46px; height:46px; border-radius:14px; border:1px solid rgba(255,255,255,.10); background:rgba(255,255,255,.05); color:#fff; align-items:center; justify-content:center; cursor:pointer; flex-shrink:0; }
     .menuToggle svg{ width:22px; height:22px; fill:currentColor; }
-    .mobileMenu{ display:none; position:absolute; top:100%; right:18px; left:18px; background:rgba(12,14,22,.98); border:1px solid rgba(255,255,255,.10); border-radius:18px; box-shadow:var(--shadow); padding:12px; margin-top:8px; }
+    
+    .mobileMenu{ display:none; position:absolute; top:100%; inset-inline-end:18px; inset-inline-start:18px; background:rgba(12,14,22,.98); border:1px solid rgba(255,255,255,.10); border-radius:18px; box-shadow:var(--shadow); padding:12px; margin-top:8px; }
     .mobileMenu.open{ display:block; }
-    .mobileMenu a{ display:block; padding:12px 14px; border-radius:12px; color:rgba(243,244,246,.92); font-weight:700; border:1px solid transparent; transition:.2s ease; }
-    .mobileMenu a:hover{ border-color:rgba(192,19,166,.35); background:rgba(192,19,166,.10); }
+    .mobileMenu a, .mobileMenu button { display:block; width:100%; text-align: start; padding:12px 14px; border-radius:12px; color:rgba(243,244,246,.92); font-weight:700; border:1px solid transparent; transition:.2s ease; background: transparent;}
+    .mobileMenu a:hover, .mobileMenu button:hover{ border-color:rgba(192,19,166,.35); background:rgba(192,19,166,.10); }
 
     .courseBanner{ position:sticky; top:72px; z-index:60; background:linear-gradient(90deg, rgba(192,19,166,.94), rgba(192,19,166,.76)); border-bottom:1px solid rgba(255,255,255,.16); }
     .courseBanner .inner{ display:flex; align-items:center; justify-content:space-between; gap:12px; padding:9px 0; flex-wrap:wrap; }
     .courseBanner .title{ font-weight:900; font-size:14px; letter-spacing:.2px; }
-    .courseBanner .sub{ font-weight:700; opacity:.92; margin-right:6px; font-size:12px; }
-    .courseBanner .link{ background:rgba(7,8,12,.85); color:#fff; padding:7px 14px; border-radius:999px; font-weight:900; white-space:nowrap; border:1px solid rgba(255,255,255,.14); transition:.2s ease; font-size:13px; }
+    .courseBanner .sub{ font-weight:700; opacity:.92; margin-inline-end:6px; font-size:12px; }
+    .courseBanner .link{ background:rgba(7,8,12,.85); color:#fff; padding:7px 14px; border-radius:999px; font-weight:900; white-space:nowrap; border:1px solid rgba(255,255,255,.14); transition:.2s ease; font-size:13px; cursor: pointer;}
     .courseBanner .link:hover{ transform:translateY(-1px); border-color:rgba(255,255,255,.22); }
+    .lang-banner-btn { background: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.4); }
 
     section{ padding:72px 0; }
     .hero{ padding:44px 0 74px; }
     .heroGrid{ display:grid; grid-template-columns:1.15fr .85fr; gap:22px; align-items:stretch; }
     .panel{ border:1px solid rgba(255,255,255,.10); background:rgba(15,18,32,.56); border-radius:var(--radius); box-shadow:var(--shadow); overflow:hidden; position:relative; }
     .panel::before{ content:""; position:absolute; inset:-2px; background:radial-gradient(500px 220px at 18% 10%, rgba(192,19,166,.22), transparent 70%); pointer-events:none; }
+    body[dir="ltr"] .panel::before { background:radial-gradient(500px 220px at 82% 10%, rgba(192,19,166,.22), transparent 70%); }
+
     .heroLeft{ padding:30px; }
     .kicker{ display:inline-flex; align-items:center; gap:10px; font-weight:800; padding:8px 12px; border-radius:999px; border:1px solid rgba(192,19,166,.35); background:rgba(192,19,166,.10); color:rgba(243,244,246,.95); font-size:13px; position:relative; z-index:1; }
-    h1{ margin:16px 0 14px; font-size:46px; line-height:1.08; letter-spacing:.2px; position:relative; z-index:1; }
+    h1{ margin:16px 0 14px; font-size:46px; line-height:1.08; letter-spacing:.2px; position:relative; z-index:1; font-weight: 900;}
     h1 .accent{ color:var(--primary); }
     .lead{ margin:0 0 22px; color:rgba(243,244,246,.78); font-size:18px; line-height:1.95; max-width:680px; position:relative; z-index:1; }
     .heroBadges{ display:flex; flex-wrap:wrap; gap:10px; position:relative; z-index:1; }
@@ -135,17 +146,17 @@
     .profile{ border-radius:var(--radius); border:1px solid rgba(255,255,255,.10); background:rgba(255,255,255,.04); overflow:hidden; display:grid; grid-template-columns:110px 1fr; gap:14px; align-items:center; padding:14px; position:relative; }
     .profile img{ width:110px; height:110px; border-radius:18px; object-fit:cover; border:1px solid rgba(255,255,255,.12); background:#0b0d14; }
     .profile .pName{ font-weight:900; font-size:18px; }
-    .profile .pRole{ color:rgba(243,244,246,.72); margin-top:2px; line-height:1.8; }
-    .quote{ border-radius:var(--radius); border:1px solid rgba(255,255,255,.10); background:rgba(255,255,255,.03); padding:16px 16px 18px; color:rgba(243,244,246,.78); line-height:1.9; position:relative; }
+    .profile .pRole{ color:rgba(243,244,246,.72); margin-top:2px; line-height:1.8; font-size:14px;}
+    .quote{ border-radius:var(--radius); border:1px solid rgba(255,255,255,.10); background:rgba(255,255,255,.03); padding:16px 16px 18px; color:rgba(243,244,246,.78); line-height:1.9; position:relative; font-size: 15px;}
     .quote strong{ color:rgba(243,244,246,.92); }
     .quote::before{ content:""; position:absolute; inset:0; background:radial-gradient(420px 260px at 85% 15%, rgba(192,19,166,.18), transparent 70%); pointer-events:none; }
 
     .sectionTitle{ display:flex; align-items:flex-end; justify-content:space-between; gap:18px; margin-bottom:18px; flex-wrap:wrap; }
-    .sectionTitle h2{ margin:0; font-size:34px; letter-spacing:.2px; }
+    .sectionTitle h2{ margin:0; font-size:34px; letter-spacing:.2px; font-weight: 900;}
     .sectionTitle p{ margin:0; color:rgba(243,244,246,.70); line-height:1.8; max-width:520px; }
     .aboutGrid{ display:grid; grid-template-columns:1fr 1fr; gap:18px; }
     .aboutBox{ padding:22px; border-radius:var(--radius); border:1px solid rgba(255,255,255,.10); background:rgba(15,18,32,.52); box-shadow:var(--shadow); }
-    .aboutBox h3{ margin:0 0 10px; font-size:20px; }
+    .aboutBox h3{ margin:0 0 10px; font-size:20px; font-weight: 900;}
     .aboutBox .txt{ margin:0; color:rgba(243,244,246,.78); line-height:1.95; font-size:16px; }
     .aboutBox .txt b{ color:rgba(243,244,246,.95); }
     .pillRow{ display:flex; flex-wrap:wrap; gap:10px; margin-top:14px; }
@@ -155,9 +166,10 @@
     .cards{ display:grid; grid-template-columns:repeat(3, 1fr); gap:14px; margin-top:18px; }
     .card{ border-radius:var(--radius); border:1px solid rgba(255,255,255,.10); background:rgba(15,18,32,.50); box-shadow:var(--shadow); padding:18px; position:relative; overflow:hidden; min-height:170px; }
     .card::before{ content:""; position:absolute; inset:-2px; background:radial-gradient(360px 220px at 18% 12%, rgba(192,19,166,.15), transparent 70%); pointer-events:none; }
-    .card h4{ margin:0 0 8px; font-size:18px; position:relative; z-index:1; }
-    .card p{ margin:0; color:rgba(243,244,246,.74); line-height:1.85; position:relative; z-index:1; }
-    .card ul{ margin:12px 0 0; padding:0 18px 0 0; color:rgba(243,244,246,.78); line-height:1.9; position:relative; z-index:1; }
+    body[dir="ltr"] .card::before { background:radial-gradient(360px 220px at 82% 12%, rgba(192,19,166,.15), transparent 70%); }
+    .card h4{ margin:0 0 8px; font-size:18px; position:relative; z-index:1; font-weight: 900;}
+    .card p{ margin:0; color:rgba(243,244,246,.74); line-height:1.85; position:relative; z-index:1; font-size: 15px;}
+    .card ul{ margin:12px 0 0; padding:0; padding-inline-start:18px; color:rgba(243,244,246,.78); line-height:1.9; position:relative; z-index:1; font-size: 14px;}
     .card li{ margin:6px 0; }
     .miniLead{ margin-top:14px; font-size:14px; color:rgba(243,244,246,.64); }
 
@@ -168,6 +180,7 @@
     .tag{ border:1px solid rgba(255,255,255,.12); background:rgba(255,255,255,.04); padding:10px 12px; border-radius:999px; font-weight:800; font-size:13px; color:rgba(243,244,246,.88); white-space:nowrap; }
     .tag.primary{ border-color:rgba(192,19,166,.40); background:rgba(192,19,166,.12); }
     @keyframes ticker{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
+    
     .clientsIntro{ margin-top:14px; color:rgba(243,244,246,.68); font-size:15px; line-height:1.9; max-width:760px; }
     .featuredRow{ margin-top:18px; display:grid; grid-template-columns:repeat(4, 1fr); gap:14px; }
     .partnerCard{ border-radius:var(--radius); border:1px solid rgba(255,255,255,.10); background:rgba(15,18,32,.52); box-shadow:var(--shadow); overflow:hidden; position:relative; transition:.18s ease; }
@@ -188,35 +201,35 @@
 
     .contactGrid{ display:grid; grid-template-columns:1.1fr .9fr; gap:16px; align-items:stretch; }
     .contactBox{ border-radius:var(--radius); border:1px solid rgba(255,255,255,.10); background:rgba(15,18,32,.50); box-shadow:var(--shadow); padding:22px; }
-    .contactBox h3{ margin:0 0 10px; font-size:20px; }
+    .contactBox h3{ margin:0 0 10px; font-size:20px; font-weight: 900;}
     .contactBox p{ margin:0; color:rgba(243,244,246,.78); line-height:1.9; }
     .socialRow{ display:flex; flex-wrap:wrap; gap:10px; margin-top:14px; }
-    .social{ display:inline-flex; align-items:center; justify-content:center; padding:10px 12px; border-radius:14px; border:1px solid rgba(255,255,255,.10); background:rgba(255,255,255,.05); font-weight:900; color:rgba(243,244,246,.90); transition:.18s ease; }
+    .social{ display:inline-flex; align-items:center; justify-content:center; padding:10px 12px; border-radius:14px; border:1px solid rgba(255,255,255,.10); background:rgba(255,255,255,.05); font-weight:900; color:rgba(243,244,246,.90); transition:.18s ease; font-size: 14px;}
     .social:hover{ border-color:rgba(192,19,166,.35); background:rgba(192,19,166,.10); transform:translateY(-1px); }
+    
     .legalFooter{ margin-top:60px; padding:18px 0; border-top:1px solid rgba(255,255,255,.10); background:rgba(255,255,255,.02); }
-    .legalFooter .row{ display:flex; gap:16px; flex-wrap:wrap; justify-content:center; font-weight:800; color:rgba(243,244,246,.72); }
+    .legalFooter .row{ display:flex; gap:16px; flex-wrap:wrap; justify-content:center; font-weight:800; color:rgba(243,244,246,.72); font-size: 14px;}
     .legalFooter a{ padding:8px 12px; border-radius:999px; border:1px solid rgba(255,255,255,.10); background:rgba(255,255,255,.03); transition:.18s ease; }
     .legalFooter a:hover{ border-color:rgba(192,19,166,.35); background:rgba(192,19,166,.10); transform:translateY(-1px); color:rgba(243,244,246,.92); }
-    .footer{ padding:22px 0 34px; color:rgba(243,244,246,.58); text-align:center; font-weight:700; border-top:1px solid rgba(255,255,255,.08); }
+    .footer{ padding:22px 0 34px; color:rgba(243,244,246,.58); text-align:center; font-weight:700; border-top:1px solid rgba(255,255,255,.08); font-size:14px;}
 
-    .backToTop{ position:fixed; left:18px; bottom:18px; z-index:80; width:48px; height:48px; border:none; border-radius:16px; background:linear-gradient(180deg, rgba(192,19,166,.98), rgba(192,19,166,.72)); color:#fff; box-shadow:0 18px 40px rgba(192,19,166,.26); cursor:pointer; display:flex; align-items:center; justify-content:center; opacity:0; visibility:hidden; transform:translateY(8px); transition:.25s ease; }
+    .backToTop{ position:fixed; inset-inline-end:18px; bottom:18px; z-index:80; width:48px; height:48px; border:none; border-radius:16px; background:linear-gradient(180deg, rgba(192,19,166,.98), rgba(192,19,166,.72)); color:#fff; box-shadow:0 18px 40px rgba(192,19,166,.26); cursor:pointer; display:flex; align-items:center; justify-content:center; opacity:0; visibility:hidden; transform:translateY(8px); transition:.25s ease; }
     .backToTop.show{ opacity:1; visibility:visible; transform:translateY(0); }
     .backToTop svg{ width:22px; height:22px; fill:currentColor; }
 
-    /* Floating Lead Widget */
-    .float-widget{ position:fixed; bottom:24px; left:24px; z-index:1000; transition:transform .3s ease; }
+    .float-widget{ position:fixed; bottom:24px; inset-inline-end:24px; z-index:1000; transition:transform .3s ease; }
     .float-widget.hidden{ transform:translateY(140px); }
-    .float-btn{ background:linear-gradient(135deg, var(--primary), #9b00d3); color:white; border:none; border-radius:999px; padding:13px 22px; font-family:"Tajawal", sans-serif; font-size:.93rem; font-weight:900; cursor:pointer; box-shadow:0 4px 20px rgba(192,19,166,.50); display:flex; align-items:center; gap:8px; transition:.2s ease; }
+    .float-btn{ background:linear-gradient(135deg, var(--primary), #9b00d3); color:white; border:none; border-radius:999px; padding:13px 22px; font-family:inherit; font-size:.93rem; font-weight:900; cursor:pointer; box-shadow:0 4px 20px rgba(192,19,166,.50); display:flex; align-items:center; gap:8px; transition:.2s ease; }
     .float-btn:hover{ transform:translateY(-2px); box-shadow:0 8px 30px rgba(192,19,166,.60); }
-    .float-panel{ display:none; position:absolute; bottom:60px; left:0; background:rgba(13,15,24,.97); border:1px solid rgba(192,19,166,.25); border-radius:1.25rem; padding:1.5rem; width:280px; box-shadow:0 16px 40px rgba(0,0,0,.50); backdrop-filter:blur(12px); }
+    .float-panel{ display:none; position:absolute; bottom:60px; inset-inline-end:0; background:rgba(13,15,24,.97); border:1px solid rgba(192,19,166,.25); border-radius:1.25rem; padding:1.5rem; width:280px; box-shadow:0 16px 40px rgba(0,0,0,.50); backdrop-filter:blur(12px); text-align:start; }
     .float-panel.open{ display:block; }
     .float-panel h4{ font-size:.95rem; font-weight:900; color:white; margin:0 0 1rem; }
-    .float-panel input{ width:100%; background:rgba(7,8,12,.80); border:1px solid rgba(192,19,166,.25); border-radius:8px; padding:10px 14px; color:white; font-family:"Tajawal", sans-serif; font-size:.9rem; outline:none; margin-bottom:8px; text-align:right; }
+    .float-panel input{ width:100%; background:rgba(7,8,12,.80); border:1px solid rgba(192,19,166,.25); border-radius:8px; padding:10px 14px; color:white; font-family:inherit; font-size:.9rem; outline:none; margin-bottom:8px; text-align:start; }
     .float-panel input:focus{ border-color:var(--primary); }
     .float-panel input::placeholder{ color:rgba(243,244,246,.62); }
-    .float-submit{ width:100%; background:linear-gradient(135deg, var(--primary), #9b00d3); border:none; border-radius:8px; padding:11px; color:white; font-family:"Tajawal", sans-serif; font-size:.93rem; font-weight:900; cursor:pointer; margin-top:4px; }
+    .float-submit{ width:100%; background:linear-gradient(135deg, var(--primary), #9b00d3); border:none; border-radius:8px; padding:11px; color:white; font-family:inherit; font-size:.93rem; font-weight:900; cursor:pointer; margin-top:4px; }
     .float-submit:disabled{ opacity:.7; cursor:not-allowed; }
-    .float-close{ position:absolute; top:10px; left:10px; background:none; border:none; color:rgba(243,244,246,.72); cursor:pointer; font-size:1rem; padding:4px; }
+    .float-close{ position:absolute; top:10px; inset-inline-end:10px; background:none; border:none; color:rgba(243,244,246,.72); cursor:pointer; font-size:1rem; padding:4px; }
 
     @media (max-width:980px){
       .heroGrid{ grid-template-columns:1fr; }
@@ -243,8 +256,8 @@
       .lead{ font-size:17px; }
       .brand{ min-width:auto; }
       .brand .sub{ display:none; }
-      .backToTop{ left:14px; bottom:14px; }
-      .float-widget{ bottom:16px; left:16px; }
+      .backToTop{ inset-inline-end:14px; bottom:14px; }
+      .float-widget{ bottom:16px; inset-inline-end:16px; }
       .float-panel{ width:270px; }
     }
   </style>
@@ -252,43 +265,44 @@
 
 <body>
 
+  <!-- ================= HEADER ================= -->
   <header class="header">
     <div class="wrap">
       <div class="nav">
-        <a class="brand" href="#home" aria-label="Daoline Digital Home">
-          <img src="logo-daoline.png" alt="Daoline Digital Logo">
+        <a class="brand" href="/" aria-label="Daoline Digital Home">
+          <img src="logo-daoline.png" alt="Daoline Digital Logo" onerror="this.style.display='none'">
           <div>
             <div class="name">Daoline <span>Digital</span></div>
-            <div class="sub">Social Media Agency</div>
+            <div class="sub" data-key="brand_sub">Social Media Agency</div>
           </div>
         </a>
 
         <nav class="menu" aria-label="Main Navigation">
-          <a href="#about">عن Daoline Digital</a>
-          <a href="#services">الخدمات</a>
-          <a href="#free">Daoline Free Courses</a>
-          <a href="#clients">العملاء</a>
-          <a href="#contact">التواصل</a>
+          <a href="#about" data-key="nav_about">عن Daoline Digital</a>
+          <a href="#services" data-key="nav_srv">الخدمات</a>
+          <a href="#free" data-key="nav_free">Daoline Free Courses</a>
+          <a href="#clients" data-key="nav_clients">العملاء</a>
+          <a href="#contact" data-key="nav_contact">التواصل</a>
         </nav>
 
         <div class="cta">
-          <a class="btn" href="mailto:info@daolinedigital.com">info@daolinedigital.com</a>
-          <a class="btn primary" href="#contact">تواصل الآن</a>
+          <!-- زر الترجمة في الهيدر -->
+          <button onclick="toggleLang()" class="lang-toggle-btn" data-key="lang_btn">🌍 English</button>
+          <a class="btn primary" href="#contact" data-key="btn_contact">تواصل الآن</a>
         </div>
 
-        <button class="menuToggle" id="menuToggle" aria-label="فتح القائمة" aria-expanded="false" aria-controls="mobileMenu">
+        <button class="menuToggle" id="menuToggle" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z"/></svg>
         </button>
 
         <div class="mobileMenu" id="mobileMenu" aria-label="Mobile Navigation">
-          <a href="#about">عن Daoline Digital</a>
-          <a href="#services">الخدمات</a>
-          <a href="#free">Daoline Free Courses</a>
-          <a href="#clients">العملاء</a>
-          <a href="#contact">التواصل</a>
-          <a href="/blog/">دخول المكتبة</a>
-          <a href="/en/">🌍 English</a>
-          <a href="mailto:info@daolinedigital.com">info@daolinedigital.com</a>
+          <a href="#about" data-key="nav_about">عن Daoline Digital</a>
+          <a href="#services" data-key="nav_srv">الخدمات</a>
+          <a href="#free" data-key="nav_free">Daoline Free Courses</a>
+          <a href="#clients" data-key="nav_clients">العملاء</a>
+          <a href="#contact" data-key="nav_contact">التواصل</a>
+          <a href="/blog/" data-key="nav_lib" data-href-en="/en/">دخول المكتبة</a>
+          <button onclick="toggleLang()" data-key="lang_btn_mobile" style="text-align: start; width: 100%; border: none; font-size: 14px; font-weight: 700; color: rgba(243,244,246,.92); padding: 12px 14px; cursor: pointer; border-radius: 12px; background: rgba(192,19,166,0.1); color: #fff; border: 1px dashed var(--primary);">🌍 English</button>
         </div>
       </div>
     </div>
@@ -297,10 +311,12 @@
   <div class="courseBanner">
     <div class="wrap">
       <div class="inner">
-        <div class="title">🎓 Daoline Free Courses <span class="sub">— مقالات + كتيبات مجانية</span></div>
+        <div class="title" data-key="banner_title">🎓 Daoline Free Courses <span class="sub" data-key="banner_sub">— مقالات + كتيبات مجانية</span></div>
         <div style="display:flex; gap:8px; flex-wrap:wrap; align-items:center;">
-          <a class="link" href="/blog/">دخول المكتبة →</a>
-          <a class="link" href="/en/">🌍 English</a>
+          <!-- زر الترجمة في البانر -->
+          <button onclick="toggleLang()" class="link lang-banner-btn" data-key="lang_btn">🌍 English</button>
+          <!-- الرابط المزدوج للمكتبة -->
+          <a class="link" href="/blog/" data-href-en="/en/" data-key="banner_link">دخول المكتبة →</a>
         </div>
       </div>
     </div>
@@ -310,35 +326,36 @@
     <div class="wrap">
       <div class="heroGrid">
         <div class="panel heroLeft">
-          <div class="kicker">منهج واضح • لغة بسيطة • قياس نتائج</div>
-          <h1>نبني حضورًا رقميًا <span class="accent">قابلًا للنمو</span></h1>
-          <p class="lead">Daoline Digital وكالة متخصصة في بناء حضور رقمي قابل للنمو: استراتيجية + محتوى + إعلانات + متابعة. نشتغل بمنهج واضح، ونتواصل بلغة بسيطة، ونقيس النتائج بمؤشرات أداء قابلة للمراجعة.</p>
+          <div class="kicker" data-key="hero_kicker">منهج واضح • لغة بسيطة • قياس نتائج</div>
+          <h1 data-key="hero_title">نبني حضورًا رقميًا <span class="accent">قابلًا للنمو</span></h1>
+          <p class="lead" data-key="hero_lead">Daoline Digital وكالة متخصصة في بناء حضور رقمي قابل للنمو: استراتيجية + محتوى + إعلانات + متابعة. نشتغل بمنهج واضح، ونتواصل بلغة بسيطة، ونقيس النتائج بمؤشرات أداء قابلة للمراجعة.</p>
           <div class="heroBadges">
-            <div class="badge">استراتيجية محتوى</div>
-            <div class="badge">إدارة منصات</div>
-            <div class="badge">إعلانات مدفوعة</div>
-            <div class="badge">تقارير و KPIs</div>
+            <div class="badge" data-key="badge_1">استراتيجية محتوى</div>
+            <div class="badge" data-key="badge_2">إدارة منصات</div>
+            <div class="badge" data-key="badge_3">إعلانات مدفوعة</div>
+            <div class="badge" data-key="badge_4">تقارير و KPIs</div>
           </div>
           <div class="heroActions">
-            <a class="btn primary" href="#contact">ابدأ التواصل</a>
-            <a class="btn" href="#services">تفاصيل الخدمات</a>
-            <a class="btn" href="/blog/">المكتبة المجانية</a>
+            <a class="btn primary" href="#contact" data-key="hero_btn1">ابدأ التواصل</a>
+            <a class="btn" href="#services" data-key="hero_btn2">تفاصيل الخدمات</a>
+            <!-- الرابط المزدوج للمكتبة -->
+            <a class="btn" href="/blog/" data-href-en="/en/" data-key="hero_btn3">المكتبة المجانية</a>
           </div>
         </div>
 
         <div class="panel heroRight">
           <div class="profile">
-            <img src="doaa-photo.jpg" alt="دعاء سليط">
+            <img src="doaa-photo.jpg" alt="Doaa Seleat" onerror="this.style.display='none'">
             <div>
-              <div class="pName">دعاء سليط</div>
-              <div class="pRole">إدارة وتشغيل • خبرة تتجاوز 15 عامًا</div>
+              <div class="pName" data-key="doaa_name">دعاء سليط</div>
+              <div class="pRole" data-key="doaa_role">إدارة وتشغيل • خبرة تتجاوز 15 عامًا</div>
               <div class="pillRow" style="margin-top:10px">
                 <span class="pill primary">Daoline Digital</span>
                 <span class="pill">Social Media • Performance</span>
               </div>
             </div>
           </div>
-          <div class="quote"><strong>الهدف:</strong> حضور قوي + نمو مستمر + نتائج قابلة للقياس.<br><span style="color:rgba(243,244,246,.72)">نركز على التخطيط، التنفيذ، والمتابعة بنفس الدقة.</span></div>
+          <div class="quote" data-key="quote"><strong>الهدف:</strong> حضور قوي + نمو مستمر + نتائج قابلة للقياس.<br><span style="color:rgba(243,244,246,.72)">نركز على التخطيط، التنفيذ، والمتابعة بنفس الدقة.</span></div>
         </div>
       </div>
     </div>
@@ -347,17 +364,17 @@
   <section id="about">
     <div class="wrap">
       <div class="sectionTitle">
-        <h2>عن Daoline Digital</h2>
-        <p>وكالة تشغيل وإدارة سوشيال ميديا بمنهج واضح، ومخرجات قابلة للمراجعة والقياس.</p>
+        <h2 data-key="sec_about_title">عن Daoline Digital</h2>
+        <p data-key="sec_about_sub">وكالة تشغيل وإدارة سوشيال ميديا بمنهج واضح، ومخرجات قابلة للمراجعة والقياس.</p>
       </div>
       <div class="aboutGrid">
         <div class="aboutBox">
-          <h3>تعريف مختصر</h3>
-          <p class="txt"><b>Daoline Digital</b> وكالة متخصصة في بناء حضور رقمي قابل للنمو: استراتيجية + محتوى + إعلانات + متابعة. بنشتغل بمنهج واضح، ونتواصل بلغة بسيطة، ونقيس النتائج بمؤشرات أداء (KPIs) قابلة للمراجعة.<br><br>تحت إدارة <b>دعاء سليط</b> — خبرة تتجاوز <b>15 عامًا</b> في إدارة السوشيال ميديا والحملات عبر مجالات مختلفة.</p>
+          <h3 data-key="about_box1_title">تعريف مختصر</h3>
+          <p class="txt" data-key="about_box1_txt"><b>Daoline Digital</b> وكالة متخصصة في بناء حضور رقمي قابل للنمو: استراتيجية + محتوى + إعلانات + متابعة. بنشتغل بمنهج واضح، ونتواصل بلغة بسيطة، ونقيس النتائج بمؤشرات أداء (KPIs) قابلة للمراجعة.<br><br>تحت إدارة <b>دعاء سليط</b> — خبرة تتجاوز <b>15 عامًا</b> في إدارة السوشيال ميديا والحملات عبر مجالات مختلفة.</p>
         </div>
         <div class="aboutBox">
-          <h3>طريقة الشغل</h3>
-          <p class="txt">1) تشخيص سريع للوضع الحالي → 2) خطة محتوى وأهداف واضحة → 3) تنفيذ ومتابعة يومية → 4) تقارير أداء → 5) تحسين مستمر بناءً على البيانات.</p>
+          <h3 data-key="about_box2_title">طريقة الشغل</h3>
+          <p class="txt" data-key="about_box2_txt">1) تشخيص سريع للوضع الحالي → 2) خطة محتوى وأهداف واضحة → 3) تنفيذ ومتابعة يومية → 4) تقارير أداء → 5) تحسين مستمر بناءً على البيانات.</p>
           <div class="pillRow"><span class="pill primary">Strategy</span><span class="pill">Content</span><span class="pill">Ads</span><span class="pill">KPIs</span></div>
         </div>
       </div>
@@ -367,16 +384,16 @@
   <section id="services">
     <div class="wrap">
       <div class="sectionTitle">
-        <h2>الخدمات</h2>
-        <p>تقسيم واضح يساعدك تعرف أنت محتاج إيه بالضبط… وتستلم إيه كل شهر.</p>
+        <h2 data-key="sec_srv_title">الخدمات</h2>
+        <p data-key="sec_srv_sub">تقسيم واضح يساعدك تعرف أنت محتاج إيه بالضبط… وتستلم إيه كل شهر.</p>
       </div>
       <div class="cards">
-        <div class="card"><h4>الاستراتيجية والتأسيس</h4><p>بنجهز الأساس اللي يخلي المحتوى يشتغل بدل ما يكون نشر وخلاص.</p><ul><li>تحليل البراند والجمهور</li><li>Content Pillars + Tone of Voice</li><li>خطة شهرية قابلة للتنفيذ</li></ul></div>
-        <div class="card"><h4>إدارة السوشيال ميديا</h4><p>تشغيل يومي + تنظيم المحتوى + ضبط الإيقاع.</p><ul><li>Calendar + Copywriting</li><li>متابعة الرسائل والتعليقات حسب الاتفاق</li><li>تقارير أسبوعية أو شهرية</li></ul></div>
-        <div class="card"><h4>المحتوى الإبداعي</h4><p>محتوى يخدم الهدف، ويعكس الهوية، ويترجم القيمة.</p><ul><li>أفكار وسيناريوهات</li><li>محتوى تعليمي وبيعي وبراندينج</li><li>تحسين الرسائل الأساسية</li></ul></div>
-        <div class="card"><h4>الإعلانات المدفوعة</h4><p>إعلانات مبنية على Funnel واضح، ومتابعة أداء دقيقة.</p><ul><li>إعداد الحملات + الاستهداف</li><li>Optimization أسبوعي</li><li>Tracking + قياس النتائج</li></ul></div>
-        <div class="card"><h4>التقارير و KPIs</h4><p>القرار مبني على أرقام… مش إحساس.</p><ul><li>لوحة مؤشرات أساسية</li><li>تحليل ما يعمل وما لا يعمل</li><li>توصيات للشهر القادم</li></ul></div>
-        <div class="card"><h4>تحسين الهوية الرقمية</h4><p>تنظيم الشكل والرسالة لتقديم احترافي وتحويل أعلى.</p><ul><li>Bio / Highlights / CTA</li><li>Guidelines بسيطة للشكل</li><li>Consistency عبر المنصات</li></ul></div>
+        <div class="card"><h4 data-key="srv1_t">الاستراتيجية والتأسيس</h4><p data-key="srv1_p">بنجهز الأساس اللي يخلي المحتوى يشتغل بدل ما يكون نشر وخلاص.</p><ul><li data-key="srv1_l1">تحليل البراند والجمهور</li><li data-key="srv1_l2">Content Pillars + Tone of Voice</li><li data-key="srv1_l3">خطة شهرية قابلة للتنفيذ</li></ul></div>
+        <div class="card"><h4 data-key="srv2_t">إدارة السوشيال ميديا</h4><p data-key="srv2_p">تشغيل يومي + تنظيم المحتوى + ضبط الإيقاع.</p><ul><li data-key="srv2_l1">Calendar + Copywriting</li><li data-key="srv2_l2">متابعة الرسائل والتعليقات حسب الاتفاق</li><li data-key="srv2_l3">تقارير أسبوعية أو شهرية</li></ul></div>
+        <div class="card"><h4 data-key="srv3_t">المحتوى الإبداعي</h4><p data-key="srv3_p">محتوى يخدم الهدف، ويعكس الهوية، ويترجم القيمة.</p><ul><li data-key="srv3_l1">أفكار وسيناريوهات</li><li data-key="srv3_l2">محتوى تعليمي وبيعي وبراندينج</li><li data-key="srv3_l3">تحسين الرسائل الأساسية</li></ul></div>
+        <div class="card"><h4 data-key="srv4_t">الإعلانات المدفوعة</h4><p data-key="srv4_p">إعلانات مبنية على Funnel واضح، ومتابعة أداء دقيقة.</p><ul><li data-key="srv4_l1">إعداد الحملات + الاستهداف</li><li data-key="srv4_l2">Optimization أسبوعي</li><li data-key="srv4_l3">Tracking + قياس النتائج</li></ul></div>
+        <div class="card"><h4 data-key="srv5_t">التقارير و KPIs</h4><p data-key="srv5_p">القرار مبني على أرقام… مش إحساس.</p><ul><li data-key="srv5_l1">لوحة مؤشرات أساسية</li><li data-key="srv5_l2">تحليل ما يعمل وما لا يعمل</li><li data-key="srv5_l3">توصيات للشهر القادم</li></ul></div>
+        <div class="card"><h4 data-key="srv6_t">تحسين الهوية الرقمية</h4><p data-key="srv6_p">تنظيم الشكل والرسالة لتقديم احترافي وتحويل أعلى.</p><ul><li data-key="srv6_l1">Bio / Highlights / CTA</li><li data-key="srv6_l2">Guidelines بسيطة للشكل</li><li data-key="srv6_l3">Consistency عبر المنصات</li></ul></div>
       </div>
     </div>
   </section>
@@ -384,20 +401,28 @@
   <section id="free">
     <div class="wrap">
       <div class="sectionTitle">
-        <h2>Daoline Free Courses</h2>
-        <p>مكتبة مجانية: مقالات + كتيبات قابلة للتنفيذ — هدفها إنك تطبّق وتطلع بنتيجة.</p>
+        <h2 data-key="sec_free_title">Daoline Free Courses</h2>
+        <p data-key="sec_free_sub">مكتبة مجانية: مقالات + كتيبات قابلة للتنفيذ — هدفها إنك تطبّق وتطلع بنتيجة.</p>
       </div>
       <div class="aboutGrid">
         <div class="aboutBox">
-          <h3>ابدأ فورًا</h3>
-          <p class="txt">ادخل على المكتبة وشوف المقالات والكتيبات المجانية. كل صفحة فيها روابط واضحة للرجوع للموقع والتنقل بسهولة.</p>
-          <div class="heroActions" style="margin-top:14px"><a class="btn primary" href="/blog/">دخول المكتبة</a><a class="btn" href="/blog/article-1.html">ابدأ بالمقال الأول</a></div>
-          <div class="miniLead">المكتبة بتتحدث تدريجيًا بمقالات وأدلة عملية جديدة.</div>
+          <h3 data-key="free_b1_t">ابدأ فورًا</h3>
+          <p class="txt" data-key="free_b1_p">ادخل على المكتبة وشوف المقالات والكتيبات المجانية. كل صفحة فيها روابط واضحة للرجوع للموقع والتنقل بسهولة.</p>
+          <div class="heroActions" style="margin-top:14px; justify-content: start;">
+              <!-- الرابط المزدوج للمكتبة -->
+              <a class="btn primary" href="/blog/" data-href-en="/en/" data-key="free_btn1">دخول المكتبة</a>
+          </div>
+          <div class="miniLead" data-key="free_note">المكتبة بتتحدث تدريجيًا بمقالات وأدلة عملية جديدة.</div>
         </div>
         <div class="aboutBox">
-          <h3>المحتوى الموجود دلوقتي</h3>
-          <p class="txt">مقالات تحليلية مبنية على أسئلة السوق الحقيقي + نماذج وكتيبات (PDF) هتنضاف تدريجيًا بنفس الأسلوب.</p>
-          <div class="pillRow"><span class="pill primary">Social Media</span><span class="pill">Content Strategy</span><span class="pill">Ads & Performance</span><span class="pill">Meta Updates</span></div>
+          <h3 data-key="free_b2_t">المحتوى الموجود دلوقتي</h3>
+          <p class="txt" data-key="free_b2_p">مقالات تحليلية مبنية على أسئلة السوق الحقيقي + نماذج وكتيبات (PDF) هتنضاف تدريجيًا بنفس الأسلوب.</p>
+          <div class="pillRow">
+              <span class="pill primary">Social Media</span>
+              <span class="pill">Content Strategy</span>
+              <span class="pill">Ads & Performance</span>
+              <span class="pill">Meta Updates</span>
+          </div>
         </div>
       </div>
     </div>
@@ -406,18 +431,44 @@
   <section class="clientsSection" id="clients">
     <div class="wrap">
       <div class="sectionTitle">
-        <h2>عملاء وشركاء نجاح</h2>
-        <p>نماذج من قطاعات وأسماء اشتغلنا معها في المحتوى، الحضور الرقمي، والتشغيل.</p>
+        <h2 data-key="sec_clients_title">عملاء وشركاء نجاح</h2>
+        <p data-key="sec_clients_sub">نماذج من قطاعات وأسماء اشتغلنا معها في المحتوى، الحضور الرقمي، والتشغيل.</p>
       </div>
       <div class="ticker" aria-label="Clients ticker"><div class="tickerTrack" id="tickerTrack"></div></div>
-      <p class="clientsIntro">من ضمن الأسماء والقطاعات التي تعاملنا معها بشكل مباشر أو عبر مشاريع تشغيل ومحتوى وحضور رقمي:</p>
+      <p class="clientsIntro" data-key="cli_intro">من ضمن الأسماء والقطاعات التي تعاملنا معها بشكل مباشر أو عبر مشاريع تشغيل ومحتوى وحضور رقمي:</p>
+      
       <div class="featuredRow">
-        <a class="partnerCard" href="https://www.facebook.com/doaaamerofficial" target="_blank" rel="noopener"><div class="partnerTop"><img src="doaa-amer.png" alt="الإعلامية دعاء عامر"></div><div class="partnerBody"><div class="t1">الإعلامية دعاء عامر</div><div class="t2">Public Figure • Social Presence</div></div></a>
-        <a class="partnerCard" href="https://www.watexsolutions.com/" target="_blank" rel="noopener"><div class="partnerTop"><img src="watex.png" alt="Watex Trading"></div><div class="partnerBody"><div class="t1">Watex Trading</div><div class="t2">B2B • Industrial Branding</div></div></a>
-        <a class="partnerCard" href="https://ghayaeg.com/" target="_blank" rel="noopener"><div class="partnerTop"><img src="ghaya.png" alt="مؤسسة غايا للإبداع"></div><div class="partnerBody"><div class="t1">مؤسسة غايا للإبداع</div><div class="t2">Publishing • Creativity • Events</div></div></a>
-        <a class="partnerCard" href="https://www.facebook.com/AhmedMouradWriter" target="_blank" rel="noopener"><div class="partnerTop"><img src="clients24.png" alt="الكاتب أحمد مراد"></div><div class="partnerBody"><div class="t1">الكاتب أحمد مراد</div><div class="t2">Author • Social Presence</div></div></a>
+        <a class="partnerCard" href="#" target="_blank" rel="noopener">
+            <div class="partnerTop"><img src="doaa-amer.png" alt="" onerror="this.style.display='none'"></div>
+            <div class="partnerBody">
+                <div class="t1" data-key="cli1_t1">الإعلامية دعاء عامر</div>
+                <div class="t2">Public Figure • Social Presence</div>
+            </div>
+        </a>
+        <a class="partnerCard" href="#" target="_blank" rel="noopener">
+            <div class="partnerTop"><img src="watex.png" alt="" onerror="this.style.display='none'"></div>
+            <div class="partnerBody">
+                <div class="t1">Watex Trading</div>
+                <div class="t2">B2B • Industrial Branding</div>
+            </div>
+        </a>
+        <a class="partnerCard" href="#" target="_blank" rel="noopener">
+            <div class="partnerTop"><img src="ghaya.png" alt="" onerror="this.style.display='none'"></div>
+            <div class="partnerBody">
+                <div class="t1" data-key="cli3_t1">مؤسسة غايا للإبداع</div>
+                <div class="t2">Publishing • Creativity</div>
+            </div>
+        </a>
+        <a class="partnerCard" href="#" target="_blank" rel="noopener">
+            <div class="partnerTop"><img src="clients24.png" alt="" onerror="this.style.display='none'"></div>
+            <div class="partnerBody">
+                <div class="t1" data-key="cli4_t1">الكاتب أحمد مراد</div>
+                <div class="t2">Author • Social Presence</div>
+            </div>
+        </a>
       </div>
-      <div class="logosTitle">ومن قطاعات وعملاء آخرين</div>
+      
+      <div class="logosTitle" data-key="logos_title">ومن قطاعات وعملاء آخرين</div>
       <div class="logosGrid"><div class="grid" id="logosGrid"></div></div>
     </div>
   </section>
@@ -425,42 +476,301 @@
   <section id="contact">
     <div class="wrap">
       <div class="sectionTitle">
-        <h2>التواصل</h2>
-        <p>للاستفسارات والتعاون: راسلنا برسالة واضحة وسنرد بأقرب وقت.</p>
+        <h2 data-key="sec_contact_title">التواصل</h2>
+        <p data-key="sec_contact_sub">للاستفسارات والتعاون: راسلنا برسالة واضحة وسنرد بأقرب وقت.</p>
       </div>
       <div class="contactGrid">
         <div class="contactBox">
-          <h3>البريد الرسمي</h3>
+          <h3 data-key="con_b1_t">البريد الرسمي</h3>
           <p><a class="btn primary" href="mailto:info@daolinedigital.com">info@daolinedigital.com</a></p>
-          <div class="socialRow" style="margin-top:14px"><a class="social" href="https://www.facebook.com/doaaseleat" target="_blank" rel="noopener">Facebook @doaaseleat</a><a class="social" href="https://www.instagram.com/doaa.seleat" target="_blank" rel="noopener">Instagram @doaa.seleat</a></div>
+          <div class="socialRow" style="margin-top:14px">
+              <a class="social" href="https://www.facebook.com/doaaseleat" target="_blank" rel="noopener">Facebook @doaaseleat</a>
+              <a class="social" href="https://www.instagram.com/doaa.seleat" target="_blank" rel="noopener">Instagram @doaa.seleat</a>
+          </div>
         </div>
-        <div class="contactBox"><h3>معلومة مهمة</h3><p>نفضل إن رسالتك تشمل: نوع النشاط، الهدف الرئيسي، المنصات الحالية إن وجدت، وأي رابط أو صفحة للبراند لتقييم سريع ومقترح أولي.</p></div>
+        <div class="contactBox">
+            <h3 data-key="con_b2_t">معلومة مهمة</h3>
+            <p data-key="con_b2_p">نفضل إن رسالتك تشمل: نوع النشاط، الهدف الرئيسي، المنصات الحالية إن وجدت، وأي رابط أو صفحة للبراند لتقييم سريع ومقترح أولي.</p>
+        </div>
       </div>
     </div>
   </section>
 
   <div class="legalFooter">
-    <div class="wrap"><div class="row"><a href="/privacy.html">سياسة الخصوصية</a><a href="/terms.html">الشروط والأحكام</a><a href="/contact.html">اتصل بنا</a></div></div>
+    <div class="wrap">
+        <div class="row">
+            <!-- الروابط المزدوجة للـ Footer -->
+            <a href="/privacy.html" data-href-en="/en/privacy.html" data-key="ft_priv">سياسة الخصوصية</a>
+            <a href="/terms.html" data-href-en="/en/terms.html" data-key="ft_term">الشروط والأحكام</a>
+            <a href="/contact.html" data-href-en="/en/contact.html" data-key="ft_cont">اتصل بنا</a>
+        </div>
+    </div>
   </div>
 
   <footer class="footer">© <span id="year"></span> Daoline Digital — All rights reserved.</footer>
 
-  <button class="backToTop" id="backToTop" aria-label="الرجوع للأعلى"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5l7 7-1.4 1.4L13 8.8V20h-2V8.8L6.4 13.4 5 12l7-7z"/></svg></button>
+  <button class="backToTop" id="backToTop" aria-label="Top"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5l7 7-1.4 1.4L13 8.8V20h-2V8.8L6.4 13.4 5 12l7-7z"/></svg></button>
 
   <!-- Floating Registration Widget -->
   <div class="float-widget hidden" id="float-widget">
     <div class="float-panel" id="float-panel">
-      <button class="float-close" onclick="toggleFloat()" aria-label="إغلاق">✕</button>
-      <h4>🎓 سجّل في الكورس المجاني</h4>
-      <input type="text" id="float-name" placeholder="اسمك" />
-      <input type="email" id="float-email" placeholder="إيميلك" />
-      <input type="tel" id="float-phone" placeholder="رقم الواتساب" />
-      <button class="float-submit" onclick="submitFloatCourse()">تسجيل</button>
+      <button class="float-close" onclick="toggleFloat()" aria-label="Close">✕</button>
+      <h4 data-key="fl_h4">🎓 سجّل في الكورس المجاني</h4>
+      <input type="text" id="float-name" data-placeholder="ph_name" placeholder="اسمك" />
+      <input type="email" id="float-email" data-placeholder="ph_email" placeholder="إيميلك" />
+      <input type="tel" id="float-phone" data-placeholder="ph_phone" placeholder="رقم الواتساب" />
+      <button class="float-submit" onclick="submitFloatCourse()" data-key="fl_sub">تسجيل</button>
     </div>
-    <button class="float-btn" onclick="toggleFloat()">🎓 سجّل في الكورس المجاني</button>
+    <button class="float-btn" onclick="toggleFloat()" data-key="fl_btn">🎓 سجّل في الكورس المجاني</button>
   </div>
 
+  <!-- Bilingual Dictionary & Logic -->
   <script>
+    const translations = {
+      ar: {
+        page_title: "Daoline Digital | Social Media Agency & Growth Strategy",
+        nav_home: "الرئيسية",
+        nav_lib: "المكتبة",
+        nav_about: "عن Daoline Digital",
+        nav_srv: "الخدمات",
+        nav_free: "Daoline Free Courses",
+        nav_clients: "العملاء",
+        nav_contact: "التواصل",
+        lang_btn: "🌍 English",
+        lang_btn_mobile: "🌍 English",
+        btn_contact: "تواصل الآن",
+        banner_title: "🎓 Daoline Free Courses",
+        banner_sub: "— مقالات + كتيبات مجانية",
+        banner_link: "دخول المكتبة →",
+        hero_kicker: "منهج واضح • لغة بسيطة • قياس نتائج",
+        hero_title: "نبني حضورًا رقميًا <span class='accent'>قابلًا للنمو</span>",
+        hero_lead: "Daoline Digital وكالة متخصصة في بناء حضور رقمي قابل للنمو: استراتيجية + محتوى + إعلانات + متابعة. نشتغل بمنهج واضح، ونتواصل بلغة بسيطة، ونقيس النتائج بمؤشرات أداء قابلة للمراجعة.",
+        badge_1: "استراتيجية محتوى",
+        badge_2: "إدارة منصات",
+        badge_3: "إعلانات مدفوعة",
+        badge_4: "تقارير و KPIs",
+        hero_btn1: "ابدأ التواصل",
+        hero_btn2: "تفاصيل الخدمات",
+        hero_btn3: "المكتبة المجانية",
+        doaa_name: "دعاء سليط",
+        doaa_role: "إدارة وتشغيل • خبرة تتجاوز 15 عامًا",
+        quote: "<strong>الهدف:</strong> حضور قوي + نمو مستمر + نتائج قابلة للقياس.<br><span style='color:rgba(243,244,246,.72)'>نركز على التخطيط، التنفيذ، والمتابعة بنفس الدقة.</span>",
+        sec_about_title: "عن Daoline Digital",
+        sec_about_sub: "وكالة تشغيل وإدارة سوشيال ميديا بمنهج واضح، ومخرجات قابلة للمراجعة والقياس.",
+        about_box1_title: "تعريف مختصر",
+        about_box1_txt: "<b>Daoline Digital</b> وكالة متخصصة في بناء حضور رقمي قابل للنمو: استراتيجية + محتوى + إعلانات + متابعة. بنشتغل بمنهج واضح، ونتواصل بلغة بسيطة، ونقيس النتائج بمؤشرات أداء (KPIs) قابلة للمراجعة.<br><br>تحت إدارة <b>دعاء سليط</b> — خبرة تتجاوز <b>15 عامًا</b> في إدارة السوشيال ميديا والحملات عبر مجالات مختلفة.",
+        about_box2_title: "طريقة الشغل",
+        about_box2_txt: "1) تشخيص سريع للوضع الحالي → 2) خطة محتوى وأهداف واضحة → 3) تنفيذ ومتابعة يومية → 4) تقارير أداء → 5) تحسين مستمر بناءً على البيانات.",
+        sec_srv_title: "الخدمات",
+        sec_srv_sub: "تقسيم واضح يساعدك تعرف أنت محتاج إيه بالضبط… وتستلم إيه كل شهر.",
+        srv1_t: "الاستراتيجية والتأسيس",
+        srv1_p: "بنجهز الأساس اللي يخلي المحتوى يشتغل بدل ما يكون نشر وخلاص.",
+        srv1_l1: "تحليل البراند والجمهور",
+        srv1_l2: "Content Pillars + Tone of Voice",
+        srv1_l3: "خطة شهرية قابلة للتنفيذ",
+        srv2_t: "إدارة السوشيال ميديا",
+        srv2_p: "تشغيل يومي + تنظيم المحتوى + ضبط الإيقاع.",
+        srv2_l1: "Calendar + Copywriting",
+        srv2_l2: "متابعة الرسائل والتعليقات حسب الاتفاق",
+        srv2_l3: "تقارير أسبوعية أو شهرية",
+        srv3_t: "المحتوى الإبداعي",
+        srv3_p: "محتوى يخدم الهدف، ويعكس الهوية، ويترجم القيمة.",
+        srv3_l1: "أفكار وسيناريوهات",
+        srv3_l2: "محتوى تعليمي وبيعي وبراندينج",
+        srv3_l3: "تحسين الرسائل الأساسية",
+        srv4_t: "الإعلانات المدفوعة",
+        srv4_p: "إعلانات مبنية على Funnel واضح، ومتابعة أداء دقيقة.",
+        srv4_l1: "إعداد الحملات + الاستهداف",
+        srv4_l2: "Optimization أسبوعي",
+        srv4_l3: "Tracking + قياس النتائج",
+        srv5_t: "التقارير و KPIs",
+        srv5_p: "القرار مبني على أرقام… مش إحساس.",
+        srv5_l1: "لوحة مؤشرات أساسية",
+        srv5_l2: "تحليل ما يعمل وما لا يعمل",
+        srv5_l3: "توصيات للشهر القادم",
+        srv6_t: "تحسين الهوية الرقمية",
+        srv6_p: "تنظيم الشكل والرسالة لتقديم احترافي وتحويل أعلى.",
+        srv6_l1: "Bio / Highlights / CTA",
+        srv6_l2: "Guidelines بسيطة للشكل",
+        srv6_l3: "Consistency عبر المنصات",
+        sec_free_title: "Daoline Free Courses",
+        sec_free_sub: "مكتبة مجانية: مقالات + كتيبات قابلة للتنفيذ — هدفها إنك تطبّق وتطلع بنتيجة.",
+        free_b1_t: "ابدأ فورًا",
+        free_b1_p: "ادخل على المكتبة وشوف المقالات والكتيبات المجانية. كل صفحة فيها روابط واضحة للرجوع للموقع والتنقل بسهولة.",
+        free_btn1: "دخول المكتبة",
+        free_note: "المكتبة بتتحدث تدريجيًا بمقالات وأدلة عملية جديدة.",
+        free_b2_t: "المحتوى الموجود دلوقتي",
+        free_b2_p: "مقالات تحليلية مبنية على أسئلة السوق الحقيقي + نماذج وكتيبات (PDF) هتنضاف تدريجيًا بنفس الأسلوب.",
+        sec_clients_title: "عملاء وشركاء نجاح",
+        sec_clients_sub: "نماذج من قطاعات وأسماء اشتغلنا معها في المحتوى، الحضور الرقمي، والتشغيل.",
+        cli_intro: "من ضمن الأسماء والقطاعات التي تعاملنا معها بشكل مباشر أو عبر مشاريع تشغيل ومحتوى وحضور رقمي:",
+        cli1_t1: "الإعلامية دعاء عامر",
+        cli3_t1: "مؤسسة غايا للإبداع",
+        cli4_t1: "الكاتب أحمد مراد",
+        logos_title: "ومن قطاعات وعملاء آخرين",
+        sec_contact_title: "التواصل",
+        sec_contact_sub: "للاستفسارات والتعاون: راسلنا برسالة واضحة وسنرد بأقرب وقت.",
+        con_b1_t: "البريد الرسمي",
+        con_b2_t: "معلومة مهمة",
+        con_b2_p: "نفضل إن رسالتك تشمل: نوع النشاط، الهدف الرئيسي، المنصات الحالية إن وجدت، وأي رابط أو صفحة للبراند لتقييم سريع ومقترح أولي.",
+        ft_priv: "سياسة الخصوصية",
+        ft_term: "الشروط والأحكام",
+        ft_cont: "اتصل بنا",
+        fl_h4: "🎓 سجّل في الكورس المجاني",
+        fl_sub: "تسجيل",
+        fl_btn: "🎓 سجّل في الكورس المجاني",
+        ph_name: "اسمك",
+        ph_email: "إيميلك",
+        ph_phone: "رقم الواتساب",
+        alert_empty: "من فضلك اكتب الاسم والإيميل ورقم الواتساب",
+        alert_err: "حصلت مشكلة في التسجيل. جرب مرة تانية.",
+        alert_success: "✅ تم تسجيلك بنجاح!"
+      },
+      en: {
+        page_title: "Daoline Digital | Social Media Agency & Growth Strategy",
+        nav_home: "Home",
+        nav_lib: "Library",
+        nav_about: "About",
+        nav_srv: "Services",
+        nav_free: "Free Courses",
+        nav_clients: "Clients",
+        nav_contact: "Contact",
+        lang_btn: "🌍 عربي",
+        lang_btn_mobile: "🌍 عربي",
+        btn_contact: "Contact Us",
+        banner_title: "🎓 Daoline Free Courses",
+        banner_sub: "— Free Playbooks & Articles",
+        banner_link: "Enter Library →",
+        hero_kicker: "Clear Process • Simple Language • Measurable Results",
+        hero_title: "We Build <span class='accent'>Scalable</span> Digital Presence",
+        hero_lead: "Daoline Digital is a specialized agency in building scalable digital presence: Strategy + Content + Ads + Tracking. We work with a clear methodology, communicate simply, and measure results with reviewable KPIs.",
+        badge_1: "Content Strategy",
+        badge_2: "Social Management",
+        badge_3: "Paid Ads",
+        badge_4: "Reports & KPIs",
+        hero_btn1: "Get Started",
+        hero_btn2: "Our Services",
+        hero_btn3: "Free Library",
+        doaa_name: "Doaa Seleat",
+        doaa_role: "Operations • 15+ Years Experience",
+        quote: "<strong>Goal:</strong> Strong Presence + Continuous Growth + Measurable Results.<br><span style='color:rgba(243,244,246,.72)'>We focus on planning, execution, and tracking with the same precision.</span>",
+        sec_about_title: "About Daoline Digital",
+        sec_about_sub: "A social media management agency with a clear approach and measurable outputs.",
+        about_box1_title: "Brief Overview",
+        about_box1_txt: "<b>Daoline Digital</b> specializes in building a scalable digital presence: Strategy + Content + Ads + Tracking. We communicate simply and measure results with solid KPIs.<br><br>Led by <b>Doaa Seleat</b> — with over <b>15 years</b> of experience in social media management.",
+        about_box2_title: "Our Workflow",
+        about_box2_txt: "1) Quick Diagnosis → 2) Content Plan & Goals → 3) Daily Execution & Monitoring → 4) Performance Reports → 5) Continuous Optimization.",
+        sec_srv_title: "Services",
+        sec_srv_sub: "A clear breakdown helping you know exactly what you need... and what you get.",
+        srv1_t: "Strategy & Setup",
+        srv1_p: "Building the foundation that makes content work, not just posting.",
+        srv1_l1: "Brand & Audience Analysis",
+        srv1_l2: "Content Pillars + Tone of Voice",
+        srv1_l3: "Actionable Monthly Plan",
+        srv2_t: "Social Media Management",
+        srv2_p: "Daily operations + content organization + pacing.",
+        srv2_l1: "Calendar + Copywriting",
+        srv2_l2: "Messages & Comments Management",
+        srv2_l3: "Weekly or Monthly Reports",
+        srv3_t: "Creative Content",
+        srv3_p: "Content that serves the goal, reflects identity, and translates value.",
+        srv3_l1: "Ideas & Scripts",
+        srv3_l2: "Educational & Sales Content",
+        srv3_l3: "Core Messaging Optimization",
+        srv4_t: "Paid Advertising",
+        srv4_p: "Ads built on a clear Funnel, with precise performance tracking.",
+        srv4_l1: "Campaign Setup & Targeting",
+        srv4_l2: "Weekly Optimization",
+        srv4_l3: "Tracking & Result Measurement",
+        srv5_t: "Reports & KPIs",
+        srv5_p: "Decisions based on numbers... not feelings.",
+        srv5_l1: "Core Dashboards",
+        srv5_l2: "Analyze What Works",
+        srv5_l3: "Recommendations for Next Month",
+        srv6_t: "Digital Identity Optimization",
+        srv6_p: "Organizing look and message for higher conversion.",
+        srv6_l1: "Bio / Highlights / CTA",
+        srv6_l2: "Simple Visual Guidelines",
+        srv6_l3: "Cross-Platform Consistency",
+        sec_free_title: "Daoline Free Courses",
+        sec_free_sub: "Free Library: Actionable articles & playbooks designed for results.",
+        free_b1_t: "Start Immediately",
+        free_b1_p: "Access the library and view free articles and booklets. Easy navigation included.",
+        free_btn1: "Enter Library",
+        free_note: "The library is gradually updated with new practical guides.",
+        free_b2_t: "Current Content",
+        free_b2_p: "Analytical articles based on real market questions + PDF templates & booklets added gradually.",
+        sec_clients_title: "Clients & Partners",
+        sec_clients_sub: "Examples of sectors and names we worked with in content and digital presence.",
+        cli_intro: "Among the names and sectors we've dealt with directly or through operations and content projects:",
+        cli1_t1: "TV Presenter Doaa Amer",
+        cli3_t1: "Ghaya Foundation",
+        cli4_t1: "Author Ahmed Mourad",
+        logos_title: "And other sectors and clients",
+        sec_contact_title: "Contact Us",
+        sec_contact_sub: "For inquiries & collaboration: Send a clear message and we'll reply ASAP.",
+        con_b1_t: "Official Email",
+        con_b2_t: "Important Note",
+        con_b2_p: "We prefer your message includes: business type, main goal, current platforms if any, and a link to the brand for a quick evaluation.",
+        ft_priv: "Privacy Policy",
+        ft_term: "Terms & Conditions",
+        ft_cont: "Contact Us",
+        fl_h4: "🎓 Enroll in Free Course",
+        fl_sub: "Enroll",
+        fl_btn: "🎓 Enroll in Free Course",
+        ph_name: "Name",
+        ph_email: "Email",
+        ph_phone: "WhatsApp Number",
+        alert_empty: "Please enter your Name, Email, and WhatsApp number",
+        alert_err: "An error occurred. Please try again.",
+        alert_success: "✅ Successfully Registered!"
+      }
+    };
+
+    let currentLang = 'ar';
+
+    function toggleLang() {
+      currentLang = currentLang === 'ar' ? 'en' : 'ar';
+      
+      // Update HTML attributes for logical CSS to work
+      document.documentElement.lang = currentLang;
+      document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+
+      // Update Texts
+      document.querySelectorAll('[data-key]').forEach(el => {
+        if(translations[currentLang][el.dataset.key]) {
+          el.innerHTML = translations[currentLang][el.dataset.key];
+        }
+      });
+
+      // Update Placeholders
+      document.querySelectorAll('[data-placeholder]').forEach(el => {
+        if(translations[currentLang][el.dataset.placeholder]) {
+          el.placeholder = translations[currentLang][el.dataset.placeholder];
+        }
+      });
+
+      // Update Links (Href) Dynamically
+      document.querySelectorAll('[data-href-en]').forEach(el => {
+        if (currentLang === 'en') {
+          if (!el.dataset.hrefAr) el.dataset.hrefAr = el.getAttribute('href'); // حفظ الرابط العربي أولاً
+          el.setAttribute('href', el.dataset.hrefEn);
+        } else {
+          if (el.dataset.hrefAr) el.setAttribute('href', el.dataset.hrefAr); // استرجاع الرابط العربي
+        }
+      });
+
+      // إرسال حدث لجوجل أناليتكس بتغيير اللغة
+      if (typeof gtag === 'function') {
+        gtag('event', 'language_switch', {
+          'event_category': 'engagement',
+          'event_label': currentLang,
+          'language': currentLang
+        });
+      }
+    }
+
+    // Existing Logic (Clients Ticker & Grid)
     const totalClients = 29;
     const movingNames = ["مؤسسة غايا للإبداع", "Watex Trading", "الإعلامية دعاء عامر", "الكاتب أحمد مراد", "AkhbarMeter", "Dar Kayan", "Writers & Publishing", "Corporate & Business"];
     const knownClientNames = { 24: "الكاتب أحمد مراد" };
@@ -495,6 +805,7 @@
 
     document.getElementById("year").textContent = new Date().getFullYear();
 
+    // Mobile Menu
     const menuToggle = document.getElementById("menuToggle");
     const mobileMenu = document.getElementById("mobileMenu");
     menuToggle.addEventListener("click", () => {
@@ -514,6 +825,7 @@
       }
     });
 
+    // Back to Top & Float Widget Display
     const backToTop = document.getElementById("backToTop");
     window.addEventListener("scroll", () => {
       if (window.scrollY > 500) backToTop.classList.add("show");
@@ -529,6 +841,7 @@
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
 
+    // Floating Widget Registration Logic
     function toggleFloat() {
       const panel = document.getElementById('float-panel');
       if (panel) panel.classList.toggle('open');
@@ -536,18 +849,9 @@
 
     const COURSE_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbzFcWGX7Qw1EFS2Z1cq6gl7RIvkI3Ot-7a2-jHMxpgfz4f9im3hyDH165iZHYtXrbV2/exec';
 
-    function isValidEmail(email) {
-      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-    }
-
-    function normalizePhone(phone) {
-      return String(phone || '').replace(/[\s\-()]/g, '').trim();
-    }
-
-    function isValidPhone(phone) {
-      const normalized = normalizePhone(phone);
-      return /^(\+?\d{10,15}|01\d{9})$/.test(normalized);
-    }
+    function isValidEmail(email) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email); }
+    function normalizePhone(phone) { return String(phone || '').replace(/[\s\-()]/g, '').trim(); }
+    function isValidPhone(phone) { return /^(\+?\d{10,15}|01\d{9})$/.test(normalizePhone(phone)); }
 
     function submitFloatCourse() {
       const btn = document.querySelector('#float-panel .float-submit');
@@ -555,23 +859,13 @@
       const email = document.getElementById('float-email')?.value.trim() || '';
       const phone = document.getElementById('float-phone')?.value.trim() || '';
 
-      if (!name || !email || !phone) {
-        alert('من فضلك اكتب الاسم والإيميل ورقم الواتساب');
-        return;
-      }
-
-      if (!isValidEmail(email)) {
-        alert('من فضلك اكتب إيميل صحيح');
-        return;
-      }
-
-      if (!isValidPhone(phone)) {
-        alert('من فضلك اكتب رقم واتساب صحيح');
+      if (!name || !email || !phone || !isValidEmail(email) || !isValidPhone(phone)) {
+        alert(translations[currentLang].alert_empty);
         return;
       }
 
       btn.disabled = true;
-      btn.textContent = 'جاري التسجيل...';
+      btn.textContent = translations[currentLang].err_wait || '...';
 
       const payload = new URLSearchParams();
       payload.append('name', name);
@@ -588,18 +882,15 @@
       })
       .then(() => {
         if (typeof gtag === 'function') {
-          gtag('event', 'generate_lead', {
-            event_category: 'lead',
-            event_label: 'homepage-floating-widget'
-          });
+          gtag('event', 'generate_lead', { event_category: 'lead', event_label: 'homepage-floating-widget' });
         }
         const panel = document.getElementById('float-panel');
-        if (panel) panel.innerHTML = '<p style="color:#86efac;text-align:center;padding:10px;line-height:1.8;">✅ تم تسجيلك بنجاح!</p>';
+        if (panel) panel.innerHTML = `<p style="color:#86efac;text-align:center;padding:10px;line-height:1.8;">${translations[currentLang].alert_success}</p>`;
       })
       .catch(() => {
-        alert('حصلت مشكلة في التسجيل. جرب مرة تانية.');
+        alert(translations[currentLang].alert_err);
         btn.disabled = false;
-        btn.textContent = 'تسجيل';
+        btn.textContent = translations[currentLang].fl_sub;
       });
     }
   </script>
