@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,7 +15,6 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-DCECS21BFZ');
   </script>
 
@@ -33,15 +32,8 @@
       --border: rgba(255,255,255,0.10);
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
 
     body {
       font-family: "Inter", Arial, sans-serif;
@@ -51,10 +43,7 @@
       font-size: 18px;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+    a { color: inherit; text-decoration: none; }
 
     .topbar {
       position: sticky;
@@ -75,23 +64,10 @@
       gap: 14px;
     }
 
-    .logo {
-      font-weight: 900;
-      font-size: 20px;
-      color: #fff;
-    }
+    .logo { font-weight: 900; font-size: 20px; color: #fff; letter-spacing: -0.5px;}
+    .logo span { color: var(--primary); }
 
-    .logo span {
-      color: var(--primary);
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
+    .nav-links { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
     .nav-btn {
       padding: 8px 14px;
       border-radius: 999px;
@@ -99,44 +75,29 @@
       border: 1px solid var(--border);
       color: #fff;
       font-size: 14px;
-      font-weight: 800;
+      font-weight: 700;
       transition: 0.2s;
     }
+    .nav-btn:hover { background: rgba(192,19,166,0.16); border-color: rgba(192,19,166,0.45); }
+    .nav-btn.primary { background: var(--primary); border-color: var(--primary); }
 
-    .nav-btn:hover {
-      background: rgba(192,19,166,0.16);
-      border-color: rgba(192,19,166,0.45);
-    }
-
-    .nav-btn.primary {
-      background: var(--primary);
-      border-color: var(--primary);
-    }
-
-    .article-wrap {
-      max-width: 850px;
-      margin: auto;
-      padding: 45px 20px 80px;
-    }
+    .article-wrap { max-width: 850px; margin: auto; padding: 45px 20px 80px; }
 
     .back-link {
       display: inline-flex;
       align-items: center;
       gap: 8px;
       margin-bottom: 30px;
-      padding: 9px 15px;
+      padding: 9px 18px;
       border-radius: 999px;
       background: rgba(255,255,255,0.05);
       border: 1px solid var(--border);
       color: var(--muted);
       font-size: 14px;
-      font-weight: 800;
+      font-weight: 700;
+      transition: 0.2s;
     }
-
-    .back-link:hover {
-      color: #fff;
-      border-color: rgba(192,19,166,0.45);
-    }
+    .back-link:hover { color: #fff; border-color: rgba(192,19,166,0.45); background: rgba(192,19,166,0.1); }
 
     .article-title {
       font-size: clamp(2rem, 5vw, 3.25rem);
@@ -145,15 +106,10 @@
       color: #fff;
       margin-bottom: 18px;
       text-align: center;
+      letter-spacing: -1px;
     }
 
-    .article-subtitle {
-      color: var(--muted);
-      text-align: center;
-      max-width: 720px;
-      margin: 0 auto 28px;
-      font-size: 1.05rem;
-    }
+    .article-subtitle { color: var(--muted); text-align: center; max-width: 720px; margin: 0 auto 28px; font-size: 1.05rem; }
 
     .article-meta {
       display: flex;
@@ -175,28 +131,13 @@
       padding-left: 16px;
       font-weight: 900;
       line-height: 1.35;
+      letter-spacing: -0.5px;
     }
 
-    .article-content h3 {
-      color: #fff;
-      font-size: 1.25rem;
-      margin: 30px 0 12px;
-      font-weight: 900;
-    }
-
-    .article-content p {
-      margin-bottom: 24px;
-      color: #e6edf5;
-    }
-
-    .article-content ul {
-      margin: 0 0 25px 24px;
-    }
-
-    .article-content li {
-      margin-bottom: 10px;
-      color: #e6edf5;
-    }
+    .article-content h3 { color: #fff; font-size: 1.25rem; margin: 30px 0 12px; font-weight: 900; }
+    .article-content p { margin-bottom: 24px; color: #e6edf5; }
+    .article-content ul { margin: 0 0 25px 24px; }
+    .article-content li { margin-bottom: 10px; color: #e6edf5; }
 
     .note-box {
       background: rgba(192,19,166,0.09);
@@ -207,17 +148,8 @@
       margin: 30px 0;
     }
 
-    .step-box {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 22px;
-      margin: 18px 0;
-    }
-
-    .step-box strong {
-      color: #f7c5e8;
-    }
+    .step-box { background: var(--surface); border: 1px solid var(--border); border-radius: 18px; padding: 22px; margin: 18px 0; }
+    .step-box strong { color: #f7c5e8; }
 
     .lead-box {
       background: linear-gradient(145deg, #1a2235, #0d1422);
@@ -227,48 +159,46 @@
       text-align: center;
       margin: 60px 0;
     }
+    .lead-box h3 { color: #fff; font-size: 1.4rem; margin-bottom: 10px; font-weight: 800;}
+    .lead-box p { color: var(--muted); text-align: center; margin-bottom: 18px; font-size: 15px;}
+    .lead-box a { display: inline-block; background: var(--primary); color: #fff; padding: 12px 22px; border-radius: 14px; font-weight: 900; transition: 0.2s;}
+    .lead-box a:hover { background: #9f0d89; transform: translateY(-2px); }
 
-    .lead-box h3 {
-      color: #fff;
-      font-size: 1.4rem;
-      margin-bottom: 10px;
-    }
-
-    .lead-box p {
-      color: var(--muted);
-      text-align: center;
-      margin-bottom: 18px;
-    }
-
-    .lead-box a {
-      display: inline-block;
-      background: var(--primary);
-      color: #fff;
-      padding: 12px 22px;
-      border-radius: 14px;
-      font-weight: 900;
-    }
-
-    footer {
-      text-align: center;
-      padding: 35px 20px;
-      color: var(--muted);
+    /* ====== RELATED ARTICLES (NEW) ====== */
+    .related-articles {
+      margin-top: 60px;
+      padding-top: 50px;
       border-top: 1px solid var(--border);
-      font-size: 14px;
     }
+    .related-articles h3 { font-size: 1.8rem; font-weight: 900; color: #fff; margin-bottom: 25px; letter-spacing: -0.5px;}
+    .grid-articles { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    
+    .article-card {
+      padding: 24px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      background: rgba(15,18,32,0.6);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      transition: 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .article-card:hover { transform: translateY(-4px); border-color: rgba(192,19,166,0.4); background: rgba(15,18,32,0.9); }
+    .tag { display: inline-flex; padding: 5px 12px; border-radius: 999px; background: rgba(192,19,166,0.1); border: 1px solid rgba(192,19,166,0.28); color: #ffd7f6; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 15px; align-self: flex-start; }
+    .article-card h4 { color: #fff; font-size: 1.25rem; line-height: 1.3; margin-bottom: 12px; font-weight: 800; }
+    .article-card p { color: var(--muted); font-size: 0.95rem; margin-bottom: 20px; line-height: 1.6; flex-grow: 1; }
+    .read-link { display: inline-flex; align-items: center; gap: 8px; color: #fff; font-weight: 800; font-size: 0.95rem; margin-top: auto; transition: 0.2s; }
+    .read-link:hover { color: var(--primary); }
 
+    footer { text-align: center; padding: 35px 20px; color: var(--muted); border-top: 1px solid var(--border); font-size: 14px; margin-top: 40px;}
+
+    @media (max-width: 768px) {
+      .grid-articles { grid-template-columns: 1fr; }
+    }
     @media (max-width: 600px) {
-      .topbar-inner {
-        flex-direction: column;
-      }
-
-      .nav-links {
-        justify-content: center;
-      }
-
-      body {
-        font-size: 17px;
-      }
+      .topbar-inner { flex-direction: column; }
+      .nav-links { justify-content: center; }
+      body { font-size: 17px; }
     }
   </style>
 </head>
@@ -277,22 +207,23 @@
 
   <header class="topbar">
     <div class="topbar-inner">
-      <a href="https://daolinedigital.com/" class="logo">
+      <a href="https://daolinedigital.com/en/" class="logo">
         Daoline<span>Digital</span>
       </a>
 
       <nav class="nav-links">
-        <a href="https://daolinedigital.com/" class="nav-btn">Home</a>
-        <a href="https://daolinedigital.com/blog/" class="nav-btn">Arabic Library</a>
-        <a href="#free-course" class="nav-btn primary">Free Course</a>
+        <a href="https://daolinedigital.com/en/" class="nav-btn">Home</a>
+        <a href="/en/" class="nav-btn">English Library</a>
+        <a href="/blog/" class="nav-btn">Arabic Library</a>
       </nav>
     </div>
   </header>
 
   <main class="article-wrap">
 
-    <a href="https://daolinedigital.com/blog/" class="back-link">
-      ← Back to Arabic Library
+    <!-- زر الرجوع للمكتبة الإنجليزية (مرتبط بالـ Index الإنجليزي) -->
+    <a href="/en/" class="back-link">
+      &larr; Back to English Library
     </a>
 
     <h1 class="article-title">
@@ -382,24 +313,16 @@
 
       <h2>5. Example: turning a weak post into a searchable post</h2>
 
-      <p>
-        Weak caption:
-      </p>
+      <p>Weak caption:</p>
 
       <div class="note-box">
-        <p>
-          “New post is live. What do you think?”
-        </p>
+        <p>“New post is live. What do you think?”</p>
       </div>
 
-      <p>
-        Strong searchable caption:
-      </p>
+      <p>Strong searchable caption:</p>
 
       <div class="note-box">
-        <p>
-          “5 content ideas for small business owners who want better Instagram engagement in 2026.”
-        </p>
+        <p>“5 content ideas for small business owners who want better Instagram engagement in 2026.”</p>
       </div>
 
       <p>
@@ -408,9 +331,7 @@
 
       <h2>6. Best keywords for creators and marketers</h2>
 
-      <p>
-        If your content is about marketing, start with keywords your audience already uses:
-      </p>
+      <p>If your content is about marketing, start with keywords your audience already uses:</p>
 
       <ul>
         <li>Social Media SEO</li>
@@ -449,12 +370,55 @@
 
     </article>
 
+    <!-- Lead Box -->
     <section class="lead-box" id="free-course">
       <h3>Learn Social Media with Daoline Digital</h3>
       <p>
         Explore our free Arabic library for practical guides, content ideas, and digital marketing resources.
       </p>
-      <a href="https://daolinedigital.com/blog/">Open Free Arabic Library</a>
+      <a href="/blog/">Open Free Arabic Library</a>
+    </section>
+
+    <!-- ======================================================== -->
+    <!-- RELATED ARTICLES SECTION (يُبقّي العميل داخل موقعك) -->
+    <!-- ======================================================== -->
+    <section class="related-articles">
+      <h3>Keep Reading: More Playbooks & Guides</h3>
+      <div class="grid-articles">
+        
+        <!-- المقال الأول من الفهرس -->
+        <article class="article-card">
+          <span class="tag">Content Strategy</span>
+          <h4>Smart Content Engineering 2026</h4>
+          <p>A complete framework for building flexible content systems, audience maps, AI workflows, and repeatable social media execution.</p>
+          <a class="read-link" href="/en/smart-content-engineering-2026.html">Read Article &rarr;</a>
+        </article>
+
+        <!-- المقال الثاني من الفهرس -->
+        <article class="article-card">
+          <span class="tag">AI Marketing</span>
+          <h4>AI Content Strategy 2026</h4>
+          <p>How to use AI as a strategic assistant without losing brand voice, human judgment, or trust with your audience.</p>
+          <a class="read-link" href="/en/ai-content-strategy-2026.html">Read Article &rarr;</a>
+        </article>
+
+        <!-- المقال الثالث من الفهرس -->
+        <article class="article-card">
+          <span class="tag">Social Media</span>
+          <h4>Social Media Strategy 2026</h4>
+          <p>A practical guide to choosing platforms, defining goals, creating content pillars, and measuring what actually matters.</p>
+          <a class="read-link" href="/en/social-media-strategy-2026.html">Read Article &rarr;</a>
+        </article>
+
+        <!-- المقال الرابع من الفهرس -->
+        <article class="article-card">
+          <span class="tag">Planning</span>
+          <h4>Content Calendar 2026</h4>
+          <p>How to build a flexible monthly content calendar that balances education, engagement, brand authority, and sales.</p>
+          <a class="read-link" href="/en/content-calendar-2026.html">Read Article &rarr;</a>
+        </article>
+
+      </div>
     </section>
 
   </main>
