@@ -192,7 +192,6 @@
         </a>
         <nav class="nav-links">
           <a href="https://daolinedigital.com/en/" class="nav-btn">🏠 Agency Home</a>
-          <!-- رابط النسخة العربية -->
           <a href="/blog/" class="nav-btn">🌍 Arabic Library</a>
           <a href="#leads-section" class="nav-btn primary">🎁 Free Playbooks</a>
         </nav>
@@ -248,7 +247,7 @@
             <span class="meta-pill">👤 Doaa Seleat</span>
           </div>
 
-          <a class="nav-btn primary" href="/en/social-media-seo-2026.html" style="font-size: 16px; padding: 12px 24px;">Read the Full Guide &rarr;</a>
+          <a class="nav-btn primary" href="social-media-seo-2026.html" style="font-size: 16px; padding: 12px 24px;">Read the Full Guide &rarr;</a>
         </div>
 
         <div class="visual-panel">
@@ -342,49 +341,49 @@
       const container = document.getElementById("dynamic-articles");
       
       // Fallback data ensures the preview doesn't break if blob/file protocol blocks the fetch
-      // You will eventually put this data into /en/blog/articles_en.json
+      // You will eventually put this data into /en/articles_en.json (or similar path)
       const fallbackArticles = [
         {
-          en_title: "Smart Content Engineering 2026",
-          en_desc: "A complete framework for building flexible content systems, audience maps, and repeatable social media execution without burnout.",
-          en_link: "smart-content-engineering-2026.html",
-          en_tag: "Content Strategy",
-          readTime: "8 min read"
-        },
-        {
-          en_title: "The AI Slop Crisis: How to Survive",
-          en_desc: "63% of users ignore AI-generated content. Learn how to use AI as an assistant while maintaining your authentic human brand voice.",
-          en_link: "ai-slop-crisis-2026.html",
-          en_tag: "AI Marketing",
-          readTime: "12 min read"
-        },
-        {
-          en_title: "The Ultimate Hooks Playbook",
-          en_desc: "Attention spans are down to 3 seconds. Learn the psychological formulas to write hooks that stop the scroll instantly.",
-          en_link: "hooks-guide-2026.html",
-          en_tag: "Copywriting",
+          title: "How to Write a Scroll-Stopping Hook",
+          desc: "Attention spans are down to 3 seconds. Learn the psychological formulas to write hooks that stop the scroll instantly.",
+          link: "how-to-write-a-scroll-stopping-hook.html",
+          tag: "Copywriting",
           readTime: "7 min read"
         },
         {
-          en_title: "Ad Budget Calculator 2026",
-          en_desc: "Stop losing money on ads. Understand your CAC, ROAS, and exactly when to scale or kill a campaign with simple math.",
-          en_link: "ad-budget-calculator-2026.html",
-          en_tag: "Analytics & ROI",
-          readTime: "10 min read"
+          title: "Content Strategy vs Posting",
+          desc: "Why do some pages post every day without selling? Discover the core difference between random posting and building a solid strategy.",
+          link: "content strategy VS posting",
+          tag: "Content Strategy",
+          readTime: "8 min read"
         },
         {
-          en_title: "2026 World Happiness Report",
-          en_desc: "Oxford's massive study reveals the true impact of social media. Find out why building communities is better than chasing followers.",
-          en_link: "happiness-report-2026.html",
-          en_tag: "Research",
+          title: "Smart Content Engineering 2026",
+          desc: "A complete framework for building flexible content systems, audience maps, and repeatable social media execution without burnout.",
+          link: "smart-content-engineering-2026.html",
+          tag: "Content Strategy",
+          readTime: "8 min read"
+        },
+        {
+          title: "The AI Slop Crisis: How to Survive",
+          desc: "63% of users ignore AI-generated content. Learn how to use AI as an assistant while maintaining your authentic human brand voice.",
+          link: "ai-slop-crisis-2026.html",
+          tag: "AI Marketing",
           readTime: "12 min read"
         },
         {
-          en_title: "Social Media Strategy 2026",
-          en_desc: "A practical guide to choosing the right platforms, defining smart goals, and measuring what actually matters for your business.",
-          en_link: "social-media-strategy-2026.html",
-          en_tag: "Social Media",
-          readTime: "9 min read"
+          title: "Ad Budget Calculator 2026",
+          desc: "Stop losing money on ads. Understand your CAC, ROAS, and exactly when to scale or kill a campaign with simple math.",
+          link: "ad-budget-calculator-2026.html",
+          tag: "Analytics & ROI",
+          readTime: "10 min read"
+        },
+        {
+          title: "2026 World Happiness Report",
+          desc: "Oxford's massive study reveals the true impact of social media. Find out why building communities is better than chasing followers.",
+          link: "happiness-report-2026.html",
+          tag: "Research",
+          readTime: "12 min read"
         }
       ];
 
@@ -392,9 +391,12 @@
         let articles = fallbackArticles;
 
         // Try network fetch exclusively for the English JSON file
-        if (window.location.protocol !== 'blob:' && window.location.protocol !== 'file:') {
+        // Ensure this logic avoids throwing uncaught TypeErrors in blob environments
+        // We use window.location.protocol.startsWith('http') to check if we are on a real server
+        if (window.location.protocol.startsWith('http')) {
           try {
-            const res = await fetch("/en/blog/articles_en.json?v=" + Date.now()); 
+            // Using relative path assuming articles_en.json is in the same /en/ folder
+            const res = await fetch("articles_en.json?v=" + Date.now()); 
             if (res.ok) {
               articles = await res.json();
             }
@@ -428,7 +430,7 @@
           const title = article.en_title || article.title || "Marketing Playbook";
           const desc = article.en_desc || article.desc || "Learn the latest strategies for 2026.";
           const link = article.en_link || article.link || "#";
-          const tag = article.en_tag || "Strategy";
+          const tag = article.en_tag || article.tag || "Strategy";
           const readTime = article.readTime || "5 min read";
 
           const card = document.createElement("article");
@@ -439,7 +441,7 @@
             <p>${escapeHTML(desc)}</p>
             <div class="card-footer">
               <span class="read-time">${escapeHTML(readTime)}</span>
-              <a class="read-link" href="/en/blog/${encodeURIComponent(link)}">Read Article &rarr;</a>
+              <a class="read-link" href="${escapeHTML(link)}">Read Article &rarr;</a>
             </div>
           `;
           container.appendChild(card);
