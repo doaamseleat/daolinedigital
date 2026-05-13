@@ -8,6 +8,7 @@
   <title>How to Write a 3-Second Scroll-Stopping Hook | Daoline Digital</title>
   <meta name="description" content="The ultimate guide to writing scroll-stopping hooks in 3 seconds. Discover hook types, the psychology behind them, practical examples, and the viral video formula.">
   <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://daolinedigital.com/en/how-to-write-a-scroll-stopping-hook.html">
 
   <!-- Google Analytics 4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-DCECS21BFZ"></script>
@@ -34,6 +35,7 @@
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
 
     body {
       font-family: "Inter", "Tajawal", sans-serif;
@@ -45,6 +47,7 @@
 
     a { color: inherit; text-decoration: none; }
 
+    /* ====== HEADER ====== */
     .topbar {
       position: sticky;
       top: 0;
@@ -64,22 +67,10 @@
       gap: 14px;
     }
 
-    .logo {
-      font-weight: 900;
-      font-size: 20px;
-      color: #fff;
-      letter-spacing: -0.5px;
-    }
-
+    .logo { font-weight: 900; font-size: 20px; color: #fff; letter-spacing: -0.5px; }
     .logo span { color: var(--primary); }
 
-    .nav-links {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
+    .nav-links { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
     .nav-btn {
       padding: 8px 14px;
       border-radius: 999px;
@@ -90,21 +81,12 @@
       font-weight: 700;
       transition: all 0.3s ease;
     }
-    
-    .nav-btn:hover { background: rgba(255,255,255,0.1); }
-
-    .nav-btn.primary {
-      background: var(--primary);
-      border-color: var(--primary);
-    }
-    
+    .nav-btn:hover { background: rgba(192,19,166,0.16); border-color: rgba(192,19,166,0.45); }
+    .nav-btn.primary { background: var(--primary); border-color: var(--primary); }
     .nav-btn.primary:hover { background: #a00f89; }
 
-    .article-wrap {
-      max-width: 850px;
-      margin: auto;
-      padding: 45px 20px 80px;
-    }
+    /* ====== ARTICLE CORE ====== */
+    .article-wrap { max-width: 850px; margin: auto; padding: 45px 20px 80px; }
 
     .back-link {
       display: inline-flex;
@@ -118,8 +100,7 @@
       font-weight: 700;
       transition: 0.3s;
     }
-    
-    .back-link:hover { color: #fff; background: rgba(255,255,255,0.1); }
+    .back-link:hover { color: #fff; background: rgba(192,19,166,0.1); border-color: rgba(192,19,166,0.45); }
 
     .article-title {
       font-size: clamp(2rem, 5vw, 3.2rem);
@@ -153,27 +134,10 @@
       letter-spacing: -0.5px;
     }
 
-    .article-content h3 {
-      color: #fff;
-      font-size: 1.3rem;
-      margin: 30px 0 12px;
-      font-weight: 800;
-    }
-
-    .article-content p {
-      margin-bottom: 24px;
-      color: #e6edf5;
-      text-align: left;
-    }
-
-    .article-content ul {
-      margin: 0 0 25px 22px;
-    }
-
-    .article-content li {
-      margin-bottom: 10px;
-      color: #e6edf5;
-    }
+    .article-content h3 { color: #fff; font-size: 1.3rem; margin: 30px 0 12px; font-weight: 800; }
+    .article-content p { margin-bottom: 24px; color: #e6edf5; text-align: left; }
+    .article-content ul { margin: 0 0 25px 22px; color: #e6edf5;}
+    .article-content li { margin-bottom: 10px; }
     
     .hl { background: rgba(192,19,166,0.25); color: #f472b6; padding: 2px 8px; border-radius: 6px; font-weight: 700; }
 
@@ -185,15 +149,64 @@
       padding: 26px;
       margin: 40px 0;
     }
-    
     .note-box-title { color: var(--primary); font-weight: 900; font-size: 20px; margin-bottom: 12px; }
 
-    footer {
+    /* ====== LEAD BOX (Hooks Version) ====== */
+    .lead-box {
+      background: linear-gradient(145deg, #1a2235, #0d1422);
+      border: 2px dashed rgba(192,19,166,0.6);
+      border-radius: 24px;
+      padding: 40px 24px;
       text-align: center;
-      padding: 35px 20px;
-      color: var(--muted);
+      margin: 60px 0;
+      box-shadow: 0 15px 40px rgba(192, 19, 166, 0.15);
+    }
+    .lead-box h3 { color: #fff; font-size: 1.8rem; margin-bottom: 10px; font-weight: 900;}
+    .lead-box p { color: var(--muted); text-align: center; margin-bottom: 25px; font-size: 16px;}
+    
+    .form-input { width: 100%; padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.4); color: #fff; font-family: inherit; margin-bottom: 12px; outline: none; font-size: 1rem; }
+    .form-input:focus { border-color: var(--primary); }
+    .submit-btn { width: 100%; background: var(--primary); color: #fff; border: none; padding: 18px; border-radius: 12px; font-weight: 800; font-size: 1.1rem; cursor: pointer; transition: 0.3s; }
+    .submit-btn:hover { background: #9f0d89; transform: translateY(-2px); }
+    
+    .success-area { display: none; margin-top: 20px; animation: fadeIn 0.5s; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+    /* ====== RELATED ARTICLES ====== */
+    .related-articles {
+      margin-top: 60px;
+      padding-top: 50px;
       border-top: 1px solid var(--border);
-      font-size: 14px;
+    }
+    .related-articles h3 { font-size: 1.8rem; font-weight: 900; color: #fff; margin-bottom: 25px; letter-spacing: -0.5px;}
+    .grid-articles { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    
+    .article-card {
+      padding: 24px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      background: rgba(15,18,32,0.6);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      transition: 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .article-card:hover { transform: translateY(-4px); border-color: rgba(192,19,166,0.4); background: rgba(15,18,32,0.9); }
+    .tag { display: inline-flex; padding: 5px 12px; border-radius: 999px; background: rgba(192,19,166,0.1); border: 1px solid rgba(192,19,166,0.28); color: #ffd7f6; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 15px; align-self: flex-start; }
+    .article-card h4 { color: #fff; font-size: 1.25rem; line-height: 1.3; margin-bottom: 12px; font-weight: 800; }
+    .article-card p { color: var(--muted); font-size: 0.95rem; margin-bottom: 20px; line-height: 1.6; flex-grow: 1; }
+    .read-link { display: inline-flex; align-items: center; gap: 8px; color: #fff; font-weight: 800; font-size: 0.95rem; margin-top: auto; transition: 0.2s; }
+    .read-link:hover { color: var(--primary); }
+
+    footer { text-align: center; padding: 35px 20px; color: var(--muted); border-top: 1px solid var(--border); font-size: 14px; margin-top: 40px;}
+
+    @media (max-width: 768px) {
+      .grid-articles { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .topbar-inner { flex-direction: column; }
+      .nav-links { justify-content: center; }
+      body { font-size: 17px; }
     }
   </style>
 </head>
@@ -202,22 +215,22 @@
 
 <header class="topbar">
   <div class="topbar-inner">
-    <a href="https://daolinedigital.com/" class="logo">
+    <a href="https://daolinedigital.com/en/" class="logo">
       Daoline<span>Digital</span>
     </a>
 
     <nav class="nav-links">
-      <a href="https://daolinedigital.com/" class="nav-btn">Home</a>
-      <a href="https://daolinedigital.com/blog/" class="nav-btn">Library</a>
-      <a href="#lead-section" class="nav-btn primary">Free Course</a>
+      <a href="https://daolinedigital.com/en/" class="nav-btn">🏠 Agency Home</a>
+      <a href="/blog/" class="nav-btn">🌍 Arabic Library</a>
+      <a href="/en/blog/" class="nav-btn primary">🎁 Free Playbooks</a>
     </nav>
   </div>
 </header>
 
 <main class="article-wrap">
 
-  <a href="https://daolinedigital.com/blog/" class="back-link">
-    ← Back to Library
+  <a href="/en/blog/" class="back-link">
+    &larr; Back to Free Playbooks
   </a>
 
   <h1 class="article-title">How to Write a Hook That Stops the Scroll in 3 Seconds: The 2026 Guide</h1>
@@ -241,6 +254,33 @@
 
     <h2>The 3-Second Rule in 2026</h2>
     <p>Skip the boring introductions! Saying "Hello everyone" or "Welcome back to my channel" wastes the most crucial seconds of your video. Dive straight into the topic. Use a shocking statement or a question that hits your audience's "pain point" right at the core.</p>
+
+    <!-- ====== LEAD BOX (Hooks Version) ====== -->
+    <section class="lead-box" id="leads-section">
+      <div style="font-size: 3.5rem; margin-bottom: 10px;">🪝</div>
+      <h3>Unlock the <span style="color: var(--primary);">Ultimate Hooks Playbook</span></h3>
+      <p>
+        Don't know how to start your videos? Get instant access to <strong>50 ready-to-use Hooks</strong> in PDF format. Downloads automatically.
+      </p>
+      
+      <div style="max-width: 450px; margin: 0 auto;" id="form-container">
+        <input type="text" id="lead-name" placeholder="Your Name" class="form-input" required>
+        <input type="email" id="lead-email" placeholder="Your Best Email" class="form-input" required>
+        <input type="tel" id="lead-whatsapp" placeholder="WhatsApp Number" class="form-input" required>
+        <button onclick="submitDaolineLead()" id="lead-btn" class="submit-btn">Download PDF Now 🚀</button>
+        <div id="lead-status" style="margin-top: 15px; font-weight: bold; font-size: 1rem;"></div>
+        <p style="font-size: 12px; color: #64748b; margin-top: 15px;">Your information is 100% secure. We hate spam too.</p>
+      </div>
+
+      <div class="success-area" id="download-area">
+        <div style="font-size: 50px; margin-bottom: 10px;">✅</div>
+        <h3 style="color: #4ade80; margin-bottom: 10px; font-size: 1.5rem;">Successfully Registered!</h3>
+        <p style="margin-bottom: 20px; font-size: 1rem; color: #e2e8f0;">Your playbook is opening in a new tab...<br>Click below if it doesn't open automatically.</p>
+        <a id="direct-download" href="#" target="_blank" style="display: inline-block; background: #4ade80; color: #0f172a; padding: 12px 22px; border-radius: 14px; font-weight: 900; text-decoration: none;">
+          Download Manually 📂
+        </a>
+      </div>
+    </section>
 
     <h2>Top Hook Formulas for 2026</h2>
     <p>To make it easier for you, here are practical examples of the most powerful hooks working right now that you can instantly apply to your content:</p>
@@ -285,11 +325,109 @@
     <p>In conclusion, remember that attention is the most expensive currency in 2026. When you offer real value wrapped in a smart, scroll-stopping hook, you'll find the algorithm actively looking for you—not the other way around.</p>
   </article>
 
+  <!-- ======================================================== -->
+  <!-- RELATED ARTICLES SECTION (Internal Linking)              -->
+  <!-- ======================================================== -->
+  <section class="related-articles">
+    <h3>Keep Reading: More Playbooks & Guides</h3>
+    <div class="grid-articles">
+      
+      <!-- المقال السابق المرتبط -->
+      <article class="article-card">
+        <span class="tag">Social SEO</span>
+        <h4>Social Media SEO 2026: Ultimate Guide</h4>
+        <p>Social platforms are the new search engines. Learn the exact workflows to optimize your content for discovery on TikTok and Instagram.</p>
+        <a class="read-link" href="social-media-seo-2026.html">Read Article &rarr;</a>
+      </article>
+
+      <article class="article-card">
+        <span class="tag">Content Strategy</span>
+        <h4>Smart Content Engineering 2026</h4>
+        <p>A complete framework for building flexible content systems, audience maps, AI workflows, and repeatable social media execution.</p>
+        <a class="read-link" href="#">Read Article &rarr;</a>
+      </article>
+
+      <article class="article-card">
+        <span class="tag">AI Marketing</span>
+        <h4>AI Content Strategy 2026</h4>
+        <p>How to use AI as a strategic assistant without losing brand voice, human judgment, or trust with your audience.</p>
+        <a class="read-link" href="#">Read Article &rarr;</a>
+      </article>
+
+      <article class="article-card">
+        <span class="tag">Planning</span>
+        <h4>Content Calendar 2026</h4>
+        <p>How to build a flexible monthly content calendar that balances education, engagement, brand authority, and sales.</p>
+        <a class="read-link" href="#">Read Article &rarr;</a>
+      </article>
+
+    </div>
+  </section>
+
 </main>
 
 <footer>
   © 2026 Daoline Digital Academy — All Rights Reserved
 </footer>
+
+<!-- Lead Submission Logic -->
+<script>
+  async function submitDaolineLead() {
+    const name = document.getElementById('lead-name').value.trim();
+    const email = document.getElementById('lead-email').value.trim();
+    const wa = document.getElementById('lead-whatsapp').value.trim();
+    const status = document.getElementById('lead-status');
+    const btn = document.getElementById('lead-btn');
+
+    if(!name || !email || !wa) {
+      status.innerText = "Please fill in all fields! ⚠️";
+      status.style.color = "#f87171";
+      return;
+    }
+
+    try {
+      btn.disabled = true; 
+      btn.innerText = "Preparing your download...";
+      
+      const fd = new FormData();
+      fd.append("entry.299023128", name);
+      fd.append("entry.1712155557", email);
+      fd.append("entry.1224669856", wa);
+      // تغيير الكلمة لتمييز أن التحميل لدليل الهوكات الإنجليزي
+      fd.append("entry.334049848", "English_Hooks_Playbook"); 
+      
+      const formUrl = "https://docs.google.com/forms/d/e/1FAIpQLSdSXEvN7DMMC-pwXED9G5TRpe4ecQ5U7pMtsg3201d2ikinfQ/formResponse";
+      
+      // Send data silently
+      await fetch(formUrl, { method: "POST", mode: "no-cors", body: fd });
+      
+      // Show Success UI
+      document.getElementById('form-container').style.display = 'none';
+      document.getElementById('download-area').style.display = 'block';
+
+      // Google Drive Link for Hooks Playbook (Same as Arabic one you provided)
+      const fileId = "15PPt3I-8tqq8giFOkrX72PeQ9k4N1SJc";
+      const driveLink = `https://drive.google.com/file/d/${fileId}/view?usp=sharing`;
+      
+      // Set fallback link
+      document.getElementById('direct-download').href = driveLink;
+
+      // Auto-open download link
+      window.open(driveLink, "_blank");
+
+      // Send GA4 Event
+      if (typeof gtag === 'function') {
+        gtag('event', 'generate_lead', { event_category: 'lead', event_label: 'english_hooks_playbook_download' });
+      }
+
+    } catch (e) {
+      status.innerText = "An error occurred. Please try again.";
+      status.style.color = "#f87171";
+      btn.disabled = false;
+      btn.innerText = "Download PDF Now 🚀";
+    }
+  }
+</script>
 
 </body>
 </html>
