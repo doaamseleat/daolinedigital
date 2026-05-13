@@ -1,0 +1,111 @@
+name: Generate English Articles JSON
+
+on:
+  push:
+    paths:
+      - "en/*.html"
+      - ".github/workflows/generate-english-articles.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Generate en/articles_en.json
+        run: |
+          python3 << 'PY'
+          import os
+          import re
+          import json
+          from html import unescape
+
+          EN_DIR = "en"
+          OUTPUT = os.path.join(EN_DIR, "articles_en.json")
+
+          articles = []
+
+          if not os.path.isdir(EN_DIR):
+              print("No /en folder found.")
+              exit(0)
+
+          for filename in os.listdir(EN_DIR):
+              if not filename.endswith(".html"):
+                  continue
+
+              if filename == "index.html":
+                  continue
+
+              path = os.path.join(EN_DIR, filename)
+
+              with open(path, "r", encoding="utf-8") as f:
+                  html = f.read()
+
+              title_match = re.search(r"<title>(.*?)</title>", html, re.I | re.S)
+              desc_match = re.search(
+                  r'<meta\s+name=["\']description["\']\s+content=["\'](.*?)["\']',
+                  html,
+                  re.I | re.S
+              )
+
+              title = unescape(title_match.group(1).strip()) if title_match else filename.replace(".html", "")
+              desc = unescape(desc_match.group(1).strip()) if desc_match else "A practical Daoline Digital marketing playbook."
+
+              title = re.sub(r"\s+", " ", title)
+              desc = re.sub(r"\s+", " ", desc)
+
+              tag = "Marketing"
+              lower = filename.lower()
+
+              if "seo" in lower:
+                  tag = "Social SEO"
+              elif "hook" in lower:
+                  tag = "Copywriting"
+              elif "content" in lower:
+                  tag = "Content Strategy"
+              elif "ai" in lower:
+                  tag = "AI Marketing"
+              elif "budget" in lower or "ads" in lower:
+                  tag = "Analytics & ROI"
+              elif "report" in lower or "research" in lower:
+                  tag = "Research"
+
+              number_match = re.search(r"(\d+)", filename)
+              number = int(number_match.group(1)) if number_match else 999
+
+              articles.append({
+                  "title": title,
+                  "desc": desc,
+                  "link": filename,
+                  "tag": tag,
+                  "readTime": "8 min read",
+                  "number": number
+              })
+
+          articles.sort(key=lambda x: x["number"])
+
+          with open(OUTPUT, "w", encoding="utf-8") as f:
+              json.dump(articles, f, ensure_ascii=False, indent=2)
+
+          print(f"Generated {OUTPUT} with {len(articles)} articles.")
+          PY
+
+      - name: Commit generated JSON
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git add en/articles_en.json
+
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Auto-generate English articles JSON"
+            git push
+          fi
