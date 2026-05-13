@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Daoline Digital English Library | Marketing Playbooks 2026</title>
-  <meta name="description" content="Explore Daoline Digital English resources: Social SEO, AI content workflows, and practical marketing playbooks for 2026.">
+  <title>Daoline Free Courses & Playbooks | Marketing Library 2026</title>
+  <meta name="description" content="Explore Daoline Digital English resources: Social SEO, AI content workflows, and practical marketing playbooks for 2026 to grow your business.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://daolinedigital.com/en/blog/">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Daoline Digital English Library | Marketing Playbooks 2026">
+  <meta property="og:title" content="Daoline Free Courses & Playbooks 2026">
   <meta property="og:description" content="Practical English marketing guides from Daoline Digital covering Social SEO, AI content strategy, and scalable content systems.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://daolinedigital.com/en/blog/">
@@ -38,17 +38,14 @@
     :root{
       --primary:#c013a6;
       --primary2:#9f0d89;
-      --blue:#2563eb;
       --bg:#07080c;
       --bg2:#0b0d14;
       --surface:#0f1220;
-      --surface2:#15192a;
       --text:#f4f7fc;
       --muted:rgba(244,247,252,.72);
       --border:rgba(255,255,255,.10);
       --shadow:0 18px 60px rgba(0,0,0,.45);
       --max:1120px;
-      --radius:24px;
     }
 
     *{ box-sizing:border-box; margin:0; padding:0; }
@@ -76,16 +73,24 @@
     .logo span:last-child{ color:var(--primary); }
     
     .nav-links{ display:flex; align-items:center; gap:10px; flex-wrap:wrap; justify-content:flex-end; }
-    .nav-btn{ padding:9px 14px; border-radius:999px; border:1px solid var(--border); background:rgba(255,255,255,.05); color:rgba(244,247,252,.90); font-size:14px; font-weight:700; transition:.2s ease; white-space:nowrap; }
-    .nav-btn:hover{ background:rgba(255,255,255,.1); }
+    .nav-btn{ padding:9px 16px; border-radius:999px; border:1px solid var(--border); background:rgba(255,255,255,.05); color:rgba(244,247,252,.90); font-size:14px; font-weight:700; transition:.2s ease; white-space:nowrap; }
+    .nav-btn:hover{ background:rgba(255,255,255,.1); border-color:rgba(192,19,166,.45); color:#fff;}
     .nav-btn.primary{ background:var(--primary); border-color:var(--primary); color:#fff; }
     .nav-btn.primary:hover{ background:var(--primary2); }
 
-    /* ====== LIBRARY HERO ====== */
-    .hero{ padding:60px 0 40px; text-align:center; border-bottom: 1px solid var(--border); background: rgba(255,255,255,0.02); }
-    .eyebrow{ display:inline-block; padding:6px 12px; border-radius:999px; color:#ffd7f6; background:rgba(192,19,166,.12); border:1px solid rgba(192,19,166,.32); font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:.08em; margin-bottom:20px; }
-    h1{ font-size:clamp(2.5rem, 5vw, 4.5rem); line-height:1.1; letter-spacing:-.05em; font-weight:900; color:#fff; max-width:800px; margin:0 auto 20px; }
-    .hero p{ max-width:650px; margin:0 auto 28px; color:rgba(244,247,252,.76); font-size:18px; line-height:1.7; }
+    /* ====== BANNER ====== */
+    .resource-banner{ position:sticky; top:70px; z-index:900; background:linear-gradient(90deg, rgba(192,19,166,.96), rgba(130,35,210,.86)); border-bottom:1px solid rgba(255,255,255,.16); }
+    .resource-inner{ min-height:48px; display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; padding:8px 0; }
+    .resource-title{ font-weight:900; font-size:14px; color:#fff; }
+    .resource-title span{ opacity:.82; font-weight:700; margin-left: 6px;}
+    .banner-link{ display:inline-flex; align-items:center; padding:7px 13px; border-radius:999px; background:rgba(7,8,12,.86); color:#fff; border:1px solid rgba(255,255,255,.14); font-size:13px; font-weight:900; transition:.2s ease; }
+    .banner-link:hover{ background:#05060a; transform:translateY(-1px); }
+
+    /* ====== HERO ====== */
+    .hero{ padding:70px 0 50px; text-align:center; border-bottom: 1px solid var(--border); background: rgba(255,255,255,0.02); }
+    .eyebrow{ display:inline-block; padding:6px 14px; border-radius:999px; color:#ffd7f6; background:rgba(192,19,166,.15); border:1px solid rgba(192,19,166,.4); font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:.08em; margin-bottom:20px; }
+    h1{ font-size:clamp(2.5rem, 5vw, 4.2rem); line-height:1.1; letter-spacing:-.04em; font-weight:900; color:#fff; max-width:850px; margin:0 auto 20px; }
+    .hero p{ max-width:680px; margin:0 auto 28px; color:rgba(244,247,252,.76); font-size:18px; line-height:1.7; }
 
     /* ====== CATEGORIES BAR ====== */
     .categories-bar { padding: 20px 0; border-bottom: 1px solid var(--border); background: rgba(15,18,32,0.4); }
@@ -95,7 +100,6 @@
     .cat-btn:hover { border-color: rgba(192,19,166,.45); color: #fff; }
     .cat-btn.active { background: rgba(192,19,166,.15); border-color: var(--primary); color: #fff; }
 
-    /* ====== SECTION STYLES ====== */
     section{ padding:60px 0; }
     .section-head{ margin-bottom:30px; }
     .section-head h2{ font-size:2rem; line-height:1.2; letter-spacing:-.04em; font-weight:900; color: #fff;}
@@ -105,11 +109,9 @@
     .featured-kicker{ display:inline-flex; padding:6px 12px; border-radius:999px; background: var(--primary); color:#fff; font-size:12px; font-weight:800; margin-bottom:20px; text-transform: uppercase; letter-spacing: 1px;}
     .featured-card h3{ font-size:2.5rem; line-height:1.1; letter-spacing:-.04em; font-weight:900; margin-bottom:16px; color:#fff; }
     .featured-card p{ color:rgba(244,247,252,.76); font-size:17px; margin-bottom:25px; line-height: 1.8;}
-    
     .meta-row{ display:flex; gap:10px; flex-wrap:wrap; margin-bottom:30px; }
     .meta-pill{ padding:6px 12px; border-radius:8px; background:rgba(255,255,255,.05); color:var(--muted); font-size:13px; font-weight:600; display: flex; align-items: center; gap: 6px;}
 
-    /* Visual Graphic inside Featured */
     .visual-panel{ border-radius:20px; border:1px solid var(--border); background: linear-gradient(135deg, rgba(37,99,235,.12), rgba(192,19,166,.20)); display:flex; align-items:center; justify-content:center; padding: 40px 20px;}
     .visual-stack{ width: 100%; max-width: 320px; display:grid; gap:12px; }
     .mini-card{ border-radius:14px; padding:16px; background:rgba(7,8,12,.8); border:1px solid rgba(255,255,255,.10); color:#fff; font-weight:800; box-shadow:0 10px 20px rgba(0,0,0,.3); font-size: 15px;}
@@ -120,7 +122,7 @@
     .article-card{ padding:26px; border-radius:24px; border:1px solid var(--border); background:rgba(15,18,32,.5); transition:.3s ease; display:flex; flex-direction:column; }
     .article-card:hover{ transform:translateY(-5px); border-color:rgba(192,19,166,.4); background:rgba(15,18,32,.8); box-shadow: 0 20px 40px rgba(0,0,0,0.4);}
     .tag{ display:inline-block; padding:5px 12px; border-radius:6px; background:rgba(192,19,166,.10); color:#ffd7f6; font-size:12px; font-weight:700; text-transform:uppercase; margin-bottom: 16px; align-self: flex-start;}
-    .article-card h3{ color:#fff; font-size:1.4rem; line-height:1.3; font-weight: 800; margin-bottom:12px; }
+    .article-card h3{ color:#fff; font-size:1.35rem; line-height:1.3; font-weight: 800; margin-bottom:12px; }
     .article-card p{ color:var(--muted); font-size:15px; margin-bottom:20px; line-height: 1.7; flex-grow: 1;}
     .card-footer { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border); padding-top: 16px; margin-top: auto;}
     .read-time { font-size: 13px; color: #64748b; font-weight: 500;}
@@ -129,7 +131,7 @@
 
     /* ====== LEAD BOX (Instant Download) ====== */
     .daoline-lead-box { 
-      margin: 60px auto; 
+      margin: 40px auto 0; 
       background: linear-gradient(145deg, #1e293b, #0f172a); 
       border: 2px dashed var(--primary); 
       border-radius: 30px; 
@@ -143,13 +145,13 @@
     .daoline-input { width: 100%; padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.4); color: #fff; font-family: inherit; margin-bottom: 12px; outline: none; font-size: 1rem; }
     .daoline-input:focus { border-color: var(--primary); }
     .daoline-submit-btn { width: 100%; background: var(--primary); color: #fff; border: none; padding: 18px; border-radius: 12px; font-weight: 800; font-size: 1.1rem; cursor: pointer; transition: 0.3s; }
-    .daoline-submit-btn:hover { background: var(--primary2); }
+    .daoline-submit-btn:hover { background: var(--primary2); transform: translateY(-2px); }
     .daoline-status { margin-top: 15px; font-weight: bold; font-size: 1rem; }
     .success-area { display: none; margin-top: 20px; animation: fadeIn 0.5s; }
     @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
     /* ====== MINI ABOUT SECTION ====== */
-    .mini-about { border-top: 1px solid var(--border); padding-top: 60px; margin-top: 40px; display: grid; grid-template-columns: 1fr 2fr; gap: 40px; align-items: center;}
+    .mini-about { border-top: 1px solid var(--border); padding-top: 60px; margin-top: 60px; display: grid; grid-template-columns: 1fr 2fr; gap: 40px; align-items: center;}
     .mini-about h3 { font-size: 1.8rem; font-weight: 900; color: #fff; margin-bottom: 10px;}
     .mini-about p { color: var(--muted); font-size: 16px; line-height: 1.8;}
 
@@ -166,7 +168,7 @@
       .grid-articles{ grid-template-columns:1fr; }
       h1{ font-size:2.2rem; }
       .daoline-lead-box { padding: 30px 20px; }
-      .nav-links { display: none; } /* Hide complex nav on mobile for clean look */
+      .nav-links { display: none; }
     }
   </style>
 </head>
@@ -181,21 +183,36 @@
           Daoline<span>Digital</span>
         </a>
         <nav class="nav-links">
-          <a href="https://daolinedigital.com/en/" class="nav-btn">Agency Home</a>
+          <a href="https://daolinedigital.com/en/" class="nav-btn">🏠 Agency Home</a>
           <a href="/blog/" class="nav-btn">🌍 Arabic Library</a>
-          <a href="#leads-section" class="nav-btn primary">Download Playbooks</a>
+          <a href="#leads-section" class="nav-btn primary">🎁 Free Playbooks</a>
         </nav>
       </div>
     </div>
   </header>
 
-  <!-- Library Hero -->
+  <!-- Library Banner -->
+  <div class="resource-banner">
+    <div class="wrap">
+      <div class="resource-inner">
+        <div class="resource-title">
+          🎓 Daoline Free Courses & Playbooks
+          <span>— Actionable strategies for real growth</span>
+        </div>
+        <div class="resource-actions">
+          <a class="banner-link" href="#leads-section">Download SEO Guide ↓</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
   <section class="hero">
     <div class="wrap">
-      <div class="eyebrow">Marketing Resources 2026</div>
-      <h1>The English Playbook Library</h1>
+      <div class="eyebrow">The 2026 Playbooks</div>
+      <h1>Smarter Social Media Growth Starts Here</h1>
       <p>
-        Actionable guides, templates, and strategies designed for creators and businesses who want to dominate social media algorithms and drive real revenue.
+        Stop guessing. Start growing. Actionable guides, AI workflows, and social media strategies designed to turn followers into paying customers in 2026.
       </p>
     </div>
   </section>
@@ -235,7 +252,6 @@
             <span class="meta-pill">👤 Doaa Seleat</span>
           </div>
 
-          <!-- Link points to the English version of the article -->
           <a class="nav-btn primary" href="/en/social-media-seo-2026.html" style="font-size: 16px; padding: 12px 24px;">Read the Full Guide &rarr;</a>
         </div>
 
@@ -286,7 +302,7 @@
           <p>Attention spans are down to 3 seconds. Learn the psychological formulas to write hooks that stop the scroll instantly.</p>
           <div class="card-footer">
             <span class="read-time">7 min read</span>
-            <a class="read-link" href="/en/hooks-guide-2026.html">Read Article &rarr;</a>
+            <a class="read-link" href="#">Read Article &rarr;</a>
           </div>
         </article>
 
@@ -337,19 +353,19 @@
         
         <div style="max-width: 450px; margin: 0 auto;" id="form-container">
           <input type="text" id="lead-name" placeholder="Your Name" class="daoline-input" required>
-          <input type="email" id="lead-email" placeholder="Your Email Address" class="daoline-input" required>
+          <input type="email" id="lead-email" placeholder="Your Best Email" class="daoline-input" required>
           <input type="tel" id="lead-whatsapp" placeholder="WhatsApp Number" class="daoline-input" required>
-          <button onclick="submitDaolineLead()" id="lead-btn" class="daoline-submit-btn">Download PDF Now</button>
+          <button onclick="submitDaolineLead()" id="lead-btn" class="daoline-submit-btn">Download PDF Now 🚀</button>
           <div id="lead-status" class="daoline-status"></div>
-          <p style="font-size: 12px; color: #64748b; margin-top: 15px;">Your information is 100% secure.</p>
+          <p style="font-size: 12px; color: #64748b; margin-top: 15px;">Your information is 100% secure. We hate spam too.</p>
         </div>
 
         <div class="success-area" id="download-area">
           <div style="font-size: 50px; margin-bottom: 10px;">✅</div>
           <h3 style="color: #4ade80; margin-bottom: 10px; font-size: 1.5rem;">Successfully Registered!</h3>
-          <p style="margin-bottom: 20px; font-size: 1rem; color: #e2e8f0;">Your playbook is opening in a new tab...<br>Click below if it doesn't open.</p>
+          <p style="margin-bottom: 20px; font-size: 1rem; color: #e2e8f0;">Your playbook is opening in a new tab...<br>Click below if it doesn't open automatically.</p>
           <a id="direct-download" href="#" target="_blank" class="daoline-submit-btn" style="background:#4ade80; color:#0f172a; text-decoration:none; display:inline-block; max-width:250px;">
-            Download Manually
+            Download Manually 📂
           </a>
         </div>
       </div>
@@ -427,7 +443,7 @@
         status.innerText = "An error occurred. Please try again.";
         status.style.color = "#f87171";
         btn.disabled = false;
-        btn.innerText = "Download PDF Now";
+        btn.innerText = "Download PDF Now 🚀";
       }
     }
   </script>
