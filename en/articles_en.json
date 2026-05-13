@@ -1,26 +1,26 @@
 [
   {
-    "title": "Social Media SEO 2026: The Ultimate Guide",
-    "desc": "Learn how social platforms became search engines and how to optimize your content for discovery, trust, and conversion.",
-    "link": "social-media-seo-2026.html",
-    "tag": "Social SEO",
-    "readTime": "10 min read",
-    "number": 1
-  },
-  {
-    "title": "How to Write a Scroll-Stopping Hook",
-    "desc": "Attention spans are short. Learn practical hook formulas that stop the scroll and make your content easier to remember.",
-    "link": "how-to-write-a-scroll-stopping-hook.html",
-    "tag": "Copywriting",
-    "readTime": "7 min read",
-    "number": 2
-  },
-  {
-    "title": "Content Strategy vs Posting",
-    "desc": "Why do some pages post every day without selling? Learn the difference between random posting and strategic content systems.",
+    "title": "Content Strategy vs. Posting: The Difference Nobody Told You About | Daoline Digital",
+    "desc": "Why do some pages post every day and never sell, while others post once and change everything? The secret isn",
     "link": "content-strategy-vs-posting.html",
     "tag": "Content Strategy",
     "readTime": "8 min read",
-    "number": 3
+    "number": 999
+  },
+  {
+    "title": "How to Write a 3-Second Scroll-Stopping Hook | Daoline Digital",
+    "desc": "The ultimate guide to writing scroll-stopping hooks in 3 seconds. Discover hook types, the psychology behind them, practical examples, and the viral video formula.",
+    "link": "how-to-write-a-scroll-stopping-hook.html",
+    "tag": "Copywriting",
+    "readTime": "8 min read",
+    "number": 999
+  },
+  {
+    "title": "Social Media SEO Guide 2026 | Daoline Digital",
+    "desc": "A practical 2026 guide to Social Media SEO: how to make your content searchable on TikTok, Instagram, YouTube, and Google using keywords, captions, hooks, and platform behavior.",
+    "link": "social-media-seo-2026.html",
+    "tag": "Social SEO",
+    "readTime": "8 min read",
+    "number": 2026
   }
 ]
