@@ -1181,6 +1181,92 @@ body.locked > *:not(#courseLock) {
 
 
 
+
+/* ===== ORGANIZED LECTURE HUB ===== */
+.lesson-order-section {
+  padding: 42px 20px 34px;
+  background: #0c0c17;
+}
+.lesson-order-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.lesson-order-title {
+  color: #fff;
+  font-size: clamp(1.6rem, 3vw, 2.3rem);
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.lesson-order-sub {
+  color: #aaa6c0;
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 24px;
+  line-height: 1.9;
+}
+.order-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 14px;
+}
+.order-step-card {
+  background: linear-gradient(145deg, rgba(255,255,255,0.10), rgba(255,255,255,0.04));
+  border: 1px solid rgba(255,255,255,0.13);
+  border-radius: 22px;
+  padding: 22px;
+  min-height: 190px;
+}
+.order-step-num {
+  width: 38px;
+  height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 13px;
+  background: linear-gradient(135deg, #8B5CF6, #C013A6);
+  color: #fff;
+  font-weight: 900;
+  margin-bottom: 12px;
+}
+.order-step-card h3 {
+  color: #fff;
+  font-size: 17px;
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+.order-step-card p {
+  color: #c8c2dd;
+  font-size: 14px;
+  line-height: 1.85;
+}
+.lecture-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+.lecture-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 8px 13px;
+  font-size: 12px;
+  font-weight: 900;
+  background: linear-gradient(135deg, #6C3CE1, #C013A6);
+  color: #fff;
+  text-decoration: none;
+}
+.lecture-action.light {
+  background: #f3f1fb;
+  color: #4C1D95;
+}
+.lesson-video-card.highlight-next {
+  border-color: rgba(16,185,129,.35);
+}
+
+
 /* ===== FINAL FINISH OVERRIDES ===== */
 .clean-nav {
   min-height: 72px;
@@ -1629,12 +1715,45 @@ body.locked > *:not(#courseLock) {
 <section class="hero">
   <div class="hero-content">
     <div class="hero-badge">🎯 First Click — محاضرات الكورس</div>
-    <h1>محاضرات First Click<br><span>ابدأ بأول فيديو وارجع للملخص وقت التطبيق</span></h1>
-    <p>شاهد الفيديو الأول، وبعده ارجع للملخص العملي وخريطة رحلة العميل وقت التطبيق.</p>
-    <a href="#lesson-video" class="hero-cta">شاهد الفيديو الأول 👇</a>
+    <h1>محاضرات First Click<br><span>تابع بالترتيب: شاهد، راجع، ثم طبّق</span></h1>
+    <p>ابدأ بالمحاضرة الأولى لفهم الأساس، وبعدها افتح المحاضرة الثانية لتطبيق فكرة العميل وسبب الشراء.</p>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+      <a href="#lesson-video" class="hero-cta">ابدأ بالمحاضرة الأولى 👇</a>
+      <a href="clarity-tool.html" class="hero-cta" style="background:linear-gradient(135deg,#10B981,#0EA5E9);">افتح المحاضرة الثانية</a>
+    </div>
   </div>
 </section>
 
+
+
+<!-- START ORDER -->
+<section class="lesson-order-section" id="start-order">
+  <div class="lesson-order-inner">
+    <h2 class="lesson-order-title">ابدأ منين؟</h2>
+    <p class="lesson-order-sub">
+      الترتيب هنا مقصود: المحاضرة الأولى تبني الأساس، المحاضرة الثانية تطبق على العميل وسبب الشراء،
+      وباقي المحاضرات هتتفتح تدريجيًا.
+    </p>
+
+    <div class="order-steps-grid">
+      <div class="order-step-card">
+        <div class="order-step-num">1</div>
+        <h3>شاهد المحاضرة الأولى</h3>
+        <p>افهم الفرق بين النشر، الإعلان، والتسويق، وراجع رحلة العميل والقيمة قبل المنتج.</p>
+      </div>
+      <div class="order-step-card">
+        <div class="order-step-num">2</div>
+        <h3>راجع ملخص المحاضرة الأولى</h3>
+        <p>استخدم الملخص الموجود تحت الفيديو كمرجع سريع وقت التطبيق على مشروعك أو صفحتك.</p>
+      </div>
+      <div class="order-step-card">
+        <div class="order-step-num">3</div>
+        <h3>افتح المحاضرة الثانية وطبّق</h3>
+        <p>هتنتقل لصفحة “العميل لا يشتري المنتج فقط” وفيها فيديو + شرح + أداة تطبيق.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- LESSON VIDEO -->
 <section class="lesson-video-section" id="lesson-video">
@@ -1658,7 +1777,7 @@ body.locked > *:not(#courseLock) {
     </div>
 
     <div class="lesson-video-note">
-      <strong>بعد الفيديو:</strong> راجع الأقسام بالترتيب، وطبّق اختبار الـ 10 ثواني على آخر بوست أو إعلان عندك.
+      <strong>بعد الفيديو:</strong> راجع الملخص الموجود تحت، ثم افتح المحاضرة الثانية من كارت المحاضرات أو من الزر الموجود أعلى الصفحة.
     </div>
   </div>
 </section>
@@ -1727,44 +1846,56 @@ body.locked > *:not(#courseLock) {
 
 
 <!-- LECTURES OVERVIEW -->
+
 <section class="lectures-overview" id="lectures-list">
   <div class="lectures-overview-inner">
-    <h2>محاضرات الكورس</h2>
-    <p>الكروت دي هي خريطة الوصول السريعة. المتاح دلوقتي ظاهر، والجديد هنضيفه هنا أول ما يجهز.</p>
+    <h2>خريطة المحاضرات</h2>
+    <p>اتبع الترتيب من اليمين للشمال: شاهد المحاضرة، راجع الملخص، ثم افتح التطبيق العملي عندما يكون متاحًا.</p>
     <div class="lecture-list-grid">
       <div class="lecture-item active">
-        <span class="lecture-num">متاحة الآن</span>
+        <span class="lecture-num">المحاضرة 01 · متاحة الآن</span>
         <h3>أساسيات التسويق اللي محدش قالهالك</h3>
         <p>رحلة العميل، الفرق بين النشر والإعلان والتسويق، والقيمة قبل أي محتوى أو إعلان.</p>
-        <span class="lecture-status">متاحة الآن</span>
+        <div class="lecture-actions">
+          <a class="lecture-action" href="#lesson-video">شاهد الفيديو</a>
+          <a class="lecture-action light" href="#sec1">راجع الملخص</a>
+        </div>
       </div>
-      <div class="lecture-item">
-        <span class="lecture-num">قريبًا</span>
-        <h3>الرسالة والمحتوى</h3>
-        <p>تُضاف بعد تجهيز الفيديو والمحتوى المكتوب.</p>
-        <span class="lecture-status soon">قريبًا</span>
+
+      <div class="lecture-item active">
+        <span class="lecture-num">المحاضرة 02 · متاحة الآن</span>
+        <h3>العميل لا يشتري المنتج فقط</h3>
+        <p>فهم سبب الشراء، قراءة الكومنتات والرسائل، مراقبة المنافس، وبداية بناء صورة العميل.</p>
+        <div class="lecture-actions">
+          <a class="lecture-action" href="clarity-tool.html">افتح المحاضرة</a>
+          <a class="lecture-action light" href="clarity-tool.html#practice-tool">التطبيق العملي</a>
+        </div>
       </div>
+
       <div class="lecture-item">
         <span class="lecture-num">قريبًا</span>
         <h3>Social Search</h3>
-        <p>تُضاف بعد تجهيز الفيديو والمحتوى المكتوب.</p>
+        <p>إزاي الناس تلاقيك على السوشيال من خلال الكلمات والأسئلة وطريقة كتابة المحتوى.</p>
         <span class="lecture-status soon">قريبًا</span>
       </div>
+
       <div class="lecture-item">
         <span class="lecture-num">قريبًا</span>
         <h3>First Ad</h3>
-        <p>تُضاف بعد تجهيز الفيديو والمحتوى المكتوب.</p>
+        <p>بداية الإعلان الممول: الهدف، الجمهور، الرسالة، والميزانية بدون عشوائية.</p>
         <span class="lecture-status soon">قريبًا</span>
       </div>
+
       <div class="lecture-item">
         <span class="lecture-num">قريبًا</span>
         <h3>Track & Improve</h3>
-        <p>تُضاف بعد تجهيز الفيديو والمحتوى المكتوب.</p>
+        <p>متابعة النتائج البسيطة ومعرفة ما الذي يحتاج تحسينًا بعد النشر أو الإعلان.</p>
         <span class="lecture-status soon">قريبًا</span>
       </div>
     </div>
   </div>
 </section>
+
 
 <!-- ===================== SECTION 1 ===================== -->
 <div class="section-divider"></div>
@@ -1920,24 +2051,32 @@ body.locked > *:not(#courseLock) {
 
 <!-- ===================== SECTION 4 ===================== -->
 <div class="section-divider"></div>
+
 <section class="section" id="sec4">
   <div class="animate-in">
     <div class="section-number">4</div>
-    <h2 class="section-title">Buyer Persona — شخصية العميل المثالي</h2>
-    <p class="section-subtitle">دي نقطة مهمة جدًا، وهنفصلها بهدوء في الفيديو الجاي.</p>
+    <h2 class="section-title">الخطوة التالية: افهم العميل قبل الرسالة</h2>
+    <p class="section-subtitle">بعد ما عرفت إن القيمة أهم من المنتج، افتح المحاضرة الثانية لتطبق على سبب الشراء والكومنتات والمنافسين.</p>
   </div>
 
   <div class="next-video-card animate-in">
-    <div class="next-video-kicker">🎬 في الفيديو الجاي</div>
-    <h3>هنبدأ من العميل قبل ما نكتب أي رسالة أو نحلل السوق.</h3>
-    <p>بعد ما فهمنا إن التسويق مش نشر ولا إعلان بس، الفيديو الجاي هيبقى عملي أكتر: هنحدد مين العميل اللي بنكلمه، إزاي نصيغ رسالة تسويقية واضحة، وإزاي نقرأ السوق من خلال <strong>SWOT Analysis</strong> من غير تعقيد.</p>
+    <div class="next-video-kicker">🎬 المحاضرة الثانية متاحة الآن</div>
+    <h3>العميل لا يشتري المنتج فقط</h3>
+    <p>
+      في المحاضرة الثانية هنصحح فكرة مهمة: الـ Persona مش ملف نملأه وخلاص.
+      هنبدأ من سلوك العميل الحقيقي: بيسأل عن إيه؟ بيتردد ليه؟ بيتفاعل مع إيه؟ ومين المنافس اللي بيقارنك به؟
+    </p>
     <div class="next-topics">
-      <div class="next-topic"><strong>Buyer Persona</strong><span>شخصية العميل المثالي</span></div>
-      <div class="next-topic"><strong>Marketing Message</strong><span>الرسالة التسويقية</span></div>
-      <div class="next-topic"><strong>SWOT Analysis</strong><span>تحليل نقاط القوة والضعف والفرص والتهديدات</span></div>
+      <div class="next-topic"><strong>سبب الشراء</strong><span>ما الذي يبحث عنه العميل فعلًا؟</span></div>
+      <div class="next-topic"><strong>قراءة التفاعل</strong><span>الكومنتات والرسائل كدليل تسويقي</span></div>
+      <div class="next-topic"><strong>تحليل المنافس</strong><span>نتعلم من السوق بدون تقليد</span></div>
+    </div>
+    <div style="margin-top:20px;">
+      <a class="hero-cta" href="clarity-tool.html" style="padding:12px 26px;">افتح المحاضرة الثانية</a>
     </div>
   </div>
 </section>
+
 
 <!-- ===================== SECTION 5 ===================== -->
 <div class="section-divider"></div>
@@ -1995,11 +2134,11 @@ body.locked > *:not(#courseLock) {
   <div class="animate-in">
     <div class="section-number">6</div>
     <h2 class="section-title">SWOT Analysis — تحليل السوق بشكل مبسط</h2>
-    <p class="section-subtitle">هنشتغل عليه بالتفصيل في الفيديو الجاي ضمن التطبيق العملي.</p>
+    <p class="section-subtitle">ده جزء هنرجع له لاحقًا بعد ما نثبت فهم العميل والرسالة التسويقية.</p>
   </div>
 
   <div class="card card-accent-2 animate-in">
-    <p><strong>SWOT Analysis</strong> هيساعدنا نشوف المشروع بوضوح: إيه القوي، إيه المحتاج يتحسن، إيه الفرص، وإيه المخاطر. مش هنطول فيه هنا؛ هنطبقه خطوة بخطوة في الفيديو الجاي.</p>
+    <p><strong>SWOT Analysis</strong> هيساعدنا نشوف المشروع بوضوح: إيه القوي، إيه المحتاج يتحسن، إيه الفرص، وإيه المخاطر. حاليًا الأهم إنك تكمل للمحاضرة الثانية وتفهم العميل وسبب الشراء أولًا.</p>
   </div>
 </section>
 
@@ -2121,11 +2260,11 @@ body.locked > *:not(#courseLock) {
   <div class="animate-in">
     <div class="section-number">8</div>
     <h2 class="section-title">Marketing Message — الرسالة التسويقية</h2>
-    <p class="section-subtitle">الرسالة هي الجملة اللي تخلي العميل يفهمك بسرعة، ودي هنبنيها في الفيديو الجاي.</p>
+    <p class="section-subtitle">الرسالة الواضحة تبدأ بعد فهم العميل: ماذا يريد؟ ممَّ يتردد؟ وما الذي يجعله يثق؟</p>
   </div>
 
   <div class="card card-accent-3 animate-in">
-    <p>بعد ما نحدد <strong>Buyer Persona</strong> ونقرأ السوق من خلال <strong>SWOT Analysis</strong>، هنقدر نكتب <strong>Marketing Message</strong> واضحة تخدم البراند الشخصي، المشروع الصغير، المشروع المتوسط، أو صانع المحتوى.</p>
+    <p>بعد المحاضرة الثانية هتبدأ تشوف العميل بشكل أوضح، ومن هنا تقدر تبني <strong>Marketing Message</strong> مفهومة تخدم البراند الشخصي، المشروع الصغير، المشروع المتوسط، أو صانع المحتوى.</p>
   </div>
 
   <!-- WRAP-UP -->
@@ -2136,7 +2275,10 @@ body.locked > *:not(#courseLock) {
       <div class="roadmap-item"><span class="roadmap-num">2</span><span>Marketing Funnel بيساعدك تعرف العميل واقف فين، وتكلمه بالرسالة المناسبة.</span></div>
       <div class="roadmap-item"><span class="roadmap-num">3</span><span>اختبار الـ 10 ثواني بيوضح بسرعة: بتبيع إيه؟ لمين؟ وليه يختارك؟</span></div>
       <div class="roadmap-item"><span class="roadmap-num">4</span><span>القيمة أهم من المنتج؛ العميل بيشتري النتيجة والإحساس مش الاسم بس.</span></div>
-      <div class="roadmap-item"><span class="roadmap-num">5</span><span>الفيديو الجاي هيكمل عمليًا: Buyer Persona، Marketing Message، و SWOT Analysis.</span></div>
+      <div class="roadmap-item"><span class="roadmap-num">5</span><span>الخطوة التالية الآن: افتح المحاضرة الثانية “العميل لا يشتري المنتج فقط” وطبّق على مشروعك.</span></div>
+    </div>
+    <div style="text-align:center;margin-top:24px;">
+      <a class="hero-cta" href="clarity-tool.html" style="padding:12px 28px;">افتح المحاضرة الثانية الآن</a>
     </div>
   </div>
 </section>
