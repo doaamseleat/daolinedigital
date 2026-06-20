@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex, nofollow" />
+<title>المحاضرة الثانية | العميل لا يشتري المنتج فقط</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&family=Tajawal:wght@400;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --brand:#c013a6; --brand2:#6c3ce1; --brand3:#3b82f6; --accent:#f59e0b;
+  --success:#10b981; --danger:#ef4444; --dark:#0f0f1a; --dark2:#15152a;
+  --card:#ffffff; --soft:#f8f6ff; --text:#1f1b35; --muted:#66627a; --line:#ece8f7;
+  --shadow:0 18px 55px rgba(40,20,80,.08); --glow:0 0 40px rgba(192,19,166,.18);
+}
+*{box-sizing:border-box;margin:0;padding:0} html{scroll-behavior:smooth}
+body{font-family:'Cairo','Tajawal',sans-serif;background:#fff;color:var(--text);line-height:2;font-size:18px;overflow-x:hidden}
+a{text-decoration:none;color:inherit}.ltr{direction:ltr;unicode-bidi:isolate}.strong{font-weight:900;color:#111}
+.clean-nav{position:fixed;inset:0 0 auto 0;z-index:900;background:rgba(255,255,255,.96);backdrop-filter:blur(16px);border-bottom:1px solid rgba(108,60,225,.12);min-height:72px;padding:14px 34px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.nav-brand{display:inline-flex;align-items:center;gap:8px;color:var(--brand2);font-weight:900;font-size:20px}.nav-brand small{color:#6b657c;font-size:14px;font-weight:700}.brand-mark{color:var(--brand);font-size:16px;filter:drop-shadow(0 0 10px rgba(192,19,166,.45))}
+.nav-links{display:flex;gap:10px;list-style:none;flex-wrap:wrap;justify-content:center}.nav-links a{background:#fff;border:1px solid #ececf5;color:#58546b;font-weight:800;padding:9px 18px;border-radius:999px;font-size:13px;transition:.22s}.nav-links a:hover{background:linear-gradient(135deg,var(--brand2),var(--brand));color:#fff;border-color:transparent}
+.hero{padding:132px 22px 70px;text-align:center;color:#fff;background:radial-gradient(circle at 22% 20%, rgba(192,19,166,.22), transparent 32%),radial-gradient(circle at 80% 58%, rgba(108,60,225,.2), transparent 36%),linear-gradient(135deg,#080812,#14142a 58%,#0b0b16);position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:auto -10% -35% -10%;height:300px;background:radial-gradient(circle,rgba(192,19,166,.12),transparent 60%)}
+.hero-content{max-width:960px;margin:auto;position:relative;z-index:1}.badge{display:inline-flex;gap:8px;align-items:center;border-radius:999px;padding:8px 18px;background:rgba(192,19,166,.14);border:1px solid rgba(192,19,166,.3);color:#ffd8f7;font-weight:900;font-size:13px;margin-bottom:20px}.hero h1{font-family:'Tajawal',sans-serif;font-size:clamp(32px,5.6vw,58px);font-weight:900;line-height:1.15;margin-bottom:16px}.hero h1 span{display:block;background:linear-gradient(135deg,#ff72e8,#bca7ff);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;font-size:clamp(24px,3.6vw,38px);margin-top:10px}.hero p{max-width:780px;margin:0 auto 28px;color:#c8c4db;font-size:18px}.hero-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:13px 28px;font-weight:900;border:none;cursor:pointer;font-family:inherit;transition:.22s}.btn-main{background:linear-gradient(135deg,var(--brand),#ff4fde);color:#fff;box-shadow:0 14px 35px rgba(192,19,166,.28)}.btn-main:hover,.btn-ghost:hover{transform:translateY(-2px)}.btn-ghost{border:1px solid rgba(255,255,255,.2);color:#fff;background:rgba(255,255,255,.06)}
+.section{padding:70px 22px;max-width:1120px;margin:auto}.section.dark{max-width:none;background:#0c0c17;color:#fff}.section.dark>.inner{max-width:1120px;margin:auto}.section.alt{max-width:none;background:linear-gradient(180deg,#fbf7ff,#fff)}.section.alt>.inner{max-width:1120px;margin:auto}.kicker{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:6px 14px;font-size:13px;font-weight:900;color:var(--brand);background:rgba(192,19,166,.08);border:1px solid rgba(192,19,166,.15);margin-bottom:14px}.section-title{font-family:'Tajawal',sans-serif;font-size:clamp(27px,4vw,40px);font-weight:900;line-height:1.35;margin-bottom:12px}.section-sub{color:var(--muted);max-width:900px;font-size:18px;margin-bottom:28px}.dark .section-sub{color:#b9bfd6}.lead-card{background:#fff;border:1px solid var(--line);border-radius:26px;padding:28px;box-shadow:var(--shadow);margin:24px 0}.dark .lead-card{background:linear-gradient(145deg,rgba(255,255,255,.10),rgba(255,255,255,.035));border:1px solid rgba(255,255,255,.12);box-shadow:0 24px 80px rgba(0,0,0,.28);color:#fff}.lead-card p{margin-bottom:10px}.lead-card p:last-child{margin-bottom:0}.highlight{background:linear-gradient(135deg,rgba(245,158,11,.11),rgba(192,19,166,.06));border:1px solid rgba(245,158,11,.22);border-radius:22px;padding:22px;margin:22px 0}.quote{font-size:clamp(20px,3vw,30px);font-weight:900;line-height:1.65;color:#fff;text-align:center;max-width:850px;margin:10px auto}.quote span{color:#ffd36d}
+.grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.grid-4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}.card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:24px;box-shadow:var(--shadow);transition:.22s}.card:hover{transform:translateY(-3px);box-shadow:0 22px 62px rgba(40,20,80,.12)}.card h3{font-size:20px;font-weight:900;margin-bottom:8px;color:#18142d}.card p{color:#4f4962;font-size:16.5px;line-height:2}.icon{width:50px;height:50px;border-radius:16px;background:linear-gradient(135deg,rgba(192,19,166,.12),rgba(108,60,225,.12));display:flex;align-items:center;justify-content:center;font-size:26px;margin-bottom:12px}.example-card{display:grid;grid-template-rows:auto 1fr;min-height:420px}.example-head{display:flex;gap:12px;align-items:center;margin-bottom:14px}.example-head h3{margin:0}.tag{display:inline-flex;border-radius:999px;padding:5px 12px;background:#f3ecff;color:#6c3ce1;font-size:12px;font-weight:900;margin-bottom:12px}.example-list{display:grid;gap:10px;margin-top:14px}.example-list span{display:block;background:#faf8ff;border:1px solid #eee8fb;color:#534b69;border-radius:14px;padding:11px 12px;font-size:14.5px;line-height:1.85}.example-list strong{display:block;color:#1f1b35;font-size:14px;margin-bottom:3px}.lesson-note{background:#fff8e8;border:1px solid rgba(245,158,11,.26);color:#4d3c17;border-radius:18px;padding:18px;margin-top:18px;font-weight:800;font-size:17px}.twocol{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:start}.routine-card{border-radius:24px;padding:28px;background:linear-gradient(145deg,#fff,#fff7fe);border:1px solid rgba(192,19,166,.12);box-shadow:var(--shadow)}.routine-card h3{font-size:22px;font-weight:900;color:#1a1530;margin-bottom:10px}.routine-card ol{padding-right:22px;color:#5e5872}.routine-card li{margin:8px 0}.signals{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:18px}.signal{background:#fff;border:1px solid #ece8f7;border-radius:18px;padding:16px}.signal strong{display:block;color:#19152b;margin-bottom:5px}.signal span{display:block;color:#68637b;font-size:14px}.formula-box{background:linear-gradient(135deg,rgba(16,185,129,.11),rgba(59,130,246,.06));border:1px solid rgba(16,185,129,.25);border-radius:24px;padding:28px;text-align:center;margin:22px 0}.formula-box p{font-weight:900;color:#111;font-size:clamp(19px,3vw,28px);line-height:1.7}.formula-box .slot{color:var(--brand);display:inline-block;background:#fff;border:1px solid #eadff9;border-radius:12px;padding:2px 8px;margin:2px}.mini-table{width:100%;border-collapse:separate;border-spacing:0;overflow:hidden;border-radius:18px;border:1px solid var(--line);background:#fff;margin:22px 0}.mini-table th{background:linear-gradient(135deg,var(--brand),var(--brand2));color:#fff;padding:14px;text-align:right}.mini-table td{padding:14px;border-bottom:1px solid var(--line);color:#554f67}.mini-table tr:last-child td{border-bottom:none}.mini-table td:first-child{font-weight:900;color:#201833}
+.tool{background:#0c0c17;color:#fff;padding:70px 22px}.tool-inner{max-width:1120px;margin:auto}.form-card{background:linear-gradient(145deg,rgba(255,255,255,.10),rgba(255,255,255,.035));border:1px solid rgba(255,255,255,.13);border-radius:28px;padding:26px;box-shadow:0 24px 80px rgba(0,0,0,.3)}.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.field{display:grid;gap:7px}.field.full{grid-column:1/-1}.field label{font-size:13px;color:#dcd8f0;font-weight:900}.field input,.field select,.field textarea{width:100%;border:1px solid rgba(255,255,255,.14);outline:none;border-radius:15px;padding:13px 14px;background:rgba(255,255,255,.08);color:#fff;font-family:inherit;font-size:14px}.field textarea{min-height:96px;resize:vertical}.field input::placeholder,.field textarea::placeholder{color:#88839e}.field select option{color:#111}.checks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.check{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.10);border-radius:14px;padding:10px;color:#e8e2ff;font-size:13px;font-weight:700}.check input{accent-color:var(--brand);width:16px;height:16px}.tool-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}.report{display:none;margin-top:24px;background:#fff;color:#201833;border-radius:26px;padding:26px;box-shadow:0 24px 80px rgba(0,0,0,.26)}.report h3{font-size:27px;font-weight:900;margin-bottom:10px;color:#111}.report-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:18px}.report-card{background:#fbf9ff;border:1px solid #ece8f7;border-radius:18px;padding:18px}.report-card strong{display:block;font-size:15px;color:#6c3ce1;margin-bottom:6px}.report-card p{font-size:14px;color:#50495f;line-height:1.85}.report .homework{background:#fff8e8;border-color:rgba(245,158,11,.28)}.copy-note{color:#78708b;font-size:13px;margin-top:12px}.footer{text-align:center;padding:36px 20px;background:#090911;color:#aaa5bf;border-top:1px solid rgba(255,255,255,.1)}
+body.locked>*:not(#courseLock){display:none!important}#courseLock{position:fixed;inset:0;z-index:999999;min-height:100vh;background:radial-gradient(circle at top right,rgba(108,60,225,.28),transparent 32%),radial-gradient(circle at bottom left,rgba(59,130,246,.18),transparent 35%),#0f0f1a;display:flex;align-items:center;justify-content:center;padding:24px}.lock-card{width:min(520px,100%);background:linear-gradient(145deg,rgba(26,26,46,.96),rgba(22,33,62,.94));border:1px solid rgba(139,92,246,.28);border-radius:28px;padding:34px;color:#e2e8f0;box-shadow:0 30px 100px rgba(0,0,0,.45),0 0 45px rgba(108,60,225,.12);text-align:center}.lock-icon{width:72px;height:72px;margin:0 auto 18px;border-radius:22px;background:linear-gradient(135deg,#6c3ce1,#3b82f6);display:flex;align-items:center;justify-content:center;font-size:34px;box-shadow:0 12px 35px rgba(108,60,225,.35)}.lock-card h2{color:#fff;font-size:28px;margin-bottom:12px}.lock-card p{color:#94a3b8;font-size:15px;margin-bottom:20px}.lock-card input{width:100%;padding:15px;border-radius:16px;border:1px solid rgba(139,92,246,.25);background:rgba(255,255,255,.07);color:#fff;font-family:inherit;font-size:16px;outline:none;text-align:center;margin-bottom:12px}.lock-card button{width:100%;padding:15px;border-radius:16px;border:0;background:linear-gradient(135deg,#6c3ce1,#3b82f6);color:#fff;font-family:inherit;font-size:16px;font-weight:900;cursor:pointer}.lock-error{display:none;margin-top:14px;color:#fca5a5;font-size:14px}.lock-note{font-size:12px!important;color:#64748b!important;margin-top:18px!important}
+@media(max-width:960px){.grid-4{grid-template-columns:repeat(2,minmax(0,1fr))}.twocol,.grid-2,.form-grid,.report-grid{grid-template-columns:1fr}.checks,.signals{grid-template-columns:1fr}.clean-nav{flex-direction:column;align-items:stretch;padding:12px 16px}.nav-brand{justify-content:center}.nav-links{justify-content:center}.nav-links a{padding:8px 12px;font-size:12px}.hero{padding-top:160px}.example-card{min-height:auto}}
+@media(max-width:560px){body{font-size:15px}.section,.tool{padding-left:16px;padding-right:16px}.hero{padding-left:16px;padding-right:16px}.grid-4{grid-template-columns:1fr}.lead-card,.routine-card,.form-card,.report{padding:20px}.hero p{font-size:16px}.btn{width:100%}.mini-table{font-size:13px}.mini-table th,.mini-table td{padding:10px}}
+
+.video-section{padding:70px 22px;background:linear-gradient(180deg,#fff,#fbf7ff)}
+.video-inner{max-width:1120px;margin:auto}
+.video-card{background:#fff;border:1px solid var(--line);border-radius:28px;padding:24px;box-shadow:var(--shadow)}
+.video-frame{position:relative;width:100%;aspect-ratio:16/9;border-radius:22px;overflow:hidden;background:#070712;box-shadow:0 24px 70px rgba(25,15,65,.16)}
+.video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.video-hint{margin-top:16px;color:#5f5874;font-size:16px;line-height:1.9}
+.video-hint strong{color:#201833}
+@media(max-width:560px){.video-section{padding-left:16px;padding-right:16px}.video-card{padding:16px;border-radius:22px}.video-frame{border-radius:16px}.video-hint{font-size:14px}}
+
+</style>
+</head>
+<body class="locked">
+<div id="courseLock" aria-label="Course access">
+  <div class="lock-card">
+    <div class="lock-icon">🔒</div>
+    <h2>دخول المحاضرة الثانية</h2>
+    <p>هذه الصفحة مخصصة للمسجلين في كورس First Click. اكتب كلمة السر لمشاهدة المحاضرة والتطبيق.</p>
+    <input id="coursePassword" type="password" placeholder="اكتب كلمة السر هنا" autocomplete="off">
+    <button id="unlockBtn" type="button">دخول المحاضرة</button>
+    <div id="lockError" class="lock-error">كلمة السر غير صحيحة. حاول مرة أخرى.</div>
+    <p class="lock-note">تنبيه: هذه حماية بسيطة مناسبة للكورس المجاني.</p>
+  </div>
+</div>
+<nav class="clean-nav" aria-label="التنقل الرئيسي">
+  <a class="nav-brand" href="lectures.html"><span class="brand-mark">●</span> First Click <small>by Daoline Digital</small></a>
+  <ul class="nav-links">
+    <li><a href="lectures.html">محاضرات الكورس</a></li>
+    <li><a href="index.html">صفحة الكورس</a></li>
+    <li><a href="index.html#register">الاشتراك المجاني</a></li>
+    <li><a href="/blog/">المكتبة</a></li>
+  </ul>
+</nav>
+<header class="hero">
+  <div class="hero-content">
+    <div class="badge">🎯 المحاضرة الثانية — First Click</div>
+    <h1>العميل لا يشتري المنتج فقط<span>افهم سبب الشراء قبل ما تكتب الرسالة</span></h1>
+    <p>محاضرة تطبيقية تساعدك تفهم العميل من التفاعل الحقيقي: الكومنتات، الرسائل، الأسئلة المتكررة، الاعتراضات، وتحليل المنافسين.</p>
+    <div class="hero-actions">
+      <a href="#lesson-video" class="btn btn-main">شاهد الفيديو</a>
+      <a href="#tool" class="btn btn-ghost">طبّق على مشروعك</a>
+    </div>
+  </div>
+</header>
+<section class="video-section" id="lesson-video">
+  <div class="video-inner">
+    <div class="kicker">فيديو المحاضرة</div>
+    <h2 class="section-title">شاهدي الفيديو أولًا… وبعده طبّقي على مشروعك</h2>
+    <p class="section-sub">الفيديو يشرح فكرة المحاضرة ببساطة: العميل لا يشتري المنتج فقط، والـ Persona لا تُبنى من قالب جاهز، لكنها تُفهم من أسئلة الناس وتعليقاتهم واعتراضاتهم وسلوكهم الحقيقي.</p>
+    <div class="video-card">
+      <div class="video-frame">
+        <iframe src="https://www.youtube.com/embed/pq4_8bqrarg?rel=0" title="First Click - المحاضرة الثانية" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+      <p class="video-hint"><strong>بعد مشاهدة الفيديو:</strong> انزلي للأداة في آخر الصفحة، واكتبي إجاباتك من واقع صفحتك أو مشروعك. الهدف إنك تفهمي العميل من سلوكه الحقيقي، مش من تخمينات عامة.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section dark" id="core">
+  <div class="inner">
+    <div class="kicker">الفكرة المركزية</div>
+    <div class="quote">العميل لا يشتري <span>اسم المنتج</span> فقط… العميل يشتري سببًا: ثقة، راحة، شكل، أمان، نتيجة، أو إحساس.</div>
+    <div class="lead-card">
+      <p>بعد المحاضرة الأولى، ظهرت مشكلة مهمة: ناس كتير قادرة تقول “أنا ببيع إيه”، لكن لما توصل إلى “لمين؟” و“ليه العميل يختارني؟” بتبدأ التفاصيل تتلخبط.</p>
+      <p>سبب اللخبطة إننا بنبدأ من المنتج: فستان، مفروشات، تسويق، أكل صحي، ديكور. لكن التسويق يبدأ من سؤال أعمق: <strong>العميل بيشتري المنتج ده ليه؟</strong></p>
+    </div>
+  </div>
+</section>
+<section class="section alt">
+  <div class="inner">
+    <div class="kicker">قبل الـ Persona</div>
+    <h2 class="section-title">ما تبدأش من قالب جاهز… ابدأ من سبب الشراء</h2>
+    <p class="section-sub">الـ Buyer Persona مش ملف نحط فيه شوية معلومات وخلاص. هي صورة بنبنيها من سلوك حقيقي: أسئلة الناس، اعتراضاتهم، تعليقاتهم، وطريقة تفاعلهم معك ومع المنافس.</p>
+    <div class="grid-2">
+      <div class="card">
+        <div class="icon">📦</div>
+        <h3>المنتج</h3>
+        <p>هو الشيء الظاهر الذي تقدمه: فستان، مفروشات، خدمة تسويق، كشف طبي، وجبة صحية، أو رحلة سفر.</p>
+      </div>
+      <div class="card">
+        <div class="icon">💡</div>
+        <h3>سبب الشراء</h3>
+        <p>هو المعنى الحقيقي الذي يبحث عنه العميل: طمأنة، ثقة، شكل أفضل، توفير وقت، نتيجة، أمان، أو قيمة مقابل السعر.</p>
+      </div>
+    </div>
+    <div class="formula-box">
+      <p>لا تسأل فقط: <span class="slot">أنا ببيع إيه؟</span> اسأل: <span class="slot">العميل بيشتري ده ليه؟</span></p>
+    </div>
+  </div>
+</section>
+<section class="section" id="examples">
+  <div class="kicker">أمثلة من صناعات مختلفة</div>
+  <h2 class="section-title">نفس المنتج ممكن يتباع لأسباب مختلفة</h2>
+  <p class="section-sub">الأمثلة التالية هدفها تعلم طريقة التفكير، وليس حفظ الإجابات. ركّز على الفرق بين “المنتج الظاهر” و“المعنى الذي يشتريه العميل”.</p>
+  <div class="grid-4">
+    <div class="card example-card"><div><div class="example-head"><div class="icon">👗</div><h3>Fashion</h3></div><span class="tag">المنتج الظاهر: فستان</span><p>ما الذي قد تبحث عنه العميلة فعلًا؟ قد تريد أن تشعر بالثقة في شكلها، أو تختار لونًا مناسبًا للمناسبة، أو ترتدي قطعة مريحة، أو تظهر بشكل جميل في الصور، أو تشعر أن البراند يشبه ذوقها.</p></div><div class="example-list"><span><strong>مثال على سؤال من العميلة</strong>هل هذا الموديل مناسب للجسم الكيرفي؟ وهل الخامة مريحة ومش بتشف؟</span><span><strong>ماذا تنشر لتساعدها على القرار؟</strong>فيديو حقيقي لارتداء القطعة، جدول مقاسات واضح، صور على أجسام مختلفة، وشرح بسيط للقصة والخامة.</span></div></div>
+    <div class="card example-card"><div><div class="example-head"><div class="icon">🛋️</div><h3>مفروشات</h3></div><span class="tag">المنتج الظاهر: بياضات وكفرات</span><p>ما الذي قد تبحث عنه العميلة فعلًا؟ قد تريد بيتًا أشيك، خامة تعيش، ألوانًا مناسبة لبيتها، شكلًا راقيًا يليق بالمكان، أو اختيارًا يريحها من الحيرة.</p></div><div class="example-list"><span><strong>مثال على سؤال من العميلة</strong>الخامة إيه؟ هل اللون ثابت؟ وهل الكفر مناسب للانتريه عندي؟</span><span><strong>ماذا تنشر لتطمئنها؟</strong>صور حقيقية للخامة، فيديو يوضح الملمس، مقارنة بين خامتين، وأفكار تنسيق ألوان داخل البيت.</span></div></div>
+    <div class="card example-card"><div><div class="example-head"><div class="icon">📣</div><h3>تسويق</h3></div><span class="tag">الخدمة الظاهرة: Marketing</span><p>ما الذي يبحث عنه صاحب البراند فعلًا؟ غالبًا يريد وضوحًا، تقليل مخاطرة، خطة قبل الصرف، وفهمًا للسوق والعميل بدل بوستات وإعلانات عشوائية.</p></div><div class="example-list"><span><strong>مثال على جملة من العميل</strong>عملنا إعلانات قبل كده ومجابتش نتيجة، ومش عارفين نكتب إيه.</span><span><strong>ماذا تنشر لتقنعه؟</strong>محتوى يشرح أخطاء ما قبل الإعلان، أمثلة على تحليل المنافسين، وخطوات بناء رسالة قبل الميزانية.</span></div></div>
+    <div class="card example-card"><div><div class="example-head"><div class="icon">🩺</div><h3>عيادة</h3></div><span class="tag">الخدمة الظاهرة: كشف أو إجراء</span><p>ما الذي يبحث عنه المريض فعلًا؟ أمان، طمأنة، خبرة، شرح واضح، ومتابعة محترمة قبل وبعد القرار.</p></div><div class="example-list"><span><strong>مثال على سؤال من المريض</strong>هل الإجراء مؤلم؟ وهل الحالة دي محتاجة تدخل فعلًا؟</span><span><strong>ماذا تنشر لتطمئنه؟</strong>شرح خطوات الزيارة، علامات تستدعي الكشف، أسئلة شائعة، ومتى نقلق ومتى لا نقلق.</span></div></div>
+    <div class="card example-card"><div><div class="example-head"><div class="icon">🥗</div><h3>أكل صحي</h3></div><span class="tag">المنتج الظاهر: وجبة</span><p>ما الذي يبحث عنه العميل فعلًا؟ التزام أسهل، شبع، صحة، راحة ضمير، وتوفير وقت من غير إحساس بالحرمان أو الملل.</p></div><div class="example-list"><span><strong>مثال على سؤال من العميل</strong>السعرات كام؟ فيها بروتين قد إيه؟ وهل بتشبع؟</span><span><strong>ماذا تنشر لتساعده؟</strong>مكونات واضحة، سعرات، جدول أسبوعي، أفكار وجبات، ومقارنة بين وجبة عشوائية ووجبة محسوبة.</span></div></div>
+    <div class="card example-card"><div><div class="example-head"><div class="icon">🏠</div><h3>ديكور</h3></div><span class="tag">الخدمة الظاهرة: تصميم أو تشطيب</span><p>ما الذي يبحث عنه العميل فعلًا؟ راحة، فخامة، بيت يشبه شخصيته، قرار مضمون، وتجنب الغلطات المكلفة.</p></div><div class="example-list"><span><strong>مثال على سؤال من العميل</strong>هل التصميم ده ينفع لمساحة صغيرة؟ والخامات دي عملية ولا شكل بس؟</span><span><strong>ماذا تنشر لتساعده؟</strong>قبل وبعد، أخطاء شائعة، حلول لمساحات صغيرة، مقارنة خامات، ومراحل تنفيذ واضحة.</span></div></div>
+    <div class="card example-card"><div><div class="example-head"><div class="icon">✈️</div><h3>سفر</h3></div><span class="tag">المنتج الظاهر: رحلة أو حجز</span><p>ما الذي يبحث عنه المسافر فعلًا؟ راحة، أمان، سعر واضح، تجربة ممتعة، وتواصل يطمنه لو حصل تغيير أو مشكلة.</p></div><div class="example-list"><span><strong>مثال على سؤال من العميل</strong>السعر شامل إيه؟ الفندق كام نجمة؟ ولو حصل تغيير في المعاد؟</span><span><strong>ماذا تنشر لتطمئنه؟</strong>تفاصيل العرض، صور الفندق، جدول الرحلة، أسئلة شائعة، وتجارب مسافرين حقيقيين.</span></div></div>
+    <div class="card example-card"><div><div class="example-head"><div class="icon">✨</div><h3>Skincare / عطور</h3></div><span class="tag">المنتج الظاهر: عناية أو عطر</span><p>ما الذي يبحث عنه العميل فعلًا؟ إحساس بالتميز، ثقة، روتين عناية مريح، رائحة تشبه شخصيته، أو أمان على البشرة.</p></div><div class="example-list"><span><strong>مثال على سؤال من العميل</strong>مناسب للبشرة الحساسة؟ ثباته قد إيه؟ وريحته قريبة من إيه؟</span><span><strong>ماذا تنشر لتساعده؟</strong>طريقة الاستخدام، لمن يناسب المنتج، مراجعات، مكونات واضحة، ومقارنة بين الاختيارات.</span></div></div>
+  </div>
+  <div class="lesson-note">الخلاصة: قبل ما تكتب محتوى أو إعلان، اسأل: هل أنا أبيع المنتج فقط، أم أوضح السبب الذي يجعل العميل يحتاجه؟</div>
+</section>
+<section class="section alt" id="routine">
+  <div class="inner">
+    <div class="kicker">روتين عملي</div>
+    <h2 class="section-title">اقرأ التفاعل بعين مسوّق</h2>
+    <p class="section-sub">لو مش عارف تحدد العميل، ما تبدأش من الخيال. ابدأ من آخر 5 بوستات عندك، واقرأ الكومنتات والرسائل كأنها بحث سوق صغير.</p>
+    <div class="twocol">
+      <div class="routine-card">
+        <h3>روتين 15 دقيقة من صفحتك</h3>
+        <ol>
+          <li>افتح آخر 5 بوستات عندك.</li>
+          <li>اكتب أكثر سؤال اتكرر.</li>
+          <li>اكتب أكثر اعتراض ظهر.</li>
+          <li>حدد: الناس سألت عن السعر، الجودة، المقاس، التوصيل، النتيجة، أم التجربة؟</li>
+          <li>لاحظ: التفاعل فضول، مقارنة، مدح، أم نية شراء؟</li>
+          <li>حوّل سؤالًا متكررًا إلى فكرة محتوى.</li>
+        </ol>
+      </div>
+      <div class="routine-card">
+        <h3>روتين 15 دقيقة من منافس</h3>
+        <ol>
+          <li>اختار منافس قريب منك، وليس أكبر براند في السوق.</li>
+          <li>راقب أكثر 5 بوستات عنده تفاعلًا.</li>
+          <li>اسأل: الناس بتسأل عن إيه عنده؟</li>
+          <li>هل بيركز على السعر، الجودة، اللايف ستايل، أم الثقة؟</li>
+          <li>هل عنده Reviews وصور عملاء؟</li>
+          <li>اكتب شيئًا واحدًا يمكنك توضيحه أفضل منه.</li>
+        </ol>
+      </div>
+    </div>
+    <div class="signals">
+      <div class="signal"><strong>لو التعليقات كلها “بكام؟”</strong><span>غالبًا القيمة غير واضحة كفاية، والعميل بدأ المقارنة من السعر.</span></div>
+      <div class="signal"><strong>لو الأسئلة عن الخامة والجودة</strong><span>قرار الشراء مرتبط بالثقة، ويحتاج شرحًا وإثباتًا.</span></div>
+      <div class="signal"><strong>لو الأسئلة عن المقاس أو المناسبة</strong><span>العميل يحتاج طمأنة وتجربة وصورًا أقرب للواقع.</span></div>
+      <div class="signal"><strong>لو المدح عن “الشياكة والرقي”</strong><span>الشكل والانطباع جزء أساسي من سبب الشراء.</span></div>
+    </div>
+  </div>
+</section>
+<section class="section" id="persona">
+  <div class="kicker">من السلوك إلى Persona</div>
+  <h2 class="section-title">الـ Buyer Persona مش خيال… هي استنتاج</h2>
+  <p class="section-sub">بعد قراءة التفاعل وتحليل منافس واحد، تقدر تبدأ تكتب Persona بسيطة مبنية على سلوك حقيقي.</p>
+  <table class="mini-table">
+    <thead><tr><th>السؤال</th><th>إجابة تساعدك تبني Persona</th></tr></thead>
+    <tbody>
+      <tr><td>يشتري بسبب؟</td><td>ثقة، راحة، شكل، جودة، سعر، نتيجة، أمان، أو انتماء للبراند.</td></tr>
+      <tr><td>يتردد بسبب؟</td><td>الخامة، المقاس، السعر، التوصيل، التجربة، النتيجة، أو عدم وجود Reviews.</td></tr>
+      <tr><td>يثق عندما يرى؟</td><td>صور حقيقية، مراجعات، مقارنة، شرح واضح، خطوات طلب، أو تجربة عميل.</td></tr>
+      <tr><td>يحتاج محتوى يوضح؟</td><td>القيمة، الفرق عن المنافس، طريقة الاستخدام، التفاصيل، أو ما بعد الشراء.</td></tr>
+    </tbody>
+  </table>
+  <div class="formula-box">
+    <p>العميل الأقرب لي هو شخص يشتري بسبب <span class="slot">_____</span> ويتردد بسبب <span class="slot">_____</span> ويحتاج أن يرى <span class="slot">_____</span> قبل القرار.</p>
+  </div>
+</section>
+<section class="section alt">
+  <div class="inner">
+    <div class="kicker">من Persona إلى محتوى</div>
+    <h2 class="section-title">كل سبب شراء له نوع محتوى مناسب</h2>
+    <p class="section-sub">لما تفهم سبب الشراء، هتعرف تختار فكرة محتوى تخدم القرار بدل ما تنشر بوستات عامة.</p>
+    <div class="grid-2">
+      <div class="card"><div class="icon">💰</div><h3>لو العميل يهتم بالسعر</h3><p>اعمل محتوى عن القيمة مقابل السعر، تفاصيل العرض، وما الذي يشمله السعر بدل إعلان رقم فقط.</p></div>
+      <div class="card"><div class="icon">🧵</div><h3>لو يهتم بالجودة</h3><p>اعرض الخامة، الاختبار، طريقة التصنيع، المقارنة، وتجارب الاستخدام الواقعية.</p></div>
+      <div class="card"><div class="icon">🤝</div><h3>لو يهتم بالثقة</h3><p>استخدم Reviews، صور عملاء، قصص تجربة، أسئلة شائعة، وضمانات واضحة.</p></div>
+      <div class="card"><div class="icon">⚡</div><h3>لو يهتم بالراحة</h3><p>اشرح سهولة الطلب، خطوات الاستخدام، سرعة التوصيل، والمتابعة بعد البيع.</p></div>
+      <div class="card"><div class="icon">🎨</div><h3>لو يهتم بالشكل</h3><p>اعرض تنسيقات، ألوان، قبل/بعد، استخدامات مختلفة، وصور في سياق حقيقي.</p></div>
+      <div class="card"><div class="icon">🎯</div><h3>لو يهتم بالنتيجة</h3><p>اعرض تحولات، تطبيقات، نتائج واقعية، أو خطوات الوصول للنتيجة بدون مبالغة.</p></div>
+    </div>
+  </div>
+</section>
+<section class="tool" id="tool">
+  <div class="tool-inner">
+    <div class="kicker">أداة التطبيق</div>
+    <h2 class="section-title">طبّق على مشروعك: افهم سبب الشراء</h2>
+    <p class="section-sub">جاوب بناءً على ملاحظاتك من صفحتك أو من منافس قريب. النتيجة مبدئية، هدفها ترتيب التفكير وليس إعطاء Persona نهائية من الخيال.</p>
+    <div class="form-card">
+      <div class="form-grid">
+        <div class="field"><label>اسم المشروع أو البراند</label><input id="project" placeholder="مثال: براند مفروشات / خدمة تسويق" /></div>
+        <div class="field"><label>نوع النشاط</label><select id="industry"><option value="مشروع أو براند">اختار الأقرب</option><option>Fashion / ملابس</option><option>مفروشات وديكور بيت</option><option>Digital Marketing</option><option>عيادة أو خدمة صحية</option><option>أكل صحي أو مطعم</option><option>ديكور وتشطيبات</option><option>سفر وسياحة</option><option>Skincare / عطور</option><option>خدمة أو منتج آخر</option></select></div>
+        <div class="field full"><label>المنتج أو الخدمة الأساسية</label><input id="product" placeholder="اكتب المنتج أو الخدمة الأساسية باختصار" /></div>
+        <div class="field full"><label>العميل غالبًا يشتري بسبب — اختار 1 إلى 3 أسباب</label><div class="checks" id="reasons">
+          <label class="check"><input type="checkbox" value="الثقة">الثقة</label><label class="check"><input type="checkbox" value="الراحة">الراحة</label><label class="check"><input type="checkbox" value="الشكل والانطباع">الشكل والانطباع</label><label class="check"><input type="checkbox" value="السعر والقيمة">السعر والقيمة</label><label class="check"><input type="checkbox" value="الجودة">الجودة</label><label class="check"><input type="checkbox" value="توفير الوقت">توفير الوقت</label><label class="check"><input type="checkbox" value="الأمان">الأمان</label><label class="check"><input type="checkbox" value="النتيجة">النتيجة</label><label class="check"><input type="checkbox" value="الانتماء للبراند">الانتماء للبراند</label><label class="check"><input type="checkbox" value="مش متأكد بعد">مش متأكد بعد</label>
+        </div></div>
+        <div class="field"><label>أكثر سؤال يتكرر عندك</label><input id="question" placeholder="مثال: السعر؟ الخامة؟ المقاس؟" /></div>
+        <div class="field"><label>أكثر اعتراض أو تردد</label><input id="objection" placeholder="مثال: غالي / مش متأكد / محتاج صور" /></div>
+        <div class="field"><label>الناس غالبًا تسأل عن</label><select id="topic"><option>السعر</option><option>الخامة أو الجودة</option><option>النتيجة</option><option>المقاس أو التفاصيل</option><option>التوصيل أو الوقت</option><option>التجربة أو Reviews</option><option>طريقة الاستخدام</option><option>غير واضح</option></select></div>
+        <div class="field"><label>نوع التفاعل الغالب</label><select id="engagement"><option>فضول فقط</option><option>مقارنة بينك وبين غيرك</option><option>نية شراء</option><option>مدح عام</option><option>اعتراضات متكررة</option><option>غير واضح</option></select></div>
+        <div class="field"><label>اسم أو لينك منافس قريب</label><input id="competitor" placeholder="اختياري" /></div>
+        <div class="field"><label>المنافس يبدو أقوى في</label><select id="compStrength"><option>الصور</option><option>السعر</option><option>Reviews</option><option>الشرح</option><option>سرعة الرد</option><option>اللايف ستايل</option><option>العروض</option><option>وضوح الرسالة</option><option>غير واضح</option></select></div>
+        <div class="field full"><label>إيه الحاجة اللي تقدر توضّحها أفضل منه؟</label><textarea id="better" placeholder="مثال: شرح الخامة، عرض تجربة عملاء، توضيح خطوات الطلب، مقارنة الأسعار بالقيمة..."></textarea></div>
+      </div>
+      <div class="tool-actions"><button class="btn btn-main" onclick="generateReport()">اعرض نتيجة قراءة العميل</button><button class="btn btn-ghost" onclick="resetTool()" type="button">ابدأ من جديد</button></div>
+      <div class="report" id="report"><h3>نتيجة قراءة العميل</h3><p class="copy-note">هذه نتيجة مبدئية تساعدك ترتب التفكير. استخدمها كبداية ثم راجعها بعد قراءة تعليقات ورسائل أكثر.</p><div id="reportContent" class="report-grid"></div><div class="tool-actions"><button class="btn btn-main" onclick="copyReport()">نسخ التقرير</button></div></div>
+    </div>
+  </div>
+</section>
+<footer class="footer"><p>First Click by Doaa Seleat · Daoline Digital</p><p style="font-size:12px;margin-top:6px;color:#77718d">المحاضرة الثانية — العميل لا يشتري المنتج فقط</p></footer>
+<script>
+function byId(id){return document.getElementById(id)}
+function selectedReasons(){return Array.from(document.querySelectorAll('#reasons input:checked')).map(x=>x.value).slice(0,3)}
+const reasonAdvice={
+  'الثقة':'اعرض Reviews، صورًا حقيقية، خطوات واضحة، وإجابات للأسئلة المتكررة.',
+  'الراحة':'اشرح سهولة الاختيار أو الاستخدام أو الطلب، وقلّل إحساس العميل بالمجهود.',
+  'الشكل والانطباع':'استخدم صورًا في سياق حقيقي، تنسيقات، قبل/بعد، وأمثلة تلهم العميل.',
+  'السعر والقيمة':'لا تعرض السعر وحده؛ اشرح ماذا يشمل السعر ولماذا يستحق.',
+  'الجودة':'ركّز على الخامة، التفاصيل، المقارنة، الاختبار، وما يجعل المنتج يعيش أكثر.',
+  'توفير الوقت':'وضّح كيف تختصر على العميل خطوات أو مجهودًا أو حيرة.',
+  'الأمان':'استخدم طمأنة، ضمان، خطوات واضحة، وشهادات أو أدلة ثقة.',
+  'النتيجة':'اعرض قبل/بعد، أمثلة تطبيق، قصص نجاح، أو نتيجة واقعية قابلة للتصديق.',
+  'الانتماء للبراند':'ابنِ لغة بصرية وصوتًا واضحًا يجعل العميل يشعر أن البراند شبهه.',
+  'مش متأكد بعد':'ابدأ بمراقبة التعليقات والأسئلة المتكررة قبل بناء الرسالة.'
+};
+const topicAdvice={
+  'السعر':'اكتب محتوى يشرح القيمة مقابل السعر وتفاصيل العرض بدل الاكتفاء برقم.',
+  'الخامة أو الجودة':'قدّم إثبات جودة: خامة، تفاصيل، مقارنة، فيديو قريب، أو تجربة استخدام.',
+  'النتيجة':'اعرض أمثلة للنتيجة المتوقعة بدون مبالغة، واجعلها ملموسة.',
+  'المقاس أو التفاصيل':'قدّم دليل اختيار، صورًا واقعية، وأجوبة واضحة قبل الشراء.',
+  'التوصيل أو الوقت':'وضّح خطوات الطلب والمدة والمتابعة لتقليل القلق.',
+  'التجربة أو Reviews':'ابدأ في جمع وعرض آراء العملاء وصور التجربة الحقيقية.',
+  'طريقة الاستخدام':'اصنع محتوى تعليميًا بسيطًا يشرح متى وكيف يستخدم العميل المنتج.',
+  'غير واضح':'راقب 5 بوستات أخرى قبل الحكم، ودوّن الأسئلة المتكررة.'
+};
+const compAdvice={
+  'الصور':'فرصتك أن تضيف شرحًا وتفاصيل وثقة، وليس صورًا جميلة فقط.',
+  'السعر':'فرصتك أن تثبت القيمة وتوضح لماذا اختيارك يستحق السعر.',
+  'Reviews':'فرصتك أن تبدأ بناء إثبات ثقة من تجارب العملاء ولو بسيطة.',
+  'الشرح':'فرصتك أن تقدم شرحًا أبسط وأكثر قربًا من أسئلة العميل.',
+  'سرعة الرد':'فرصتك تحسين تجربة الرد والمتابعة وتحويل الأسئلة إلى فرص بيع.',
+  'اللايف ستايل':'فرصتك بناء إحساس حول البراند بدل عرض المنتج فقط.',
+  'العروض':'فرصتك أن تجعل العرض مفهومًا ومربوطًا بقيمة حقيقية.',
+  'وضوح الرسالة':'فرصتك إعادة صياغة رسالتك لتكون محددة أكثر.',
+  'غير واضح':'ابدأ بتحليل 5 بوستات عنده قبل تحديد نقطة قوته.'
+};
+function generateReport(){
+  const project=byId('project').value.trim()||'مشروعك';
+  const industry=byId('industry').value;
+  const product=byId('product').value.trim()||'المنتج أو الخدمة';
+  const reasons=selectedReasons();
+  const topic=byId('topic').value;
+  const engagement=byId('engagement').value;
+  const comp=byId('compStrength').value;
+  const question=byId('question').value.trim();
+  const objection=byId('objection').value.trim();
+  const reasonText=reasons.length?reasons.join(' + '):'سبب الشراء غير واضح بعد';
+  const primary=reasons[0]||'مش متأكد بعد';
+  const contentAdvice=topicAdvice[topic]||topicAdvice['غير واضح'];
+  const competitorAdvice=compAdvice[comp]||compAdvice['غير واضح'];
+  const questionInsight=question? 'السؤال المتكرر الذي رصدته يصلح كفكرة محتوى مباشرة، لأن تكراره يعني أن العميل يحتاج إجابة قبل القرار.' : 'ابدأ بتسجيل أكثر سؤال يتكرر في التعليقات أو الرسائل؛ بدون هذا السؤال ستظل الرسالة عامة.';
+  const objectionInsight=objection? 'وجود اعتراض متكرر يعني أن المحتوى القادم يجب أن يطمئن العميل قبل أن يطلب منه الشراء.' : 'راقب الاعتراضات أو التردد في الرسائل، لأنها تكشف ما يمنع العميل من الشراء.';
+  const html=`
+    <div class="report-card"><strong>1. سبب الشراء المحتمل</strong><p>يبدو أن قرار العميل قد يكون مرتبطًا بـ <b>${reasonText}</b>. لذلك لا تعرض ${product} كاسم فقط، بل اربطه بالمعنى أو النتيجة التي يبحث عنها العميل.</p></div>
+    <div class="report-card"><strong>2. العميل الأقرب</strong><p>العميل الأقرب لـ ${project} ليس فقط من يحتاج ${product}، بل من يهتم بـ <b>${primary}</b> ويحتاج محتوى يطمئنه أو يوضح له القيمة قبل القرار.</p></div>
+    <div class="report-card"><strong>3. اتجاه المحتوى المناسب</strong><p>${contentAdvice}</p></div>
+    <div class="report-card"><strong>4. قراءة التفاعل</strong><p>${questionInsight} ${objectionInsight} ونوع التفاعل الحالي هو: <b>${engagement}</b>.</p></div>
+    <div class="report-card"><strong>5. زاوية المنافس</strong><p>لو المنافس أقوى في <b>${comp}</b>، فـ ${competitorAdvice}</p></div>
+    <div class="report-card"><strong>6. صياغة أولية لـ “ليه أنت؟”</strong><p>العميل يختارك عندما يرى أنك لا تقدم ${product} فقط، بل تساعده على الوصول إلى ${reasonText} بطريقة أوضح وأنسب من البدائل.</p></div>
+    <div class="report-card"><strong>7. أول 3 أفكار محتوى</strong><p>حوّل السؤال المتكرر إلى بوست. اعمل محتوى يرد على الاعتراض الأساسي. وانشر مثالًا أو صورة أو Review يثبت القيمة التي يبحث عنها العميل.</p></div>
+    <div class="report-card homework"><strong>8. واجب الأسبوع</strong><p>راقب 5 بوستات عندك و5 بوستات عند منافس واحد. اجمع 10 تعليقات أو رسائل متكررة. صنّفها إلى سعر، جودة، ثقة، شكل، راحة، اعتراض. ثم حوّل 3 منها إلى محتوى.</p></div>`;
+  byId('reportContent').innerHTML=html;
+  byId('report').style.display='block';
+  byId('report').scrollIntoView({behavior:'smooth',block:'start'});
+}
+function resetTool(){document.querySelectorAll('input,textarea').forEach(el=>{if(el.type==='checkbox') el.checked=false; else el.value=''});document.querySelectorAll('select').forEach(el=>el.selectedIndex=0);byId('report').style.display='none'}
+function copyReport(){
+  const el=byId('reportContent'); const text=Array.from(el.querySelectorAll('.report-card')).map(card=>card.innerText).join('\n\n');
+  navigator.clipboard.writeText(text).then(()=>alert('تم نسخ التقرير'));
+}
+(function(){
+  const passwordHash='1209ee4b8a0ce00d41dc6b500034fecfd7531fdbcd5de013eb3fb4d993734b15';
+  const storageKey='firstClickLesson2Access';
+  const lock=byId('courseLock'), input=byId('coursePassword'), btn=byId('unlockBtn'), error=byId('lockError');
+  async function sha256(text){const data=new TextEncoder().encode(text);const hash=await crypto.subtle.digest('SHA-256',data);return Array.from(new Uint8Array(hash)).map(b=>b.toString(16).padStart(2,'0')).join('')}
+  function unlock(){document.body.classList.remove('locked'); if(lock) lock.style.display='none'}
+  async function check(){const value=(input.value||'').trim(); if(await sha256(value)===passwordHash){localStorage.setItem(storageKey,'granted'); unlock()} else {error.style.display='block'; input.select()}}
+  if(localStorage.getItem(storageKey)==='granted') unlock();
+  btn.addEventListener('click',check); input.addEventListener('keydown',e=>{if(e.key==='Enter') check()});
+})();
+</script>
+</body>
+</html>
