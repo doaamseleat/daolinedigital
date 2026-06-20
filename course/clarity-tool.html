@@ -20,7 +20,7 @@ body{font-family:'Cairo','Tajawal',sans-serif;background:#fff;color:var(--text);
 a{text-decoration:none;color:inherit}.ltr{direction:ltr;unicode-bidi:isolate}.strong{font-weight:900;color:#111}
 .clean-nav{position:fixed;inset:0 0 auto 0;z-index:900;background:rgba(255,255,255,.96);backdrop-filter:blur(16px);border-bottom:1px solid rgba(108,60,225,.12);min-height:72px;padding:14px 34px;display:flex;align-items:center;justify-content:space-between;gap:18px}
 .nav-brand{display:inline-flex;align-items:center;gap:8px;color:var(--brand2);font-weight:900;font-size:20px}.nav-brand small{color:#6b657c;font-size:14px;font-weight:700}.brand-mark{color:var(--brand);font-size:16px;filter:drop-shadow(0 0 10px rgba(192,19,166,.45))}
-.nav-links{display:flex;gap:10px;list-style:none;flex-wrap:wrap;justify-content:center}.nav-links a{background:#fff;border:1px solid #ececf5;color:#58546b;font-weight:800;padding:9px 18px;border-radius:999px;font-size:13px;transition:.22s}.nav-links a:hover{background:linear-gradient(135deg,var(--brand2),var(--brand));color:#fff;border-color:transparent}
+.nav-links{display:flex;gap:10px;list-style:none;flex-wrap:wrap;justify-content:center}.nav-links a{background:#fff;border:1px solid #ececf5;color:#58546b;font-weight:800;padding:9px 18px;border-radius:999px;font-size:13px;transition:.22s}.nav-links a:hover{background:linear-gradient(135deg,var(--brand2),var(--brand));color:#fff;border-color:transparent}.nav-links a.active{background:linear-gradient(135deg,var(--brand2),var(--brand));color:#fff;border-color:transparent;box-shadow:0 10px 24px rgba(108,60,225,.18)}.nav-links a.logout-link{color:#b91c1c;border-color:#fee2e2;background:#fff5f5}.nav-links a.logout-link:hover{background:linear-gradient(135deg,#ef4444,#b91c1c);color:#fff;border-color:transparent}
 .hero{padding:132px 22px 70px;text-align:center;color:#fff;background:radial-gradient(circle at 22% 20%, rgba(192,19,166,.22), transparent 32%),radial-gradient(circle at 80% 58%, rgba(108,60,225,.2), transparent 36%),linear-gradient(135deg,#080812,#14142a 58%,#0b0b16);position:relative;overflow:hidden}
 .hero::after{content:"";position:absolute;inset:auto -10% -35% -10%;height:300px;background:radial-gradient(circle,rgba(192,19,166,.12),transparent 60%)}
 .hero-content{max-width:960px;margin:auto;position:relative;z-index:1}.badge{display:inline-flex;gap:8px;align-items:center;border-radius:999px;padding:8px 18px;background:rgba(192,19,166,.14);border:1px solid rgba(192,19,166,.3);color:#ffd8f7;font-weight:900;font-size:13px;margin-bottom:20px}.hero h1{font-family:'Tajawal',sans-serif;font-size:clamp(32px,5.6vw,58px);font-weight:900;line-height:1.15;margin-bottom:16px}.hero h1 span{display:block;background:linear-gradient(135deg,#ff72e8,#bca7ff);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;font-size:clamp(24px,3.6vw,38px);margin-top:10px}.hero p{max-width:780px;margin:0 auto 28px;color:#c8c4db;font-size:18px}.hero-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:13px 28px;font-weight:900;border:none;cursor:pointer;font-family:inherit;transition:.22s}.btn-main{background:linear-gradient(135deg,var(--brand),#ff4fde);color:#fff;box-shadow:0 14px 35px rgba(192,19,166,.28)}.btn-main:hover,.btn-ghost:hover{transform:translateY(-2px)}.btn-ghost{border:1px solid rgba(255,255,255,.2);color:#fff;background:rgba(255,255,255,.06)}
@@ -54,13 +54,16 @@ body.locked>*:not(#courseLock){display:none!important}#courseLock{position:fixed
     <p class="lock-note">تنبيه: هذه حماية بسيطة مناسبة للكورس المجاني.</p>
   </div>
 </div>
-<nav class="clean-nav" aria-label="التنقل الرئيسي">
-  <a class="nav-brand" href="lectures.html"><span class="brand-mark">●</span> First Click <small>by Daoline Digital</small></a>
+<nav class="clean-nav" aria-label="مسار التنقل داخل كورس First Click">
+  <a class="nav-brand" href="lectures.html" aria-label="العودة إلى فهرس المحاضرات">
+    <span class="brand-mark">●</span> First Click <small>by Daoline Digital</small>
+  </a>
   <ul class="nav-links">
-    <li><a href="lectures.html">محاضرات الكورس</a></li>
+    <li><a href="lectures.html">فهرس المحاضرات</a></li>
+    <li><a href="lecture-1.html">المحاضرة الأولى</a></li>
+    <li><a href="clarity-tool.html" class="active">المحاضرة الثانية</a></li>
     <li><a href="index.html">صفحة الكورس</a></li>
-    <li><a href="index.html#register">الاشتراك المجاني</a></li>
-    <li><a href="/blog/">المكتبة</a></li>
+    <li><a href="index.html" class="logout-link" data-logout>خروج</a></li>
   </ul>
 </nav>
 <header class="hero">
@@ -302,6 +305,13 @@ function copyReport(){
   const el=byId('reportContent'); const text=Array.from(el.querySelectorAll('.report-card')).map(card=>card.innerText).join('\n\n');
   navigator.clipboard.writeText(text).then(()=>alert('تم نسخ التقرير'));
 }
+document.querySelectorAll('[data-logout]').forEach(link => {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+    ['firstClickLesson2Access','marketingLecture1Access','firstClickLecturesAccess'].forEach(key => localStorage.removeItem(key));
+    window.location.href = 'index.html';
+  });
+});
 (function(){
   const passwordHash='1209ee4b8a0ce00d41dc6b500034fecfd7531fdbcd5de013eb3fb4d993734b15';
   const storageKey='firstClickLesson2Access';
