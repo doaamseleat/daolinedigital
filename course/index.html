@@ -839,6 +839,126 @@
       white-space: nowrap;
     }
 
+
+    /* ===== AVAILABLE LECTURES / START HERE ===== */
+    .start-flow {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 26px;
+      box-shadow: 0 18px 50px rgba(0,0,0,0.06);
+      margin-top: 10px;
+    }
+
+    .start-flow-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .start-step {
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 18px;
+      background: linear-gradient(135deg, #fff, #fff8fe);
+    }
+
+    .start-step-num {
+      width: 34px;
+      height: 34px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--brand), #ff4fde);
+      color: #fff;
+      font-weight: 900;
+      margin-bottom: 10px;
+    }
+
+    .start-step h3 {
+      font-size: 16px;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+
+    .start-step p {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    .available-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .available-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      min-height: 230px;
+      box-shadow: 0 14px 35px rgba(0,0,0,0.05);
+    }
+
+    .available-card.available {
+      border-color: rgba(22, 163, 74, 0.24);
+      background: linear-gradient(135deg, #fff, #f7fff9);
+    }
+
+    .available-card.soon {
+      background: #fafafd;
+    }
+
+    .lesson-tag {
+      width: fit-content;
+      padding: 5px 11px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 900;
+      color: var(--brand);
+      background: rgba(192,19,166,0.08);
+      border: 1px solid rgba(192,19,166,0.15);
+    }
+
+    .available-card h3 {
+      font-size: 18px;
+      line-height: 1.5;
+      color: var(--text);
+    }
+
+    .available-card p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.8;
+      flex: 1;
+    }
+
+    .lesson-btn {
+      display: inline-flex;
+      width: fit-content;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      padding: 10px 16px;
+      font-size: 13px;
+      font-weight: 900;
+      background: linear-gradient(135deg, var(--brand), #ff4fde);
+      color: #fff;
+    }
+
+    .lesson-btn.secondary {
+      background: #f2f2f8;
+      color: var(--text2);
+    }
+
     @media (max-width: 920px) {
       .hero-layout {
         grid-template-columns: 1fr;
@@ -937,6 +1057,7 @@
     <div class="nav-actions">
       <a class="nav-link" href="/">الرئيسية</a>
       <a class="nav-link" href="/blog/">المكتبة</a>
+      <a class="nav-link" href="#start-here">ابدأ من هنا</a>
       <a class="nav-link" href="lectures.html">المحاضرات</a>
       <a class="nav-cta" href="#register">سجّل مجانًا</a>
     </div>
@@ -1049,6 +1170,61 @@
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen>
           </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section" id="start-here">
+    <div class="section-inner">
+      <div class="section-tag">ابدأ من هنا</div>
+      <h2 class="section-title">الترتيب الصحيح للدخول على المحاضرات</h2>
+      <p class="section-sub">
+        صفحة التسجيل هدفها تجمع بياناتك وترسل لك كلمة السر. بعد كده تدخل على صفحة المحاضرات وتتابع المحتوى بالترتيب:
+        شاهد الفيديو، راجع الملخص، ثم افتح التطبيق العملي.
+      </p>
+
+      <div class="start-flow">
+        <div class="start-flow-grid">
+          <div class="start-step">
+            <div class="start-step-num">1</div>
+            <h3>سجّل في البرنامج</h3>
+            <p>اكتب الاسم والإيميل ورقم الواتساب في النموذج الموجود أسفل الصفحة.</p>
+          </div>
+          <div class="start-step">
+            <div class="start-step-num">2</div>
+            <h3>راجع الإيميل</h3>
+            <p>هيوصلك رابط صفحة المحاضرات وكلمة السر الخاصة بالدخول.</p>
+          </div>
+          <div class="start-step">
+            <div class="start-step-num">3</div>
+            <h3>اتبع ترتيب المحاضرات</h3>
+            <p>ابدأ بالمحاضرة الأولى، ثم افتح المحاضرة الثانية والتطبيق العملي الخاص بها.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="available-grid">
+        <div class="available-card available">
+          <span class="lesson-tag">المحاضرة 01 · متاحة الآن</span>
+          <h3>أساسيات التسويق اللي محدش قالهالك</h3>
+          <p>الفرق بين النشر والإعلان والتسويق، رحلة العميل، اختبار الـ 10 ثواني، وفكرة القيمة قبل المنتج.</p>
+          <a class="lesson-btn" href="lectures.html">دخول صفحة المحاضرات</a>
+        </div>
+
+        <div class="available-card available">
+          <span class="lesson-tag">المحاضرة 02 · متاحة الآن</span>
+          <h3>العميل لا يشتري المنتج فقط</h3>
+          <p>فهم سبب الشراء، قراءة الكومنتات والرسائل، مراقبة المنافس، وبداية بناء صورة أوضح للعميل.</p>
+          <a class="lesson-btn" href="lectures.html#lectures-list">افتح الترتيب</a>
+        </div>
+
+        <div class="available-card soon">
+          <span class="lesson-tag">قريبًا</span>
+          <h3>باقي المحاضرات</h3>
+          <p>Social Search، First Ad، و Track & Improve هيتضافوا تدريجيًا داخل صفحة المحاضرات.</p>
+          <a class="lesson-btn secondary" href="#register">سجّل ليصلك التحديث</a>
         </div>
       </div>
     </div>
