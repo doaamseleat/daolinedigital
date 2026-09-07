@@ -1,8 +1,8 @@
 name: Publish 2 Articles Per Day - Daoline
 on:
   schedule:
-    - cron: '0 9 * * *'
-    - cron: '0 18 * * *'
+    - cron: '0 9 * * *'   # 12 الظهر بتوقيت مصر (UTC+3)
+    - cron: '0 18 * * *'  # 9 بالليل بتوقيت مصر (UTC+3)
   workflow_dispatch:
 jobs:
   publish:
@@ -26,6 +26,11 @@ jobs:
             LAST_FILE=".github/last_published.txt"
             LAST=$(cat $LAST_FILE 2>/dev/null || echo "0")
             FILES=($(ls -1 blog/*.html | sort))
+            if [ ${#FILES[@]} -eq 0 ]; then
+              echo "No files in blog/"
+              echo "published=false" >> $GITHUB_OUTPUT
+              exit 0
+            fi
             NEXT=$(( (LAST + 1) % ${#FILES[@]} ))
             BASENAME=$(basename "${FILES[$NEXT]}")
             echo "$NEXT" > $LAST_FILE
@@ -49,22 +54,34 @@ jobs:
         run: |
           FILE="blog/${{ env.BASENAME }}"
           TITLE=$(grep -oPm1 "(?<=<title>).*?(?=</title>)" "$FILE" | head -n1)
+          if [ -z "$TITLE" ]; then
+            TITLE="${{ env.BASENAME }}"
+          fi
           LINK="https://daolinedigital.com/blog/${{ env.BASENAME }}"
           
           if [ "${{ env.mode }}" = "new" ]; then
-            PREFIX="🚀 مقال جديد"
+            PREFIX="🚀 مقال جديد من Daoline"
           else
             PREFIX="📚 من أرشيف Daoline - اقرأ مرة أخرى"
           fi
           
-          MESSAGE="$PREFIX: $TITLE
-
-          اقرا المقال كامل: $LINK
-
-          #تسويق_الكتروني #DaolineDigital"
+          echo "Posting $FILE with mode ${{ env.mode }}"
           
-          curl -X POST "https://graph.facebook.com/${{ env.PAGE_ID }}/feed" \
-            --data-urlencode "message=$MESSAGE" \
+          RESPONSE=$(curl -s -X POST "https://graph.facebook.com/v19.0/${{ env.PAGE_ID }}/feed" \
+            --data-urlencode "message=$PREFIX: $TITLE
+
+          اقرأ المقال كامل هنا: $LINK
+
+          #تسويق_الكتروني #DaolineDigital #تسويق" \
             --data-urlencode "link=$LINK" \
-            -d "access_token=$FB_TOKEN"
-          echo "✅ Posted $BASENAME to Facebook as $mode"
+            -d "access_token=$FB_TOKEN")
+          
+          echo "Facebook Response: $RESPONSE"
+          
+          if echo "$RESPONSE" | grep -q '"error"'; then
+            echo "❌ FAILED TO POST TO FACEBOOK"
+            echo "$RESPONSE"
+            exit 1
+          else
+            echo "✅ SUCCESS POSTED: $RESPONSE"
+          fi
