@@ -1,0 +1,27 @@
+name: Publish 2 Articles Per Day - Daoline
+on:
+  schedule:
+    - cron: '0 7 * * *'
+    - cron: '0 19 * * *'
+  workflow_dispatch:
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Publish one queued article
+        run: |
+          QUEUE_FILE=$(ls -1 blog/queue/*.html 2>/dev/null | grep -v ".gitkeep" | head -n 1)
+          if [ -z "$QUEUE_FILE" ]; then
+            echo "Queue فاضي"
+            exit 0
+          fi
+          BASENAME=$(basename "$QUEUE_FILE")
+          mv "$QUEUE_FILE" "blog/$BASENAME"
+          git config user.name "Daoline Bot"
+          git config user.email "bot@daolinedigital.com"
+          git add .
+          git commit -m "Auto publish: $BASENAME"
+          git push
