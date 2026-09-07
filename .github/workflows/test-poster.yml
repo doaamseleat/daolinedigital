@@ -3,6 +3,7 @@ name: Test Daoline Poster Generator
 on:
   pull_request:
     paths:
+      - "assets/fonts/**"
       - "scripts/**"
       - "package.json"
       - "package-lock.json"
