@@ -1,0 +1,53 @@
+name: One-time live Facebook test 018 v2
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/live-test-018-once-v2.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  publish-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Generate poster and publish to DaoLine
+        env:
+          FB_TOKEN: ${{ secrets.FB_PAGE_ACCESS_TOKEN }}
+          PAGE_ID: "627701733973210"
+        run: |
+          set -euo pipefail
+          META=$(node scripts/generate-facebook-poster.mjs --article blog/018.html --logo logo-daoline.png --output tmp/facebook-poster.png)
+          TITLE=$(printf '%s' "$META" | node -e "let s='';process.stdin.on('data',d=>s+=d).on('end',()=>console.log(JSON.parse(s).title))")
+          DESCRIPTION=$(printf '%s' "$META" | node -e "let s='';process.stdin.on('data',d=>s+=d).on('end',()=>console.log(JSON.parse(s).description))")
+          LINK="https://daolinedigital.com/blog/018.html"
+          CAPTION="🧪 اختبار النشر التلقائي من Daoline
+
+          $TITLE
+
+          $DESCRIPTION
+
+          اقرأ المقال كاملًا هنا:
+          $LINK
+
+          #تسويق_رقمي #DaolineDigital"
+          RESPONSE_FILE=$(mktemp)
+          HTTP_CODE=$(curl --silent --show-error --output "$RESPONSE_FILE" --write-out "%{http_code}" \
+            -X POST "https://graph.facebook.com/v26.0/$PAGE_ID/photos" \
+            -F "source=@tmp/facebook-poster.png;type=image/png" \
+            -F "caption=$CAPTION" \
+            -F "published=true" \
+            -F "access_token=$FB_TOKEN")
+          cat "$RESPONSE_FILE"
+          if [ "$HTTP_CODE" -lt 200 ] || [ "$HTTP_CODE" -ge 300 ] || grep -q '"error"' "$RESPONSE_FILE"; then
+            echo "::error::Facebook photo post failed (HTTP $HTTP_CODE)"
+            exit 1
+          fi
