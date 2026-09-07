@@ -13,19 +13,34 @@ permissions:
 jobs:
   generate:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repo
+      - name: Checkout repo with full history
         uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
 
-      - name: Generate articles.json
+      - name: Generate articles.json by real publish date
         run: |
           python3 << 'PY'
-          import re, json
+          import re, json, subprocess
           from pathlib import Path
 
           blog_dir = Path("blog")
           articles = []
+
+          def get_git_date(file_path):
+              try:
+                  # تاريخ آخر تعديل للملف في الـ git = تاريخ النشر
+                  ts = subprocess.check_output(
+                      ["git", "log", "-1", "--format=%at", "--", str(file_path)],
+                      text=True
+                  ).strip()
+                  return int(ts) if ts else 0
+              except:
+                  try:
+                      return int(file_path.stat().st_mtime)
+                  except:
+                      return 0
 
           for file in blog_dir.glob("*.html"):
               if file.name == "index.html":
@@ -33,7 +48,10 @@ jobs:
               if file.is_dir():
                   continue
 
-              text = file.read_text(encoding="utf-8", errors="ignore")
+              try:
+                  text = file.read_text(encoding="utf-8", errors="ignore")
+              except:
+                  continue
 
               title_match = re.search(r"<title>(.*?)</title>", text, re.S | re.I)
               desc_match = re.search(r'<meta\s+name=["\']description["\']\s+content=["\'](.*?)["\']', text, re.S | re.I)
@@ -41,8 +59,7 @@ jobs:
               title = title_match.group(1).strip() if title_match else file.stem
               desc = desc_match.group(1).strip() if desc_match else "مقال من Daoline Digital."
 
-              # نستخدم تاريخ التعديل بدل الرقم - الاحدث يطلع الاول
-              mtime = file.stat().st_mtime
+              publish_date = get_git_date(file)
 
               nums = re.findall(r"\d+", file.name)
               number = int(nums[0]) if nums else 0
@@ -52,19 +69,18 @@ jobs:
                   "desc": desc,
                   "link": file.name,
                   "number": number,
-                  "mtime": mtime
+                  "_publish_date": publish_date
               })
 
-          # الترتيب بتاريخ التعديل - الاحدث اولاً
-          articles.sort(key=lambda x: x["mtime"], reverse=True)
+          # الأحدث أولاً حسب تاريخ النشر الحقيقي
+          articles.sort(key=lambda x: x["_publish_date"], reverse=True)
 
-          # نشيل حقل mtime قبل الحفظ عشان نحافظ على شكل الملف القديم
           for a in articles:
-              a.pop("mtime", None)
+              a.pop("_publish_date", None)
 
           out = blog_dir / "articles.json"
           out.write_text(json.dumps(articles, ensure_ascii=False, indent=2), encoding="utf-8")
-          print(f"Generated {len(articles)} articles sorted by newest first")
+          print(f"✅ Generated {len(articles)} articles sorted by REAL publish date")
           PY
 
       - name: Commit articles.json
@@ -72,5 +88,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add blog/articles.json
-          git commit -m "Auto update articles.json - sorted by date" || echo "No changes"
+          git commit -m "Fix: sort by real git publish date" || echo "No changes"
           git push
