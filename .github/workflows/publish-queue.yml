@@ -1,8 +1,8 @@
 name: Publish 2 Articles Per Day - Daoline
 on:
   schedule:
-    - cron: '0 9 * * *'   # 12 الظهر بتوقيت مصر (UTC+3)
-    - cron: '0 18 * * *'  # 9 بالليل بتوقيت مصر (UTC+3)
+    - cron: '0 9 * * *'
+    - cron: '0 18 * * *'
   workflow_dispatch:
 jobs:
   publish:
@@ -11,10 +11,13 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Publish from queue OR recycle old
         id: publish
         run: |
+          git pull --rebase origin main || git pull origin main
           QUEUE_FILE=$(ls -1 blog/queue/*.html 2>/dev/null | grep -v ".gitkeep" | head -n 1)
           if [ -n "$QUEUE_FILE" ]; then
             BASENAME=$(basename "$QUEUE_FILE")
@@ -26,11 +29,6 @@ jobs:
             LAST_FILE=".github/last_published.txt"
             LAST=$(cat $LAST_FILE 2>/dev/null || echo "0")
             FILES=($(ls -1 blog/*.html | sort))
-            if [ ${#FILES[@]} -eq 0 ]; then
-              echo "No files in blog/"
-              echo "published=false" >> $GITHUB_OUTPUT
-              exit 0
-            fi
             NEXT=$(( (LAST + 1) % ${#FILES[@]} ))
             BASENAME=$(basename "${FILES[$NEXT]}")
             echo "$NEXT" > $LAST_FILE
@@ -39,12 +37,12 @@ jobs:
             echo "published=true" >> $GITHUB_OUTPUT
             git add $LAST_FILE
           fi
-          
+
           git config user.name "Daoline Bot"
           git config user.email "bot@daolinedigital.com"
-          git add .
+          git add.
           git commit -m "Auto publish: $BASENAME - $mode" || echo "no changes"
-          git push
+          git push origin main
 
       - name: Post to Facebook Page DaoLine
         if: steps.publish.outputs.published == 'true'
@@ -54,34 +52,12 @@ jobs:
         run: |
           FILE="blog/${{ env.BASENAME }}"
           TITLE=$(grep -oPm1 "(?<=<title>).*?(?=</title>)" "$FILE" | head -n1)
-          if [ -z "$TITLE" ]; then
-            TITLE="${{ env.BASENAME }}"
-          fi
           LINK="https://daolinedigital.com/blog/${{ env.BASENAME }}"
-          
-          if [ "${{ env.mode }}" = "new" ]; then
-            PREFIX="🚀 مقال جديد من Daoline"
-          else
-            PREFIX="📚 من أرشيف Daoline - اقرأ مرة أخرى"
-          fi
-          
-          echo "Posting $FILE with mode ${{ env.mode }}"
-          
-          RESPONSE=$(curl -s -X POST "https://graph.facebook.com/v19.0/${{ env.PAGE_ID }}/feed" \
-            --data-urlencode "message=$PREFIX: $TITLE
+          if [ "${{ env.mode }}" = "new" ]; then PREFIX="🚀 مقال جديد من Daoline"; else PREFIX="📚 من أرشيف Daoline"; fi
+          RESPONSE=$(curl -s -X POST "https://graph.facebook.com/v19.0/${{ env.PAGE_ID }}/feed" --data-urlencode "message=$PREFIX: $TITLE
 
-          اقرأ المقال كامل هنا: $LINK
+          اقرأ المقال كامل: $LINK
 
-          #تسويق_الكتروني #DaolineDigital #تسويق" \
-            --data-urlencode "link=$LINK" \
-            -d "access_token=$FB_TOKEN")
-          
+          #تسويق_الكتروني #DaolineDigital" --data-urlencode "link=$LINK" -d "access_token=$FB_TOKEN")
           echo "Facebook Response: $RESPONSE"
-          
-          if echo "$RESPONSE" | grep -q '"error"'; then
-            echo "❌ FAILED TO POST TO FACEBOOK"
-            echo "$RESPONSE"
-            exit 1
-          else
-            echo "✅ SUCCESS POSTED: $RESPONSE"
-          fi
+          if echo "$RESPONSE" | grep -q '"error"'; then echo "❌ FAILED"; exit 1; else echo "✅ SUCCESS"; fi
