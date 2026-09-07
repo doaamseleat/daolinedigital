@@ -1,0 +1,35 @@
+name: Test Daoline Poster Generator
+
+on:
+  pull_request:
+    paths:
+      - "scripts/**"
+      - "package.json"
+      - "package-lock.json"
+      - ".github/workflows/publish-queue.yml"
+      - ".github/workflows/test-poster.yml"
+      - "blog/018.html"
+      - "logo-daoline.png"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test-poster:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Test poster with blog/018.html
+        run: npm run test:poster
+      - name: Upload PNG preview
+        uses: actions/upload-artifact@v4
+        with:
+          name: daoline-poster-018-preview
+          path: tmp/test-018-facebook-poster.png
+          retention-days: 7
