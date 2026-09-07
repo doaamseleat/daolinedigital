@@ -21,7 +21,7 @@ jobs:
       - name: Generate articles.json
         run: |
           python3 << 'PY'
-          import os, re, json
+          import re, json
           from pathlib import Path
 
           blog_dir = Path("blog")
@@ -29,6 +29,8 @@ jobs:
 
           for file in blog_dir.glob("*.html"):
               if file.name == "index.html":
+                  continue
+              if file.is_dir():
                   continue
 
               text = file.read_text(encoding="utf-8", errors="ignore")
@@ -39,6 +41,9 @@ jobs:
               title = title_match.group(1).strip() if title_match else file.stem
               desc = desc_match.group(1).strip() if desc_match else "مقال من Daoline Digital."
 
+              # نستخدم تاريخ التعديل بدل الرقم - الاحدث يطلع الاول
+              mtime = file.stat().st_mtime
+
               nums = re.findall(r"\d+", file.name)
               number = int(nums[0]) if nums else 0
 
@@ -46,13 +51,20 @@ jobs:
                   "title": title,
                   "desc": desc,
                   "link": file.name,
-                  "number": number
+                  "number": number,
+                  "mtime": mtime
               })
 
-          articles.sort(key=lambda x: x["number"], reverse=True)
+          # الترتيب بتاريخ التعديل - الاحدث اولاً
+          articles.sort(key=lambda x: x["mtime"], reverse=True)
+
+          # نشيل حقل mtime قبل الحفظ عشان نحافظ على شكل الملف القديم
+          for a in articles:
+              a.pop("mtime", None)
 
           out = blog_dir / "articles.json"
           out.write_text(json.dumps(articles, ensure_ascii=False, indent=2), encoding="utf-8")
+          print(f"Generated {len(articles)} articles sorted by newest first")
           PY
 
       - name: Commit articles.json
@@ -60,5 +72,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add blog/articles.json
-          git commit -m "Auto update articles.json" || echo "No changes"
+          git commit -m "Auto update articles.json - sorted by date" || echo "No changes"
           git push
