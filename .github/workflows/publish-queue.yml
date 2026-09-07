@@ -11,17 +11,45 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v4
+
       - name: Publish one queued article
+        id: publish
         run: |
           QUEUE_FILE=$(ls -1 blog/queue/*.html 2>/dev/null | grep -v ".gitkeep" | head -n 1)
           if [ -z "$QUEUE_FILE" ]; then
             echo "Queue فاضي"
+            echo "published=false" >> $GITHUB_OUTPUT
             exit 0
           fi
           BASENAME=$(basename "$QUEUE_FILE")
           mv "$QUEUE_FILE" "blog/$BASENAME"
+          echo "BASENAME=$BASENAME" >> $GITHUB_ENV
+          echo "published=true" >> $GITHUB_OUTPUT
+          
           git config user.name "Daoline Bot"
           git config user.email "bot@daolinedigital.com"
           git add .
           git commit -m "Auto publish: $BASENAME"
           git push
+
+      - name: Post to Facebook Page DaoLine
+        if: steps.publish.outputs.published == 'true'
+        env:
+          FB_TOKEN: ${{ secrets.FB_PAGE_ACCESS_TOKEN }}
+          PAGE_ID: "627701733973210"
+        run: |
+          FILE="blog/${{ env.BASENAME }}"
+          TITLE=$(grep -oPm1 "(?<=<title>).*?(?=</title>)" "$FILE" | head -n1)
+          LINK="https://daolinedigital.com/blog/${{ env.BASENAME }}"
+          
+          MESSAGE="🚀 مقال جديد من Daoline Digital: $TITLE
+
+          اقرا المقال كامل: $LINK
+
+          #تسويق_الكتروني #DaolineDigital"
+
+          curl -X POST "https://graph.facebook.com/${{ env.PAGE_ID }}/feed" \
+            -d "message=$MESSAGE" \
+            -d "link=$LINK" \
+            -d "access_token=$FB_TOKEN"
+          echo "✅ Posted to Facebook"
