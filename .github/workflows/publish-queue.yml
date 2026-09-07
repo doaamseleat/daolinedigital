@@ -1,8 +1,8 @@
 name: Publish 2 Articles Per Day - Daoline
 on:
   schedule:
-    - cron: '0 7 * * *'
-    - cron: '0 19 * * *'
+    - cron: '0 9 * * *'
+    - cron: '0 18 * * *'
   workflow_dispatch:
 jobs:
   publish:
@@ -12,24 +12,33 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Publish one queued article
+      - name: Publish from queue OR recycle old
         id: publish
         run: |
           QUEUE_FILE=$(ls -1 blog/queue/*.html 2>/dev/null | grep -v ".gitkeep" | head -n 1)
-          if [ -z "$QUEUE_FILE" ]; then
-            echo "Queue فاضي"
-            echo "published=false" >> $GITHUB_OUTPUT
-            exit 0
+          if [ -n "$QUEUE_FILE" ]; then
+            BASENAME=$(basename "$QUEUE_FILE")
+            mv "$QUEUE_FILE" "blog/$BASENAME"
+            echo "BASENAME=$BASENAME" >> $GITHUB_ENV
+            echo "mode=new" >> $GITHUB_ENV
+            echo "published=true" >> $GITHUB_OUTPUT
+          else
+            LAST_FILE=".github/last_published.txt"
+            LAST=$(cat $LAST_FILE 2>/dev/null || echo "0")
+            FILES=($(ls -1 blog/*.html | sort))
+            NEXT=$(( (LAST + 1) % ${#FILES[@]} ))
+            BASENAME=$(basename "${FILES[$NEXT]}")
+            echo "$NEXT" > $LAST_FILE
+            echo "BASENAME=$BASENAME" >> $GITHUB_ENV
+            echo "mode=recycle" >> $GITHUB_ENV
+            echo "published=true" >> $GITHUB_OUTPUT
+            git add $LAST_FILE
           fi
-          BASENAME=$(basename "$QUEUE_FILE")
-          mv "$QUEUE_FILE" "blog/$BASENAME"
-          echo "BASENAME=$BASENAME" >> $GITHUB_ENV
-          echo "published=true" >> $GITHUB_OUTPUT
           
           git config user.name "Daoline Bot"
           git config user.email "bot@daolinedigital.com"
           git add .
-          git commit -m "Auto publish: $BASENAME"
+          git commit -m "Auto publish: $BASENAME - $mode" || echo "no changes"
           git push
 
       - name: Post to Facebook Page DaoLine
@@ -42,14 +51,20 @@ jobs:
           TITLE=$(grep -oPm1 "(?<=<title>).*?(?=</title>)" "$FILE" | head -n1)
           LINK="https://daolinedigital.com/blog/${{ env.BASENAME }}"
           
-          MESSAGE="🚀 مقال جديد من Daoline Digital: $TITLE
+          if [ "${{ env.mode }}" = "new" ]; then
+            PREFIX="🚀 مقال جديد"
+          else
+            PREFIX="📚 من أرشيف Daoline - اقرأ مرة أخرى"
+          fi
+          
+          MESSAGE="$PREFIX: $TITLE
 
           اقرا المقال كامل: $LINK
 
           #تسويق_الكتروني #DaolineDigital"
-
+          
           curl -X POST "https://graph.facebook.com/${{ env.PAGE_ID }}/feed" \
-            -d "message=$MESSAGE" \
-            -d "link=$LINK" \
+            --data-urlencode "message=$MESSAGE" \
+            --data-urlencode "link=$LINK" \
             -d "access_token=$FB_TOKEN"
-          echo "✅ Posted to Facebook"
+          echo "✅ Posted $BASENAME to Facebook as $mode"
