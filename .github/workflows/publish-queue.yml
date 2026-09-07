@@ -1,63 +1,108 @@
 name: Publish 2 Articles Per Day - Daoline
 on:
   schedule:
-    - cron: '0 9 * * *'
-    - cron: '0 18 * * *'
+    - cron: '0 9 * * *'   # 12 الظهر مصر
+    - cron: '0 18 * * *'  # 9 بليل مصر
   workflow_dispatch:
+
+# عشان لو دوستي مرتين ورا بعض مايعملش conflict
+concurrency:
+  group: publish-daoline
+  cancel-in-progress: false
+
 jobs:
   publish:
     runs-on: ubuntu-latest
     permissions:
       contents: write
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repo
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
       - name: Publish from queue OR recycle old
         id: publish
         run: |
-          git pull --rebase origin main || git pull origin main
-          QUEUE_FILE=$(ls -1 blog/queue/*.html 2>/dev/null | grep -v ".gitkeep" | head -n 1)
+          # نعمل pull الاول عشان مايحصلش rejected
+          git pull --rebase origin main || echo "first run"
+
+          QUEUE_FILE=$(ls -1 blog/queue/*.html 2>/dev/null | grep -v ".gitkeep" | head -n 1 || true)
+          
           if [ -n "$QUEUE_FILE" ]; then
+            echo "Found new file in queue: $QUEUE_FILE"
             BASENAME=$(basename "$QUEUE_FILE")
             mv "$QUEUE_FILE" "blog/$BASENAME"
             echo "BASENAME=$BASENAME" >> $GITHUB_ENV
             echo "mode=new" >> $GITHUB_ENV
             echo "published=true" >> $GITHUB_OUTPUT
           else
+            echo "Queue empty - recycling old articles"
             LAST_FILE=".github/last_published.txt"
+            mkdir -p .github
             LAST=$(cat $LAST_FILE 2>/dev/null || echo "0")
-            FILES=($(ls -1 blog/*.html | sort))
+            FILES=($(ls -1 blog/*.html 2>/dev/null | sort))
+            
+            if [ ${#FILES[@]} -eq 0 ]; then
+              echo "No files in blog/ to recycle"
+              echo "published=false" >> $GITHUB_OUTPUT
+              exit 0
+            fi
+            
             NEXT=$(( (LAST + 1) % ${#FILES[@]} ))
             BASENAME=$(basename "${FILES[$NEXT]}")
-            echo "$NEXT" > $LAST_FILE
+            echo "$NEXT" > "$LAST_FILE"
             echo "BASENAME=$BASENAME" >> $GITHUB_ENV
             echo "mode=recycle" >> $GITHUB_ENV
             echo "published=true" >> $GITHUB_OUTPUT
-            git add $LAST_FILE
           fi
 
           git config user.name "Daoline Bot"
           git config user.email "bot@daolinedigital.com"
-          git add.
-          git commit -m "Auto publish: $BASENAME - $mode" || echo "no changes"
-          git push origin main
+          git add .
+          git commit -m "Auto publish: $BASENAME - ${{ env.mode }}" || echo "no changes to commit"
+          git push origin main || (git pull --rebase origin main && git push origin main)
 
       - name: Post to Facebook Page DaoLine
         if: steps.publish.outputs.published == 'true'
+        continue-on-error: true
         env:
           FB_TOKEN: ${{ secrets.FB_PAGE_ACCESS_TOKEN }}
           PAGE_ID: "627701733973210"
         run: |
           FILE="blog/${{ env.BASENAME }}"
-          TITLE=$(grep -oPm1 "(?<=<title>).*?(?=</title>)" "$FILE" | head -n1)
+          echo "Processing file: $FILE"
+          
+          # نجيب العنوان
+          TITLE=$(grep -oPm1 "(?<=<title>).*?(?=</title>)" "$FILE" 2>/dev/null | head -n1 || echo "")
+          if [ -z "$TITLE" ]; then
+            TITLE=$(basename "$FILE" .html)
+          fi
+          
           LINK="https://daolinedigital.com/blog/${{ env.BASENAME }}"
-          if [ "${{ env.mode }}" = "new" ]; then PREFIX="🚀 مقال جديد من Daoline"; else PREFIX="📚 من أرشيف Daoline"; fi
-          RESPONSE=$(curl -s -X POST "https://graph.facebook.com/v19.0/${{ env.PAGE_ID }}/feed" --data-urlencode "message=$PREFIX: $TITLE
+          
+          if [ "${{ env.mode }}" = "new" ]; then
+            PREFIX="🚀 مقال جديد من Daoline"
+          else
+            PREFIX="📚 من أرشيف Daoline"
+          fi
 
-          اقرأ المقال كامل: $LINK
+          echo "Posting to Facebook: $TITLE"
 
-          #تسويق_الكتروني #DaolineDigital" --data-urlencode "link=$LINK" -d "access_token=$FB_TOKEN")
+          RESPONSE=$(curl -s -X POST "https://graph.facebook.com/v19.0/$PAGE_ID/feed" \
+            --data-urlencode "message=$PREFIX: $TITLE
+
+          اقرأ المقال كامل هنا: $LINK
+
+          #تسويق_الكتروني #DaolineDigital" \
+            --data-urlencode "link=$LINK" \
+            -d "access_token=$FB_TOKEN")
+
           echo "Facebook Response: $RESPONSE"
-          if echo "$RESPONSE" | grep -q '"error"'; then echo "❌ FAILED"; exit 1; else echo "✅ SUCCESS"; fi
+
+          if echo "$RESPONSE" | grep -q '"error"'; then
+            echo "::warning::Facebook post failed, but site publish succeeded"
+            echo "$RESPONSE"
+          else
+            echo "✅ Successfully posted to Facebook"
+          fi
