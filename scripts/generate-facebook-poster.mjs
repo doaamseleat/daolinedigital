@@ -4,6 +4,13 @@ import { Resvg } from '@resvg/resvg-js';
 
 const WIDTH = 1080;
 const HEIGHT = 1350;
+const FONT_DIR = path.resolve('assets/fonts');
+const FONT_FILES = [
+  path.join(FONT_DIR, 'Changa-Variable.ttf'),
+  path.join(FONT_DIR, 'Tajawal-Medium.ttf'),
+  path.join(FONT_DIR, 'Tajawal-Bold.ttf'),
+  path.join(FONT_DIR, 'Montserrat-Variable.ttf')
+];
 
 function decodeHtml(value = '') {
   const entities = {
@@ -66,7 +73,7 @@ function wrapText(text, maxCharacters, maxLines) {
 
 function tspans(lines, x, startY, lineHeight) {
   return lines.map((line, index) =>
-    `<tspan x="${x}" y="${startY + index * lineHeight}">${escapeXml(line)}</tspan>`
+    `<tspan x="${x}" y="${startY + index * lineHeight}" direction="rtl" unicode-bidi="plaintext">${escapeXml(line)}</tspan>`
   ).join('');
 }
 
@@ -100,24 +107,28 @@ export async function generatePoster({ articlePath, outputPath, logoPath }) {
     <rect x="72" y="72" width="936" height="1206" rx="42" fill="#ffffff" fill-opacity="0.035" stroke="#ffffff" stroke-opacity="0.12" stroke-width="2" filter="url(#shadow)"/>
 
     <image href="${logoUri}" x="824" y="105" width="150" height="150" preserveAspectRatio="xMidYMid meet"/>
-    <text x="105" y="160" fill="#f8fafc" font-family="DejaVu Sans, sans-serif" font-size="28" font-weight="700" letter-spacing="1">DAOLINE DIGITAL</text>
+    <text x="105" y="160" fill="#f8fafc" font-family="Montserrat" font-size="28" font-weight="600" letter-spacing="1">DAOLINE DIGITAL</text>
     <rect x="105" y="198" width="170" height="7" rx="4" fill="#c013a6"/>
 
-    <text x="540" y="390" fill="#ffffff" font-family="DejaVu Sans, sans-serif" font-size="64" font-weight="700" text-anchor="middle" direction="rtl">${tspans(titleLines, 540, 390, 94)}</text>
+    <text x="540" y="390" fill="#ffffff" font-family="Changa" font-size="64" font-weight="800" text-anchor="middle" direction="rtl" unicode-bidi="plaintext" lang="ar">${tspans(titleLines, 540, 390, 94)}</text>
 
     <line x1="105" x2="975" y1="840" y2="840" stroke="#ffffff" stroke-opacity="0.15" stroke-width="2"/>
-    <text x="960" y="920" fill="#dbe3ef" font-family="DejaVu Sans, sans-serif" font-size="33" font-weight="400" text-anchor="end" direction="rtl">${tspans(descriptionLines, 960, 920, 55)}</text>
+    <text x="540" y="920" fill="#dbe3ef" font-family="Tajawal" font-size="33" font-weight="500" text-anchor="middle" direction="rtl" unicode-bidi="plaintext" lang="ar">${tspans(descriptionLines, 540, 920, 55)}</text>
 
     <rect x="680" y="1110" width="295" height="86" rx="43" fill="#c013a6"/>
-    <text x="827" y="1165" fill="#ffffff" font-family="DejaVu Sans, sans-serif" font-size="32" font-weight="700" text-anchor="middle" direction="rtl">اقرأ المقال كاملًا</text>
-    <text x="105" y="1163" fill="#ffffff" font-family="DejaVu Sans, sans-serif" font-size="28" font-weight="700">daolinedigital.com</text>
-    <text x="105" y="1220" fill="#94a3b8" font-family="DejaVu Sans, sans-serif" font-size="22">SOCIAL MEDIA • STRATEGY • GROWTH</text>
+    <text x="827" y="1165" fill="#ffffff" font-family="Tajawal" font-size="32" font-weight="700" text-anchor="middle" direction="rtl" unicode-bidi="plaintext" lang="ar">اقرأ المقال كاملًا</text>
+    <text x="105" y="1163" fill="#ffffff" font-family="Montserrat" font-size="28" font-weight="600">daolinedigital.com</text>
+    <text x="105" y="1220" fill="#94a3b8" font-family="Montserrat" font-size="22" font-weight="600">SOCIAL MEDIA • STRATEGY • GROWTH</text>
   </svg>`;
 
   await fs.mkdir(path.dirname(outputPath), { recursive: true });
   const renderer = new Resvg(svg, {
     fitTo: { mode: 'width', value: WIDTH },
-    font: { loadSystemFonts: true, defaultFontFamily: 'DejaVu Sans' }
+    font: {
+      fontFiles: FONT_FILES,
+      loadSystemFonts: false,
+      defaultFontFamily: 'Tajawal'
+    }
   });
   await fs.writeFile(outputPath, renderer.render().asPng());
   return metadata;
