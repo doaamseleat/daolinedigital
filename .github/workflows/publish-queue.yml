@@ -1,9 +1,6 @@
 name: Publish 2 Articles Per Day - Daoline
 
 on:
-  push:
-    paths:
-      - '.github/publish-now-trigger'
   schedule:
     - cron: '17 12 * * *'
       timezone: 'Africa/Cairo'
