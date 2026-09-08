@@ -1,0 +1,27 @@
+name: Validate Facebook token once
+on:
+  push:
+    paths:
+      - '.github/workflows/validate-facebook-token-once.yml'
+permissions:
+  contents: write
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate Page token
+        env:
+          FB_TOKEN: ${{ secrets.FB_PAGE_ACCESS_TOKEN }}
+        run: |
+          curl --silent --show-error --get "https://graph.facebook.com/v26.0/me" \
+            --data-urlencode "fields=id,name" \
+            --data-urlencode "access_token=$FB_TOKEN" \
+            -o .github/facebook-token-check.json
+      - name: Save result
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .github/facebook-token-check.json
+          git commit -m "Temporary Facebook token validation"
+          git push
