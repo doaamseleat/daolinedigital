@@ -126,6 +126,23 @@ jobs:
         run: |
           set -euo pipefail
 
+          # FB_TOKEN is the non-expiring System User token. Resolve a Page token
+          # at runtime because New Pages Experience requires a Page token for /posts and /photos.
+          TOKEN_RESPONSE=$(curl --silent --show-error --get \
+            "https://graph.facebook.com/v26.0/$PAGE_ID" \
+            --data-urlencode "fields=access_token" \
+            --data-urlencode "access_token=$FB_TOKEN")
+          if echo "$TOKEN_RESPONSE" | grep -q '"error"'; then
+            echo "$TOKEN_RESPONSE"
+            echo "::error::Could not resolve a Page access token from the System User token"
+            exit 1
+          fi
+          PAGE_TOKEN=$(printf '%s' "$TOKEN_RESPONSE" | node -e "let s='';process.stdin.on('data',d=>s+=d).on('end',()=>{const r=JSON.parse(s); console.log(r.access_token || '')})")
+          if [ -z "$PAGE_TOKEN" ]; then
+            echo "::error::Meta returned no Page access token"
+            exit 1
+          fi
+
           META=$(node scripts/generate-facebook-poster.mjs --article "$ARTICLE_PATH" --logo logo-daoline.png --output tmp/facebook-poster.png)
           TITLE=$(printf '%s' "$META" | node -e "let s='';process.stdin.on('data',d=>s+=d).on('end',()=>console.log(JSON.parse(s).title))")
           DESCRIPTION=$(printf '%s' "$META" | node -e "let s='';process.stdin.on('data',d=>s+=d).on('end',()=>console.log(JSON.parse(s).description))")
@@ -157,7 +174,7 @@ jobs:
             -F "source=@tmp/facebook-poster.png;type=image/png" \
             -F "caption=$CAPTION" \
             -F "published=true" \
-            -F "access_token=$FB_TOKEN")
+            -F "access_token=$PAGE_TOKEN")
           RESPONSE=$(cat "$RESPONSE_FILE")
           echo "Facebook Response: $RESPONSE"
 
