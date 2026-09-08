@@ -1,8 +1,9 @@
 name: Publish 2 Articles Per Day - Daoline
+
 on:
   schedule:
-    - cron: '0 9 * * *'   # 12 الظهر مصر
-    - cron: '0 18 * * *'  # 9 بليل مصر
+    - cron: '0 9 * * *'   # 12:00 PM Egypt during UTC+3
+    - cron: '0 18 * * *'  # 9:00 PM Egypt during UTC+3
   workflow_dispatch:
     inputs:
       article:
@@ -15,7 +16,6 @@ on:
         default: true
         type: boolean
 
-# عشان لو دوستي مرتين ورا بعض مايعملش conflict
 concurrency:
   group: publish-daoline
   cancel-in-progress: false
@@ -25,6 +25,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
@@ -40,113 +41,103 @@ jobs:
       - name: Install poster generator
         run: npm ci
 
-      - name: Publish from queue OR recycle old
-        id: publish
+      - name: Select article without advancing queue
+        id: prepare
         env:
           MANUAL_ARTICLE: ${{ inputs.article }}
           DRY_RUN: ${{ inputs.dry_run }}
         run: |
-          # نعمل pull الاول عشان مايحصلش rejected
-          git pull --rebase origin main || echo "first run"
+          set -euo pipefail
+          git pull --rebase origin main || true
 
-          RUNS_FILE=".github/publish-runs.log"
-          mkdir -p .github
           if [ "$GITHUB_EVENT_NAME" = "workflow_dispatch" ] && [ "$DRY_RUN" = "true" ] && [ -z "$MANUAL_ARTICLE" ]; then
             echo "A dry run requires an article path, for example blog/018.html"
             exit 1
           fi
-          EXISTING=$(grep -F "${GITHUB_RUN_ID}|" "$RUNS_FILE" 2>/dev/null | tail -n 1 || true)
 
+          PUBLISHED_RUNS=".github/facebook-published-runs.log"
+          EXISTING=$(grep -F "${GITHUB_RUN_ID}|" "$PUBLISHED_RUNS" 2>/dev/null | tail -n 1 || true)
           if [ -n "$EXISTING" ]; then
-            BASENAME=$(printf '%s' "$EXISTING" | cut -d'|' -f2)
-            MODE=$(printf '%s' "$EXISTING" | cut -d'|' -f3)
-            echo "Reusing article reserved for this workflow run: $BASENAME"
-          elif [ -n "$MANUAL_ARTICLE" ]; then
+            echo "This workflow run was already published: $EXISTING"
+            echo "already_published=true" >> "$GITHUB_ENV"
+            echo "selected=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          echo "already_published=false" >> "$GITHUB_ENV"
+
+          if [ -n "$MANUAL_ARTICLE" ]; then
             if [ ! -f "$MANUAL_ARTICLE" ] || [[ "$MANUAL_ARTICLE" != blog/*.html ]]; then
               echo "Invalid manual article path: $MANUAL_ARTICLE"
               exit 1
             fi
+            ARTICLE_PATH="$MANUAL_ARTICLE"
             BASENAME=$(basename "$MANUAL_ARTICLE")
             MODE="test"
+            NEXT_INDEX=""
           else
             QUEUE_FILE=$(find blog/queue -maxdepth 1 -type f -name '*.html' -print 2>/dev/null | sort | head -n 1 || true)
             if [ -n "$QUEUE_FILE" ]; then
-            echo "Found new file in queue: $QUEUE_FILE"
-            BASENAME=$(basename "$QUEUE_FILE")
-            mv "$QUEUE_FILE" "blog/$BASENAME"
+              echo "Found new file in queue: $QUEUE_FILE"
+              ARTICLE_PATH="$QUEUE_FILE"
+              BASENAME=$(basename "$QUEUE_FILE")
               MODE="new"
+              NEXT_INDEX=""
             else
-              echo "Queue empty - recycling old articles"
+              echo "Queue empty - selecting an archived article"
               LAST_FILE=".github/last_published.txt"
               LAST=$(cat "$LAST_FILE" 2>/dev/null || echo "-1")
               mapfile -t FILES < <(find blog -maxdepth 1 -type f -name '*.html' -print | sort)
 
               if [ ${#FILES[@]} -eq 0 ]; then
                 echo "No files in blog/ to recycle"
-                echo "published=false" >> "$GITHUB_OUTPUT"
+                echo "selected=false" >> "$GITHUB_OUTPUT"
                 exit 0
               fi
 
-              NEXT=$(( (LAST + 1) % ${#FILES[@]} ))
-              BASENAME=$(basename "${FILES[$NEXT]}")
-              echo "$NEXT" > "$LAST_FILE"
+              NEXT_INDEX=$(( (LAST + 1) % ${#FILES[@]} ))
+              ARTICLE_PATH="${FILES[$NEXT_INDEX]}"
+              BASENAME=$(basename "$ARTICLE_PATH")
               MODE="recycle"
             fi
-            if [ "$DRY_RUN" != "true" ]; then
-              echo "${GITHUB_RUN_ID}|${BASENAME}|${MODE}" >> "$RUNS_FILE"
-            fi
           fi
 
+          echo "ARTICLE_PATH=$ARTICLE_PATH" >> "$GITHUB_ENV"
           echo "BASENAME=$BASENAME" >> "$GITHUB_ENV"
           echo "mode=$MODE" >> "$GITHUB_ENV"
-          echo "published=true" >> "$GITHUB_OUTPUT"
+          echo "NEXT_INDEX=$NEXT_INDEX" >> "$GITHUB_ENV"
+          echo "selected=true" >> "$GITHUB_OUTPUT"
 
-          if [ "$DRY_RUN" != "true" ]; then
-            git config user.name "Daoline Bot"
-            git config user.email "bot@daolinedigital.com"
-            git add .
-            git commit -m "Auto publish: $BASENAME - $MODE" || echo "no changes to commit"
-            git push origin main || (git pull --rebase origin main && git push origin main)
-          fi
-
-      - name: Generate Daoline Facebook poster
-        if: steps.publish.outputs.published == 'true'
+      - name: Generate and validate Daoline Facebook poster
+        if: steps.prepare.outputs.selected == 'true'
         run: |
+          set -euo pipefail
           node scripts/generate-facebook-poster.mjs \
-            --article "blog/${{ env.BASENAME }}" \
+            --article "${{ env.ARTICLE_PATH }}" \
             --logo "logo-daoline.png" \
             --output "tmp/facebook-poster.png"
           node scripts/test-facebook-poster.mjs
 
       - name: Post poster to Facebook Page DaoLine
-        if: steps.publish.outputs.published == 'true' && !(github.event_name == 'workflow_dispatch' && inputs.dry_run)
+        if: steps.prepare.outputs.selected == 'true' && !(github.event_name == 'workflow_dispatch' && inputs.dry_run)
         env:
           FB_TOKEN: ${{ secrets.FB_PAGE_ACCESS_TOKEN }}
           PAGE_ID: "627701733973210"
         run: |
-          FILE="blog/${{ env.BASENAME }}"
-          echo "Processing file: $FILE"
+          set -euo pipefail
 
-          PUBLISHED_RUNS=".github/facebook-published-runs.log"
-          if grep -Fxq "$GITHUB_RUN_ID" "$PUBLISHED_RUNS" 2>/dev/null; then
-            echo "Facebook post already completed for workflow run $GITHUB_RUN_ID; skipping duplicate."
-            exit 0
-          fi
-
-          META=$(node scripts/generate-facebook-poster.mjs --article "$FILE" --logo logo-daoline.png --output tmp/facebook-poster.png)
+          META=$(node scripts/generate-facebook-poster.mjs --article "$ARTICLE_PATH" --logo logo-daoline.png --output tmp/facebook-poster.png)
           TITLE=$(printf '%s' "$META" | node -e "let s='';process.stdin.on('data',d=>s+=d).on('end',()=>console.log(JSON.parse(s).title))")
           DESCRIPTION=$(printf '%s' "$META" | node -e "let s='';process.stdin.on('data',d=>s+=d).on('end',()=>console.log(JSON.parse(s).description))")
-          LINK="https://daolinedigital.com/blog/${{ env.BASENAME }}"
+          LINK="https://daolinedigital.com/blog/$BASENAME"
 
-          if [ "${{ env.mode }}" = "new" ]; then
+          if [ "$mode" = "new" ]; then
             PREFIX="🚀 مقال جديد من Daoline"
-          elif [ "${{ env.mode }}" = "test" ]; then
+          elif [ "$mode" = "test" ]; then
             PREFIX="🧪 اختبار نشر Daoline"
           else
             PREFIX="📚 من أرشيف Daoline"
           fi
-
-          echo "Posting to Facebook: $TITLE"
 
           CAPTION="$PREFIX
 
@@ -162,13 +153,12 @@ jobs:
           RESPONSE_FILE=$(mktemp)
           HTTP_CODE=$(curl --silent --show-error \
             --output "$RESPONSE_FILE" --write-out "%{http_code}" \
-            -X POST "https://graph.facebook.com/v23.0/$PAGE_ID/photos" \
+            -X POST "https://graph.facebook.com/v26.0/$PAGE_ID/photos" \
             -F "source=@tmp/facebook-poster.png;type=image/png" \
             -F "caption=$CAPTION" \
             -F "published=true" \
             -F "access_token=$FB_TOKEN")
           RESPONSE=$(cat "$RESPONSE_FILE")
-
           echo "Facebook Response: $RESPONSE"
 
           if [ "$HTTP_CODE" -lt 200 ] || [ "$HTTP_CODE" -ge 300 ] || echo "$RESPONSE" | grep -q '"error"'; then
@@ -176,18 +166,47 @@ jobs:
             exit 1
           fi
 
-          echo "$GITHUB_RUN_ID" >> "$PUBLISHED_RUNS"
+          POST_ID=$(printf '%s' "$RESPONSE" | node -e "let s='';process.stdin.on('data',d=>s+=d).on('end',()=>{const r=JSON.parse(s); console.log(r.post_id || r.id || '')})")
+          if [ -z "$POST_ID" ]; then
+            echo "::error::Facebook returned success without a post ID"
+            exit 1
+          fi
+          echo "FB_POST_ID=$POST_ID" >> "$GITHUB_ENV"
+          echo "Successfully posted to Facebook: $POST_ID"
+
+      - name: Finalize queue only after Facebook success
+        if: steps.prepare.outputs.selected == 'true' && !(github.event_name == 'workflow_dispatch' && inputs.dry_run)
+        run: |
+          set -euo pipefail
+          mkdir -p .github
+          PUBLISHED_RUNS=".github/facebook-published-runs.log"
+
+          if grep -Fq "${GITHUB_RUN_ID}|" "$PUBLISHED_RUNS" 2>/dev/null; then
+            echo "Publish already finalized for this workflow run."
+            exit 0
+          fi
+
+          if [ "$mode" = "new" ]; then
+            mv "$ARTICLE_PATH" "blog/$BASENAME"
+          elif [ "$mode" = "recycle" ]; then
+            echo "$NEXT_INDEX" > ".github/last_published.txt"
+          fi
+
+          printf '%s|%s|%s|%s|%s\n' \
+            "$GITHUB_RUN_ID" "$BASENAME" "$mode" "$FB_POST_ID" "$(date -u +%FT%TZ)" \
+            >> "$PUBLISHED_RUNS"
+
           git config user.name "Daoline Bot"
           git config user.email "bot@daolinedigital.com"
-          git add "$PUBLISHED_RUNS"
-          git commit -m "Record Facebook publish: ${{ env.BASENAME }}" || true
+          git add .
+          git commit -m "Record Facebook publish: $BASENAME - $FB_POST_ID" || true
           git push origin main || (git pull --rebase origin main && git push origin main)
-          echo "✅ Successfully posted poster to Facebook"
 
       - name: Upload generated poster artifact
-        if: steps.publish.outputs.published == 'true'
+        if: always() && steps.prepare.outputs.selected == 'true'
         uses: actions/upload-artifact@v4
         with:
           name: daoline-facebook-poster-${{ env.BASENAME }}
           path: tmp/facebook-poster.png
+          if-no-files-found: warn
           retention-days: 7
