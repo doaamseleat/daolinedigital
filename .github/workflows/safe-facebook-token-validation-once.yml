@@ -1,0 +1,28 @@
+name: Safe Facebook token validation once
+on:
+  push:
+    paths:
+      - '.github/workflows/safe-facebook-token-validation-once.yml'
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Validate System User and derived Page token
+        env:
+          SYSTEM_TOKEN: ${{ secrets.FB_PAGE_ACCESS_TOKEN }}
+          PAGE_ID: "627701733973210"
+        run: |
+          set -euo pipefail
+          TOKEN_RESPONSE=$(curl --fail-with-body --silent --show-error --get \
+            "https://graph.facebook.com/v26.0/$PAGE_ID" \
+            --data-urlencode "fields=access_token" \
+            --data-urlencode "access_token=$SYSTEM_TOKEN")
+          PAGE_TOKEN=$(printf '%s' "$TOKEN_RESPONSE" | python3 -c "import json,sys; print(json.load(sys.stdin).get('access_token',''))")
+          test -n "$PAGE_TOKEN"
+          HTTP_CODE=$(curl --silent --show-error --output /dev/null --write-out "%{http_code}" --get \
+            "https://graph.facebook.com/v26.0/$PAGE_ID/posts" \
+            --data-urlencode "fields=id" \
+            --data-urlencode "limit=1" \
+            --data-urlencode "access_token=$PAGE_TOKEN")
+          test "$HTTP_CODE" = "200"
+          echo "System User token and derived Page token are valid."
