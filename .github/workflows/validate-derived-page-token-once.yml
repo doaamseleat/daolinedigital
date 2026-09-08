@@ -1,0 +1,37 @@
+name: Validate derived Page token once
+on:
+  push:
+    paths:
+      - '.github/workflows/validate-derived-page-token-once.yml'
+permissions:
+  contents: write
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Resolve Page token and test read
+        env:
+          SYSTEM_TOKEN: ${{ secrets.FB_PAGE_ACCESS_TOKEN }}
+          PAGE_ID: "627701733973210"
+        run: |
+          TOKEN_RESPONSE=$(curl --silent --show-error --get "https://graph.facebook.com/v26.0/$PAGE_ID" \
+            --data-urlencode "fields=access_token" \
+            --data-urlencode "access_token=$SYSTEM_TOKEN")
+          PAGE_TOKEN=$(printf '%s' "$TOKEN_RESPONSE" | node -e "let s='';process.stdin.on('data',d=>s+=d).on('end',()=>{const r=JSON.parse(s);console.log(r.access_token||'')})")
+          if [ -z "$PAGE_TOKEN" ]; then
+            printf '%s' "$TOKEN_RESPONSE" > .github/derived-page-token-check.json
+          else
+            curl --silent --show-error --get "https://graph.facebook.com/v26.0/$PAGE_ID/posts" \
+              --data-urlencode "fields=id,created_time" \
+              --data-urlencode "limit=1" \
+              --data-urlencode "access_token=$PAGE_TOKEN" \
+              -o .github/derived-page-token-check.json
+          fi
+      - name: Save sanitized result
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .github/derived-page-token-check.json
+          git commit -m "Temporary derived Page token validation"
+          git push
