@@ -207,6 +207,7 @@ jobs:
 
           if [ "$mode" = "new" ]; then
             mv "$ARTICLE_PATH" "blog/$BASENAME"
+            node scripts/update-articles-index.mjs --article "blog/$BASENAME"
           elif [ "$mode" = "recycle" ]; then
             echo "$NEXT_INDEX" > ".github/last_published.txt"
           fi
