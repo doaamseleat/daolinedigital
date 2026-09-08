@@ -14,8 +14,7 @@ jobs:
         env:
           FB_TOKEN: ${{ secrets.FB_PAGE_ACCESS_TOKEN }}
         run: |
-          set -euo pipefail
-          curl --fail-with-body --silent --show-error --get "https://graph.facebook.com/v26.0/627701733973210/posts" \
+          curl --silent --show-error --get "https://graph.facebook.com/v26.0/627701733973210/posts" \
             --data-urlencode "fields=id,message,created_time,permalink_url" \
             --data-urlencode "since=2026-09-06T21:00:00Z" \
             --data-urlencode "until=2026-09-08T12:00:00Z" \
