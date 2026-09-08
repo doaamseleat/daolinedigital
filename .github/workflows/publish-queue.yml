@@ -2,8 +2,10 @@ name: Publish 2 Articles Per Day - Daoline
 
 on:
   schedule:
-    - cron: '0 9 * * *'   # 12:00 PM Egypt during UTC+3
-    - cron: '0 18 * * *'  # 9:00 PM Egypt during UTC+3
+    - cron: '17 12 * * *'
+      timezone: 'Africa/Cairo'
+    - cron: '17 21 * * *'
+      timezone: 'Africa/Cairo'
   workflow_dispatch:
     inputs:
       article:
