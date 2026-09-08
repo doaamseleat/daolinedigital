@@ -1,0 +1,31 @@
+name: Check Facebook posts once
+on:
+  push:
+    paths:
+      - '.github/workflows/check-facebook-posts-once.yml'
+permissions:
+  contents: write
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch recent Page posts
+        env:
+          FB_TOKEN: ${{ secrets.FB_PAGE_ACCESS_TOKEN }}
+        run: |
+          set -euo pipefail
+          curl --fail-with-body --silent --show-error --get "https://graph.facebook.com/v26.0/627701733973210/posts" \
+            --data-urlencode "fields=id,message,created_time,permalink_url" \
+            --data-urlencode "since=2026-09-06T21:00:00Z" \
+            --data-urlencode "until=2026-09-08T12:00:00Z" \
+            --data-urlencode "limit=100" \
+            --data-urlencode "access_token=$FB_TOKEN" \
+            -o .github/facebook-check-once.json
+      - name: Save sanitized result
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .github/facebook-check-once.json
+          git commit -m "Temporary Facebook posts check"
+          git push
