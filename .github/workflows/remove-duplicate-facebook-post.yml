@@ -15,7 +15,7 @@ jobs:
   remove-duplicate:
     runs-on: ubuntu-latest
     env:
-      DUPLICATE_POST_ID: '627701733973210_1656274126507127'
+      DUPLICATE_POST_ID: '1656274106507129'
       PRIMARY_POST_ID: '627701733973210_1656274583173748'
     steps:
       - name: Delete duplicate post only
