@@ -2,6 +2,8 @@ name: Publish 2 Articles Per Day - Daoline
 
 on:
   push:
+    branches:
+      - main
     paths:
       - '.github/publish-now.txt'
   schedule:
