@@ -1,0 +1,51 @@
+name: Remove duplicate Facebook post
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/remove-duplicate-facebook-post.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  remove-duplicate:
+    runs-on: ubuntu-latest
+    env:
+      DUPLICATE_POST_ID: '627701733973210_1656274126507127'
+      PRIMARY_POST_ID: '627701733973210_1656274583173748'
+    steps:
+      - name: Delete duplicate post only
+        env:
+          FB_PAGE_ACCESS_TOKEN: ${{ secrets.FB_PAGE_ACCESS_TOKEN }}
+        run: |
+          set -euo pipefail
+          test "$DUPLICATE_POST_ID" != "$PRIMARY_POST_ID"
+          RESPONSE=$(curl --fail-with-body -sS -X DELETE             "https://graph.facebook.com/v23.0/$DUPLICATE_POST_ID"             --data-urlencode "access_token=$FB_PAGE_ACCESS_TOKEN")
+          echo "$RESPONSE" | node -e "
+            let s='';
+            process.stdin.on('data', d => s += d);
+            process.stdin.on('end', () => {
+              const result = JSON.parse(s);
+              if (result.success !== true) {
+                console.error('Facebook did not confirm deletion');
+                process.exit(1);
+              }
+              console.log('Duplicate Facebook post deleted successfully');
+            });
+          "
+
+      - name: Remove one-time cleanup workflow
+        uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Commit cleanup
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git rm .github/workflows/remove-duplicate-facebook-post.yml
+          git commit -m "Remove completed duplicate-post cleanup"
+          git push origin HEAD:main
