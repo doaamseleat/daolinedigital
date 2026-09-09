@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - '.github/workflows/remove-duplicate-facebook-post.yml'
+      - '.github/remove-duplicate-facebook-post.txt'
 
 permissions:
   contents: write
