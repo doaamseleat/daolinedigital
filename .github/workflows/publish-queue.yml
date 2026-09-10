@@ -7,7 +7,7 @@ on:
     paths:
       - '.github/publish-now.txt'
   schedule:
-    - cron: '0 23 * * *'
+    - cron: '17 23 * * *'
       timezone: 'Africa/Cairo'
   workflow_dispatch:
     inputs:
