@@ -1,4 +1,4 @@
-name: Publish 2 Articles Per Day - Daoline
+name: Publish 1 Article Daily - Daoline
 
 on:
   push:
@@ -7,9 +7,7 @@ on:
     paths:
       - '.github/publish-now.txt'
   schedule:
-    - cron: '17 12 * * *'
-      timezone: 'Africa/Cairo'
-    - cron: '17 21 * * *'
+    - cron: '0 23 * * *'
       timezone: 'Africa/Cairo'
   workflow_dispatch:
     inputs:
