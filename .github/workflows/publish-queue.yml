@@ -55,6 +55,10 @@ jobs:
           set -euo pipefail
           git pull --rebase origin main || true
 
+          if [ "$GITHUB_EVENT_NAME" = "push" ] && [ -f ".github/publish-now.txt" ]; then
+            MANUAL_ARTICLE=$(tr -d '\r\n[:space:]' < ".github/publish-now.txt")
+          fi
+
           if [ "$GITHUB_EVENT_NAME" = "workflow_dispatch" ] && [ "$DRY_RUN" = "true" ] && [ -z "$MANUAL_ARTICLE" ]; then
             echo "A dry run requires an article path, for example blog/018.html"
             exit 1
@@ -78,7 +82,11 @@ jobs:
             fi
             ARTICLE_PATH="$MANUAL_ARTICLE"
             BASENAME=$(basename "$MANUAL_ARTICLE")
-            MODE="test"
+            if [ "$GITHUB_EVENT_NAME" = "push" ]; then
+              MODE="manual"
+            else
+              MODE="test"
+            fi
             NEXT_INDEX=""
           else
             QUEUE_FILE=$(find blog/queue -maxdepth 1 -type f -name '*.html' -print 2>/dev/null | sort | head -n 1 || true)
@@ -153,7 +161,7 @@ jobs:
           DESCRIPTION=$(printf '%s' "$META" | node -e "let s='';process.stdin.on('data',d=>s+=d).on('end',()=>console.log(JSON.parse(s).description))")
           LINK="https://daolinedigital.com/blog/$BASENAME"
 
-          if [ "$mode" = "new" ]; then
+          if [ "$mode" = "new" ] || [ "$mode" = "manual" ]; then
             PREFIX="🚀 مقال جديد من Daoline"
           elif [ "$mode" = "test" ]; then
             PREFIX="🧪 اختبار نشر Daoline"
