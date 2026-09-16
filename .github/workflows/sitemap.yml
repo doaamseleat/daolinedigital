@@ -31,7 +31,8 @@ jobs:
           python3 << 'PY'
           from pathlib import Path
           from urllib.parse import quote
-          from datetime import datetime
+          import re
+          import subprocess
 
           BASE = "https://daolinedigital.com"
 
@@ -45,32 +46,60 @@ jobs:
               ("/terms.html", "yearly", "0.3"),
           ]
 
+          def is_indexable(file):
+              html = file.read_text(encoding="utf-8")
+              if re.search(r'<meta\s+name=["\']robots["\'][^>]*content=["\'][^"\']*noindex', html, re.I):
+                  return False
+
+              canonical = re.search(r'<link\s+rel=["\']canonical["\'][^>]*href=["\']([^"\']+)', html, re.I)
+              expected = BASE + "/" + quote(file.as_posix())
+              if canonical and canonical.group(1).rstrip("/") != expected.rstrip("/"):
+                  return False
+
+              return True
+
+          def last_modified(file):
+              result = subprocess.run(
+                  ["git", "log", "-1", "--format=%cs", "--", file.as_posix()],
+                  capture_output=True,
+                  text=True,
+                  check=True,
+              )
+              return result.stdout.strip()
+
           blog_dir = Path("blog")
 
           for file in sorted(blog_dir.glob("*.html")):
-              if file.name == "index.html":
+              if file.name == "index.html" or not is_indexable(file):
                   continue
 
               encoded_path = "/blog/" + quote(file.name)
-              urls.append((encoded_path, "monthly", "0.8"))
+              urls.append((encoded_path, "monthly", "0.8", last_modified(file)))
 
           for folder, priority in (("en", "0.8"), ("course", "0.7")):
               section_dir = Path(folder)
               for file in sorted(section_dir.glob("*.html")):
-                  if file.name == "index.html":
+                  if file.name == "index.html" or not is_indexable(file):
                       continue
                   encoded_path = f"/{folder}/" + quote(file.name)
-                  urls.append((encoded_path, "monthly", priority))
+                  urls.append((encoded_path, "monthly", priority, last_modified(file)))
 
-          today = datetime.utcnow().date().isoformat()
+          static_urls = []
+          for path, changefreq, priority in urls[:7]:
+              source = Path("index.html") if path == "/" else Path(path.strip("/"))
+              if path.endswith("/"):
+                  source = source / "index.html"
+              static_urls.append((path, changefreq, priority, last_modified(source)))
+
+          urls = static_urls + urls[7:]
 
           sitemap = ['<?xml version="1.0" encoding="UTF-8"?>']
           sitemap.append('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">')
 
-          for path, changefreq, priority in urls:
+          for path, changefreq, priority, modified in urls:
               sitemap.append("  <url>")
               sitemap.append(f"    <loc>{BASE}{path}</loc>")
-              sitemap.append(f"    <lastmod>{today}</lastmod>")
+              sitemap.append(f"    <lastmod>{modified}</lastmod>")
               sitemap.append(f"    <changefreq>{changefreq}</changefreq>")
               sitemap.append(f"    <priority>{priority}</priority>")
               sitemap.append("  </url>")
