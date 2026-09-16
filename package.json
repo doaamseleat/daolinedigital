@@ -4,7 +4,8 @@
   "type": "module",
   "scripts": {
     "poster": "node scripts/generate-facebook-poster.mjs",
-    "test:poster": "node scripts/test-facebook-poster.mjs"
+    "test:poster": "node scripts/test-facebook-poster.mjs",
+    "seo:normalize": "node scripts/seo-normalize.mjs"
   },
   "dependencies": {
     "@resvg/resvg-js": "2.6.2"
