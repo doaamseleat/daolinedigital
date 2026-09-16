@@ -266,9 +266,9 @@ function schema(article, filename) {
   return JSON.stringify({
     '@context': 'https://schema.org', '@type': 'Article', headline: article.title,
     description: article.description, author: {'@type':'Person', name:'Doaa Seleat'},
-    publisher: {'@type':'Organization', name:'Daoline Digital', url:'https://daolinedigital.com'},
+    publisher: {'@type':'Organization', name:'Daoline Digital', url:'https://daolinedigital.com', logo:{'@type':'ImageObject', url:'https://daolinedigital.com/logo-daoline.png'}},
     datePublished: '2026-09-08', dateModified: '2026-09-08',
-    url: `https://daolinedigital.com/blog/${filename}`, inLanguage: 'ar', articleSection: article.category
+    url: `https://daolinedigital.com/blog/${filename}`, image:'https://daolinedigital.com/daoline-home-cover.jpg', inLanguage: 'ar', articleSection: article.category
   }, null, 2).replace(/<\//g, '<\\/');
 }
 
