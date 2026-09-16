@@ -7,6 +7,8 @@ on:
     paths:
       - "*.html"
       - "blog/*.html"
+      - "en/*.html"
+      - "course/*.html"
       - ".github/workflows/sitemap.yml"
 
   workflow_dispatch:
@@ -36,6 +38,8 @@ jobs:
           urls = [
               ("/", "weekly", "1.0"),
               ("/blog/", "daily", "0.9"),
+              ("/en/", "weekly", "0.8"),
+              ("/course/", "monthly", "0.7"),
               ("/contact.html", "yearly", "0.4"),
               ("/privacy.html", "yearly", "0.3"),
               ("/terms.html", "yearly", "0.3"),
@@ -49,6 +53,14 @@ jobs:
 
               encoded_path = "/blog/" + quote(file.name)
               urls.append((encoded_path, "monthly", "0.8"))
+
+          for folder, priority in (("en", "0.8"), ("course", "0.7")):
+              section_dir = Path(folder)
+              for file in sorted(section_dir.glob("*.html")):
+                  if file.name == "index.html":
+                      continue
+                  encoded_path = f"/{folder}/" + quote(file.name)
+                  urls.append((encoded_path, "monthly", priority))
 
           today = datetime.utcnow().date().isoformat()
 
