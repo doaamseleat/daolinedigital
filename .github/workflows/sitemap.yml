@@ -86,9 +86,13 @@ jobs:
 
           static_urls = []
           for path, changefreq, priority in urls[:7]:
-              source = Path("index.html") if path == "/" else Path(path.strip("/"))
-              if path.endswith("/"):
+              if path == "/":
+                  source = Path("index.html")
+              elif path.endswith("/"):
+                  source = Path(path.strip("/"))
                   source = source / "index.html"
+              else:
+                  source = Path(path.strip("/"))
               static_urls.append((path, changefreq, priority, last_modified(source)))
 
           urls = static_urls + urls[7:]
