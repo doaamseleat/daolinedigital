@@ -8,6 +8,22 @@
     "number": 2
   },
   {
+    "title": "Link Search Console to GA4: Find Organic Queries and Landing Pages | Daoline Digital",
+    "desc": "A practical guide to connect Search Console and GA4, read organic queries and landing pages, and turn impressions, clicks, engagement, and conversions into decisions.",
+    "link": "search-console-ga4-organic-queries-guide.html",
+    "tag": "Marketing",
+    "readTime": "8 min read",
+    "number": 4
+  },
+  {
+    "title": "UTM Tracking for Social Media: A Clean GA4 Naming Guide | Daoline Digital",
+    "desc": "Build consistent UTM links for social campaigns, test them, and read source, medium, campaign, and content performance correctly in GA4.",
+    "link": "utm-tracking-social-media-ga4-guide.html",
+    "tag": "Marketing",
+    "readTime": "8 min read",
+    "number": 4
+  },
+  {
     "title": "Social Media SEO Guide for Discoverability in 2026 | Daoline",
     "desc": "Use Social Media SEO to make content discoverable on TikTok, Instagram, YouTube, and Google with a practical search-first workflow.",
     "link": "030-social-media-seo-discoverable-2026.html",
@@ -32,9 +48,17 @@
     "number": 999
   },
   {
-    "title": "Social Media SEO Guide 2026 | Daoline Digital",
-    "desc": "A practical 2026 guide to Social Media SEO: how to make your content searchable on TikTok, Instagram, YouTube, and Google using keywords, captions, hooks, and platform behavior.",
-    "link": "social-media-seo-2026.html",
+    "title": "Answer Engine Optimization (AEO) for Small Businesses in 2026 | Daoline Digital",
+    "desc": "A practical AEO guide to structure trustworthy, quotable answers for Google AI features and AI assistants without abandoning SEO fundamentals.",
+    "link": "answer-engine-optimization-small-business-2026.html",
+    "tag": "Marketing",
+    "readTime": "8 min read",
+    "number": 2026
+  },
+  {
+    "title": "LinkedIn SEO in 2026: Make B2B Expertise Discoverable | Daoline Digital",
+    "desc": "A practical LinkedIn SEO system for keyword research, profile positioning, search-friendly posts, topic clusters, distribution, and measurable website traffic.",
+    "link": "linkedin-seo-ai-visibility-2026.html",
     "tag": "Social SEO",
     "readTime": "8 min read",
     "number": 2026

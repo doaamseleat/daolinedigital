@@ -28,6 +28,9 @@ jobs:
 
           EN_DIR = "en"
           OUTPUT = os.path.join(EN_DIR, "articles_en.json")
+          # Legacy URLs that redirect to a stronger canonical article should not
+          # be listed as separate cards or compete with the canonical page.
+          SKIP_FILES = {"index.html", "social-media-seo-2026.html"}
 
           articles = []
 
@@ -39,7 +42,7 @@ jobs:
               if not filename.endswith(".html"):
                   continue
 
-              if filename == "index.html":
+              if filename in SKIP_FILES:
                   continue
 
               path = os.path.join(EN_DIR, filename)

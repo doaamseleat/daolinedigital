@@ -7,8 +7,8 @@ on:
     paths:
       - '.github/publish-now.txt'
   schedule:
-    - cron: '17 23 * * *'
-      timezone: 'Africa/Cairo'
+    # GitHub Actions cron is UTC. 20:17 UTC = 23:17 in Cairo (UTC+3).
+    - cron: '17 20 * * *'
   workflow_dispatch:
     inputs:
       article:
