@@ -14,14 +14,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Changa:wght@400;700;800&display=swap" rel="stylesheet">
 
   <script src="https://cdn.tailwindcss.com"></script>
-  
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
   <style>
     :root {
-      --primary: #c013a6; 
+      --primary: #c013a6;
       --primary2: #a00f89;
-      --secondary: #2563eb; 
+      --secondary: #2563eb;
       --bg: #0f172a;
       --text: #e2e8f0;
       --muted: rgba(226,232,240,.78);
@@ -51,12 +51,12 @@
     .text-daoline { color: var(--primary); }
     .bg-daoline { background-color: var(--primary); }
     .hover-bg-daoline:hover { background-color: var(--primary2); transition: .25s ease; }
-    
+
     .hero-gradient { background: radial-gradient(circle at top center, rgba(192,19,166,.15) 0%, transparent 75%); }
-    .glass { 
-        background: rgba(30, 41, 59, 0.45); 
-        backdrop-filter: blur(12px); 
-        border: 1px solid rgba(255, 255, 255, 0.08); 
+    .glass {
+        background: rgba(30, 41, 59, 0.45);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
         border-radius: 2rem;
         padding: 3rem;
         margin-bottom: 4rem;
@@ -89,18 +89,18 @@
     .freebar-inner { max-width: 1200px; margin: 0 auto; padding: 12px 20px; display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between; color: #fff; font-weight: 800; }
     .freebar-btn { background: #0f172a; color: #fff; text-decoration: none; padding: 10px 18px; border-radius: 999px; font-weight: 900; transition: 0.25s ease; border: 1px solid rgba(255,255,255,0.08); }
     .freebar-btn:hover { background: #020617; }
-    
+
     .locked-container { position: relative; overflow: hidden; border-radius: 20px; margin-top: 60px; }
     .locked-blur { filter: blur(14px); opacity: 0.18; pointer-events: none; transition: 0.5s; }
     .watermark-text { position: absolute; top: 28%; left: 50%; transform: translate(-50%, -50%) rotate(-10deg); font-size: 2.7rem; font-weight: 900; color: rgba(255,255,255,0.05); z-index: 1; text-align: center; white-space: nowrap; pointer-events: none; }
-    
+
     .lead-box { background: linear-gradient(180deg, rgba(30,41,59,0.95), rgba(15,23,42,0.98)); border: 2px solid rgba(192,19,166,0.35); box-shadow: 0 0 80px rgba(192,19,166,0.18); border-radius: 24px; padding: 40px 28px; text-align: center; position: relative; z-index: 3; }
     .form-input { width: 100%; box-sizing: border-box; background: rgba(255, 255, 255, 0.05); border: 2px solid rgba(255, 255, 255, 0.1); border-radius: 1rem; padding: 1rem 1.2rem; color: white; outline: none; text-align: right; font-family: 'Tajawal', sans-serif; font-size: 1rem; margin-bottom: 14px;}
     .form-input:focus { border-color: var(--primary); background: rgba(255,255,255,0.08); }
-    
+
     .submit-btn { background: linear-gradient(90deg, var(--primary), #a00f89); color: #fff; border: none; width: 100%; padding: 18px 20px; border-radius: 16px; font-family: 'Tajawal', sans-serif; font-weight: 900; font-size: 1.2rem; cursor: pointer; transition: 0.25s ease; box-shadow: 0 12px 25px rgba(192,19,166,0.25); }
     .submit-btn:hover { transform: translateY(-2px); }
-    
+
     #status-msg { display: none; margin-top: 1rem; font-weight: bold; padding: 14px; border-radius: 12px; text-align: center; font-size: 1rem; border: 1px solid transparent; }
     #security-toast { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background-color: var(--primary); color: white; padding: 12px 24px; border-radius: 999px; font-weight: 900; box-shadow: 0 10px 25px rgba(0,0,0,0.5); z-index: 9999; opacity: 0; transition: all 0.3s ease; pointer-events: none; }
 
@@ -108,10 +108,10 @@
 
     /* Print Styles */
     @media print {
-      @page { size: A4; margin: 10mm 15mm; } 
-      body { 
-        background-color: #fff !important; 
-        color: #000 !important; 
+      @page { size: A4; margin: 10mm 15mm; }
+      body {
+        background-color: #fff !important;
+        color: #000 !important;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
       }
@@ -123,17 +123,17 @@
         background: #fff !important;
         border: none !important;
       }
-      
+
       h1 { color: #000 !important; font-size: 26pt; margin-bottom: 10px;}
       .section-title { color: #c013a6 !important; background: transparent !important; box-shadow: none !important; border-bottom: 3px solid #c013a6 !important; font-size: 18pt; display: block; margin-top: 25px; margin-bottom: 15px; transform: none;}
-      
+
       .glass, .bg-slate-800\/40, .bg-slate-900\/60, .bg-indigo-950 {
         background: #fff !important;
         border: 1px solid #cbd5e1 !important;
         box-shadow: none !important;
         color: #000 !important;
       }
-      
+
       p, li { color: #334155 !important; }
       .text-white { color: #0f172a !important; }
       .bg-black\/30 { background: #f8fafc !important; border: 1px solid #e2e8f0; }
@@ -141,6 +141,8 @@
       .no-print, .freebar, .locked-container, nav { display: none !important; }
     }
   </style>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9549277321717950" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="/assets/article-enhancements.css">
 </head>
 
 <body oncontextmenu="return false;">
@@ -166,7 +168,7 @@
 
   <div class="no-print text-center py-6">
     <button onclick="downloadPDF()" class="bg-gradient-to-r from-daoline to-secondary text-white px-8 py-3 rounded-full font-black text-lg shadow-xl hover:scale-105 transition-all">
-      📥 تحميل الكتالوج كـ PDF 
+      📥 تحميل الكتالوج كـ PDF
     </button>
   </div>
 
@@ -188,8 +190,13 @@
       </header>
 
       <main class="container mx-auto px-4 max-w-5xl pb-10 text-right">
-
-        <section class="mb-16">
+<!-- ARTICLE_TOC_START -->
+  <nav class="article-toc" aria-label="فهرس المقال">
+    <strong>في هذا المقال</strong>
+    <ol><li><a href="#01-هوكات-الفضول-والتشويق-">01) هوكات الفضول والتشويق 🧲</a></li><li><a href="#02-هوكات-القصص-والسرد-">02) هوكات القصص والسرد 📖</a></li><li><a href="#03-هوكات-حل-المشكلات-">03) هوكات حل المشكلات 🧩</a></li><li><a href="#04-هوكات-الصدمة-وكسر-المألوف-">04) هوكات الصدمة وكسر المألوف ⚡</a></li><li><a href="#05-المشكلة-والحل-بالصور-">05) المشكلة والحل (بالصور 📸)</a></li><li><a href="#06-هوكات-توفير-الوقت-والمجهود-">06) هوكات توفير الوقت والمجهود ⏳</a></li><li><a href="#-الهدية-معادلة-الفيديو-الفيروسي-الكاملة">🎁 الهدية: معادلة الفيديو الفيروسي الكاملة</a></li><li><a href="#احصل-على-كتالوج-الهوكات-كاملا-الآن">احصل على كتالوج الهوكات كاملًا الآن</a></li></ol>
+  </nav>
+  <!-- ARTICLE_TOC_END -->
+<section class="mb-16">
             <div class="bg-slate-800/40 border-r-4 border-secondary p-8 rounded-2xl">
                 <h3 class="text-2xl font-black text-white mb-4">ليه صناعة المحتوى محتاجة "هوك" مش مجرد كاميرا حلوة؟</h3>
                 <p class="text-xl leading-relaxed text-slate-300">
@@ -200,7 +207,7 @@
         </section>
 
         <section class="mb-24">
-          <h2 class="section-title">01) هوكات الفضول والتشويق 🧲</h2>
+          <h2 class="section-title" id="01-هوكات-الفضول-والتشويق-">01) هوكات الفضول والتشويق 🧲</h2>
           <div class="glass !p-6 md:!p-10">
             <p class="text-slate-300 text-lg mb-8">الفضول هو أقوى غريزة عند البشر. لو قدرت تزرع سؤال في دماغ العميل في أول ثانية، مستحيل يقفل الفيديو قبل ما يعرف الإجابة.</p>
             <div class="grid md:grid-cols-2 gap-6">
@@ -237,7 +244,7 @@
         </section>
 
         <section class="mb-24">
-          <h2 class="section-title">02) هوكات القصص والسرد 📖</h2>
+          <h2 class="section-title" id="02-هوكات-القصص-والسرد-">02) هوكات القصص والسرد 📖</h2>
           <div class="glass !p-6 md:!p-10">
             <p class="text-slate-300 text-lg mb-8">الناس بتنسى الأرقام والإحصائيات، لكن مستحيل تنسى "قصة". القصص بتبني ثقة ومصداقية ملهاش مثيل.</p>
             <div class="grid md:grid-cols-2 gap-6">
@@ -274,7 +281,7 @@
         </section>
 
         <section class="mb-24">
-          <h2 class="section-title">03) هوكات حل المشكلات 🧩</h2>
+          <h2 class="section-title" id="03-هوكات-حل-المشكلات-">03) هوكات حل المشكلات 🧩</h2>
           <div class="glass !p-6 md:!p-10">
             <p class="text-slate-300 text-lg mb-8">لو العميل بيتألم من مشكلة معينة، وأنت دخلت الفيديو بذكر المشكلة دي.. العميل هيحس إنك قاعد معاه وبتقرأ أفكاره.</p>
             <div class="grid md:grid-cols-2 gap-6">
@@ -323,7 +330,7 @@
         </section>
 
         <section class="mb-24">
-          <h2 class="section-title">04) هوكات الصدمة وكسر المألوف ⚡</h2>
+          <h2 class="section-title" id="04-هوكات-الصدمة-وكسر-المألوف-">04) هوكات الصدمة وكسر المألوف ⚡</h2>
           <div class="glass !p-6 md:!p-10">
             <p class="text-slate-300 text-lg mb-8">لما تطلع تقول رأي صادم أو عكس التيار، إنت بتجبر الناس تتفرج عشان تعترض أو تتفق معاك.</p>
             <div class="grid md:grid-cols-2 gap-6">
@@ -360,10 +367,10 @@
         </section>
 
         <section class="mb-24">
-          <h2 class="section-title">05) المشكلة والحل (بالصور 📸)</h2>
+          <h2 class="section-title" id="05-المشكلة-والحل-بالصور-">05) المشكلة والحل (بالصور 📸)</h2>
           <div class="glass !p-6 md:!p-10">
             <p class="text-slate-300 text-lg mb-8">الصورة بتخطف العين أسرع من الكلام. اعرض المشكلة في أول ثانية (الهوك البصري) وبعدين ادمجها بالحل.</p>
-            
+
             <div class="grid md:grid-cols-2 gap-10">
                 <div>
                     <img src="https://images.unsplash.com/photo-1584820927498-cafe3c157921?auto=format&fit=crop&w=800&q=80" alt="مكان فوضوي" class="visual-hook-img mb-4">
@@ -372,7 +379,7 @@
                         <p class="text-sm text-slate-400">↑ صورة توضح المشكلة (مكان فوضوي، إعلان خاسر، الخ).</p>
                     </div>
                 </div>
-                
+
                 <div>
                     <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=800&q=80" alt="مكان منظم" class="visual-hook-img mb-4">
                     <div class="bg-slate-900/60 border border-slate-700 p-6 rounded-2xl">
@@ -385,7 +392,7 @@
         </section>
 
         <section class="mb-24">
-          <h2 class="section-title">06) هوكات توفير الوقت والمجهود ⏳</h2>
+          <h2 class="section-title" id="06-هوكات-توفير-الوقت-والمجهود-">06) هوكات توفير الوقت والمجهود ⏳</h2>
           <div class="glass !p-6 md:!p-10">
             <p class="text-slate-300 text-lg mb-8">الوقت أعلى من الفلوس. لو قدرت توعد المشاهد بتوفير وقت = هو معاك فوراً.</p>
             <div class="grid md:grid-cols-3 gap-6">
@@ -404,9 +411,9 @@
 
         <section class="mb-24">
             <div class="bg-indigo-950 border-4 border-daoline p-8 md:p-12 rounded-[2rem] shadow-2xl">
-                <h2 class="text-3xl font-black text-white mb-6">🎁 الهدية: معادلة الفيديو الفيروسي الكاملة</h2>
+                <h2 class="text-3xl font-black text-white mb-6" id="-الهدية-معادلة-الفيديو-الفيروسي-الكاملة">🎁 الهدية: معادلة الفيديو الفيروسي الكاملة</h2>
                 <p class="text-indigo-200 text-lg mb-8 font-bold">الهوك لوحده مش كفاية - عشان الفيديو يبيع بجد لازم تمشي على الهيكل ده:</p>
-                
+
                 <div class="space-y-4 text-right">
                     <div class="bg-white p-6 rounded-xl border-r-8 border-daoline">
                         <h4 class="font-black text-xl text-daoline mb-2">1. الهوك (الثانية 0 إلى 3):</h4>
@@ -427,8 +434,17 @@
                 </div>
             </div>
         </section>
-
-      </main>
+<!-- ARTICLE_DISCOVERY_START -->
+  <aside class="article-author" aria-label="عن الكاتبة">
+    <img src="/doaa-photo.jpg" alt="دعاء سليط - خبيرة تسويق رقمي" width="72" height="72" loading="lazy">
+    <div><strong>كتابة ومراجعة: دعاء سليط</strong><p>خبيرة سوشيال ميديا ومدربة تسويق رقمي بخبرة عملية في الاستراتيجية والمحتوى والإعلانات.</p></div>
+  </aside>
+  <section class="related-articles" aria-label="مقالات مرتبطة">
+    <h2>كمّلي القراءة</h2>
+    <ul><li><a href="/blog/019-Social-Hook-2026-7.html">إزاي تكتب هوك يوقف السكرول في 3 ثواني: الدليل الشامل 2026 | Daoline Digital ←</a></li><li><a href="/blog/014-writing-captions-hooks.html">كيف تكتب كابشن يجذب التفاعل في 2026؟ دليل خطوة بخطوة | Daoline Digital ←</a></li><li><a href="/blog/040-social-media-crisis-plan-2026.html">قبل ما الأزمة تحصل: خطة Social Media Crisis من صفحة واحدة | Daoline Digital ←</a></li><li><a href="/blog/046-hashtag-is-dead-2026.html">هل مات الهاشتاج في 2026؟ الحقيقة العملية | Daoline ←</a></li></ul>
+  </section>
+  <!-- ARTICLE_DISCOVERY_END -->
+</main>
   </div>
 
   <section id="lead-download" class="locked-container no-print px-4 pb-20">
@@ -447,7 +463,7 @@
 
         <div class="lead-box -mt-40">
           <div style="width:70px;height:70px;background:var(--primary);color:#fff;border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:2rem;font-weight:900;margin:0 auto 18px auto;">D</div>
-          <h2 class="text-3xl font-black text-white mb-4">احصل على كتالوج الهوكات كاملًا الآن</h2>
+          <h2 class="text-3xl font-black text-white mb-4" id="احصل-على-كتالوج-الهوكات-كاملا-الآن">احصل على كتالوج الهوكات كاملًا الآن</h2>
           <p class="text-slate-300 text-lg mb-8 max-w-2xl mx-auto leading-relaxed">
             سجّل بياناتك وسيصلك <strong>كتالوج الهوكات من Daoline</strong> مباشرة على الإيميل بصيغة PDF.
           </p>
@@ -491,7 +507,7 @@
           DAOLINE<span class="text-daoline font-black">DIGITAL</span>
         </div>
     </div>
-    
+
     <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-10 text-right px-10 mb-16">
         <div>
             <h4 class="text-white text-2xl font-black mb-6 border-r-4 border-daoline pr-4 uppercase italic">Contact Details:</h4>
@@ -508,7 +524,7 @@
             </div>
         </div>
     </div>
-    
+
     <div class="pt-10 border-t border-white/5 mx-10 text-[11px] text-slate-700 uppercase font-black tracking-widest">
         © 2026 Daoline Digital Academy | All Rights Reserved
     </div>
@@ -593,25 +609,25 @@
           window.scrollTo(0, 0);
 
           const element = document.getElementById('pdf-content');
-          
+
           showToast('⏳ جاري تجهيز الملف بدقة عالية...');
 
           const opt = {
-              margin:       [5, 5, 10, 5], 
+              margin:       [5, 5, 10, 5],
               filename:     'كتالوج_الهوكات_Daoline_2026.pdf',
               image:        { type: 'jpeg', quality: 1 },
-              html2canvas:  { 
-                  scale: 2, 
-                  useCORS: true, 
+              html2canvas:  {
+                  scale: 2,
+                  useCORS: true,
                   backgroundColor: '#0f172a',
-                  scrollY: 0,  
+                  scrollY: 0,
                   scrollX: 0
               },
               jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' },
-              pagebreak:    { 
-                  mode: ['css', 'legacy'], 
-                  before: ['.hook-section', '.bonus-section'], 
-                  avoid: ['.hook-item', '.hook-analysis', '.highlight-box', '.placeholder', '.visual-hook-img', 'h2'] 
+              pagebreak:    {
+                  mode: ['css', 'legacy'],
+                  before: ['.hook-section', '.bonus-section'],
+                  avoid: ['.hook-item', '.hook-analysis', '.highlight-box', '.placeholder', '.visual-hook-img', 'h2']
               }
           };
 
@@ -626,5 +642,6 @@
       }
   </script>
 
+<script defer src="/assets/article-enhancements.js"></script>
 </body>
 </html>

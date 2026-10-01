@@ -16,302 +16,304 @@
 
     gtag('config', 'G-DCECS21BFZ');
   </script>
-  
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
 
   <style>
-    :root { 
-        --primary: #c013a6; 
-        --bg: #020617; 
-        --surface: #0f172a; 
-        --text: #e2e8f0; 
-        --muted: #94a3b8; 
+    :root {
+        --primary: #c013a6;
+        --bg: #020617;
+        --surface: #0f172a;
+        --text: #e2e8f0;
+        --muted: #94a3b8;
         --secondary: #2563eb;
     }
 
-    * { 
-        box-sizing: border-box; 
-        margin: 0; 
-        padding: 0; 
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
     }
 
-    body { 
-        font-family: 'Tajawal', sans-serif; 
-        background: var(--bg); 
-        color: var(--text); 
-        line-height: 1.8; 
-        overflow-x: hidden; 
+    body {
+        font-family: 'Tajawal', sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.8;
+        overflow-x: hidden;
     }
 
-    header { 
-        position: sticky; 
-        top: 0; 
-        z-index: 1000; 
-        background: rgba(15, 23, 42, 0.96); 
-        backdrop-filter: blur(12px); 
-        border-bottom: 2px solid var(--primary); 
-        padding: 15px 20px; 
+    header {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        background: rgba(15, 23, 42, 0.96);
+        backdrop-filter: blur(12px);
+        border-bottom: 2px solid var(--primary);
+        padding: 15px 20px;
     }
 
-    .nav { 
-        max-width: 1100px; 
-        margin: 0 auto; 
-        display: flex; 
-        justify-content: space-between; 
-        align-items: center; 
+    .nav {
+        max-width: 1100px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
 
-    .nav a { 
-        color: #fff; 
-        text-decoration: none; 
-        font-weight: 700; 
-        font-size: 0.95rem; 
-        margin-left: 20px; 
-        transition: 0.3s; 
+    .nav a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 0.95rem;
+        margin-left: 20px;
+        transition: 0.3s;
     }
 
-    .nav a:hover { 
-        color: var(--primary); 
+    .nav a:hover {
+        color: var(--primary);
     }
 
-    .logo { 
-        font-size: 1.4rem; 
-        font-weight: 900; 
-        color: #fff; 
-        text-decoration: none; 
+    .logo {
+        font-size: 1.4rem;
+        font-weight: 900;
+        color: #fff;
+        text-decoration: none;
     }
 
-    .logo span { 
-        color: var(--primary); 
+    .logo span {
+        color: var(--primary);
     }
 
-    .container { 
-        max-width: 1000px; 
-        margin: 40px auto; 
-        padding: 0 25px; 
+    .container {
+        max-width: 1000px;
+        margin: 40px auto;
+        padding: 0 25px;
     }
 
-    .breadcrumbs { 
-        font-size: 0.85rem; 
-        color: var(--muted); 
-        margin-bottom: 20px; 
+    .breadcrumbs {
+        font-size: 0.85rem;
+        color: var(--muted);
+        margin-bottom: 20px;
     }
 
-    .breadcrumbs a { 
-        color: var(--primary); 
-        text-decoration: none; 
-    }
-    
-    h1 { 
-        font-size: 3rem; 
-        font-weight: 900; 
-        color: #fff; 
-        line-height: 1.2; 
-        margin-bottom: 25px; 
-        text-align: center; 
+    .breadcrumbs a {
+        color: var(--primary);
+        text-decoration: none;
     }
 
-    .meta { 
-        font-size: 0.95rem; 
-        color: var(--muted); 
-        margin-bottom: 40px; 
-        display: flex; 
-        justify-content: center; 
-        gap: 20px; 
-        border-bottom: 1px solid rgba(255,255,255,0.05); 
-        padding-bottom: 20px; 
+    h1 {
+        font-size: 3rem;
+        font-weight: 900;
+        color: #fff;
+        line-height: 1.2;
+        margin-bottom: 25px;
+        text-align: center;
     }
 
-    .article-content { 
-        font-size: 1.2rem; 
-        color: #cbd5e1; 
+    .meta {
+        font-size: 0.95rem;
+        color: var(--muted);
+        margin-bottom: 40px;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+        padding-bottom: 20px;
     }
 
-    h2 { 
-        color: var(--primary); 
-        font-size: 2rem; 
-        margin: 50px 0 25px; 
-        border-right: 6px solid var(--primary); 
-        padding-right: 20px; 
-        font-weight: 900; 
+    .article-content {
+        font-size: 1.2rem;
+        color: #cbd5e1;
     }
 
-    h3 { 
-        color: #fff; 
-        font-size: 1.5rem; 
-        margin: 35px 0 15px; 
-        font-weight: 800; 
+    h2 {
+        color: var(--primary);
+        font-size: 2rem;
+        margin: 50px 0 25px;
+        border-right: 6px solid var(--primary);
+        padding-right: 20px;
+        font-weight: 900;
     }
 
-    p { 
-        margin-bottom: 25px; 
-        text-align: justify; 
+    h3 {
+        color: #fff;
+        font-size: 1.5rem;
+        margin: 35px 0 15px;
+        font-weight: 800;
+    }
+
+    p {
+        margin-bottom: 25px;
+        text-align: justify;
     }
 
     /* Tables */
-    .styled-table { 
-        width: 100%; 
-        border-collapse: collapse; 
-        margin: 25px 0; 
-        font-size: 1rem; 
-        background: var(--surface); 
-        border-radius: 15px; 
-        overflow: hidden; 
+    .styled-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 25px 0;
+        font-size: 1rem;
+        background: var(--surface);
+        border-radius: 15px;
+        overflow: hidden;
     }
 
-    .styled-table thead tr { 
-        background-color: var(--primary); 
-        color: #ffffff; 
-        text-align: right; 
+    .styled-table thead tr {
+        background-color: var(--primary);
+        color: #ffffff;
+        text-align: right;
     }
 
-    .styled-table th, 
-    .styled-table td { 
-        padding: 15px 20px; 
-        border-bottom: 1px solid rgba(255,255,255,0.05); 
+    .styled-table th,
+    .styled-table td {
+        padding: 15px 20px;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
     }
 
-    .styled-table tbody tr:hover { 
-        background: rgba(255,255,255,0.02); 
+    .styled-table tbody tr:hover {
+        background: rgba(255,255,255,0.02);
     }
 
-    .badge { 
-        padding: 4px 10px; 
-        border-radius: 5px; 
-        font-size: 0.8rem; 
-        font-weight: bold; 
-        color: #fff; 
+    .badge {
+        padding: 4px 10px;
+        border-radius: 5px;
+        font-size: 0.8rem;
+        font-weight: bold;
+        color: #fff;
     }
 
     /* Tech Cards */
-    .tech-grid { 
-        display: grid; 
-        grid-template-columns: 1fr 1fr; 
-        gap: 20px; 
-        margin: 30px 0; 
+    .tech-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        margin: 30px 0;
     }
 
-    .tech-card { 
-        background: var(--surface); 
-        border: 1px solid rgba(255,255,255,0.05); 
-        border-right: 4px solid var(--secondary); 
-        padding: 25px; 
-        border-radius: 15px; 
-        transition: 0.3s; 
+    .tech-card {
+        background: var(--surface);
+        border: 1px solid rgba(255,255,255,0.05);
+        border-right: 4px solid var(--secondary);
+        padding: 25px;
+        border-radius: 15px;
+        transition: 0.3s;
     }
 
-    .tech-card:hover { 
-        transform: translateY(-5px); 
-        border-color: var(--primary); 
+    .tech-card:hover {
+        transform: translateY(-5px);
+        border-color: var(--primary);
     }
 
     /* Lead Box System */
-    .lead-box { 
-        background: linear-gradient(145deg, #1e293b, #0f172a); 
-        border: 3px dashed var(--primary); 
-        border-radius: 30px; 
-        padding: 50px 40px; 
-        margin: 70px 0; 
+    .lead-box {
+        background: linear-gradient(145deg, #1e293b, #0f172a);
+        border: 3px dashed var(--primary);
+        border-radius: 30px;
+        padding: 50px 40px;
+        margin: 70px 0;
         text-align: center;
-        position: relative; 
+        position: relative;
         box-shadow: 0 25px 60px rgba(192, 19, 166, 0.3);
     }
 
-    .free-badge { 
-        font-size: 4rem; 
-        font-weight: 900; 
-        color: var(--primary); 
-        margin: 10px 0 20px 0; 
-        line-height: 1; 
+    .free-badge {
+        font-size: 4rem;
+        font-weight: 900;
+        color: var(--primary);
+        margin: 10px 0 20px 0;
+        line-height: 1;
         text-shadow: 0 10px 30px rgba(192, 19, 166, 0.5);
     }
 
-    .form-input { 
-        width: 100%; 
-        padding: 16px; 
-        border-radius: 15px; 
-        border: 1px solid rgba(255,255,255,0.1); 
-        background: rgba(0,0,0,0.4); 
-        color: #fff; 
-        font-family: 'Tajawal'; 
-        margin-bottom: 15px; 
-        outline: none; 
-        text-align: right; 
-        font-size: 1rem; 
+    .form-input {
+        width: 100%;
+        padding: 16px;
+        border-radius: 15px;
+        border: 1px solid rgba(255,255,255,0.1);
+        background: rgba(0,0,0,0.4);
+        color: #fff;
+        font-family: 'Tajawal';
+        margin-bottom: 15px;
+        outline: none;
+        text-align: right;
+        font-size: 1rem;
     }
 
-    .submit-btn { 
-        width: 100%; 
-        background: var(--primary); 
-        color: #fff; 
-        border: none; 
-        padding: 20px; 
-        border-radius: 15px; 
-        font-weight: 900; 
-        font-size: 1.3rem; 
-        cursor: pointer; 
-        transition: 0.4s; 
-        box-shadow: 0 10px 30px rgba(192, 19, 166, 0.3); 
+    .submit-btn {
+        width: 100%;
+        background: var(--primary);
+        color: #fff;
+        border: none;
+        padding: 20px;
+        border-radius: 15px;
+        font-weight: 900;
+        font-size: 1.3rem;
+        cursor: pointer;
+        transition: 0.4s;
+        box-shadow: 0 10px 30px rgba(192, 19, 166, 0.3);
     }
 
-    .submit-btn:hover { 
-        transform: scale(1.02); 
-        background: #a00f89; 
+    .submit-btn:hover {
+        transform: scale(1.02);
+        background: #a00f89;
     }
 
-    .footer-action { 
-        margin-top: 80px; 
-        padding: 60px 40px; 
-        background: #0f172a; 
-        border-radius: 30px; 
-        text-align: center; 
-        border: 1px solid rgba(192,19,166,0.1); 
+    .footer-action {
+        margin-top: 80px;
+        padding: 60px 40px;
+        background: #0f172a;
+        border-radius: 30px;
+        text-align: center;
+        border: 1px solid rgba(192,19,166,0.1);
     }
 
-    .footer-btn { 
-        display: inline-block; 
-        background: transparent; 
-        border: 2px solid var(--primary); 
-        color: var(--primary); 
-        padding: 16px 40px; 
-        border-radius: 15px; 
-        text-decoration: none; 
-        font-weight: 900; 
-        margin: 10px; 
-        transition: 0.3s; 
+    .footer-btn {
+        display: inline-block;
+        background: transparent;
+        border: 2px solid var(--primary);
+        color: var(--primary);
+        padding: 16px 40px;
+        border-radius: 15px;
+        text-decoration: none;
+        font-weight: 900;
+        margin: 10px;
+        transition: 0.3s;
     }
 
-    .footer-btn:hover { 
-        background: var(--primary); 
-        color: #fff; 
+    .footer-btn:hover {
+        background: var(--primary);
+        color: #fff;
     }
 
-    #security-toast { 
-        position: fixed; 
-        bottom: 20px; 
-        left: 50%; 
-        transform: translateX(-50%); 
-        background-color: var(--primary); 
-        color: white; 
-        padding: 12px 24px; 
-        border-radius: 999px; 
-        font-weight: 900; 
-        box-shadow: 0 10px 25px rgba(0,0,0,0.5); 
-        z-index: 9999; 
-        opacity: 0; 
-        transition: all 0.3s ease; 
-        pointer-events: none; 
+    #security-toast {
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: var(--primary);
+        color: white;
+        padding: 12px 24px;
+        border-radius: 999px;
+        font-weight: 900;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+        z-index: 9999;
+        opacity: 0;
+        transition: all 0.3s ease;
+        pointer-events: none;
     }
-    @media (max-width: 768px) { 
-        h1 { font-size: 2rem; } 
+    @media (max-width: 768px) {
+        h1 { font-size: 2rem; }
         .tech-grid { grid-template-cols: 1fr; }
         .nav-menu { display: none; }
-        .free-badge { font-size: 2.8rem; } 
+        .free-badge { font-size: 2.8rem; }
         h2 { font-size: 1.7rem; }
     }
   </style>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9549277321717950" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="/assets/article-enhancements.css">
 </head>
 <body>
 
@@ -327,13 +329,19 @@
   </header>
 
   <main class="container">
-    <nav class="breadcrumbs">
-        <a href="https://daolinedigital.com/">الرئيسية</a> / 
+<!-- ARTICLE_TOC_START -->
+  <nav class="article-toc" aria-label="فهرس المقال">
+    <strong>في هذا المقال</strong>
+    <ol><li><a href="#أولا-أهم-10-أدوات-لاستكشاف-الكلمات-المفتاحية">أولاً: أهم 10 أدوات لاستكشاف الكلمات المفتاحية</a></li><li><a href="#ثانيا-التكنيكات-الجديدة-لـ-Social-SEO">ثانياً: التكنيكات الجديدة لـ Social SEO</a></li><li><a href="#ثالثا-تحليل-المحتوى-المنافس-">ثالثاً: تحليل المحتوى المنافس 🕵️‍♂️</a></li><li><a href="#رابعا-كيف-نطوع-التكنيك-للمحتوى-العربي">رابعاً: كيف نطوع التكنيك للمحتوى العربي؟</a></li></ol>
+  </nav>
+  <!-- ARTICLE_TOC_END -->
+<nav class="breadcrumbs">
+        <a href="https://daolinedigital.com/">الرئيسية</a> /
         <a href="https://daolinedigital.com/blog/">المكتبة</a> / سيو السوشيال ميديا
     </nav>
 
     <h1>🔥 دليلك الشامل لـ Social Media SEO في 2026: كيف تتصدر الخوارزميات؟</h1>
-    
+
     <div class="meta">
       <span>👤 إعداد: دعاء سليط</span>
       <span>⏱️ القراءة: 10 دقائق</span>
@@ -343,7 +351,7 @@
     <article class="article-content">
       <p>في 2026، تغيرت قواعد اللعبة تماماً. لم يعد البحث مقتصرًا على جوجل، بل أصبح تيك توك وإنستجرام هما المحركين الأساسيين للبحث لدى الجيل الجديد. لكي تنجح علامتك التجارية، يجب أن تفهم كيف تجعل الخوارزمية تعرض فيديوهاتك لكل من يبحث عن حل لمشكلته.</p>
 
-      <h2>أولاً: أهم 10 أدوات لاستكشاف الكلمات المفتاحية</h2>
+      <h2 id="أولا-أهم-10-أدوات-لاستكشاف-الكلمات-المفتاحية">أولاً: أهم 10 أدوات لاستكشاف الكلمات المفتاحية</h2>
       <p>بدلاً من التخمين، استخدم هذه الأدوات الاحترافية لمعرفة ما يكتبه جمهورك في شريط البحث فعلياً:</p>
 
       <table class="styled-table">
@@ -383,7 +391,7 @@
         </tbody>
       </table>
 
-      <h2>ثانياً: التكنيكات الجديدة لـ Social SEO</h2>
+      <h2 id="ثانيا-التكنيكات-الجديدة-لـ-Social-SEO">ثانياً: التكنيكات الجديدة لـ Social SEO</h2>
       <div class="tech-grid">
         <div class="tech-card">
           <h3>1. القاعدة الذهبية (الكلمة المسموعة) ⏱️</h3>
@@ -409,7 +417,7 @@
         <p style="color: #fff; font-size: 1.4rem; font-weight: 700; margin-bottom: 30px; line-height: 1.5;">
           احصلي فوراً على <span style="color:var(--primary);">"كتالوج الهوكات السحرية 2026"</span><br>أكثر من 100 صيغة جاهزة للنسخ والاستخدام!
         </p>
-        
+
         <div style="max-width: 500px; margin: 0 auto;">
           <input type="text" id="name" placeholder="اسمك الكريم.." class="form-input">
           <input type="email" id="email" placeholder="بريدك الإلكتروني.." class="form-input">
@@ -419,10 +427,10 @@
         </div>
       </section>
 
-      <h2>ثالثاً: تحليل المحتوى المنافس 🕵️‍♂️</h2>
+      <h2 id="ثالثا-تحليل-المحتوى-المنافس-">ثالثاً: تحليل المحتوى المنافس 🕵️‍♂️</h2>
       <p>لا تقلد منافسيك، بل ابحث عن "الكنز" في تعليقات جمهورهم. ابحث عن الأسئلة التي لم يُجب عليها المنافس، وحولها فوراً إلى فيديو رد (Video Reply) لتخطف هذا الجمهور إلى صفحتك.</p>
 
-      <h2>رابعاً: كيف نطوع التكنيك للمحتوى العربي؟</h2>
+      <h2 id="رابعا-كيف-نطوع-التكنيك-للمحتوى-العربي">رابعاً: كيف نطوع التكنيك للمحتوى العربي؟</h2>
       <p>المحتوى العربي له طبيعة خاصة. إليكِ السر:</p>
       <ul>
         <li><strong>في الصوت والنص المرئي:</strong> استخدمي اللهجة العامية الدارجة التي يكتبها المستخدم بيده في شريط البحث (مثل: "ازاي اخس" وليس "كيف أفقد الوزن").</li>
@@ -439,7 +447,17 @@
         <a href="https://daolinedigital.com/" class="footer-btn" style="background: var(--primary); color:#fff;">الخدمات والحلول</a>
       </div>
     </section>
-  </main>
+<!-- ARTICLE_DISCOVERY_START -->
+  <aside class="article-author" aria-label="عن الكاتبة">
+    <img src="/doaa-photo.jpg" alt="دعاء سليط - خبيرة تسويق رقمي" width="72" height="72" loading="lazy">
+    <div><strong>كتابة ومراجعة: دعاء سليط</strong><p>خبيرة سوشيال ميديا ومدربة تسويق رقمي بخبرة عملية في الاستراتيجية والمحتوى والإعلانات.</p></div>
+  </aside>
+  <section class="related-articles" aria-label="مقالات مرتبطة">
+    <h2>كمّلي القراءة</h2>
+    <ul><li><a href="/blog/013-free-social-media-tools.html">أفضل 10 أدوات سوشيال ميديا مجانية للمبتدئين في 2026 | Daoline Digital ←</a></li><li><a href="/blog/016.html">دليل تحديثات Meta 2026 | Daoline Digital ←</a></li><li><a href="/blog/021-%D8%AA%D9%82%D8%B1%D9%8A%D8%B1-%D8%A7%D9%84%D8%B3%D9%88%D8%B4%D9%8A%D8%A7%D9%84-%D9%85%D9%8A%D8%AF%D9%8A%D8%A7-%D8%A7%D9%84%D8%B3%D8%B9%D8%A7%D8%AF%D8%A9-%D8%A7%D9%84%D8%B9%D8%A7%D9%84%D9%85%D9%8A.html">تقرير السعادة العالمي 2026: السوشيال ميديا بتأذي مين بالظبط؟ | Daoline Digital ←</a></li><li><a href="/blog/018.html">دليل الـ 3 ثواني: 50 خطاف (Hook) جاهز لنسخة 2026 | Daoline Digital ←</a></li></ul>
+  </section>
+  <!-- ARTICLE_DISCOVERY_END -->
+</main>
 
   <footer style="text-align: center; padding: 50px 20px; color: var(--muted); font-size: 0.9rem; border-top: 1px solid rgba(255,255,255,0.05);">
     © 2026 Daoline Digital Academy | إعداد دعاء سليط | جميع الحقوق محفوظة
@@ -463,22 +481,22 @@
       try {
         btn.disabled = true; btn.innerText = "جاري تحضير دليلك...";
         const fd = new FormData();
-        
+
         fd.append("entry.299023128", name);
         fd.append("entry.1712155557", email);
         fd.append("entry.1224669856", wa);
-        fd.append("entry.334049848", "new_catalog"); 
+        fd.append("entry.334049848", "new_catalog");
 
-        await fetch("https://docs.google.com/forms/d/e/1FAIpQLSdSXEvN7DMMC-pwXED9G5TRpe4ecQ5U7pMtsg3201d2ikinfQ/formResponse", { 
-            method: "POST", 
-            mode: "no-cors", 
-            body: fd 
+        await fetch("https://docs.google.com/forms/d/e/1FAIpQLSdSXEvN7DMMC-pwXED9G5TRpe4ecQ5U7pMtsg3201d2ikinfQ/formResponse", {
+            method: "POST",
+            mode: "no-cors",
+            body: fd
         });
-        
+
         status.innerText = "تم بنجاح! ✅ شيكي على إيميلك الآن (والـ Spam) هتلاقي الدليل وصلك.";
         status.style.color = "#4ade80";
         btn.innerText = "تم الإرسال بنجاح ✅";
-        
+
         document.getElementById('name').value = '';
         document.getElementById('email').value = '';
         document.getElementById('whatsapp').value = '';
@@ -518,5 +536,6 @@
   <li><a href="/blog/019-social-seo-strategy-2026.html">استراتيجية السوشيال SEO</a></li>
   <li><a href="/blog/020-Social-Seo-2026-7.html">دليل السوشيال SEO</a></li>
 </ul>
+<script defer src="/assets/article-enhancements.js"></script>
 </body>
 </html>

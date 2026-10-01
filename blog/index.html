@@ -9,6 +9,7 @@
 <meta name="robots" content="index, follow" />
 <link rel="canonical" href="https://daolinedigital.com/blog/" />
 <link rel="icon" href="/logo-daoline.png" type="image/png" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9549277321717950" crossorigin="anonymous"></script>
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
@@ -97,6 +98,25 @@ h1 {
   border-radius: 18px;
   padding: 22px;
 }
+
+.library-search {
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0 0 24px;
+  padding: 15px 18px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: #0f1220;
+  color: #fff;
+  font: inherit;
+}
+
+.library-search:focus {
+  outline: 2px solid rgba(192,19,166,.55);
+  border-color: #c013a6;
+}
+
+.search-status { color:#aaa; margin:-12px 0 22px; min-height:1.5em; }
 
 .loading {
   text-align: center;
@@ -291,7 +311,7 @@ footer {
 <h1>المكتبة المجانية لتعلم التسويق الرقمي</h1>
 
 <p class="lead">
-عايز تتعلم التسويق الرقمي من غير تعقيد؟  
+عايز تتعلم التسويق الرقمي من غير تعقيد؟
 هنا هتلاقي مقالات بسيطة تساعدك تفهم السوشيال ميديا والمحتوى خطوة خطوة.
 </p>
 
@@ -303,6 +323,10 @@ footer {
   <p>مكتبة Daoline Digital مساحة عربية عملية لأصحاب المشروعات والمسوقين وصناع المحتوى. ستجد هنا شروحات تساعدك على بناء استراتيجية محتوى، تحسين ظهور البراند في البحث، قراءة مؤشرات الأداء، وتشخيص حملات السوشيال ميديا قبل زيادة الميزانية.</p>
   <p>كل مقال يركز على سؤال واضح أو مشكلة حقيقية، ويقدم أمثلة وخطوات قابلة للتطبيق بدل النصائح العامة. ابدأ بالموضوع الأقرب لتحديك الحالي، ثم انتقل إلى المقالات المرتبطة لبناء صورة متكاملة عن المحتوى والإعلانات والنمو الرقمي.</p>
 </section>
+
+<label for="library-search" style="display:block;font-weight:800;margin-bottom:8px;">ابحثي في المكتبة</label>
+<input class="library-search" id="library-search" type="search" placeholder="مثال: SEO، إعلانات، محتوى، ذكاء اصطناعي" autocomplete="off">
+<p class="search-status" id="search-status" aria-live="polite"></p>
 
 <div id="articles">
 <!-- ARTICLES_STATIC_START -->
@@ -638,6 +662,8 @@ async function loadArticles() {
       container.appendChild(card);
     });
 
+    filterArticles();
+
   } catch (error) {
     container.innerHTML = `
       <div class="error-box">
@@ -666,6 +692,25 @@ function escapeHTML(str) {
 }
 
 loadArticles();
+
+const searchInput = document.getElementById("library-search");
+const searchStatus = document.getElementById("search-status");
+
+function filterArticles() {
+  const query = (searchInput?.value || "").trim().toLocaleLowerCase("ar");
+  const cards = [...document.querySelectorAll("#articles .card")];
+  let visible = 0;
+
+  cards.forEach(card => {
+    const matches = !query || card.textContent.toLocaleLowerCase("ar").includes(query);
+    card.hidden = !matches;
+    if (matches) visible += 1;
+  });
+
+  searchStatus.textContent = query ? `${visible} مقال مطابق` : "";
+}
+
+searchInput?.addEventListener("input", filterArticles);
 
 window.addEventListener("scroll", function () {
   const widget = document.getElementById("float-widget");
