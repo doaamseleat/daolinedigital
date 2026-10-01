@@ -82,7 +82,12 @@ jobs:
             fi
             ARTICLE_PATH="$MANUAL_ARTICLE"
             BASENAME=$(basename "$MANUAL_ARTICLE")
-            if [ "$GITHUB_EVENT_NAME" = "push" ]; then
+            if [ "$GITHUB_EVENT_NAME" = "push" ] && [[ "$MANUAL_ARTICLE" == blog/queue/*.html ]]; then
+              # A publish-now request may target the next queued article. Treat
+              # it like a normal queue publish so it is moved only after Meta
+              # confirms the photo post succeeded.
+              MODE="new"
+            elif [ "$GITHUB_EVENT_NAME" = "push" ]; then
               MODE="manual"
             else
               MODE="test"
@@ -221,6 +226,10 @@ jobs:
             node scripts/update-articles-index.mjs --article "blog/$BASENAME"
           elif [ "$mode" = "recycle" ]; then
             echo "$NEXT_INDEX" > ".github/last_published.txt"
+          fi
+
+          if [ "$GITHUB_EVENT_NAME" = "push" ] && [ -f ".github/publish-now.txt" ]; then
+            rm -f ".github/publish-now.txt"
           fi
 
           printf '%s|%s|%s|%s|%s\n' \
