@@ -3,6 +3,7 @@ import path from "node:path";
 
 const ADSENSE = '<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9549277321717950" crossorigin="anonymous"></script>';
 const ENHANCEMENTS = '<script defer src="/assets/article-enhancements.js"></script>';
+const AD_PLACEMENTS = '<script defer src="/assets/ad-placements.js"></script>';
 const ENHANCEMENT_STYLES = '<link rel="stylesheet" href="/assets/article-enhancements.css">';
 const MANAGED_START = '<!-- ARTICLE_DISCOVERY_START -->';
 const MANAGED_END = '<!-- ARTICLE_DISCOVERY_END -->';
@@ -84,6 +85,9 @@ for (let currentIndex = 0; currentIndex < items.length; currentIndex += 1) {
   }
   if (!/\/assets\/article-enhancements\.js/i.test(html)) {
     html = html.replace(/<\/body>/i, `${ENHANCEMENTS}\n</body>`);
+  }
+  if (!/\/assets\/ad-placements\.js/i.test(html)) {
+    html = html.replace(/<\/body>/i, `${AD_PLACEMENTS}\n</body>`);
   }
 
   const headings = [];

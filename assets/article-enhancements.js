@@ -1,4 +1,11 @@
 (() => {
+  if (!document.querySelector('script[src="/assets/ad-placements.js"]')) {
+    const ads = document.createElement("script");
+    ads.src = "/assets/ad-placements.js";
+    ads.defer = true;
+    document.head.appendChild(ads);
+  }
+
   const send = (name, params = {}) => {
     if (typeof window.gtag === "function") {
       window.gtag("event", name, params);
