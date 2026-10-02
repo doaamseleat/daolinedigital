@@ -96,6 +96,23 @@
     img{ max-width:100%; display:block; }
     button{ font-family:inherit; }
 
+
+    /* proof strip + work showcase + whatsapp */
+    .proof{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:18px}
+    .proof .pf{border:1px solid var(--border);background:rgba(15,18,32,.56);border-radius:var(--radius2);padding:16px 14px;text-align:center}
+    .proof b{display:block;font-family:'Inter',sans-serif;font-weight:900;font-size:clamp(24px,3.2vw,34px);color:#f7c5e8;line-height:1.15}
+    .proof span{display:block;margin-top:6px;font-size:15px;color:var(--text);opacity:.85}
+    .works{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:4px 0 26px}
+    .work{position:relative;display:block;border-radius:var(--radius2);overflow:hidden;border:1px solid var(--border);aspect-ratio:4/5;background:var(--card)}
+    .work img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+    .work:hover img{transform:scale(1.04)}
+    .work .wc{position:absolute;inset:auto 0 0 0;padding:44px 14px 14px;background:linear-gradient(transparent,rgba(7,8,12,.95))}
+    .work .wc b{display:block;font-size:17px}
+    .work .wc span{font-size:14px;color:#f7c5e8}
+    .btn.wa{border-color:rgba(37,211,102,.6);background:linear-gradient(180deg,#25d366,#1da851);color:#fff}
+    .waFloat{position:fixed;bottom:18px;right:18px;z-index:60;width:58px;height:58px;border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(0,0,0,.45)}
+    .waFloat svg{width:32px;height:32px;fill:#fff}
+    @media(max-width:760px){.proof{grid-template-columns:repeat(2,1fr)}.works{grid-template-columns:repeat(2,1fr)}}
     .wrap{ max-width:var(--max); margin:0 auto; padding:0 18px; }
 
     .header{
@@ -347,6 +364,7 @@
           </div>
           <div class="heroActions">
             <a class="btn primary" href="#contact" data-key="hero_btn1">ابدأ التواصل</a>
+            <a class="btn wa" href="https://wa.me/201005479564?text=%D8%A3%D9%87%D9%84%D8%A7%20%D8%AF%D8%B9%D8%A7%D8%A1%D8%8C%20%D8%B9%D8%A7%D9%88%D8%B2%20%D8%A3%D8%B3%D8%AA%D9%81%D8%B3%D8%B1%20%D8%B9%D9%86%20%D8%AE%D8%AF%D9%85%D8%A7%D8%AA%20Daoline" target="_blank" rel="noopener">واتساب مباشر</a>
             <a class="btn" href="#services" data-key="hero_btn2">تفاصيل الخدمات</a>
             
             <a class="btn" href="/blog/" data-key="hero_btn3">المكتبة المجانية</a>
@@ -367,6 +385,12 @@
           </div>
           <div class="quote" data-key="quote"><strong>الهدف:</strong> حضور قوي + نمو مستمر + نتائج قابلة للقياس.<br><span style="color:rgba(243,244,246,.72)">نركز على التخطيط، التنفيذ، والمتابعة بنفس الدقة.</span></div>
         </div>
+      </div>
+      <div class="proof">
+        <div class="pf"><b>1.1M</b><span>متابع لصفحة الكاتب أحمد مراد</span></div>
+        <div class="pf"><b>2</b><span>صفحة لغايا دخلت برنامج الربح من ميتا</span></div>
+        <div class="pf"><b>Big 5</b><span>أفضل ستاند لواتكس</span></div>
+        <div class="pf"><b>7</b><span>مواقع ومتاجر اتبنت واشتغلت</span></div>
       </div>
     </div>
   </section>
@@ -456,7 +480,15 @@
         <h2 data-key="sec_clients_title">عملاء وشركاء نجاح</h2>
         <p data-key="sec_clients_sub">نماذج من قطاعات وأسماء اشتغلنا معها في المحتوى، الحضور الرقمي، والتشغيل.</p>
       </div>
-      <div style="text-align:center;margin:-6px 0 22px"><a class="btn primary" href="/portfolio/">💼 شوف سابقة الأعمال: ريلز وبوسترات ونتايج حقيقية</a></div>
+      <div class="works">
+        <a class="work" href="/portfolio/#p-mama"><img src="portfolio/media/mama-01-poster.webp" alt="ماما المجال" loading="lazy"><div class="wc"><b>ماما المجال</b><span>سلسلة دودل عن إعلانات ميتا</span></div></a>
+        <a class="work" href="/portfolio/#p-sa"><img src="portfolio/media/sa-06-1.webp" alt="SA Studios Dahab" loading="lazy"><div class="wc"><b>SA Studios Dahab</b><span>محتوى وريلز وإعلانات</span></div></a>
+        <a class="work" href="/portfolio/#p-ghaya"><img style="object-position:right" src="portfolio/media/ghaya-case1-1.webp" alt="مؤسسة غايا للإبداع" loading="lazy"><div class="wc"><b>مؤسسة غايا للإبداع</b><span>دراسة حالة · بدأنا فين ووصلنا فين</span></div></a>
+        <a class="work" href="/portfolio/#p-basha"><img src="portfolio/media/basha-06.webp" alt="الباشا للتصدير" loading="lazy"><div class="wc"><b>الباشا للتصدير</b><span>ريلز معارض ومنتجات</span></div></a>
+        <a class="work" href="/portfolio/#p-watex"><img src="portfolio/media/7-واتكس/watex-feed-1.webp" alt="Watex & GTEX" loading="lazy"><div class="wc"><b>Watex & GTEX</b><span>30 تصميم سوشيال ميديا</span></div></a>
+        <a class="work" href="/portfolio/#p-mourad"><img src="portfolio/media/media/media/mourad-02.webp" alt="أحمد مراد" loading="lazy"><div class="wc"><b>أحمد مراد</b><span>ريتريت كتابة السيناريو في دهب</span></div></a>
+      </div>
+      <div style="text-align:center;margin:0 0 26px"><a class="btn primary" href="/portfolio/">💼 شوف كل الأعمال (18 مشروع)</a></div>
       <div class="ticker" aria-label="Clients ticker"><div class="tickerTrack" id="tickerTrack"></div></div>
       <p class="clientsIntro" data-key="cli_intro">من ضمن الأسماء والقطاعات التي تعاملنا معها بشكل مباشر أو عبر مشاريع تشغيل ومحتوى وحضور رقمي:</p>
       
@@ -741,5 +773,6 @@
     }
   </script>
 
+<a class="waFloat" href="https://wa.me/201005479564?text=%D8%A3%D9%87%D9%84%D8%A7%20%D8%AF%D8%B9%D8%A7%D8%A1%D8%8C%20%D8%B9%D8%A7%D9%88%D8%B2%20%D8%A3%D8%B3%D8%AA%D9%81%D8%B3%D8%B1%20%D8%B9%D9%86%20%D8%AE%D8%AF%D9%85%D8%A7%D8%AA%20Daoline" target="_blank" rel="noopener" aria-label="واتساب"><svg viewBox="0 0 32 32"><path d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.9 2 7L3 29l6.4-2c2 1.1 4.3 1.7 6.6 1.7 7.2 0 13-5.7 13-12.8S23.2 3 16 3zm7.6 18.1c-.3.9-1.8 1.7-2.5 1.8-.6.1-1.5.1-2.4-.2-.6-.2-1.3-.4-2.2-.8-3.9-1.7-6.4-5.6-6.6-5.8-.2-.3-1.6-2.1-1.6-4s1-2.9 1.4-3.3c.4-.4.8-.5 1-.5h.8c.2 0 .6-.1.9.7.3.9 1.1 2.8 1.2 3 .1.2.2.4 0 .7-.1.3-.2.5-.4.7l-.6.7c-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.3 2.8 1.7 3.2 1.9.4.2.6.2.8-.1.2-.3 1-1.1 1.2-1.5.3-.4.5-.3.9-.2.4.1 2.3 1.1 2.7 1.3.4.2.7.3.8.5.1.1.1 1-.2 1.9z"/></svg></a>
 </body>
 </html>
