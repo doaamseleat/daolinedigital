@@ -8,7 +8,7 @@
   </url>
   <url>
     <loc>https://daolinedigital.com/blog/</loc>
-    <lastmod>2026-10-03</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
@@ -405,6 +405,12 @@
   <url>
     <loc>https://daolinedigital.com/en/utm-tracking-social-media-ga4-guide.html</loc>
     <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://daolinedigital.com/blog/053-direct-traffic-bots-data-centers-ga4.html</loc>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

@@ -289,5 +289,6 @@
     document.querySelectorAll('.copy-btn').forEach(button=>button.addEventListener('click',async()=>{const code=button.nextElementSibling.innerText;try{await navigator.clipboard.writeText(code);const old=button.textContent;button.textContent='تم النسخ ✓';setTimeout(()=>button.textContent=old,1600)}catch{button.textContent='حدّد النص وانسخه';}}));
   </script>
 <script defer src="/assets/article-enhancements.js"></script>
+<script defer src="/assets/ad-placements.js"></script>
 </body>
 </html>
