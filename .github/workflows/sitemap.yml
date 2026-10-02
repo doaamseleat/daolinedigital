@@ -41,6 +41,7 @@ jobs:
               ("/blog/", "daily", "0.9"),
               ("/en/", "weekly", "0.8"),
               ("/course/", "monthly", "0.7"),
+              ("/portfolio/", "monthly", "0.8"),
               ("/contact.html", "yearly", "0.4"),
               ("/privacy.html", "yearly", "0.3"),
               ("/terms.html", "yearly", "0.3"),
@@ -85,7 +86,7 @@ jobs:
                   urls.append((encoded_path, "monthly", priority, last_modified(file)))
 
           static_urls = []
-          for path, changefreq, priority in urls[:7]:
+          for path, changefreq, priority in urls[:8]:
               if path == "/":
                   source = Path("index.html")
               elif path.endswith("/"):
@@ -95,7 +96,7 @@ jobs:
                   source = Path(path.strip("/"))
               static_urls.append((path, changefreq, priority, last_modified(source)))
 
-          urls = static_urls + urls[7:]
+          urls = static_urls + urls[8:]
 
           sitemap = ['<?xml version="1.0" encoding="UTF-8"?>']
           sitemap.append('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">')
