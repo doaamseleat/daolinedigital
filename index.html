@@ -113,6 +113,21 @@
     .waFloat{position:fixed;bottom:18px;right:18px;z-index:60;width:58px;height:58px;border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(0,0,0,.45)}
     .waFloat svg{width:32px;height:32px;fill:#fff}
     @media(max-width:760px){.proof{grid-template-columns:repeat(2,1fr)}.works{grid-template-columns:repeat(2,1fr)}}
+
+    /* latest articles rotator */
+    .artRoll{flex:1;display:flex;flex-direction:column;border-radius:var(--radius);border:1px solid rgba(192,19,166,.35);background:linear-gradient(160deg,rgba(192,19,166,.16),rgba(15,18,32,.6) 60%);padding:18px;min-height:230px}
+    .artRoll[hidden]{display:none}
+    .artHead{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px}
+    .artHead .lbl{font-weight:800;font-size:15px;color:#f7c5e8}
+    .artHead .new{font-size:12px;font-weight:800;background:var(--primary);color:#fff;border-radius:999px;padding:2px 10px}
+    .artBody{flex:1;display:flex;flex-direction:column;gap:8px;transition:opacity .45s,transform .45s}
+    .artBody.fade{opacity:0;transform:translateY(8px)}
+    .artBody h3{margin:0;font-size:20px;line-height:1.5;font-weight:800}
+    .artBody p{margin:0;color:var(--muted);font-size:15px;line-height:1.8;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+    .artFoot{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:14px;flex-wrap:wrap}
+    .artDots{display:flex;gap:6px}
+    .artDots button{width:8px;height:8px;border-radius:50%;border:0;padding:0;background:rgba(255,255,255,.25);cursor:pointer;transition:.3s}
+    .artDots button.on{width:22px;border-radius:999px;background:var(--primary)}
     .wrap{ max-width:var(--max); margin:0 auto; padding:0 18px; }
 
     .header{
@@ -384,6 +399,34 @@
             </div>
           </div>
           <div class="quote" data-key="quote"><strong>الهدف:</strong> حضور قوي + نمو مستمر + نتائج قابلة للقياس.<br><span style="color:rgba(243,244,246,.72)">نركز على التخطيط، التنفيذ، والمتابعة بنفس الدقة.</span></div>
+          <div class="artRoll" id="artRoll" hidden aria-live="polite">
+            <div class="artHead"><span class="lbl">📚 أحدث مقالات المكتبة</span><span class="new" id="artNew">جديد</span></div>
+            <a class="artBody" id="artBody" href="/blog/"><h3 id="artT"></h3><p id="artD"></p></a>
+            <div class="artFoot"><a class="btn primary" id="artGo" href="/blog/">اقرأ المقال ←</a><div class="artDots" id="artDots"></div></div>
+          </div>
+          <script>
+          (function(){
+            var box=document.getElementById('artRoll'); if(!box) return;
+            fetch('/blog/articles.json',{cache:'no-cache'}).then(function(r){return r.json()}).then(function(list){
+              var items=(list||[]).filter(function(a){return a&&a.title&&a.link}).slice(0,6);
+              if(!items.length) return;
+              var i=0, timer, body=document.getElementById('artBody'), dots=document.getElementById('artDots');
+              items.forEach(function(_,k){var b=document.createElement('button');b.setAttribute('aria-label','مقال '+(k+1));b.onclick=function(){go(k);restart();};dots.appendChild(b);});
+              function clean(t){return String(t).split(' | ')[0].trim();}
+              function paint(){var a=items[i],url='/blog/'+a.link;
+                document.getElementById('artT').textContent=clean(a.title);
+                document.getElementById('artD').textContent=a.desc||'';
+                body.href=url; document.getElementById('artGo').href=url;
+                document.getElementById('artNew').style.visibility=i===0?'visible':'hidden';
+                [].forEach.call(dots.children,function(d,k){d.classList.toggle('on',k===i);});}
+              function go(k){body.classList.add('fade');setTimeout(function(){i=(k+items.length)%items.length;paint();body.classList.remove('fade');},450);}
+              function restart(){clearInterval(timer);timer=setInterval(function(){go(i+1);},6000);}
+              box.addEventListener('mouseenter',function(){clearInterval(timer);});
+              box.addEventListener('mouseleave',restart);
+              paint(); box.hidden=false; restart();
+            }).catch(function(){});
+          })();
+          </script>
         </div>
       </div>
       <div class="proof">
