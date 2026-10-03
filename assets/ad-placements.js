@@ -2,12 +2,9 @@
   "use strict";
 
   const ADSENSE_CLIENT = "ca-pub-9549277321717950";
-  const ARTICLE_MID_SLOT = "1299236772";
   const CONTENT_BOTTOM_SLOT = "6847251931";
   const path = window.location.pathname.replace(/\/+$/, "") || "/";
   const isBlog = path === "/blog" || path.startsWith("/blog/");
-  const isBlogIndex = path === "/blog" || path === "/blog/index.html";
-  const isArticle = isBlog && !isBlogIndex;
   const isCourse = path === "/course" || path.startsWith("/course/");
 
   if (!isBlog && !isCourse) return;
@@ -28,7 +25,6 @@
     style.id = "daoline-ad-styles";
     style.textContent = `
       .daoline-ad { width: min(100% - 32px, 1080px); margin: 36px auto; padding: 12px 0; text-align: center; overflow: hidden; }
-      .daoline-ad--mid { margin-top: 42px; margin-bottom: 42px; }
       .daoline-ad__label { margin: 0 0 8px; color: #777; font: 11px/1.4 Arial, sans-serif; letter-spacing: .04em; }
       .daoline-ad .adsbygoogle { min-height: 90px; }
       @media (max-width: 640px) { .daoline-ad { width: calc(100% - 24px); margin: 28px auto; } }
@@ -66,31 +62,6 @@
     }
   };
 
-  const insertMidArticleAd = () => {
-    if (!isArticle || document.querySelector('[data-daoline-ad="mid"]')) return;
-    const root = document.querySelector("main article, article, main, .article-content, .article-body");
-    if (!root) return;
-
-    const excluded = /related|author|share|newsletter|cta|faq|comments|toc/i;
-    let blocks = Array.from(root.children).filter((element) => {
-      const marker = `${element.id} ${element.className}`;
-      return !excluded.test(marker) && !element.matches("script, style, nav, footer, aside");
-    });
-
-    if (blocks.length < 4) {
-      blocks = Array.from(root.querySelectorAll("h2, section, p")).filter((element) => {
-        const marker = `${element.id} ${element.className}`;
-        return !excluded.test(marker) && element.textContent.trim().length > 80;
-      });
-    }
-    if (!blocks.length) return;
-
-    const target = blocks[Math.min(blocks.length - 1, Math.max(1, Math.floor(blocks.length * 0.45)))];
-    const placement = createAd(ARTICLE_MID_SLOT, "mid");
-    target.insertAdjacentElement("afterend", placement);
-    queueAd();
-  };
-
   const insertBottomAd = () => {
     if (document.querySelector('[data-daoline-ad="bottom"]')) return;
     const placement = createAd(CONTENT_BOTTOM_SLOT, "bottom");
@@ -103,7 +74,6 @@
   const init = () => {
     ensureAdSenseScript();
     addStyles();
-    insertMidArticleAd();
     insertBottomAd();
   };
 
