@@ -6,8 +6,9 @@
   const path = window.location.pathname.replace(/\/+$/, "") || "/";
   const isBlog = path === "/blog" || path.startsWith("/blog/");
   const isCourse = path === "/course" || path.startsWith("/course/");
+  const isEnglishArticle = path.startsWith("/en/") && path !== "/en/index.html";
 
-  if (!isBlog && !isCourse) return;
+  if (!isBlog && !isCourse && !isEnglishArticle) return;
 
   const ensureAdSenseScript = () => {
     const existing = document.querySelector('script[src*="pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"]');
@@ -36,11 +37,12 @@
     const wrapper = document.createElement("aside");
     wrapper.className = `daoline-ad daoline-ad--${position}`;
     wrapper.dataset.daolineAd = position;
-    wrapper.setAttribute("aria-label", "إعلان");
+    const adLabel = document.documentElement.lang === "en" ? "Advertisement" : "إعلان";
+    wrapper.setAttribute("aria-label", adLabel);
 
     const label = document.createElement("div");
     label.className = "daoline-ad__label";
-    label.textContent = "إعلان";
+    label.textContent = adLabel;
 
     const ad = document.createElement("ins");
     ad.className = "adsbygoogle";
