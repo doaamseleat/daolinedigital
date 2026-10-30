@@ -32,6 +32,12 @@
     .checklist{list-style:none;padding-left:0}.checklist li{padding:9px 0 9px 34px;position:relative}.checklist li:before{content:'✓';position:absolute;left:0;top:8px;width:23px;height:23px;border-radius:50%;display:grid;place-items:center;background:rgba(34,197,94,.16);color:#86efac;font-weight:900}
     .myth-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:20px 0}.myth,.fact{border-radius:16px;padding:18px}.myth{background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.25)}.fact{background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.25)}
     .myth b{color:#fca5a5}.fact b{color:#86efac}.example-copy{padding:18px;border-left:4px solid #c013a6;background:rgba(255,255,255,.04);border-radius:0 14px 14px 0;margin:16px 0}.code-sample{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;overflow-wrap:anywhere;background:#090b12;border:1px solid rgba(255,255,255,.12);padding:16px;border-radius:14px;color:#d8b4fe}
+    .pinterest-flow{display:grid;grid-template-columns:1fr auto 1fr auto 1fr auto 1fr;align-items:stretch;gap:10px;margin:28px 0;padding:22px;border-radius:22px;background:linear-gradient(135deg,rgba(230,0,35,.10),rgba(192,19,166,.12));border:1px solid rgba(230,0,35,.28)}
+    .flow-step{min-height:132px;padding:18px 12px;border-radius:18px;background:rgba(9,11,18,.78);border:1px solid rgba(255,255,255,.12);display:flex;flex-direction:column;justify-content:center;text-align:center}.flow-step .icon{font-size:1.8rem}.flow-step b{display:block;color:#fff;margin:8px 0 4px}.flow-step span{color:#b8c1d1;font-size:.9rem;line-height:1.45}.flow-arrow{align-self:center;color:#ff5a72;font-size:1.55rem;font-weight:900}
+    .board-map{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:24px 0}.board-tile{padding:20px 16px;border-radius:18px;min-height:150px;border:1px solid rgba(255,255,255,.12);background:linear-gradient(160deg,rgba(230,0,35,.13),rgba(124,58,237,.12));position:relative;overflow:hidden}.board-tile:before{content:'';position:absolute;width:72px;height:72px;border-radius:50%;right:-18px;top:-18px;background:rgba(230,0,35,.16)}.board-tile .board-no{color:#ff8a9b;font-size:.78rem;font-weight:900;letter-spacing:.08em}.board-tile b{display:block;color:#fff;font-size:1.02rem;line-height:1.35;margin:16px 0 8px}.board-tile span{color:#b8c1d1;font-size:.88rem;line-height:1.45}
+    .visual-caption{text-align:center;color:#9eacc0;font-size:.88rem;margin-top:-12px;margin-bottom:28px}
+    @media(max-width:800px){.pinterest-flow{grid-template-columns:1fr}.flow-arrow{transform:rotate(90deg)}.board-map{grid-template-columns:1fr 1fr}}
+    @media(max-width:520px){.board-map{grid-template-columns:1fr}.pinterest-flow{padding:14px}.flow-step{min-height:112px}}
     @media(max-width:700px){.myth-grid{grid-template-columns:1fr}}
   </style>
 </head>
@@ -61,6 +67,14 @@
     <div class="intro">If you are considering <strong>Pinterest for small business</strong>, the most useful question is not, “Can I get followers?” It is, “Can my business create helpful visual content that leads the right people to my website?” For many small businesses, Pinterest is worth testing when it connects searchable ideas to genuinely useful articles, services, products, templates, case studies, or guides.</div>
 
     <div class="quick-answer"><strong>Quick answer:</strong> Pinterest may be useful if customers research before buying and your website gives them a valuable next step. Start with a business account, a small set of keyword-led boards, and several clear Pin designs that lead to relevant pages—not a generic homepage.</div>
+
+    <div class="pinterest-flow" role="img" aria-label="Pinterest traffic journey from search to website visit">
+      <div class="flow-step"><div class="icon">⌕</div><b>Search</b><span>A customer searches for an idea or solution.</span></div><div class="flow-arrow" aria-hidden="true">→</div>
+      <div class="flow-step"><div class="icon">◆</div><b>Discover</b><span>Your useful Pin appears with a clear promise.</span></div><div class="flow-arrow" aria-hidden="true">→</div>
+      <div class="flow-step"><div class="icon">↗</div><b>Click</b><span>The title and creative earn an outbound click.</span></div><div class="flow-arrow" aria-hidden="true">→</div>
+      <div class="flow-step"><div class="icon">◎</div><b>Website</b><span>The landing page delivers the promised answer.</span></div>
+    </div>
+    <p class="visual-caption">The Pinterest traffic path: search intent first, useful website destination last.</p>
 
     <section class="section">
       <div class="number">01 • SEARCH BEHAVIOUR</div>
@@ -112,6 +126,12 @@
         <li><strong>Write a natural board description.</strong> Explain what the board contains and who it helps. Use related keywords only where they fit.</li>
       </ol>
       <p>For Daoline Digital, useful Pinterest boards include <strong>Social Media SEO Tips</strong>, <strong>Content Strategy for Small Business</strong>, <strong>LinkedIn Marketing Tips</strong>, and <strong>Social Media Hooks</strong>.</p>
+      <div class="board-map" aria-label="Daoline Digital Pinterest board map">
+        <div class="board-tile"><span class="board-no">BOARD 01</span><b>Social Media SEO Tips</b><span>Search visibility, keywords, profiles, and discoverability.</span></div>
+        <div class="board-tile"><span class="board-no">BOARD 02</span><b>Content Strategy for Small Business</b><span>Planning systems, checklists, and practical workflows.</span></div>
+        <div class="board-tile"><span class="board-no">BOARD 03</span><b>LinkedIn Marketing Tips</b><span>B2B expertise, authority, and searchable content.</span></div>
+        <div class="board-tile"><span class="board-no">BOARD 04</span><b>Social Media Hooks</b><span>Headlines, opening lines, and Pin creative angles.</span></div>
+      </div>
       <p>One article can fit more than one board, but the Pin angle should match the board. A Pin for “LinkedIn Marketing Tips” should lead with LinkedIn. A Pin for “Social Media Hooks” should lead with the opening line or headline.</p>
     </section>
 
