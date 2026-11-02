@@ -4,7 +4,8 @@
 <div class="big ar">ب</div><div class="name">Baa</div>
 <div class="word"><span class="w ar">بَطَّة</span><span class="m">duck</span></div><img src="/ar/img/02.png" alt="duck">
 <button class="play" id="p">▶ Listen</button>
-<div class="row"><button data-s="0">Name</button><button data-s="1">Sound</button><button data-s="2">Word</button></div></div>
+<div class="row"><button data-s="0">Name</button><button data-s="1">Sound</button><button data-s="2">Word</button></div>
+<div class="sent"><div class="sa ar">البَطَّةُ تَسْبَحُ.</div><div class="se">The duck swims.</div><button class="play s2" id="ps">▶ Sentence</button></div></div>
 <nav><a href="/ar/1/">← Alif</a><a href="/ar/">All</a><a href="/ar/3/">Taa →</a></nav><script>
 const T=["بَاء", "بَ", "بَطَّة"], N='02';
 const a=new Audio();let tried=0;const srcs=['/ar/audio/'+N+'.mp3','/ar/audio/'+N+'.wav'];
@@ -12,5 +13,6 @@ function speak(txt){try{speechSynthesis.cancel();const u=new SpeechSynthesisUtte
 function full(){tried=0;a.src=srcs[0];a.play().catch(()=>{})}
 a.onerror=()=>{tried++;if(tried<srcs.length){a.src=srcs[tried];a.play().catch(()=>{})}else speak(T.join(' ، '))};
 document.getElementById('p').onclick=full;
+const sa=new Audio('/ar/audio/s'+N+'.mp3');sa.onerror=()=>speak(document.querySelector('.sa').textContent);document.getElementById('ps').onclick=()=>{a.pause();sa.currentTime=0;sa.play().catch(()=>speak(document.querySelector('.sa').textContent))};
 document.querySelectorAll('[data-s]').forEach(b=>b.onclick=()=>speak(T[+b.dataset.s]));
 </script><footer>Daoline Books · Arabic Alphabet Workbook</footer></body></html>

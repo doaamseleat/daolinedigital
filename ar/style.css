@@ -9,4 +9,5 @@ img{width:180px;height:180px;object-fit:contain}
 nav{display:flex;justify-content:space-between;width:100%;max-width:440px;margin-top:18px}nav a{color:#8a6d3b;font-weight:700;text-decoration:none;font-size:16px}
 .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;width:100%;max-width:520px}.grid a{background:#fff;border-radius:18px;box-shadow:0 4px 14px rgba(120,80,0,.1);text-decoration:none;color:#c013a6;font-size:44px;font-weight:700;padding:10px 0;text-align:center}
 .grid a small{display:block;font:700 12px 'Nunito',sans-serif;color:#666}h1{font-size:26px;margin-bottom:6px;text-align:center}p.sub{color:#666;margin-bottom:18px;text-align:center}
+.sent{margin-top:22px;padding-top:18px;border-top:2px dashed #f0dcb4}.sa{font-size:32px;font-weight:700}.se{font-size:17px;color:#666;margin-top:4px}.play.s2{background:#f2a20c;margin-top:12px}
 footer{margin-top:28px;font-size:13px;color:#9a8a70}
