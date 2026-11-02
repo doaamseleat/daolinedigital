@@ -6,7 +6,7 @@
 <button class="play" id="p">▶ Listen</button>
 <div class="row"><button data-s="0"><span class="ar">يَاء</span>Name</button><button data-s="1"><span class="ar">يَ</span>Sound</button><button data-s="2"><span class="ar">يَد</span>Word</button></div>
 <div class="sent"><div class="sa ar">يَدِي صَغِيرَةٌ.</div><div class="se">My hand is small.</div><button class="play s2" id="ps">▶ Sentence</button></div></div>
-<nav><a href="/ar/27/">← Waaw</a><a href="/ar/">All</a><a href="/ar/">All letters</a></nav><script>
+<nav><a href="/ar/27/">← Waaw</a><a href="/ar/">All</a><a href="/ar/hamza/">Hamza →</a></nav><script>
 const T=["يَاء", "يَ", "يَد"], N='28', PARTS=[[0.43, 1.01], [1.5, 1.96], [2.39, 3.17]];
 let ctx=null,cur=null;const bufs={};
 function speak(txt){try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(txt);u.lang='ar-SA';u.rate=.7;const v=speechSynthesis.getVoices().find(v=>v.lang&&v.lang.startsWith('ar'));if(v)u.voice=v;speechSynthesis.speak(u)}catch(e){}}
