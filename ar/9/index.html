@@ -4,15 +4,22 @@
 <div class="big ar">ذ</div><div class="name">Dhaal</div>
 <div class="word"><span class="w ar">ذُرَة</span><span class="m">corn</span></div><img src="/ar/img/09.png" alt="corn">
 <button class="play" id="p">▶ Listen</button>
-<div class="row"><button data-s="0">Name</button><button data-s="1">Sound</button><button data-s="2">Word</button></div>
+<div class="row"><button data-s="0"><span class="ar">ذَال</span>Name</button><button data-s="1"><span class="ar">ذَ</span>Sound</button><button data-s="2"><span class="ar">ذُرَة</span>Word</button></div>
 <div class="sent"><div class="sa ar">الذُّرَةُ صَفْرَاءُ.</div><div class="se">The corn is yellow.</div><button class="play s2" id="ps">▶ Sentence</button></div></div>
 <nav><a href="/ar/8/">← Daal</a><a href="/ar/">All</a><a href="/ar/10/">Raa →</a></nav><script>
-const T=["ذَال", "ذَ", "ذُرَة"], N='09';
-const a=new Audio();let tried=0;const srcs=['/ar/audio/'+N+'.mp3','/ar/audio/'+N+'.wav'];
+const T=["ذَال", "ذَ", "ذُرَة"], N='09', PARTS=[[0.52, 1.34], [1.73, 2.24], [2.68, 3.33]];
+let ctx=null,cur=null;const bufs={};
 function speak(txt){try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(txt);u.lang='ar-SA';u.rate=.7;const v=speechSynthesis.getVoices().find(v=>v.lang&&v.lang.startsWith('ar'));if(v)u.voice=v;speechSynthesis.speak(u)}catch(e){}}
-function full(){tried=0;a.src=srcs[0];a.play().catch(()=>{})}
-a.onerror=()=>{tried++;if(tried<srcs.length){a.src=srcs[tried];a.play().catch(()=>{})}else speak(T.join(' ، '))};
-document.getElementById('p').onclick=full;
-const sa=new Audio('/ar/audio/s'+N+'.mp3');sa.onerror=()=>speak(document.querySelector('.sa').textContent);document.getElementById('ps').onclick=()=>{a.pause();sa.currentTime=0;sa.play().catch(()=>speak(document.querySelector('.sa').textContent))};
-document.querySelectorAll('[data-s]').forEach(b=>b.onclick=()=>speak(T[+b.dataset.s]));
+async function load(name){if(bufs[name])return bufs[name];
+ for(const ext of ['.mp3','.wav']){try{const r=await fetch('/ar/audio/'+name+ext);if(!r.ok)continue;const ab=await r.arrayBuffer();bufs[name]=await ctx.decodeAudioData(ab);return bufs[name]}catch(e){}}
+ throw new Error('no audio')}
+async function play(name,st,en,fallback){
+ try{if(!ctx)ctx=new (window.AudioContext||window.webkitAudioContext)();if(ctx.state==='suspended')await ctx.resume();
+  const b=await load(name);if(cur){try{cur.stop()}catch(e){}}
+  const src=ctx.createBufferSource();src.buffer=b;src.connect(ctx.destination);
+  st=st||0;en=en||b.duration;src.start(0,st,Math.max(.05,en-st));cur=src}
+ catch(e){speak(fallback)}}
+document.getElementById('p').onclick=()=>play(N,0,0,T.join(' ، '));
+document.querySelectorAll('[data-s]').forEach(b=>b.onclick=()=>{const k=+b.dataset.s;play(N,PARTS[k][0],PARTS[k][1],T[k])});
+document.getElementById('ps').onclick=()=>play('s'+N,0,0,document.querySelector('.sa').textContent);
 </script><footer>Daoline Books · Arabic Alphabet Workbook</footer></body></html>
