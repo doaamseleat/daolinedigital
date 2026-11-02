@@ -1,0 +1,16 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Ghayn غ — Hear the letter</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@700&family=Nunito:wght@700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="/ar/style.css"></head><body><div class="top">Letter 19 of 28</div><div class="card">
+<div class="big ar">غ</div><div class="name">Ghayn</div>
+<div class="word"><span class="w ar">غَزَال</span><span class="m">gazelle</span></div><img src="/ar/img/19.png" alt="gazelle">
+<button class="play" id="p">▶ Listen</button>
+<div class="row"><button data-s="0">Name</button><button data-s="1">Sound</button><button data-s="2">Word</button></div></div>
+<nav><a href="/ar/18/">← ʿAyn</a><a href="/ar/">All</a><a href="/ar/20/">Faa →</a></nav><script>
+const T=["غَيْن", "غَ", "غَزَال"], N='19';
+const a=new Audio();let tried=0;const srcs=['/ar/audio/'+N+'.mp3','/ar/audio/'+N+'.wav'];
+function speak(txt){try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(txt);u.lang='ar-SA';u.rate=.7;const v=speechSynthesis.getVoices().find(v=>v.lang&&v.lang.startsWith('ar'));if(v)u.voice=v;speechSynthesis.speak(u)}catch(e){}}
+function full(){tried=0;a.src=srcs[0];a.play().catch(()=>{})}
+a.onerror=()=>{tried++;if(tried<srcs.length){a.src=srcs[tried];a.play().catch(()=>{})}else speak(T.join(' ، '))};
+document.getElementById('p').onclick=full;
+document.querySelectorAll('[data-s]').forEach(b=>b.onclick=()=>speak(T[+b.dataset.s]));
+</script><footer>Daoline Books · Arabic Alphabet Workbook</footer></body></html>
